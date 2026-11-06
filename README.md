@@ -8,7 +8,7 @@ The homepage links to three independently maintained projects:
 - [An Atlas of Numerical Methods](https://koyamahr.github.io/numerical-methods-atlas/)
 - [The Art of Thermal Instability](https://koyamahr.github.io/the-art-of-thermal-instability/)
 
-It also links to the author's Google Scholar, LinkedIn, and ResearchGate profiles. Japanese and English are available using the language buttons or `?lang=ja` / `?lang=en`. The selected language follows links to the bilingual projects.
+It also links to the author's ORCID (0009-0003-7503-4715), Google Scholar, LinkedIn, and ResearchGate profiles. Japanese and English are available using the language buttons or `?lang=ja` / `?lang=en`. The selected language follows links to the bilingual projects.
 
 ## Edit and preview
 
