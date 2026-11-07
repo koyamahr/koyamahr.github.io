@@ -93,6 +93,7 @@ const html = `<!doctype html>
           <figcaption>01 / INFRASTRUCTURE &amp; POLICY</figcaption>
         </figure>
       </section>
+      <aside class="history-callout"><p class="eyebrow">HISTORY, RELATIONSHIPS &amp; FUNDING</p><a href="history.html?lang=ja" data-history><span data-i18n="historyTitle">委員会の関係図・年表・20年の予算概要</span> ↗</a><p data-i18n="historyIntro">文科省とCSTIの評価の流れ、「京」・「富岳」の設置と計画変更、2006〜2025年度の主要事業の予算を、根拠資料からたどります。</p></aside>
       <section aria-labelledby="periods-heading">
         <div class="section-label"><h2 id="periods-heading" data-i18n="periodsHeading">文部科学省への2度の出向</h2><span class="minor">2015–17 / 2023–25</span></div>
         <div class="periods">${periods}</div>

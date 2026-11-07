@@ -1,7 +1,7 @@
 (() => {
   const copy = {
     ja: {
-      title: '小山 洋 | 計算科学政策の記録', skip: '委員会・業務の記録へ', home: 'ホーム', breadcrumb: '計算科学政策の記録',
+      historyTitle: '委員会の関係図・年表・20年の予算概要', historyIntro: '文科省とCSTIの評価の流れ、「京」・「富岳」の設置と計画変更、2006〜2025年度の主要事業の予算を、根拠資料からたどります。', title: '小山 洋 | 計算科学政策の記録', skip: '委員会・業務の記録へ', home: 'ホーム', breadcrumb: '計算科学政策の記録',
       headline1: '計算科学を支える、', headline2: '政策の記録。',
       intro: '文部科学省への2度の出向と、関連する委員会・業務の記録。HPCI、ポスト「京」、AI for Scienceなど、本人が関与を確認した委員会等の公開資料を整理しています。',
       directoryJump: '関与した委員会等の一覧へ', directoryHeading: '関与した委員会等', directoryScope: '本人申告による整理',
@@ -19,7 +19,7 @@
       sourceIndex: '出典一覧と確認状況', read: '本文確認', indexed: '直接取得未確認', updated: '更新', checked: '確認日', footer: '小山 洋 / Hiroshi Koyama', back: 'ホームに戻る', count: n => `${n}件の記録`,
     },
     en: {
-      title: 'Hiroshi Koyama | Computing Policy Archive', skip: 'Skip to the records', home: 'Home', breadcrumb: 'Computing Policy Archive',
+      historyTitle: 'Committee map, timeline & twenty years of budgets', historyIntro: 'Follow MEXT and CSTI evaluation routes, K and Fugaku installation, changes of plan, and FY2006–2025 major-program budget overviews through public evidence.', title: 'Hiroshi Koyama | Computing Policy Archive', skip: 'Skip to the records', home: 'Home', breadcrumb: 'Computing Policy Archive',
       headline1: 'Behind the infrastructure,', headline2: 'a record of policy work.',
       intro: 'A record of two secondments to MEXT and related committee work, with public sources on HPCI, post-K, and AI for Science. Committee involvement has been confirmed by the author.',
       directoryJump: 'Explore the committee directory', directoryHeading: 'Committees & working groups', directoryScope: 'Involvement confirmed by the author',
@@ -106,6 +106,7 @@
     document.querySelectorAll('[data-verification]').forEach(element => { element.textContent = strings[element.dataset.verification === 'read' ? 'read' : 'indexed']; });
     document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
     document.querySelectorAll('[data-home]').forEach(link => { link.href = '../?lang=' + lang; });
+    document.querySelectorAll('[data-history]').forEach(link => { link.href = 'history.html?lang=' + lang; });
     document.getElementById('record-search').placeholder = strings.searchPlaceholder;
     document.getElementById('committee-search').placeholder = strings.committeePlaceholder;
     if (save) { try { localStorage.setItem('koyamahr.home.language', lang); } catch {} }

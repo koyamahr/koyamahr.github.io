@@ -56,3 +56,22 @@ The primary entry point is now the four-method gallery. Each tile previews the s
 - `chart.mjs` renders price overlays and separate aligned oscillator panes (fixed 0–100 for RSI). All displayed calculations and scales use only data visible up to the observation date unless the outcome is revealed. SMA, EMA, MACD, RSI, and band calculations use trailing data only.
 
 Example: `/market-chart-atlas/?lang=ja&indicator=macd&fast=12&slow=26&signal=9#nvda-2023`. Indicator definitions link to Fidelity’s official indicator guide and John Bollinger’s band rules. Refreshing the historical dataset does not change the indicator definitions.
+
+## Committee relationships, timeline and budgets
+
+The bilingual [`hpci-policy/history.html`](https://koyamahr.github.io/hpci-policy/history.html) is generated from `hpci-policy/history.json`. It connects institutional context to the 19 confirmed committees and includes six relationship views, an evidence panel, a filterable timeline, a 2006–2025 budget-overview chart, individual award examples, and political advocacy context. A relationship is typed as `parent`, `report` or `sequence`: do not turn a reporting relationship or chronological progression into a formal hierarchy. In particular, the post-2019 Information Committee is directly under the science council, and the exploratory projects sub-working group is under the priority-projects WG. Institutional context does not add personal involvement claims.
+
+Run both generators after editing:
+
+```sh
+node scripts/build-policy.mjs
+node scripts/build-history.mjs
+```
+
+`history-render.mjs` provides the shared server/browser bilingual rendering; `history.js` supplies interactions; `budget-chart.mjs` renders the financial chart. Commit the generated HTML and `hpci-policy/budget-data.csv` with the data and scripts. The deployed site has no package/CDN dependencies. The builder checks source IDs, diagram endpoints, all committee relationships, annual coverage, monetary values and review-sheet arithmetic.
+
+### Financial scope and provenance
+
+The chart is a **major direct-program budget overview**, not an exhaustive total of all supercomputing-related MEXT spending. Operating block grants are excluded at the author’s explicit request. Earth Simulator and SINET are separate programs outside this series. All 20 fiscal years have an overview observation; FY2006–2013 are source-rounded totals, FY2014 is labeled “budget” by the source, and FY2019 currently uses a proposal. Reconciliation into one consistent accounting boundary is incomplete. Requests, supplementary budgets and expenditure are explicitly partial. Missing years are not zero.
+
+Preserve each record's `kind`, `sourceAmountType`, `basis`, `precision`, `year`, `series`, `sourceIds` and bilingual notes. `millionYen` is nominal JPY million; the chart converts to JPY 100 million. Keep the budget-overview and administrative-review accounting scopes distinct, and retain carry-in, carry-out and reserve adjustments in `reviewComparison`. Never add award or subcontract records to a program total, multi-year commitments to annual appropriations, or compute-resource allocations to monetary allocations. Grant decisions are not final settlements or actual institutional expenditure. The individual award list is a verified starting sample, not all selected projects.
