@@ -38,7 +38,7 @@ The author excluded eight entries from the initial MEXT list: 071, 059, 035, 034
 
 ## Market Chart Atlas
 
-The bilingual [Market Chart Atlas](https://koyamahr.github.io/market-chart-atlas/) lives in `market-chart-atlas/`, linked from a separate **Data & Markets** section on the homepage. It is a static, dependency-free app with 12 curated historical cases across eight US stocks and two index ETFs.
+The bilingual [Market Chart Atlas](https://koyamahr.github.io/market-chart-atlas/) lives in `market-chart-atlas/`, linked from a separate **Data & Markets** section on the homepage. It is a static, dependency-free technical indicator gallery: moving averages (SMA / EMA), MACD, Wilder RSI, and Bollinger Bands, compared on the same 12 curated historical cases across eight US stocks and two index ETFs.
 
 - `cases.json`: bilingual observation, question, and retrospective commentary. The observation date is a US trading-session date.
 - `data.json`: finite Yahoo Finance daily OHLC/volume snapshots, with source and actual retrieval date. Each case has 130 preceding sessions, the observation session, and 20 following sessions. Prices reflect splits (including subsequent splits), not dividends.
@@ -46,3 +46,13 @@ The bilingual [Market Chart Atlas](https://koyamahr.github.io/market-chart-atlas
 - `indicators.mjs`: trailing SMA, fixed prior-20-session high/low reference levels, and close-to-close percentage calculation. These are not trading strategy returns.
 
 Preview from the repository root using the server above and visit `/market-chart-atlas/?lang=ja` or `?lang=en`. No build is needed for GitHub Pages. Refresh snapshots deliberately with `python3 scripts/fetch-market-data.py` (network required). Refreshing can change historical prices when the provider applies subsequent corporate actions. Run `node --test scripts/market-atlas.test.mjs` after dataset or indicator changes. The case selection is educational and retrospective, not a statistical sample or investment recommendation.
+
+### Technical indicator gallery
+
+The primary entry point is now the four-method gallery. Each tile previews the same case with default parameters. Selecting a method preserves the case, observation window, and reveal state. The chart offers per-method sliders, reset, matching-date price and indicator readouts, definitions, equations, interpretation, limitations, and primary-source references. Case selection is also available directly above the chart. Japanese and English are supported throughout.
+
+- `methods.mjs` contains bilingual method descriptions and parameter bounds. MACD is the default. URLs preserve `indicator`, active method parameters, language, and the case hash; old case links still work.
+- `indicators.mjs` implements SMA-seeded EMA, MACD and signal/histogram, Wilder RSI, and population-standard-deviation Bollinger Bands. Both flat RSI gains/losses are defined as 50. EMA and RSI use finite historical initialization, so values can differ from services using longer histories.
+- `chart.mjs` renders price overlays and separate aligned oscillator panes (fixed 0–100 for RSI). All displayed calculations and scales use only data visible up to the observation date unless the outcome is revealed. SMA, EMA, MACD, RSI, and band calculations use trailing data only.
+
+Example: `/market-chart-atlas/?lang=ja&indicator=macd&fast=12&slow=26&signal=9#nvda-2023`. Indicator definitions link to Fidelity’s official indicator guide and John Bollinger’s band rules. Refreshing the historical dataset does not change the indicator definitions.
