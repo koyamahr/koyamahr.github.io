@@ -28,6 +28,8 @@ for(const a of data.spending.cases){
 }
 for(const a of data.spending.piExamples){if(!Number.isSafeInteger(a.yen)||a.yen<0||a.people<1)throw Error('Invalid PI record');checkSources(a)}
 if(data.spending.employmentShare!==null||data.spending.equipmentShare!==null)throw Error('Unverified aggregate spending shares must remain null');
+unique(data.relatedLinks.flatMap(group=>group.items),'related link');
+for(const group of data.relatedLinks){if(!group.title.ja||!group.title.en||!group.items.length)throw Error('Incomplete related-link group '+group.id);for(const item of group.items){if(new URL(item.url).protocol!=='https:'||!item.checked||!item.title.ja||!item.title.en||!item.note.ja||!item.note.en)throw Error('Incomplete related link '+item.id)}}
 const assetNames=['history.js','history-render.mjs','budget-chart.mjs','spending-render.mjs','history.css','style.css'];
 const assetVersion=createHash('sha256').update((await Promise.all(assetNames.map(name=>readFile(new URL(name,dir),'utf8')))).join('\n')).digest('hex').slice(0,12);
 const importMap={imports:Object.fromEntries(['history-render.mjs','budget-chart.mjs','spending-render.mjs'].map(name=>['./'+name,'./'+name+'?v='+assetVersion]))};

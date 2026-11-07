@@ -83,3 +83,7 @@ The `spending` dataset in `history.json` contains independently bounded cases. I
 `spending-render.mjs` renders those cases with their own denominators. PI salary-charging records are separately labeled and do not establish new employment. Aggregate equipment and newly hired researcher shares stay `null` until matching source accounts exist. The builder validates case totals and source references. The author requested operating block grants to stay outside the analysis.
 
 The history builder hashes the shared modules and styles, emits versioned asset URLs and a matching import map, so an already-open browser receives updated renderers along with new data.
+
+### Official links
+
+The history page’s `#links` section groups nine official destinations for community recommendations, HPCI access and selection results, operating/support organizations, and policy/institutional documents. Edit bilingual titles, descriptions, URLs and check dates in `history.json` → `relatedLinks`; the builder validates these records. This directory is separate from the evidence index and does not add personal involvement claims.

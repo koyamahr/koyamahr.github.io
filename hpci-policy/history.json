@@ -4472,5 +4472,142 @@
       "ja": "研究者の「新規雇用」に対応する総額には、課題別の費目決算と雇用区分・人数・従事期間の対応が必要です。大学への交付額、PI人件費への付替額、既存職員のエフォート分はそれぞれ別の情報です。公開成果報告書に経費内訳がない場合は、未確認として残します。",
       "en": "A total for newly employed researchers requires project accounts linked to employment category, headcount and time worked. Grants to universities, PI salary charging and existing staff effort are distinct quantities. If a public results report lacks cost accounts, that portion remains unverified."
     }
-  }
+  },
+  "relatedLinks": [
+    {
+      "id": "community-use",
+      "title": {
+        "ja": "コミュニティ・利用・運用",
+        "en": "Community, access & operations"
+      },
+      "items": [
+        {
+          "id": "consortium",
+          "url": "https://www.hpci-c.jp/",
+          "title": {
+            "ja": "HPCIコンソーシアム",
+            "en": "HPCI Consortium"
+          },
+          "note": {
+            "ja": "計算科学コミュニティの意見集約、国への提言、計算科学ロードマップなどを読む。",
+            "en": "Read community recommendations, computational science roadmaps and other proposals."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "portal",
+          "url": "https://www.hpci-office.jp/",
+          "title": {
+            "ja": "HPCIポータルサイト",
+            "en": "HPCI portal"
+          },
+          "note": {
+            "ja": "「富岳」や全国のHPCI計算資源の利用案内、課題申請、利用支援、研究成果を調べる。",
+            "en": "Find access guidance, project applications, user support and research outputs for Fugaku and HPCI resources."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "selection",
+          "url": "https://www.hpci-office.jp/using_hpci/awarding_results",
+          "title": {
+            "ja": "HPCI 課題選定の結果",
+            "en": "HPCI project selection results"
+          },
+          "note": {
+            "ja": "年度別の採択課題と計算資源の配分をたどる。研究費の配分額とは区別する。",
+            "en": "Browse selected projects and compute-resource allocations by fiscal year; these are distinct from monetary research awards."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "rist",
+          "url": "https://www.rist.or.jp/",
+          "title": {
+            "ja": "高度情報科学技術研究機構（RIST）",
+            "en": "Research Organization for Information Science and Technology (RIST)"
+          },
+          "note": {
+            "ja": "HPCIの利用促進や利用支援を担う機関の活動を知る。",
+            "en": "Explore the organization’s work on HPCI access promotion and user support."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "rccs",
+          "url": "https://www.r-ccs.riken.jp/",
+          "title": {
+            "ja": "理研 計算科学研究センター（R-CCS）",
+            "en": "RIKEN Center for Computational Science (R-CCS)"
+          },
+          "note": {
+            "ja": "「富岳」の運用、計算科学・計算機科学の研究、開発・沿革・公開報告書を調べる。",
+            "en": "Explore Fugaku operations, computing research, development history and public reports."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "focus",
+          "url": "https://www.j-focus.or.jp/",
+          "title": {
+            "ja": "計算科学振興財団（FOCUS）",
+            "en": "Foundation for Computational Science (FOCUS)"
+          },
+          "note": {
+            "ja": "産業利用の相談、講習会、FOCUSスパコンの利用案内・活用事例を探す。",
+            "en": "Find industrial-use advice, training, FOCUS supercomputer access and application examples."
+          },
+          "checked": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "id": "policy-institutions",
+      "title": {
+        "ja": "政策・制度の入口",
+        "en": "Policy & institutional sources"
+      },
+      "items": [
+        {
+          "id": "mext-hpci",
+          "url": "https://www.mext.go.jp/a_menu/kaihatu/jouhou/hpci/1307375.htm",
+          "title": {
+            "ja": "文部科学省 HPCIについて",
+            "en": "MEXT: HPCI overview"
+          },
+          "note": {
+            "ja": "HPCIの制度、「京」・「富岳」の開発・評価、将来計画の検討と関連資料をたどる。",
+            "en": "Trace HPCI policy, K and Fugaku development and reviews, future planning and related documents."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "csti-home",
+          "url": "https://www8.cao.go.jp/cstp/",
+          "title": {
+            "ja": "内閣府 総合科学技術・イノベーション会議（CSTI）",
+            "en": "Cabinet Office: Council for Science, Technology and Innovation (CSTI)"
+          },
+          "note": {
+            "ja": "科学技術政策の会議資料・開催情報への入口。個別の評価資料は関係図・年表にも掲載。",
+            "en": "Find science and technology policy meeting materials; specific evaluation evidence is also linked in the maps and timeline."
+          },
+          "checked": "2026-11-07"
+        },
+        {
+          "id": "sharing-law",
+          "url": "https://www.mext.go.jp/a_menu/kagaku/shisetsu/index.htm",
+          "title": {
+            "ja": "文部科学省 研究施設共用に対する取組",
+            "en": "MEXT: shared use of research facilities"
+          },
+          "note": {
+            "ja": "「共用促進法」と、特定高速電子計算機施設の共用を支える制度・基本方針を確認する。",
+            "en": "Find the shared-use legislation and the institutional framework and basic policy for designated supercomputing facilities."
+          },
+          "checked": "2026-11-07"
+        }
+      ]
+    }
+  ]
 }
