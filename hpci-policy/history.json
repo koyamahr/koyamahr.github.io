@@ -854,6 +854,62 @@
       },
       "verification": "read",
       "checked": "2026-11-07"
+    },
+    {
+      "id": "spending-review2022",
+      "title": {
+        "ja": "2022年度の資金フロー・支出先・費目内訳",
+        "en": "FY2022 funding flows, recipients and cost categories"
+      },
+      "url": "https://www.mext.go.jp/content/20231212-mxt_kaikesou02-000031439_0256.pdf#page=4",
+      "location": {
+        "ja": "2023年度HPCIレビューシート：PDF 4頁のA→I、5頁Gの費目、6頁Gの東京大学、8頁Iの企業明細",
+        "en": "FY2023 HPCI review: PDF p.4 A→I, p.5 G cost breakdown, p.6 Tokyo University under G, p.8 corporate recipients under I"
+      },
+      "verification": "read",
+      "checked": "2026-11-07"
+    },
+    {
+      "id": "pi-ycu2024",
+      "title": {
+        "ja": "横浜市立大学：PI人件費の活用実績（2024年度）",
+        "en": "Yokohama City University: FY2024 PI salary expenditure"
+      },
+      "url": "https://www.yokohama-cu.ac.jp/res-portal/res_exps/hatsugi/f3brgp0000000meg-att/R6katsuyojixtusekihoukoku.pdf",
+      "location": {
+        "ja": "PDF 1頁：富岳成果創出加速プログラム、PI2名・1,766,183円",
+        "en": "PDF p.1: Fugaku acceleration program; 2 PIs, JPY 1,766,183"
+      },
+      "verification": "read",
+      "checked": "2026-11-07"
+    },
+    {
+      "id": "pi-ism2024",
+      "title": {
+        "ja": "統計数理研究所：PI人件費の活用実績（2024年度）",
+        "en": "Institute of Statistical Mathematics: FY2024 PI salary expenditure"
+      },
+      "url": "https://www.ism.ac.jp/kensui/index/pi_jinkenhi_R6houkoku.pdf",
+      "location": {
+        "ja": "PDF 1頁：富岳成果創出加速プログラム、PI1名・2,120,000円",
+        "en": "PDF p.1: Fugaku acceleration program; 1 PI, JPY 2,120,000"
+      },
+      "verification": "read",
+      "checked": "2026-11-07"
+    },
+    {
+      "id": "kyoto-report2023",
+      "title": {
+        "ja": "京都大学・医療創薬課題の2023年度成果報告書",
+        "en": "Kyoto medicine/drug discovery project FY2023 results report"
+      },
+      "url": "https://www.mext.go.jp/content/20260330-mxt-jyohoka01-000047432_1181.pdf",
+      "location": {
+        "ja": "公開本文45頁を確認。研究成果・実施体制はあるが人件費の経費内訳はこの版では確認できない",
+        "en": "45-page public report reviewed; research results and team structure, but no personnel-cost breakdown identified in this version"
+      },
+      "verification": "read",
+      "checked": "2026-11-07"
     }
   ],
   "nodes": [
@@ -4245,5 +4301,176 @@
   "budgetScope": {
     "ja": "対象は計算科学技術推進室の主要直接事業（「京」・HPCI、戦略プログラム、ポスト「京」・「富岳」開発、次期フラッグシップ）。運営費交付金は本人の指定により集計対象外です。地球シミュレータ、SINET等の別事業もこの系列には含みません。2006–2013年度は丸めた予算合計、2014年度は原表の「予算額」、2019年度は予算案を含み、厳密に同じ会計範囲の20年系列は照合途中です。補正・要求・執行の系列は確認済み記録だけを表示し、年度合計とはしません。",
     "en": "Covers major direct programs of MEXT’s computational science office: K/HPCI, the Strategic Program, post-K/Fugaku development and the next flagship. Operating block grants are excluded at the author’s request. Separate programs such as Earth Simulator and SINET are outside this series. FY2006–2013 uses rounded annual totals; FY2014 follows the source’s “budget” label; FY2019 includes a proposal. Reconciliation into an identical accounting scope over 20 years is ongoing. Supplementary, request and expenditure series contain verified records only, not complete annual totals."
+  },
+  "spending": {
+    "scope": {
+      "ja": "単年度・個別事業／実施機関の確認例です。20年間全体や全採択課題の割合ではありません。運営費交付金は除外し、ここでは「富岳」運用の事業別補助金と研究課題の経費を扱います。",
+      "en": "Verified examples for specific fiscal years, programs and institutions, not shares for all 20 years or every selected project. Operating block grants are excluded; these examples concern the Fugaku operations subsidy and project costs."
+    },
+    "cases": [
+      {
+        "id": "riken-operations-2022",
+        "year": 2022,
+        "axis": "recipient",
+        "title": {
+          "ja": "「富岳」運用：支払先の区分",
+          "en": "Fugaku operations: recipient category"
+        },
+        "denominatorYen": 14424000000,
+        "denominatorLabel": {
+          "ja": "理研への「富岳」運用補助金（A）",
+          "en": "Fugaku operations subsidy to RIKEN (A)"
+        },
+        "numeratorYen": 12530000000,
+        "numeratorLabel": {
+          "ja": "下流の「企業等」24機関への支出（I）",
+          "en": "Downstream spending on 24 “companies, etc.” (I)"
+        },
+        "sourceIds": [
+          "spending-review2022"
+        ],
+        "note": {
+          "ja": "「企業等」は原表の区分。保守、電気・ガス、施設管理、技術支援等を含む。残りは人件費と判定できない。企業側の給与・利益・部材費もこの資料では分離しない。",
+          "en": "“Companies, etc.” follows the source category and includes maintenance, power/gas, facilities management and technical support. The remainder cannot be labeled salaries. Supplier wages, profit and materials are not separated."
+        },
+        "segments": [
+          {
+            "title": {
+              "ja": "企業等への支出",
+              "en": "Companies, etc."
+            },
+            "yen": 12530000000,
+            "color": "#65869a"
+          },
+          {
+            "title": {
+              "ja": "その他・内訳未分類",
+              "en": "Other / not classified"
+            },
+            "yen": 1894000000,
+            "color": "#ced4c5"
+          }
+        ],
+        "examples": [
+          {
+            "recipient": "富士通株式会社",
+            "use": {
+              "ja": "本体・移行用ファイルシステムの保守等",
+              "en": "Maintenance of Fugaku and the migration file system, etc."
+            },
+            "yen": 6191000000
+          },
+          {
+            "recipient": "関西電力株式会社",
+            "use": {
+              "ja": "電気・ガス代",
+              "en": "Electricity and gas"
+            },
+            "yen": 4970000000
+          }
+        ]
+      },
+      {
+        "id": "tokyo-fluid-2022",
+        "year": 2022,
+        "axis": "purpose",
+        "title": {
+          "ja": "成果創出加速：東京大学の1課題分",
+          "en": "Research acceleration: one project’s Tokyo University allocation"
+        },
+        "denominatorYen": 84000000,
+        "denominatorLabel": {
+          "ja": "「革新的流体性能予測技術」課題の東京大学分（G）",
+          "en": "Tokyo University portion of the innovative fluid-performance prediction project (G)"
+        },
+        "numeratorYen": 18000000,
+        "numeratorLabel": {
+          "ja": "人件費：業務担当職員・補助者・社会保険料等",
+          "en": "Personnel: staff, assistants and employer social-insurance costs"
+        },
+        "sourceIds": [
+          "spending-review2022"
+        ],
+        "note": {
+          "ja": "費目表はブロックGの最大支出先（東京大学）の内訳。84百万円は全14機関の総額でも課題全機関の総額でもない。人件費18百万円を、新規採用の研究者の給与だけとはみなさない。",
+          "en": "The cost table covers the largest recipient in block G, Tokyo University. JPY 84m is neither the total for all 14 recipients nor the whole multi-institution project. Its personnel category is not restricted to newly hired researchers."
+        },
+        "segments": [
+          {
+            "title": {
+              "ja": "人件費",
+              "en": "Personnel"
+            },
+            "yen": 18000000,
+            "color": "#52745f"
+          },
+          {
+            "title": {
+              "ja": "雑役務費",
+              "en": "Services"
+            },
+            "yen": 15000000,
+            "color": "#65869a"
+          },
+          {
+            "title": {
+              "ja": "一般管理費",
+              "en": "Administration"
+            },
+            "yen": 8000000,
+            "color": "#ba995c"
+          },
+          {
+            "title": {
+              "ja": "借損料",
+              "en": "Rent"
+            },
+            "yen": 2000000,
+            "color": "#92799a"
+          },
+          {
+            "title": {
+              "ja": "その他（設備・委託・旅費等を含む）",
+              "en": "Other (including equipment, commissioning and travel)"
+            },
+            "yen": 41000000,
+            "color": "#ced4c5"
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "piExamples": [
+      {
+        "institution": {
+          "ja": "横浜市立大学",
+          "en": "Yokohama City University"
+        },
+        "year": 2024,
+        "people": 2,
+        "yen": 1766183,
+        "sourceIds": [
+          "pi-ycu2024"
+        ]
+      },
+      {
+        "institution": {
+          "ja": "情報・システム研究機構 統計数理研究所",
+          "en": "Institute of Statistical Mathematics, ROIS"
+        },
+        "year": 2024,
+        "people": 1,
+        "yen": 2120000,
+        "sourceIds": [
+          "pi-ism2024"
+        ]
+      }
+    ],
+    "employmentShare": null,
+    "equipmentShare": null,
+    "reportGap": {
+      "ja": "研究者の「新規雇用」に対応する総額には、課題別の費目決算と雇用区分・人数・従事期間の対応が必要です。大学への交付額、PI人件費への付替額、既存職員のエフォート分はそれぞれ別の情報です。公開成果報告書に経費内訳がない場合は、未確認として残します。",
+      "en": "A total for newly employed researchers requires project accounts linked to employment category, headcount and time worked. Grants to universities, PI salary charging and existing staff effort are distinct quantities. If a public results report lacks cost accounts, that portion remains unverified."
+    }
   }
 }

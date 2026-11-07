@@ -40,3 +40,5 @@ app.addEventListener('change',e=>{if(e.target.matches('#finance-year,#finance-ki
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang,true)));
 let initial=new URL(location.href).searchParams.get('lang');if(!['ja','en'].includes(initial)){try{initial=localStorage.getItem('koyamahr.home.language')}catch{}}
 setLanguage(['ja','en'].includes(initial)?initial:'ja');
+const initialAnchor=location.hash.slice(1);
+if(initialAnchor) requestAnimationFrame(()=>document.getElementById(initialAnchor)?.scrollIntoView({block:'start'}));
