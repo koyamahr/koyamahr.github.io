@@ -1,0 +1,326 @@
+[
+  {
+    "id": "nvda-2023",
+    "symbol": "NVDA",
+    "company": "NVIDIA",
+    "date": "2023-05-24",
+    "category": "breakout",
+    "title": {
+      "ja": "高値圏の、その先へ。",
+      "en": "At the edge of a breakout."
+    },
+    "pattern": {
+      "ja": "高値圏・イベント前",
+      "en": "Near highs · before an event"
+    },
+    "observe": {
+      "ja": "上昇基調のなか、高値付近で値幅が縮小。直近の高値と出来高を確認し、価格だけで判断しない。",
+      "en": "An advance pauses near its highs. Compare the recent ceiling and volume rather than interpreting price alone."
+    },
+    "question": {
+      "ja": "高値を越えた場合、その水準を維持できるだろうか。窓を開けたときは前日終値と翌日始値の違いにも注目。",
+      "en": "If price clears the recent highs, can it hold that level? Watch the difference between the prior close and next open if it gaps."
+    },
+    "review": {
+      "ja": "翌営業日は大きく上放れて始まった。決算などの新情報が価格を変える事例で、前日までの形だけで上昇幅を説明することはできない。",
+      "en": "The next session opened sharply higher. New information around earnings can reset price; the preceding chart shape alone cannot explain the size of this move."
+    }
+  },
+  {
+    "id": "aapl-2020",
+    "symbol": "AAPL",
+    "company": "Apple",
+    "date": "2020-03-23",
+    "category": "reversal",
+    "title": {
+      "ja": "下落の底は、いつ見える。",
+      "en": "When does a low become clear?"
+    },
+    "pattern": {
+      "ja": "急落・反発の観察",
+      "en": "Selloff · watching for a rebound"
+    },
+    "observe": {
+      "ja": "大きな下落が続き、短期移動平均からも離れている。下げすぎに見えることと、底が確認できることは別の判断。",
+      "en": "Price has fallen steeply and sits below its short-term average. Looking stretched and confirming a bottom are different observations."
+    },
+    "question": {
+      "ja": "直近安値を更新せず、前日の高値を越えられるか。値幅と出来高がどう変わるかも追いたい。",
+      "en": "Can price stop making new lows and move above the previous session’s high? Track the changes in range and volume."
+    },
+    "review": {
+      "ja": "翌営業日から反発し、20営業日後の終値は観察日を上回った。底だったと断定できるのは後からであり、観察時点の不確実性は残る。",
+      "en": "Price rebounded the next session and closed higher 20 sessions later. Calling this the bottom is a retrospective judgment, not something established on the observation date."
+    }
+  },
+  {
+    "id": "msft-2020",
+    "symbol": "MSFT",
+    "company": "Microsoft",
+    "date": "2020-02-19",
+    "category": "trend",
+    "title": {
+      "ja": "強いトレンドにも、転機はある。",
+      "en": "Even a strong trend can turn."
+    },
+    "pattern": {
+      "ja": "上昇トレンド・高値圏",
+      "en": "Uptrend · near the highs"
+    },
+    "observe": {
+      "ja": "中期の上昇基調が続き、高値近辺にいる。移動平均線の向きと、直近の上昇で安値が切り上がっているかを観察する。",
+      "en": "A medium-term advance remains near its highs. Observe the slope of the averages and whether recent swing lows are rising."
+    },
+    "question": {
+      "ja": "直近安値や20日移動平均を割った場合、トレンドの継続という読みを見直せるか。",
+      "en": "If price breaks a recent low or the 20-session average, what would make you reconsider the continuation scenario?"
+    },
+    "review": {
+      "ja": "その後は急落し、上昇基調は崩れた。過去のトレンドに沿う読みも、新しい相場環境では見直しが必要になる。",
+      "en": "A sharp decline followed and the uptrend broke down. An interpretation based on the prior trend needs revision as market conditions change."
+    }
+  },
+  {
+    "id": "tsla-2021",
+    "symbol": "TSLA",
+    "company": "Tesla",
+    "date": "2021-11-04",
+    "category": "reversal",
+    "title": {
+      "ja": "上昇の速さを、読み直す。",
+      "en": "Reading the pace of a rally."
+    },
+    "pattern": {
+      "ja": "急騰・移動平均からの乖離",
+      "en": "Rapid advance · distance from the mean"
+    },
+    "observe": {
+      "ja": "短期間の大きな上昇で、価格は移動平均線より上に離れている。強い勢いと、大きく変動しうる状態の両方が見える。",
+      "en": "A rapid advance has carried price above its moving averages. The chart shows both strong momentum and room for large fluctuations."
+    },
+    "question": {
+      "ja": "上昇速度は維持されるか。高値を更新できなくなった場合、どの安値が次の観察点になるか。",
+      "en": "Can this pace persist? If price stops making new highs, which recent low becomes the next point to observe?"
+    },
+    "review": {
+      "ja": "20営業日後には観察日の終値を下回った。ただし移動平均から離れたことだけでは、反転の時期や大きさは決められない。",
+      "en": "The close was lower 20 sessions later. Distance from an average alone does not establish the timing or size of a reversal."
+    }
+  },
+  {
+    "id": "meta-2022",
+    "symbol": "META",
+    "company": "Meta Platforms",
+    "date": "2022-10-27",
+    "category": "gap",
+    "title": {
+      "ja": "窓が変える、価格の景色。",
+      "en": "A gap redraws the landscape."
+    },
+    "pattern": {
+      "ja": "下放れ・大きな値幅",
+      "en": "Gap down · wide range"
+    },
+    "observe": {
+      "ja": "前日までの価格帯から下に窓を開けた。大きな出来高と日中の値幅を、通常の一日と分けて観察する。",
+      "en": "Price opens below the previous trading range. Compare the large volume and intraday range with a typical session."
+    },
+    "question": {
+      "ja": "すぐに窓を埋めるのか、それとも安値圏で推移するのか。一本の足だけで反転を決めつけず、続く足を観察したい。",
+      "en": "Will the gap fill quickly, or will price remain near the lows? Observe the next sessions before inferring a reversal from one candle."
+    },
+    "review": {
+      "ja": "観察日後にも安値を探る場面があり、その後は持ち直した。20営業日後の終値だけを見ると、途中の下落を見落としてしまう。",
+      "en": "Price probed lower after the observation date before recovering. A single 20-session return conceals the decline along the way."
+    }
+  },
+  {
+    "id": "amzn-2022",
+    "symbol": "AMZN",
+    "company": "Amazon",
+    "date": "2022-04-28",
+    "category": "gap",
+    "title": {
+      "ja": "翌日の始値は、まだ見えない。",
+      "en": "Tomorrow’s open is unknown."
+    },
+    "pattern": {
+      "ja": "戻り局面・イベント前",
+      "en": "A rebound · before an event"
+    },
+    "observe": {
+      "ja": "直前の下落に対して大きな陽線が出ている。終値が強く見えても、取引時間外の情報はこの足には含まれていない。",
+      "en": "A large up candle follows a decline. Even a strong close does not contain information that arrives after the session."
+    },
+    "question": {
+      "ja": "反発が続くという仮説は、翌日も同じ価格帯で取引されることを前提にしていないか。",
+      "en": "Does a continuation scenario implicitly assume that the next session will trade near today’s closing range?"
+    },
+    "review": {
+      "ja": "翌営業日は前日終値を大きく下回って始まった。終値間の変化と、実際の始値からの値動きは区別して読む必要がある。",
+      "en": "The next session opened far below the prior close. Close-to-close changes and moves from the actual opening price are different measurements."
+    }
+  },
+  {
+    "id": "nflx-2022",
+    "symbol": "NFLX",
+    "company": "Netflix",
+    "date": "2022-04-19",
+    "category": "gap",
+    "title": {
+      "ja": "支持線の意味を、考える。",
+      "en": "Reading a support level."
+    },
+    "pattern": {
+      "ja": "下落基調・イベント前",
+      "en": "Downtrend · before an event"
+    },
+    "observe": {
+      "ja": "中期の移動平均線より下で推移し、戻りが見られる。過去の安値帯を引いても、そこで必ず取引できるとは限らない。",
+      "en": "Price remains below its medium-term average despite a rebound. Drawing a prior support level does not guarantee trading will occur at that price."
+    },
+    "question": {
+      "ja": "直近の価格帯を下に抜けたとき、窓の有無によって解釈はどう変わるか。",
+      "en": "How would the presence of an opening gap change the interpretation of a break below the recent range?"
+    },
+    "review": {
+      "ja": "翌営業日は大幅に下放れ、その後も弱い推移が続いた。一本の支持線では、情報の変化や窓による価格の飛躍は捉えきれない。",
+      "en": "A large gap down followed, with further weakness afterward. A support line cannot capture the information shock or discontinuity in the traded price."
+    }
+  },
+  {
+    "id": "spy-2020",
+    "symbol": "SPY",
+    "company": "SPDR S&P 500 ETF Trust",
+    "date": "2020-03-23",
+    "category": "reversal",
+    "title": {
+      "ja": "市場全体の、急落と反発。",
+      "en": "A market-wide selloff and rebound."
+    },
+    "pattern": {
+      "ja": "指数ETF・急落局面",
+      "en": "Index ETF · a sharp selloff"
+    },
+    "observe": {
+      "ja": "幅広い米国株を対象とするETFも、大きな値幅で下落している。個別企業だけでなく市場全体の状態を見るための事例。",
+      "en": "An ETF tracking a broad US equity index is also falling with large ranges. Use it to observe the market backdrop alongside individual stocks."
+    },
+    "question": {
+      "ja": "反発が出た場合、一日の戻りにとどまるのか。数日間の高値・安値の並びで確認できるか。",
+      "en": "If a rebound appears, will it last beyond a single session? Observe the sequence of highs and lows over several days."
+    },
+    "review": {
+      "ja": "翌営業日に強く反発し、その後も回復が進んだ。個別銘柄と同時期の指数を並べると、市場共通の動きが見えてくる。",
+      "en": "A strong rebound began the next session and the recovery continued. Comparing an index with individual stocks reveals their shared market backdrop."
+    }
+  },
+  {
+    "id": "qqq-2022",
+    "symbol": "QQQ",
+    "company": "Invesco QQQ Trust",
+    "date": "2022-08-16",
+    "category": "failed",
+    "title": {
+      "ja": "回復の兆しを、どう読む。",
+      "en": "How do you read a recovery?"
+    },
+    "pattern": {
+      "ja": "下落相場の戻り",
+      "en": "A rally within a wider decline"
+    },
+    "observe": {
+      "ja": "数週間の反発で移動平均線を上回っている。短期の上昇と、より長い期間の下落を同時に見る必要がある。",
+      "en": "A multiweek rally has moved price above its averages. Compare the short-term advance with the decline over the wider period."
+    },
+    "question": {
+      "ja": "直近高値を越えて上昇を継続できるか。押し目と再下落を分ける観察点はどこだろう。",
+      "en": "Can price clear the recent highs and extend the rally? Which observations would distinguish a pullback from a renewed decline?"
+    },
+    "review": {
+      "ja": "戻りは続かず、20営業日後の終値は観察日を下回った。移動平均線を上回ることだけでは、長期のトレンド転換は確認できない。",
+      "en": "The rally faded and price closed lower 20 sessions later. Moving above an average alone does not confirm a change in the longer-term trend."
+    }
+  },
+  {
+    "id": "amd-2023",
+    "symbol": "AMD",
+    "company": "Advanced Micro Devices",
+    "date": "2023-05-24",
+    "category": "breakout",
+    "title": {
+      "ja": "高値の向こうを、考える。",
+      "en": "Looking beyond the highs."
+    },
+    "pattern": {
+      "ja": "上昇基調・高値への接近",
+      "en": "Uptrend · approaching recent highs"
+    },
+    "observe": {
+      "ja": "上昇基調のなかで直近高値に近づいている。移動平均線の向きだけでなく、過去の高値帯と日々の値幅を見比べる。",
+      "en": "An advance approaches recent highs. Compare the prior ceiling and daily ranges alongside the direction of the averages."
+    },
+    "question": {
+      "ja": "高値を越えた後、上昇は滑らかに続くのか。途中の高値と20営業日後の終値は、同じ印象を与えるだろうか。",
+      "en": "Would a move beyond the highs lead to a smooth advance? Might the interim peak tell a different story from the close 20 sessions later?"
+    },
+    "review": {
+      "ja": "翌営業日は上放れ、その後の上昇と反落を経て、20営業日後は観察日近辺に戻った。最終日の変化率と、途中の値動きを併せて読む事例。",
+      "en": "An upside gap was followed by an advance and a retreat; after 20 sessions price was near the observation close. Read the path as well as the endpoint."
+    }
+  },
+  {
+    "id": "nvda-2024",
+    "symbol": "NVDA",
+    "company": "NVIDIA",
+    "date": "2024-06-18",
+    "category": "reversal",
+    "title": {
+      "ja": "高値更新の、その足元。",
+      "en": "Looking beneath a new high."
+    },
+    "pattern": {
+      "ja": "高値更新・上昇の加速",
+      "en": "New highs · accelerating advance"
+    },
+    "observe": {
+      "ja": "上昇が続き、高値を更新している。強い足が出たときこそ、移動平均との距離や、直近の安値の位置を確認する。",
+      "en": "Price continues to advance into new highs. Observe its distance from the averages and the position of recent lows even when the latest candle is strong."
+    },
+    "question": {
+      "ja": "高値更新が止まった場合、どの足から変化が読み取れるか。一日ではなく数日の連なりを見たい。",
+      "en": "If new highs stop, which sessions first show a change? Read the sequence rather than relying on one candle."
+    },
+    "review": {
+      "ja": "その後は反落と戻りを繰り返し、20営業日後は観察日の終値を下回った。上昇トレンドの中にも、まとまった調整が起こる。",
+      "en": "Pullbacks and rebounds followed, with a lower close after 20 sessions. A strong advance can still contain a substantial correction."
+    }
+  },
+  {
+    "id": "aapl-2023",
+    "symbol": "AAPL",
+    "company": "Apple",
+    "date": "2023-07-31",
+    "category": "failed",
+    "title": {
+      "ja": "上向きの平均線、その後。",
+      "en": "Beyond a rising average."
+    },
+    "pattern": {
+      "ja": "高値圏・継続シナリオの検証",
+      "en": "Near highs · testing continuation"
+    },
+    "observe": {
+      "ja": "上向きの移動平均線に沿って価格が上昇してきた。高値圏での小さな値動きが、継続と失速のどちらにつながるかはまだ見えない。",
+      "en": "Price has advanced alongside rising averages. The small ranges near the highs do not yet establish continuation or exhaustion."
+    },
+    "question": {
+      "ja": "安値の切り上げが崩れたとき、継続という仮説をどこで見直すか。",
+      "en": "Where would you reassess a continuation scenario if the sequence of higher lows breaks?"
+    },
+    "review": {
+      "ja": "その後は高値圏から下落した。上向きの移動平均線は過去の価格を要約するもので、次の上昇を保証するものではない。",
+      "en": "Price subsequently fell from the highs. A rising average summarizes past prices; it does not establish what the next move will be."
+    }
+  }
+]
