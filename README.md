@@ -13,7 +13,20 @@ It also links to the author's ORCID (0009-0003-7503-4715), Google Scholar, Linke
 
 The homepage also links to the bilingual [Computing Policy Archive](https://koyamahr.github.io/hpci-policy/), a personal record of two secondments to MEXT and related committees and work, with public primary sources. It includes 19 committees and working groups whose involvement the author confirmed, alongside detailed records for HPCI and the post-K basic-design review. An institutional context section explains the shared-facility law (Act No. 78 of 1994). Committee involvement is distinguished from committee membership; personal responsibilities and public-source summaries are labeled separately. Public meeting dates are not treated as the author's assignment dates.
 
-## Edit and preview
+## Books
+
+The bilingual [Books page](https://koyamahr.github.io/books/) and the homepage's books section are generated from `books/catalog.json`. Published books have a verified Amazon ASIN and a link for sampling and purchase. Forthcoming books are explicitly labeled **To be published**, without an invented release date or purchase link. The book editions listed here are Japanese; English descriptions introduce those editions.
+
+To add a book or update availability:
+
+1. Update its public metadata, short descriptions, and `published` / `upcoming` status in `books/catalog.json`. Set `asin` when the Amazon product page is available.
+2. Add the authorized cover image under `books/covers/`.
+3. Run `node scripts/build-books.mjs` from the repository root. Commit the catalog, generated `books/index.html` and homepage section, and any changed cover together.
+4. Check `/books/?lang=ja`, `/books/?lang=en`, and the homepage's language switch. Keep private production notes and submission records outside this repository.
+
+The site hosts cover images and descriptions; reading samples are reached through the Amazon product page. Book manuscripts and EPUB files are not included.
+
+## Homepage editing
 
 Edit `index.html`. Text in both languages is defined in its `copy` object; Japanese content remains readable without JavaScript. The page uses local SVG artwork and system fonts, with no build step or external dependencies.
 

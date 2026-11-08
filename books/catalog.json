@@ -1,0 +1,76 @@
+{
+  "books": [
+    {
+      "id": "alien-manual",
+      "title": "宇宙人マニュアル",
+      "subtitle": "地球の常識が通じない相手と出会うために",
+      "status": "published",
+      "cover": "/books/covers/alien-manual.jpg",
+      "asin": "B0HQVV87CC",
+      "genre": { "ja": "物理と空想の科学エッセイ", "en": "Physics & speculative science" },
+      "teaser": {
+        "ja": "重力、熱、光、情報から、まだ会っていない隣人の体と暮らしを考える。",
+        "en": "Imagining alien bodies and everyday life through gravity, heat, light, and information."
+      },
+      "description": {
+        "ja": [
+          "宇宙人に翼を付けたら、その熱はどこへ逃がせばいいのだろう。重力、流体、熱、光、情報の制約を手がかりに、まだ会っていない隣人の体と暮らしを考える科学エッセイです。",
+          "足や目の数、飛行に必要な翼面積、赤外線の見え方から、食事、住宅、権利、友好関係まで。本文では数字が暮らしに何を意味するかを読み、巻末の「物理の検討ノート」では式と近似をたどれます。"
+        ],
+        "en": [
+          "If an alien had wings, where would its waste heat go? This Japanese-language science essay imagines unfamiliar bodies and everyday lives using the constraints of gravity, fluids, heat, light, and information.",
+          "From eyes and flight to food, homes, and first contact, it explores how physical conditions change what we take for granted. Technical notes separate established physics from assumptions and open questions."
+        ]
+      }
+    },
+    {
+      "id": "postdoc-invest",
+      "title": "ポスドクは投資しろ",
+      "subtitle": "研究を続ける自由のためのお金の基礎知識",
+      "status": "upcoming",
+      "cover": "/books/covers/postdoc-invest.jpg",
+      "genre": { "ja": "研究者の生活とお金", "en": "Research careers & personal finance" },
+      "teaser": {
+        "ja": "複利、分散、金融政策、税と社会保険。研究と生活を自分で選ぶための一冊。",
+        "en": "Compound growth, diversification, policy, tax, and social insurance—for more freedom in research and life."
+      },
+      "description": {
+        "ja": [
+          "研究を続ける自由のために、お金を考えておきたかった。ポスドクを含む任期付きの仕事を経験した著者が、過去の自分に向けて書く、お金の基礎と実践です。",
+          "複利・分散投資・金利と債券価格を、関係式と過去のデータから考えます。税・年金・医療保険、景気と政策のつながり、小テストも交えながら、資産額を競うより、自分で選べる時間を増やすことを目指します。"
+        ],
+        "en": [
+          "What would I have wanted to know about money to keep doing research? Drawing on fixed-term research jobs, including postdoctoral positions, the author writes to his younger self about financial foundations and practical decisions.",
+          "This forthcoming Japanese-language book connects compound growth, diversification, interest rates, economic policy, and historical data with tax, pensions, and health insurance. Its aim is more choice in research and life."
+        ]
+      }
+    },
+    {
+      "id": "astronomy-foundations",
+      "title": "理論天文学の道具箱 入門編",
+      "subtitle": "高校数学でたどる、星と宇宙のしくみ",
+      "status": "upcoming",
+      "cover": "/books/covers/astronomy-foundations.jpg",
+      "genre": { "ja": "宇宙物理の入門書", "en": "An introduction to astrophysics" },
+      "teaser": {
+        "ja": "小さな式から、大きな宇宙へ。高校数学の式変形で星と宇宙をたどる。",
+        "en": "From small equations to a vast universe: exploring stars and the cosmos through school-level algebra."
+      },
+      "description": {
+        "ja": [
+          "白色矮星には、なぜ限界の質量があるのでしょう。光は星を押し広げられるのでしょうか。分数・指数・平方根・比例を手がかりに、星と宇宙のしくみを式変形でたどる入門書です。",
+          "熱放射、太陽の寿命、エディントン限界、チャンドラセカール質量から宇宙膨張まで。無料のWeb教材をもとに、説明文・数値例・式変形の読み方を増補し、書籍として再構成しています。"
+        ],
+        "en": [
+          "Why do white dwarfs have a limiting mass? Can light push a star apart? This forthcoming Japanese-language introduction explores stars and the universe through fractions, powers, roots, and proportional reasoning.",
+          "It develops thermal radiation, stellar lifetimes, the Eddington limit, the Chandrasekhar mass, and cosmic expansion. Based on the free web lessons, the book expands the explanations and worked examples."
+        ]
+      },
+      "related": {
+        "url": "https://koyamahr.github.io/astronomy-step-by-step/",
+        "ja": "関連する無料Web教材",
+        "en": "Related free web lessons"
+      }
+    }
+  ]
+}
