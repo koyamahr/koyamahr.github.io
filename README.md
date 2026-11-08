@@ -87,3 +87,13 @@ The history builder hashes the shared modules and styles, emits versioned asset 
 ### Official links
 
 The history page’s `#links` section groups nine official destinations for community recommendations, HPCI access and selection results, operating/support organizations, and policy/institutional documents. Edit bilingual titles, descriptions, URLs and check dates in `history.json` → `relatedLinks`; the builder validates these records. This directory is separate from the evidence index and does not add personal involvement claims.
+
+## Japan–U.S. supercomputer comparison
+
+The HPCI archive itself includes an interactive comparison at [`/hpci-policy/?lang=ja#japan-us`](https://koyamahr.github.io/hpci-policy/?lang=ja#japan-us), without changes to the personal homepage. Tabs cover a 13-system timeline, published costs, a two-system comparison, decision-making and 30 primary sources. The archive’s existing Japanese/English switch also controls this section.
+
+- `hpci-policy/comparison.json` preserves system-specific milestone definitions, cost scopes, historical source dates, evidence links and English descriptions. `cost` is in the explicitly declared `costUnit` (JPY 100 million or USD million), not base currency.
+- `comparison-render.mjs` shares static and interactive rendering and validates source references and data. `comparison.js` handles scoped controls, keyboard-operable tabs and language changes. `comparison.css` uses a separate `sc-` namespace.
+- Run `node scripts/build-policy.mjs` to regenerate the archive HTML and `comparison-data.csv`. The CSV exports **base currency** in `amount_native_currency`, preserves missing totals, and distinguishes future targets. Versioned module/style URLs prevent stale combinations. The deployed page has no framework or CDN dependency; chart content remains available without JavaScript.
+
+Costs and intervals are intentionally heterogeneous historical observations, not a reconciled lifecycle-cost or development-efficiency ranking. The Summit/Sierra joint amount is not divided between systems. FugakuNEXT annual funding is not treated as a full project total. The comparison does not add personal involvement claims to the archive.

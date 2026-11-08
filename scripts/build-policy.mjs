@@ -1,4 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { renderComparison, validateComparison, comparisonCSV } from '../hpci-policy/comparison-render.mjs';
 
 const directory = new URL('../hpci-policy/', import.meta.url);
 const data = JSON.parse(await readFile(new URL('content.json', directory), 'utf8'));
@@ -60,6 +62,10 @@ const committees = data.committees.map((committee, index) => `<details class="co
     <p class="committee-source-state"><span data-i18n="publicPageReviewed">公開ページ確認</span>: ${committee.checked}${committee.archive ? ' · MEXT / NDL WARP' : ' · MEXT'}</p>
   </div>
 </details>`).join('\n');
+const comparison = JSON.parse(await readFile(new URL('comparison.json', directory), 'utf8'));
+validateComparison(comparison);
+const comparisonVersion = createHash('sha256').update((await Promise.all(['comparison.json','comparison-render.mjs','comparison.js','comparison.css','site.js','style.css'].map(name => readFile(new URL(name, directory), 'utf8')))).join('\n')).digest('hex').slice(0,12);
+const comparisonImports = {'./comparison-render.mjs': './comparison-render.mjs?v=' + comparisonVersion};
 const html = `<!doctype html>
 <html lang="ja">
 <head>
@@ -73,9 +79,12 @@ const html = `<!doctype html>
   <meta property="og:url" content="https://koyamahr.github.io/hpci-policy/">
   <link rel="canonical" href="https://koyamahr.github.io/hpci-policy/">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=${comparisonVersion}">
+  <link rel="stylesheet" href="comparison.css?v=${comparisonVersion}">
   <title>小山 洋 | 計算科学政策の記録</title>
-  <script src="site.js" defer></script>
+  <script src="site.js?v=${comparisonVersion}" defer></script>
+  <script type="importmap">${JSON.stringify({imports: comparisonImports})}</script>
+  <script type="module" src="comparison.js?v=${comparisonVersion}"></script>
 </head>
 <body>
   <a class="skip" href="#records" data-i18n="skip">委員会・業務の記録へ</a>
@@ -87,13 +96,14 @@ const html = `<!doctype html>
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../" data-home data-i18n="home">ホーム</a><span aria-hidden="true">/</span>${t('breadcrumb', '計算科学政策の記録')}</nav>
     <main>
       <section class="hero" aria-labelledby="headline">
-        <div><p class="eyebrow">Computing Policy Archive</p><h1 id="headline">${t('headline1', '計算科学を支える、')}${t('headline2', '政策の記録。')}</h1><p class="intro" data-i18n="intro">文部科学省への2度の出向と、関連する委員会・業務の記録。HPCI、ポスト「京」、AI for Scienceなど、本人が関与を確認した委員会等の公開資料を整理しています。</p><a class="directory-jump" href="#committees"><span data-i18n="directoryJump">関与した委員会等の一覧へ</span> <span aria-hidden="true">↓</span></a></div>
+        <div><p class="eyebrow">Computing Policy Archive</p><h1 id="headline">${t('headline1', '計算科学を支える、')}${t('headline2', '政策の記録。')}</h1><p class="intro" data-i18n="intro">文部科学省への2度の出向と、関連する委員会・業務の記録。HPCI、ポスト「京」、AI for Scienceなど、本人が関与を確認した委員会等の公開資料を整理しています。</p><a class="directory-jump" href="#committees"><span data-i18n="directoryJump">関与した委員会等の一覧へ</span> <span aria-hidden="true">↓</span></a> <a class="directory-jump" href="#japan-us"><span data-i18n="comparisonJump">日米比較のチャートへ</span> <span aria-hidden="true">↓</span></a></div>
         <figure class="archive-figure" aria-hidden="true">
           <svg viewBox="0 0 340 235" fill="none"><g stroke="#c5cebf" stroke-width=".7"><path d="M18 60h300M18 112h300M18 164h300M65 32v163m60-163v163m60-163v163m60-163v163" stroke-dasharray="2 5"/></g><g stroke="#78907b" stroke-width="1"><path d="M35 112h58m0 0 52-52h60m-112 52 52 52h60m0-104 52 52h44m-96 52 52-52"/><rect x="28" y="105" width="14" height="14" fill="#f6f4ed"/><rect x="86" y="105" width="14" height="14" fill="#52745f"/><circle cx="145" cy="60" r="5" fill="#f6f4ed"/><circle cx="205" cy="60" r="5" fill="#f6f4ed"/><circle cx="145" cy="164" r="5" fill="#f6f4ed"/><circle cx="205" cy="164" r="5" fill="#f6f4ed"/><rect x="250" y="105" width="14" height="14" fill="#52745f"/><rect x="294" y="105" width="14" height="14" fill="#f6f4ed"/></g><g fill="#5a6861" font-family="Georgia,serif" font-size="10"><text x="72" y="94">2015–17</text><text x="236" y="94">2023–25</text><text x="128" y="43">HPCI</text><text x="125" y="187">POST-K</text></g></svg>
           <figcaption>01 / INFRASTRUCTURE &amp; POLICY</figcaption>
         </figure>
       </section>
       <aside class="history-callout"><p class="eyebrow">HISTORY, RELATIONSHIPS &amp; FUNDING</p><a href="history.html?lang=ja" data-history><span data-i18n="historyTitle">委員会の関係図・年表・20年の予算概要</span> ↗</a><p data-i18n="historyIntro">文科省とCSTIの評価の流れ、「京」・「富岳」の設置と計画変更、2006〜2025年度の主要事業の予算を、根拠資料からたどります。</p></aside>
+      ${renderComparison(comparison)}
       <section aria-labelledby="periods-heading">
         <div class="section-label"><h2 id="periods-heading" data-i18n="periodsHeading">文部科学省への2度の出向</h2><span class="minor">2015–17 / 2023–25</span></div>
         <div class="periods">${periods}</div>
@@ -143,9 +153,11 @@ const html = `<!doctype html>
     </main>
     <footer><span>${t('footer', '小山 洋 / Hiroshi Koyama')}<br>${t('updated', '更新')}: <time datetime="${data.updated}">${data.updated}</time></span><a href="../" data-home data-i18n="back">ホームに戻る</a></footer>
   </div>
+  <script id="comparison-data" type="application/json">${JSON.stringify(comparison).replace(/</g, '\\u003c')}</script>
   <script id="archive-data" type="application/json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
 </body>
 </html>
 `;
+await writeFile(new URL('comparison-data.csv', directory), comparisonCSV(comparison));
 await writeFile(new URL('index.html', directory), html.replace(/[\t ]+$/gm, ''));
 console.log(`Built hpci-policy/index.html: ${data.periods.length} periods, ${data.committees.length} committees, ${data.records.length} detailed records, ${data.sources.length} additional sources.`);

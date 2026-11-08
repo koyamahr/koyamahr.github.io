@@ -1,0 +1,646 @@
+{
+  "updated": "2026-11-08",
+  "machines": [
+    {
+      "id": "nwt",
+      "name": "数値風洞",
+      "subtitle": "Numerical Wind Tunnel / 分野別基盤の先駆",
+      "org": "NAL（現JAXA）",
+      "country": "JP",
+      "mission": "science",
+      "start": 1989,
+      "startLabel": "研究開発プロジェクト開始",
+      "end": 1993,
+      "endLabel": "設置（2月）",
+      "cost": null,
+      "currency": "JPY",
+      "costKind": "unknown",
+      "costLabel": "一次資料で予算総額を未確認",
+      "note": "航空宇宙の計算流体力学に向けた基盤。全国共用の旗艦とは制度が異なる歴史的先駆として掲載。",
+      "sources": [
+        "J1"
+      ],
+      "en": {
+        "name": "Numerical Wind Tunnel",
+        "subtitle": "A domain-specific national research infrastructure",
+        "org": "NAL (now JAXA)",
+        "startLabel": "Research and development project begins",
+        "endLabel": "Installed (February)",
+        "costLabel": "No total verified in the reviewed primary sources",
+        "note": "An aerospace computational-fluid-dynamics system. Included as a historical precursor, rather than a nationwide shared-use flagship."
+      },
+      "costUnit": "JPY 100 million"
+    },
+    {
+      "id": "earth",
+      "name": "地球シミュレータ",
+      "subtitle": "Earth Simulator / 初代システム",
+      "org": "旧JAMSTEC等3機関",
+      "country": "JP",
+      "mission": "science",
+      "start": 1997,
+      "startLabel": "研究開発センター設置・開発開始",
+      "end": 2002,
+      "endLabel": "設置・完成（2月）",
+      "cost": 563.4,
+      "currency": "JPY",
+      "costKind": "project",
+      "costLabel": "FY1997–2001開発経費合計。施設等を含む",
+      "costYear": "FY1997–2001集計",
+      "note": "本体427.6億円、周辺機器41.2億円、施設等94.6億円。後継の地球シミュレータ各世代の費用は含まない。",
+      "sources": [
+        "J2",
+        "J3"
+      ],
+      "en": {
+        "name": "Earth Simulator",
+        "subtitle": "First-generation system",
+        "org": "JAMSTEC predecessor and two partner agencies",
+        "startLabel": "Development center established; project starts",
+        "endLabel": "Installation and completion (February)",
+        "costLabel": "FY1997–2001 development expenses, including facilities",
+        "costYear": "FY1997–2001 total",
+        "note": "Main system: JPY 42.76bn; peripherals: 4.12bn; facilities, etc.: 9.46bn. Excludes later Earth Simulator generations."
+      },
+      "costUnit": "JPY 100 million"
+    },
+    {
+      "id": "k",
+      "name": "京",
+      "subtitle": "K computer / HPCIの中核",
+      "org": "理化学研究所・富士通",
+      "country": "JP",
+      "mission": "science",
+      "start": 2006,
+      "startLabel": "開発開始（年度）",
+      "end": 2012,
+      "endLabel": "共用開始（9月28日）",
+      "cost": 1111,
+      "currency": "JPY",
+      "costKind": "project",
+      "costLabel": "FY2006–2012プロジェクト総額。アプリ・施設等を含む",
+      "costYear": "FY2006–2012",
+      "note": "システム開発・製作、ソフトウェア評価、施設、グランドチャレンジアプリ開発等を含む。機器だけの価格ではない。",
+      "sources": [
+        "J4",
+        "J5"
+      ],
+      "en": {
+        "name": "K computer",
+        "subtitle": "Core infrastructure of HPCI",
+        "org": "RIKEN / Fujitsu",
+        "startLabel": "Development starts (fiscal year)",
+        "endLabel": "Shared use begins (28 September)",
+        "costLabel": "FY2006–2012 project total, including software, applications and facilities",
+        "costYear": "FY2006–2012",
+        "note": "Includes system development and manufacture, software evaluation, facilities and Grand Challenge applications. This is not a machine-only price."
+      },
+      "costUnit": "JPY 100 million"
+    },
+    {
+      "id": "fugaku",
+      "name": "富岳",
+      "subtitle": "Fugaku / 科学と産業の共用基盤",
+      "org": "理化学研究所・富士通",
+      "country": "JP",
+      "mission": "science",
+      "start": 2014,
+      "startLabel": "ポスト「京」開発開始（4月）",
+      "end": 2021,
+      "endLabel": "完成・共用開始（3月9日）",
+      "cost": 1100,
+      "currency": "JPY",
+      "qualifier": "約",
+      "costKind": "project",
+      "costLabel": "開発国費総額。民間負担を含む機器価格ではない",
+      "costYear": "2018年評価",
+      "note": "FY2014–2020の国費総額として約1,100億円を公表。2020年の試行利用と2021年の正式共用を区別。",
+      "sources": [
+        "J6",
+        "J7"
+      ],
+      "en": {
+        "name": "Fugaku",
+        "subtitle": "Shared computing for science and industry",
+        "org": "RIKEN / Fujitsu",
+        "startLabel": "Post-K development starts (April)",
+        "endLabel": "Completion and shared use (9 March)",
+        "costLabel": "National funding for development, not a machine price including private contributions",
+        "costYear": "2018 review",
+        "note": "Approximately JPY 110bn in national funding for FY2014–2020. Early use in 2020 is distinct from formal shared use in 2021."
+      },
+      "costUnit": "JPY 100 million"
+    },
+    {
+      "id": "next",
+      "name": "富岳NEXT",
+      "subtitle": "FugakuNEXT / AIとシミュレーション",
+      "org": "理研・富士通・NVIDIA",
+      "country": "JP",
+      "mission": "science",
+      "start": 2025,
+      "startLabel": "開発・整備に着手（1月）",
+      "end": 2030,
+      "endLabel": "稼働開始",
+      "planned": true,
+      "cost": null,
+      "currency": "JPY",
+      "costKind": "unknown",
+      "costLabel": "確認資料では総事業費を未確認",
+      "note": "FY2024補正69億円、FY2025当初8億円は別々の単年度予算。全期間総額ではないため、総額グラフに含めない。2030年頃は計画。",
+      "sources": [
+        "J8",
+        "J9",
+        "J10"
+      ],
+      "en": {
+        "name": "FugakuNEXT",
+        "subtitle": "AI and simulation",
+        "org": "RIKEN / Fujitsu / NVIDIA",
+        "startLabel": "Development and deployment project starts (January)",
+        "endLabel": "Target start of operations",
+        "costLabel": "No full-project total verified in the reviewed sources",
+        "note": "FY2024 supplementary funding of JPY 6.9bn and FY2025 initial funding of JPY 0.8bn are separate annual appropriations, not the total project budget. Around 2030 remains a target."
+      },
+      "costUnit": "JPY 100 million"
+    },
+    {
+      "id": "red",
+      "name": "ASCI Red",
+      "subtitle": "テラフロップス時代の国家計算基盤",
+      "org": "Sandia / DOE",
+      "country": "US",
+      "mission": "nuclear",
+      "start": 1995,
+      "startLabel": "Intelを開発企業に選定",
+      "end": 1996,
+      "endLabel": "初の1 TFLOPS実証（12月）",
+      "cost": null,
+      "currency": "USD",
+      "costKind": "unknown",
+      "costLabel": "直接の一次資料で費用を未確認",
+      "note": "この到達点は性能実証であり、本番運用開始ではない。DOEの核備蓄管理プログラムASCIによる開発。",
+      "sources": [
+        "U1",
+        "U2"
+      ],
+      "en": {
+        "name": "ASCI Red",
+        "subtitle": "National computing at the teraflop milestone",
+        "org": "Sandia / DOE",
+        "startLabel": "Intel selected for development",
+        "endLabel": "First 1 TFLOPS demonstration (December)",
+        "costLabel": "No cost verified directly in the reviewed primary sources",
+        "note": "The endpoint is a performance demonstration, not the start of production. Developed through DOE’s ASCI nuclear stockpile stewardship program."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "road",
+      "name": "Roadrunner",
+      "subtitle": "ハイブリッド型ペタスケールシステム",
+      "org": "Los Alamos / NNSA",
+      "country": "US",
+      "mission": "nuclear",
+      "start": 2006,
+      "startLabel": "調達開始（会計年度）",
+      "end": 2008,
+      "endLabel": "第3段階の納入（9月）",
+      "cost": 98,
+      "currency": "USD",
+      "qualifier": "約",
+      "costKind": "contract",
+      "costLabel": "GAO集計の調達支出。全保有費用ではない",
+      "costYear": "2009年GAO報告",
+      "note": "約$98Mは調達支出の集計。契約発表額や施設込み総事業費とは異なる。棒グラフでは調達額の区分に表示。",
+      "sources": [
+        "U3",
+        "U4"
+      ],
+      "en": {
+        "name": "Roadrunner",
+        "subtitle": "A hybrid petascale system",
+        "org": "Los Alamos / NNSA",
+        "startLabel": "Acquisition begins (fiscal year)",
+        "endLabel": "Phase-three delivery (September)",
+        "costLabel": "Procurement expenditure reported by GAO, not lifecycle cost",
+        "costYear": "2009 GAO report",
+        "note": "Approximately $98M is a retrospective procurement-spending total, rather than an announced contract value or a facility-inclusive project total."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "titan",
+      "name": "Titan",
+      "subtitle": "JaguarをGPUで拡張",
+      "org": "Oak Ridge / DOE Science",
+      "country": "US",
+      "mission": "science",
+      "start": 2011,
+      "startLabel": "Crayとの契約発表（10月）",
+      "end": 2012,
+      "endLabel": "システム公開（10月29日）",
+      "cost": 97,
+      "currency": "USD",
+      "costKind": "contract",
+      "costLabel": "Jaguar更新の契約額。追加オプションを除く",
+      "costYear": "2011年発表",
+      "note": "既設Jaguarのアップグレード。2012年の公開を終点に表示。正式な受入試験完了は2013年6月で、ゼロからの施設建設とは異なる。",
+      "sources": [
+        "U5",
+        "U6",
+        "U7"
+      ],
+      "en": {
+        "name": "Titan",
+        "subtitle": "Upgrading Jaguar with GPUs",
+        "org": "Oak Ridge / DOE Science",
+        "startLabel": "Cray contract announced (October)",
+        "endLabel": "System publicly unveiled (29 October)",
+        "costLabel": "Jaguar upgrade contract, excluding additional options",
+        "costYear": "2011 announcement",
+        "note": "An upgrade of the existing Jaguar system. The displayed endpoint is its 2012 unveiling; acceptance testing completed in June 2013. It was not a new facility built from scratch."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "summit",
+      "name": "Summit",
+      "subtitle": "CORAL共同調達 / 科学研究",
+      "org": "Oak Ridge / DOE Science",
+      "country": "US",
+      "mission": "science",
+      "start": 2014,
+      "startLabel": "CORAL契約発表（11月）",
+      "end": 2019,
+      "endLabel": "利用プログラム開始（年）",
+      "cost": null,
+      "currency": "USD",
+      "costKind": "unknown",
+      "costLabel": "Sierraと合わせ$325M。単独額は未掲載",
+      "costYear": "2014年発表",
+      "note": "2018年6月公開、2019年に利用プログラムへ。共同発表$425Mのうち$325Mが2システム分、$100Mは別の技術開発。各機へ按分しない。",
+      "sources": [
+        "U8",
+        "U9"
+      ],
+      "en": {
+        "name": "Summit",
+        "subtitle": "CORAL joint procurement / open science",
+        "org": "Oak Ridge / DOE Science",
+        "startLabel": "CORAL contracts announced (November)",
+        "endLabel": "User programs begin (year)",
+        "costLabel": "$325M jointly with Sierra; no individual figure shown",
+        "costYear": "2014 announcement",
+        "note": "Unveiled in June 2018, with user programs from 2019. The $425M announcement included $325M for two systems and $100M in separate technology R&D. No per-system allocation is inferred."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "sierra",
+      "name": "Sierra",
+      "subtitle": "CORAL共同調達 / 核備蓄管理",
+      "org": "Livermore / NNSA",
+      "country": "US",
+      "mission": "nuclear",
+      "start": 2014,
+      "startLabel": "CORAL契約発表（11月）",
+      "end": 2019,
+      "endLabel": "機密用途の利用開始（春）",
+      "cost": null,
+      "currency": "USD",
+      "costKind": "unknown",
+      "costLabel": "Summitと合わせ$325M。単独額は未掲載",
+      "costYear": "2014年発表",
+      "note": "2018年の献呈式と2019年春の機密利用開始は別の節目。共同調達額からの機種別配分は行わない。",
+      "sources": [
+        "U8",
+        "U10"
+      ],
+      "en": {
+        "name": "Sierra",
+        "subtitle": "CORAL joint procurement / nuclear stockpile",
+        "org": "Livermore / NNSA",
+        "startLabel": "CORAL contracts announced (November)",
+        "endLabel": "Classified users begin (spring)",
+        "costLabel": "$325M jointly with Summit; no individual figure shown",
+        "costYear": "2014 announcement",
+        "note": "The 2018 dedication and spring 2019 start of classified use are distinct milestones. The combined contract value is not divided between the two systems."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "frontier",
+      "name": "Frontier",
+      "subtitle": "エクサスケールの科学研究基盤",
+      "org": "Oak Ridge / DOE Science",
+      "country": "US",
+      "mission": "science",
+      "start": 2019,
+      "startLabel": "契約発表（5月7日）",
+      "end": 2023,
+      "endLabel": "科学利用の本格開始（4月）",
+      "cost": 600,
+      "currency": "USD",
+      "qualifier": "超",
+      "costKind": "contract",
+      "costLabel": "システムと技術開発の契約額（$600M超）",
+      "costYear": "2019年発表",
+      "note": "棒は公表下限の$600Mを表示。2022年のエクサスケール達成と、2023年の科学利用開始を区別。2019年発表時の納入見通しは2021年。",
+      "sources": [
+        "U11",
+        "U12"
+      ],
+      "en": {
+        "name": "Frontier",
+        "subtitle": "Exascale infrastructure for open science",
+        "org": "Oak Ridge / DOE Science",
+        "startLabel": "Contract announced (7 May)",
+        "endLabel": "Full scientific user operations begin (April)",
+        "costLabel": "System and technology-development contract, over $600M",
+        "costYear": "2019 announcement",
+        "note": "The bar shows the announced lower bound of $600M. The 2022 exascale demonstration is distinct from 2023 science operations. Delivery was originally expected in 2021."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "aurora",
+      "name": "Aurora",
+      "subtitle": "改定されたエクサスケール計画",
+      "org": "Argonne / DOE Science",
+      "country": "US",
+      "mission": "science",
+      "start": 2019,
+      "startLabel": "エクサスケール契約発表（3月）",
+      "end": 2025,
+      "endLabel": "本番利用開始（1月）",
+      "cost": 500,
+      "currency": "USD",
+      "qualifier": "超",
+      "costKind": "contract",
+      "costLabel": "2019年の改定契約額（$500M超）",
+      "costYear": "2019年発表",
+      "note": "棒は公表下限の$500Mを表示。2015年の旧計画$200Mからスコープが変更。両額は加算しない。2023年の設置完了、2024年の性能実証とも区別。",
+      "sources": [
+        "U13",
+        "U14"
+      ],
+      "en": {
+        "name": "Aurora",
+        "subtitle": "A revised exascale acquisition",
+        "org": "Argonne / DOE Science",
+        "startLabel": "Exascale contract announced (March)",
+        "endLabel": "Production begins (January)",
+        "costLabel": "Revised 2019 contract, over $500M",
+        "costYear": "2019 announcement",
+        "note": "The bar shows the $500M lower bound. The 2015 $200M plan had a different scope; the two figures are not added. Installation in 2023 and performance demonstration in 2024 are distinct milestones."
+      },
+      "costUnit": "USD million"
+    },
+    {
+      "id": "elcap",
+      "name": "El Capitan",
+      "subtitle": "核備蓄管理向けエクサスケール",
+      "org": "Livermore / NNSA",
+      "country": "US",
+      "mission": "nuclear",
+      "start": 2019,
+      "startLabel": "契約発表（8月）",
+      "end": 2025,
+      "endLabel": "本番運用（9月）",
+      "cost": 600,
+      "currency": "USD",
+      "costKind": "contract",
+      "costLabel": "システム開発・調達契約額。施設更新は別枠",
+      "costYear": "2019年発表",
+      "note": "2025年1月の献呈式、3月の機密環境への移行、本番運用を区別。2019年の納入見通しは2022年後半。施設更新費を契約額へ混ぜない。",
+      "sources": [
+        "U15",
+        "U16"
+      ],
+      "en": {
+        "name": "El Capitan",
+        "subtitle": "Exascale for stockpile stewardship",
+        "org": "Livermore / NNSA",
+        "startLabel": "Contract announced (August)",
+        "endLabel": "Production operations (September)",
+        "costLabel": "System development/procurement contract; facility modernization is separate",
+        "costYear": "2019 announcement",
+        "note": "Distinguishes the January 2025 dedication, March transition to classified computing and production operations. Delivery was originally expected in late 2022. Facility costs are not merged into the contract figure."
+      },
+      "costUnit": "USD million"
+    }
+  ],
+  "sources": [
+    {
+      "id": "J1",
+      "title": "Numerical Wind Tunnel — Supercomputer history",
+      "publisher": "JAXA",
+      "description": "1989年開発開始、1993年設置",
+      "url": "https://www.jss.jaxa.jp/en/sc_history/"
+    },
+    {
+      "id": "J2",
+      "title": "地球シミュレータ開発史",
+      "publisher": "JAMSTEC",
+      "description": "開発経緯・開発経費合計563.4億円（本文p.93）",
+      "url": "https://www.jamstec.go.jp/es/jp/publication/pdf/Development_ES.pdf"
+    },
+    {
+      "id": "J3",
+      "title": "初代地球シミュレータのシステム構成",
+      "publisher": "JAMSTEC",
+      "description": "2002年2月の完成",
+      "url": "https://www.jamstec.go.jp/es/jp/es1/system/hardware.html"
+    },
+    {
+      "id": "J4",
+      "title": "スーパーコンピュータ「京」の開発資金",
+      "publisher": "理研 AICS",
+      "description": "FY2006–2012のプロジェクト総額1,111億円",
+      "url": "https://aics.riken.jp/jp/overview/budget/development_cost.html"
+    },
+    {
+      "id": "J5",
+      "title": "計算科学研究センターの沿革",
+      "publisher": "理研 R-CCS",
+      "description": "「京」の開発開始と共用開始",
+      "url": "https://www.r-ccs.riken.jp/about/history/"
+    },
+    {
+      "id": "J6",
+      "title": "「富岳」完成、共用開始",
+      "publisher": "理研",
+      "description": "2014年開発開始、2021年3月9日共用開始",
+      "url": "https://www.riken.jp/pr/news/2021/20210309_2/"
+    },
+    {
+      "id": "J7",
+      "title": "ポスト「京」の開発に係る評価について",
+      "publisher": "内閣府 CSTI",
+      "description": "2018年評価時点の開発国費総額 約1,100億円",
+      "url": "https://www8.cao.go.jp/cstp/siryo/haihui040/siryo3-2.pdf"
+    },
+    {
+      "id": "J8",
+      "title": "「富岳」の次世代となる新たなフラッグシップシステムの開発に着手",
+      "publisher": "理研",
+      "description": "2025年1月、補正予算による開発開始",
+      "url": "https://www.riken.jp/pr/news/2025/20250122_1/index.html"
+    },
+    {
+      "id": "J9",
+      "title": "「富岳NEXT」について",
+      "publisher": "理研 R-CCS",
+      "description": "2030年頃の稼働開始目標・開発方針",
+      "url": "https://www.r-ccs.riken.jp/fugaku-next/"
+    },
+    {
+      "id": "J10",
+      "title": "HPCI計画推進委員会 予算等の資料",
+      "publisher": "文部科学省",
+      "description": "2025年4月：FY2024補正69億円、FY2025当初8億円",
+      "url": "https://www.mext.go.jp/content/20250414-mxt-jyohoka01-000041663_1.pdf"
+    },
+    {
+      "id": "U1",
+      "title": "ASCI Red is decommissioned",
+      "publisher": "Sandia National Laboratories",
+      "description": "1996年12月のテラフロップス到達などの歴史",
+      "url": "https://newsreleases.sandia.gov/sandias-asci-red-worlds-first-teraflop-supercomputer-is-decommissioned/"
+    },
+    {
+      "id": "U2",
+      "title": "ASCI Red acquisition history",
+      "publisher": "U.S. DOE",
+      "description": "1995年Intel選定",
+      "url": "https://www.energy.gov/gc/articles/wa00015compaqfederalllcwaiverdomesticandforeignpatpdf"
+    },
+    {
+      "id": "U3",
+      "title": "NNSA high-performance computing expenditure review",
+      "publisher": "U.S. GAO",
+      "description": "Roadrunnerの調達費 約$98M",
+      "url": "https://www.gao.gov/assets/a296801.html"
+    },
+    {
+      "id": "U4",
+      "title": "NNSA computing systems inventory",
+      "publisher": "U.S. GAO",
+      "description": "RoadrunnerのFY2006調達・2008年第3段階納入",
+      "url": "https://www.gao.gov/assets/a313299.html"
+    },
+    {
+      "id": "U5",
+      "title": "ORNL awards contract to Cray for Titan",
+      "publisher": "ORNL",
+      "description": "2011年10月の契約発表",
+      "url": "https://www.ornl.gov/news/ornl-awards-contract-cray-titan-supercomputer"
+    },
+    {
+      "id": "U6",
+      "title": "Cray financial results — Titan contract",
+      "publisher": "Cray / U.S. SEC",
+      "description": "$97M契約、追加オプションは別",
+      "url": "https://www.sec.gov/Archives/edgar/data/949158/000119312511290661/d248135dex991.htm"
+    },
+    {
+      "id": "U7",
+      "title": "ORNL debuts Titan supercomputer",
+      "publisher": "ORNL",
+      "description": "2012年10月29日の公開",
+      "url": "https://www.ornl.gov/news/ornl-debuts-titan-supercomputer"
+    },
+    {
+      "id": "U8",
+      "title": "DOE announces next-generation supercomputing awards",
+      "publisher": "U.S. DOE / LLNL",
+      "description": "2014年：Summit・Sierra合計$325M、別枠R&D $100M",
+      "url": "https://hpc.llnl.gov/sites/default/files/announcement.DOE_.2014.11.14_0.pdf"
+    },
+    {
+      "id": "U9",
+      "title": "Summit system history",
+      "publisher": "ORNL / OLCF",
+      "description": "2018年公開、2019年利用プログラムへ",
+      "url": "https://www.olcf.ornl.gov/olcf-resources/compute-systems/summit/"
+    },
+    {
+      "id": "U10",
+      "title": "The Sierra era",
+      "publisher": "LLNL",
+      "description": "2018年献呈、2019年春機密利用開始",
+      "url": "https://contenthub.llnl.gov/article/21236/sierra-era"
+    },
+    {
+      "id": "U11",
+      "title": "DOE and Cray to deliver Frontier",
+      "publisher": "U.S. DOE",
+      "description": "2019年：システム・技術開発に$600M超",
+      "url": "https://www.energy.gov/articles/us-department-energy-and-cray-deliver-record-setting-frontier-supercomputer-ornl"
+    },
+    {
+      "id": "U12",
+      "title": "OLCF 2023 User Survey Report",
+      "publisher": "ORNL / OLCF",
+      "description": "2023年4月のFrontier利用開始",
+      "url": "https://www.olcf.ornl.gov/wp-content/uploads/OLCF-2023-User-Survey-Report.pdf"
+    },
+    {
+      "id": "U13",
+      "title": "DOE and Intel to build exascale Aurora",
+      "publisher": "U.S. DOE",
+      "description": "2019年改定スコープ：$500M超の契約",
+      "url": "https://www.energy.gov/articles/us-department-energy-and-intel-build-first-exascale-supercomputer"
+    },
+    {
+      "id": "U14",
+      "title": "Aurora",
+      "publisher": "Argonne / ALCF",
+      "description": "2025年1月の本番利用開始",
+      "url": "https://www.alcf.anl.gov/aurora"
+    },
+    {
+      "id": "U15",
+      "title": "NNSA signs $600M El Capitan contract",
+      "publisher": "U.S. DOE / NNSA",
+      "description": "2019年8月の契約",
+      "url": "https://www.energy.gov/articles/does-nnsa-signs-600-million-contract-build-its-first-exascale-supercomputer"
+    },
+    {
+      "id": "U16",
+      "title": "LLNL FY2025 Performance Evaluation Report",
+      "publisher": "U.S. DOE",
+      "description": "2025年9月のEl Capitan本番運用（2026年公表）",
+      "url": "https://www.energy.gov/sites/default/files/2026-02/LLNL%20FY%202025%20Performance%20Evaluation%20Report_Redacted.pdf"
+    },
+    {
+      "id": "P1",
+      "title": "The federal budget process",
+      "publisher": "USAGov",
+      "description": "OMB・大統領要求・議会の歳出決定",
+      "url": "https://www.usa.gov/federal-budget-process"
+    },
+    {
+      "id": "P2",
+      "title": "予算編成の流れ",
+      "publisher": "財務省 福岡財務支局",
+      "description": "概算要求・政府案・国会議決",
+      "url": "https://lfb.mof.go.jp/fukuoka/content/010/20230829zaisei.pdf"
+    },
+    {
+      "id": "P3",
+      "title": "大規模研究開発評価WG（令和6年度）",
+      "publisher": "内閣府 CSTI",
+      "description": "富岳後継システムの事前評価資料",
+      "url": "https://www8.cao.go.jp/cstp/tyousakai/hyouka/daikibo4/haihu-si4.html"
+    },
+    {
+      "id": "P4",
+      "title": "Exascale Computing Project",
+      "publisher": "DOE ECP",
+      "description": "2016–2024年、約$1.8Bの開発事業",
+      "url": "https://www.exascaleproject.org/"
+    }
+  ]
+}
