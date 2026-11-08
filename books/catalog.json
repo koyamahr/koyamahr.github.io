@@ -27,7 +27,8 @@
       "id": "postdoc-invest",
       "title": "ポスドクは投資しろ",
       "subtitle": "研究を続ける自由のためのお金の基礎知識",
-      "status": "upcoming",
+      "status": "published",
+      "asin": "B0HQWVFC87",
       "cover": "/books/covers/postdoc-invest.jpg",
       "genre": { "ja": "研究者の生活とお金", "en": "Research careers & personal finance" },
       "teaser": {
@@ -41,7 +42,7 @@
         ],
         "en": [
           "What would I have wanted to know about money to keep doing research? Drawing on fixed-term research jobs, including postdoctoral positions, the author writes to his younger self about financial foundations and practical decisions.",
-          "This forthcoming Japanese-language book connects compound growth, diversification, interest rates, economic policy, and historical data with tax, pensions, and health insurance. Its aim is more choice in research and life."
+          "This Japanese-language book connects compound growth, diversification, interest rates, economic policy, and historical data with tax, pensions, and health insurance. Its aim is more choice in research and life."
         ]
       }
     },
@@ -49,7 +50,8 @@
       "id": "astronomy-foundations",
       "title": "理論天文学の道具箱 入門編",
       "subtitle": "高校数学でたどる、星と宇宙のしくみ",
-      "status": "upcoming",
+      "status": "published",
+      "asin": "B0HQX2ZSNR",
       "cover": "/books/covers/astronomy-foundations.jpg",
       "genre": { "ja": "宇宙物理の入門書", "en": "An introduction to astrophysics" },
       "teaser": {
@@ -62,7 +64,7 @@
           "熱放射、太陽の寿命、エディントン限界、チャンドラセカール質量から宇宙膨張まで。無料のWeb教材をもとに、説明文・数値例・式変形の読み方を増補し、書籍として再構成しています。"
         ],
         "en": [
-          "Why do white dwarfs have a limiting mass? Can light push a star apart? This forthcoming Japanese-language introduction explores stars and the universe through fractions, powers, roots, and proportional reasoning.",
+          "Why do white dwarfs have a limiting mass? Can light push a star apart? This Japanese-language introduction explores stars and the universe through fractions, powers, roots, and proportional reasoning.",
           "It develops thermal radiation, stellar lifetimes, the Eddington limit, the Chandrasekhar mass, and cosmic expansion. Based on the free web lessons, the book expands the explanations and worked examples."
         ]
       },
