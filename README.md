@@ -1,8 +1,8 @@
-# Hiroshi Koyama — Physics & Computation
+# Hiroshi Koyama — Writing, Learning, Research & Books
 
 Personal project index: **https://koyamahr.github.io/**
 
-The homepage links to four independently maintained projects:
+The homepage is a public portfolio with three entry points: **Articles & essays**, **Learning & research**, and **Books**. The introduction connects the author's work in astrophysics with writing and learning resources. It links to the author's public note profile, Koyamax (`https://note.com/hr_koyama`), two introductory articles, and the independently maintained projects below:
 
 - [Theoretical Astrophysics, Step by Step](https://koyamahr.github.io/astronomy-step-by-step/)
 - [An Atlas of Numerical Methods](https://koyamahr.github.io/numerical-methods-atlas/)
@@ -28,7 +28,7 @@ The site hosts cover images and descriptions; reading samples are reached throug
 
 ## Homepage editing
 
-Edit `index.html`. Text in both languages is defined in its `copy` object; Japanese content remains readable without JavaScript. The page uses local SVG artwork and system fonts, with no build step or external dependencies.
+Edit `index.html`, `home.css`, and `home.js`. Text in both languages is defined in the `copy` object in `home.js`; keep the default Japanese HTML in sync. Japanese content and every portfolio destination remain readable without JavaScript. `#portfolio` is the overview; `#writing`, `#projects`, and `#books` are the three entry destinations. Keep existing anchors and project URLs stable. The page uses local SVG artwork and system fonts, with no external dependencies. Run `node scripts/build-books.mjs` after editing book metadata or the generated books introduction; it preserves the rest of the homepage.
 
 ```sh
 python3 -m http.server 4180 --bind 127.0.0.1

@@ -1,0 +1,136 @@
+(() => {
+  const copy = {
+  "ja": {
+    "marketTitle": "株価チャート・アトラス",
+    "marketDescription": "移動平均・MACD・RSI・ボリンジャーバンドを、数式と実際のチャートで比較。期間を動かし、仕組みと読み方、限界を確かめる日英対応のギャラリー。",
+    "marketTopics": "MACD・RSI / 移動平均・ボリンジャーバンド / 12の実例",
+    "marketAction": "分析手法を見比べる",
+    "policyTitle": "計算科学政策の記録",
+    "policyDescription": "文部科学省への2度の出向を軸に、HPCI・ポスト「京」・AI for Scienceの委員会と関連業務を公開資料でたどる記録。",
+    "policyAction": "記録を読む",
+    "title": "小山 洋 | 記事・教材・研究・著書",
+    "skip": "ポートフォリオへ進む",
+    "headline": "宇宙を考え、言葉と計算で届ける。",
+    "intro": "宇宙物理の研究を軸に、科学やAI、研究者の暮らしを綴る記事、式と計算で学ぶ教材、本をつくっています。小山 洋の公開作品と研究活動をまとめたポートフォリオです。",
+    "projects": "教材・研究",
+    "astroField": "宇宙物理 / Astrophysics",
+    "astroTitle": "理論天文学の道具箱",
+    "astroDescription": "高校数学の式変形から、星の構造・放射・重力へ。入門編から発展編へと進む、日本語・英語の宇宙物理教材です。",
+    "astroTopics": "星の限界質量 / 宇宙膨張 / 降着と不安定性",
+    "astroAction": "教材を読む",
+    "numField": "数値解析 / Numerical Methods",
+    "numDescription": "方程式から離散化、実装、検証へ。数値計算法の考え方と歴史をたどり、ベンチマークや対話的な実験で確かめます。",
+    "numTopics": "数値流体 / 時間積分 / 保存則と安定性",
+    "numAction": "アトラスを開く",
+    "thermalField": "熱的不安定性 / Thermal Instability",
+    "thermalDescription": "星間ガスは、なぜ冷たい相と暖かい相に分かれるのか。原論文の式・図を、コードと計算データからたどる研究アーカイブです。",
+    "thermalTopics": "加熱と冷却 / 相転移フロント / 原論文と再計算",
+    "thermalAction": "アーカイブを読む",
+    "opticsField": "光学 / Optical Systems",
+    "opticsTitle": "光学系のギャラリー",
+    "opticsDescription": "対物レンズ、アイピース、写真レンズ、望遠鏡の構成を比較。模式図・メーカー公表資料と、回折限界MTFの対話的表示を集めた図鑑です。",
+    "opticsTopics": "レンズと鏡 / Leica・ZEISS / 光学構成とMTF",
+    "opticsAction": "ギャラリーを見る",
+    "profiles": "CV・研究プロフィール",
+    "profilesNote": "論文、経歴、研究活動について。",
+    "orcid": "研究者ID：0009-0003-7503-4715",
+    "scholar": "論文・引用情報",
+    "linkedin": "経歴・プロフィール",
+    "researchgate": "研究活動・論文",
+    "footer": "小山 洋 / Hiroshi Koyama",
+    "metaDescription": "小山 洋の公開ポートフォリオ。noteの記事・エッセイ、宇宙物理と数値解析の教材・研究アーカイブ、著書・Kindle本をご紹介します。",
+    "heroAction": "ポートフォリオを見る",
+    "portfolio": "ポートフォリオ",
+    "portfolioNote": "記事・教材・本から、気になるものへ。",
+    "entryWriting": "記事・エッセイ",
+    "entryWritingNote": "科学・AI・研究者の暮らしをnoteで。",
+    "entryResearch": "教材・研究",
+    "entryResearchNote": "式・図・コードで考える、公開教材と研究。",
+    "entryBooks": "本",
+    "entryBooksNote": "物理の空想から研究者の生活まで。",
+    "writing": "記事・エッセイ",
+    "writingIntro": "日々の疑問や、研究の現場で考えたことをnoteに。科学とAI、研究者の暮らしを、自分の言葉で綴っています。",
+    "writingAction": "noteの記事を読む",
+    "writingLanguage": "リンク先の記事は日本語です。",
+    "essayAI": "科学研究とAI",
+    "essayLife": "研究者の暮らし",
+    "projectsIntro": "式をたどり、図を動かし、コードで確かめる。宇宙物理から数値解析、光学、計算科学政策まで、公開中の教材と研究の記録です。"
+  },
+  "en": {
+    "marketTitle": "Market Chart Atlas",
+    "marketDescription": "Compare moving averages, MACD, RSI, and Bollinger Bands through formulas and real charts. Adjust periods to explore each method, its interpretation, and its limits.",
+    "marketTopics": "MACD & RSI / Moving averages & Bollinger Bands / 12 real cases",
+    "marketAction": "Explore the indicators",
+    "policyTitle": "Computing Policy Archive",
+    "policyDescription": "A record of two secondments to MEXT and related committee work, with public sources on HPCI, post-K, and AI for Science.",
+    "policyAction": "Explore the record",
+    "title": "Hiroshi Koyama | Writing, Learning, Research & Books",
+    "skip": "Skip to portfolio",
+    "headline": "Exploring the cosmos, through words and code.",
+    "intro": "Rooted in astrophysics, my work connects essays on science, AI and life in research with learning resources built around equations and computation. Explore my published writing, books and research projects here.",
+    "projects": "Learning & research",
+    "astroField": "Astrophysics",
+    "astroTitle": "Theoretical Astrophysics, Step by Step",
+    "astroDescription": "From school algebra to stellar structure, radiation, and gravity. A bilingual Japanese–English series, from foundations to advanced problems.",
+    "astroTopics": "Stellar mass limits / Cosmic expansion / Accretion",
+    "astroAction": "Explore the lessons",
+    "numField": "Numerical Methods",
+    "numDescription": "From equations to discretization, implementation, and verification. Explore the ideas and history of numerical methods through benchmarks and interactive experiments.",
+    "numTopics": "Numerical fluids / Time integration / Stability",
+    "numAction": "Open the atlas",
+    "thermalField": "Thermal Instability",
+    "thermalDescription": "Why does interstellar gas separate into cold and warm phases? A research archive tracing original papers and figures through code and computational data.",
+    "thermalTopics": "Heating & cooling / Phase fronts / Recomputing papers",
+    "thermalAction": "Explore the archive",
+    "opticsField": "Optical Systems",
+    "opticsTitle": "Optical Atlas",
+    "opticsDescription": "Compare objective lenses, eyepieces, camera lenses, and telescope designs. A Japanese-language gallery of schematics, published specifications, and interactive diffraction-limited MTF curves.",
+    "opticsTopics": "Lenses & mirrors / Leica & ZEISS / Optical layouts & MTF",
+    "opticsAction": "Explore the gallery",
+    "profiles": "CV & research profiles",
+    "profilesNote": "Publications, background, and research activity.",
+    "orcid": "Researcher iD: 0009-0003-7503-4715",
+    "scholar": "Publications & citations",
+    "linkedin": "Background & profile",
+    "researchgate": "Research & publications",
+    "footer": "Hiroshi Koyama / 小山 洋",
+    "metaDescription": "The public portfolio of Hiroshi Koyama: essays on note, astrophysics and numerical methods resources, research archives, and Japanese-language Kindle books.",
+    "heroAction": "Explore the portfolio",
+    "portfolio": "Portfolio",
+    "portfolioNote": "Find a starting point in the writing, learning resources or books.",
+    "entryWriting": "Articles & essays",
+    "entryWritingNote": "Science, AI and life in research, on note.",
+    "entryResearch": "Learning & research",
+    "entryResearchNote": "Explore ideas through equations, figures and code.",
+    "entryBooks": "Books",
+    "entryBooksNote": "From imagined worlds to everyday life in research.",
+    "writing": "Articles & essays",
+    "writingIntro": "Questions from everyday life and the research workplace, written on note. Personal essays about science, AI and the choices researchers face.",
+    "writingAction": "Read the articles on note",
+    "writingLanguage": "The linked articles are in Japanese.",
+    "essayAI": "Science & AI",
+    "essayLife": "Life in research",
+    "projectsIntro": "Follow an equation, adjust a figure and check an idea with code. Published resources and research records spanning astrophysics, numerical methods, optics and computing policy."
+  }
+};
+  function setLanguage(lang, save = false) {
+    const strings = copy[lang];
+    document.documentElement.lang = lang;
+    document.title = strings.title;
+    document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = strings[element.dataset.i18n]; });
+    document.querySelectorAll('[data-lang]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.lang === lang)); });
+    document.querySelectorAll('[data-project]').forEach(link => {
+      link.href = ({astro:'/astronomy-step-by-step/',numerical:'/numerical-methods-atlas/',policy:'/hpci-policy/',market:'/market-chart-atlas/'}[link.dataset.project]) + '?lang=' + lang;
+    });
+    document.querySelector('meta[name="description"]').content = strings.metaDescription;
+    document.querySelector('meta[property="og:title"]').content = strings.title;
+    document.querySelector('meta[property="og:description"]').content = strings.metaDescription;
+    if (save) { try { localStorage.setItem('koyamahr.home.language', lang); } catch {} }
+    const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null, '', url);
+  }
+  let saved; try { saved = localStorage.getItem('koyamahr.home.language'); } catch {}
+  const requested = new URLSearchParams(location.search).get('lang');
+  setLanguage(['ja','en'].includes(requested) ? requested : saved === 'en' ? 'en' : 'ja');
+  document.querySelector('.lang-switch').hidden = false;
+  document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang, true)));
+})();
