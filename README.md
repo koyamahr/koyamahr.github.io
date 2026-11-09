@@ -9,7 +9,7 @@ The homepage is a public portfolio with three entry points: **Articles & essays*
 - [The Art of Thermal Instability](https://koyamahr.github.io/the-art-of-thermal-instability/)
 - [Optical Atlas — 光学系のギャラリー](https://koyamahr.github.io/optics/) (Japanese)
 
-It also links to the author's ORCID (0009-0003-7503-4715), Google Scholar, LinkedIn, and ResearchGate profiles. Japanese and English are available using the language buttons or `?lang=ja` / `?lang=en`. The selected language follows links to the bilingual projects.
+It also links to the author's researchmap (`https://researchmap.jp/read0200749`), ORCID (0009-0003-7503-4715), Google Scholar, LinkedIn, and ResearchGate profiles. Japanese and English are available using the language buttons or `?lang=ja` / `?lang=en`. The selected language follows links to the bilingual projects.
 
 The homepage also links to the bilingual [Computing Policy Archive](https://koyamahr.github.io/hpci-policy/), a personal record of two secondments to MEXT and related committees and work, with public primary sources. It includes 19 committees and working groups whose involvement the author confirmed, alongside detailed records for HPCI and the post-K basic-design review. An institutional context section explains the shared-facility law (Act No. 78 of 1994). Committee involvement is distinguished from committee membership; personal responsibilities and public-source summaries are labeled separately. Public meeting dates are not treated as the author's assignment dates.
 
