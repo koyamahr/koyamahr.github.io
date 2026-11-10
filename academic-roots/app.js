@@ -1,3 +1,4 @@
+import { initBuilder } from './builder.js?v=2';
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const data = await fetch(new URL('data.json', import.meta.url)).then(response => {
@@ -68,45 +69,5 @@ if (!data) {
     if (people.some(person => person.id === location.hash.slice(1)) || edges.some(edge => edge.id === location.hash.slice(1))) readHash();
   });
 
-  $('#copy-link').hidden = false;
-  $('#copy-link').addEventListener('click', async () => {
-    const canonical = $('link[rel=canonical]').href + location.hash;
-    try {
-      await navigator.clipboard.writeText(canonical);
-      $('#share-status').textContent = '選択中の人物・関係へのリンクをコピーしました。';
-    } catch {
-      $('#share-status').replaceChildren();
-      const label = document.createElement('label');
-      label.textContent = 'このURLをコピー： ';
-      const input = document.createElement('input');
-      input.readOnly = true;
-      input.value = canonical;
-      input.style.cssText = 'width:65%;max-width:500px;font-size:11px';
-      label.append(input);
-      $('#share-status').append(label);
-      input.focus();
-      input.select();
-    }
-  });
-  function createCard() {
-    const nodeMarkup = people.map((person, index) => {
-      const x = 66 + index * 222;
-      const next = index < edges.length ? `<path d="M${x + 177} 324h45" stroke="${index ? '#426750' : '#94632f'}" stroke-width="2" ${index ? '' : 'stroke-dasharray="5 4"'}/><path d="M${x + 215} 320l7 4-7 4" fill="none" stroke="#426750"/><text x="${x + 200}" y="419" text-anchor="middle" font-size="12" fill="#68736a">${escape(edges[index].short)}</text>` : '';
-      return `<rect x="${x}" y="251" width="177" height="139" fill="${index === 4 ? '#203b32' : '#fdfcf7'}" stroke="#cfd6c8"/><text x="${x + 17}" y="279" font-size="12" fill="${index === 4 ? '#d2dccb' : '#68736a'}">${escape(person.anchor)}</text><text x="${x + 17}" y="323" font-size="24" fill="${index === 4 ? '#f6f4ed' : '#203b32'}">${escape(person.name)}</text><text x="${x + 17}" y="352" font-size="12" fill="${index === 4 ? '#d2dccb' : '#68736a'}">${escape(person.en)}</text>${next}`;
-    }).join('');
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#f6f4ed"/><g font-family="sans-serif"><text x="66" y="63" font-size="21" fill="#426750">Academic Roots</text><path d="M66 89H1134" stroke="#cfd6c8"/><text x="66" y="157" font-size="37" fill="#203b32">湯川秀樹まで、4ステップ。</text><text x="66" y="194" font-size="16" fill="#68736a">小山洋からたどる、学術上のつながり</text>${nodeMarkup}<path d="M66 473H1134" stroke="#cfd6c8"/><text x="66" y="510" font-size="14" fill="#68736a">大学院での指導と研究室の師弟関係を含む。全区間が博士論文指導を意味するわけではありません。</text><text x="66" y="538" font-size="14" fill="#94632f">小山洋 → 犬塚修一郎：本人申告　／　残り3関係：公開資料で確認</text><text x="66" y="589" font-size="14" fill="#426750">koyamahr.github.io/academic-roots/</text><text x="1134" y="589" text-anchor="end" font-size="12" fill="#68736a">確認日 2026.11.10</text></g></svg>`;
-  }
-  $('#save-card').hidden = false;
-  $('#save-card').addEventListener('click', () => {
-    const blob = new Blob([createCard()], {type:'image/svg+xml;charset=utf-8'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'academic-roots-koyama-yukawa.svg';
-    document.body.append(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 30000);
-    $('#share-status').textContent = '出典ページのURLと確認状況を記したSVGカードを保存しました。';
-  });
 }
+initBuilder(data);
