@@ -128,6 +128,17 @@
     document.title = title;
     document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = strings[element.dataset.i18n]; });
     document.querySelectorAll('[data-lang]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.lang === lang)); });
+    const entries = document.querySelector('.entry-nav');
+    if (entries) {
+      const order = lang === 'en'
+        ? ['projects', 'books', 'photographs', 'writing']
+        : ['writing', 'projects', 'books', 'photographs'];
+      order.forEach((id, index) => {
+        const entry = document.getElementById(id);
+        entry.querySelector('.entry-number').textContent = String(index + 1).padStart(2, '0');
+        entries.append(entry);
+      });
+    }
     document.querySelectorAll('[data-language-link]').forEach(link => {
       const url = new URL(link.getAttribute('href'), location.href);
       url.searchParams.set('lang', lang);
