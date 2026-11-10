@@ -13,6 +13,16 @@ It also links to the author's researchmap (`https://researchmap.jp/read0200749`)
 
 The homepage also links to the bilingual [Computing Policy Archive](https://koyamahr.github.io/hpci-policy/), a personal record of two secondments to MEXT and related committees and work, with public primary sources. It includes 19 committees and working groups whose involvement the author confirmed, alongside detailed records for HPCI and the post-K basic-design review. An institutional context section explains the shared-facility law (Act No. 78 of 1994). Committee involvement is distinguished from committee membership; personal responsibilities and public-source summaries are labeled separately. Public meeting dates are not treated as the author's assignment dates.
 
+## Academic Roots
+
+[`/academic-roots/`](https://koyamahr.github.io/academic-roots/) is a Japanese-language, dependency-free academic-lineage prototype. It follows Hiroshi Koyama → Shu-ichiro Inutsuka → Shoken Miyama → Chushiro Hayashi → Hideki Yukawa. Select people or relationships to inspect evidence, step through the route, share a deep link, or download an SVG card. The homepage links to the demo.
+
+- `academic-roots/data.json` contains typed student-to-mentor relationships, individual source references, evidence descriptions, time-period qualifications, and self-report status. Do not change research mentorship or laboratory membership to doctoral supervision without supporting evidence. Koyama's doctoral year and supervision are author-reported; the contemporary research relationship is also documented in Inutsuka's retrospective article. The other three links have separately reviewed public sources.
+- `index.html`, `style.css`, and `app.js` implement the responsive, keyboard-accessible viewer. Person and relationship IDs are stable URL fragments. The original astronomers' genealogy is a discovery reference, not an imported dataset.
+- `share.svg` and `share.png` are the current route's social preview; refresh them after changing names or relationship status. SVG downloads are generated from the same JSON data in the viewer.
+
+Preview with the repository's static server and visit `/academic-roots/`. Check all five person selections, four relationship selections, direct fragment links, step-through/reset, copying, SVG export, and mobile/desktop layouts. No account registration, automatic relationship discovery, or shared editing is implemented in this prototype. Corrections link to this repository's issue form.
+
 ## Books
 
 The bilingual [Books page](https://koyamahr.github.io/books/) and the homepage's books section are generated from `books/catalog.json`. Published books have a verified Amazon ASIN and a link for sampling and purchase. Forthcoming books are explicitly labeled **To be published**, without an invented release date or purchase link. The book editions listed here are Japanese; English descriptions introduce those editions.

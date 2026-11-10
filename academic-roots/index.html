@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f4ed">
+  <title>Academic Roots — 小山洋から湯川秀樹へ</title>
+  <meta name="description" content="自分の研究は、誰につながっている？ 小山洋から犬塚修一郎、観山正見、林忠四郎を経て湯川秀樹へ。出典と関係の種類を確かめながらたどる学術系譜のデモ。">
+  <meta property="og:title" content="Academic Roots — 湯川秀樹まで4ステップ">
+  <meta property="og:description" content="小山洋 → 犬塚修一郎 → 観山正見 → 林忠四郎 → 湯川秀樹。出典を確かめながらたどる、学術上のつながり。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koyamahr.github.io/academic-roots/">
+  <meta property="og:image" content="https://koyamahr.github.io/academic-roots/share.png">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://koyamahr.github.io/academic-roots/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=1">
+  <script type="module" src="app.js?v=1"></script>
+</head>
+<body>
+  <a class="skip" href="#lineage">系譜へ進む</a>
+  <div class="wrap">
+    <header class="header">
+      <a class="brand" href="./" aria-label="Academic Roots ホーム"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M8 28V18H27V8M18 18v10"/><circle cx="8" cy="28" r="3"/><circle cx="18" cy="28" r="3"/><circle cx="27" cy="8" r="3"/><circle cx="27" cy="18" r="3"/></svg><span>Academic <em>Roots</em></span></a>
+      <nav aria-label="メイン"><a href="#sources">出典・確かさ</a><a href="../" class="home-link">Hiroshi Koyama <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="headline">
+        <div><p class="eyebrow"><span></span> ACADEMIC GENEALOGY · PROTOTYPE 01</p><h1 id="headline">自分の研究は、<br>誰につながっている？</h1><p class="intro">指導を受けた人から、そのまた先へ。<br>一人の研究者を起点に、学問が受け継がれてきた道をたどる。</p><a class="hero-action" href="#lineage">小山 洋のルーツをたどる <span aria-hidden="true">↓</span></a></div>
+        <aside class="destination"><span class="destination-label">この経路の到達点</span><p class="destination-name">湯川 秀樹</p><div class="distance"><strong>4</strong><span>ステップ先の<br>学術上のつながり</span></div><p class="destination-note">大学院での指導と、<br>研究室での師弟関係をたどる。</p></aside>
+      </section>
+      <section id="lineage" class="lineage-section" aria-labelledby="lineage-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / FOLLOW THE ROOTS</p><h2 id="lineage-title">小山 洋から、湯川 秀樹へ。</h2></div><span class="prototype-tag">実データによるデモ</span></div>
+        <div class="graph-toolbar"><p>矢印は <strong>研究者 → 指導を受けた相手</strong>。人物や線を選ぶと、根拠が開きます。</p><button id="walk" class="text-button" type="button" hidden>順にたどる <span aria-hidden="true">→</span></button></div>
+        <div id="graph" class="graph" aria-label="小山洋から湯川秀樹までの学術系譜"></div>
+        <div class="graph-key"><span><i class="key-line"></i> 公開資料で確認</span><span><i class="key-line dashed"></i> 本人申告</span><span class="graph-count">5人 · 4つの関係</span></div>
+        <div id="detail" class="detail" aria-live="polite" aria-atomic="true"></div>
+        <noscript><div class="no-js"><h3>学術系譜</h3><p>小山 洋 → 犬塚 修一郎 → 観山 正見 → 林 忠四郎 → 湯川 秀樹</p><p>小山洋→犬塚修一郎は本人申告。犬塚→観山、観山→林は大学院での指導、林→湯川は研究室での関係です。</p><p>詳しい関係・年・根拠は<a href="data.json">公開データ</a>をご覧ください。画面での選択にはJavaScriptを有効にしてください。</p></div></noscript>
+      </section>
+      <section class="share-section" aria-labelledby="share-title"><div><p class="eyebrow">A PERSONAL CONNECTION TO SCIENCE</p><h2 id="share-title">学問の歴史が、自分につながる。</h2><p>一人ひとりの研究の先に、受け継がれてきた知識と問いがある。<br>この小さな系譜を、ひとつのカードに。</p></div><div class="share-actions"><button type="button" id="save-card" class="primary-button" hidden>系譜カードを保存 <span aria-hidden="true">↓</span></button><button type="button" id="copy-link" class="secondary-button" hidden>リンクをコピー <span aria-hidden="true">↗</span></button><span class="export-hint">カードはSVG画像として保存できます。</span></div><p id="share-status" class="share-status" role="status"></p></section>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><p class="eyebrow">02 / EVIDENCE, NOT ASSUMPTION</p><h2 id="sources-title">つながりには、根拠を。</h2></div><span class="updated">確認日 2026.11.10</span></div><p class="section-intro">学位の指導、研究室での師弟、共同研究は、それぞれ異なる関係です。<br>このデモでは、資料が示している範囲と未確認の点を一緒に表示しています。</p><div class="evidence-summary"><p><strong>3</strong><span>つの関係を<br>公開資料で確認</span></p><p><strong>1</strong><span>つの関係は<br>本人申告</span></p><div><b>「博士の系譜」とは限りません。</b><span>すべての線が博士論文指導を意味するわけではありません。<br>「4ステップ」は、種類の異なる学術上の関係を数えたものです。</span></div></div><div id="source-list" class="source-list"></div><noscript><p><a href="https://www.asj.or.jp/jp/activities/geppou/item/114-2_109.pdf">犬塚修一郎「星形成理論の展開」</a> ／ <a href="https://www.soken.ac.jp/outline/history/yasunobu_okada/taidan3_1/">観山正見・本人対談</a> ／ <a href="https://www.kyoto-up.or.jp/books/9784876984978.html?lang=en">林忠四郎の全仕事</a></p></noscript><div class="method-note"><span class="small-label">ABOUT THIS DEMO</span><p>小山洋の系譜1経路をたどる、閲覧用プロトタイプです。人物登録・自動調査・データの一般公開投稿はまだ行えません。<a href="https://quasar.cc.osaka-kyoiku.ac.jp/~fukue/keizu96.htm" target="_blank" rel="noopener noreferrer">日本の天文学者の系図</a>を経路発見の参考にし、各関係を別の公開資料または本人申告で記録しています。元の図・文章・データ全体は転載していません。</p><a class="data-link" href="data.json" download="academic-roots.json">出典付きデータを保存（JSON） <span aria-hidden="true">↓</span></a><p class="correction">誤りに気づいた場合は、<a href="https://github.com/koyamahr/koyamahr.github.io/issues/new?title=Academic%20Roots%3A%20correction" target="_blank" rel="noopener noreferrer">GitHubで訂正を知らせる</a>ことができます（GitHubアカウントが必要です）。</p></div></section>
+    </main>
+    <footer><a class="footer-brand" href="./">Academic Roots</a><span>研究のつながりを、出典とともに。</span><a href="../">小山 洋のホームページ <span aria-hidden="true">↗</span></a></footer>
+  </div>
+</body>
+</html>
