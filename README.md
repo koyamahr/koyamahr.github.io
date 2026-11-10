@@ -2,7 +2,7 @@
 
 Personal project index: **https://koyamahr.github.io/**
 
-The homepage is a public portfolio with four entry points: **Articles & essays**, **Learning & research**, **Books**, and **Photographs**. The introduction connects the author's work in astrophysics with writing and learning resources. It links to the author's public note profile, Koyamax (`https://note.com/hr_koyama`), two introductory articles, and the independently maintained projects below:
+The homepage is a compact public portfolio: a short author introduction and one photograph, four direct entry points (**Articles & essays**, **Learning & research**, **Books**, and **Photographs**), compact research-profile links and the contact form. Articles lead to the public note profile, Koyamax (`https://note.com/hr_koyama`). Learning and research lead to `/research/`, which lists eight published resources and web works, including the projects below:
 
 - [Theoretical Astrophysics, Step by Step](https://koyamahr.github.io/astronomy-step-by-step/)
 - [An Atlas of Numerical Methods](https://koyamahr.github.io/numerical-methods-atlas/)
@@ -11,7 +11,7 @@ The homepage is a public portfolio with four entry points: **Articles & essays**
 
 It also links to the author's researchmap (`https://researchmap.jp/read0200749`), ORCID (0009-0003-7503-4715), Google Scholar, LinkedIn, and ResearchGate profiles. Japanese and English are available using the language buttons or `?lang=ja` / `?lang=en`. The selected language follows links to the bilingual projects.
 
-The homepage also links to the bilingual [Computing Policy Archive](https://koyamahr.github.io/hpci-policy/), a personal record of two secondments to MEXT and related committees and work, with public primary sources. It includes 19 committees and working groups whose involvement the author confirmed, alongside detailed records for HPCI and the post-K basic-design review. An institutional context section explains the shared-facility law (Act No. 78 of 1994). Committee involvement is distinguished from committee membership; personal responsibilities and public-source summaries are labeled separately. Public meeting dates are not treated as the author's assignment dates.
+The works directory also links to the bilingual [Computing Policy Archive](https://koyamahr.github.io/hpci-policy/), a personal record of two secondments to MEXT and related committees and work, with public primary sources. It includes 19 committees and working groups whose involvement the author confirmed, alongside detailed records for HPCI and the post-K basic-design review. An institutional context section explains the shared-facility law (Act No. 78 of 1994). Committee involvement is distinguished from committee membership; personal responsibilities and public-source summaries are labeled separately. Public meeting dates are not treated as the author's assignment dates.
 
 ## Academic Roots
 
@@ -28,14 +28,14 @@ Run `node --test scripts/research-model.test.mjs`. The local working copy was br
 
 ## Books
 
-The bilingual [Books page](https://koyamahr.github.io/books/) and the homepage's books section are generated from `books/catalog.json`. Published books have a verified Amazon ASIN and a link for sampling and purchase. Forthcoming books are explicitly labeled **To be published**, without an invented release date or purchase link. The book editions listed here are Japanese; English descriptions introduce those editions.
+The bilingual [Books page](https://koyamahr.github.io/books/) is generated from `books/catalog.json`. The compact homepage links to it without repeating the individual covers and descriptions. Published books have a verified Amazon ASIN and a link for sampling and purchase. Forthcoming books are explicitly labeled **To be published**, without an invented release date or purchase link. The book editions listed here are Japanese; English descriptions introduce those editions.
 
 To add a book or update availability:
 
 1. Update its public metadata, short descriptions, and `published` / `upcoming` status in `books/catalog.json`. Set `asin` when the Amazon product page is available.
 2. Add the authorized cover image under `books/covers/`.
-3. Run `node scripts/build-books.mjs` from the repository root. Commit the catalog, generated `books/index.html` and homepage section, and any changed cover together.
-4. Check `/books/?lang=ja`, `/books/?lang=en`, and the homepage's language switch. Keep private production notes and submission records outside this repository.
+3. Run `node scripts/build-books.mjs` from the repository root. Commit the catalog, generated `books/index.html`, and any changed cover together.
+4. Check `/books/?lang=ja` and `/books/?lang=en`. Keep private production notes and submission records outside this repository.
 
 The site hosts cover images and descriptions; reading samples are reached through the Amazon product page. Book manuscripts and EPUB files are not included.
 
@@ -43,7 +43,9 @@ The site hosts cover images and descriptions; reading samples are reached throug
 
 The final `#contact` section links to a Google Form in a new tab. Japanese and English introductions follow the language switch, with a usable Japanese link without JavaScript. The form asks for a required reply email, a required message, and an optional name. The owner's destination email is absent from the public HTML, JavaScript and link. The form's response summary is disabled and owner email notifications are enabled. The owner approved public responses from anyone with the link. The form was activated and a signed-out test submission reached the confirmation page. To suspend contact intake, use the form editor’s published/response settings to stop accepting responses; the website link can remain in place or be removed.
 
-Edit `index.html`, `home.css`, and `home.js`. Text in both languages is defined in the `copy` object in `home.js`; keep the default Japanese HTML in sync. Japanese content and every portfolio destination remain readable without JavaScript. `#portfolio` is the overview; `#writing`, `#projects`, and `#books` are the original entry destinations; `#photographs` adds the photography entry. Keep existing anchors and project URLs stable. The page uses local SVG artwork and system fonts, with no external dependencies. Run `node scripts/build-books.mjs` after editing book metadata or the generated books introduction; it preserves the rest of the homepage.
+Edit `index.html`, `research/index.html`, `home.css`, and `home.js`. Both pages share the paper-and-ink style and Japanese/English text in the `copy` object. Keep default Japanese HTML in sync so the page and all destinations work without JavaScript. Add new learning resources and public web works to `/research/`; keep the homepage's four category links compact. Unreleased apps stay private.
+
+`#portfolio`, `#profiles`, and `#contact` stay on the homepage. Existing `#writing`, `#books`, and `#photographs` anchors target their entry cards. Old `#projects`, `#college-notes`, and `#academic-roots` links forward to the appropriate work in `/research/` when JavaScript is enabled, with a visible category-card fallback otherwise. The books generator now writes only `/books/index.html` and never reinserts detailed teasers into the homepage. The site uses system fonts, local assets and no framework or external runtime dependencies.
 
 ```sh
 python3 -m http.server 4180 --bind 127.0.0.1
@@ -66,7 +68,7 @@ The author excluded eight entries from the initial MEXT list: 071, 059, 035, 034
 
 ## Market Chart Atlas
 
-The bilingual [Market Chart Atlas](https://koyamahr.github.io/market-chart-atlas/) lives in `market-chart-atlas/`, linked from a separate **Data & Markets** section on the homepage. It is a static, dependency-free technical indicator gallery: moving averages (SMA / EMA), MACD, Wilder RSI, and Bollinger Bands, compared on the same 12 curated historical cases across eight US stocks and two index ETFs.
+The bilingual [Market Chart Atlas](https://koyamahr.github.io/market-chart-atlas/) lives in `market-chart-atlas/`, linked from the **Archives & web works** group in `/research/`. It is a static, dependency-free technical indicator gallery: moving averages (SMA / EMA), MACD, Wilder RSI, and Bollinger Bands, compared on the same 12 curated historical cases across eight US stocks and two index ETFs.
 
 - `cases.json`: bilingual observation, question, and retrospective commentary. The observation date is a US trading-session date.
 - `data.json`: finite Yahoo Finance daily OHLC/volume snapshots, with source and actual retrieval date. Each case has 130 preceding sessions, the observation session, and 20 following sessions. Prices reflect splits (including subsequent splits), not dividends.
@@ -128,7 +130,7 @@ Costs and intervals are intentionally heterogeneous historical observations, not
 
 ## Photographs
 
-`photographs/` is Hiroshi Koyama’s bilingual photography portfolio, led by eight selected photographs across nature, light, architecture and an observatory. The homepage presents the author and four entry points: articles, learning/research, books and photographs. The 2007–2008 American travel collection is separate at `photographs/america/`, linked from Series.
+`photographs/` is Hiroshi Koyama’s bilingual photography portfolio, led by eight selected photographs across nature, light, architecture and an observatory. The compact homepage presents the author, one selected photograph and four direct entry points: articles, learning/research, books and photographs. The 2007–2008 American travel collection is separate at `photographs/america/`, linked from Series.
 
 Default Japanese HTML includes every photograph, caption and expandable exposure record without JavaScript. `site.js` adds language switching and a keyboard-accessible image viewer (Escape to close, arrow keys to navigate). Images keep their original proportions, except for bounded presentation crops.
 

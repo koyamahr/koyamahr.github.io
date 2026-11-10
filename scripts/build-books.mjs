@@ -55,17 +55,4 @@ const page = `<!doctype html>
   <footer class="books-footer"><span>小山 洋 / Hiroshi Koyama</span><a data-books-link href="/?lang=ja">${text('トップページへ','Back to home')}</a></footer>
 </div></body></html>\n`;
 writeFileSync(resolve(root,'books/index.html'),page);
-const teasers=books.map(book=>`<article class="book-teaser"><a data-books-link href="/books/?lang=ja#${book.id}" aria-label="${escape(book.title)}">${cover(book)}</a><div>${badge(book)}<h3 lang="ja"><a data-books-link href="/books/?lang=ja#${book.id}">${escape(book.title)}</a></h3>${text(book.teaser.ja,book.teaser.en,'p')}</div></article>`).join('\n');
-const section=`<!-- books:start -->
-<section class="books-home" id="books" aria-labelledby="books-home-title"><div class="books-home-heading">${text('著書・Kindle本','Books','h2',' id="books-home-title"')}<a data-books-link href="/books/?lang=ja">${text('出版リストを見る','View all books')} <span aria-hidden="true">↗</span></a></div>${text('科学の空想、研究者の暮らし、宇宙物理の学びを、一冊ずつ。各書籍の紹介と、Amazonの試し読み・購入リンクをまとめています。','Imagined worlds, life in research, and learning astrophysics—one book at a time. Find introductions and Amazon links for samples and purchase.','p',' class="section-lead"')}<div class="books-home-grid">${teasers}</div></section>
-<!-- books:end -->`;
-let home=readFileSync(resolve(root,'index.html'),'utf8');
-if(home.includes('<!-- books:start -->')) home=home.replace(/<!-- books:start -->[\s\S]*?<!-- books:end -->/,section);
-else {
-  const marker='      <section class="profiles"';
-  if(!home.includes(marker)) throw Error('Cannot locate homepage insertion point');
-  home=home.replace(marker,section+'\n'+marker);
-}
-if(!home.includes('href="/books/books.css"')) home=home.replace('</head>','  <link rel="stylesheet" href="/books/books.css">\n  <script src="/books/books.js" defer></script>\n</head>');
-writeFileSync(resolve(root,'index.html'),home);
-console.log(`Built /books/ and homepage entries: ${books.length} books`);
+console.log(`Built /books/: ${books.length} books`);
