@@ -85,7 +85,7 @@ const html = `<!doctype html>
   <script src="site.js?v=${comparisonVersion}" defer></script>
   <script type="importmap">${JSON.stringify({imports: comparisonImports})}</script>
   <script type="module" src="comparison.js?v=${comparisonVersion}"></script>
-</head>
+<style id="rights-notice-style">.rights-notice{box-sizing:border-box;max-width:1240px;width:100%;margin:32px auto 0;padding:20px 24px;border-top:1px solid #c8c4ba;color:#56564e;background:transparent;font:13px/1.7 system-ui,sans-serif}.rights-notice p{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0!important}.rights-notice a{color:inherit;text-underline-offset:3px}.rights-notice span{overflow-wrap:anywhere}</style></head>
 <body>
   <a class="skip" href="#records" data-i18n="skip">委員会・業務の記録へ</a>
   <div class="wrap">
@@ -155,7 +155,7 @@ const html = `<!doctype html>
   </div>
   <script id="comparison-data" type="application/json">${JSON.stringify(comparison).replace(/</g, '\\u003c')}</script>
   <script id="archive-data" type="application/json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
-</body>
+<footer class="rights-notice" aria-label="利用条件 / Licensing"><p><a href="https://koyamahr.github.io/rights/">利用条件 / Rights &amp; reuse</a><span>Original code: MIT · Text, figures &amp; photos: separate terms</span></p></footer></body>
 </html>
 `;
 await writeFile(new URL('comparison-data.csv', directory), comparisonCSV(comparison));

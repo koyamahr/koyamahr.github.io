@@ -137,3 +137,8 @@ Default Japanese HTML includes every photograph, caption and expandable exposure
 Public assets are resized, EXIF-free JPEG viewing copies. Public `catalog.json` files contain only whitelisted descriptive and camera fields; coordinates, HDD paths and complete EXIF stay outside this repository. Restrained tonal adjustments are CSS display filters. AI-generated editing attempts were rejected and are not used. Original photographs stay untouched; people-containing reserve photographs are excluded.
 
 Preview `/photographs/?lang=ja`, `?lang=en`, and `/photographs/america/`. No build step or external dependency is needed.
+
+
+## Licensing / ライセンス
+
+Original implementation code: **MIT** ([LICENSE](LICENSE)). Text, figures, photographs, book material and data are **excluded** and follow separate terms; see [LICENSING.md](LICENSING.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Public guide: https://koyamahr.github.io/rights/ .

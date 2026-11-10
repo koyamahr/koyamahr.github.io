@@ -48,11 +48,11 @@ const page = `<!doctype html>
   <meta property="og:url" content="https://koyamahr.github.io/books/"><meta property="og:image" content="https://koyamahr.github.io/books/covers/alien-manual.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/books/books.css">
   <script src="/books/books.js" defer></script>
-</head><body class="books-page"><div class="books-wrap">
+<style id="rights-notice-style">.rights-notice{box-sizing:border-box;max-width:1240px;width:100%;margin:32px auto 0;padding:20px 24px;border-top:1px solid #c8c4ba;color:#56564e;background:transparent;font:13px/1.7 system-ui,sans-serif}.rights-notice p{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0!important}.rights-notice a{color:inherit;text-underline-offset:3px}.rights-notice span{overflow-wrap:anywhere}</style></head><body class="books-page"><div class="books-wrap">
   <header class="books-header"><a class="books-identity" data-books-link href="/?lang=ja">Hiroshi Koyama</a><div class="books-language" role="group" aria-label="言語 / Language" hidden><button type="button" data-books-lang="ja" lang="ja" aria-pressed="true">日本語</button><button type="button" data-books-lang="en" lang="en" aria-pressed="false">English</button></div></header>
   <main><section class="books-intro"><p class="books-eyebrow">BOOKS BY HIROSHI KOYAMA</p>${text('著書・Kindle本','Books','h1')}${text('物理の式から、空想や研究者の暮らしまで。小山 洋の著書と刊行予定の本を紹介します。','From physical equations to imagined worlds and life in research. Published and forthcoming books by Hiroshi Koyama.','p')}</section>
   ${groups}</main>
   <footer class="books-footer"><span>小山 洋 / Hiroshi Koyama</span><a data-books-link href="/?lang=ja">${text('トップページへ','Back to home')}</a></footer>
-</div></body></html>\n`;
+</div><footer class="rights-notice" aria-label="利用条件 / Licensing"><p><a href="https://koyamahr.github.io/rights/">利用条件 / Rights &amp; reuse</a><span>Original code: MIT · Text, figures &amp; photos: separate terms</span></p></footer></body></html>\n`;
 writeFileSync(resolve(root,'books/index.html'),page);
 console.log(`Built /books/: ${books.length} books`);
