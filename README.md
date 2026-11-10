@@ -2,7 +2,7 @@
 
 Personal project index: **https://koyamahr.github.io/**
 
-The homepage is a compact public portfolio: a short author introduction and one photograph, four direct entry points (**Articles & essays**, **Learning & research**, **Books**, and **Photographs**), compact research-profile links and the contact form. Articles lead to the public note profile, Koyamax (`https://note.com/hr_koyama`). Learning and research lead to `/research/`, which lists eight published resources and web works, including the projects below:
+The homepage is a compact public portfolio: a short author introduction and one photograph, four direct entry points (**Articles & essays**, **Learning & research**, **Books**, and **Photographs**), compact research-profile links and the contact form. Articles lead to the public note profile, Koyamax (`https://note.com/hr_koyama`); the English entry explicitly labels those articles as Japanese. The language switch translates portfolio introductions, not the external note articles. Learning and research lead to `/research/`, which lists eight published resources and web works, including the projects below:
 
 - [Theoretical Astrophysics, Step by Step](https://koyamahr.github.io/astronomy-step-by-step/)
 - [An Atlas of Numerical Methods](https://koyamahr.github.io/numerical-methods-atlas/)

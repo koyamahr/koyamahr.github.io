@@ -102,7 +102,7 @@
     "metaDescription": "Hiroshi Koyama’s portfolio: articles, astrophysics and numerical methods resources, research archives, books and photographs.",
     "portfolio": "Portfolio",
     "entryWriting": "Articles & essays",
-    "entryWritingNote": "Science, AI and life in research, on note.",
+    "entryWritingNote": "Science, AI and life in research. Articles in Japanese on note.",
     "entryResearch": "Learning & research",
     "entryResearchNote": "Astrophysics, numerical methods, notebooks and web works.",
     "entryBooks": "Books",
