@@ -1,6 +1,8 @@
 (() => {
   const copy = {
   "ja": {
+    "rootsDescription": "小山 洋から4代先に、湯川秀樹。いつものAIで自分の学術系譜を調べ、結果を貼り付けて系図や画像を作れます。",
+    "rootsAction": "自分のルーツを調べる",
     "entryPhotos": "写真",
     "entryPhotosNote": "街の表情、建物、自然の風景。",
     "photosTitle": "写真",
@@ -74,6 +76,8 @@
     "projectsIntro": "式をたどり、図を動かし、コードで確かめる。宇宙物理から数値解析、光学、計算科学政策まで、公開中の教材と研究の記録です。"
   },
   "en": {
+    "rootsDescription": "Four academic links from Hiroshi Koyama to Hideki Yukawa. Research your own lineage with your usual AI, then paste the result to create a family tree and image. Japanese interface.",
+    "rootsAction": "Explore your academic roots",
     "entryPhotos": "Photographs",
     "entryPhotosNote": "Streets, architecture and natural landscapes.",
     "photosTitle": "Photographs",

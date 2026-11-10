@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f4ed">
+  <title>Academic Roots — 4代先に、湯川秀樹。</title>
+  <meta name="description" content="小山洋から4代先に湯川秀樹。学術系譜の完成例を見て、自分のAIで調べた結果を貼り戻し、あなたの系譜を作れます。">
+  <meta property="og:title" content="Academic Roots — 4代先に、湯川秀樹。">
+  <meta property="og:description" content="小山洋の学術系譜を完成例に。いつものAIで調べ、結果を貼るだけで自分の系譜へ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koyamahr.github.io/academic-roots/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://koyamahr.github.io/academic-roots/">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=4">
+  <script type="module" src="app.js?v=4"></script>
+</head>
+<body>
+  <a class="skip" href="#lineage">系譜へ進む</a>
+  <div class="wrap">
+    <header class="header">
+      <a class="brand" href="./" aria-label="Academic Roots ホーム"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M8 28V18H27V8M18 18v10"/><circle cx="8" cy="28" r="3"/><circle cx="18" cy="28" r="3"/><circle cx="27" cy="8" r="3"/><circle cx="27" cy="18" r="3"/></svg><span>Academic <em>Roots</em></span></a>
+      <nav aria-label="メイン"><a href="#create" class="nav-create">自分も作る <span aria-hidden="true">↗</span></a><a href="#sources" class="nav-sources">出典・確かさ</a><a href="https://koyamahr.github.io/" class="home-link">Hiroshi Koyama <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="headline">
+        <div><p class="eyebrow"><span></span> KOYAMA'S ACADEMIC ROOTS</p><p class="hero-kicker">小山 洋の学術系譜を、たどってみた。</p><h1 id="headline">4代先に、<br><em>湯川秀樹。</em></h1><p class="intro">自分の先生から、そのまた先生へ。<br>研究のつながりをたどると、思いがけない人に出会える。<br>あなたも、いつものAIと自分のルーツを探してみよう。</p><div class="hero-choices"><a class="primary-button" href="#create">自分のルーツを調べる <span aria-hidden="true">↗</span></a><a class="hero-action" href="#lineage">小山の完成例を見る <span aria-hidden="true">↓</span></a></div><p class="hero-footnote">ここでの「4代」は4つの学術上の関係。すべてが博士論文指導ではありません。</p></div>
+        <aside class="destination"><span class="destination-label">小山 洋 → 湯川 秀樹</span><div class="distance"><strong>4</strong><span>つの関係を<br>たどった先に。</span></div><div class="mini-root" aria-hidden="true"><span>小山 洋</span><i>↓</i><span>犬塚 修一郎</span><i>↓</i><span>観山 正見</span><i>↓</i><span>林 忠四郎</span><i>↓</i><b>湯川 秀樹</b></div></aside>
+      </section>
+      <section id="lineage" class="lineage-section" aria-labelledby="lineage-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / FOLLOW THE ROOTS</p><h2 id="lineage-title">小山 洋から、湯川 秀樹へ。</h2></div><span class="prototype-tag">完成例 · 公開資料＋本人申告</span></div>
+        <div class="graph-toolbar"><p>矢印は <strong>研究者 → 指導を受けた相手</strong>。人物や線を選ぶと、根拠が開きます。</p><button id="walk" class="text-button" type="button" hidden>順にたどる <span aria-hidden="true">→</span></button></div>
+        <div id="graph" class="graph" aria-label="小山洋から湯川秀樹までの学術系譜"></div>
+        <div class="graph-key"><span><i class="key-line"></i> 公開資料で確認</span><span><i class="key-line dashed"></i> 本人申告</span><span class="graph-count">5人 · 4つの関係</span></div>
+        <div id="detail" class="detail" aria-live="polite" aria-atomic="true"></div>
+        <noscript><div class="no-js"><h3>学術系譜</h3><p>小山 洋 → 犬塚 修一郎 → 観山 正見 → 林 忠四郎 → 湯川 秀樹</p><p>小山洋→犬塚修一郎は本人申告。犬塚→観山、観山→林は大学院での指導、林→湯川は研究室での関係です。</p><p>詳しい関係・年・根拠は<a href="data.json">公開データ</a>をご覧ください。画面での選択にはJavaScriptを有効にしてください。</p></div></noscript>
+      </section>
+      <div class="try-strip"><p>あなたの先生の、その先は？</p><a href="#create">いつものAIで調べてみる <span aria-hidden="true">↓</span></a></div>
+      <section id="create" class="create-section" aria-labelledby="create-title">
+        <div class="section-heading"><div><p class="eyebrow">02 / BRING YOUR OWN AI</p><h2 id="create-title">調べるのは、いつものAI。<br>ここで、あなたの系譜に。</h2></div><span class="prototype-tag">登録・APIキー入力不要</span></div>
+        <p class="section-intro">Web検索ができるAIに調査を頼み、回答をこのページに貼り戻します。<br>指導教員が小山の例に登場しなくても、どの研究室からでも始められます。</p>
+        <aside class="privacy-note" aria-labelledby="privacy-heading"><h3 id="privacy-heading">入力した情報は、運営者には送信されません。</h3><p>氏名・所属・貼り付けたAIの回答を、当サイトの運営者が収集・保存することはありません。作成した系譜は、このブラウザ内に保存されます。保存データは、下の「このブラウザの作成データを消す」から削除できます。</p><p>調査依頼文を自分のAIに貼り付けると、その内容は利用するAIサービスに送信されます。また、文章・画像・リンク・データを誰かに共有すると、そこに含まれる情報が相手に伝わります。</p></aside>
+        <ol class="workflow"><li><b>01</b><span>名前を入力して<br>依頼文をコピー</span></li><li><b>02</b><span>自分のAIに貼って<br>ルーツを調べる</span></li><li><b>03</b><span>回答を貼り戻して<br>系譜をコピー</span></li></ol>
+        <div class="research-grid">
+          <section class="research-panel" aria-labelledby="request-heading"><p class="small-label">01 / MAKE A RESEARCH REQUEST</p><h3 id="request-heading">まず、知っている先生まで。</h3>
+            <form id="research-request"><div class="request-fields"><div class="field-group"><label for="your-name">あなたの名前 <span class="required-label">必須</span></label><input id="your-name" maxlength="60" required autocomplete="name" placeholder="お名前"></div><div class="field-group"><label for="your-mentor">指導を受けた先生 <span class="required-label">必須</span></label><input id="your-mentor" maxlength="60" required placeholder="先生のお名前"></div><div class="field-group full"><label for="your-school">大学・研究室 <span class="required-label">人物を見分けるヒント</span></label><input id="your-school" maxlength="180" placeholder="例：○○大学 理学研究科 天文学専攻"></div><div class="field-group"><label for="your-year">学位取得年・在籍年</label><input id="your-year" maxlength="40" placeholder="例：2001年 PhD"></div><div class="field-group"><label for="your-kind">先生との関係</label><select id="your-kind"><option value="research">研究指導</option><option value="doctoral">博士課程での研究指導</option><option value="masters">修士課程での研究指導</option><option value="postdoc">ポスドクでの研究指導</option><option value="lab">研究室での学術上の関係</option></select></div></div>
+            <button class="primary-button" type="submit" disabled>AIへの調査依頼をコピー <span aria-hidden="true">↗</span></button><p id="prompt-status" class="field-help" role="status">コピーした依頼文を、普段使っているAIのチャットに貼ってください。</p><p id="prompt-error" class="create-error" role="alert"></p></form>
+            <details id="prompt-details"><summary>調査依頼文を見る・手動でコピー</summary><label class="sr-only" for="research-prompt">AIに渡す調査依頼文</label><textarea id="research-prompt" rows="10" readonly placeholder="名前と先生を入力して、上のボタンを押すと表示されます。"></textarea></details>
+          </section>
+          <section class="research-panel" aria-labelledby="import-heading"><p class="small-label">02–03 / RETURN WITH YOUR ROOTS</p><h3 id="import-heading">AIの回答を、ここに。</h3><p class="panel-intro">依頼文には、調査のルールと回答形式も入っています。AIが返したJSON全体を、そのまま貼り付けてください。</p>
+            <form id="research-import"><label for="research-answer">AIの回答（JSON）</label><textarea id="research-answer" rows="9" maxlength="80000" spellcheck="false" placeholder="{&#10;  &quot;format&quot;: &quot;academic-roots-research&quot;,&#10;  …&#10;}"></textarea><button class="primary-button" type="submit" disabled>回答から系譜を作る <span aria-hidden="true">→</span></button><p id="import-error" class="create-error" role="alert"></p></form>
+            <button id="load-example" type="button" class="text-button">小山の実例データで、取り込みを試す <span aria-hidden="true">↗</span></button><p class="field-help">実例データでも、取り込み後は確認前として表示します。AIが出典を付けても、自動的に確認済みにはなりません。</p>
+          </section>
+        </div>
+        <div class="flow-note"><b>あなたの調査は、あなたのAIで。</b><p>このページからAIを呼び出すことはありません。AIの利用条件・料金や、貼り付けた情報の扱いは、ご自身が利用するサービスに準じます。</p></div>
+        <details class="manual-entry"><summary>系譜を知っているので、手入力する</summary><form id="manual-form"><label for="manual-name">起点となるあなたの名前</label><input id="manual-name" maxlength="60" required placeholder="お名前"><label for="manual-ancestors">指導教員から順に、1行に1人</label><textarea id="manual-ancestors" rows="4" maxlength="900" required placeholder="最初の先生&#10;その先生の指導教員&#10;さらに上の先生"></textarea><button type="submit" class="secondary-button" disabled>手入力から系譜を作る <span aria-hidden="true">→</span></button><p id="manual-error" class="create-error" role="alert"></p></form></details>
+        <div id="your-result" class="your-result" hidden>
+          <div class="result-heading"><span class="small-label">YOUR ACADEMIC ROOTS</span><h3 id="result-title"></h3><p id="result-summary"></p></div>
+          <div class="result-layout"><div class="result-copy"><ol id="your-route" class="your-route" aria-label="作成した学術系譜"></ol><div id="unresolved" class="unresolved" hidden></div><div class="result-actions"><button type="button" class="primary-button" id="copy-text">文章をコピー <span aria-hidden="true">↗</span></button><button type="button" class="secondary-button" id="copy-image" disabled>画像をコピー <span aria-hidden="true">↗</span></button><button type="button" class="secondary-button" id="download-png" disabled>PNGで保存 <span aria-hidden="true">↓</span></button><button type="button" class="secondary-button" id="copy-personal-link">再現用リンクをコピー <span aria-hidden="true">↗</span></button><button type="button" class="secondary-button" id="download-json">データを保存 <span aria-hidden="true">↓</span></button><button type="button" class="secondary-button" id="edit-result">取り込み内容を編集 <span aria-hidden="true">↑</span></button></div><p id="result-status" class="result-status" role="status"></p><div id="manual-copy" hidden><label for="copy-fallback">選択してコピー</label><textarea id="copy-fallback" rows="5" readonly></textarea></div><p class="field-help">リンクと保存データには、名前・所属・根拠・出典が含まれます。共有先では「確認前」に戻り、元の作成者のチェックは引き継ぎません。</p><p id="local-link-note" class="field-help" hidden>この非公開プレビューのリンクは、同じ端末での再現用です。ほかの人に渡す場合は文章・画像・データ保存を使ってください。</p></div><figure class="card-preview"><img id="card-preview" alt="作成した系譜カードのプレビュー"><figcaption>自分のルーツを、文章・画像・データで持ち出せます。</figcaption></figure></div>
+          <section class="review-section" aria-labelledby="review-heading"><h4 id="review-heading">つながりの根拠を、1本ずつ確かめる。</h4><p class="field-help">出典の該当箇所が、この2人の関係を本当に示しているか確認してください。チェックは作成者による確認であり、このサイトによる独立検証ではありません。申告や推測には、出典確認のチェックは付けられません。</p><div id="your-evidence"></div></section>
+        </div>
+        <button id="reset-roots" class="text-button reset-research" type="button">このブラウザの作成データを消す</button>
+      </section>
+      <noscript><p class="no-js">自分の系譜を作るにはJavaScriptを有効にしてください。</p></noscript>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><p class="eyebrow">03 / EVIDENCE, NOT ASSUMPTION</p><h2 id="sources-title">実例のつながりと、その根拠。</h2></div><span class="updated">確認日 2026.11.10</span></div><p class="section-intro">学位の指導、研究室での師弟、共同研究は、それぞれ異なる関係です。<br>このデモでは、資料が示している範囲と未確認の点を一緒に表示しています。</p><div class="evidence-summary"><p><strong>3</strong><span>つの関係を<br>公開資料で確認</span></p><p><strong>1</strong><span>つの関係は<br>本人申告</span></p><div><b>「博士の系譜」とは限りません。</b><span>すべての線が博士論文指導を意味するわけではありません。<br>「4ステップ」は、種類の異なる学術上の関係を数えたものです。</span></div></div><div id="source-list" class="source-list"></div><noscript><p><a href="https://www.asj.or.jp/jp/activities/geppou/item/114-2_109.pdf">犬塚修一郎「星形成理論の展開」</a> ／ <a href="https://www.soken.ac.jp/outline/history/yasunobu_okada/taidan3_1/">観山正見・本人対談</a> ／ <a href="https://www.kyoto-up.or.jp/books/9784876984978.html?lang=en">林忠四郎の全仕事</a></p></noscript><div class="method-note"><span class="small-label">ABOUT THIS DEMO</span><p>小山洋の実例は、公開資料と本人申告を人が照合してまとめた完成例です。このページのAI依頼文で自動生成・検証された結果ではありません。訪問者は自分のAIに調査を依頼し、回答を取り込んで系譜を作成できます。共通データベースへの投稿・合流には対応していません。<a href="https://quasar.cc.osaka-kyoiku.ac.jp/~fukue/keizu96.htm" target="_blank" rel="noopener noreferrer">日本の天文学者の系図</a>を経路発見の参考にし、各関係を別の公開資料または本人申告で記録しています。元の図・文章・データ全体は転載していません。</p><a class="data-link" href="data.json" download="academic-roots.json">出典付きデータを保存（JSON） <span aria-hidden="true">↓</span></a><p class="correction">誤りに気づいた場合は、<a href="https://github.com/koyamahr/koyamahr.github.io/issues/new?title=Academic%20Roots%3A%20correction" target="_blank" rel="noopener noreferrer">GitHubで訂正を知らせる</a>ことができます（GitHubアカウントが必要です）。</p></div></section>
+    </main>
+    <footer><a class="footer-brand" href="./">Academic Roots</a><span>研究のつながりを、出典とともに。</span><a href="https://koyamahr.github.io/">小山 洋のホームページ <span aria-hidden="true">↗</span></a></footer>
+  </div>
+</body>
+</html>

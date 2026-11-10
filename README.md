@@ -13,6 +13,19 @@ It also links to the author's researchmap (`https://researchmap.jp/read0200749`)
 
 The homepage also links to the bilingual [Computing Policy Archive](https://koyamahr.github.io/hpci-policy/), a personal record of two secondments to MEXT and related committees and work, with public primary sources. It includes 19 committees and working groups whose involvement the author confirmed, alongside detailed records for HPCI and the post-K basic-design review. An institutional context section explains the shared-facility law (Act No. 78 of 1994). Committee involvement is distinguished from committee membership; personal responsibilities and public-source summaries are labeled separately. Public meeting dates are not treated as the author's assignment dates.
 
+## Academic Roots
+
+[Academic Roots](https://koyamahr.github.io/academic-roots/) is a Japanese-language academic-lineage tool, linked from the homepage in Japanese and English. The example connects Hiroshi Koyama to Hideki Yukawa through four typed relationships. It includes Koyama's doctoral thesis title, degree date, the University of Tokyo degree record, and the National Diet Library catalog record. Koyama's supervision remains author-reported; degree evidence and examination committees do not automatically establish supervision.
+
+Visitors enter themselves and a supervisor, copy a research request into their own web-enabled LLM, then paste the returned JSON to create, review and export their lineage. The site makes no LLM or search API requests and requires no API keys or account. An input notice explains that personal inputs and AI responses are not sent to the site operator, that created lineages stay in local browser storage, and that pasting into an AI or sharing exports discloses the included information to the chosen recipient. Inputs have no form names and submit controls are enabled only after local handlers attach, preventing native form fallback from including personal inputs in URLs.
+
+- `academic-roots/data.json` contains the five-person example, evidence, typed relationships and thesis metadata. This example was manually researched and is not represented as a result of the new request template.
+- `academic-roots/research-model.mjs` generates requests, validates 2–13-person paths and source URLs, and encodes shared results. AI-supplied verification flags are discarded. Creator review is labeled as such and is not passed to a recipient as verified status.
+- `academic-roots/llm-builder.js` handles local storage (`academic-roots.research.v1`), import, source review, manual entry, text/image copying, PNG/JSON export, and fragment-only share links. Shared data includes names, affiliations and evidence. Long links fall back to JSON export.
+- `academic-roots/app.js` renders the example and sources. Cached asset and data versions must stay synchronized when updated.
+
+Run `node --test scripts/research-model.test.mjs`. The local working copy was browser-tested for prompt copy, import, review, text/image copy, PNG export, shared-result restoration, local restoration/deletion and narrow layouts. External LLM research accuracy and response compatibility across models remain unmeasured. No shared researcher database is implemented.
+
 ## Books
 
 The bilingual [Books page](https://koyamahr.github.io/books/) and the homepage's books section are generated from `books/catalog.json`. Published books have a verified Amazon ASIN and a link for sampling and purchase. Forthcoming books are explicitly labeled **To be published**, without an invented release date or purchase link. The book editions listed here are Japanese; English descriptions introduce those editions.
