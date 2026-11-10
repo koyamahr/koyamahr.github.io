@@ -28,6 +28,8 @@ The site hosts cover images and descriptions; reading samples are reached throug
 
 ## Homepage editing
 
+The final `#contact` section links to a Google Form in a new tab. Japanese and English introductions follow the language switch, with a usable Japanese link without JavaScript. The form asks for a required reply email, a required message, and an optional name. The owner's destination email is absent from the public HTML, JavaScript and link. The form's response summary is disabled and owner email notifications are enabled. The owner approved public responses from anyone with the link. The form was activated and a signed-out test submission reached the confirmation page. To suspend contact intake, use the form editor’s published/response settings to stop accepting responses; the website link can remain in place or be removed.
+
 Edit `index.html`, `home.css`, and `home.js`. Text in both languages is defined in the `copy` object in `home.js`; keep the default Japanese HTML in sync. Japanese content and every portfolio destination remain readable without JavaScript. `#portfolio` is the overview; `#writing`, `#projects`, and `#books` are the original entry destinations; `#photographs` adds the photography entry. Keep existing anchors and project URLs stable. The page uses local SVG artwork and system fonts, with no external dependencies. Run `node scripts/build-books.mjs` after editing book metadata or the generated books introduction; it preserves the rest of the homepage.
 
 ```sh
