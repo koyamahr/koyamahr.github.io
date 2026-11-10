@@ -2,7 +2,7 @@
 
 Personal project index: **https://koyamahr.github.io/**
 
-The homepage is a public portfolio with three entry points: **Articles & essays**, **Learning & research**, and **Books**. The introduction connects the author's work in astrophysics with writing and learning resources. It links to the author's public note profile, Koyamax (`https://note.com/hr_koyama`), two introductory articles, and the independently maintained projects below:
+The homepage is a public portfolio with four entry points: **Articles & essays**, **Learning & research**, **Books**, and **Photographs**. The introduction connects the author's work in astrophysics with writing and learning resources. It links to the author's public note profile, Koyamax (`https://note.com/hr_koyama`), two introductory articles, and the independently maintained projects below:
 
 - [Theoretical Astrophysics, Step by Step](https://koyamahr.github.io/astronomy-step-by-step/)
 - [An Atlas of Numerical Methods](https://koyamahr.github.io/numerical-methods-atlas/)
@@ -42,7 +42,7 @@ The site hosts cover images and descriptions; reading samples are reached throug
 
 ## Homepage editing
 
-Edit `index.html`, `home.css`, and `home.js`. Text in both languages is defined in the `copy` object in `home.js`; keep the default Japanese HTML in sync. Japanese content and every portfolio destination remain readable without JavaScript. `#portfolio` is the overview; `#writing`, `#projects`, and `#books` are the three entry destinations. Keep existing anchors and project URLs stable. The page uses local SVG artwork and system fonts, with no external dependencies. Run `node scripts/build-books.mjs` after editing book metadata or the generated books introduction; it preserves the rest of the homepage.
+Edit `index.html`, `home.css`, and `home.js`. Text in both languages is defined in the `copy` object in `home.js`; keep the default Japanese HTML in sync. Japanese content and every portfolio destination remain readable without JavaScript. `#portfolio` is the overview; `#writing`, `#projects`, and `#books` are the original entry destinations; `#photographs` adds the photography entry. Keep existing anchors and project URLs stable. The page uses local SVG artwork and system fonts, with no external dependencies. Run `node scripts/build-books.mjs` after editing book metadata or the generated books introduction; it preserves the rest of the homepage.
 
 ```sh
 python3 -m http.server 4180 --bind 127.0.0.1
@@ -124,3 +124,13 @@ The HPCI archive itself includes an interactive comparison at [`/hpci-policy/?la
 - Run `node scripts/build-policy.mjs` to regenerate the archive HTML and `comparison-data.csv`. The CSV exports **base currency** in `amount_native_currency`, preserves missing totals, and distinguishes future targets. Versioned module/style URLs prevent stale combinations. The deployed page has no framework or CDN dependency; chart content remains available without JavaScript.
 
 Costs and intervals are intentionally heterogeneous historical observations, not a reconciled lifecycle-cost or development-efficiency ranking. The Summit/Sierra joint amount is not divided between systems. FugakuNEXT annual funding is not treated as a full project total. The comparison does not add personal involvement claims to the archive.
+
+## Photographs
+
+`photographs/` is Hiroshi Koyama’s bilingual photography portfolio, led by eight selected photographs across nature, light, architecture and an observatory. The homepage presents the author and four entry points: articles, learning/research, books and photographs. The 2007–2008 American travel collection is separate at `photographs/america/`, linked from Series.
+
+Default Japanese HTML includes every photograph, caption and expandable exposure record without JavaScript. `site.js` adds language switching and a keyboard-accessible image viewer (Escape to close, arrow keys to navigate). Images keep their original proportions, except for bounded presentation crops.
+
+Public assets are resized, EXIF-free JPEG viewing copies. Public `catalog.json` files contain only whitelisted descriptive and camera fields; coordinates, HDD paths and complete EXIF stay outside this repository. Restrained tonal adjustments are CSS display filters. AI-generated editing attempts were rejected and are not used. Original photographs stay untouched; people-containing reserve photographs are excluded.
+
+Preview `/photographs/?lang=ja`, `?lang=en`, and `/photographs/america/`. No build step or external dependency is needed.

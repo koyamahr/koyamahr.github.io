@@ -1,6 +1,11 @@
 (() => {
   const copy = {
   "ja": {
+    "entryPhotos": "写真",
+    "entryPhotosNote": "街の表情、建物、自然の風景。",
+    "photosTitle": "写真",
+    "photosDescription": "鳥、花と虫、空の光、街の形。これまでに撮影した写真から、代表作品を紹介しています。",
+    "photosAction": "写真を見る",
     "marketTitle": "株価チャート・アトラス",
     "marketDescription": "移動平均・MACD・RSI・ボリンジャーバンドを、数式と実際のチャートで比較。期間を動かし、仕組みと読み方、限界を確かめる日英対応のギャラリー。",
     "marketTopics": "MACD・RSI / 移動平均・ボリンジャーバンド / 12の実例",
@@ -8,10 +13,13 @@
     "policyTitle": "計算科学政策の記録",
     "policyDescription": "文部科学省への2度の出向を軸に、HPCI・ポスト「京」・AI for Scienceの委員会と関連業務を公開資料でたどる記録。",
     "policyAction": "記録を読む",
-    "title": "小山 洋 | 記事・教材・研究・著書",
+    "title": "小山 洋 | ポートフォリオ",
     "skip": "ポートフォリオへ進む",
-    "headline": "宇宙を考え、言葉と計算で届ける。",
-    "intro": "宇宙物理の研究を軸に、科学やAI、研究者の暮らしを綴る記事、式と計算で学ぶ教材、本をつくっています。小山 洋の公開作品と研究活動をまとめたポートフォリオです。",
+    "headline": "小山 洋",
+    "tagline": "宇宙を考え、言葉と計算で届ける。",
+    "heroProfile": "CV・研究プロフィール",
+    "heroPhoto": "撮影作品から",
+    "intro": "宇宙物理の研究、記事と本、公開教材、写真。小山 洋の活動と作品をまとめたポートフォリオです。",
     "projects": "教材・研究",
     "astroField": "宇宙物理 / Astrophysics",
     "astroTitle": "理論天文学の道具箱",
@@ -39,10 +47,10 @@
     "linkedin": "経歴・プロフィール",
     "researchgate": "研究活動・論文",
     "footer": "小山 洋 / Hiroshi Koyama",
-    "metaDescription": "小山 洋の公開ポートフォリオ。noteの記事・エッセイ、宇宙物理と数値解析の教材・研究アーカイブ、著書・Kindle本をご紹介します。",
-    "heroAction": "ポートフォリオを見る",
+    "metaDescription": "小山洋のポートフォリオ。記事・エッセイ、教材・研究、著書・Kindle本、写真作品を紹介します。",
+    "heroAction": "作品と活動を見る",
     "portfolio": "ポートフォリオ",
-    "portfolioNote": "記事・教材・本から、気になるものへ。",
+    "portfolioNote": "記事・教材・本・写真から、気になるものへ。",
     "entryWriting": "記事・エッセイ",
     "entryWritingNote": "科学・AI・研究者の暮らしをnoteで。",
     "entryResearch": "教材・研究",
@@ -58,6 +66,11 @@
     "projectsIntro": "式をたどり、図を動かし、コードで確かめる。宇宙物理から数値解析、光学、計算科学政策まで、公開中の教材と研究の記録です。"
   },
   "en": {
+    "entryPhotos": "Photographs",
+    "entryPhotosNote": "Streets, architecture and natural landscapes.",
+    "photosTitle": "Photographs",
+    "photosDescription": "Birds, flowers and insects, light in the sky, shapes in the city. A selection of my photographs.",
+    "photosAction": "Explore the photographs",
     "marketTitle": "Market Chart Atlas",
     "marketDescription": "Compare moving averages, MACD, RSI, and Bollinger Bands through formulas and real charts. Adjust periods to explore each method, its interpretation, and its limits.",
     "marketTopics": "MACD & RSI / Moving averages & Bollinger Bands / 12 real cases",
@@ -65,10 +78,13 @@
     "policyTitle": "Computing Policy Archive",
     "policyDescription": "A record of two secondments to MEXT and related committee work, with public sources on HPCI, post-K, and AI for Science.",
     "policyAction": "Explore the record",
-    "title": "Hiroshi Koyama | Writing, Learning, Research & Books",
+    "title": "Hiroshi Koyama | Portfolio",
     "skip": "Skip to portfolio",
-    "headline": "Exploring the cosmos, through words and code.",
-    "intro": "Rooted in astrophysics, my work connects essays on science, AI and life in research with learning resources built around equations and computation. Explore my published writing, books and research projects here.",
+    "headline": "Hiroshi Koyama",
+    "tagline": "Exploring the cosmos, through words and code.",
+    "heroProfile": "CV & research profiles",
+    "heroPhoto": "From my photographs",
+    "intro": "Astrophysics, writing and books, learning resources, and photographs. A portfolio of my work and activities.",
     "projects": "Learning & research",
     "astroField": "Astrophysics",
     "astroTitle": "Theoretical Astrophysics, Step by Step",
@@ -96,10 +112,10 @@
     "linkedin": "Background & profile",
     "researchgate": "Research & publications",
     "footer": "Hiroshi Koyama / 小山 洋",
-    "metaDescription": "The public portfolio of Hiroshi Koyama: essays on note, astrophysics and numerical methods resources, research archives, and Japanese-language Kindle books.",
+    "metaDescription": "Hiroshi Koyama’s portfolio: articles, astrophysics and numerical methods resources, research archives, books and photographs.",
     "heroAction": "Explore the portfolio",
     "portfolio": "Portfolio",
-    "portfolioNote": "Find a starting point in the writing, learning resources or books.",
+    "portfolioNote": "Explore the writing, learning resources, books and photographs.",
     "entryWriting": "Articles & essays",
     "entryWritingNote": "Science, AI and life in research, on note.",
     "entryResearch": "Learning & research",
@@ -122,7 +138,7 @@
     document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = strings[element.dataset.i18n]; });
     document.querySelectorAll('[data-lang]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.lang === lang)); });
     document.querySelectorAll('[data-project]').forEach(link => {
-      link.href = ({astro:'/astronomy-step-by-step/',numerical:'/numerical-methods-atlas/',policy:'/hpci-policy/',market:'/market-chart-atlas/'}[link.dataset.project]) + '?lang=' + lang;
+      link.href = ({astro:'/astronomy-step-by-step/',numerical:'/numerical-methods-atlas/',policy:'/hpci-policy/',market:'/market-chart-atlas/',photographs:'/photographs/'}[link.dataset.project]) + '?lang=' + lang;
     });
     document.querySelector('meta[name="description"]').content = strings.metaDescription;
     document.querySelector('meta[property="og:title"]').content = strings.title;

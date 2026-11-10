@@ -1,0 +1,166 @@
+{
+  "photographer": "Hiroshi Koyama",
+  "photos": [
+    {
+      "slug": "georgetown-flag",
+      "title": {
+        "ja": "星条旗のある街角",
+        "en": "A flag on a Georgetown street"
+      },
+      "place": "Georgetown, Washington, D.C.",
+      "date": "2008-04-19",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.003125,
+      "aperture": 5.3,
+      "iso": 200.0,
+      "focal_length_mm": 120.0,
+      "exposure_compensation_ev": 0.0,
+      "width": 1063,
+      "height": 1600,
+      "image": "../images/georgetown-flag.jpg",
+      "alt": {
+        "ja": "レンガの家と淡い緑の鎧戸、その間に掲げられた星条旗。",
+        "en": "An American flag between brickwork and pale green shutters."
+      },
+      "display_adjustment": "Subtle CSS tonal adjustment"
+    },
+    {
+      "slug": "flag-through-glass",
+      "title": {
+        "ja": "ガラス越しの街",
+        "en": "The city through glass"
+      },
+      "place": "Washington, D.C.",
+      "date": "2008-10-22",
+      "camera": "NIKON D40",
+      "exposure_seconds": 0.00625,
+      "aperture": 5.3,
+      "iso": 400,
+      "focal_length_mm": 82.0,
+      "exposure_compensation_ev": 0.0,
+      "width": 1600,
+      "height": 1061,
+      "image": "../images/flag-through-glass.jpg",
+      "alt": {
+        "ja": "ガラスの模様と映り込みの奥に見える星条旗。",
+        "en": "An American flag seen through patterns and reflections in glass."
+      },
+      "display_adjustment": "None"
+    },
+    {
+      "slug": "washington-metro",
+      "title": {
+        "ja": "地下に広がる幾何学",
+        "en": "Geometry underground"
+      },
+      "place": "Washington, D.C.",
+      "date": "2008-10-19",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.3333333333333333,
+      "aperture": 7.1,
+      "iso": 800.0,
+      "focal_length_mm": 10.5,
+      "exposure_compensation_ev": 0.0,
+      "width": 1063,
+      "height": 1600,
+      "image": "../images/washington-metro.jpg",
+      "alt": {
+        "ja": "ワシントンの地下鉄。格子状の天井とホームの駅名標識。",
+        "en": "A coffered ceiling and the platform sign in the Washington Metro."
+      },
+      "display_adjustment": "Subtle CSS tonal adjustment"
+    },
+    {
+      "slug": "kennedy-space-center",
+      "title": {
+        "ja": "大きな星条旗",
+        "en": "A flag on a different scale"
+      },
+      "place": "Kennedy Space Center, Florida",
+      "date": "2008-11-14",
+      "camera": "NIKON D40",
+      "exposure_seconds": 0.001,
+      "aperture": 5.6,
+      "iso": 320,
+      "focal_length_mm": 170.0,
+      "exposure_compensation_ev": 0.0,
+      "width": 1064,
+      "height": 1600,
+      "image": "../images/kennedy-space-center.jpg",
+      "alt": {
+        "ja": "宇宙センターの建物に大きく描かれた星条旗。",
+        "en": "A large American flag painted on a building at Kennedy Space Center."
+      },
+      "display_adjustment": "Subtle CSS tonal adjustment"
+    },
+    {
+      "slug": "washington-at-night",
+      "title": {
+        "ja": "夜の白い塔",
+        "en": "A white tower at night"
+      },
+      "place": "Washington, D.C.",
+      "date": "2008-10-29",
+      "camera": "NIKON D40",
+      "exposure_seconds": 0.3333333333333333,
+      "aperture": 5.0,
+      "iso": 1600,
+      "focal_length_mm": 22.0,
+      "exposure_compensation_ev": 0.0,
+      "width": 1600,
+      "height": 1064,
+      "image": "../images/washington-at-night.jpg",
+      "alt": {
+        "ja": "夜空に照らし出されたワシントン記念塔。",
+        "en": "The illuminated Washington Monument beneath the night sky."
+      },
+      "display_adjustment": "None"
+    },
+    {
+      "slug": "florida-palms",
+      "title": {
+        "ja": "南の街の光",
+        "en": "Light on a southern street"
+      },
+      "place": "Florida",
+      "date": "2007-08-26",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.0004,
+      "aperture": 5.6,
+      "iso": 400.0,
+      "focal_length_mm": 10.5,
+      "exposure_compensation_ev": 0.0,
+      "width": 1600,
+      "height": 1063,
+      "image": "../images/florida-palms.jpg",
+      "alt": {
+        "ja": "ヤシの並木と住宅地の入口に差す、強い日差し。",
+        "en": "Strong sunlight over palms at the entrance to a residential neighborhood."
+      },
+      "display_adjustment": "None"
+    },
+    {
+      "slug": "florida-coast",
+      "title": {
+        "ja": "砂丘の向こうへ",
+        "en": "Beyond the dunes"
+      },
+      "place": "Florida",
+      "date": "2007-08-26",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.0025,
+      "aperture": 9.0,
+      "iso": 200.0,
+      "focal_length_mm": 31.0,
+      "exposure_compensation_ev": 0.0,
+      "width": 1063,
+      "height": 1600,
+      "image": "../images/florida-coast.jpg",
+      "alt": {
+        "ja": "砂丘の草の向こうに広がる、青い海と波打ち際。",
+        "en": "Blue water and the shoreline beyond grasses on the dunes."
+      },
+      "display_adjustment": "None"
+    }
+  ]
+}

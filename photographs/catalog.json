@@ -1,0 +1,173 @@
+{
+  "photographer": "Hiroshi Koyama",
+  "photos": [
+    {
+      "slug": "white-bird",
+      "title": {
+        "ja": "水辺の白い鳥",
+        "en": "A white bird by the water"
+      },
+      "category": "Nature",
+      "date": "2008-11-15",
+      "camera": "NIKON D40",
+      "exposure_seconds": 0.00125,
+      "aperture": 5.6,
+      "iso": 400,
+      "focal_length_mm": 200.0,
+      "image": "images/white-bird.jpg",
+      "width": 1600,
+      "height": 1064,
+      "alt": {
+        "ja": "青い水面を背に、水辺に立つ白い鳥。",
+        "en": "A white bird standing beside blue water."
+      }
+    },
+    {
+      "slug": "sunflower-and-bee",
+      "title": {
+        "ja": "ひまわりと蜂",
+        "en": "Sunflower and bee"
+      },
+      "category": "Nature",
+      "date": "2006-07-22",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.0013333333333333333,
+      "aperture": 6.3,
+      "iso": 200,
+      "focal_length_mm": 60.0,
+      "image": "images/sunflower-and-bee.jpg",
+      "width": 1063,
+      "height": 1600,
+      "alt": {
+        "ja": "黄色いひまわりの花にとまる蜂。",
+        "en": "A bee on the yellow petals of a sunflower."
+      }
+    },
+    {
+      "slug": "evening-sky",
+      "title": {
+        "ja": "街と夕空",
+        "en": "City and evening sky"
+      },
+      "category": "Light & sky",
+      "date": "2026-02-28",
+      "camera": "NIKON Z 50",
+      "exposure_seconds": 0.5,
+      "aperture": null,
+      "iso": 100,
+      "focal_length_mm": null,
+      "image": "images/evening-sky.jpg",
+      "width": 1600,
+      "height": 1067,
+      "alt": {
+        "ja": "広角で見上げた街の建物と、青く暮れていく空。",
+        "en": "A wide-angle view of buildings and the blue evening sky."
+      }
+    },
+    {
+      "slug": "sunlit-clouds",
+      "title": {
+        "ja": "夕日に染まる雲",
+        "en": "Clouds in the evening light"
+      },
+      "category": "Light & sky",
+      "date": "2008-08-07",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.0025,
+      "aperture": 5.6,
+      "iso": 640,
+      "focal_length_mm": 200.0,
+      "image": "images/sunlit-clouds.jpg",
+      "width": 1600,
+      "height": 1063,
+      "alt": {
+        "ja": "木々の上で、夕日に淡く染まった雲。",
+        "en": "Clouds in warm evening light above the trees."
+      }
+    },
+    {
+      "slug": "georgetown-flag",
+      "title": {
+        "ja": "星条旗のある街角",
+        "en": "A flag on a Georgetown street"
+      },
+      "category": "Streets & architecture",
+      "date": "2008-04-19",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.003125,
+      "aperture": 5.3,
+      "iso": 200.0,
+      "focal_length_mm": 120.0,
+      "image": "images/georgetown-flag.jpg",
+      "width": 1063,
+      "height": 1600,
+      "alt": {
+        "ja": "レンガの家と淡い緑の鎧戸、その間の星条旗。",
+        "en": "An American flag between brickwork and pale green shutters."
+      }
+    },
+    {
+      "slug": "washington-metro",
+      "title": {
+        "ja": "地下に広がる幾何学",
+        "en": "Geometry underground"
+      },
+      "category": "Streets & architecture",
+      "date": "2008-10-19",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.3333333333333333,
+      "aperture": 7.1,
+      "iso": 800.0,
+      "focal_length_mm": 10.5,
+      "image": "images/washington-metro.jpg",
+      "width": 1063,
+      "height": 1600,
+      "alt": {
+        "ja": "ワシントンの地下鉄の格子状天井と駅名標識。",
+        "en": "A coffered ceiling and platform sign in the Washington Metro."
+      }
+    },
+    {
+      "slug": "telescope-dome",
+      "title": {
+        "ja": "観測の現場",
+        "en": "At the telescope"
+      },
+      "category": "Science",
+      "date": "2006-07-22",
+      "camera": "NIKON D2X",
+      "exposure_seconds": 0.0125,
+      "aperture": 2.8,
+      "iso": 800,
+      "focal_length_mm": 10.5,
+      "image": "images/telescope-dome.jpg",
+      "width": 1063,
+      "height": 1600,
+      "alt": {
+        "ja": "ドーム内に設置された望遠鏡と青い架台。",
+        "en": "A telescope and its blue mounting inside an observatory dome."
+      }
+    },
+    {
+      "slug": "washington-at-night",
+      "title": {
+        "ja": "夜の白い塔",
+        "en": "A white tower at night"
+      },
+      "category": "Light & sky",
+      "date": "2008-10-29",
+      "camera": "NIKON D40",
+      "exposure_seconds": 0.3333333333333333,
+      "aperture": 5.0,
+      "iso": 1600,
+      "focal_length_mm": 22.0,
+      "image": "images/washington-at-night.jpg",
+      "width": 1600,
+      "height": 1064,
+      "alt": {
+        "ja": "夜空に照らし出されたワシントン記念塔。",
+        "en": "The illuminated Washington Monument beneath the night sky."
+      }
+    }
+  ]
+}
