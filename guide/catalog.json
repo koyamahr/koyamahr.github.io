@@ -1,13 +1,36 @@
 [
-{"domain":"numerical","title":{"ja":"数値計算アトラス","en":"Numerical Methods Atlas"},"url":"https://koyamahr.github.io/numerical-methods-atlas/","description":{"ja":"方程式、離散化、実装、ベンチマークをたどる。衝撃波、流体、Poisson、時間積分、粒子法、有限要素法を学ぶ。","en":"Equations, discretization, implementation and benchmarks: shocks, fluids, Poisson, time integration, particle methods and finite elements."},"scope":{"ja":"教育用実装・限定的な検証・文献調査・開発予定が混在。各章の範囲を確認。量子化学・Hartree–Fock・DFTは今後の予定で専用実装は未着手。","en":"Contains educational implementations, limited verification, literature surveys and plans. Check each chapter. Quantum chemistry, Hartree–Fock and DFT are planned, with no dedicated implementation yet."},"keywords":"数値計算 アルゴリズム 計算 解法 numerical algorithm simulation"},
-{"domain":"astronomy","title":{"ja":"理論天文学の道具箱","en":"Theoretical Astrophysics, Step by Step"},"url":"https://koyamahr.github.io/astronomy-step-by-step/","description":{"ja":"高校数学から星の構造、放射、重力、チャンドラセカール質量、エディントン限界、一般相対論へ進む日英教材。式の導出や対話的なモデルを学ぶ。","en":"Bilingual lessons from school algebra to stellar structure, radiation, gravity, Chandrasekhar mass, Eddington limit and relativity. Derivations and interactive educational models."},"scope":{"ja":"近似・前提を限定した教育用教材。研究対象そのものの観測的検証を保証しない。","en":"Educational material with specific assumptions and approximations; not a guarantee of observational validation."},"keywords":"宇宙 天文 物理 astrophysics astronomy"},
-{"domain":"thermal","title":{"ja":"熱的不安定性の研究アーカイブ","en":"The Art of Thermal Instability"},"url":"https://koyamahr.github.io/the-art-of-thermal-instability/","description":{"ja":"星間ガスの冷たい相と暖かい相、Fieldの熱的不安定性、冷却・加熱、線形成長、伝導を論文・式・計算例からたどる。","en":"Interstellar cold and warm phases, Field thermal instability, cooling/heating, linear growth and conduction through papers, equations and numerical examples."},"scope":{"ja":"保存された計算例・試作・文献のみの項目を区別する。原論文の全結果を再現したという意味ではない。","en":"Distinguish saved computational examples, prototypes and literature-only entries. Not every result in the cited papers has been reproduced."},"keywords":"星間 熱的不安定 冷却 thermal instability cooling Field"},
-{"domain":"optics","title":{"ja":"光学系のギャラリー","en":"Optical Atlas"},"url":"https://koyamahr.github.io/optics/","description":{"ja":"対物レンズ、アイピース、写真レンズ、望遠鏡を模式図と公表仕様で比較。理想的な回折限界MTFを操作する日本語の図鑑。","en":"A Japanese atlas of objectives, eyepieces, camera lenses and telescopes: schematic layouts, published specifications and interactive ideal diffraction-limited MTF."},"scope":{"ja":"ここでは概要のみ索引。模式図は光線追跡ではなく、理想MTFは製品の実測性能ではない。","en":"Overview indexed only. Schematics are not ray tracing; ideal MTF does not measure actual product performance."},"keywords":"光学 レンズ 望遠鏡 optics telescope lens MTF"},
-{"domain":"archives","title":{"ja":"大学ノート","en":"College Notes"},"url":"https://koyamahr.github.io/college-notes/","description":{"ja":"学生時代の日本語自筆ノート43冊・1192ページ。数式や図をスキャン画像で読み返す。","en":"43 Japanese handwritten student notebooks, 1,192 scanned pages of equations and diagrams."},"scope":{"ja":"この案内は概要のみ。手書き本文の全文検索・OCRではない。","en":"Overview only; handwritten page contents are not OCR-indexed here."},"keywords":"大学 ノート 手書き handwritten notebooks"},
-{"domain":"archives","title":{"ja":"Academic Roots — 学術系譜","en":"Academic Roots"},"url":"https://koyamahr.github.io/academic-roots/","description":{"ja":"自分のLLMで学術的な師弟関係を調べ、JSONを貼り付けて出典を点検し、系図・画像を作る。","en":"Use your own LLM to research academic genealogy, paste JSON, review sources and create a tree or image. Japanese interface."},"scope":{"ja":"概要のみ索引。AIの回答は検証済みとは扱わず、本人による出典確認が必要。","en":"Overview only. AI responses are not treated as verified; users must check sources."},"keywords":"系図 師弟 genealogy academic roots"},
-{"domain":"archives","title":{"ja":"株価チャート・アトラス","en":"Market Chart Atlas"},"url":"https://koyamahr.github.io/market-chart-atlas/","description":{"ja":"移動平均、MACD、RSI、ボリンジャーバンドを実際のチャートと数式で比較する日英の教材。","en":"Compare moving averages, MACD, RSI and Bollinger Bands with historical charts and formulas in Japanese and English."},"scope":{"ja":"概要のみ索引。教育用の過去事例で、投資助言や戦略のバックテストではない。","en":"Overview only. Historical educational examples, not investment advice or a strategy backtest."},"keywords":"株価 投資 chart finance RSI MACD"},
-{"domain":"archives","title":{"ja":"計算科学政策の記録","en":"Computing Policy Archive"},"url":"https://koyamahr.github.io/hpci-policy/","description":{"ja":"文科省への出向、HPCI、ポスト京、AI for Scienceに関する公開資料と本人の関連業務をたどる。","en":"Public sources on MEXT secondments, HPCI, post-K and AI for Science, with the author's related work."},"scope":{"ja":"概要のみ索引。委員会の開催期間と本人の在任期間は別。","en":"Overview only. Committee timelines are distinct from the author's own tenure."},"keywords":"HPCI 政策 スパコン policy supercomputer"},
-{"domain":"writing","title":{"ja":"本・Kindle","en":"Books & Kindle"},"url":"https://koyamahr.github.io/books/","description":{"ja":"宇宙人マニュアル、ポスドクは投資しろ、理論天文学の道具箱 入門編。公開紹介と販売先への入口。","en":"Public book descriptions and purchase links: speculative alien physics, money for researchers and astrophysics. Books are in Japanese."},"scope":{"ja":"紹介情報のみ。販売中の書籍原稿や本文全体は含めない。","en":"Descriptions only; commercial book manuscripts and full contents are not included."},"keywords":"本 Kindle 書籍 book publication"},
-{"domain":"writing","title":{"ja":"記事・エッセイ（note）","en":"Articles & essays on note"},"url":"https://note.com/hr_koyama","description":{"ja":"科学、AI、研究者の暮らしについての日本語記事。","en":"Japanese articles on science, AI and life in research."},"scope":{"ja":"プロフィールへの入口のみ。noteの記事本文は収録していない。","en":"Profile entry only. Article bodies are not indexed."},"keywords":"note 記事 エッセイ essay writing"},
-{"domain":"photographs","title":{"ja":"写真ポートフォリオ","en":"Photographs"},"url":"https://koyamahr.github.io/photographs/","description":{"ja":"自然、空の光、街の形の代表作と、別ページのアメリカ写真集。","en":"Selected photographs of nature, light and city shapes, with a separate America collection."},"scope":{"ja":"概要のみ。写真の元データ・EXIF・位置情報は含めない。","en":"Overview only; originals, EXIF and location metadata are not included."},"keywords":"写真 アメリカ photography America"}
+  {
+    "domain": "numerical",
+    "title": {
+      "ja": "数値計算アトラス",
+      "en": "Numerical Methods Atlas"
+    },
+    "url": "https://koyamahr.github.io/numerical-methods-atlas/",
+    "description": {
+      "ja": "方程式、離散化、実装、ベンチマークをたどる。衝撃波、流体、Poisson、時間積分、粒子法、有限要素法を学ぶ。",
+      "en": "Equations, discretization, implementation and benchmarks: shocks, fluids, Poisson, time integration, particle methods and finite elements."
+    },
+    "scope": {
+      "ja": "教育用実装・限定的な検証・文献調査・開発予定が混在。各章の範囲を確認。量子化学・Hartree–Fock・DFTは今後の予定で専用実装は未着手。",
+      "en": "Contains educational implementations, limited verification, literature surveys and plans. Check each chapter. Quantum chemistry, Hartree–Fock and DFT are planned, with no dedicated implementation yet."
+    },
+    "keywords": "数値計算 アルゴリズム 計算 解法 numerical algorithm simulation"
+  },
+  {
+    "domain": "thermal",
+    "title": {
+      "ja": "熱的不安定性の研究アーカイブ",
+      "en": "The Art of Thermal Instability"
+    },
+    "url": "https://koyamahr.github.io/the-art-of-thermal-instability/",
+    "description": {
+      "ja": "星間ガスの冷たい相と暖かい相、Fieldの熱的不安定性、冷却・加熱、線形成長、伝導を論文・式・計算例からたどる。",
+      "en": "Interstellar cold and warm phases, Field thermal instability, cooling/heating, linear growth and conduction through papers, equations and numerical examples."
+    },
+    "scope": {
+      "ja": "保存された計算例・試作・文献のみの項目を区別する。原論文の全結果を再現したという意味ではない。",
+      "en": "Distinguish saved computational examples, prototypes and literature-only entries. Not every result in the cited papers has been reproduced."
+    },
+    "keywords": "星間 熱的不安定 冷却 thermal instability cooling Field"
+  }
 ]

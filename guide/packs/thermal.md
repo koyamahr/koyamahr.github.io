@@ -1,13 +1,13 @@
 # Hiroshi Koyama — public site knowledge pack
 
-Snapshot: 2026-11-11-793361854f
+Snapshot: 2026-11-11-9d74245461
 Captured (UTC): 2026-11-11T00:17:12+00:00
 
 For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamahr.github.io/rights/
 
 ## Coverage
 
-Numerical reading chapters, astronomy static pages and thermal-instability static pages: extracted public text (figures and interactive code omitted). Other works: curated overview only. Japanese drafts and English originals may differ. Mathematical rendering can be incomplete; consult the original. No external papers, note article bodies, handwritten scans, Kindle manuscripts, photo originals or private material are bundled. Not a claim that your LLM will read every entry.
+Only Numerical Methods Atlas reading chapters and Thermal Instability static pages: extracted public text (figures and interactive code omitted), plus two curated project overviews. Astrophysics lessons and other portfolio works are outside this guide. Japanese drafts and English originals may differ. Mathematical rendering can be incomplete; consult the original. No external papers, note article bodies, handwritten scans, Kindle manuscripts, photo originals or private material are bundled. Not a claim that your LLM will read every entry.
 
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. [en]

@@ -14,12 +14,9 @@ const aliases = [
  ['量子化学|dft|密度汎関数|hartree|ハートリー','quantum chemistry DFT Hartree roadmap planned'],
  ['ブラックホール|black hole|相対論|relativity','black hole Schwarzschild relativity'],
  ['白色矮星|チャンドラ|white dwarf|chandrasekhar','white dwarf Chandrasekhar'],
- ['レンズ|望遠鏡|mtf|optics','optics telescope lens MTF'],
- ['系図|師弟|genealogy','genealogy academic roots'],
- ['株価|macd|投資|stock','chart RSI MACD finance'],
  ['生物|biology|sir|反応拡散','biological SIR reaction diffusion survey'],
 ];
-const generic = /このサイト.*(できる|ある|使える)|what can.*(site|here)|what.*(resources|available)|サイト全体/i;
+const generic = /(このサイト|研究サイト).*(できる|ある|使える)|what can.*(site|here|research resources)|what.*(resources|available)|サイト全体/i;
 const stop=new Set('the a an of for and or to is are in on with how what can i want do this site please would like which should my be it を の に は が と で する したい です ます から ため どんな おすすめ 計算 できる'.split(' '));
 export function tokens(value) {
  const s=value.normalize('NFKC').toLowerCase();
@@ -33,7 +30,7 @@ export function tokens(value) {
  return [...new Set(out)].slice(0,100);
 }
 export function allowedURL(value){
- try {const u=new URL(value);return u.protocol==='https:' && !u.username&&!u.password&&((u.hostname==='koyamahr.github.io'&&!u.port)||(u.hostname==='note.com'&&u.pathname==='/hr_koyama'&&!u.search&&!u.hash));}catch{return false;}
+ try {const u=new URL(value);return u.protocol==='https:' && !u.username&&!u.password&&(u.hostname==='koyamahr.github.io'&&!u.port&&/^\/(numerical-methods-atlas|the-art-of-thermal-instability)\//.test(u.pathname));}catch{return false;}
 }
 export function makeEngine(data){
  const docs=data.records.filter(r=>allowedURL(r.url)).map(r=>({...r, terms:new Set(tokens(r.title+' '+r.section+' '+r.text+' '+(r.keywords||''))), titleTerms:new Set(tokens(r.title+' '+r.section+' '+(r.keywords||'')))}));
@@ -42,7 +39,7 @@ export function makeEngine(data){
   const q=query.trim().slice(0,2000), overview=!q||generic.test(q);
   let expanded=q;for(const [rule,extra] of aliases)if(new RegExp(rule,'i').test(q))expanded+=' '+extra;
   const terms=tokens(expanded), original=new Set(tokens(q));
-  const focus=/thermal instability|熱的不安定|星間ガス/i.test(q)?'thermal':/poisson|ポアソン|衝撃波|shock|weno|有限要素|時間積分|粒子法/i.test(q)?'numerical':/写真|photograph/i.test(q)?'photographs':/レンズ|望遠鏡|optics|mtf/i.test(q)?'optics':null;
+  const focus=/thermal instability|熱的不安定|星間ガス/i.test(q)?'thermal':/poisson|ポアソン|衝撃波|shock|weno|有限要素|時間積分|粒子法/i.test(q)?'numerical':null;
   const best=new Map();
   for(const d of docs){
    if(domain!=='all'&&d.domain!==domain)continue;

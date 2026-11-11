@@ -13,7 +13,6 @@ ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://koyamahr.github.io'
 DOMAINS = [
  ('numerical', '/numerical-methods-atlas/', '数値計算アトラス', 'Numerical Methods Atlas'),
- ('astronomy', '/astronomy-step-by-step/', '理論天文学の道具箱', 'Theoretical Astrophysics'),
  ('thermal', '/the-art-of-thermal-instability/', '熱的不安定性', 'Thermal Instability'),
 ]
 class Prose(HTMLParser):
@@ -84,7 +83,6 @@ def main():
     p=urllib.parse.urlparse(url)
     if p.netloc!='koyamahr.github.io' or not p.path.startswith(prefix):raise ValueError('Unexpected sitemap URL')
     if domain=='numerical' and not re.search(r'/(en|ja)/read/[^/]+/$',p.path):continue
-    if domain=='astronomy' and not re.search(r'/(en|ja)/',p.path):continue
     tasks.append((domain,url))
   def read(task):
    domain,url=task; html=fetch(url); parser=Prose();parser.feed(re.sub(r'(<\/?h)\s+([1-6])',r'\1\2',html));parser.flush();parser.title=parser.title or parser.documentTitle.strip()
@@ -98,6 +96,9 @@ def main():
   pages=[]; records=[]
   with ThreadPoolExecutor(max_workers=6) as pool:
    for page,rows in pool.map(read,tasks):pages.append(page);records.extend(rows)
+ allowed={d[0] for d in DOMAINS}
+ pages=[p for p in pages if p['domain'] in allowed]
+ records=[r for r in records if r['domain'] in allowed]
  notices={r['url'].split('#')[0]:r['text'].split('↗',1)[-1].strip() for r in records if r['domain']=='numerical' and r['text'].startswith('解説章ソースを見る')}
  records=[r for r in records if not (r['domain']=='numerical' and r['text'].startswith('解説章ソースを見る'))]
  for r in records:
@@ -113,7 +114,7 @@ def main():
   rows=[r for r in records if domain=='all' or r['domain']==domain]
   text='# Hiroshi Koyama — public site knowledge pack\n\nSnapshot: '+data['version']+'\nCaptured (UTC): '+stamp+'\n\n'
   text+='For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamahr.github.io/rights/\n\n'
-  text+='## Coverage\n\nNumerical reading chapters, astronomy static pages and thermal-instability static pages: extracted public text (figures and interactive code omitted). Other works: curated overview only. Japanese drafts and English originals may differ. Mathematical rendering can be incomplete; consult the original. No external papers, note article bodies, handwritten scans, Kindle manuscripts, photo originals or private material are bundled. Not a claim that your LLM will read every entry.\n\n'
+  text+='## Coverage\n\nOnly Numerical Methods Atlas reading chapters and Thermal Instability static pages: extracted public text (figures and interactive code omitted), plus two curated project overviews. Astrophysics lessons and other portfolio works are outside this guide. Japanese drafts and English originals may differ. Mathematical rendering can be incomplete; consult the original. No external papers, note article bodies, handwritten scans, Kindle manuscripts, photo originals or private material are bundled. Not a claim that your LLM will read every entry.\n\n'
   for r in rows:text+='## '+r['title']+(' — '+r['section'] if r['section'] else '')+' ['+r['lang']+']\n\nSource: '+r['url']+'\nCoverage: '+r['kind']+'\n'+('Source note: '+r['notice']+'\n' if r.get('notice') else '')+'\n'+r['text']+'\n\n'
   (ROOT/'guide/packs'/f'{domain}.md').write_text('\n'.join(line.rstrip() for line in text.splitlines()).rstrip()+'\n')
  print(json.dumps({'version':data['version'],'pages':len(pages),'chunks':len(records),'indexBytes':(ROOT/'guide/index.json').stat().st_size}))

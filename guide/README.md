@@ -4,14 +4,14 @@ Buildless, bilingual, client-side retrieval and manual handoff to the visitor's 
 
 ## Data and scope
 
-- `catalog.json`: curated bilingual descriptions and scope limits for 11 public works. Update these when a work's scope changes.
+- `catalog.json`: curated bilingual descriptions and scope limits for the two public research sites. Update these when a work's scope changes.
 - `index.json`: a versioned snapshot of extracted public text, source URLs and per-page SHA-256 hashes. No private paths or credentials.
 - `packs/*.md`: downloadable, source-linked knowledge packs derived from that same snapshot. Not a mirror of all content.
 - `search.mjs`: deterministic lexical retrieval with related-term expansion and explicit topic boosts; not semantic embeddings, model inference or scientific ranking. Translation-equivalent pages are collapsed; the best matching excerpt per page is shown. Results are capped at 14, selections at 6 and the handoff at 16,000 characters.
 - `app.mjs`: renders text with DOM textContent, not imported HTML. Questions are held in memory, never saved, logged, placed in a URL or sent by application code. Only the public index is fetched. The user decides whether to paste the prompt into another service. Host access logs still apply to ordinary page/asset requests.
 - No model, API key field, inference endpoint, embedding API, server process, analytics, third-party JS or runtime dependencies.
 
-Extracted text: numerical reading chapters, static astrophysics lessons and static thermal-instability pages. Other works are overview-only. No local manuscripts, handwritten originals, unpublished apps, EXIF/GPS or external paper bodies are read. Figure content and running experiments are not represented; mathematical/table extraction can be incomplete. Japanese translations may be drafts. Source pages remain authoritative for implementation/verification scope. Quantum chemistry/DFT is future work, not a dedicated implemented solver.
+Extracted text: Numerical Methods Atlas reading chapters and static Thermal Instability pages, plus two project overviews. Astrophysics lessons and other portfolio works are excluded. No local manuscripts, handwritten originals, unpublished apps, EXIF/GPS or external paper bodies are read. Figure content and running experiments are not represented; mathematical/table extraction can be incomplete. Japanese translations may be drafts. Source pages remain authoritative for implementation/verification scope. Quantum chemistry/DFT is future work, not a dedicated implemented solver.
 
 ## Refresh after public content changes
 
@@ -45,3 +45,5 @@ node --test scripts/guide.test.mjs scripts/research-model.test.mjs scripts/marke
 ```
 
 Checks cover bilingual overview, focused scientific retrieval, planned DFT status, missing terms and filters, bounded/source-linked export, untrusted-text serialization, source URL restrictions and public snapshot scope. Browser QA covers selection/copy, stale question handling, download, language changes, no-result behavior and responsive layout. It does not claim to evaluate a visitor's LLM or independently validate underlying scientific results.
+
+Scope decision (2026-11-11): keep this first research-consultation release focused on Numerical Methods Atlas and Thermal Instability. Astrophysics is a future expansion candidate; ordinary portfolio browsing remains in the works directory.
