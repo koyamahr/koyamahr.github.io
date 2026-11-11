@@ -12020,8 +12020,8 @@
     },
     {
       "path": "catalog.js",
-      "bytes": 170542,
-      "sha256": "0aa94159cee8ee35651f8ad77126bf33bcea83d8f34c672603ed6df5227ee854"
+      "bytes": 170667,
+      "sha256": "56d60552826c3714c4d5cfe88e9266f50059ac6e1e2a2f8ce38d94f0ec6b5a74"
     },
     {
       "path": "favicon.ico",
@@ -12036,7 +12036,7 @@
     {
       "path": "index.html",
       "bytes": 4450,
-      "sha256": "05e01a415e67120b495be8449f87cba50de8899596f5f2ca4134dd7e3150a5b0"
+      "sha256": "2dbc080c4ec0b8aa527682cbfe9f5eaa64bc916de63095afeef86ac3f7f240a6"
     },
     {
       "path": "library.css",
@@ -12051,7 +12051,7 @@
     {
       "path": "notebook.html",
       "bytes": 4693,
-      "sha256": "e52d6c14e7f17a46d5a1a6e600c7bddd3208b3a6c812494759ea730ba68a9f39"
+      "sha256": "880a853f0f563a4302d4c920604fe2815fc0de5f5fbfcb14f199c796a3b01bc1"
     },
     {
       "path": "notebook.js",
