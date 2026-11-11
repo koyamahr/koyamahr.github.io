@@ -1,0 +1,640 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-11-11",
+  "scope": "関連資料の書誌情報のみ。本文・スキャン画像・PDFは非公開。",
+  "entries": [
+    {
+      "id": "b001",
+      "source_ids": [
+        "n001"
+      ],
+      "title": "固体物理学演習 ― キッテルの理解を深めるために（改訂版）",
+      "creator": "沼居貴陽",
+      "kind": "書籍",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b002",
+      "source_ids": [
+        "n002",
+        "n003"
+      ],
+      "title": "流体力学 1・2",
+      "creator": "L. D. ランダウ／E. M. リフシッツ",
+      "kind": "書籍",
+      "note": "日本語版の２分冊。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b004",
+      "source_ids": [
+        "n004"
+      ],
+      "title": "場の古典論 ― 電気力学、特殊および一般相対性理論",
+      "creator": "L. D. ランダウ／E. M. リフシッツ",
+      "kind": "書籍",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b005",
+      "source_ids": [
+        "n005",
+        "n006"
+      ],
+      "title": "物理的運動学 1・2",
+      "creator": "E. M. リフシッツ／L. P. ピタエフスキー",
+      "kind": "書籍",
+      "note": "２分冊。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b007",
+      "source_ids": [
+        "n007"
+      ],
+      "title": "弾性理論（増補新版）",
+      "creator": "L. D. ランダウ／E. M. リフシッツ",
+      "kind": "書籍",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b008",
+      "source_ids": [
+        "n008"
+      ],
+      "title": "力学（増訂第3版）",
+      "creator": "L. D. ランダウ／E. M. リフシッツ",
+      "kind": "書籍",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b009",
+      "source_ids": [
+        "n009",
+        "n010"
+      ],
+      "title": "量子力学 ― 非相対論的理論 1・2",
+      "creator": "L. D. ランダウ／E. M. リフシッツ",
+      "kind": "書籍",
+      "note": "２分冊。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b011",
+      "source_ids": [
+        "n011"
+      ],
+      "title": "Sound（流体力学の章・抜粋）",
+      "creator": null,
+      "kind": "書籍",
+      "note": "見出しのみ確認。出典書籍と版は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b012",
+      "source_ids": [
+        "n012"
+      ],
+      "title": "Patterns for Parallel Programming",
+      "creator": "Timothy G. Mattson／Beverly Sanders／Berna Massingill",
+      "kind": "書籍",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": "https://www.informit.com/store/patterns-for-parallel-programming-9780132651189"
+    },
+    {
+      "id": "b013",
+      "source_ids": [
+        "n013"
+      ],
+      "title": "VPP FortranからHPFへ",
+      "creator": "荻野竜樹",
+      "kind": "記事",
+      "note": "名古屋大学大型計算機センターニュース Vol.31 No.4。",
+      "title_status": "identified",
+      "reference_url": "https://icts.nagoya-u.ac.jp/ja/center/pub/news90-02.html"
+    },
+    {
+      "id": "b014",
+      "source_ids": [
+        "n014",
+        "n015"
+      ],
+      "title": "大学演習 熱学・統計力学 ― 第5章「統計力学の原理」",
+      "creator": "久保亮五 編",
+      "kind": "書籍",
+      "note": "同じ章の２資料。章題・内容と出版社目次を照合。手元の版の確定は継続。",
+      "title_status": "identified",
+      "reference_url": "https://www.shokabo.co.jp/mybooks/ISBN978-4-7853-8032-8.htm"
+    },
+    {
+      "id": "b016",
+      "source_ids": [
+        "n016"
+      ],
+      "title": "数学コンチェルト ― 第1話「アイオロスの竪琴」",
+      "creator": "岡田康志",
+      "kind": "記事",
+      "note": "先頭記事の表題・著者を記載。後続記事の書誌は確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b017",
+      "source_ids": [
+        "n017"
+      ],
+      "title": "ハイレベル・ゼミ ― 基底としてのn進法",
+      "creator": "小島寛之",
+      "kind": "記事",
+      "note": "先頭記事の表題・著者を記載。後続記事の書誌は確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b018",
+      "source_ids": [
+        "n018"
+      ],
+      "title": "一数の広場 ― ax+by=cの整数解",
+      "creator": "雲孝夫",
+      "kind": "記事",
+      "note": "先頭記事の表題・著者を記載。後続記事の書誌は確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b019",
+      "source_ids": [
+        "n019"
+      ],
+      "title": "受験数学を超えて ― 対称行列の話",
+      "creator": "雲孝夫",
+      "kind": "記事",
+      "note": "先頭記事の表題・著者を記載。後続記事の書誌は確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b020",
+      "source_ids": [
+        "n020"
+      ],
+      "title": "放射線検出資料 ― GM計数管など",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "仮題。資料全体の正式な表題・著者は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b022",
+      "source_ids": [
+        "n022"
+      ],
+      "title": "課題演習 宇宙における微視的過程",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "副題：宇宙におけるX線と原子、電子との相互作用。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b023",
+      "source_ids": [
+        "n023"
+      ],
+      "title": "物理数学（1993後期）試験問題",
+      "creator": null,
+      "kind": "演習・試験",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b025",
+      "source_ids": [
+        "n025"
+      ],
+      "title": "Γ関数・Β関数",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "先頭の見出しを記載。資料全体の正式な表題は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b026",
+      "source_ids": [
+        "n026"
+      ],
+      "title": "特殊関数の性質",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "先頭の見出しを記載。資料全体の正式な表題は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b027",
+      "source_ids": [
+        "n027"
+      ],
+      "title": "物理数学特論レポート問題",
+      "creator": null,
+      "kind": "演習・試験",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b029",
+      "source_ids": [
+        "n029"
+      ],
+      "title": "物理数学演習問題（複素解析ほか）",
+      "creator": "藤原（姓のみ）",
+      "kind": "演習・試験",
+      "note": "先頭ページ余白の氏名を転記。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b030",
+      "source_ids": [
+        "n030"
+      ],
+      "title": "電磁気学演習",
+      "creator": "佐々（姓のみ）",
+      "kind": "演習・試験",
+      "note": "表題の「電磁気学演習（佐々）」から転記。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b036",
+      "source_ids": [
+        "n036"
+      ],
+      "title": "量子力学演習",
+      "creator": null,
+      "kind": "演習・試験",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b037",
+      "source_ids": [
+        "n037"
+      ],
+      "title": "統計熱力学演習 II",
+      "creator": null,
+      "kind": "演習・試験",
+      "note": "余白の氏名は判読保留。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b038",
+      "source_ids": [
+        "n038"
+      ],
+      "title": "統計熱力学演習2組レポート問題（2回目）",
+      "creator": null,
+      "kind": "演習・試験",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b046",
+      "source_ids": [
+        "n046",
+        "n047"
+      ],
+      "title": "一般相対論を使わない、電波天文学の立場から見た重力レンズ",
+      "creator": "出口修至",
+      "kind": "講義資料",
+      "note": "前半の表題で確認。同題の連続資料をまとめて記載。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b048",
+      "source_ids": [
+        "n048"
+      ],
+      "title": "原子核関連の配布資料",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "仮題。資料全体の正式な表題・著者は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b050",
+      "source_ids": [
+        "n050"
+      ],
+      "title": "原子核物理学（1993前期）レポートについて",
+      "creator": "玉垣（姓のみ）",
+      "kind": "演習・試験",
+      "note": "提出先欄の教員姓を記載。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b052",
+      "source_ids": [
+        "n052"
+      ],
+      "title": "銀河天文学特論 II 課題レポート",
+      "creator": "千葉柾司",
+      "kind": "演習・試験",
+      "note": "提出先欄で氏名を確認。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b053",
+      "source_ids": [
+        "n053"
+      ],
+      "title": "膨張宇宙における構造形成",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "先頭の章見出しを記載。資料全体の正式な表題は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b055",
+      "source_ids": [
+        "n055"
+      ],
+      "title": "実験物理学B レポート問題",
+      "creator": "中村（姓のみ）",
+      "kind": "演習・試験",
+      "note": "表題の「実験物理学B（中村）」から転記。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b059",
+      "source_ids": [
+        "n059"
+      ],
+      "title": "ニュートリノ関連の配布資料",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "仮題。資料全体の正式な表題・著者は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b069",
+      "source_ids": [
+        "n069"
+      ],
+      "title": "論理回路・ゲート関連資料",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "仮題。先頭のゲート一覧を確認。メーカーや資料全体の著者は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b071",
+      "source_ids": [
+        "n071"
+      ],
+      "title": "近代物理学1 前期試験問題（1989年度）",
+      "creator": "小玉（姓のみ）",
+      "kind": "演習・試験",
+      "note": "担当教官欄で確認。後続資料は個別確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b073",
+      "source_ids": [
+        "n073"
+      ],
+      "title": "電磁気学 試験問題（1992年度後期）",
+      "creator": "笹尾（姓のみ）",
+      "kind": "演習・試験",
+      "note": "先頭試験問題の氏名を記載。後続資料は個別確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b076",
+      "source_ids": [
+        "n076"
+      ],
+      "title": "Maxwell方程式",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "先頭見出しのみ確認。文中のJ. C. Maxwellを資料の著者とは扱わない。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b077",
+      "source_ids": [
+        "n077"
+      ],
+      "title": "Advanced General Relativity",
+      "creator": "John Stewart",
+      "kind": "書籍",
+      "note": "出版情報ページで著者・書名を確認。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b078",
+      "source_ids": [
+        "n078"
+      ],
+      "title": "Physics at Dynamical Stages of Stellar Evolution",
+      "creator": "S. I. Blinnikov",
+      "kind": "講義資料",
+      "note": "講義案内の表題・講師名で確認。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b079",
+      "source_ids": [
+        "n079"
+      ],
+      "title": "一般相対論的MHDコードの概要とその応用例",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "引用文献の著者と、資料自体の作成者を区別。作成者は未確認。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b084",
+      "source_ids": [
+        "n084"
+      ],
+      "title": "Celestial Mechanics and Stellar Dynamics",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b088",
+      "source_ids": [
+        "n088"
+      ],
+      "title": "場の量子論・演習問題",
+      "creator": null,
+      "kind": "演習・試験",
+      "note": "内容を示す仮題。正式な表題・作成者は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b089",
+      "source_ids": [
+        "n089"
+      ],
+      "title": "カオス科学の基礎と展開 ― 複雑系の理解に向けて",
+      "creator": "井上政義／秦浩起",
+      "kind": "書籍",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b091",
+      "source_ids": [
+        "n091"
+      ],
+      "title": "星間物理学 ― References for Interstellar Medium",
+      "creator": "中川貴雄",
+      "kind": "講義資料",
+      "note": "先頭の文献案内の表題・氏名で確認。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b092",
+      "source_ids": [
+        "n092",
+        "n093"
+      ],
+      "title": "星の進化",
+      "creator": "中村卓史",
+      "kind": "講義資料",
+      "note": "同じ講義予定を持つ２資料をまとめて記載。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b095",
+      "source_ids": [
+        "n095"
+      ],
+      "title": "原始ガス雲の分裂と星形成",
+      "creator": "大向一行",
+      "kind": "論文",
+      "note": "修士論文。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b096",
+      "source_ids": [
+        "n096"
+      ],
+      "title": "部分電離イオンのオパシティー",
+      "creator": "山田章一",
+      "kind": "講義資料",
+      "note": "",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b097",
+      "source_ids": [
+        "n097"
+      ],
+      "title": "降着円盤における磁気回転不安定性",
+      "creator": "佐野孝好",
+      "kind": "論文",
+      "note": "修士論文。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b099",
+      "source_ids": [
+        "n099"
+      ],
+      "title": "パルサー・宇宙線・活動銀河中心核関連の講義資料",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "仮題。先頭の項目一覧を記載。作成者は未確認。",
+      "title_status": "tentative",
+      "reference_url": null
+    },
+    {
+      "id": "b100",
+      "source_ids": [
+        "n100",
+        "n101",
+        "n107",
+        "n108"
+      ],
+      "title": "宇宙磁場観測法",
+      "creator": "田村元秀",
+      "kind": "講義資料",
+      "note": "前後２分冊のTIFF・PDF版をまとめて記載。前半の表題・講師名で確認。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b102",
+      "source_ids": [
+        "n102"
+      ],
+      "title": "輻射流体力学の定式化",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "表題を確認。講師名の手書き記載は判読保留。",
+      "title_status": "identified",
+      "reference_url": null
+    },
+    {
+      "id": "b103",
+      "source_ids": [
+        "n103"
+      ],
+      "title": "研究者としてのノウハウ論",
+      "creator": null,
+      "kind": "講義資料",
+      "note": "先頭の表題を記載。後続資料の表題・著者は確認中。",
+      "title_status": "identified",
+      "reference_url": null
+    }
+  ]
+}
