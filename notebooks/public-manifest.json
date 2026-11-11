@@ -12020,18 +12020,18 @@
     },
     {
       "path": "bibliography.html",
-      "bytes": 27726,
-      "sha256": "4ddba0b834c41fab0661e64f745c0ed01aee271257506224a6b576a09b98f0a7"
+      "bytes": 27718,
+      "sha256": "262c950871a78e3a550ea46961a31328610863581ecfb464a9280fc88181a0f5"
     },
     {
       "path": "bibliography.json",
-      "bytes": 17691,
-      "sha256": "7ce5f1e14177b2568dc6ef482b57b874e2905e5fefa8dc655fdad850e642a895"
+      "bytes": 18244,
+      "sha256": "146bcb4d98edc60d6b4c92c388576187464056bf7733dd55accfe7cb720dd69f"
     },
     {
       "path": "catalog.js",
-      "bytes": 172034,
-      "sha256": "9cd708b9b23a74edd35face7c61b7ba16fa8603c097066192db67927e9c28d4a"
+      "bytes": 172440,
+      "sha256": "f474654ee9fd822191d63c4749815feb154e6d26d331e4623f9e5e48cc793e83"
     },
     {
       "path": "favicon.ico",
@@ -12046,7 +12046,7 @@
     {
       "path": "index.html",
       "bytes": 4922,
-      "sha256": "7d11982b5a257c94d104addc8b27f81cf79d5b114a85e844b4d5280910f7d788"
+      "sha256": "185932bd6a0562972adf924c4205e9bbafb45189bf80177cc2d05a45ee900f68"
     },
     {
       "path": "library.css",
@@ -12061,7 +12061,7 @@
     {
       "path": "notebook.html",
       "bytes": 4693,
-      "sha256": "5d6d14986f2ec0a7afaff4f02d8038cb21d297dcb3e20d88cccb983664fa282a"
+      "sha256": "5ffe763f92d7663540e570ea6c8d544993e507a0ea50adbd5d4be00a0d6099c0"
     },
     {
       "path": "notebook.js",

@@ -301,11 +301,15 @@
         "n037"
       ],
       "title": "統計熱力学演習 II",
-      "creator": null,
+      "creator": "矢彦澤茂明",
       "kind": "演習・試験",
-      "note": "余白の氏名は判読保留。",
+      "note": "講師名は所蔵者の確認（2026年11月11日）。",
       "title_status": "identified",
-      "reference_url": null
+      "reference_url": null,
+      "creator_source": {
+        "type": "owner_confirmation",
+        "confirmed_on": "2026-11-11"
+      }
     },
     {
       "id": "b038",
@@ -446,11 +450,15 @@
         "n076"
       ],
       "title": "Maxwell方程式",
-      "creator": null,
+      "creator": "恒藤敏彦",
       "kind": "講義資料",
-      "note": "先頭見出しのみ確認。文中のJ. C. Maxwellを資料の著者とは扱わない。",
+      "note": "先頭見出しを記載。著者名は所蔵者の確認（2026年11月11日）。",
       "title_status": "identified",
-      "reference_url": null
+      "reference_url": null,
+      "creator_source": {
+        "type": "owner_confirmation",
+        "confirmed_on": "2026-11-11"
+      }
     },
     {
       "id": "b077",
@@ -618,11 +626,15 @@
         "n102"
       ],
       "title": "輻射流体力学の定式化",
-      "creator": null,
+      "creator": "梅村雅之",
       "kind": "講義資料",
-      "note": "表題を確認。講師名の手書き記載は判読保留。",
+      "note": "表題を確認。講師名は所蔵者の確認（2026年11月11日）。",
       "title_status": "identified",
-      "reference_url": null
+      "reference_url": null,
+      "creator_source": {
+        "type": "owner_confirmation",
+        "confirmed_on": "2026-11-11"
+      }
     },
     {
       "id": "b103",
@@ -630,11 +642,15 @@
         "n103"
       ],
       "title": "研究者としてのノウハウ論",
-      "creator": null,
+      "creator": "渡部潤一",
       "kind": "講義資料",
-      "note": "先頭の表題を記載。後続資料の表題・著者は確認中。",
+      "note": "先頭資料の著者名は所蔵者の確認（2026年11月11日）。後続資料の表題・著者は確認中。",
       "title_status": "identified",
-      "reference_url": null
+      "reference_url": null,
+      "creator_source": {
+        "type": "owner_confirmation",
+        "confirmed_on": "2026-11-11"
+      }
     }
   ]
 }
