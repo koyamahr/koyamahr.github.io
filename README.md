@@ -2,7 +2,7 @@
 
 Personal project index: **https://koyamarium.github.io/**
 
-The homepage is a compact public portfolio: a short author introduction and one photograph, four direct entry points (**Articles & essays**, **Learning & research**, **Books**, and **Photographs**), compact research-profile links and the contact form. Articles lead to the public note profile, Koyamax (`https://note.com/hr_koyama`); the English entry explicitly labels those articles as Japanese. The language switch translates portfolio introductions, not the external note articles. In English the entry order is learning/research, books, photographs, then Japanese articles; Japanese retains articles first. Displayed numbers and keyboard order follow the selected language. Learning and research lead to `/research/`, which lists eight published resources and web works, including the projects below:
+The homepage is a compact public portfolio: a short author introduction and one photograph, four direct entry points (**Articles & essays**, **Learning & research**, **Books**, and **Photographs**), compact research-profile links and the public contact email. Articles lead to the public note profile, Koyamax (`https://note.com/hr_koyama`); the English entry explicitly labels those articles as Japanese. The language switch translates portfolio introductions, not the external note articles. In English the entry order is learning/research, books, photographs, then Japanese articles; Japanese retains articles first. Displayed numbers and keyboard order follow the selected language. Learning and research lead to `/research/`, which lists eight published resources and web works, including the projects below:
 
 - [Theoretical Astrophysics, Step by Step](https://koyamarium.github.io/astronomy-step-by-step/)
 - [An Atlas of Numerical Methods](https://koyamarium.github.io/numerical-methods-atlas/)
@@ -41,7 +41,7 @@ The site hosts cover images and descriptions; reading samples are reached throug
 
 ## Homepage editing
 
-The final `#contact` section links to a Google Form in a new tab. Japanese and English introductions follow the language switch, with a usable Japanese link without JavaScript. The form asks for a required reply email, a required message, and an optional name. The owner's destination email is absent from the public HTML, JavaScript and link. The form's response summary is disabled and owner email notifications are enabled. The owner approved public responses from anyone with the link. The form was activated and a signed-out test submission reached the confirmation page. To suspend contact intake, use the form editor’s published/response settings to stop accepting responses; the website link can remain in place or be removed.
+The final `#contact` section displays the public address `koyamarium@gmail.com` and links directly to `mailto:koyamarium@gmail.com`. Japanese and English copy explain that the visitor’s email application opens. Keep the default Japanese HTML and the translations in `home.js` synchronized.
 
 Edit `index.html`, `research/index.html`, `home.css`, and `home.js`. Both pages share the paper-and-ink style and Japanese/English text in the `copy` object. Keep default Japanese HTML in sync so the page and all destinations work without JavaScript. Add new learning resources and public web works to `/research/`; keep the homepage's four category links compact. Unreleased apps stay private.
 
