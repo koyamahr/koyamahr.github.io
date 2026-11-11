@@ -1,0 +1,14294 @@
+# Hiroshi Koyama — public site knowledge pack
+
+Snapshot: 2026-11-11-793361854f
+Captured (UTC): 2026-11-11T00:17:12+00:00
+
+For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamahr.github.io/rights/
+
+## Coverage
+
+Numerical reading chapters, astronomy static pages and thermal-instability static pages: extracted public text (figures and interactive code omitted). Other works: curated overview only. Japanese drafts and English originals may differ. Mathematical rendering can be incomplete; consult the original. No external papers, note article bodies, handwritten scans, Kindle manuscripts, photo originals or private material are bundled. Not a claim that your LLM will read every entry.
+
+## A-stability, L-stability and error norms — A-stability, L-stability and error norms [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/
+Coverage: reading
+
+A-stability and L-stability describe the response of a time integrator to
+linear decay modes. L1, L2 and L∞ instead describe the size and distribution
+of an error. They answer different questions. A method can be stable with a
+large error, and a small algebraic residual need not imply a small PDE error.
+
+## A-stability, L-stability and error norms — A-stability concerns the whole left half-plane# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#a-stability-concerns-the-whole-left-half-plane
+Coverage: reading
+
+Apply a one-step method to y′=λy, with z=λΔt. Its stability function satisfies
+y_{n+1}=R(z)y_n,\qquad
+\mathcal S=\{z\in\mathbb C:|R(z)|\leq1\}.
+The method is A-stable if its absolute-stability region contains the entire
+closed left half-plane. In particular, R must have no pole there. Thus a
+scalar mode with Re λ≤0 does not grow for any positive step size in this test.
+Dahlquist (1963) is a foundational
+A-stability reference in the linear-multistep setting. The one-step notation
+here is used to make the comparison transparent.
+Forward Euler, R(z)=1+z, is stable on the negative real axis only for
+−2≤z≤0. No consistent explicit RK method is A-stable: its nonconstant
+stability polynomial is unbounded along the negative real axis.
+Being implicit alone does not guarantee A-stability.
+
+## A-stability, L-stability and error norms — L-stability also damps infinitely stiff modes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#l-stability-also-damps-infinitely-stiff-modes
+Coverage: reading
+
+An L-stable one-step method is A-stable and satisfies
+\lim_{|z|\to\infty,\;\operatorname{Re}z<0}R(z)=0.
+This extra property damps modes that are much faster than the chosen step.
+Backward Euler has R(z)=1/(1−z), so it is both A-stable and L-stable.
+Crank–Nicolson / the trapezoidal rule has
+R_{CN}(z)=\frac{1+z/2}{1-z/2},\qquad
+\lim_{z\to-\infty}R_{CN}(z)=-1.
+It is A-stable but not L-stable: very stiff negative-real modes alternate
+sign and decay only slowly. Implicit midpoint has the same scalar linear
+R(z), although its nonlinear update is different from the trapezoidal rule.
+For z=−1000, backward Euler gives about 0.001 in one step, while CN gives
+about −0.996; the exact factor is exp(−1000).
+For the implemented SDIRK2,
+\gamma=1-1/\sqrt2,\qquad
+R(z)=\frac{1+(1-2\gamma)z}{(1-\gamma z)^2}.
+Its poles are in the right half-plane, it is A-stable and its large-z limit
+is zero. This is the L-stable two-stage family associated with
+Alexander (1977).
+BDF2 is a two-step method: analyze its characteristic roots and parasitic
+mode, rather than assigning it an arbitrary single-valued R(z).
+These are linear absolute-stability statements. Accuracy, nonlinear
+contractivity, SSP/TVD inheritance, positivity and boundary stability require
+their own checks. Eigenvalues alone can also miss transient growth of
+nonnormal operators. An A-stable time step cannot repair an inconsistent
+
+## A-stability, L-stability and error norms — L-stability also damps infinitely stiff modes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#l-stability-also-damps-infinitely-stiff-modes
+Coverage: reading
+
+spatial discretization, and L-stability cannot make an underresolved transient
+accurate.
+
+## A-stability, L-stability and error norms — Continuous L1, L2 and L∞ errors# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#continuous-l1-l2-and-l-errors
+Coverage: reading
+
+For scalar error e(x)=u_h(x)−u_ref(x) on a domain Ω,
+\|e\|_{L^1}=\int_\Omega |e|\,dV,\qquad
+\|e\|_{L^2}=\left(\int_\Omega |e|^2\,dV\right)^{1/2},\qquad
+\|e\|_{L^\infty}=\operatorname*{ess\,sup}_{x\in\Omega}|e(x)|.
+L1 measures integrated absolute error. L2 emphasizes larger deviations more
+strongly. L∞ measures the worst error apart from measure-zero sets. For a
+continuous error on a compact domain, the essential supremum equals the maximum.
+For discontinuous solutions, the value assigned exactly at a jump does not
+change the continuous norm.
+For a domain with volume V, mean absolute error is L1/V and RMS error is
+L2/√V. These normalized quantities have the same physical units as u;
+unnormalized integral norms also contain powers of length. State the convention
+before comparing domains of different size.
+
+## A-stability, L-stability and error norms — Discrete weights and the reference representation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#discrete-weights-and-the-reference-representation
+Coverage: reading
+
+For finite-volume error e_i between a numerical cell mean and a reference cell
+mean, with positive cell volumes V_i,
+E_1=\sum_iV_i|e_i|,\qquad
+E_2=\left(\sum_iV_i|e_i|^2\right)^{1/2},\qquad
+E_\infty=\max_i|e_i|.
+On a uniform grid, V_i=h^d. On the unit interval, these become mean absolute
+error, RMS error and maximum cell-mean error. On a nonuniform mesh, an unweighted
+arithmetic mean generally gives the wrong spatial weighting. For e=(1,3) and
+cell volumes (0.75,0.25), E1=1.5, E2=√3 and E∞=3; unweighted means disagree.
+The Euclidean vector norm np.linalg.norm(e) omits the h^(d/2) factor of a
+physical discrete L2 norm. Comparing that raw norm across meshes can therefore
+change an apparent convergence exponent. Relative error E_p/||u_ref||_p needs
+a stated reference norm; when the denominator is zero, it is undefined. Any
+regularization must be explicitly reported.
+A reference at cell centers is not an exact cell-average reference. DG and FEM
+need reconstruction and quadrature inside elements; a coefficient-vector
+norm is not automatically a function L2 norm. Likewise, a maximum over sample
+points is a sampled L∞ diagnostic, not necessarily the exact supremum of a
+high-order reconstructed field. Vector components with different units should
+be reported separately or nondimensionalized with stated scales.
+
+## A-stability, L-stability and error norms — Convergence, shocks and algebraic residuals# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#convergence-shocks-and-algebraic-residuals
+Coverage: reading
+
+For matched runs at the same physical time and error convention, the observed
+order is
+p_{obs}=\frac{\log(E_{coarse}/E_{fine})}{\log(h_{coarse}/h_{fine})}.
+Temporal error, reference error, quadrature error, roundoff and incomplete
+iterative convergence can mask spatial order. Refine time separately, or state
+how Δt scales with h. Adaptive ODE tolerance is a local, component-scaled error
+control; it is not a global spatial L2 error bound.
+Different norms can behave differently near shocks. For example, an O(1)
+error supported on width O(h) has L1=O(h), L2=O(√h) and L∞=O(1). This simple
+scaling is not a universal convergence-rate claim for a shock solver. A useful
+L1 refinement result need not imply maximum-norm convergence of a shifted jump.
+For Ax=b, the residual is r=b−Ax. The solution error satisfies
+x_num−x_exact=−A^(−1)r, so conditioning matters. An algebraic residual compares
+against the discrete equation; discretization error compares that equation's
+solution against the continuous problem. See sparse/nonlinear solvers
+and the Lax–Richtmyer discussion.
+
+## A-stability, L-stability and error norms — Where the atlas reports each quantity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#where-the-atlas-reports-each-quantity
+Coverage: reading
+
+The equation gallery reports L1/MAE, L2/RMS and
+L∞ over its stored unit-interval profiles. Its labels retain the distinction
+between exact cell means, point-sampled Euler references and absent references.
+The browser stability laboratory has a point-sampled
+L1/MAE diagnostic and amplification factors; it does not thereby measure
+a reconstructed finite-volume function norm.
+P1 FEM integrates L2 and H1 seminorm errors inside triangles.
+Periodic MAC flow reports a combined velocity RMS error
+and maximum absolute discrete divergence. These are different diagnostics.
+Stiff integration reports maximum error over accepted
+time nodes, separate from nonlinear stage residuals and local step estimates.
+Original exhibits keep their documented conventions; this chapter does not
+retroactively relabel point samples as cell averages or certify a missing
+maximum-norm calculation.
+
+## A-stability, L-stability and error norms — Where the atlas reports each quantity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/accuracy-stability/#where-the-atlas-reports-each-quantity
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Advanced limiters: TVB and positivity preservation — Advanced limiters: TVB and positivity preservation [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/
+Coverage: reading
+
+The limiter notebook
+includes a TVB scalar experiment and a separate conservative Euler-state
+scaling demonstration. These address different failure modes: loss of accuracy
+near a smooth extremum and inadmissible thermodynamic states.
+
+## Advanced limiters: TVB and positivity preservation — TVB modified minmod# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#tvb-modified-minmod
+Coverage: reading
+
+For a candidate increment v and neighboring increments a and b, define
+\widetilde m(v,a,b)=
+\begin{cases}
+v,&|v|\le M\Delta x^2,\\
+m(v,a,b),&\text{otherwise},
+\end{cases}
+where m is the generalized minmod: the smallest magnitude with a shared sign,
+and zero when signs disagree. Our scalar demonstration chooses v=(a+b)/2.
+At M=0 this reduces to the two-increment minmod used in the TVD experiment.
+At M>0 sufficiently small increments survive even when the neighboring slopes
+have opposite signs, permitting a smooth peak to remain curved.
+The dx-squared threshold reflects the scale of smooth-extremum face
+deviations in the RKDG setting. Its coefficient has units of solution divided
+by length squared; it is not a universal dimensionless constant. Rescaling the
+dependent variable or coordinates requires reconsidering M. Increments and
+derivatives require different thresholds.
+Cockburn and Shu (1989)
+develop the TVB RKDG framework. This edition implements the modified-minmod
+building block in scalar finite volumes, rather than that full RKDG method
+or its theorem. The notebook computes M=0,10,50 on both the sine and square
+pulse. Compare errors and measured maximum TV: allowing small extrema means
+TV need not decrease at every step, and a large M can also admit small
+oscillations beside a discontinuity. Changing M does not prove a uniform TVB
+
+## Advanced limiters: TVB and positivity preservation — TVB modified minmod# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#tvb-modified-minmod
+Coverage: reading
+
+bound for an arbitrary method. No Euler-system TVB extension is implemented.
+
+## Advanced limiters: TVB and positivity preservation — Positive density and pressure are different constraints# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#positive-density-and-pressure-are-different-constraints
+Coverage: reading
+
+For ideal-gas conservative variables U=(rho,m,E),
+p(U)=(\gamma-1)\left(E-\frac{|m|^2}{2\rho}\right),\qquad
+\mathcal G=\{U:\rho>0,\ p(U)>0\}.
+Positive density alone does not ensure positive internal energy. TVD, TVB,
+an entropy fix, and the absence of visible wiggles do not automatically make
+Euler states admissible. A negative pressure can arise from excessive kinetic
+energy even when rho and E are positive.
+
+## Advanced limiters: TVB and positivity preservation — A mean-preserving scaling building block# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#a-mean-preserving-scaling-building-block
+Coverage: reading
+
+Start with an admissible conservative cell average Ubar. Scale every supplied
+reconstruction point by the same factor:
+\widehat U_\alpha=\bar U+\theta(U_\alpha-\bar U),\qquad 0\le\theta\le1.
+If the original points have quadrature mean Ubar, the scaled points retain it.
+Using a single theta across components and points is essential to this
+particular construction. Clipping rho, pressure, or total energy independently
+does not have that conservation property.
+First bound theta by the minimum reconstructed density:
+\theta_\rho=\min\left(1,
+\frac{\bar\rho-\epsilon_\rho}{\bar\rho-\rho_{\min}}\right)
+\quad\text{if }\rho_{\min}<\epsilon_\rho;
+\qquad\theta_\rho=1\text{ otherwise}.
+Then shrink theta in [0,theta_rho] until every supplied point also satisfies
+p(Uhat) ≥ epsilon_p. Ideal-gas pressure is concave for positive density, so
+the admissible part of this line segment contains the mean and can be found
+by bisection. The implementation uses 64 iterations and a small roundoff
+retreat. Density and pressure floors are input parameters, not inserted mass
+or energy. Inadmissible averages raise an error; scaling around a bad mean
+cannot repair conservation and positivity together in this way.
+This follows the convex-scaling idea of
+Zhang and Shu (2010), with a
+deliberately simple common-state scaling and numerical pressure search. It is
+
+## Advanced limiters: TVB and positivity preservation — A mean-preserving scaling building block# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#a-mean-preserving-scaling-building-block
+Coverage: reading
+
+not a line-by-line reproduction of their two-stage density-polynomial and
+state limiter. The implementation covers the supplied points only; arbitrary
+polynomial values between those points are not automatically bounded.
+
+## Advanced limiters: TVB and positivity preservation — What the demonstration actually verifies# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#what-the-demonstration-actually-verifies
+Coverage: reading
+
+The three-node cell has xi=-1,0,1, positive Gauss–Lobatto weights
+(1/6,2/3,1/6), gamma=1.4, and Ubar=(1,0,2.5). The raw states are
+Ubar + xi times delta. Choose delta=(1.2,0,0) for a density violation,
+(0,3,0) for a pressure violation, or (1.2,3,1) for a combined violation.
+Their weighted mean is exactly Ubar in real arithmetic. The plot samples only
+these three nodes and reports theta, minimum limited density, minimum limited
+pressure, and the conservative mean defect, with epsilon_rho=epsilon_p=1e-8.
+These are constructed reconstruction tests, not blast-wave or rarefaction
+time integrations.
+import numpy as np
+from numart.limiters import positive_reconstruction
+mean = np.array([1., 0., 2.5])
+raw = mean + np.array([-1., 0., 1.])[:, None] * [0., 3., 0.]
+limited, theta = positive_reconstruction(mean, raw)
+Tests check that an already admissible reconstruction is unchanged, bad means
+are rejected, and both floors and conservative quadrature means survive the
+three failure cases.
+
+## Advanced limiters: TVB and positivity preservation — From reconstruction to a fully discrete guarantee# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#from-reconstruction-to-a-fully-discrete-guarantee
+Coverage: reading
+
+A complete positivity-preserving Euler method also needs a compatible
+positivity-preserving numerical flux, positive quadrature decomposition
+including interface states, a corresponding wave-speed/CFL restriction, and
+limiting at all required stages. SSP time stepping propagates a forward-Euler
+positivity property only when that property and its step restriction already
+hold. Source terms and boundary treatment require their own checks.
+This helper is not wired into the existing Euler MUSCL, finite-difference
+WENO, CT/GLM, or KEEP time updates. Those solvers retain their documented
+limitations. A future complete implementation should add stage-by-stage
+admissibility and conservation checks, near-vacuum double rarefaction, and
+strong blast-wave tests before claiming positivity preservation over time.
+Multidimensional and non-ideal-EOS extensions need additional analysis.
+
+## Advanced limiters: TVB and positivity preservation — From reconstruction to a fully discrete guarantee# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced-limiters/#from-reconstruction-to-a-fully-discrete-guarantee
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Preconditioning, dual time stepping, and residual distribution — Condition numbers and PDE preconditioning# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#condition-numbers-and-pde-preconditioning
+Coverage: reading
+
+For Ax=b, the 2-norm condition number is κ₂(A)=σmax/σmin. It measures
+sensitivity to perturbations rather than the convergence rate of a particular
+iteration. Left preconditioning gives P^{-1}Ax=P^{-1}b; right preconditioning
+gives AP^{-1}y=b, x=P^{-1}y. For symmetric positive-definite systems,
+P^{-1/2}AP^{-1/2} supports symmetry-preserving comparisons.
+conditioning_example constructs A=S B S, where B is a 1D Poisson matrix
+and S is diagonal scaling. It demonstrates the change in condition number
+under symmetric Jacobi scaling. It does not implement Turkel's low-Mach flow
+preconditioning matrix.
+Compressible PDEs pose a separate preconditioning problem when low-Mach
+convective and acoustic characteristic speeds differ greatly. A pseudo-time
+system such as Γ(U) ∂U/∂τ + R(U)=0 modifies characteristic speeds,
+convergence, and numerical dissipation. Deriving Γ, transforming variables,
+choosing Mach-dependent coefficients, and maintaining boundary consistency
+require additional verification. Replacing the physical time derivative
+indiscriminately changes the time-dependent solution.
+Turkel (1987).
+
+## Preconditioning, dual time stepping, and residual distribution — Dual time stepping# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#dual-time-stepping
+Coverage: reading
+
+Applying BDF2 in physical time to dU/dt+R(U)=0 gives
+\frac{3U^{n+1}-4U^n+U^{n-1}}{2\Delta t}+R(U^{n+1})=0.
+At each physical step, evolve the pseudo-time equation for Q,
+\frac{dQ}{d\tau}+\frac{3Q-4U^n+U^{n-1}}{2\Delta t}+R(Q)=0,
+to a steady state. Backward Euler starts the first step. Physical-time accuracy
+depends on Δt, spatial error, and incomplete inner convergence. A large physical
+CFL alone does not establish accurate time evolution.
+Jameson (1991).
+dual_time_advection is a minimal periodic 1D example: implicit upwind
+advection with BDF1/BDF2, solved by a Jacobi pseudo-time iteration. The inner
+residual threshold is tol*max(1,||b||∞), with default tol=1e-10. Failure to
+converge within the iteration limit raises an error. Tests compare against an
+independent dense solve of the BDF2 discrete equations. This is a reduced model
+rather than Jameson's complete compressible-flow multigrid algorithm.
+
+## Preconditioning, dual time stepping, and residual distribution — Residual distribution schemes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#residual-distribution-schemes
+Coverage: reading
+
+Distribute an element residual Φ_K=∫K ∇·F(U) dV to its nodes while preserving
+Σ_{i∈K} Φ_i^K=Φ_K. This conservation condition connects continuous finite
+elements with upwind ideas.
+Abgrall (2006), author-hosted review.
+rd_residual is a minimal 1D P1 scalar-advection example. It assigns all of
+Φ_K=a(u_{i+1}-u_i) to the downstream node and divides by lumped mass h.
+Tests establish equivalence to first-order upwind differences in this case.
+2D triangular N/LDA schemes, nonlinear blending, time-consistent mass matrices,
+and Euler systems remain unimplemented.
+
+## Preconditioning, dual time stepping, and residual distribution — Roe, entropy fixes, Einfeldt, and rotated solvers# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#roe-entropy-fixes-einfeldt-and-rotated-solvers
+Coverage: reading
+
+Roe uses a linearization satisfying F_R-F_L=Ã(U_R-U_L) and its eigensystem.
+This edition forms sqrt(ρ)-weighted u and H, with
+ã²=(γ-1)(H̃-ũ²/2), and adds dissipation through wave strengths and
+eigenvectors.
+Roe (1981).
+The entropy fix replaces the absolute acoustic eigenvalue below δ with
+(λ²+δ²)/(2δ). HLLE is a separate flux using Einfeldt-type left/right wave
+speeds for strong low-density expansions. Roe entropy correction, HLLE
+positivity properties, and carbuncle treatments address different problems.
+Einfeldt (1988),
+Einfeldt et al. (1991).
+Rotated-hybrid Riemann solvers combine fluxes using directions beyond the face
+normal to balance shock robustness and shear-layer resolution. A coordinate
+rotation alone does not reproduce this construction. This edition adds a specified directional HLLE/Roe composition and cylinder-forebody tests. This explicit two-flux experiment is distinct from an optimized reproduction of the original Rotated-RHLL dissipation formula.
+Nishikawa–Kitamura (2008).
+
+## Preconditioning, dual time stepping, and residual distribution — Roe's Property U# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#roes-property-u
+Coverage: reading
+
+Roe's 1981 paper, author-uploaded full text, pp. 359–360
+uses four conditions: (i) a linear mapping from conserved-state space to
+flux space for each fixed state pair; (ii) the coincident-state limit equals
+the physical Jacobian; (iii) the matrix maps the state jump exactly onto
+the flux jump; (iv) its eigenvectors are linearly independent. The two-state
+matrix need not depend linearly on its arguments. For physical ideal-gas Euler
+states the construction below also has real acoustic/contact speeds.
+Here is the algebra implemented and independently checked in this atlas.
+For U=(ρ,ρu,E), H=(E+p)/ρ, set z=√ρ(1,u,H). Then
+ U(z)=\begin{pmatrix}z_1^2\\z_1z_2\\
+ (z_1z_3+(\gamma-1)z_2^2/2)/\gamma\end{pmatrix},\qquad
+ F(z)=\begin{pmatrix}z_1z_2\\
+ ((\gamma+1)z_2^2/2+(\gamma-1)z_1z_3)/\gamma\\z_2z_3\end{pmatrix}.
+Both maps are quadratic. Their midpoint Jacobians B=∂U/∂z and C=∂F/∂z
+therefore satisfy ΔU=B(z̄)Δz and ΔF=C(z̄)Δz exactly. Consequently
+Ã=C(z̄)B(z̄)⁻¹ has the jump property. Ratios of z̄ give
+ \widetilde u=\frac{\sqrt{\rho_L}u_L+\sqrt{\rho_R}u_R}{\sqrt{\rho_L}+\sqrt{\rho_R}},\quad
+ \widetilde H=\frac{\sqrt{\rho_L}H_L+\sqrt{\rho_R}H_R}{\sqrt{\rho_L}+\sqrt{\rho_R}},\quad
+ \widetilde c^2=(\gamma-1)(\widetilde H-\widetilde u^2/2).
+At equal states, the chain rule gives CB⁻¹=∂F/∂U. The independently constructed
+
+## Preconditioning, dual time stepping, and residual distribution — Roe's Property U# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#roes-property-u
+Coverage: reading
+
+eigenbasis has speeds ũ−c̃,ũ,ũ+c̃. Since c̃>0, its three eigenvectors span
+the state space. We check the parameter-vector matrix against this eigenbasis,
+the analytic Jacobian, and 2000 deterministic physical state pairs.
+If ΔF=sΔU for a single nonzero Rankine–Hugoniot jump, then ÃΔU=sΔU:
+the jump lies in the speed-s eigenspace. The unmodified Roe flux consequently
+recognizes isolated contact/shock jumps. This does not make every reconstructed,
+time-discretized shock calculation exact. Smoothing |λ| changes the flux
+without changing the matrix identity, and can smear a stationary shock.
+An expansion discontinuity can also satisfy the jump relation. Our reversed
+stationary normal-shock pair passes Property U but the raw Roe flux differs
+from the entropy Riemann reference. This is a numerical counterexample to
+confusing the jump property with entropy selection. The entropy fix is an
+additional design choice; neither gives a multidimensional carbuncle guarantee.
+python scripts/build_shock_robustness.py saves the matrix checks, moving and
+stationary shocks, a contact and the expansion counterexample in the
+diagnostic manifest.
+
+## Preconditioning, dual time stepping, and residual distribution — Roe's Property U# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/advanced/#roes-property-u
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Arbitrary Lagrangian–Eulerian methods — Arbitrary Lagrangian–Eulerian methods [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/ale/
+Coverage: reading
+
+Eulerian cells stay fixed while fluid crosses their faces. Lagrangian cells move with the fluid. In ALE, the mesh velocity w can be chosen independently of the fluid velocity u. Hirt, Amsden, and Cook (1974) provide a classical all-speed ALE formulation.
+
+## Arbitrary Lagrangian–Eulerian methods — The flux is relative to the moving face# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/ale/#the-flux-is-relative-to-the-moving-face
+Coverage: reading
+
+Reynolds transport gives, for a moving control volume K(t),
+\frac{d}{dt}\int_{K(t)}U\,dV
++\int_{\partial K(t)}\left[F(U)\cdot n-(w\cdot n)U\right]dS=0.
+With w = 0 this is Eulerian. Choosing the normal mesh speed equal to the fluid normal speed gives the Lagrangian mass-flux limit. Pressure still transfers momentum and energy across a material face; setting mass flux to zero does not set every Euler flux to zero.
+
+## Arbitrary Lagrangian–Eulerian methods — Geometry must obey a conservation law too# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/ale/#geometry-must-obey-a-conservation-law-too
+Coverage: reading
+
+For a uniform state to remain uniform, changing cell volumes and face motion must agree:
+\frac{d|K|}{dt}=\int_{\partial K}w\cdot n\,dS.
+Its discrete counterpart is the geometric conservation law (GCL). A mesh-motion routine and a flow update that use inconsistent swept volumes can create a spurious flow from constant data, even if each looks accurate separately.
+
+## Arbitrary Lagrangian–Eulerian methods — A reproducible one-step check# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/ale/#a-reproducible-one-step-check
+Coverage: reading
+
+numart.geometry.moving_volume_uniform_test deforms faces on [0,1] by a smooth sinusoidal displacement with fixed endpoints. Face velocity is the actual displacement divided by delta t. For constant scalar q, it updates the extensive quantity Vq with relative flux (a−w)q and divides by the new volume. The same displacement appears in both operations.
+import numpy as np
+from numart.geometry import moving_volume_uniform_test
+old_faces, new_faces, q = moving_volume_uniform_test(phase=0.8)
+print(np.max(np.abs(q - 1)))
+Uniform-state preservation is checked to roundoff over several deformation phases. The amplitude restriction ensures positive cell widths. This is a 1D moving-volume identity check, not an ALE Euler solver or a test of accuracy for nonuniform data.
+
+## Arbitrary Lagrangian–Eulerian methods — Mesh motion, remapping, and distortion# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/ale/#mesh-motion-remapping-and-distortion
+Coverage: reading
+
+A complete ALE method may move vertices, solve a Lagrangian or relative-flux step, and remap to a better mesh. Conservative remapping, mesh tangling, boundary motion, and temporal consistency require additional tests. A remap that preserves total mass can still violate positivity or fail to preserve a constant state.
+Use the mesh chapter to separate topology from motion, and the coordinate chapter to distinguish moving control volumes from changing tensor bases. Neither replacing x by r nor moving plotted vertices automatically constructs an ALE method.
+
+## Arbitrary Lagrangian–Eulerian methods — Mesh motion, remapping, and distortion# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/ale/#mesh-motion-remapping-and-distortion
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Orthogonal polynomials and mesh basis functions — Orthogonal polynomials and mesh basis functions [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/
+Coverage: reading
+
+A mesh supplies cells, geometry and connectivity. A basis supplies the functions used to represent a field on those cells. The choice of basis is separate from cell shape and variable staggering. The basis notebook makes modes, nodes and their mass matrices visible. The existing DG advection example already uses Legendre modes internally; this chapter exposes the algebra behind it.
+
+## Orthogonal polynomials and mesh basis functions — Start on a reference element# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#start-on-a-reference-element
+Coverage: reading
+
+Map a physical interval of length h and center x_c to a reference interval:
+x=x_c+J\xi,\qquad J=h/2,\qquad -1\leq\xi\leq1,
+\qquad u_h(x)=\sum_{j=0}^{p}a_j\phi_j(\xi).
+The p+1 coefficients are element degrees of freedom. In a continuous finite-element method, neighboring elements share selected boundary degrees of freedom. DG keeps independent element coefficients and couples traces through numerical fluxes. A local polynomial basis can serve either formulation.
+For constant material coefficients and an affine map, the element mass and diffusion matrices are
+M_{ij}=J\int_{-1}^{1}\phi_i\phi_j\,d\xi,
+\qquad K_{ij}=J^{-1}\int_{-1}^{1}\phi_i'\phi_j'\,d\xi.
+Curved maps introduce a variable Jacobian; variable density or coefficients also change these integrals. Reference-element orthogonality alone then does not make the physical matrix diagonal.
+
+## Orthogonal polynomials and mesh basis functions — Legendre modes and orthonormal modes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#legendre-modes-and-orthonormal-modes
+Coverage: reading
+
+With unit weight on [-1,1], the Legendre family satisfies
+P_0=1,\quad P_1=\xi,\quad P_2=(3\xi^2-1)/2,
+\qquad (n+1)P_{n+1}=(2n+1)\xi P_n-nP_{n-1},
+\int_{-1}^{1}P_iP_j\,d\xi=\frac{2}{2i+1}\delta_{ij},
+\qquad \widehat P_i=\sqrt{\frac{2i+1}{2}}P_i.
+The ordinary Legendre mass is diagonal, with unequal diagonal entries. The orthonormal reference mass is the identity. Their coefficient values differ, although both span exactly the same degree-p polynomial space. The constant mode encodes the element mean; the higher Legendre modes have zero mean. See NIST DLMF §18.3 for normalization and §18.9 for recurrence relations.
+
+## Orthogonal polynomials and mesh basis functions — Nodal Lagrange functions represent the same space# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#nodal-lagrange-functions-represent-the-same-space
+Coverage: reading
+
+Choose distinct nodes and define cardinal polynomials:
+\ell_j(\xi)=\prod_{k\ne j}\frac{\xi-\xi_k}{\xi_j-\xi_k},
+\qquad \ell_j(\xi_i)=\delta_{ij},\qquad
+u_h=\sum_j u_j\ell_j.
+Here the coefficients u_j are nodal values. In a modal expansion, the coefficients are polynomial amplitudes. For the same polynomial, the change of representation is
+u_i=\sum_j V_{ij}a_j,\qquad V_{ij}=P_j(\xi_i),\qquad a=V^{-1}u.
+The notebook compares equispaced nodes and Gauss–Lobatto–Legendre (GLL) nodes. It reports the condition number of this Legendre Vandermonde; that number depends on normalization and is not the condition number of a complete PDE solve. Endpoint clustering can help interpolation, but does not remove Gibbs oscillations at a jump.
+
+## Orthogonal polynomials and mesh basis functions — Quadrature and the diagonal-mass caveat# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#quadrature-and-the-diagonal-mass-caveat
+Coverage: reading
+
+With p+1 points, Gauss–Legendre quadrature integrates polynomials through degree 2p+1. GLL includes the endpoints and integrates through degree 2p−1. Its interior points are the zeros of P'_p, and its weights are
+w_i=\frac{2}{p(p+1)P_p(\xi_i)^2},\qquad p\geq1.
+Products of degree-p basis functions can have degree 2p. Consequently, GLL collocation gives a quadrature mass diag(w), while the exactly integrated GLL nodal mass generally has off-diagonal entries. On an affine interval with unit weight, their difference is rank one. The highest Legendre squared norm is 2/p under GLL quadrature, instead of 2/(2p+1). The notebook lets you switch between both matrices. These facts, and an efficient correction, are derived in Teukolsky's mass-matrix note.
+For constant-coefficient stiffness, the polynomial degree is at most 2p−2, so the same GLL rule is sufficient. Nonlinear fluxes and variable metrics can require additional quadrature or a suitable split formulation; a diagonal mass alone is not a nonlinear stability guarantee. DLMF §3.5 explains Gaussian quadrature more generally.
+
+## Orthogonal polynomials and mesh basis functions — Projection is different from interpolation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#projection-is-different-from-interpolation
+Coverage: reading
+
+An unweighted L2 Legendre projection uses integral moments:
+a_k=\frac{2k+1}{2}\int_{-1}^{1}f(\xi)P_k(\xi)\,d\xi.
+Nodal interpolation instead matches f at the chosen nodes. They agree for every polynomial of degree at most p, but need not agree for other functions. For exp(ξ), the notebook shows rapidly decreasing errors as p increases. For sign(ξ), the displayed overshoot and slow convergence expose the loss of smoothness; neither approximation supplies a shock limiter. The jump is integrated on two separate half-intervals, and interpolation explicitly uses sign(0)=0. L2 errors are integrated with 80-point Gauss rules on each half.
+
+## Orthogonal polynomials and mesh basis functions — Quadrilaterals and triangles have different polynomial spaces# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#quadrilaterals-and-triangles-have-different-polynomial-spaces
+Coverage: reading
+
+On a quadrilateral, a tensor basis takes products of one-dimensional functions:
+\phi_{ij}(\xi,\eta)=\ell_i(\xi)\ell_j(\eta),\qquad
+0\leq i,j\leq p.
+This Q_p space has (p+1)^2 functions. A triangle's total-degree P_p space has (p+1)(p+2)/2. Thus Q2 has nine degrees of freedom, while triangular P2 has six. The cell topology determines which reference map and trace connectivity are needed. DefElement's Lagrange definition distinguishes these spaces and nodal variants.
+On the reference triangle (0,0), (1,0), (0,1), barycentric coordinates are λ0=1−ξ−η, λ1=ξ, λ2=η. The P1 vertex functions are λ_i. P2 has vertex functions λ_i(2λ_i−1) and edge functions 4λ_iλ_j. They form a partition of unity and reproduce quadratic fields; they are not an orthogonal basis. The notebook colors each of these six shape functions on the actual triangle.
+Orthogonal modal triangle bases can instead be built from suitably weighted Jacobi polynomials in collapsed coordinates, including the Dubiner construction. A rectangular Legendre tensor product restricted to a triangle does not automatically retain orthogonality. This edition implements P1/P2 nodal triangles and quadrilateral tensor evaluation; a Dubiner implementation remains additional work.
+
+## Orthogonal polynomials and mesh basis functions — Other orthogonal families and their measures# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#other-orthogonal-families-and-their-measures
+Coverage: reading
+
+Orthogonality always includes a domain and a weight. Changing either changes the inner product. The notebook also tabulates Chebyshev T modes and demonstrates their nonorthogonality under unit weight. The remaining families below are mathematical reading connections. Conventions follow DLMF §18.2 and §18.3.
+Chebyshev T_n: T_n(cos θ)=cos(nθ), on [-1,1], weight (1−ξ²)^−1/2. Useful for endpoint-clustered spectral interpolation. They are not mutually orthogonal under the unweighted finite-element mass integral.
+Jacobi: P_n^(α,β), weight (1−ξ)^α(1+ξ)^β on [-1,1], α,β>−1. This family includes Legendre and, after normalization, Chebyshev; weighted coordinate transforms connect it to simplex bases.
+Hermite: physicists' H_n has weight exp(−ξ²) on the real line; probabilists' He_n uses exp(−ξ²/2). These are different conventions. Orthogonal Hermite polynomials are distinct from the endpoint value/derivative Hermite interpolation used by CIP.
+Generalized Laguerre: L_n^(α) uses ξ^α exp(−ξ) on [0,∞), α>−1. It addresses a semi-infinite domain rather than an ordinary bounded mesh cell.
+Fourier modes: exp(ikx) are orthogonal on a periodic interval with matching integer wave numbers. They form a global periodic basis rather than a mesh-local polynomial family; the spectral advection example uses these modes.
+
+## Orthogonal polynomials and mesh basis functions — Verification and scope# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#verification-and-scope
+Coverage: reading
+
+numart.basis supplies Legendre/Chebyshev and nodal tabulation, derivatives, affine interval matrices, GLL quadrature, projection, P1/P2 triangles and tensor products. Tests check continuous Legendre orthogonality, GLL exactness limits, cardinal interpolation, polynomial reproduction, partition of unity, derivative reproduction, the GLL summation-by-parts identity, rank-one mass difference and physical Jacobian scaling. The existing DG solver remains restricted to scalar periodic P0/P1/P2 advection.
+Reproduce the exhibit with python scripts/build_basis.py. Saved arrays and source hashes accompany the figure. This adds reference-element building blocks, not a general curved-mesh assembly or a higher-order fluid solver.
+Continue with mesh connectivity, continuous triangular FEM, DG advection, limiters and variable staggering.
+
+## Orthogonal polynomials and mesh basis functions — Verification and scope# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/basis-functions/#verification-and-scope
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Benchmark library — Benchmark library [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/
+Coverage: reading
+
+For the representation behind DG and spectral examples, see orthogonal polynomials and element bases: Legendre modes, nodal transforms, quadrature, and their mass matrices.
+Each 1D Problem stores the equation, domain, final time, boundaries, initial
+condition, reference solution, and citation keys. get_problem(name) exposes
+the same definition to every method. The last array axis contains variables:
+Euler uses (ρ,ρu,E), shallow water uses (h,hu), and isothermal flow uses (ρ,ρu).
+
+## Benchmark library — Smooth problems# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#smooth-problems
+Coverage: reading
+
+Linear advection uses periodic [0,1], speed a, and initial data sin(2πx).
+The exact translated solution compares finite differences, DG, and Fourier
+methods. DG uses modal Legendre P0/P1/P2, upwind boundary fluxes, and SSPRK3.
+Distinguish the spatial order of Pp from the third-order time integrator.
+DG has elements × (p+1) unknowns. Fourier integrates the linear modes exactly
+in time; the gallery does not establish an equal-cost or equal-degree-of-freedom
+ranking. Nonlinear products, dealiasing, and Gibbs treatments are future work.
+entropy-wave uses Euler data ρ=1+0.2sin(2πx), u=1,p=1,γ=1.4, periodic
+[0,1], and t=1. Only density translates, giving an exact reference for smooth
+accuracy and periodic conservation. Isothermal Euler has no independent energy
+or entropy variable and does not support this same Euler entropy-wave problem.
+
+## Benchmark library — Shock tubes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#shock-tubes
+Coverage: reading
+
+Sod: [0,1], x0=0.5, left (ρ,u,p)=(1,0,1), right (0.125,0,0.1),
+γ=1.4, and t=0.2. Boundaries use zero-gradient extrapolation; the main waves
+do not reach them before the final time. The exact Riemann solver finds the
+matching pressure by bisection and samples shocks, contacts, and rarefaction
+fans. Exact solutions containing a vacuum are unsupported.
+Sod (1978),
+exact-solution implementation reference.
+Lax: [-5,5], x0=0, left (0.445,0.698,3.528), right (0.5,0,0.571),
+γ=1.4, t=1.3, and extrapolation boundaries. The Lax test and the
+Lax–Friedrichs algorithm are different namesakes. These are standard parameters
+from later literature; the original 1954 paper's table has not been directly
+matched here.
+Shu–Osher: [-5,5], x0=-4, t=1.8, γ=1.4, left
+(3.857143,2.629369,10.33333), and right (1+0.2sin(5x),0,1).
+Ghost states are fixed to the initial conditions evaluated at the domain ends.
+There is no exact final-time reference; the first-edition figure compares
+MUSCL and WENO numerical results.
+Shu–Osher (1989),
+adopted parameters in Quokka, §3.1.5.
+
+## Benchmark library — Low densities and Einfeldt-type tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#low-densities-and-einfeldt-type-tests
+Coverage: reading
+
+double-rarefaction uses [0,1], x0=0.5, left (1,-2,0.4), right
+(1,2,0.4), γ=1.4, and t=0.15. This strong expansion is commonly called
+the 1–2–3 problem. The selected positivity test uses piecewise-constant
+reconstruction with HLLE. It does not transfer a positivity guarantee to
+high-order MUSCL or WENO.
+Einfeldt et al. (1991).
+
+## Benchmark library — Shallow-water and isothermal flow# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#shallow-water-and-isothermal-flow
+Coverage: reading
+
+dam-break solves flat-bottom shallow water with g=1, left h=2, right
+h=1, u=0, [0,1], and t=0.1. Dry beds, topographic sources,
+well-balanced discretization, and wetting/drying are unsupported.
+isothermal uses p=cs²ρ, cs=1, left ρ=1, right ρ=0.125, and u=0
+on the same domain and time interval. Both use extrapolation boundaries.
+First-edition checks compare solvers, admissible states, and conservative
+form. The reference library now supplies semi-analytic
+Riemann states and conserved cell means for the equation gallery. The original
+Problem.reference callbacks for these two cases remain unset; use
+get_reference for the new evaluations.
+LeVeque (2002).
+
+## Benchmark library — Riemann fluxes and reconstruction# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#riemann-fluxes-and-reconstruction
+Coverage: reading
+
+Rusanov and HLL support Euler, shallow water, and isothermal flow. HLLC, Roe,
+and HLLE currently support ideal-gas Euler only. HLL uses minimum/maximum
+local acoustic speeds; HLLE uses Einfeldt-type estimates including Roe averages.
+Roe applies quadratic entropy smoothing to acoustic eigenvalues with
+δ=0.1ã, leaving the contact eigenvalue unchanged. This is neither a
+low-density positivity fix nor a general entropy-stable flux construction.
+MUSCL uses selectable minmod (default), Superbee, MC, van Leer, or clipped
+van Albada reconstruction in primitive variables; see limiters.
+WENO5-JS is a
+componentwise finite-difference implementation with pointwise fluxes and
+global LF splitting. A separate reconstruction chapter below adds characteristics
+and WENO-Z; this original solver remains unchanged. Fully discrete positivity
+preservation is still future work. A separate advanced limiter
+exhibit implements TVB modified minmod and positive Euler reconstruction scaling;
+neither is coupled to these Euler time updates. Errors are labeled pointwise: finite-volume cell
+averages and finite-difference point values are not strictly interchangeable.
+See MHD for Orszag–Tang definitions and limits, and
+elliptic problems for diffusion and Poisson cases.
+
+## Benchmark library — Matching the benchmark to the scheme# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#matching-the-benchmark-to-the-scheme
+Coverage: reading
+
+The original KEEP exhibit uses a smooth isentropic vortex and conservation diagnostics. Its bare central flux has no shock stabilization and is not presented as a Sod/DMR solver. The movie guide separates those smooth computations from shock-capturing and MHD movies, and keeps steady fields as still images.
+
+## Benchmark library — Equation-first scalar comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#equation-first-scalar-comparisons
+Coverage: reading
+
+The equation gallery adds Burgers and LWR traffic
+Riemann problems with exact cell-integrated references, plus advection and heat
+mode tests. It also connects the existing Sod, wet dam-break and isothermal
+baselines, with each reference convention explicitly labeled.
+
+## Benchmark library — Expanded reconstruction and flux tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#expanded-reconstruction-and-flux-tests
+Coverage: reading
+
+The new reconstruction chapter and interactive comparison add limited parabolic FV, conservative characteristics, FD WENO-Z and an explicit AUSM-family baseline. The original code described above remains a componentwise baseline. Planar shock sensitivity and Roe's Property U have separate verification.
+
+## Benchmark library — Expanded reconstruction and flux tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/benchmarks/#expanded-reconstruction-and-flux-tests
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Biological model equations and numerical verification — Biological model equations and numerical verification [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/
+Coverage: reading
+
+This survey selects 22 biological and biologically motivated model families,
+from population growth to stochastic gene regulation and fluid–structure
+coupling. It expands the equation map beyond conservation-law CFD. All 22
+entries are literature and proposed benchmark designs; this addition implements
+no biological solver and reports no simulated biological result.
+The equations below use conventional simplified or normalized forms. A source
+identifies the model lineage, not a claim that every coefficient and variable
+matches that paper. The structured catalog
+retains references, numerical issues, verification targets and scope for each
+entry. The selection emphasizes numerical variety, rather than a comprehensive
+review of present-day mathematical biology. Sources checked on 6 November 2026.
+
+## Biological model equations and numerical verification — Which biological questions exercise which algorithms# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#which-biological-questions-exercise-which-algorithms
+Coverage: reading
+
+Population growth and ecology: logistic, predator–prey, Fisher fronts,
+cross-diffusion and replicator dynamics test positive states, invariant sets,
+long-time behavior and spatial invasion.
+Demography and epidemics: age transport and compartment models test
+renewal boundaries, balances, nonnegative compartments and thresholds.
+Biochemistry and metabolism: enzyme kinetics and Monod growth connect
+stiff ODEs, conservation laws and reduced models.
+Morphogenesis: Turing analysis, Gierer–Meinhardt, Schnakenberg and
+Gray–Scott separate physical instability from numerical pattern selection.
+Excitation: Hodgkin–Huxley, FitzHugh–Nagumo and Aliev–Panfilov connect
+stiff reactions to pulse conduction, refractoriness and spiral waves.
+Gene regulation and noise: delayed feedback, toggles, repressilators and
+the chemical master equation need history interpolation, bifurcation analysis
+or jump-process simulation.
+Biomechanics: a fluid–elastic structure requires constitutive forces and
+a coupling discretization in addition to fluid equations.
+Existing diffusion and elliptic methods, FEM,
+sparse/Newton methods, stiff integrators
+and incompressible projection supply useful numerical
+building blocks. Their current tests do not verify these new biological systems.
+
+## Biological model equations and numerical verification — Historical model catalog# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#historical-model-catalog
+Coverage: reading
+
+Dates identify an early source or a selected development, not an exclusive
+priority claim. Later spatial extensions, reductions and translations are
+identified with their individual entries.
+
+## Biological model equations and numerical verification — 01 · 1838 · Logistic population growth# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#01-1838-logistic-population-growth
+Coverage: reading
+
+Population and ecology · Survey only. Density-limited growth with carrying capacity K. It is the simplest biological ODE baseline.
+\dot N=rN(1-N/K).
+Numerical issue. Positivity, preservation of equilibria and overshoot of K; an accurate-looking curve can still violate the invariant interval.
+Proposed verification. Compare with N(t)=K/[1+(K/N0−1)exp(−rt)] for N0>0; measure temporal order and behavior near 0 and K.
+Model convention. The linked original is the later 1847 memoir; the 1838 note itself was not audited. The differential equation is not the discrete logistic map.
+Sources: Verhulst, Pierre-François (1847).
+
+## Biological model equations and numerical verification — 02 · 1913 · Michaelis–Menten and full enzyme kinetics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#02-1913-michaelismenten-and-full-enzyme-kinetics
+Coverage: reading
+
+Biochemical reactions · Survey only. Enzyme saturation; the full mass-action system resolves the transient complex C, while the rate law eliminates a fast variable.
+E+S\mathrel{\mathop{\rightleftharpoons}^{k_1}_{k_{-1}}}C\mathrel{\mathop{\longrightarrow}^{k_2}}E+P,\qquad v=V_{\max}S/(K_M+S).
+Numerical issue. Fast initial layers and stiffness; full and reduced models have different validity regimes. Under the usual quasi-steady approximation KM=(k−1+k2)/k1.
+Proposed verification. Check E+C and S+C+P conservation in the closed mechanism. Compare reduced and full systems as enzyme/substrate scales vary, rather than calling the reduction exact.
+Model convention. The 1913 rapid-equilibrium interpretation and the 1925 quasi-steady-state derivation must remain distinct.
+Sources: Michaelis–Menten (1913; via the 2011 translation), Briggs, George E. and Haldane, J. B. S. (1925), Johnson, Kenneth A. and Goody, Roger S. (2011).
+
+## Biological model equations and numerical verification — 03 · 1920 · Lotka–Volterra predator–prey# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#03-1920-lotkavolterra-predatorprey
+Coverage: reading
+
+Population and ecology · Survey only. Coupled prey growth and predation; a phase-plane and long-time integration test.
+\dot x=\alpha x-\beta xy,\qquad\dot y=\delta xy-\gamma y.
+Numerical issue. Positive states and artificial damping or growth of closed orbits. Periodic orbits of this idealized system are not attracting limit cycles.
+Proposed verification. Monitor H=δx−γ ln(x)+βy−α ln(y) for positive x,y, and compare orbit drift under step refinement.
+Sources: Lotka, Alfred J. (1920), Volterra, Vito (1926).
+
+## Biological model equations and numerical verification — 04 · 1926 · McKendrick age-structured population# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#04-1926-mckendrick-age-structured-population
+Coverage: reading
+
+Structured population transport · Survey only. Individuals move through age a at unit speed; newborns enter through a nonlocal renewal boundary.
+\partial_t n+\partial_a n=-\mu(a)n,\qquad n(0,t)=\int_0^\infty b(a)n(a,t)\,da.
+Numerical issue. Upwind/FV transport in age, birth-boundary quadrature and truncation of the infinite age interval.
+Proposed verification. Use characteristic survival along cohorts and check d∫n da/dt=births−deaths, including any artificial oldest-age outflow.
+Model convention. This is the classical age-transport form; the later von Foerster lineage is acknowledged without treating its date as the first appearance.
+Sources: McKendrick, A. G. (1926).
+
+## Biological model equations and numerical verification — 05 · 1927 · SIR and SEIR compartment models# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#05-1927-sir-and-seir-compartment-models
+Coverage: reading
+
+Epidemic compartments · Survey only. Closed, well-mixed normalized population fractions. SEIR adds an exposed compartment and a progression rate.
+\dot s=-\beta si,\quad\dot i=\beta si-\gamma i,\quad\dot r=\gamma i,\quad s+i+r=1.
+Numerical issue. Nonnegative compartments, invariant total population and correct resolution of epidemic peak times.
+Proposed verification. Check total 1 and i+s−(γ/β)ln(s) for β>0,s>0; compare early growth rate βs0−γ and final-size relation in the closed SIR specialization.
+Model convention. The original general epidemic framework is broader than this SIR specialization. Population-count and fraction conventions give different β definitions.
+Sources: Kermack, W. O. and McKendrick, A. G. (1927).
+
+## Biological model equations and numerical verification — 06 · 1937 · Fisher–KPP invasion front# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#06-1937-fisherkpp-invasion-front
+Coverage: reading
+
+Population and ecology · Survey only. Spatial spread of an invading population or advantageous allele, represented by a reaction–diffusion front.
+u_t=D\Delta u+ru(1-u),\qquad 0\leq u\leq1.
+Numerical issue. Spatial and temporal front-speed errors; leading-edge resolution, positivity and finite-domain boundary contamination.
+Proposed verification. Use the Ablowitz–Zeppetella exact front at c=5√(Dr/6), or test the minimal speed 2√(Dr) only with the appropriate steep initial-data regime on a sufficiently large domain.
+Model convention. Fisher–KPP is a conventional family name; the independent KPP 1937 original remains an archival follow-up. The exact special speed is not the minimal speed.
+Sources: Fisher, R. A. (1937), Ablowitz, Mark J. and Zeppetella, Anthony (1979).
+
+## Biological model equations and numerical verification — 07 · 1949 · Monod growth and chemostat# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#07-1949-monod-growth-and-chemostat
+Coverage: reading
+
+Biochemical reactions · Survey only. Nutrient-limited biomass X, substrate S, yield Y and chemostat dilution d; d=0 gives a closed batch model.
+\mu(S)=\mu_{\max}\frac{S}{K_S+S},\quad\dot X=(\mu(S)-d)X,\quad\dot S=d(S_{in}-S)-\mu(S)X/Y.
+Numerical issue. Washout near a threshold, disparate resource/growth scales, positivity and the distinction between yield and rate constants.
+Proposed verification. For d=0 check S+X/Y. For d>0 use d(S+X/Y)/dt=d[Sin−(S+X/Y)] and verify the washout equilibrium.
+Model convention. This writes one constant-yield extension of saturation growth, not a universal metabolic model.
+Sources: Monod, Jacques (1949).
+
+## Biological model equations and numerical verification — 08 · 1952 · Hodgkin–Huxley membrane dynamics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#08-1952-hodgkinhuxley-membrane-dynamics
+Coverage: reading
+
+Excitable systems · Survey only. Voltage and gating variables z=m,h,n describe an ionic excitable membrane. A cable extension adds spatial axial current.
+C_m\dot V=I_{app}-\bar g_{Na}m^3h(V-E_{Na})-\bar g_Kn^4(V-E_K)-g_L(V-E_L),\quad\dot z=\alpha_z(V)(1-z)-\beta_z(V)z.
+Numerical issue. Stiff gates, removable singularities in rate formulas, gating bounds, voltage/current sign and temperature conventions.
+Proposed verification. Select an explicitly versioned CellML/reference convention, verify resting equilibrium and gate relaxation at clamped voltage, then refine spike time and waveform.
+Model convention. The original squid-axon model is not a calibrated human cardiac model. No single rate parameter set is selected by this survey.
+Sources: Hodgkin, A. L. and Huxley, A. F. (1952).
+
+## Biological model equations and numerical verification — 09 · 1952 · Turing reaction–diffusion framework# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#09-1952-turing-reactiondiffusion-framework
+Coverage: reading
+
+Pattern formation · Survey only. A framework for diffusion-driven pattern onset around a homogeneous reaction equilibrium, not a unique choice of f and g.
+u_t=D_u\Delta u+f(u,v),\qquad v_t=D_v\Delta v+g(u,v).
+Numerical issue. Physical versus numerical instability, domain eigenmodes and errors in the discrete Laplacian dispersion relation.
+Proposed verification. For a selected kinetic law compare eigenvalues of J−k²diag(Du,Dv) with early-time Fourier-mode growth. Show that the k=0 reaction equilibrium is stable before asserting diffusion-driven instability.
+Model convention. A spot image or unequal diffusion coefficients alone do not establish a Turing mechanism. Boundary conditions determine the available modes.
+Sources: Turing, Alan M. (1952).
+
+## Biological model equations and numerical verification — 10 · 1961 · FitzHugh–Nagumo excitation and recovery# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#10-1961-fitzhughnagumo-excitation-and-recovery
+Coverage: reading
+
+Excitable systems · Survey only. A normalized fast excitation/slow recovery model for pulses, refractoriness and spiral waves when extended in space.
+v_t=D\Delta v+v-v^3/3-w+I,\qquad w_t=\epsilon(v+a-bw).
+Numerical issue. Stiff time-scale separation, splitting error, wave-speed convergence and numerical wave breakup.
+Proposed verification. Check ODE fixed points/nullclines and small-perturbation eigenvalues first; then refine a 1D pulse before a 2D spiral movie.
+Model convention. This is a common normalized variant; cubic coefficients, recovery signs and nondimensionalization differ between formulations.
+Sources: FitzHugh, Richard (1961), Nagumo, Jinichi and Arimoto, Suguru and Yoshizawa, Shuji (1962).
+
+## Biological model equations and numerical verification — 11 · 1970 · Keller–Segel chemotaxis# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#11-1970-kellersegel-chemotaxis
+Coverage: reading
+
+Chemotaxis · Survey only. Cell density n drifts up a chemoattractant gradient; τc=0 gives an elliptic chemical subproblem.
+n_t=D_n\Delta n-\chi\nabla\cdot(n\nabla c),\qquad\tau_c c_t=D_c\Delta c+\alpha n-\lambda c.
+Numerical issue. Cross-coupled flux, positivity, mass conservation and concentrated peaks; spurious undershoots must not be mistaken for physical aggregation or blowup.
+Proposed verification. With zero total cell flux check ∫n conservation, homogeneous equilibria and linear growth; refine the peak and domain before discussing singularity. Use manufactured smooth solutions before aggregation cases.
+Model convention. This is a common two-field reduction of a more detailed original formulation. Blowup thresholds depend on dimension, domain, boundary and chemical dynamics.
+Sources: Keller, Evelyn F. and Segel, Lee A. (1970).
+
+## Biological model equations and numerical verification — 12 · 1972 · Gierer–Meinhardt activator–inhibitor# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#12-1972-gierermeinhardt-activatorinhibitor
+Coverage: reading
+
+Pattern formation · Survey only. A representative simplified short-range activation/long-range inhibition model.
+a_t=D_a\Delta a+\rho a^2/h-\mu a+\sigma_a,\qquad h_t=D_h\Delta h+\rho_h a^2-\nu h.
+Numerical issue. The inhibitor denominator can become singular; positive h, narrow peaks and reaction stiffness require explicit treatment.
+Proposed verification. Choose a positive homogeneous equilibrium, check its dispersion relation and inhibitor positivity, then refine spike width and pattern wavelength.
+Model convention. Source densities, saturation and baseline production vary across the model family. This simplified formula is not a verbatim transcription of every original variant.
+Sources: Gierer, Alfred and Meinhardt, Hans (1972).
+
+## Biological model equations and numerical verification — 13 · 1972 · Fluid–elastic structure and immersed boundaries# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#13-1972-fluidelastic-structure-and-immersed-boundaries
+Coverage: reading
+
+Biomechanics · Survey only. Fluid coupled to a deformable structure; biological examples include valves and membranes, once a force/constitutive law is supplied.
+\rho(\boldsymbol u_t+\boldsymbol u\cdot\nabla\boldsymbol u)=-\nabla p+\mu\Delta\boldsymbol u+\boldsymbol f,\quad\nabla\cdot\boldsymbol u=0,\quad\boldsymbol X_t=\boldsymbol u(\boldsymbol X,t).
+Numerical issue. Stiff elastic forces, pressure projection, Eulerian–Lagrangian interpolation/spreading and volume leakage.
+Proposed verification. Specify elastic energy and force before solving. Check force transfer, adjoint interpolation/spreading, fluid divergence and enclosed-volume drift on a simple relaxing boundary.
+Model convention. Immersed boundary is a numerical coupling method, not itself a closed biological constitutive equation. The existing periodic MAC solver does not implement this coupling.
+Sources: Peskin, Charles S. (1972).
+
+## Biological model equations and numerical verification — 14 · 1977 · Chemical master equation and Gillespie SSA# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#14-1977-chemical-master-equation-and-gillespie-ssa
+Coverage: reading
+
+Stochastic reaction networks · Survey only. Integer molecule counts, reaction jumps νj and propensities aj; SSA samples paths of this continuous-time Markov model.
+\partial_t P(\boldsymbol n,t)=\sum_j\left[a_j(\boldsymbol n-\boldsymbol\nu_j)P(\boldsymbol n-\boldsymbol\nu_j,t)-a_j(\boldsymbol n)P(\boldsymbol n,t)\right].
+Numerical issue. Correct combinatorial propensities, event ordering, absorbing states and statistical error; tau-leaping is a separate approximation.
+Proposed verification. Use immigration–death reactions ∅→X at constant rate k and X→∅ at rate γn: stationary counts are Poisson(k/γ). Compare ensemble mean, variance and distribution with confidence intervals.
+Model convention. The 1977 paper is a foundational SSA reference, not a priority claim for all master equations. SSA is a solver; the reaction network is the model. A seed documents a trajectory, not an ensemble validation.
+Sources: Gillespie, Daniel T. (1977).
+
+## Biological model equations and numerical verification — 15 · 1977 · Mackey–Glass delayed physiological feedback# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#15-1977-mackeyglass-delayed-physiological-feedback
+Coverage: reading
+
+Delay and gene regulation · Survey only. Delayed feedback in a normalized physiological control model; delay can change stability and oscillatory behavior.
+\dot x(t)=\frac{\beta x(t-\tau)}{1+x(t-\tau)^p}-\gamma x(t).
+Numerical issue. A history function over [−τ,0], delayed interpolation, propagated derivative discontinuities and delay-aware adaptive stepping.
+Proposed verification. Check the τ=0 ODE limit, a constant equilibrium history and a manufactured forced solution. Compare long-time statistics rather than expecting chaotic trajectories to match pointwise indefinitely.
+Model convention. A scalar initial value alone is insufficient. The delayed ODE is distinct from a spatial reaction–diffusion model.
+Sources: Mackey, Michael C. and Glass, Leon (1977).
+
+## Biological model equations and numerical verification — 16 · 1978 · Replicator evolutionary game dynamics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#16-1978-replicator-evolutionary-game-dynamics
+Coverage: reading
+
+Evolutionary dynamics · Survey only. Strategy fractions reproduce according to relative payoff in a specified matrix game.
+\dot x_i=x_i[(A\boldsymbol x)_i-\boldsymbol x^TA\boldsymbol x],\qquad x_i\geq0,\quad\sum_i x_i=1.
+Numerical issue. Preserving the probability simplex, behavior near extinction boundaries, neutral cycles versus attracting equilibria.
+Proposed verification. Check simplex conservation, exact invariant faces and an analytically chosen game equilibrium; use the appropriate game-specific invariant or Lyapunov function.
+Model convention. No universal Lyapunov function or equivalence of fixed point and evolutionarily stable strategy is assumed.
+Sources: Taylor, Peter D. and Jonker, Leo B. (1978).
+
+## Biological model equations and numerical verification — 17 · 1979 · Schnakenberg reaction–diffusion# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#17-1979-schnakenberg-reactiondiffusion
+Coverage: reading
+
+Pattern formation · Survey only. A simple autocatalytic kinetic law extended in space, useful for reproducible Turing-onset tests.
+u_t=D_u\Delta u+a-u+u^2v,\qquad v_t=D_v\Delta v+b-u^2v.
+Numerical issue. Reaction stiffness, positive concentrations and the distinction between kinetic Hopf and spatial Turing instabilities.
+Proposed verification. Check u*=a+b, v*=b/(a+b)², then compare mode-growth rates with the linearized discrete and continuum operators under fixed boundaries.
+Model convention. A mathematical chemical pattern model; matching a visual biological pattern does not calibrate it to a tissue.
+Sources: Schnakenberg, Jürgen (1979).
+
+## Biological model equations and numerical verification — 18 · 1979 · Shigesada–Kawasaki–Teramoto cross-diffusion# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#18-1979-shigesadakawasakiteramoto-cross-diffusion
+Coverage: reading
+
+Population and ecology · Survey only. Competition with density-dependent self- and cross-dispersal can produce spatial segregation.
+u_t=\Delta[(d_1+\alpha_{11}u+\alpha_{12}v)u]+u(a_1-b_1u-c_1v),\quad v_t=\Delta[(d_2+\alpha_{21}u+\alpha_{22}v)v]+v(a_2-b_2u-c_2v).
+Numerical issue. A coupled nonlinear diffusion matrix, loss of simple scalar maximum-principle arguments, positivity and entropy-compatible discretization.
+Proposed verification. Start with manufactured smooth solutions and constant-state equilibria. With reactions removed and no normal flux, conserve each species mass; check coefficient assumptions before claiming an entropy law.
+Model convention. The displayed homogeneous-environment reduction omits the original environmental-potential terms. It is not equivalent to two independent scalar diffusion equations.
+Sources: Shigesada, Nanako and Kawasaki, Kohkichi and Teramoto, Ei (1979).
+
+## Biological model equations and numerical verification — 19 · 1983 · Gray–Scott spatial autocatalysis# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#19-1983-grayscott-spatial-autocatalysis
+Coverage: reading
+
+Pattern formation · Survey only. A chemical feed/decay model whose spatial extension supports diverse spot and wave patterns.
+u_t=D_u\Delta u-uv^2+F(1-u),\qquad v_t=D_v\Delta v+uv^2-(F+k)v.
+Numerical issue. Sensitivity to F,k, diffusion, domain and finite-amplitude initial perturbations; grid-scale patterns and floating-point variation can affect long-time morphology.
+Proposed verification. Record every parameter and the perturbation seed. Verify the homogeneous (1,0) state and early perturbation response, then perform grid/time refinement of quantitative observables.
+Model convention. 1983 is the well-mixed CSTR source; Pearson 1993 is the spatial pattern reference. Spot division does not by itself demonstrate cell division or a linear Turing instability.
+Sources: Gray, Peter and Scott, Stephen K. (1983), Pearson, John E. (1993).
+
+## Biological model equations and numerical verification — 20 · 1996 · Aliev–Panfilov cardiac excitation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#20-1996-alievpanfilov-cardiac-excitation
+Coverage: reading
+
+Excitable systems · Survey only. A reduced phenomenological excitation/recovery model for cardiac waves and restitution.
+u_t=D\Delta u-ku(u-a)(u-1)-uv,\quad v_t=\left(\epsilon_0+\frac{\mu_1v}{u+\mu_2}\right)[-v-ku(u-b-1)].
+Numerical issue. Stiff recovery, denominator behavior and sensitivity of wave speed/restitution to resolution and time splitting.
+Proposed verification. Select a specific model encoding and parameters; establish single-cell and 1D conduction convergence before 2D reentry. Compare a restitution curve, not only a spiral image.
+Model convention. Monodomain/bidomain tissue models add conductivity tensors and, for bidomain, an extracellular elliptic constraint. They are not automatically included by this two-variable model.
+Sources: Aliev, R. R. and Panfilov, A. V. (1996).
+
+## Biological model equations and numerical verification — 21 · 2000 · Repressilator mRNA–protein network# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#21-2000-repressilator-mrnaprotein-network
+Coverage: reading
+
+Delay and gene regulation · Survey only. Three repressing genes form a cyclic network; retaining mRNA and protein gives six state variables.
+\dot m_i=\frac{\alpha}{1+p_{i-1}^n}+\alpha_0-m_i,\quad\dot p_i=\beta(m_i-p_i),\qquad i=1,2,3\ \text{cyclic}.
+Numerical issue. Multiple degradation scales, oscillation onset, phase error and differences between deterministic cycles and noisy individual-cell behavior.
+Proposed verification. Check the symmetric equilibrium and its linear stability. Compare period and amplitude under time refinement after a stated transient.
+Model convention. The six-variable form is distinct from a reduced three-protein oscillator; oscillations are parameter-dependent.
+Sources: Elowitz, Michael B. and Leibler, Stanislas (2000).
+
+## Biological model equations and numerical verification — 22 · 2000 · Genetic toggle switch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#22-2000-genetic-toggle-switch
+Coverage: reading
+
+Delay and gene regulation · Survey only. Mutual repression produces a possible bistable genetic switch in a normalized model.
+\dot u=\frac{\alpha_1}{1+v^p}-u,\qquad\dot v=\frac{\alpha_2}{1+u^q}-v.
+Numerical issue. Parameter-dependent bistability, saddle separatrices, continuation and sensitivity to perturbations near basin boundaries.
+Proposed verification. Find all positive equilibria and their Jacobian eigenvalues; verify hysteresis with sufficiently slow continuation and multiple initial conditions.
+Model convention. Bistability is not guaranteed for arbitrary Hill exponents or production rates. Induction, mRNA dynamics and noise are additional model choices.
+Sources: Gardner, Timothy S. and Cantor, Charles R. and Collins, James J. (2000).
+
+## Biological model equations and numerical verification — A verification path before attractive movies# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#a-verification-path-before-attractive-movies
+Coverage: reading
+
+A practical first sequence is logistic/SIR → full enzyme kinetics →
+Fisher front → FitzHugh–Nagumo pulse → Schnakenberg modes → Keller–Segel
+aggregation. Predator–prey can run alongside the Hamiltonian notebook as a
+long-time invariant test, while a birth–death SSA provides the first stochastic
+branch. Gray–Scott is a later visually useful chemical exhibit, with explicit
+feed rates, spatial scales, initial perturbation and source attribution.
+This order is an implementation proposal, separate from the historical order.
+
+## Biological model equations and numerical verification — An exact nonlinear front# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#an-exact-nonlinear-front
+Coverage: reading
+
+For the scaled Fisher equation, the special front of
+Ablowitz–Zeppetella (1979) gives a
+particularly useful deterministic reference:
+u(x,t)=\left[1+\exp\left(\sqrt{\frac r{6D}}(x-ct-x_0)\right)\right]^{-2},
+\qquad c=5\sqrt{\frac{Dr}{6}}.
+A finite interval should use matching time-dependent analytic boundary data,
+or put boundaries far enough away and quantify the truncation effect. Compare
+front location, profile norms and temporal/spatial refinement separately.
+The special explicit front travels faster than the minimal-speed front;
+confusing these two reference problems would produce a false solver error.
+
+## Biological model equations and numerical verification — Pattern onset is a quantitative test# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#pattern-onset-is-a-quantitative-test
+Coverage: reading
+
+For a chosen two-species reaction equilibrium, form its Jacobian J. On the
+continuum, a Fourier mode with wavevector k evolves under
+L(k)=J-|k|^2\operatorname{diag}(D_u,D_v).
+On a uniform square grid with a centered Laplacian, replace |k|² by
+\kappa_h^2=\frac4{h^2}
+\left[\sin^2(k_xh/2)+\sin^2(k_yh/2)\right].
+Seed one small eigenmode, measure its early exponential growth and compare
+both dispersion relations. A stable k=0 reaction system and an unstable
+nonzero mode diagnose the selected diffusion-driven instability; nonlinear
+late-time spots alone do not. Schnakenberg supplies a simple kinetic law for
+this exercise; it should not be silently substituted for Turing's own example.
+Periodic and zero-flux boundaries admit different mode sets.
+
+## Biological model equations and numerical verification — Preserve the model before judging the method# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#preserve-the-model-before-judging-the-method
+Coverage: reading
+
+Each future run should specify dimensional or normalized variables, the full
+parameter set, boundary/initial conditions, units, random seed where relevant,
+model version and source. Balances include boundary flux and source terms:
+not every biological reaction–diffusion problem conserves each species mass.
+Positivity fixes that clip values may change totals and extinction thresholds.
+An implicit diffusion step alone does not prove positivity of a split update.
+For stochastic networks, distinguish discretization/model approximation from
+finite-ensemble sampling uncertainty. For nonlinear reaction networks the ODE
+solution need not equal the exact stochastic mean. For delayed equations,
+record the history function and interpolation rule. For biochemical reductions,
+measure the model-reduction error separately from integration error.
+
+## Biological model equations and numerical verification — Sources and further branches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#sources-and-further-branches
+Coverage: reading
+
+Murray's third-edition introduction (2002)
+provides a broad reading route across these branches. Physiome's
+Hodgkin–Huxley workspace
+and Aliev–Panfilov encoding
+are model-version references to inspect before choosing implementation
+parameters, rather than independent validation data.
+Separate follow-up surveys could cover neural population fields, spatial
+stochastic reaction–diffusion, intracellular polarity and mass-conserving
+reaction networks, cell-cycle size structure, vertex/phase-field cell
+mechanics, tumor/nutrient free boundaries, and population genetics with drift.
+These are additional branches, not a claim that the current 22 entries exhaust
+biological modeling. Numerical verification against a stated equation is also
+different from validation against organism- or experiment-specific data.
+Return to the equation gallery, the
+historical atlas, or the full reference catalog.
+
+## Biological model equations and numerical verification — Sources and further branches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/biological-models/#sources-and-further-branches
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## The carbuncle phenomenon — The carbuncle phenomenon [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/
+Coverage: reading
+
+A strong shock can develop a spurious bulge, streaks, or alternating transverse states when captured by a multidimensional numerical scheme. This carbuncle instability is a property of the discretized flow problem; a sharp-looking shock alone does not establish accuracy. Grid-aligned shocks are a particularly revealing setting.
+Quirk (1994) documents failures of Godunov-type solvers and motivates switching between complementary fluxes. Pandolfi and D’Ambrosio (2001) analyze shock-related instabilities and localized remedies. Their analyses motivate the diagnostic questions below; this chapter does not claim a universal mechanism or a new stability proof.
+
+## The carbuncle phenomenon — Why a one-dimensional flux can fail in two dimensions# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#why-a-one-dimensional-flux-can-fail-in-two-dimensions
+Coverage: reading
+
+A face-normal Roe flux has the form
+\widehat F_n=\tfrac12(F_n(U_L)+F_n(U_R))
+-\tfrac12\sum_k |\widetilde\lambda_k|\,\alpha_k\widetilde r_k.
+Its characteristic decomposition gives different dissipation to acoustic, contact, and shear waves. Near a stationary, grid-aligned shock, disturbances in neighboring rows can interact with weakly damped transverse modes and the discrete shock structure. Resolving contacts accurately and stabilizing every strong multidimensional shock are separate design demands. The entire scheme matters: reconstruction, flux, time integration, mesh, and boundaries.
+Odd–even decoupling describes alternating neighboring-row behavior and is a useful shock-instability diagnostic. It is related to carbuncle studies, but the terms do not identify one identical test in every paper. The familiar blunt-body shock bulge and a perturbed planar-shock experiment have different geometries and boundary conditions.
+
+## The carbuncle phenomenon — Three different questions# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#three-different-questions
+Coverage: reading
+
+Entropy correction: a transonic rarefaction can be represented by an inadmissible expansion shock. Smoothing a small acoustic eigenvalue addresses this sonic-wave issue. It does not by itself certify multidimensional strong-shock stability.
+Positivity: density and pressure must remain admissible. Wave-speed bounds, a suitable CFL restriction, and positivity-preserving reconstruction address this question. Positive states can still contain a carbuncle.
+Transverse shock robustness: perturbations along the shock must not grow into a grid-dependent artifact. This requires its own multidimensional evidence.
+The library’s 1D Roe entropy smoothing belongs to the first category. Passing Sod or the double-rarefaction test does not answer the third.
+
+## The carbuncle phenomenon — Remedies and their tradeoffs# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#remedies-and-their-tradeoffs
+Coverage: reading
+
+A two-wave HLL/HLLE flux or Rusanov flux usually adds more dissipation to contact and shear information than a contact-resolving solver. A shock sensor can blend a sharper flux with a more dissipative one locally. Rotated or multidimensional flux constructions seek dissipation in directions that a strictly face-normal treatment can miss. See Nishikawa and Kitamura (2008) for a rotated-hybrid approach.
+These are design directions, not interchangeable guarantees. A sensor may also damp a physical shear layer; excessive dissipation can conceal an instability while losing the feature of interest. State the actual wave-speed estimate: this atlas’s 2D baseline uses HLL with Davis-type bounds, not an implementation of every Einfeldt HLLE variant.
+
+## The carbuncle phenomenon — What an honest comparison must measure# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#what-an-honest-comparison-must-measure
+Coverage: reading
+
+Use a perturbed planar strong shock, then a blunt-body flow on a controlled grid sequence. Fix the shock Mach number, shock location relative to cell faces, perturbation amplitude and wavelength, boundary conditions, reconstruction, CFL, and final time. Compare Roe, HLL/HLLE, and a proposed hybrid under matched settings. Repeat with shifted or rotated meshes.
+For periodic transverse rows, one possible alternating-density diagnostic at a selected shock-normal station is
+A_\pi(i,t)=\left|\frac{1}{N_y}\sum_{j=0}^{N_y-1}(-1)^j
+\bigl(\rho_{i,j}(t)-\overline\rho_i(t)\bigr)\right|.
+Record its time history and the maximum over the shock neighborhood, together with shock position, transverse velocity, pressure, and positivity. For a moving shock, track the shock neighborhood rather than a single fixed column. Other wavelengths need their own diagnostics. A small final residual or a visually smooth contour is insufficient evidence.
+
+## The carbuncle phenomenon — Status in this edition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#status-in-this-edition
+Coverage: reading
+
+The Double Mach Reflection exhibit is an actual first-order HLL computation of an oblique shock interaction. It is not a controlled Roe-versus-HLL carbuncle experiment and supplies no carbuncle-free certification. The planar-shock section below adds a controlled row-perturbation diagnostic; a separate stage adds conforming-grid cylinder-forebody snapshots and controls. The physical cylindrical viscous stress and numerical shock dissipation also represent different operators.
+Continue with Roe’s legacy, the flux benchmarks, and the implementation roadmap.
+
+## The carbuncle phenomenon — Computed planar odd–even diagnostic# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#computed-planar-oddeven-diagnostic
+Coverage: reading
+
+Open the controlled comparison. This independent test
+uses a stationary Mach-6 normal shock in [0,1] × [0,0.25], γ=1.4,
+upstream (ρ,u,v,p)=(1.4,6,0,1), and exact normal-shock downstream states.
+Both x boundaries are fixed, y is periodic, and cells are square. Compare
+64 × 16 and 128 × 32 at t=0.2 using first-order space, SSPRK2 and CFL 0.3.
+The shock is either at x=0.5, aligned with a face, or half a cell farther right.
+Initial conservative means integrate a row-dependent front displacement of
+±10⁻⁴Δx exactly. Each configuration has an unperturbed control.
+Compare raw Roe, Roe with acoustic smoothing δ=0.1c̃, Davis HLL,
+Einfeldt-type HLLE, a pressure-sensor Roe/HLLE blend, and the common-sound-speed
+cubic-pressure AUSM baseline. All runs use the same
+spatial/time settings; their step counts and costs need not match.
+The blend uses S=max_neighbors |p_neighbor−p|/min(p_neighbor,p),
+θ=clip((S−0.05)/0.2,0,1), and the maximum adjacent cell θ at each face.
+F=(1−θ)F_Roe_fixed+θF_HLLE. The x-pressure jump can therefore activate
+HLLE on nearby transverse faces. This is an explicit educational sensor,
+not the published rotated-hybrid construction or a universal cure.
+Measure max_i Aπ over |x−xshock|<0.1, pressure/density admissibility, retry
+counts, transverse velocity and each row's integrated mass-deficit position.
+
+## The carbuncle phenomenon — Computed planar odd–even diagnostic# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#computed-planar-oddeven-diagnostic
+Coverage: reading
+
+The latter is not a pointwise detected front location. Density maps subtract
+the transverse row mean, using one signed color range per comparison.
+The history's logarithmic display floors values at 10⁻¹⁶; raw values remain
+in the download. No state clipping or hidden flux replacement is used.
+Face-aligned Roe runs amplify the chosen row mode; shifting the shock half a
+cell changes the response substantially. The entropy correction does not
+remove this position sensitivity. HLL/HLLE and the other fluxes must be judged
+from these stated runs, rather than their names. The special Nyquist seed
+preserves a symmetry with zero transverse velocity even as density rows
+separate, so this experiment does not probe general transverse motion.
+Reproduce with python scripts/build_shock_robustness.py. Download
+all perturbed/control histories, definitions and source hashes
+and final conservative fields.
+This is not the original Quirk moving-shock/perturbed-grid duct or a blunt-body
+carbuncle bulge. Cylinder-forebody cases are now a separate computed stage. Other wavelengths, mesh rotations and
+broader CFL/strength sweeps remain required work; no carbuncle-free claim is made.
+See Property U for the separate single-jump algebra.
+
+## The carbuncle phenomenon — Computed planar odd–even diagnostic# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/carbuncle/#computed-planar-oddeven-diagnostic
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Chapman–Enskog expansion: from populations to transport — Chapman–Enskog expansion: from populations to transport [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/chapman-enskog/
+Coverage: reading
+
+Chapman–Enskog（チャップマン–エンスコッグ）expansion separates kinetic
+relaxation from slowly varying hydrodynamic fields. The classical kinetic
+theory is treated by Chapman and Cowling's The Mathematical Theory of
+Non-Uniform Gases (first edition 1939; third edition 1970). The book's date
+is not the invention date of the expansion. This chapter gives an independent,
+unforced, isothermal lattice-BGK derivation at low Mach number.
+
+## Chapman–Enskog expansion: from populations to transport — A small parameter and solvability# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/chapman-enskog/#a-small-parameter-and-solvability
+Coverage: reading
+
+Introduce a bookkeeping parameter ε for slow variation:
+f_q=f_q^{(0)}+\epsilon f_q^{(1)}+\epsilon^2 f_q^{(2)}+\cdots,
+\quad \partial_t=\epsilon\partial_{t_1}+\epsilon^2\partial_{t_2},
+\quad \nabla=\epsilon\nabla_1.
+Conserved moments are carried by the local equilibrium, so higher-order
+corrections have zero mass and momentum moments:
+\sum_q f_q^{(k)}=0,\quad
+\sum_q\boldsymbol c_q f_q^{(k)}=0\quad (k\geq1).
+These are constraints on the expansion, not instructions to erase the
+nonequilibrium stress. The stress moment of f^(1) produces viscous transport.
+
+## Chapman–Enskog expansion: from populations to transport — Keep the discrete-time Taylor term# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/chapman-enskog/#keep-the-discrete-time-taylor-term
+Coverage: reading
+
+For lattice BGK, expand the streaming side with D_q=∂t+c_q·∇. In lattice
+time units the Taylor series starts as D_q f_q + D_q² f_q/2.
+At successive orders,
+f_q^{(0)}=f_q^{eq},\qquad
+f_q^{(1)}=-\tau D_{1q} f_q^{eq},
+\partial_{t_2} f_q^{eq}
++\left(1-\frac1{2\tau}\right)D_{1q}f_q^{(1)}
+=-\frac{f_q^{(2)}}{\tau}.
+The first-order mass and momentum moments give the continuity and Euler
+parts. The second-order stress correction supplies the Newtonian viscous
+part. D2Q9 equilibrium isotropy, the low-Mach approximation, and the preceding
+factor give the shear viscosity
+\nu=c_s^2\left(\tau-\frac12\right)\Delta t.
+Here τ is the dimensionless number of lattice time steps used for
+relaxation, with physical τ_relax=τΔt. Continuous-time BGK instead gives
+ν=c_s²τ_relax for the corresponding isothermal model; there is no streaming
+Taylor half-step in that continuous equation. Mixing those definitions yields
+a wrong viscosity.
+
+## Chapman–Enskog expansion: from populations to transport — What this derivation does and does not establish# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/chapman-enskog/#what-this-derivation-does-and-does-not-establish
+Coverage: reading
+
+The D2Q9 experiment measures shear damping rather than
+only substituting this formula. Qian et al. (1992)
+is the lattice-model source; the BGK source
+concerns continuous kinetic relaxation. Guo et al. (2002)
+treats the force discretization separately; the unforced algebra above does
+not derive its source term.
+This is a formal near-equilibrium asymptotic expansion, with small gradients
+and small Mach number for the truncated isothermal equilibrium. It does not
+prove stability near shocks, justify arbitrary relaxation times, recover an
+energy equation, or make this model a general rarefied-gas Boltzmann solver.
+Burnett-order transport and thermal collision models require additional
+moments and analysis.
+
+## Chapman–Enskog expansion: from populations to transport — What this derivation does and does not establish# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/chapman-enskog/#what-this-derivation-does-and-does-not-establish
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## CIP: carry the value and the gradient — CIP: carry the value and the gradient [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/
+Coverage: reading
+
+The original cubic-interpolated pseudo-particle (CIP) idea stores a field and
+its spatial derivative, then reconstructs an upwind cubic profile. The broader
+family is also called constrained interpolation profile. The
+CIP notebook
+implements the original polynomial construction for constant-speed periodic
+scalar advection. It compares value-only linear interpolation with CIP and
+checks diffusion, gradient transport, oscillations, refinement, and conservation.
+Historical references are Takewaki–Nishiguchi–Yabe (1985)
+and Yabe–Aoki (1991).
+The accessible Saito–Obase–Abe-Ouchi (2020) paper
+describes CIP-family value/gradient evolution and a rational variant; its
+ice-sheet application and RCIP algorithm are separate from this polynomial example.
+
+## CIP: carry the value and the gradient — Characteristics and an additional unknown# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#characteristics-and-an-additional-unknown
+Coverage: reading
+
+For constant velocity a,
+f_t+a f_x=0,\qquad g=f_x,\qquad g_t+a g_x=0.
+At a receiving point x_i, trace backward to x_d=x_i−a dt. Interpolate both
+f and g from the old upwind interval at that departure point. The evolved g
+is an independent state variable; it is not replaced after each step by a
+finite difference of the updated f. For N nodes, CIP therefore stores 2N
+scalar unknowns, while the linear comparison stores N.
+For variable velocity the gradient equation instead includes stretching:
+g_t+a g_x=-a_xg.
+Source terms, velocity variation, and compressibility require additional
+updates and characteristic treatment. A transported tracer f_t+a f_x=0 and
+a conserved density f_t+(af)_x=0 also differ when a_x is nonzero. This edition
+uses constant a only, where the two PDE forms coincide.
+
+## CIP: carry the value and the gradient — Four endpoint constraints determine a cubic# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#four-endpoint-constraints-determine-a-cubic
+Coverage: reading
+
+On an interval of width h, with normalized coordinate s∈[0,1], the cubic is
+P(s)=H_{00}(s)f_L+hH_{10}(s)g_L+H_{01}(s)f_R+hH_{11}(s)g_R,
+\begin{aligned}
+H_{00}&=2s^3-3s^2+1,&H_{10}&=s^3-2s^2+s,\\
+H_{01}&=-2s^3+3s^2,&H_{11}&=s^3-s^2.
+\end{aligned}
+The endpoint values and physical derivatives are reproduced, and the new
+states are f_i=P(s_d) and g_i=P′(s_d)/h. Here P′ differentiates with respect
+to s. For positive a, the interval is [x_{i−1},x_i] and s_d=1−a dt/h; for
+negative a it is [x_i,x_{i+1}] and s_d=−a dt/h. The implementation restricts
+|a|dt/h≤1 to keep the departure point in this adjacent interval. The case
+|a|dt/h=1 shifts both arrays by one node exactly.
+This is a complete characteristic/remapping update for this constant-speed
+problem, rather than a spatial RHS subsequently advanced by an arbitrary RK
+method. It belongs beside the RK family, not inside its list
+of time-integration tableaus. More general semi-Lagrangian schemes can cross
+multiple cells; that capability is outside this adjacent-cell example.
+
+## CIP: carry the value and the gradient — Reproducible scalar tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#reproducible-scalar-tests
+Coverage: reading
+
+The domain is periodic [0,1], with N=128 point nodes x_i=i/N. Notebook choices
+are a=±1, Courant magnitudes 0.25, 0.6, or 1, and final times 0.25 or 1.
+The last step is shortened. Every configuration is solved independently to
+its selected final time, without interpolation between saved solutions.
+The smooth profile is 1+0.2 sin(2πx). Initial g is either its analytic
+derivative or the centered periodic difference. The square pulse is one on
+[0.2,0.4) and zero elsewhere. Its initial slopes are either zero or centered
+differences. Zero is an explicit convention at a sampled discontinuity, not
+an analytic derivative there. Consequently there is no square-pulse exact
+gradient error displayed.
+The reference f is exact translated point samples. These are not the
+cell-average references used in the finite-volume limiter notebook.
+Reported L1 means the average absolute point error. Initial-gradient choice
+can materially affect sharp features. The basic cubic has no TVD, monotonicity,
+or positivity limiter, and the square test shows overshoot and undershoot.
+The linear interpolation comparison is the same signed-characteristic
+point-value update, algebraically first-order upwind for |C|≤1.
+Smooth refinement uses N=32,64,128,256, a=1, Courant=0.6, and T=0.37. The
+computed value errors approach order three for both gradient initializations;
+
+## CIP: carry the value and the gradient — Reproducible scalar tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#reproducible-scalar-tests
+Coverage: reading
+
+the gradient errors are recorded separately. A cubic interpolant alone is
+not a fourth-order global-accuracy claim after repeated remapping. Integer
+Courant shifts are a special exact-translation case, so they are not used
+to infer a generic refinement order. No equal-cost ranking is made between
+the N-state linear method and the 2N-state CIP method.
+
+## CIP: carry the value and the gradient — Why a sine wave is not a conservation proof# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#why-a-sine-wave-is-not-a-conservation-proof
+Coverage: reading
+
+The exact integral of the periodic piecewise-Hermite reconstruction is
+M=\sum_i\left[\frac h2(f_i+f_{i+1})+
+\frac{h^2}{12}(g_i-g_{i+1})\right]=h\sum_i f_i.
+For uniform constant-speed remapping with fraction s, its one-step change is
+\Delta M=h^2\,[H_{10}(s)+H_{11}(s)]\sum_i g_i.
+The initial analytic sine slopes and centered differences sum to zero, so
+the displayed scalar runs can conserve this integral to roundoff even though
+the method has no universal conservative remapping property.
+The separate counterexample uses N=32 and a valid periodic C1 Hermite field
+with f_i=1 and g_i=1 at every node. This is not a constant function:
+each interval contains a small cubic ripple, and its derivative varies
+between the nodes. Its exact integral is 1. Exact translation preserves that
+integral, while one CIP remapping step at C=0.35 gives
+s=0.65,\qquad \Delta M=h\,s(1-s)(1-2s)=-0.0021328125.
+The plot shows the exact shifted original reconstruction and the reconstructed
+CIP field over the first four intervals. This is an intentionally constructed
+grid-scale test of a claimed property, not a prediction of the mass error for
+every smooth flow. Integrals are evaluated analytically, not by coarse
+quadrature. Small errors in an easy test cannot establish a stronger guarantee.
+
+## CIP: carry the value and the gradient — Conservative and shape-preserving branches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#conservative-and-shape-preserving-branches
+Coverage: reading
+
+CIP–CSL (Yabe et al., 2001)
+introduces an integral constraint and conservative semi-Lagrangian transport.
+Rational CIP / RCIP changes the reconstruction, and variants apply additional
+shape constraints. Conservation and boundedness require their own definitions
+and tests; neither follows solely from the CIP name.
+This edition implements the original 1D cubic only. CIP–CSL2/CSL4, RCIP,
+fluid advection/non-advection splitting, multidimensional mixed derivatives,
+and complete compressible or multiphase solvers are reading context. The
+existing Euler shock-tube solvers retain their documented reconstruction and
+flux choices.
+
+## CIP: carry the value and the gradient — Reproduce# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#reproduce
+Coverage: reading
+
+from numart.cip import solve_advection, mass_counterexample
+wave = solve_advection(profile="sine", speed=-1., cfl=0.6)
+pulse = solve_advection(profile="square", gradient="centered")
+print(mass_counterexample()["mass_after"])
+python scripts/build_cip.py
+python scripts/sync_web_content.py
+docs/figures/cip.json records 48 paired CIP/linear configurations, derivative
+arrays, diagnostics, three refinement series, the conservation counterexample,
+and source hashes. The browser selects these Python-computed results. Tests
+check exact cubic reconstruction and derivatives, both directions, one-cell
+shifts, constant preservation, smooth refinement, oscillations, and the
+analytic mass-change identity.
+
+## CIP: carry the value and the gradient — Reproduce# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/cip/#reproduce
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Polar and cylindrical coordinates: tensors and viscosity — Polar and cylindrical coordinates: tensors and viscosity [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/
+Coverage: reading
+
+The formulas below use physical components in the orthonormal basis (e_r,e_phi,e_z), with cylindrical coordinates (r,phi,z), phi in radians, and r > 0. A planar polar field is obtained by setting u_z = 0 and all z derivatives to zero. Coordinate-basis tensor components have different metric factors; mixing the conventions creates incorrect viscous forces.
+For a reference derivation of cylindrical fluid equations, see Richard Fitzpatrick’s lecture notes. This chapter states a general bulk-viscosity convention explicitly and checks it with analytic fields.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Velocity gradient: differentiate the basis too# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#velocity-gradient-differentiate-the-basis-too
+Coverage: reading
+
+Let L_ij = e_i · ((e_j · grad)u). Its rows are velocity components and columns are differentiation directions:
+L=\begin{pmatrix}
+\partial_r u_r & (\partial_\phi u_r-u_\phi)/r & \partial_z u_r\\
+\partial_r u_\phi & (\partial_\phi u_\phi+u_r)/r & \partial_z u_\phi\\
+\partial_r u_z & (\partial_\phi u_z)/r & \partial_z u_z
+\end{pmatrix}.
+The terms −u_phi/r and +u_r/r arise from rotation of the basis. Define D = (L+L^T)/2 and theta = tr(L):
+\theta=\nabla\cdot u=\partial_r u_r+\frac{u_r}{r}
++\frac{\partial_\phi u_\phi}{r}+\partial_z u_z.
+The input partials[...,i,j] in numart.coordinates means the plain coordinate derivative of physical velocity component i with respect to coordinate j = (r,phi,z). Supply the phi derivative itself, not a derivative already divided by r.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Newtonian stress: all six independent components# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#newtonian-stress-all-six-independent-components
+Coverage: reading
+
+With total stress sigma = −p I + tau, dynamic shear viscosity mu, and bulk viscosity zeta, the three-dimensional constitutive law is
+\tau=2\mu D+\lambda\theta I,\qquad
+\lambda=\zeta-\frac23\mu.
+Stokes’ hypothesis sets zeta = 0. It is a material assumption, distinct from imposing incompressibility theta = 0. Positive mu and nonnegative zeta ensure nonnegative viscous dissipation.
+\begin{aligned}
+\tau_{rr}&=2\mu\,\partial_r u_r+\lambda\theta,\\
+\tau_{\phi\phi}&=\frac{2\mu}{r}(u_r+\partial_\phi u_\phi)+\lambda\theta,\\
+\tau_{zz}&=2\mu\,\partial_z u_z+\lambda\theta,\\
+\tau_{r\phi}&=\mu\left(\partial_r u_\phi-\frac{u_\phi}{r}
++\frac{\partial_\phi u_r}{r}\right),\\
+\tau_{rz}&=\mu(\partial_z u_r+\partial_r u_z),\\
+\tau_{\phi z}&=\mu\left(\partial_z u_\phi+\frac{\partial_\phi u_z}{r}\right).
+\end{aligned}
+The lower indices here label physical components, not covariant coordinate-basis components. Off-diagonal engineering shear rates are twice the corresponding D component; applying another factor of two to the formulas above would be an error.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Stress divergence: the viscous force per volume# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#stress-divergence-the-viscous-force-per-volume
+Coverage: reading
+
+For a symmetric physical stress tensor, f = div(tau) has components
+\begin{aligned}
+f_r&=\partial_r\tau_{rr}+\frac1r\partial_\phi\tau_{r\phi}
++\partial_z\tau_{rz}+\frac{\tau_{rr}-\tau_{\phi\phi}}r,\\
+f_\phi&=\partial_r\tau_{r\phi}+\frac1r\partial_\phi\tau_{\phi\phi}
++\partial_z\tau_{\phi z}+\frac{2\tau_{r\phi}}r,\\
+f_z&=\partial_r\tau_{rz}+\frac1r\partial_\phi\tau_{\phi z}
++\partial_z\tau_{zz}+\frac{\tau_{rz}}r.
+\end{aligned}
+The acceleration contribution is f/rho. Pressure contributes −grad(p) separately. These divergence formulas allow spatially variable mu and zeta when stress derivatives include their variation. In the Python routine, partials[...,i,j,k] is the coordinate derivative k of physical stress component (i,j).
+
+## Polar and cylindrical coordinates: tensors and viscosity — Constant viscosity and the vector Laplacian# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#constant-viscosity-and-the-vector-laplacian
+Coverage: reading
+
+Only for constant mu and lambda can the force be simplified to
+f=\mu\nabla^2 u+(\mu+\lambda)\nabla\theta.
+For a scalar g, let
+\Delta_s g=\frac1r\partial_r(r\partial_r g)
++\frac1{r^2}\partial_\phi^2g+\partial_z^2g.
+The physical components of the vector Laplacian are
+\begin{aligned}
+(\nabla^2u)_r&=\Delta_su_r-\frac{u_r}{r^2}
+-\frac2{r^2}\partial_\phi u_\phi,\\
+(\nabla^2u)_\phi&=\Delta_su_\phi-\frac{u_\phi}{r^2}
++\frac2{r^2}\partial_\phi u_r,\\
+(\nabla^2u)_z&=\Delta_su_z.
+\end{aligned}
+For incompressible constant-viscosity flow, theta vanishes, but the radial and azimuthal vector-Laplacian metric terms remain. For variable coefficients, pulling mu outside derivatives omits terms 2D·grad(mu) and theta grad(lambda). Evaluate the full stress divergence instead.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Axisymmetry, polar slices, and material acceleration# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#axisymmetry-polar-slices-and-material-acceleration
+Coverage: reading
+
+Axisymmetry removes phi derivatives, not the terms u_r/r, −u_phi/r, or the stress-divergence metric terms. Axisymmetric flow may still have swirl. For a planar polar slice of a three-dimensional Newtonian fluid, retain the 2mu/3 bulk correction and tau_zz = lambda theta. A genuinely two-dimensional constitutive model uses a different deviatoric trace subtraction and must be declared separately.
+The scalar advective derivative is D_s/Dt = partial_t + u_r partial_r + (u_phi/r) partial_phi + u_z partial_z. Vector material acceleration has extra radial and azimuthal terms:
+a_r=\frac{D_su_r}{Dt}-\frac{u_\phi^2}{r},\qquad
+a_\phi=\frac{D_su_\phi}{Dt}+\frac{u_ru_\phi}{r},\qquad
+a_z=\frac{D_su_z}{Dt}.
+These inertial terms are different from viscous metric terms.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Coordinate-basis tensors and transformations# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#coordinate-basis-tensors-and-transformations
+Coverage: reading
+
+The cylindrical coordinate basis is (partial_r,partial_phi,partial_z) = (e_r,r e_phi,e_z), with metric diag(1,r²,1). Thus physical u_phi = r u^phi, and physical tau_phi,phi = r² tau^{phi,phi} = tau_{phi,phi}^{coordinate}/r². Covariant, contravariant, and physical arrays cannot be substituted for one another without these factors.
+Nonzero Christoffel symbols include Gamma^r_phi,phi = −r and Gamma^phi_r,phi = Gamma^phi_phi,r = 1/r. Covariant differentiation accounts for the same basis changes included explicitly above. The Cartesian transformation uses the orthogonal matrix Q with columns e_r, e_phi, e_z: L_cart = Q L_cyl Q^T and tau_cart = Q tau_cyl Q^T.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Analytic checks and the axis# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#analytic-checks-and-the-axis
+Coverage: reading
+
+Rigid rotation: u_phi = Omega r gives antisymmetric L, D = 0, and zero viscous stress. Using partial_r u_phi alone would incorrectly create shear.
+Pipe Poiseuille flow: u_z = Umax(1−r²/R²) gives tau_rz = −2 mu Umax r/R² and f_z = −4 mu Umax/R². Steady axial momentum requires dp/dz = f_z.
+Circular Couette flow: u_phi = A r+B/r gives tau_rphi = −2 mu B/r² and zero azimuthal viscous-force divergence away from boundaries.
+Cartesian affine fields: random constant Cartesian velocity gradients are transformed into cylindrical data and back. Constant Cartesian stresses have zero divergence after angular basis derivatives are included.
+The tests also verify the dissipation identity
+\tau:D=2\mu D_{\rm dev}:D_{\rm dev}+\zeta\theta^2\ge0.
+These routines require r > 0. At the axis, use regularity and analytic limits rather than replacing r by a small arbitrary number. For a smooth axisymmetric field, u_r and u_phi are O(r), and u_z = u_z(0)+O(r²). Then the axial scalar radial Laplacian tends to 2 partial_r² u_z. Nonaxisymmetric regular Cartesian fields have different component limits; even uniform Cartesian translation need not have u_r = O(r).
+import numpy as np
+from numart.coordinates import cylindrical_velocity_gradient, newtonian_stress
+r, omega = 0.7, 2.0
+u = np.array([0., omega*r, 0.])
+du = np.zeros((3,3)); du[1,0] = omega
+L = cylindrical_velocity_gradient(r, u, du)
+
+## Polar and cylindrical coordinates: tensors and viscosity — Analytic checks and the axis# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#analytic-checks-and-the-axis
+Coverage: reading
+
+assert np.allclose(newtonian_stress(L), 0.)
+The code checks tensor identities at supplied points. A cylindrical Navier–Stokes PDE solver, axis boundary scheme, and spherical-coordinate implementation remain future work.
+
+## Polar and cylindrical coordinates: tensors and viscosity — Analytic checks and the axis# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/coordinates-viscosity/#analytic-checks-and-the-axis
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Double Mach Reflection — Double Mach Reflection [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/
+Coverage: reading
+
+This exhibit computes a Mach-10 shock reflecting from a wall using the two-dimensional ideal-gas Euler equations. The benchmark is associated with Woodward and Colella (1984). NASA’s LAVA tutorial is a modern implementation reference.
+
+## Double Mach Reflection — Equations and initial states# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/#equations-and-initial-states
+Coverage: reading
+
+Use gamma = 1.4 on [0,4] × [0,1], with conserved state U = (rho, rho u, rho v, E) and E = p/(gamma−1) + rho(u²+v²)/2. The initial shock intersects the bottom wall at x = 1/6 and makes a 60-degree angle with it:
+x_s(y,0)=\frac16+\frac{y}{\sqrt3}.
+The post-shock state to its left is (rho,u,v,p) = (8, 8.25 sqrt(3)/2, −4.125, 116.5). The ambient state to its right is (1.4,0,0,1). The upstream sound speed is one, so the shock-normal propagation speed of ten corresponds to Mach 10.
+Initial cell states are assigned by the cell-center side of the shock; cut-cell averages are not integrated exactly.
+The moving incident-shock line is
+x_s(y,t)=\frac16+\frac{y+20t}{\sqrt3}.
+These states satisfy the moving Rankine–Hugoniot relation in the shock-normal direction; the automated check uses normal (sqrt(3)/2,−1/2) and speed 10.
+
+## Double Mach Reflection — Boundary conditions and discretization# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/#boundary-conditions-and-discretization
+Coverage: reading
+
+The left boundary supplies the post-shock state. The right boundary uses zero-gradient outflow. At the bottom, x < 1/6 supplies post-shock data; the remaining wall reflects normal momentum. The top boundary assigns the two states using x_s(1,t). SSPRK2 stages evaluate this boundary at their corresponding stage times.
+The calculation uses piecewise-constant finite volumes, a two-wave HLL flux with Davis-type minimum/maximum acoustic speeds, and an unsplit flux divergence. The step is bounded by
+\Delta t=C\left[\frac{\max(|u|+c)}{\Delta x}
++\frac{\max(|v|+c)}{\Delta y}\right]^{-1}.
+The displayed run has Nx = 256, Ny = 64, delta x = delta y = 1/64, C = 0.4, final time 0.2, and 811 steps. Its minimum final density is 1.4 and minimum final pressure is 1.0. These are measured diagnostics for this run, not a general positivity theorem.
+
+## Double Mach Reflection — Reproduce and inspect# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/#reproduce-and-inspect
+Coverage: reading
+
+python -m numart.cli run double-mach --n 64 --cfl 0.4 --output outputs/double-mach
+Here --n sets Ny and Nx = 4 Ny. The command saves solution.npz, run.json, and double-mach.png. The gallery snapshot includes its run manifest and conserved-state arrays. Array q has shape (Nx,Ny,4); x and y are cell-center coordinates. The manifest records source hashes and the working-tree state at generation time.
+
+## Double Mach Reflection — What the figure establishes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/#what-the-figure-establishes
+Coverage: reading
+
+The image shows a computed incident/reflected shock pattern, with density and thirty density contours. First-order spatial reconstruction is deliberately diffusive. This grid does not resolve the fine wall jet and roll-up of high-resolution PPM or adaptive calculations. There is no exact final-time solution, grid-convergence study, or digitized original-paper comparison in this exhibit.
+Tests check equal-state flux consistency, a periodic uniform state, the incident-shock jump relation, moving-top and reflecting-wall data, and admissible states in a small-grid run. They do not establish convergence of the full reflection pattern. Further work should add higher-order reconstruction, refinement, and independent reference-code comparisons.
+For strong-shock instability diagnostics, continue to the carbuncle phenomenon. This HLL image is not a demonstration that a Roe implementation is stable or unstable.
+
+## Double Mach Reflection — Watch the reflection evolve# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/#watch-the-reflection-evolve
+Coverage: reading
+
+The saved-state movie shows density and pressure from the same 256 × 64 calculation. It includes actual physical times, solver steps, fixed scales, frame inspection, and MP4 export. Read the sampling definitions.
+
+## Double Mach Reflection — Watch the reflection evolve# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/double-mach/#watch-the-reflection-evolve
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Parabolic problems: evolving diffusion# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#parabolic-problems-evolving-diffusion
+Coverage: reading
+
+Solve u_t=νu_xx on [0,1] with zero Dirichlet boundaries and initial data
+sin(πx). The reference solution is u=exp(-νπ²t)sin(πx).
+numart.linear.diffusion_1d returns interior nodes.
+Second-order centered differences and the θ method give
+(I-\theta\nu\Delta t D_{xx})u^{n+1}
+=(I+(1-\theta)\nu\Delta t D_{xx})u^n.
+θ=0: FTCS, requiring r=νΔt/h²≤1/2.
+θ=1: backward Euler, first order in time and unconditionally stable for linear diffusion.
+θ=1/2: Crank–Nicolson, second order in time and A-stable for linear diffusion.
+The Fourier amplification factor is
+G=[1-4(1-θ)r sin²(ξ/2)]/[1+4θr sin²(ξ/2)].
+For large r, Crank–Nicolson can have negative G: high-frequency modes alternate
+sign while remaining stable. Stability, positivity, monotonicity, and temporal
+resolution need separate checks.
+Crank–Nicolson (1947).
+spectral_diffusion solves a separate periodic problem by multiplying each
+Fourier coefficient by exp(-νk²t). Accuracy comparisons with the Dirichlet
+finite-difference problem must account for their different boundaries.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Thomas elimination: from implicit steps to tridiagonal systems# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#thomas-elimination-from-implicit-steps-to-tridiagonal-systems
+Coverage: reading
+
+For subdiagonal a, diagonal b, and superdiagonal c, forward elimination uses
+m_i=a_i/b'_{i-1}, b'_i=b_i-m_i c_{i-1}, and
+d'_i=d_i-m_i d'_{i-1}. Back substitution uses
+x_i=(d'_i-c_i x_{i+1})/b'_i. Both work and storage are O(N).
+thomas preserves its inputs and raises an error for a small pivot. It uses
+elimination without pivoting, so it is not safe for every tridiagonal matrix.
+The diffusion matrices used here are strictly diagonally dominant. The original
+1949 Thomas report has not been inspected; the historical citation and the
+verification of this modern implementation are separate claims.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Elliptic problems: the Poisson equation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#elliptic-problems-the-poisson-equation
+Coverage: reading
+
+The sign convention is -Δu=f. In 1D, use a tridiagonal system and Thomas
+elimination; in 2D, use a five-point stencil with matrix-free conjugate gradients
+or multigrid. Default manufactured solutions are sin(πx) in 1D and
+sin(πx)sin(πy) in 2D. Check the linear-system residual separately from the
+discretization error relative to the continuous solution.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Dirichlet, Neumann, and Robin boundaries# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#dirichlet-neumann-and-robin-boundaries
+Coverage: reading
+
+Dirichlet specifies u=g_D; Neumann specifies the outward normal derivative
+∂u/∂n=g_N; Robin specifies αu+β∂u/∂n=g. The normal derivative is -u_x at
+the left end and +u_x at the right. Outward conductive heat flux is
+-k∂u/∂n, so both the specified quantity and its sign matter.
+Pass Boundary.dirichlet(value), Boundary.neumann(value), or
+Boundary(alpha,beta,value) to poisson_boundary_1d. Robin and Neumann
+conditions eliminate ghost points and use half weights at the endpoints.
+The time-dependent diffusion_1d currently supports zero Dirichlet boundaries.
+A pure-Neumann Poisson solution is determined only up to an additive constant.
+The divergence theorem requires
+\int_\Omega f\,dV=-\int_{\partial\Omega}g_N\,dS.
+The implementation checks the discrete compatibility condition corresponding
+to trapezoidal quadrature and fixes the constant with a prescribed mean,
+defaulting to zero. Some Robin coefficients also lead to a loss of uniqueness.
+Periodic Poisson problems similarly need zero-mode compatibility and a mean
+constraint, with the endpoints identified.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Spectral radius of the iteration matrix# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#spectral-radius-of-the-iteration-matrix
+Coverage: reading
+
+For a stationary iteration x^{k+1}=T x^k+c solving Ax=b, errors satisfy
+e^{k+1}=T e^k. In finite dimensions, convergence for every initial error is
+equivalent to ρ(T)<1, where ρ(T)=max |λ_i(T)|.
+This differs from the radius of convergence of a power series,
+R=1/limsup |a_n|^{1/n}, and from a Newton iteration's basin of convergence.
+With A=D+L+U, Jacobi has T=-D^{-1}(L+U), Gauss–Seidel has
+T=-(D+L)^{-1}U, and SOR has
+T=(D+ωL)^{-1}[(1-ω)D-ωU]. iteration_matrix and spectral_radius support
+small-matrix demonstrations. Nonnormal matrices can exhibit transient error
+growth even when ρ<1. The system condition number κ(A) and iteration
+spectral radius ρ(T) measure different properties.
+Netlib Templates.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Red-black Gauss–Seidel and SOR# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#red-black-gaussseidel-and-sor
+Coverage: reading
+
+Color the five-point grid with (i+j) mod 2. Updates of one color depend only
+on the other color; update red, then black. Set ω=1 for Gauss–Seidel and
+use 0<ω<2 for SOR relaxation. This interval alone does not guarantee
+convergence for arbitrary nonsymmetric systems. The implementation targets
+symmetric positive-definite Dirichlet Poisson problems.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Geometric multigrid V-cycle# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#geometric-multigrid-v-cycle
+Coverage: reading
+
+Apply three red-black Gauss–Seidel sweeps on the fine grid.
+Compute r_h=f_h-A_h u_h.
+Restrict the residual by full weighting.
+Solve the coarse-grid error equation recursively.
+Prolongate the correction bilinearly.
+Apply three more fine-grid sweeps.
+Each side has N=2^k-1 interior nodes. Coarse grids use rediscretized five-point
+operators, and the one-unknown coarsest problem is solved directly. Tests check
+interpolation, restriction, grid spacing, and boundary consistency. Variable
+coefficients, anisotropy, curved grids, AMG, and FAS are outside this edition.
+Fedorenko (1961),
+Brandt (1977).
+For a teaching path, start with Briggs–Henson–McCormick, A Multigrid Tutorial, second edition (2000), then use Trottenberg–Oosterlee–Schüller, Multigrid for local Fourier analysis, algorithm design and advanced applications. The textbook guide explains where each book fits. Their broader scope includes methods beyond the geometric V-cycle implemented here.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Particle and disk gravity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#particle-and-disk-gravity
+Coverage: reading
+
+The new particle-gravity chapter connects PM, P³M, Tree, multipoles, and multigrid. Gravity boundary kernels adds Hockney–Eastwood isolated convolution and Koyama–Ostriker slab Fourier kernels. The existing multigrid example retains its 2D zero-Dirichlet operator; it is not a 3D open-boundary gravity solver.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Further routes to diffusion and elliptic problems# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#further-routes-to-diffusion-and-elliptic-problems
+Coverage: reading
+
+See continuous P1 FEM for weak-form assembly,
+GMRES/ILU and nonlinear solves for nonsymmetric systems,
+and Nishikawa hyperbolic diffusion for auxiliary-gradient
+pseudo-time iteration. The equation gallery separately
+shows physical-time heat diffusion.
+For definitions and comparisons of A-stability, L-stability and L1/L2/L∞ error norms,
+see the shared accuracy and stability guide.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Same-system Poisson comparison# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#same-system-poisson-comparison
+Coverage: reading
+
+Open the Poisson solver notebook. All 2D methods solve
+one constant-coefficient five-point SPD system on the unit square with zero
+Dirichlet boundaries. N=31,63,127 counts interior nodes per side, hence
+N² unknowns. Every iterative method starts from zero. The common stopping
+criterion uses the explicitly recomputed true residual, including for CG:
+ (A_hu)_{ij}=\frac{4u_{ij}-u_{i-1,j}-u_{i+1,j}-u_{i,j-1}-u_{i,j+1}}{h^2},\quad
+ h=\frac1{N+1},\qquad
+ \frac{\|f-A_hu\|_2}{\|f\|_2}\le 10^{-8}.
+Forcing choices are a broad smooth manufactured field and two localized
+opposite-sign sources. The manufactured solution is
+u=x(1−x)e^(2x)y(1−y)e^(−1.5y), with f=−Δu differentiated analytically.
+The localized forcing is
+100exp(−[(x−0.28)²+(y−0.35)²]/0.006)
+−60exp(−[(x−0.70)²+(y−0.65)²]/0.012), with no continuous exact solution supplied.
+Algebraic error is nodal RMS against the FFT/DST discrete solution;
+continuous nodal RMS for the manufactured field measures discretization error.
+Neither is a continuous integral L2 norm. Tight residuals do not remove
+second-order discretization error.
+The separate N=31 single-sine diagnostic uses u=sin(πx)sin(πy) and f=2π²u.
+It is one eigenvector of this discrete matrix: exact-arithmetic CG requires
+one iteration from zero. It is therefore unsuitable as the sole general
+solver benchmark. Broad forcing avoids this shortcut.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Same-system Poisson comparison# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#same-system-poisson-comparison
+Coverage: reading
+
+The compared configurations are Jacobi, weighted Jacobi (ω=2/3), red-black
+Gauss–Seidel, red-black SOR, unpreconditioned CG, the existing geometric
+multigrid V-cycle, DST+Thomas and FFT/DST direct elimination. SOR uses
+ω=2/[1+sin(π/(N+1))] for this model and ordering. This is not a generally
+optimal setting for arbitrary meshes/operators. A sweep, CG iteration and
+V-cycle are different work units. Multigrid has three pre/post RBGS sweeps
+at every level and additional coarse-grid work. Its cycle count is not a
+fine-grid sweep count. Netlib's SOR discussion
+provides the method context.
+The FFT route uses an orthonormal DST-I computed with an odd extension and
+NumPy FFT, following the DST-I definition.
+The 1D eigenvalues of the difference operator are
+λk=4h⁻²sin²[kπ/(2(N+1))]; in 2D divide by λk+λl.
+This solves the same discrete operator, rather than substituting continuum
+wave numbers k². Zero Dirichlet boundaries are not periodic boundaries.
+No SciPy dependency is required by the implementation.
+Plain Thomas solves 1D tridiagonal systems. The 2D separable direct route
+transforms y, solves N shifted tridiagonal x systems with Thomas, then applies
+the inverse transform. It is labeled DST+Thomas, not a generic 2D Thomas
+solver. Both FFT/DST routes rely on constant coefficients, a rectangular
+uniform mesh and separable boundary conditions. A separate 1D table compares
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Same-system Poisson comparison# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#same-system-poisson-comparison
+Coverage: reading
+
+plain Thomas with FFT/DST at N=63,255,1023 for u=x(1−x)e^(2x).
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Timing protocol and downloadable evidence# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#timing-protocol-and-downloadable-evidence
+Coverage: reading
+
+Each configuration is run three times after a small N=7 code-path warmup.
+The reported median trial supplies its own convergence history. Wall time
+includes solver setup, allocations, per-unit true-residual checks and logging;
+it excludes imports, problem/reference generation, file I/O and plotting.
+No cached factorization/eigenvalues are reused between trials. The 1D timings
+also include their final residual check. Hardware/software metadata and all
+three times are saved. Python loops and compiled NumPy kernels have different
+costs; these measurements rank these diagnostic implementations on one host,
+not algorithms independently of implementation or hardware.
+Direct solvers have only a completed-solve endpoint marker. The chart samples
+long histories and floors displayed residuals at 10⁻¹⁴; full values are in the
+table and download. The NPZ retains every selected-trial residual/timestamp
+and final fields. CG's recursive residual chooses directions, but its true
+residual decides convergence. Residual histories need not be monotone.
+Reproduce with python scripts/build_poisson_comparison.py. Download
+settings, sampled histories, timings and source hashes
+and fields and full selected histories.
+Tests independently check DST against a dense sine matrix, direct solves
+against dense linear systems, common true residuals, all method solutions,
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Timing protocol and downloadable evidence# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#timing-protocol-and-downloadable-evidence
+Coverage: reading
+
+zero forcing and manufactured second-order refinement. Variable coefficients,
+anisotropy, irregular meshes, periodic/pure-Neumann nullspaces and parallel
+scaling require separate comparisons.
+
+## Diffusion, elliptic equations, boundary conditions, and iteration — Timing protocol and downloadable evidence# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/elliptic/#timing-protocol-and-downloadable-evidence
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Equation gallery: choose the equation before the algorithm — Equation gallery: choose the equation before the algorithm [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/
+Coverage: reading
+
+The local Web edition provides an Equations gallery with saved profiles,
+physical-time controls, fixed plot ranges, initial/boundary conditions,
+characteristic speeds and links back to methods and papers. It contains nine
+cases across seven equation families. Data are generated by
+python scripts/build_equation_gallery.py, not invented animation curves.
+
+## Equation gallery: choose the equation before the algorithm — Translation and diffusion# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#translation-and-diffusion
+Coverage: reading
+
+Linear advection u_t+u_x=0 moves a periodic sine wave. First-order upwind with
+forward Euler is compared with exact translated cell averages. Heat diffusion
+u_t=0.02u_xx damps the same Fourier mode; centered spatial differences and
+forward Euler use νΔt/Δx²≤0.4. Their discrete means are conserved.
+
+## Equation gallery: choose the equation before the algorithm — Burgers: shocks and fans# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#burgers-shocks-and-fans
+Coverage: reading
+
+Burgers (1948) is the classical
+model reference; this exhibit uses its inviscid scalar conservation law:
+u_t+(u^2/2)_x=0,\qquad f'(u)=u.
+A decreasing jump forms a shock traveling at (u_L+u_R)/2. An increasing jump
+forms a rarefaction fan, with u=x/t in coordinates centered on the initial
+jump. Exact Godunov flux selects the entropy solution, including zero flux
+inside a transonic Burgers fan. The plotted exact curves are cell integrals,
+so a shock cutting a cell is not treated as a point sample.
+
+## Equation gallery: choose the equation before the algorithm — Traffic: a jam can move against the cars# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#traffic-a-jam-can-move-against-the-cars
+Coverage: reading
+
+Lighthill–Whitham (1955) and
+Richards (1956) are the independent
+classical traffic references. This exhibit chooses a normalized quadratic
+fundamental diagram, rather than asserting that every traffic model has it:
+\rho_t+[\rho(1-\rho)]_x=0,\qquad 0\leq\rho\leq1.
+Vehicles move at 1−ρ, while small density disturbances move at 1−2ρ.
+A jump from 0.3 to 0.9 shocks at speed −0.2, despite positive vehicle speeds.
+The opposite ordering creates a clearing fan because the flux is concave.
+Both Burgers and traffic use MUSCL minmod, Godunov flux, SSPRK3 and CFL≤0.4.
+Density bounds are checked; the solver does not silently clip them.
+
+## Equation gallery: choose the equation before the algorithm — Fluid systems and kinetic methods# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#fluid-systems-and-kinetic-methods
+Coverage: reading
+
+The existing Euler Sod, wet shallow-water dam-break and isothermal density-jump
+solvers are connected as additional cases. All three now overlay conserved cell
+means from semi-analytic Riemann references: known wave fronts split Gauss
+quadrature, and the 24/48-point difference estimates integration convergence.
+The reference library explains the formulas, root
+residuals and point-versus-mean convention. Dry-bed reference formulas do not
+extend the positive-state numerical solver to dry states.
+Those models and positive-depth limits are defined in the benchmark guide.
+LBM, Chapman–Enskog expansion,
+periodic incompressible flow, and
+hyperbolic diffusion have separate computed exhibits.
+An equation, a kinetic model and a discretization are different choices.
+
+## Equation gallery: choose the equation before the algorithm — Saved times and reproducibility# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#saved-times-and-reproducibility
+Coverage: reading
+
+Scalar snapshots observe completed solver steps: their actual times can differ
+slightly from the requested display times. Output requests leave the trajectory
+unchanged. The existing 1D system baseline has no snapshot API; its displayed
+fluid times are explicitly labeled independent solves, each ending at the
+shown time. Playback links those runs and does not imply identical intermediate
+steps. Outflow mean changes include boundary flux and are not labeled mass loss.
+Download profiles and source hashes.
+Additional convergence evidence keeps these
+new experiments separate from the atlas's original validation manifest.
+
+## Equation gallery: choose the equation before the algorithm — Additional equation maps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#additional-equation-maps
+Coverage: reading
+
+The biological survey catalogs 22 model families with
+original references and proposed verification, without adding biological
+simulations. The Arakawa grid chapter adds computed
+A/B/C Fourier-symbol comparisons for linear rotating shallow water, rather
+than another fluid movie. These statuses remain distinct from the nine
+precomputed cases above.
+For definitions and comparisons of A-stability, L-stability and L1/L2/L∞ error norms,
+see the shared accuracy and stability guide.
+
+## Equation gallery: choose the equation before the algorithm — Additional equation maps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/equation-gallery/#additional-equation-maps
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Interactive experiment guide — Interactive experiment guide [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/
+Coverage: reading
+
+The basis notebook adds computed reference-element algebra: Legendre and Lagrange shapes, exact versus GLL-quadrature matrices, smooth/jump approximation, and triangular P2 functions. Its saved arrays and source hashes come from scripts/build_basis.py; it does not introduce a new PDE evolution solver.
+The web edition now includes a stability laboratory
+and a convergence notebook.
+The laboratory computes in the browser; the convergence notebook displays
+measurements from the original gallery manifest. These are distinct sources
+of evidence.
+
+## Interactive experiment guide — Periodic advection in the browser# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#periodic-advection-in-the-browser
+Coverage: reading
+
+The model is
+u_t+a u_x=0,\qquad x\in[0,1],\qquad u(x+1,t)=u(x,t).
+Use 64 cell-centered sample points, h=1/64, velocity a=+1 or a=-1,
+and Δt=|C|h. The signed Courant number is C=aΔt/h. The controls expose
+0.05≤|C|≤1.5 and 0–100 time steps. The exact comparison samples the
+continuous translated profile u(x-at,0) at the same grid points.
+Initial data can be a sine wave, a square pulse equal to one on [0.25,0.65)
+and zero elsewhere, or a sine wave with small high-frequency perturbations:
+u(x,0)=\sin(2\pi x)+10^{-3}
+\left[\sin(2\pi(N/2)x)+\cos(2\pi(N/4)x)\right].
+The ripple seeds both Nyquist and shorter resolved grid-scale modes. It makes
+unstable growth visible without relying on machine roundoff. The square
+pulse illustrates smearing and dispersive oscillations; it is not a smooth
+convergence test.
+
+## Interactive experiment guide — Four discrete updates# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#four-discrete-updates
+Coverage: reading
+
+numart.advection.difference_step and the browser implement FTCS, upwind,
+classical Lax–Friedrichs, and Lax–Wendroff. Upwind switches stencil with the
+velocity sign. The stability chapter develops their context.
+For FTCS,
+u_j^{n+1}=u_j^n-\frac C2(u_{j+1}^n-u_{j-1}^n),\qquad
+G(\theta)=1-iC\sin\theta.
+Its squared amplification is 1+C²sin²θ. Consequently, nonzero C produces
+growing modes even when the necessary domain-of-dependence bound |C|≤1
+is met. Upwind, LF, and LW satisfy the Fourier stability criterion for this
+periodic constant-coefficient problem when |C|≤1.
+The solution plot updates alongside |G(θ)|. The reported maximum samples
+all distinct real-data Fourier wavenumbers of the 64-point grid. The dashed
+threshold marks |G|=1. When the solution grows, its vertical scale expands
+rather than clipping the computed values. Pointwise L1 error, maximum
+amplitude, and arithmetic mean drift are reported separately.
+These properties concern this linear periodic model. They do not transfer
+automatically to nonlinear systems, other boundaries, or a different time
+integrator. With unstable growth, cancellation and floating-point rounding
+can also corrupt the measured mean.
+
+## Interactive experiment guide — Reproducibility and export# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#reproducibility-and-export
+Coverage: reading
+
+The browser kernels are compared with 24 reference cases generated from the
+Python implementation: four methods, six signed Courant numbers, and twelve
+updates per case. Tests compare complete sample arrays and complex Fourier
+amplification factors. Separate tests check exact one-cell translation at
+unit CFL, direction reversal, periodic wrapping, and observed-order arithmetic.
+The fixture records the SHA-256 of numart/advection.py; a source mismatch
+fails the browser numerical tests until the reference export is refreshed.
+The experiment download contains settings, grid coordinates, initial,
+computed, and exact samples, diagnostics, and the Python reference hash.
+It records a calculation performed in JavaScript, rather than claiming that
+Python runs in the browser.
+To apply the same stencil from Python:
+import numpy as np
+from numart.advection import difference_step
+n, courant, steps = 64, 0.8, 40
+x = (np.arange(n) + 0.5) / n
+q = np.sin(2 * np.pi * x)
+for _ in range(steps):
+ q = difference_step(q, courant, "lax-wendroff")
+exact = np.sin(2 * np.pi * (x - courant * steps / n))
+print("pointwise L1 error:", np.mean(abs(q - exact)))
+
+## Interactive experiment guide — Reading a refinement study# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#reading-a-refinement-study
+Coverage: reading
+
+The notebook uses the first-edition docs/figures/validation.json measurements.
+The original manifest, including source hashes and runtime versions, is
+available for download. These data predate the browser laboratory and are not
+new wall-clock measurements.
+For successive meshes, the displayed observed order is
+p_{\mathrm{obs}}=
+\frac{\log(E_{\mathrm{coarse}}/E_{\mathrm{fine}})}
+{\log(N_{\mathrm{fine}}/N_{\mathrm{coarse}})}.
+DG advection: periodic scalar transport, final time 0.2, CFL 0.2,
+N=8,16,32,64, modal Legendre P0/P1/P2, and SSPRK3. The error is RMS sampled
+at the implementation's quadrature points. It is not a separately integrated
+L2 norm. Pp stores N(p+1) scalar unknowns. Toggle the horizontal axis between
+elements and unknowns; the data remain unchanged. Spatial orders 1, 2, and 3
+and SSPRK3's time order three explain the expected smooth behavior.
+Euler entropy wave: final time 1, CFL 0.3, N=40,80,160, primitive minmod
+MUSCL or componentwise FD WENO5-JS with SSPRK3. The error is pointwise density
+L1. WENO's fifth-order spatial reconstruction does not remove the third-order
+time error, so slopes from this finite sequence do not guarantee asymptotic
+fifth-order fully discrete convergence. Euler stores three scalar state
+components per point or cell; equal counts do not imply equal computational
+cost or identical approximation spaces.
+
+## Interactive experiment guide — Reading a refinement study# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#reading-a-refinement-study
+Coverage: reading
+
+A decreasing error, an observed slope, a positivity test, a small divergence,
+and a performance comparison answer different questions. The notebook keeps
+those distinctions explicit. See the benchmark definitions
+and the implementation roadmap for the remaining checks.
+
+## Interactive experiment guide — Temporal trajectories and mesh connectivity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#temporal-trajectories-and-mesh-connectivity
+Coverage: reading
+
+The time integration notebook selects Python-computed y′ = i y trajectories for twelve temporal methods, with fixed final time 20. It exposes step size, leapfrog startup perturbation, two characteristic roots, sampled error, and amplitude. These are precomputed ODE results, unlike the browser-computed spatial stability laboratory. Read the time integration definitions.
+The mesh explorer displays three explicit vertex/cell datasets. Selection highlights face-sharing neighbors; the cell dropdown and keyboard-accessible polygons provide equivalent controls. Geometry is fixed, and no flow is integrated. Read mesh definitions, ALE, and SPH.
+Both notebooks expose foundations.json, generated by scripts/sync_web_content.py, with source SHA-256 hashes for the temporal and geometry modules. Their Python tests check refinement orders, leapfrog modes, midpoint amplitude, kernel normalization, mesh topology, and moving-volume uniform-state preservation.
+
+## Interactive experiment guide — Hamiltonian maps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#hamiltonian-maps
+Coverage: reading
+
+The Hamiltonian notebook loads 30 Python-computed cases on demand. It compares energy errors at a shared fixed step, then lets readers inspect one map’s phase-space orbit or square-boundary image. Analytic local Jacobian diagnostics distinguish symplectic structure from energy preservation. Read the definitions. Regenerate the dataset and figure with python scripts/build_hamiltonian.py.
+
+## Interactive experiment guide — Nonsteady movie and KEEP exhibits# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#nonsteady-movie-and-keep-exhibits
+Coverage: reading
+
+The motion gallery presents actual saved solver states and explicit physical timestamps, with fixed color scales and MP4 export. KEEP is evaluated on a smooth exact-reference vortex, with separate spatial/time-refinement and entropy diagnostics. No shock-capturing claim follows from that smooth computation.
+
+## Interactive experiment guide — Slope limiters and advanced reconstruction# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#slope-limiters-and-advanced-reconstruction
+Coverage: reading
+
+The limiter notebook
+loads 45 Python-computed curves on demand, together with six smooth-refinement
+studies and three constructed Euler reconstruction failures. Select minmod,
+Superbee, MC, van Leer, or clipped van Albada, inspect scalar periodic TV and
+mass, and compare Sod with the same HLLC flux. Scalar errors use exact cell
+averages; Sod retains its pointwise reference convention. First-order and
+unlimited baselines apply only to scalar advection.
+The advanced controls select TVB M=0,10,50 and demonstrate conservative
+positive-state scaling. Read slope definitions and the
+advanced assumptions. python scripts/build_limiters.py
+generates docs/figures/limiters.json with source hashes; the standard sync
+copies it to the web edition. Neither the scalar TVB example nor the positive
+reconstruction helper confers a fully discrete Euler positivity guarantee.
+
+## Interactive experiment guide — Runge–Kutta family notebook# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#rungekutta-family-notebook
+Coverage: reading
+
+The family notebook compares nine fixed-step explicit RK tableaus. Three RK2 methods share a linear stability polynomial but differ on the nonlinear y′=−y² test. Select a one-step size, inspect actual RHS-stage predictors, and compare sampled stability contours and final-time refinement. Formal order, stage count, nonlinear SSP coefficient, and RHS work are displayed separately. Read the RK chapter for all definitions and conditional SSP assumptions. python scripts/build_runge_kutta.py creates the plotted data and source manifest. The existing oscillator notebook now offers twelve temporal methods; its implicit options remain scalar linear models.
+
+## Interactive experiment guide — CIP value and gradient transport# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#cip-value-and-gradient-transport
+Coverage: reading
+
+The CIP notebook compares original cubic-Hermite CIP with linear point interpolation on uniform periodic scalar advection. It displays the independently transported gradient, derivative-initialization choices, smooth refinement, overshoot on a square pulse, and an analytic conservation counterexample. Read the definitions; point samples and finite-volume averages are not interchangeable. Rebuild with python scripts/build_cip.py before syncing.
+For definitions and comparisons of A-stability, L-stability and L1/L2/L∞ error norms,
+see the shared accuracy and stability guide.
+
+## Interactive experiment guide — CIP value and gradient transport# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/experiments/#cip-value-and-gradient-transport
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Continuous finite elements: from weak form to sparse assembly — Continuous finite elements: from weak form to sparse assembly [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/fem/
+Coverage: reading
+
+Implemented: continuous P1 elements on intervals and affine triangles,
+Poisson with Dirichlet data, consistent mass matrices, and quadrature error norms.
+This is distinct from the atlas's discontinuous Galerkin advection example.
+The basis-function chapter and notebook connect these nodal shapes to Legendre modes, GLL nodes, exact and quadrature mass matrices, and triangular P2 functions. The assembler in this FEM chapter remains P1.
+
+## Continuous finite elements: from weak form to sparse assembly — 1943: a variational route# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/fem/#1943-a-variational-route
+Coverage: reading
+
+Courant (1943)
+is a foundational variational reference. This chapter's small implementation
+is an independent modern P1 demonstration, rather than a reproduction of his examples.
+For −Δu=f, prescribe u=g on the boundary. Multiplication by a test function
+that vanishes there and integration by parts give
+\int_\Omega \nabla u_h\cdot\nabla v_h\,d\Omega
+=\int_\Omega f v_h\,d\Omega.
+Write u_h as nodal coefficients times continuous piecewise linear basis
+functions. On a triangle K, the shape gradients are constant:
+K^K_{ij}=|K|\nabla\phi_i\cdot\nabla\phi_j,
+\qquad M^K_{ij}=\frac{|K|}{12}(1+\delta_{ij}).
+Shared nodes accumulate element contributions into CSR storage. Nonzero
+Dirichlet values move to the right-hand side before symmetric row/column
+elimination. Treating only rows would destroy the symmetry relevant to CG.
+The example uses ILU-preconditioned GMRES.
+
+## Continuous finite elements: from weak form to sparse assembly — Inspect the evidence# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/fem/#inspect-the-evidence
+Coverage: reading
+
+The manufactured solution is sin(πx)sin(πy) on the unit square. L2 and H1
+seminorm errors are integrated inside elements, not measured only at nodes.
+The expected smooth-solution orders are two and one. Tests also cover affine
+patches, nonzero boundary data, constant null vectors before boundary
+elimination, and total consistent mass.
+from numart.fem import poisson_2d
+result = poisson_2d(16)
+print(result.residual, result.u.shape)
+Reproduce with python scripts/build_equation_gallery.py. The dedicated
+manifest records errors and source hashes.
+Mixed velocity–pressure elements, inf–sup conditions, curved meshes, general
+Neumann/Robin assembly and adaptive refinement remain future work. The current
+projection example uses a staggered finite-difference grid.
+For definitions and comparisons of A-stability, L-stability and L1/L2/L∞ error norms,
+see the shared accuracy and stability guide.
+
+## Continuous finite elements: from weak form to sparse assembly — Inspect the evidence# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/fem/#inspect-the-evidence
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Spherical meshes and Arakawa A, B and C grids — Spherical meshes and Arakawa A, B and C grids [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/
+Coverage: reading
+
+A/B/C names specify where different variables live on a mesh. They are
+not an accuracy order, a mesh shape, or a time-stepping family. A structured
+rectangular mesh may use any of these staggerings. The conventional comparison
+is described by Arakawa–Lamb (1977),
+with a useful agency exposition in the
+ECMWF numerical-methods notes.
+Implemented here: spherical mesh geometry diagrams, plus placement diagrams
+and tested Fourier symbols for a linear periodic f-plane shallow-water system. This is not an A/B/C nonlinear
+weather or ocean model, and it introduces no new full flow simulation.
+
+## Spherical meshes and Arakawa A, B and C grids — A sphere needs several charts# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#spherical-meshes
+Coverage: reading
+
+Mesh geometry and variable staggering are separate choices. A cubed sphere
+can carry a C-grid arrangement; a triangular mesh can also store edge-normal
+velocities. A/B/C labels alone do not specify spherical connectivity or metrics.
+On a sphere of radius R, with latitude φ and longitude λ,
+ ds^2=R^2\left(d\varphi^2+\cos^2\varphi\,d\lambda^2\right),
+ \qquad \Delta s_\lambda\simeq R\cos\varphi\,\Delta\lambda.
+Geographic poles are regular physical locations. Longitude becomes undefined
+there, while equal longitude increments become very short near them. An
+explicit wave/advection CFL bound can therefore become restrictive. Pole
+filters, reduced grids and spectral methods are other responses; replacing
+the mesh is not the only option. The three constructions below avoid the
+single latitude–longitude chart's polar convergence, while introducing other
+coupling and metric questions. None is automatically equal-area.
+
+## Spherical meshes and Arakawa A, B and C grids — Yin–Yang: two overlapping low-latitude patches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#yin-yang
+Coverage: reading
+
+Kageyama–Sato (2004) combine two
+identical latitude–longitude patches. In each patch's own coordinates,
+ |\varphi|\leq\pi/4+\delta,\qquad |\lambda|\leq3\pi/4+\delta,
+ \qquad
+ \boldsymbol{x}^{\mathrm{Yang}}=
+ \begin{pmatrix}-1&0&0\\0&0&1\\0&1&0\end{pmatrix}
+ \boldsymbol{x}^{\mathrm{Yin}}.
+The rotation puts each chart's poles inside the other chart's low-latitude
+region. The figure uses δ=3°; purple marks overlap, not a third patch.
+Each component retains orthogonal latitude–longitude coordinates and familiar
+metrics. Boundary data must be transferred through the overlap. Interpolating
+scalar values alone does not guarantee a globally conservative mass budget;
+overlap ownership/weights and conservative coupling need explicit design.
+Velocity components must also rotate between local tangent bases. These
+transfers are explained here, but no overset transport solver is implemented.
+
+## Spherical meshes and Arakawa A, B and C grids — Cubed sphere: six connected panels# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#cubed-sphere
+Coverage: reading
+
+The six-face construction is associated with
+Ronchi–Iacono–Paolucci (1996).
+Our diagram chooses equiangular gnomonic coordinates. For an orthonormal
+face frame with outward normal n and tangent directions e₁,e₂,
+ \boldsymbol{x}(\xi,\eta)=R\,
+ \frac{\boldsymbol{n}+\tan\xi\,\boldsymbol{e}_1+\tan\eta\,\boldsymbol{e}_2}
+ {\left\lVert\boldsymbol{n}+\tan\xi\,\boldsymbol{e}_1+\tan\eta\,\boldsymbol{e}_2\right\rVert},
+ \qquad -\pi/4\leq\xi,\eta\leq\pi/4.
+The picture has 8×8 cells per panel. Adjacent panel boundaries match; three
+panels meet at each cube corner. This mapping avoids a latitude–longitude
+pole but is generally nonorthogonal inside a face, and cell areas and metric
+factors vary. Other cubed-sphere projections have different properties.
+Neighbor indices, vector components and numerical fluxes must agree across
+seams. A continuous-looking diagram is not a test of those operators.
+
+## Spherical meshes and Arakawa A, B and C grids — Icosahedral triangles and their dual# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#icosahedral
+Coverage: reading
+
+Start with 20 triangular faces, split each triangle into four using edge
+midpoints, and project new vertices radially onto the sphere. At level L,
+ F=20\,4^L,\qquad E=30\,4^L,\qquad V=10\,4^L+2,
+ \qquad V-E+F=2.
+Level 2 has 320 triangles, 480 edges and 162 vertices. Twelve vertices have
+five neighbors; the others have six. Connecting neighboring face centers through shared edge midpoints
+produces a dual with twelve pentagons and otherwise hexagons. Here the centers
+are normalized triangle centroids: this is a barycentric dual, not a claim
+of a Voronoi/Delaunay orthogonal pair. For this unoptimized sample, the largest
+triangle area is about 1.275 times the smallest, so quasi-uniform does not mean
+equal-area. The connectivity formulas apply to this regular refinement, not
+every possible spherical unstructured mesh.
+The ICON model description
+is a useful example of triangular mesh geometry combined with C-type
+staggering. Our illustration is not the optimized ICON mesh or its dynamical
+core. Accurate divergence, gradient, vorticity and wave dispersion still
+depend on compatible discrete operators.
+
+## Spherical meshes and Arakawa A, B and C grids — Interfaces, vectors and what the figures verify# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#spherical-interface-checks
+Coverage: reading
+
+A physical tangent velocity is one vector, even when its components differ
+between charts. If E_A and E_B have orthonormal tangent basis vectors as
+columns in one common Cartesian frame, then
+ \boldsymbol{v}=E_A\boldsymbol{u}_A=E_B\boldsymbol{u}_B,
+ \qquad \boldsymbol{u}_B=E_B^{\mathsf T}E_A\boldsymbol{u}_A.
+This formula uses orthonormal physical components. Covariant or contravariant
+components in nonorthogonal coordinates require the corresponding metric and
+dual basis. Copying two component arrays across a seam is insufficient.
+For finite volumes, a shared interface needs the same integrated flux with
+opposite signs in neighboring cell budgets. Overset grids additionally need
+a well-defined accounting of overlap; summing both full patches counts some
+area twice.
+The geometry tests check unit radii, matching cube-panel boundary nodes,
+icosahedral edge incidence and valence, Euler's identity, and total spherical
+triangle area 4π. A deterministic equal-area sample checks Yin–Yang coverage
+and overlap; this sampled check is not a formal coverage proof. Reproduce both
+figures with python scripts/build_spherical_meshes.py; the
+geometry manifest records construction choices,
+area statistics and source/artifact hashes. These checks do not establish
+transport accuracy, seam conservation or geophysical wave convergence. Useful
+
+## Spherical meshes and Arakawa A, B and C grids — Interfaces, vectors and what the figures verify# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#spherical-interface-checks
+Coverage: reading
+
+next tests would rotate a smooth tracer across every seam and monitor global
+mass, then compare balanced shallow-water waves under refinement.
+
+## Spherical meshes and Arakawa A, B and C grids — A, B and C specify relative placement# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#a-b-and-c-specify-relative-placement
+Coverage: reading
+
+Take free-surface perturbation η at scalar cell centers (i+1/2,j+1/2), with
+square cell size Δ. Define u as the x velocity and v as the y velocity.
+A grid: η, u and v are all at the same center.
+B grid: η is at the center; both u and v are at vertices (i,j).
+C grid: η is at the center; u is at x-normal faces (i,j+1/2), and v is
+at y-normal faces (i+1/2,j).
+Choosing vertices rather than centers as the origin reverses some diagram
+conventions without changing the relative placement. Plot the locations and
+component directions before comparing array indices between models.
+On a C grid, normal face velocities naturally supply cell divergence, and
+center-to-center scalar differences give face pressure gradients. That is the
+placement already used by the atlas's periodic MAC projection.
+The relationship concerns spatial location; MAC and an ocean C-grid dynamical
+core need not share their Coriolis, advection, boundary or time algorithms.
+The official MITgcm staggering description
+shows this face-normal arrangement in three dimensions.
+
+## Spherical meshes and Arakawa A, B and C grids — Rotation and gravity waves make the difference visible# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#rotation-and-gravity-waves-make-the-difference-visible
+Coverage: reading
+
+For constant mean depth H and constant Coriolis parameter f,
+u_t-fv=-g\eta_x,\qquad v_t+fu=-g\eta_y,
+\qquad\eta_t+H(u_x+v_y)=0.
+The continuum has a zero-frequency geostrophic branch and gravity branches
+\omega^2=f^2+c^2(k^2+\ell^2),\qquad c=\sqrt{gH},\qquad L_D=c/|f|.
+A discrete dispersion relation depends on the operators and the locations.
+Here each grid uses centered second-order pressure/divergence; C-grid Coriolis
+uses the symmetric four-point interpolation between u and v locations.
+With the physical staggering phases removed, the effective wavenumbers are
+\begin{aligned}
+A:\quad &\widetilde k=\sin(k\Delta)/\Delta,
+&\widetilde\ell=\sin(\ell\Delta)/\Delta,&\quad f_h=f,\\
+B:\quad &\widetilde k=2\sin(k\Delta/2)\cos(\ell\Delta/2)/\Delta,
+&\widetilde\ell=2\cos(k\Delta/2)\sin(\ell\Delta/2)/\Delta,&\quad f_h=f,\\
+C:\quad &\widetilde k=2\sin(k\Delta/2)/\Delta,
+&\widetilde\ell=2\sin(\ell\Delta/2)/\Delta,&\quad f_h=f\cos(k\Delta/2)\cos(\ell\Delta/2).
+\end{aligned}
+The computed baseline has ω_h²=f_h²+c²(k̃²+ℓ̃²). For the energy-scaled state
+(u,v,cη/H), the full 3×3 Fourier generator is skew-Hermitian: its eigenvalues
+are 0 and ±iω_h. This is a semi-discrete result. A time integrator can add
+phase error, damping or instability even when the spatial generator conserves
+this linear energy.
+
+## Spherical meshes and Arakawa A, B and C grids — Checkerboards and an unresolved deformation radius# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#checkerboards-and-an-unresolved-deformation-radius
+Coverage: reading
+
+A centered A-grid pressure gradient cannot see the shortest alternating
+height mode in a coordinate direction. The B-grid baseline removes that
+axis-only null mode but retains a diagonal height checkerboard. The C-grid
+pressure-gradient/divergence pair couples that mode; however, its simple
+Coriolis average vanishes at certain shortest waves. These are distinct
+operator effects, not one universal checkerboard diagnosis.
+The figure compares both axial and diagonal waves at L_D/Δ=0.25 and 2.
+A and B overlap on the diagonal for these square-grid operators, while their
+axial curves differ. When the deformation radius is unresolved, Coriolis
+averaging can strongly distort the C-grid near-inertial branches. Thus
+“C is always best” is not a valid conclusion. Resolved gravity waves,
+coarse-grid geostrophic adjustment and directional errors are different tests.
+Different Coriolis discretizations can change the comparison without changing
+the C placement itself.
+
+## Spherical meshes and Arakawa A, B and C grids — D and E, vertical staggering and magnetic grids# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#d-and-e-vertical-staggering-and-magnetic-grids
+Coverage: reading
+
+The D grid interchanges the face locations of u and v relative to C:
+u lies at the y-normal face location and v at the x-normal face location.
+The arrows still denote physical x and y components, so a D diagram is not
+obtained by merely renaming the C velocity arrays. The E grid is commonly
+viewed as a B arrangement rotated by 45 degrees; its indexing and resolvable
+wavevector set must be treated consistently. They are described here but
+have no implemented symbols in this addition.
+Horizontal Arakawa staggering is separate from Lorenz versus
+Charney–Phillips vertical staggering. Likewise, MHD constrained transport
+uses face/edge placement to enforce a magnetic-divergence identity; it is not
+synonymous with an Arakawa C-grid shallow-water algorithm. Each needs its own
+compatible discrete operators.
+
+## Spherical meshes and Arakawa A, B and C grids — Evidence and the next geophysical benchmarks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#evidence-and-the-next-geophysical-benchmarks
+Coverage: reading
+
+numart.geophysical_grids supplies the A/B/C symbols. Tests compare them with
+independently applied physical-grid finite-difference stencils on Fourier
+waves, check skew-Hermitian energy structure and the geostrophic zero branch,
+verify long-wave second-order convergence, and expose the distinct short-wave
+null modes. Reproduce the figure with python scripts/build_geophysical_grids.py;
+the manifest records assumptions, sampled
+frequencies and source hashes.
+A sensible next flow sequence is geostrophic adjustment, inertia–gravity
+waves, a coastal Kelvin wave, and a beta-plane Rossby wave, followed by
+potential-vorticity and nonlinear energy/enstrophy budgets. The present
+constant-f symbols do not verify beta-plane Rossby propagation, coastlines,
+spherical metrics, topography or wetting/drying. A nonlinear Arakawa Jacobian
+or energy/enstrophy-conserving shallow-water flux is another algorithmic
+choice; selecting A, B or C placement alone does not provide those invariants.
+
+## Spherical meshes and Arakawa A, B and C grids — Evidence and the next geophysical benchmarks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/geophysical-grids/#evidence-and-the-next-geophysical-benchmarks
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Gravity kernels: isolated FFTs and a periodic slab — Gravity kernels: isolated FFTs and a periodic slab [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/
+Coverage: reading
+
+The boundary condition is part of a Poisson solver’s definition. A finite isolated mass, a fully periodic density contrast, and a horizontally periodic disk with vacuum above and below have different Green functions. Padding an array does not by itself choose the right one.
+The isolated construction here follows the Hockney–Eastwood doubled-domain convolution idea in Computer Simulation Using Particles. The disk reference is Koyama and Ostriker (2009), ApJ 693, 1316–1345, §2.3 and Appendix A (author preprint). It uses horizontal periodicity, vertical domain doubling, and mode-dependent image corrections. Below we derive and test kernels with our own explicit transform normalization; the finite sampled DFT and the continuum Fourier coefficient are distinguished.
+
+## Gravity kernels: isolated FFTs and a periodic slab — Isolated gravity: linear convolution on a doubled grid# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/#isolated-gravity-linear-convolution-on-a-doubled-grid
+Coverage: reading
+
+With G = 1, the three-dimensional isolated potential is
+\phi(\boldsymbol x)=-\int\frac{\rho(\boldsymbol x')}{|\boldsymbol x-\boldsymbol x'|}\,d^3x'.
+For a source grid Nx × Ny × Nz, pad the density with zeros to 2Nx × 2Ny × 2Nz. Build a kernel using signed grid lags on that doubled domain, multiply its FFT by the padded density FFT, invert, and retain the original physical block:
+\phi_{\rm physical}=\Delta V\,
+\mathcal R\,\operatorname{IFFT}\bigl[
+\operatorname{FFT}(\rho_{\rm padded})\operatorname{FFT}(K_{\rm doubled})\bigr].
+Source–target separations inside the retained block are less than the original domain length in each direction. The doubled cyclic convolution therefore equals the desired nonperiodic discrete convolution. This is stronger than merely moving periodic images farther away. Replacing K by the usual periodic symbol −4 pi/k² would solve a different problem.
+The singular grid-origin kernel must be declared. isolated_potential assigns an explicit self_kernel, default zero, and uses −1/r elsewhere. It does not integrate the kernel over a finite source cell. Its roundoff-level agreement with a direct grid sum verifies convolution and padding, not high-order continuum accuracy or a uniquely correct self-cell prescription. A fully isolated finite mass can have phi tending to zero at infinity; a slab with nonzero surface density generally cannot.
+
+## Gravity kernels: isolated FFTs and a periodic slab — Horizontal Fourier transform of a slab# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/#horizontal-fourier-transform-of-a-slab
+Coverage: reading
+
+Take x and y periodic and let the density vanish outside a vertical interval of length Lz. With horizontal wavevector k_perp, use the convention
+\widehat\rho_{\boldsymbol k}(z)=\frac1{L_xL_y}
+\int\rho(x,y,z)e^{-i(k_xx+k_yy)}\,dx\,dy,\qquad
+k=\sqrt{k_x^2+k_y^2}.
+Poisson’s equation becomes (partial_z²−k²) phi_hat = 4 pi G rho_hat. The full gravitational kernel, including 4 pi G, is
+\mathcal G_k(s)=\begin{cases}
+-\dfrac{2\pi G}{k}e^{-k|s|},&k>0,\\
+2\pi G|s|,&k=0,
+\end{cases}\qquad
+\widehat\phi_{\boldsymbol k}(z)=\int\mathcal G_k(z-z')\widehat\rho_{\boldsymbol k}(z')\,dz'.
+Our sign convention includes the gravitational prefactor in the kernel; some references factor it out. The derivative jump at s = 0 gives 4 pi G, which checks both sign and normalization. Nonzero horizontal modes decay into the exterior. The zero mode is the horizontally averaged mass sheet, with a finite exterior force rather than a decaying potential.
+
+## Gravity kernels: isolated FFTs and a periodic slab — The vertical Fourier coefficient and the image factor# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/#the-vertical-fourier-coefficient-and-the-image-factor
+Coverage: reading
+
+Only separations |s| < Lz are required. Extend the kernel periodically over a separation interval of length 2Lz and set k_z,ell = pi ell/Lz. For k > 0 the continuous integral is
+\widetilde{\mathcal G}_{k,\ell}
+=\int_{-L_z}^{L_z}\mathcal G_k(s)e^{-ik_{z,\ell}s}\,ds
+=-\frac{4\pi G}{k^2+k_{z,\ell}^2}
+\left[1-(-1)^\ell e^{-kL_z}\right].
+It follows by integrating the even exponential against a cosine. The square-bracket factor distinguishes the slab kernel from the ordinary fully periodic Poisson multiplier. Equivalently, doubling z and adding a negative image density at displacement Lz with horizontal-mode factor exp(−k Lz) produces this factor before applying the ordinary nonzero Poisson multiplier.
+For the k = 0 horizontal mode, the continuous coefficient is
+\widetilde{\mathcal G}_{0,\ell}=
+\begin{cases}
+2\pi G L_z^2,&\ell=0,\\
+\dfrac{4\pi G[(-1)^\ell-1]}{k_{z,\ell}^2},&\ell\ne0.
+\end{cases}
+The all-zero coefficient fixes an additive potential constant in this convention. Other constant gauges give the same force. Dropping the entire horizontal k = 0 mode, however, removes the physical mean sheet and is incorrect. Our slab solver does not subtract the mean density.
+
+## Gravity kernels: isolated FFTs and a periodic slab — A sampled DFT is a different numerical object# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/#a-sampled-dft-is-a-different-numerical-object
+Coverage: reading
+
+Let dz = Lz/Nz and s_j be the 2Nz signed vertical lags. The multiplier for the discrete quadrature is
+\widetilde{\mathcal G}^{\rm sampled}_{k,\ell}
+=\Delta z\sum_{j=0}^{2N_z-1}\mathcal G_k(s_j)
+ e^{-2\pi i j\ell/(2N_z)}.
+This is exactly dz times the DFT of the sampled kernel. It is not, at finite Nz, identical to the continuous integral above. For k > 0 its real value can also be evaluated by the geometric series
+\widetilde{\mathcal G}^{\rm sampled}_{k,\ell}
+=-\frac{2\pi G\Delta z}{k}
+\frac{\sinh(k\Delta z)}{\cosh(k\Delta z)-\cos(\pi\ell/N_z)}
+\left[1-(-1)^\ell e^{-kL_z}\right].
+Use a separate k = 0 branch to avoid cancellation and division by zero. Expanding sinh, cosh, and cos recovers the continuous coefficient for fixed resolved modes as dz tends to zero. Tests measure this convergence. The distinction prevents labeling a continuum coefficient as the exact finite sum of sampled values.
+slab_green_transform exposes both sampled and continuum representations. slab_potential defaults to the sampled kernel, so its FFT result matches an independent direct vertical quadrature. The continuum option applies the analytic coefficient instead. This is a small independently written kernel laboratory, not a reproduction of all numerical choices or the interstellar-medium simulations in the paper.
+
+## Gravity kernels: isolated FFTs and a periodic slab — Check the boundary physics before a galaxy calculation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/#check-the-boundary-physics-before-a-galaxy-calculation
+Coverage: reading
+
+import numpy as np
+from numart.gravity_boundaries import isolated_potential, slab_potential
+rho = np.ones((8,8,16))
+phi_slab = slab_potential(rho) # horizontal mean mode retained
+phi_isolated = isolated_potential(rho, spacing=(1/8,1/8,1/16))
+These two arrays describe different boundary problems. Tests compare isolated FFT convolution with a direct nonperiodic grid sum, including a source near a boundary; verify the mean plane’s quadratic potential and linear interior acceleration; and recover the exponential field of a sinusoidal sheet. For a sheet of surface density Sigma, the mean potential is 2 pi G Sigma |z−z0| and the nonzero mode decays as exp(−k|z−z0|).
+The kernel verification manifest records source hashes and measured errors for the displayed checks.
+The implementation uses ordinary horizontal periodicity, not shear-periodic remapping. Mass assignment, self-cell integration, vertical quadrature accuracy, force differentiation, and gravity–hydrodynamics coupling require further checks before production use. Continue with particle gravity, multigrid, and Hamiltonian maps.
+
+## Gravity kernels: isolated FFTs and a periodic slab — Check the boundary physics before a galaxy calculation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gravity-boundaries/#check-the-boundary-physics-before-a-galaxy-calculation
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Godunov smoothed particle hydrodynamics (GSPH) — Godunov smoothed particle hydrodynamics (GSPH) [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/
+Coverage: reading
+
+Status: source-based reading notes and an implementation plan. The existing
+SPH example reconstructs fields; it does not advance a GSPH
+fluid. No GSPH benchmark result is claimed here.
+
+## Godunov smoothed particle hydrodynamics (GSPH) — Inutsuka's formulation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/#inutsuka39s-formulation
+Coverage: reading
+
+Inutsuka (2002) derives particle
+evolution from convolutions of the fluid equations. Pairwise Riemann problems
+supply pressure and velocity for the interactions, replacing a separately
+prescribed shock artificial viscosity. Riemann dissipation still remains.
+The author's preprint, sections 2–3
+is the equation reference. It also cites the earlier Godunov-type SPH
+contribution (1994); that original report has not been inspected here.
+For a common Gaussian smoothing length, a linear approximation to specific
+volume V = 1/rho gives the overlap coefficient (equations 48–52)
+C_{ij}=\frac{V_i-V_j}{|\mathbf x_i-\mathbf x_j|},\qquad
+D_{ij}=\frac{V_i+V_j}{2},\qquad
+V_{ij}^{2}(h)=D_{ij}^{2}+\frac{h^2 C_{ij}^{2}}4.
+Equation 65 then uses the pair pressure in the momentum update:
+\frac{d\mathbf v_i}{dt}
+=-2\sum_j m_j P^*_{ij}V_{ij}^{2}(h)
+\nabla_i W(\mathbf x_i-\mathbf x_j,\sqrt{2}h).
+This is the common-h Gaussian form. The paper's variable-h expressions and
+time-centered internal-energy update are needed for its conservation argument.
+Changing only the pressure in an existing SPH force is not that derivation.
+
+## Godunov smoothed particle hydrodynamics (GSPH) — Connecting the existing exhibits# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/#connecting-the-existing-exhibits
+Coverage: reading
+
+The implementation path joins particle kernels,
+Euler Riemann solvers, and moving-particle time integration.
+The current interpolation uses a compact cubic kernel; the derivation above
+uses a Gaussian and its overlap. Their kernel-width conventions must be kept
+explicit. The existing fixed-grid flux returns F(U), whereas a GSPH pair update
+needs a consistently oriented star pressure and velocity. Reusing a flux
+function alone does not provide a complete particle interaction.
+
+## Godunov smoothed particle hydrodynamics (GSPH) — A staged verification plan# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/#a-staged-verification-plan
+Coverage: reading
+
+Check kernel overlaps, specific-volume reconstruction, pair orientation,
+equal and unequal masses, and uniform-pressure consistency.
+Advance pair forces and internal energy with a matched time update; measure
+momentum and total-energy drift before adding adaptive smoothing lengths.
+Run a smooth acoustic wave and an advected contact with controlled particle
+spacing and smoothing scale. Separate interpolation and time-step refinement.
+Compare the paper's first shock tube (equation 89, Figure 2) with its exact
+Euler solution, then add the shared Sod and Shu–Osher tests. Record particle
+masses, spacing, neighbors, boundary reservoirs, and reconstruction choices.
+For that first published shock tube, the primitive left/right states are
+(rho, v, p) = (1, 0, 1) and (0.5, 0, 0.2), gamma = 1.4, at t = 0.2.
+It differs from the standard Sod parameters used elsewhere in this atlas.
+These are proposed verification targets, not computed GSPH results.
+
+## Godunov smoothed particle hydrodynamics (GSPH) — The MHD branch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/#the-mhd-branch
+Coverage: reading
+
+Iwasaki and Inutsuka (2011)
+extend the particle approach: compressive interactions use a nonlinear Riemann
+problem with magnetic pressure, while Alfvén waves use characteristics.
+Their paper includes Alfvén, shock-tube,
+Orszag–Tang, rotor, and magnetized-blast tests. This is a separate GSPMHD
+implementation direction; the atlas's existing grid-based CT/GLM
+does not implement it. Particle magnetic-divergence and tensile-instability
+treatments would require their own verification.
+
+## Godunov smoothed particle hydrodynamics (GSPH) — Special-relativistic continuation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/#special-relativistic-continuation
+Coverage: reading
+
+Kitajima, Inutsuka, and Seno (2026)
+develop SRGSPH with a relativistic Riemann solver, unequal particle baryon
+numbers, and variable smoothing lengths. The preprint dates to 2025; the
+journal issue is 2026. This is special relativity, not a general-relativistic
+fluid solver. Continue with the SRHD/GRHD development review.
+
+## Godunov smoothed particle hydrodynamics (GSPH) — Special-relativistic continuation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/gsph/#special-relativistic-continuation
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Historical atlas — Historical atlas [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/
+Coverage: reading
+
+Dates refer to original publication years, with translations, reprints, and
+online publication dates distinguished where relevant. This atlas offers a
+reading path through representative sources. It does not settle every claim
+of invention or priority. The reference catalog records the
+relationship between each source and the implementation, including open questions.
+
+## Historical atlas — Classical foundations: equations, differences, and iteration# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#classical-foundations-equations-differences-and-iteration
+Coverage: reading
+
+Begin with forward, backward, and centered differences, Euler time integration,
+Fourier expansions, heat conduction, and the Laplace and Poisson equations.
+Distinguish boundary values from boundary fluxes before introducing Dirichlet,
+Neumann, and Robin conditions. The mathematical origins of these ideas precede
+their later use in computational fluid dynamics.
+
+## Historical atlas — 1928: CFL and domains of dependence# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#1928-cfl-and-domains-of-dependence
+Coverage: reading
+
+Courant–Friedrichs–Lewy compares the continuous domain of dependence with the
+reach of a discrete stencil. Vary C=a Δt/Δx in linear advection to distinguish
+necessary conditions from sufficient ones.
+Original CFL paper,
+derivations and experiments.
+
+## Historical atlas — 1939–1943: kinetic asymptotics and variational assembly# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19391943-kinetic-asymptotics-and-variational-assembly
+Coverage: reading
+
+Chapman–Cowling's kinetic-theory book appeared in 1939; this is a book date,
+not the invention date of the Chapman–Enskog expansion.
+Courant (1943) connects
+variational problems to piecewise representations. The P1 FEM exhibit
+implements independent sparse Poisson examples.
+
+## Historical atlas — 1947–1950: diffusion, implicit methods, and linear stability# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19471950-diffusion-implicit-methods-and-linear-stability
+Coverage: reading
+
+Crank–Nicolson (1947); Thomas tridiagonal elimination, commonly cited to a 1949
+report whose original text has not been inspected here; and stability analysis
+in Charney–Fjørtoft–von Neumann's numerical forecasting work (1950).
+The 1950 paper is historical context, rather than a claim that von Neumann
+analysis originated in that paper alone. Connect the diffusion number
+r=ν Δt/Δx² with A-stability, monotonicity, and implicit linear systems.
+Diffusion and linear solvers.
+Burgers (1948) supplies a
+parallel nonlinear model branch. The equation gallery
+uses the inviscid shock/fan problem, rather than reproducing its turbulence analysis.
+
+## Historical atlas — 1954–1961: Lax, Godunov, and conservation form# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19541961-lax-godunov-and-conservation-form
+Coverage: reading
+
+Lax (1954), Lax–Richtmyer (1956), Godunov (1959), Lax–Wendroff (1960), and
+Rusanov (1961) lead into weak solutions, numerical fluxes, shock speeds,
+numerical viscosity, and dispersion. The Lax–Richtmyer linear convergence
+theorem and Lax–Wendroff-type results about weak limits of nonlinear
+conservative approximations have different hypotheses.
+Here, method="godunov" denotes a Godunov-type finite-volume method with
+approximate Riemann fluxes, rather than a complete reproduction of the
+original exact-flux algorithm.
+BGK (1954) provides a kinetic
+relaxation model. Lighthill–Whitham (1955)
+and Richards (1956) connect conservation
+laws to traffic waves. These separate branches meet in the gallery through
+explicit equations and references, not a single invention chronology.
+
+## Historical atlas — 1961–1977: relaxation, multigrid, and local and global bases# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19611977-relaxation-multigrid-and-local-and-global-bases
+Coverage: reading
+
+Fedorenko (1961), Reed–Hill (1973), Gottlieb–Orszag (1977), and Brandt (1977).
+Split Poisson iteration into smoothing of high-frequency errors and coarse-grid
+correction of smooth errors. DG uses elementwise polynomials joined by boundary
+fluxes; spectral methods use global bases. Earlier Galerkin and Fourier ideas
+provide the mathematical background to these developments.
+Poisson and multigrid, numart.advection.dg_advection.
+Chorin (1968)
+leads to incompressible projection.
+Alexander (1977) supplies the
+SDIRK branch; source treatment and adaptive error control
+remain distinct from a method's linear stability function.
+
+## Historical atlas — 1978–1983: shared benchmarks and high-resolution fluxes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19781983-shared-benchmarks-and-high-resolution-fluxes
+Coverage: reading
+
+Sod (1978), van Leer's MUSCL (1979), Orszag–Tang (1979), Roe (1981), and
+Harten–Lax–van Leer (1983). Compare contact and acoustic-wave resolution on the
+same Sod problem. The first-edition MUSCL implementation uses minmod and the
+method of lines; van Leer's original Lagrangian/remap construction is different.
+The original incompressible Orszag–Tang study and the normalization of today's
+compressible test are also distinguished.
+Benchmark definitions, MHD.
+
+## Historical atlas — 1984–1989: TVD slopes and TVB extrema relaxation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19841989-tvd-slopes-and-tvb-extrema-relaxation
+Coverage: reading
+
+Sweby (1984) organizes scalar flux-limiter bounds. Cockburn–Shu (1989) develops the TVB RKDG framework. Compare five slope limiters, then inspect the separate TVB and positive-state scaling building blocks. The latter also links the positivity framework of Zhang–Shu (2010), with its required flux, quadrature, CFL, and SSP conditions.
+
+## Historical atlas — 1985–1991: cubic profiles and transported gradients# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19851991-cubic-profiles-and-transported-gradients
+Coverage: reading
+
+Takewaki–Nishiguchi–Yabe (1985) and Yabe–Aoki (1991) develop the CIP line of cubic value/gradient transport. The CIP chapter computes a constant-speed scalar example and distinguishes later conservative and rational branches. Its constructed Hermite-field test separates low diffusion from a mass-conservation guarantee.
+
+## Historical atlas — 1987–1989: higher order, preconditioning, and magnetic constraints# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19871989-higher-order-preconditioning-and-magnetic-constraints
+Coverage: reading
+
+ENO by Harten and colleagues (1987), Turkel's low-speed preconditioning (1987),
+Einfeldt (1988), Evans–Hawley CT (1988), Shu–Osher (1988, 1989), and
+Cockburn–Shu RKDG (1989). High-order interpolation alone does not ensure robust
+shock capture. Entropy fixes and positivity require separate attention.
+The Shu–Osher test combines a shock with a smooth density wave.
+
+## Historical atlas — 1991–1996: unsteady iteration, low densities, HLLC, and WENO# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#19911996-unsteady-iteration-low-densities-hllc-and-weno
+Coverage: reading
+
+Einfeldt and colleagues (1991), Jameson (1991), Toro–Spruce–Speares (1994),
+Liu–Osher–Chan (1994), and Jiang–Shu (1996). Study physical and pseudo-time,
+low-density failure, contact restoration, and nonlinear WENO weights.
+The origin of WENO in 1994 is distinguished from WENO5-JS (1996), which is the
+variant implemented in this edition.
+Preconditioning and dual time stepping.
+
+## Historical atlas — 2000–2008: multidimensional robustness and constraints# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#20002008-multidimensional-robustness-and-constraints
+Coverage: reading
+
+Tóth (2000), Dedner and colleagues (2002), Abgrall's residual-distribution
+review (2006), and Nishikawa–Kitamura (2008). Follow discrete CT/GLM operators,
+conservative residual distribution, rotated-hybrid fluxes, and the carbuncle
+instability. The 2006 date identifies the RD review, rather than the invention
+of residual distribution.
+Inutsuka (2002) adds a parallel
+particle branch: convolution-based SPH evolution with pairwise Riemann
+problems. The GSPH chapter distinguishes its 1994 precursor from
+the detailed 2002 formulation and the later MHD extension by
+Iwasaki–Inutsuka (2011).
+These are source notes and planned fluid solvers, rather than the existing
+static SPH reconstruction.
+
+## Historical atlas — 2001–2009: SSP inheritance and additional Runge–Kutta stages# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#20012009-ssp-inheritance-and-additional-rungekutta-stages
+Coverage: reading
+
+Gottlieb–Shu–Tadmor (2001), Spiteri–Ruuth (2002), and Gottlieb–Ketcheson–Shu (2009) distinguish scalar linear stability from conditional nonlinear stability inheritance. These are developments in the SSP branch, not the origin of Runge–Kutta methods. The RK family chapter compares RK2 variants, RK4, and SSPRK(s,p), with actual nonlinear stages and refinement.
+
+## Historical atlas — Relativistic branch: 1972–2026# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#relativistic-branch-19722026
+Coverage: reading
+
+The SRHD/GRHD/GRMHD review connects Wilson's
+Kerr-background calculation (1972), exact SR Riemann solutions (1994), Valencia
+(1997), local-frame solvers (1998), relativistic magnetic constraints, HARM
+(2003), dynamical spacetime, and nonlinear primitive recovery. Later branches
+include radiation, DG–FD hybrids, physical-state constraints, and GPU-oriented
+merger codes. SRGSPH (2026) connects
+back to Inutsuka's particle formulation. The review records source and
+publication status as checked on 6 November 2026; it adds no relativistic solver.
+
+## Historical atlas — Toward modern verification and validation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#toward-modern-verification-and-validation
+Coverage: reading
+
+The NASA 2D case catalog introduces the distinction between
+numerical verification and physical validation against experiments. Each
+future exhibit should connect its original source, current data access point,
+implementation status, and verification evidence.
+
+## Historical atlas — Moving meshes, particles, and temporal modes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#moving-meshes-particles-and-temporal-modes
+Coverage: reading
+
+The fixed-grid history has parallel branches. Hirt, Amsden, and Cook (1974) provide a classical ALE framework; Gingold and Monaghan (1977) and Lucy (1977) are independent early SPH sources. The new ALE, particle, and mesh chapters connect their different representations of geometry and motion. The code implements small reconstruction and geometric-conservation examples, rather than those original flow calculations.
+The time integration chapter gives the two-step leapfrog recurrence and its computational root. Its discussion of time filtering points to a later modification by Williams (2009), without assigning the invention of leapfrog to that paper.
+The Double Mach Reflection exhibit adds a computed two-dimensional shock interaction. Quirk (1994) and Pandolfi and D’Ambrosio (2001) lead into the separate carbuncle reading notes. Finally, Remembering Philip L. Roe records the university’s 2026 memorial and returns to his 1981 contribution.
+
+## Historical atlas — Particle fields and canonical time maps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#particle-fields-and-canonical-time-maps
+Coverage: reading
+
+Hockney’s P³M account (1981), Barnes–Hut (1986), and Greengard–Rokhlin (1987) connect mesh, tree, and expansion-based field calculations. Yoshida (1990) provides a route to high-order symplectic compositions. The new gravity and Hamiltonian-map chapters make their different roles explicit. Koyama–Ostriker (2009) supplies the disk-potential FFT reference in the boundary-kernel chapter.
+
+## Historical atlas — Smooth-flow structure and honest test selection# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#smooth-flow-structure-and-honest-test-selection
+Coverage: reading
+
+Kuya, Totani, and Kawai (2018) introduce the KEEP line of compressible-flow discretizations. The KEEP chapter implements the original second-order Cartesian form and distinguishes later entropy, pressure-equilibrium, and temporal extensions. Its smooth-vortex refinement and saved-state movie are separate from shock-capturing benchmarks; neither kinetic-energy consistency nor a visually smooth movie is a universal stability guarantee.
+
+## Historical atlas — Parallel solver branches: 1986–2010# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#parallel-solver-branches-19862010
+Coverage: reading
+
+GMRES (1986) and
+BiCGSTAB (1992) provide nonsymmetric
+sparse-system solvers.
+Qian et al. (1992) and
+Guo et al. (2002) lead to the
+lattice-BGK and forcing exhibits.
+Nishikawa (2007) develops the
+first-order hyperbolic diffusion system, with an
+advection–diffusion extension published in 2010. The reading room distinguishes
+that system's original second-order RD scheme from our first-order FV baseline.
+
+## Historical atlas — Biological and geophysical branches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#biological-and-geophysical-branches
+Coverage: reading
+
+The biological equation survey follows population
+growth through Lotka/Volterra, age structure and SIR, then Fisher fronts,
+Turing morphogenesis, excitable membranes, chemotaxis, stochastic reaction
+networks and synthetic gene circuits. Original, translated and reduced model
+forms have separate source notes. All 22 biological entries are survey-only.
+Arakawa–Lamb (1977)
+connects variable placement to geophysical waves. The A/B/C chapter
+adds independent centered f-plane symbol comparisons; the horizontal grid
+classification is separate from vertical staggering and nonlinear invariant
+conservation.
+
+## Historical atlas — Biological and geophysical branches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/history/#biological-and-geophysical-branches
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Nishikawa's hyperbolic diffusion: iterate a first-order system — Nishikawa's hyperbolic diffusion: iterate a first-order system [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/hyperbolic-diffusion/
+Coverage: reading
+
+Hiroaki Nishikawa (2007)
+introduces the first-order hyperbolic-system approach to steady diffusion,
+including second-order residual-distribution schemes. The
+2010 extension unifies advection
+and diffusion. The date is the journal publication year, not the DOI's year.
+Implemented here: a periodic 1D, first-order upwind finite-volume baseline
+with SSPRK2. It demonstrates equivalent steady equations; it does not implement
+the original paper's second-order multidimensional RD constructions.
+
+## Nishikawa's hyperbolic diffusion: iterate a first-order system — Evolve the solution and its gradient# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/hyperbolic-diffusion/#evolve-the-solution-and-its-gradient
+Coverage: reading
+
+For the steady problem −νu_xx=f, introduce p and pseudo-time τ:
+\partial_\tau u-\nu\partial_x p=f,\qquad
+\partial_\tau p-\frac1{T_r}\partial_x u=-\frac p{T_r}.
+At convergence, p=u_x, recovering the original steady diffusion equation.
+The homogeneous flux Jacobian has eigenvalues
+\lambda_\pm=\pm\sqrt{\nu/T_r}.
+The relaxation time T_r is a numerical parameter controlling pseudo-time
+propagation and damping. It is not the physical diffusivity. A hyperbolic
+Courant restriction scales with h for fixed T_r; an explicit source treatment
+also has a relaxation restriction. The demonstration therefore uses
+\Delta\tau=\frac{C}{a/h+1/T_r},\qquad
+ a=\sqrt{\nu/T_r},\quad C\leq\frac12.
+A physical heat equation is not recovered at every finite pseudo-time.
+Replacing the heat gallery's physical-time curve by this iteration history
+would change the problem. Time-accurate extensions require additional analysis.
+
+## Nishikawa's hyperbolic diffusion: iterate a first-order system — Residual convergence and discretization error# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/hyperbolic-diffusion/#residual-convergence-and-discretization-error
+Coverage: reading
+
+The manufactured steady reference is sin(2πx), with zero mean on the periodic
+unit interval and forcing ν(2π)²sin(2πx). The initial mean fixes the constant
+null mode. Both equation residuals are measured; the gradient residual is
+scaled by 2π in the combined RMS diagnostic. A small residual does not eliminate
+the first-order upwind spatial error. N=32,64,128 checks that error separately.
+The manifest records steps and pseudo-time
+sizes, without a matched-cost speedup claim.
+Compare Thomas and multigrid, sparse preconditioning,
+and the physical diffusion gallery. Anisotropic
+diffusion, high-order face reconstruction, viscous Navier–Stokes coupling and
+the complete RD formulation are future extensions. Publisher records and
+abstracts were checked; full original-paper reproductions are not claimed.
+
+## Nishikawa's hyperbolic diffusion: iterate a first-order system — Residual convergence and discretization error# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/hyperbolic-diffusion/#residual-convergence-and-discretization-error
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Incompressible flow: project with compatible discrete operators — Incompressible flow: project with compatible discrete operators [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/incompressible/
+Coverage: reading
+
+Implemented: unit-density periodic 2D Navier–Stokes on a MAC grid, centered
+convection and viscosity, projected SSPRK2, and discrete-FFT Poisson inversion.
+
+## Incompressible flow: project with compatible discrete operators — 1968: the projection branch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/incompressible/#1968-the-projection-branch
+Coverage: reading
+
+Chorin (1968)
+is the original projection reference. Our periodic RK model illustrates the
+principle; it does not reproduce his boundary treatments or original time step.
+Velocity components live on different faces; pressure lives at cell centers.
+Choose divergence D and gradient G so that D=−Gᵀ under the periodic grid
+inner product. Then
+DG\phi=D\boldsymbol u^*,\qquad
+\boldsymbol u=\boldsymbol u^*-G\phi,\qquad D\boldsymbol u=0.
+The FFT must invert the symbol of DG, not continuum −|k|²:
+\lambda_h=-\frac4{h^2}
+\left[\sin^2(k_xh/2)+\sin^2(k_yh/2)\right].
+The pressure constant is undetermined. Set its mean to zero; subtract the mean
+from the Poisson source for periodic compatibility. Tests check the adjoint
+identity, projection idempotence, energy contraction and divergence removal.
+
+## Incompressible flow: project with compatible discrete operators — Taylor–Green verification# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/incompressible/#taylorgreen-verification
+Coverage: reading
+
+On [0,2π)² with viscosity ν, use
+u=\sin x\cos y\,e^{-2\nu t},\qquad
+v=-\cos x\sin y\,e^{-2\nu t}.
+The velocity error refines at second order for N=16,32,64 at T=0.5, ν=0.1.
+Mean kinetic energy is e^(−4νt)/4. Stage projection multipliers are not
+silently labeled physical pressure; a final pressure estimate is reconstructed
+from the momentum RHS, without a claimed pressure-order verification.
+Reproducible measurements include maximum
+absolute discrete divergence. The explicit step retains both advective and
+viscous restrictions. No-slip cavity boundaries, SIMPLE/PISO, cylinder wakes,
+mixed FEM, turbulence models and experimental validation are not implemented
+by this periodic test. Compare the separate low-Mach LBM model.
+The Arakawa A/B/C comparison places this MAC
+arrangement in a geophysical context. Matching face locations does not
+automatically supply a Coriolis or potential-vorticity algorithm.
+
+## Incompressible flow: project with compatible discrete operators — Taylor–Green verification# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/incompressible/#taylorgreen-verification
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — KEEP schemes: preserve the smooth-flow balance, test the limits [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/
+Coverage: reading
+
+KEEP stands for kinetic-energy and entropy preserving. The work of Yuichi Kuya, Kosuke Totani, and Soshi Kawai at Tohoku University seeks a low-dissipation balance between the conservative equations of compressible flow. The original 2018 paper is the starting point. The authors’ 2022 conference explanation, especially §2.2 and Eq. (9), states the Cartesian flux implemented here.
+This exhibit implements the original second-order arithmetic-mean Cartesian flux, with periodic boundaries and classical RK4. It does not implement every later scheme named KEEP. Watch its smooth-vortex evolution.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Which quantities should be preserved?# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#which-quantities-should-be-preserved
+Coverage: reading
+
+In a smooth periodic inviscid flow, mass, momentum, and total energy are conservative. The total kinetic energy alone is generally not constant in compressible flow: pressure work exchanges kinetic and internal energy. With K = integral rho |u|²/2,
+\frac{dK}{dt}=\int p\,\nabla\cdot u\,dV.
+A kinetic-energy-consistent convective discretization should not create a spurious kinetic-energy source through an inconsistent mass/momentum product rule. This is different from imposing dK/dt = 0 on a compressible vortex.
+We measure the dimensionless entropy proxy
+S_* = \int\rho\log\left(\frac{p}{\rho^\gamma}\right)dV.
+For a fixed ideal-gas composition this differs from physical entropy only by fixed factors and an additive mass term. Its change per initial mass is useful when initial isentropic data give S_* approximately zero; dividing by initial S_* would be ill-conditioned.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — The implemented two-point flux# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#the-implemented-two-point-flux
+Coverage: reading
+
+Let an overbar denote the arithmetic mean of left and right values, u_n the velocity normal to a Cartesian face, and e = p/[rho(gamma−1)]. The baseline flux is
+\begin{aligned}
+C&=\overline\rho\,\overline u_n,\\
+F_{\rho u_i}&=C\,\overline u_i+\overline p\,\delta_{in},\\
+F_E&=C\left[\frac12\boldsymbol u_L\cdot\boldsymbol u_R+\overline e\right]
++\frac12(u_{n,L}p_R+u_{n,R}p_L).
+\end{aligned}
+The mass flux is C. The cross-velocity kinetic term and cross-pressure work are deliberate; replacing them by a convenient average of the full physical flux changes the discrete energy exchange. The implementation is a central two-point flux-difference method of second spatial order. It has no Riemann-solver dissipation.
+Tests verify equal-state consistency, left/right symmetry, periodic conservation of the primary variables, and the semidiscrete kinetic-energy pressure-work identity. RK4 adds temporal truncation error and does not inherit every semidiscrete identity exactly.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Appropriate first test: smooth isentropic vortex advection# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#appropriate-first-test-smooth-isentropic-vortex-advection
+Coverage: reading
+
+Use gamma = 1.4 on a periodic [−10,10]² square, background velocity (1,0.5), and vortex strength beta = 3. Relative to its translating center, write X, Y and r² = X²+Y². The reference is
+\begin{aligned}
+u&=1-\frac{\beta Y}{2\pi}e^{(1-r^2)/2},&
+v&=0.5+\frac{\beta X}{2\pi}e^{(1-r^2)/2},\\
+T&=1-\frac{(\gamma-1)\beta^2}{8\gamma\pi^2}e^{1-r^2},&
+\rho&=T^{1/(\gamma-1)},\qquad p=\rho^\gamma.
+\end{aligned}
+The whole-plane vortex translates analytically. Minimum-image coordinates in a box of length 20 leave its boundary tails below floating-point significance for these parameters, avoiding an appreciable periodic boundary jump. Positivity of the analytic temperature is checked explicitly.
+The static study runs 48², 96², and 192² cells to t = 1 at CFL 0.25. It reports pointwise density L1 error, primary-conservation drift, and the change in S_* per mass. A separate 96² run halves the CFL to assess the time-step contribution. The measurement manifest states the actual errors; the expected smooth spatial order is two. The movie instead runs 96² to t = 4 and is a qualitative time-history exhibit, not a substitute for refinement.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Appropriate next tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#appropriate-next-tests
+Coverage: reading
+
+A compressible inviscid 3D Taylor–Green vortex is a primary KEEP benchmark. Fix the periodic box [0,2 pi]³, reference density, gamma, initial Mach number, velocity amplitude, initial pressure perturbation, and temporal scheme. Track total energy, kinetic energy, pressure dilatation, entropy, density/temperature RMS fluctuations, and resolved spectra under grid and time refinement. Pressure-work exchange must be separated from numerical dissipation. The original paper also examines inviscid isotropic turbulence. These 3D computations are not implemented in this edition; a 2D slice is not a replacement for the three-dimensional vortex-stretching dynamics.
+A smooth constant-pressure density wave tests preservation of pressure/velocity equilibrium. It is a useful additional diagnostic, but that property depends on the flux variant. Our original arithmetic-mean flux produces a nonzero semidiscrete pressure residual for this data; a test records that limitation instead of claiming it passes. Shima et al. (2021) study pressure-equilibrium-preserving split forms.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Caveats: entropy, shocks, and the scheme version# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#caveats-entropy-shocks-and-the-scheme-version
+Coverage: reading
+
+Preserving is not a roundoff-exact entropy guarantee. The authors explicitly distinguish improved entropy behavior from exact conservation in their 2022 explanation. Tamaki, Kuya, and Kawai (2022) analyze remaining entropy errors and redefine KEEP variants with tunable approximation order. Our code does not implement that redefinition or an exact logarithmic-mean entropy-conservative flux.
+A shock requires entropy production. A bare non-dissipative central flux supplies no general mechanism to select a non-oscillatory admissible shock solution. Sod, Shu–Osher, and Double Mach Reflection are not acceptance tests for the unstabilized baseline demonstrated here. A shock-tube run can still be a deliberate limitation/oscillation diagnostic; it should not be advertised as a validated shock-capturing result. It is inaccurate to turn this into a universal statement that every KEEP-based method is unable to solve any shock tube.
+Shock stabilization changes the method. A sensor, artificial viscosity, upwind blending, filtering, or another entropy-stable construction needs its own definition and tests. Record shock/contact thickness, oscillations, positivity, and added dissipation; keep separate results for the smooth base scheme and stabilized extension. No such extension is implemented here.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Caveats: entropy, shocks, and the scheme version# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#caveats-entropy-shocks-and-the-scheme-version
+Coverage: reading
+
+No positivity theorem is supplied. Positive density and pressure in the displayed smooth runs do not establish robustness near vacuum or under arbitrary under-resolution. The code stops on nonphysical states rather than silently clipping them.
+Time integration and boundaries matter. Asada, Maruyama, and Kawai (2024) address temporal preservation. Our RK4, periodic uniform-grid experiment does not implement their method, high-order/curvilinear KEEP, hanging-node treatments, wall models, or a production LES solver.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Reproduce# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#reproduce
+Coverage: reading
+
+python scripts/build_keep.py
+python -m pip install '.[movies]'
+python scripts/build_movies.py
+The first command creates the smooth-error figure and its source manifest. The second build adds the KEEP vortex to the motion gallery. Continue with shock benchmarks, carbuncle caveats, and the distinction from symplectic Hamiltonian maps: KEEP’s fluid energy/entropy consistency and symplecticity of a mechanical time map are different properties.
+
+## KEEP schemes: preserve the smooth-flow balance, test the limits — Reproduce# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/keep/#reproduce
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Lattice Boltzmann: collide, stream, recover fluid motion — Lattice Boltzmann: collide, stream, recover fluid motion [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/lattice-boltzmann/
+Coverage: reading
+
+Implemented: low-Mach, isothermal D2Q9–BGK, Guo body forcing, periodic
+boundaries and stationary half-way bounce-back walls. Lattice units use
+Δx=Δt=ρ_ref=1, c_s²=1/3.
+
+## Lattice Boltzmann: collide, stream, recover fluid motion — 1954 → 1992 → 2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/lattice-boltzmann/#1954-1992-2002
+Coverage: reading
+
+The relaxation model of Bhatnagar–Gross–Krook (1954)
+precedes lattice BGK. Qian–d'Humières–Lallemand (1992)
+is the lattice-BGK reference. Guo–Zheng–Shi (2002)
+supplies the force discretization used here. These are distinct developments.
+D2Q9 has one resting population, four axial directions and four diagonals.
+Weights are 4/9, 1/9 and 1/36 for those groups. The equilibrium is
+f_q^{eq}=w_q\rho\left[1+3\boldsymbol c_q\cdot\boldsymbol u
++\frac92(\boldsymbol c_q\cdot\boldsymbol u)^2
+-\frac32|\boldsymbol u|^2\right].
+Collision relaxes populations, then streaming shifts each by its integer
+lattice velocity:
+f_q(\boldsymbol x+\boldsymbol c_q,t+1)
+=f_q(\boldsymbol x,t)-\frac{f_q-f_q^{eq}}{\tau}+S_q.
+For a force density F, Guo forcing uses
+S_q=w_q\left(1-\frac1{2\tau}\right)
+\left[3(\boldsymbol c_q-\boldsymbol u)
++9(\boldsymbol c_q\cdot\boldsymbol u)\boldsymbol c_q\right]\cdot\boldsymbol F,
+\quad
+\rho\boldsymbol u=\sum_q f_q\boldsymbol c_q+\frac{\boldsymbol F}{2}.
+Density is the population sum, pressure is c_s²ρ, and viscosity is
+ν=c_s²(τ−1/2). The Chapman–Enskog derivation
+explains the discrete-time half-step correction. τ>1/2 makes this viscosity
+positive; it is not a universal nonlinear stability certificate.
+
+## Lattice Boltzmann: collide, stream, recover fluid motion — Two independent tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/lattice-boltzmann/#two-independent-tests
+Coverage: reading
+
+A transverse periodic shear wave decays as exp(−νk²t), allowing an independent
+viscosity measurement. Force-driven Poiseuille flow has exact profile
+u_x=F_x y(H−y)/(2ρ_refν). The walls sit half a lattice spacing beyond the
+outer fluid nodes, not at those node centers. Fixed τ=0.8, peak velocity 0.01,
+and Ny=8,16,32 test wall placement and refinement. Startup runs for twelve
+slowest viscous decay times; finite-time and spatial errors remain distinct.
+The data manifest records channel errors,
+Mach numbers, force settings and step counts. Unit tests also verify periodic
+mass/momentum conservation and equilibrium moments. BGK is a single-relaxation
+baseline: MRT/TRT, entropic and cumulant collisions, thermal/compressible LBM,
+moving walls and multiphase models remain extensions. Projection flow
+solves a different discrete system and provides another route to incompressibility.
+
+## Lattice Boltzmann: collide, stream, recover fluid motion — Two independent tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/lattice-boltzmann/#two-independent-tests
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Slope limiters: minmod, Superbee, MC, van Leer, and van Albada [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/
+Coverage: reading
+
+Limiters trade linear high-order reconstruction for a nonlinear choice of
+local slope. Open the limiter notebook
+to compare five choices on identical grids and time integrators, together with
+first-order and unlimited scalar baselines.
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Reconstruction and the ratio convention# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#reconstruction-and-the-ratio-convention
+Coverage: reading
+
+For uniform cells, let the backward and forward increments be
+a_i=\bar u_i-\bar u_{i-1},\qquad b_i=\bar u_{i+1}-\bar u_i,
+\qquad r_i=a_i/b_i,\qquad s_i=\phi(r_i)b_i.
+The two states reconstructed from cell i are
+u_{i+1/2}^{L}=\bar u_i+\tfrac12s_i,\qquad
+u_{i-1/2}^{R}=\bar u_i-\tfrac12s_i.
+The implementation works directly with a and b, so a zero denominator at a
+plateau requires neither a numerical epsilon nor an arbitrary ratio. Opposite
+signs or either zero increment give zero limited slope. These are increments;
+divide by cell width only if a derivative is required.
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Five limiter functions# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#five-limiter-functions
+Coverage: reading
+
+Each function below is zero for r ≤ 0. For r > 0:
+\begin{aligned}
+\phi_{\rm minmod}(r)&=\min(1,r),\\
+\phi_{\rm Superbee}(r)&=\max\{\min(2r,1),\min(r,2)\},\\
+\phi_{\rm MC}(r)&=\min\{2r,(1+r)/2,2\},\\
+\phi_{\rm van\ Leer}(r)&=2r/(1+r),\\
+\phi_{\rm van\ Albada}(r)&=(r^2+r)/(r^2+1).
+\end{aligned}
+This is the clipped, symmetric van Albada form, without an epsilon
+regularization; other variants differ near extrema. MC means monotonized
+central. All five satisfy phi(1)=1 and the plotted scalar bounds
+0 ≤ phi(r) ≤ min(2r,2). See Sweby (1984)
+for the scalar flux-limiter framework and Roe's compressive construction, and
+the Clawpack limiter documentation
+and MPI-AMRVAC slope-limiter notes
+for implementation conventions. Names shared by different codes do not settle
+which variables, time integrator, or epsilon are used.
+Minmod chooses the smaller same-sign increment. Superbee takes a more
+compressive slope and can sharpen a smooth feature into a plateau. MC and van
+Leer retain more slope than minmod in many monotone regions. The notebook
+lets the error, variation, and overshoot measurements qualify those tendencies;
+no limiter wins every problem.
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Computed comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#computed-comparisons
+Coverage: reading
+
+The scalar equation is u_t + a u_x = 0 on [0,1], with periodic boundaries.
+All runs use conservative finite volumes, upwind interface fluxes, SSPRK(3,3),
+N=200, |a| dt/dx ≤ 0.3, and final time 1. The last step is shortened. Both
+directions a=±1 are computed. The two profiles are a unit square pulse on
+[0.2,0.4] and sin(2πx). Initial and reference values are exact cell averages,
+including partially covered square-pulse cells and the sine's sinc factor.
+Displayed L1 errors use those cell averages. Periodic total variation includes
+the last-to-first cell jump; mass is dx times the sum. Maximum TV uses every
+saved full-step diagnostic, including the initial state.
+The first-order comparison has zero slope. The unlimited comparison uses the
+centered slope (a+b)/2 with the same flux and SSPRK3; it can produce oscillations.
+It is not the Lax–Wendroff fully discrete method.
+The separate Sod comparison uses the existing ideal-gas setup, gamma=1.4,
+N=200, t=0.2, HLLC, primitive-variable reconstruction, and SSPRK3 at CFL=0.3.
+Only the slope choice changes. Its density error is pointwise, following
+the existing Sod convention; it is not an exact cell-average error. Outflow
+boundaries mean that the periodic scalar mass/TV diagnostics are not applied
+to this panel.
+Smooth sine refinement at N=40,80,160 and t=0.2 reports measured L1 errors and
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Computed comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#computed-comparisons
+Coverage: reading
+
+orders. A second-order label describes smooth-region consistency, not uniform
+pointwise accuracy at extrema or a second-order error on discontinuities.
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — TVD is a property of the complete scalar update# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#tvd-is-a-property-of-the-complete-scalar-update
+Coverage: reading
+
+For this scalar MUSCL operator, the stated slope bounds together with
+|a| dt/dx ≤ 1/2 give a TVD forward-Euler building block; SSPRK3 preserves its
+convex stability property under that bound. The executable solver restricts
+CFL to this range. Tests check both signs, periodic conservation, full-step
+variation, bounds, and a forward-Euler random-data case at CFL=1/2.
+The same function applied componentwise to Euler primitive variables is not a
+general system TVD theorem, entropy condition, or guarantee of positive cell
+averages. Characteristic reconstruction and a fully discrete positivity
+construction are separate extensions. See advanced limiters
+for TVB extrema relaxation and conservative positive-state scaling.
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Reproduce and inspect# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#reproduce-and-inspect
+Coverage: reading
+
+python -m numart.cli run sod --method muscl --riemann hllc --limiter superbee --n 200
+python scripts/build_limiters.py
+python scripts/sync_web_content.py
+from numart import get_problem, solve
+from numart.tvd import solve_advection
+sod = solve(get_problem("sod"), limiter="mc")
+pulse = solve_advection(profile="square", limiter="van-leer", speed=-1.)
+docs/figures/limiters.json records all plotted arrays, refinement results,
+diagnostics, and source hashes. The browser selects these Python-computed
+curves; it does not run another implementation of the PDE solver. Default
+MUSCL remains minmod. The limiter option does not apply to WENO5 or the 2D
+Euler/MHD baselines.
+
+## Slope limiters: minmod, Superbee, MC, van Leer, and van Albada — Reproduce and inspect# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/limiters/#reproduce-and-inspect
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Structured, unstructured, and triangular meshes — Structured, unstructured, and triangular meshes [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/
+Coverage: reading
+
+A mesh describes geometry and connectivity. Cell shape and indexing are different choices: triangles may be obtained by splitting a structured lattice, or connected in an irregular unstructured triangulation. The mesh explorer makes this distinction visible.
+The element-basis chapter supplies the other half of the representation: Legendre modes, nodal Lagrange functions, quadrature and mass matrices, quadrilateral tensor products, and triangular P1/P2 shape functions. The basis notebook shows these functions inside a reference cell.
+
+## Structured, unstructured, and triangular meshes — Structured meshes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/#structured-meshes
+Coverage: reading
+
+A logically rectangular mesh admits indices (i,j) and predictable neighboring indices. Cartesian rectangles are the simplest example, but a body-fitted curvilinear mesh may retain structured indexing. Metric terms, face normals, and cell volumes then come from its geometry. Multiblock grids join several such index spaces.
+The explorer’s first example has 8 × 6 rectangular cells on the unit square. Connectivity is still exported explicitly so that the same inspection code can handle every example.
+
+## Structured, unstructured, and triangular meshes — Triangles and unstructured connectivity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/#triangles-and-unstructured-connectivity
+Coverage: reading
+
+Splitting each rectangle into two triangles changes the cell shape while preserving an underlying lattice pattern. The third example instead triangulates deterministic irregular interior points and a fixed square boundary. It uses Matplotlib’s Delaunay triangulation, not a call to the Triangle package. Shewchuk’s Triangle paper is a historical and algorithmic reading reference.
+An unstructured solver normally stores vertices, cells, faces, and owner/neighbor relationships. Boundary faces have one adjacent cell; interior faces have two. The explorer highlights face-sharing neighbors, not every cell that merely touches a vertex. Labels are vertex-average cell centers; for triangles these equal the area centroids.
+
+## Structured, unstructured, and triangular meshes — Conservation is a face contract# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/#conservation-is-a-face-contract
+Coverage: reading
+
+For a finite volume K with area |K|,
+\frac{d}{dt}(|K|\overline U_K)
+=-\sum_{f\subset\partial K}|f|\,\widehat F(U_K,U_{K_f};n_{K,f}).
+An interior face contributes equal and opposite fluxes to its two cells. This cancellation is independent of whether K is a quadrilateral or triangle. With counterclockwise vertices, an edge displacement (dx,dy) has outward unit normal (dy,−dx)/length. Signed polygon areas detect reversed or degenerate cells.
+
+## Structured, unstructured, and triangular meshes — Quality and implementation scope# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/#quality-and-implementation-scope
+Coverage: reading
+
+Small angles, skewness, aspect ratio, nonorthogonality, and volume variation influence reconstruction and stability differently. Delaunay connectivity alone does not guarantee adequate boundary-layer resolution or a suitable minimum angle for arbitrary point sets. No mesh-quality optimization is performed here.
+numart.geometry.example_meshes supplies the three examples. Tests verify positive cell areas, unit total area, connected face-neighbor graphs, reciprocal adjacency, and the planar Euler relation V−E+F_cells = 1 for these simply connected domains. The explorer is a geometry/connectivity demonstration; an unstructured Euler or viscous flow solver remains future work.
+Continue with ALE moving cells, SPH particles, and cylindrical metrics and tensors.
+
+## Structured, unstructured, and triangular meshes — Variable staggering is another choice# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/#variable-staggering-is-another-choice
+Coverage: reading
+
+Arakawa A/B/C placement specifies which variables
+occupy centers, corners and faces on a given mesh. It is independent of
+structured versus unstructured connectivity and of temporal order. The new
+chapter connects the existing MAC layout to rotating shallow-water waves,
+with explicit Coriolis averaging and tested Fourier symbols.
+
+## Structured, unstructured, and triangular meshes — Variable staggering is another choice# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/meshes/#variable-staggering-is-another-choice
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## MHD: constrained transport and divergence cleaning — MHD: constrained transport and divergence cleaning [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/
+Coverage: reading
+
+The GSPH/GSPMHD notes describe a separate particle branch.
+The relativistic development review follows
+SRMHD and GRMHD, including CT, primitive recovery, and evolving spacetime.
+Neither branch is implemented by the Newtonian planar model below.
+
+## MHD: constrained transport and divergence cleaning — Problem and units# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#problem-and-units
+Coverage: reading
+
+The original Orszag–Tang baseline is planar 2D ideal MHD with γ=5/3, μ0=1, and vz=Bz=0 on the
+periodic unit square. Arrays are indexed [x,y,variable], with state
+q=(ρ,mx,my,E,Bx,By,ψ) and
+E=p/(γ-1)+ρ(vx²+vy²)/2+(Bx²+By²)/2.
+The Orszag–Tang initial condition is
+\rho=\frac{25}{36\pi},\quad p=\frac5{12\pi},\quad
+\mathbf v=(-\sin2\pi y,\sin2\pi x),\quad
+\mathbf B=\frac1{\sqrt{4\pi}}(-\sin2\pi y,\sin4\pi x).
+This is a widely used compressible-test normalization, rather than a complete
+reproduction of the original incompressible MHD study by
+Orszag–Tang (1979).
+The MASCLET paper is one reference for
+this compressible normalization.
+
+## MHD: constrained transport and divergence cleaning — CT: share the same edge electric field# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#ct-share-the-same-edge-electric-field
+Coverage: reading
+
+Store normal magnetic components on cell faces and update both directions
+with a shared corner Ez: for example, Bx <- Bx - Δt D_y Ez and
+By <- By + Δt D_x Ez. The corresponding divergence update contains
+-D_xD_y Ez+D_yD_x Ez=0, preserving the matching discrete divergence.
+This edition uses a simple flux-CT construction with arithmetic averages of
+electric fields from Rusanov face fluxes. Face Riemann problems use a single
+normal magnetic field; interface energy is adjusted to preserve primitive
+pressure. After each update, cell-centered fields are averaged from faces.
+Total energy is not reset nonconservatively. This implementation does not
+reproduce every coordinate-system detail of Evans–Hawley or Athena's upwind CT.
+Evans–Hawley (1988),
+Tóth (2000).
+
+## MHD: constrained transport and divergence cleaning — GLM: transport and damp divergence errors# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#glm-transport-and-damp-divergence-errors
+Coverage: reading
+
+With cell-centered B and an auxiliary variable ψ, solve
+\partial_t\mathbf B+\nabla\cdot(\mathbf v\mathbf B-\mathbf B\mathbf v)+\nabla\psi=0,
+\qquad
+\partial_t\psi+c_h^2\nabla\cdot\mathbf B=-\alpha\psi.
+The induction flux components are F_i(B_j)=v_i B_j-B_i v_j+δij ψ.
+This edition fixes ch=3 and uses α=damping*ch/h, with damping=0.18.
+Linear ψ damping is split off and integrated exponentially; the remaining
+update uses first-order Rusanov fluxes and forward Euler. The energy variable
+is conventional MHD energy without a ψ² contribution. This educational
+Dedner-type model covers a subset of GLM/EGLM formulations.
+Dedner et al. (2002).
+
+## MHD: constrained transport and divergence cleaning — Measuring ∇·B# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#measuring-b
+Coverage: reading
+
+CT uses face-field differences; GLM uses centered differences of cell-centered
+B. Records include the operator name, because values from different discrete
+divergences cannot directly rank methods. With the fixed, relatively dissipative
+GLM wave speed and symmetric OT data, centered divergence can remain extremely
+small. OT alone therefore gives incomplete evidence about cleaning performance.
+A separate diagnostic injects Bx += 0.01sin(2πx) with
+magnetic_error=0.01, adjusting energy to preserve initial gas pressure.
+This is not the standard OT problem. It examines divergence-wave transport
+and damping while distinguishing damping from error reduction by numerical
+viscosity. CT preserves an initial discrete constraint; it does not
+automatically remove an existing magnetic-monopole error.
+
+## MHD: constrained transport and divergence cleaning — Verification scope# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#verification-scope
+Coverage: reading
+
+Tests check periodic mass and total energy, density and pressure positivity
+on selected cases, CT divergence preservation, and GLM injected-error cleaning.
+The HLLD section below adds Brio–Wu, Alfvén-wave refinement and field loops.
+External reference-code comparisons remain future work. The low-resolution, first-order OT figures
+are introductory demonstrations of magnetic-constraint handling.
+
+## MHD: constrained transport and divergence cleaning — Time evolution# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#time-evolution
+Coverage: reading
+
+The motion gallery now includes separate 64² Orszag–Tang CT and GLM movies. Their actual adaptive-CFL snapshot times and native divergence diagnostics differ. Playback does not supply an equal-accuracy ranking.
+
+## MHD: constrained transport and divergence cleaning — HLLD and standard wave tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#hlld-and-standard-wave-tests
+Coverage: reading
+
+Open the HLLD test comparisons. These new full-vector ideal-MHD
+runs retain all three velocity and magnetic components, unlike the planar
+Orszag–Tang baseline above. With μ0 = 1,
+q = (ρ,ρvx,ρvy,ρvz,E,Bx,By,Bz) and
+E = p/(γ−1) + ρ|v|²/2 + |B|²/2.
+The HLLD fan resolves the contact and two rotational waves between its outer
+fast-wave bounds. Intermediate star/double-star states use one shared normal
+magnetic field. Invalid intermediate states fall back to HLLE and each face
+fallback is counted. Miyoshi–Kusano (2005)
+is the original bibliographic source; the accessible
+Athena++ HLLD implementation
+was used to cross-check the equations. This is an independent educational
+implementation, not an Athena++ run or full reproduction of the paper.
+All three tests use primitive MC slopes and SSPRK2 with face positivity
+scaling. Step retries and HLLE fallbacks are recorded; no conserved mean is clipped.
+Selected physical states staying positive is not a general robustness proof.
+Brio–Wu: γ = 2 on [0,1], initial discontinuity at x = 0.5,
+(ρ,p,By)L = (1,1,1), (ρ,p,By)R = (0.125,0.1,−1), Bx = 0.75,
+all velocities and Bz zero, open ends, t = 0.1, CFL 0.35.
+Compare HLLE/HLLD at 400 cells and HLLD at 800. Profiles are numerical
+grid comparisons, not exact-solution overlays or a universal uniqueness
+claim. Brio–Wu (1988).
+Circular Alfvén wave: γ = 5/3, ρ = 1, p = 0.1, Bx = 1,
+
+## MHD: constrained transport and divergence cleaning — HLLD and standard wave tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#hlld-and-standard-wave-tests
+Coverage: reading
+
+(By,Bz) = 0.1(cos(2πx),sin(2πx)), (vy,vz) = −(By,Bz), vx = 0,
+periodic unit interval, one period t = 1, CFL 0.35. Exact conservative
+cell averages include sinc-averaged transverse fields and constant total
+energy; energy is not reconstructed from squares of averaged fields.
+HLLE and HLLD use 32, 64, 128 and 256 cells. The finest measured orders
+for the mean absolute transverse-field error are both approximately 1.98.
+Weak magnetic loop: γ = 5/3, ρ = p = 1, v = (2,1,0),
+Az = 10⁻³ max(0.3−r,0) on a periodic 2 × 1 box, t = 1,
+CFL 0.3, 64 × 32 and 128 × 64 cells. Compare HLLE/HLLD with each
+of CT and GLM. Finite-field translation is a diagnostic, not an exact
+solution: magnetic forces are small, not zero.
+
+## MHD: constrained transport and divergence cleaning — CT-Contact and GLM scope in the loop test# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#ct-contact-and-glm-scope-in-the-loop-test
+Coverage: reading
+
+CT initializes face B from a corner-potential curl. A contact-upwinded corner
+EMF uses the face mass-flux sign for transverse electric-field derivatives
+(CT-Contact in Mignone–Del Zanna (2021), equations 20–22).
+It reduces to the face induction flux in a grid-aligned 1D limit. This is not
+the UCT-HLLD construction. The shared curl preserves the native face divergence
+at each SSPRK stage; cell B is averaged from faces and total energy is not reset.
+GLM initializes cell B from a centered curl of cell Az. At each face, the
+longitudinal subsystem is solved first:
+ B_n^*=\frac{B_{n,L}+B_{n,R}}2-\frac{\psi_R-\psi_L}{2c_h},\qquad
+ \psi^*=\frac{\psi_L+\psi_R}2-\frac{c_h(B_{n,R}-B_{n,L})}2.
+HLLD/HLLE then receives common Bn*, preserving interface primitive pressure;
+fluxes of Bn and ψ are ψ* and ch²Bn*. Set ch = 4 and use exponential ψ
+half-step damping with rate 0.18ch/h before/after SSPRK2. E has no ψ energy.
+This is a conservative GLM model inspired by the longitudinal solve in
+Mignone–Tzeferacos (2010), not their CTU
+integrator or EGLM variant. The fixed cleaning speed also changes the step count.
+The initial magnetic discretizations and native divergence operators differ.
+Energy fractions are normalized by each run's own initial cell-field energy.
+Do not infer an equal-accuracy or matched-cost CT/GLM ranking. At 128 × 64,
+
+## MHD: constrained transport and divergence cleaning — CT-Contact and GLM scope in the loop test# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#ct-contact-and-glm-scope-in-the-loop-test
+Coverage: reading
+
+CT preserves native maximum divergence below 4 × 10⁻¹⁶ in these runs;
+GLM's centered maximum is about 3.7 × 10⁻⁴. These operator-dependent numbers
+have units of B/length. All published loop runs have zero HLLE fallbacks and
+zero retries. External reference-code comparisons, stronger-field loop tests
+and UCT-HLLD remain future work.
+Reproduce with python scripts/build_mhd_tests.py. Download
+definitions, diagnostics and hashes and
+computed conservative arrays.
+
+## MHD: constrained transport and divergence cleaning — CT-Contact and GLM scope in the loop test# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/mhd/#ct-contact-and-glm-scope-in-the-loop-test
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Time-dependent tests: movies and saved states — Time-dependent tests: movies and saved states [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/
+Coverage: reading
+
+Open the motion gallery.
+Use movies when the evolution is part of the question: a shock reflecting, a vortex advecting, or magnetic structures forming. Steady solutions, manufactured equilibrium profiles, and final elliptic fields remain still figures. A solver residual versus iteration is an algorithmic history, not a physical-time flow movie.
+
+## Time-dependent tests: movies and saved states — Five computed movies# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#five-computed-movies
+Coverage: reading
+
+Double Mach Reflection: Mach-10 2D Euler reflection on 256 × 64 cells, t = 0 to 0.2, first-order HLL with SSPRK2 and CFL 0.4. The fine wall jet is not resolved. Read the setup.
+Orszag–Tang with CT: 64² periodic planar ideal MHD, t = 0 to 0.5, first-order Rusanov with forward Euler and CFL 0.3. Magnetic divergence uses the staggered face operator.
+Orszag–Tang with GLM: the same resolution and physical interval, with fixed cleaning speed 3 and damping 0.18. Its native divergence uses the cell-centered central operator. The CT and GLM plots do not form an equal-accuracy ranking. Read the MHD definitions.
+Smooth isentropic vortex with original KEEP: 96² periodic Euler on [−10,10]², t = 0 to 4, the second-order arithmetic-mean Cartesian KEEP flux and classical RK4, CFL 0.25. No shock stabilization, pressure-equilibrium-preserving extension, or exact entropy claim is included. Read the KEEP chapter.
+Mach-3 forward-facing step: 240 × 80 cells, t = 0 to 4, first-order HLL and SSPRK2 with CFL 0.4. Grid-aligned blocked cells represent a step at x = 0.6 of height 0.2. Standard reflection is applied without an entropy/enthalpy corner reset. Diagnostics exclude solid cells. This is a classical inviscid benchmark, not a NASA experimental validation. See the shock-case definitions.
+
+## Time-dependent tests: movies and saved states — Five computed movies# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#five-computed-movies
+Coverage: reading
+
+Density and pressure appear together in every movie. These are rendered numerical states from the repository solvers, not interpolated illustrations or reproductions of original-paper movies.
+
+## Time-dependent tests: movies and saved states — Actual physical times, unchanged time steps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#actual-physical-times-unchanged-time-steps
+Coverage: reading
+
+Each movie requests 81 output times, including the initial and final times. The recorder saves the first completed solver state at or after each request. It does not shorten a numerical step to hit a requested time and does not interpolate the solution. If a coarse step crosses several requests, one state represents them. Actual times and solver step counts accompany every frame.
+The production movies have 81 distinct states each. The MHD CT and GLM solvers choose different time steps, so similarly numbered frames need not have identical intermediate physical times. Read the timestamps before comparing them. Snapshot tests verify that enabling output leaves the final state and numerical history unchanged.
+
+## Time-dependent tests: movies and saved states — Fixed scales and explicit playback# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#fixed-scales-and-explicit-playback
+Coverage: reading
+
+Each density and pressure color scale is fixed across its entire run using that run’s extrema over the saved states. Colors must not be interpreted as identical values across different movies unless their scale labels agree. The minima and maxima listed beside the player are measurements of the currently displayed state; they do not establish a positivity theorem.
+Playback starts only after pressing Play. Pause, first/last, previous/next, a saved-frame slider, speed selection, and an optional loop support inspection. Speed is presentation speed, not a change to the simulation. At the nominal rate, 81 saved frames at 12 frames per second make a 6.75-second clip. All physical times remain printed inside the images.
+A native MP4 player and MP4/frame downloads are also available. MP4 uses H.264 video with no audio; the inspectable image frames are lossless WebP. Video compression is a presentation step and never feeds back into the computation.
+
+## Time-dependent tests: movies and saved states — Reproduce and verify# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#reproduce-and-verify
+Coverage: reading
+
+python -m pip install '.[movies]'
+python scripts/build_movies.py
+python scripts/check_movies.py
+The builder writes the published frames, MP4 files, and movie catalog into website/public/assets/movies. It also saves full numerical snapshots as compressed NumPy arrays in the ignored outputs/movies directory for local inspection. Source hashes, image/video hashes, numerical-state hashes, software versions, methods, boundary conditions, physical scales, and per-frame diagnostics are recorded in the catalog. The fifth movie is built by python scripts/build_shock_gallery.py and has a separate shock catalog; the player combines both catalogs. Its full saved states are in outputs/shock-gallery.
+The checker validates hashes and metadata, opens each saved image, and decodes each MP4 to verify its dimensions, playback rate, and complete frame count. A short small-grid build can be made with --quick --output <directory>; its catalog is marked as a quick check and is not the published production run.
+
+## Time-dependent tests: movies and saved states — Multidimensional still fields# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#multidimensional-still-fields
+Coverage: reading
+
+The numerical gallery
+opens with 2D/3D spatial fields, including the five movie entry points above.
+Dimension and subject filters can be combined; all dimensions also includes
+the 1D comparisons and algorithmic diagnostic figures.
+Three additional still figures expose fields from existing solvers:
+2D triangular P1 Poisson: 24 × 24 split squares (1152 triangles), zero
+Dirichlet data and exact solution sin(πx)sin(πy). The second panel is nodal
+error; continuous L2/H1 errors are measured separately inside elements.
+2D periodic Taylor–Green: 64 × 64 MAC cells, viscosity 0.1, t = 0.5.
+Speed/arrows average face velocities to cell centers only for visualization;
+velocity RMS and divergence diagnostics use the native MAC arrays.
+3D periodic Poisson: a 32³ FFT solve with density
+1 + 0.3 cos(2πx)cos(4πy)cos(2πz), G = 1 and zero-mean potential.
+Three orthogonal slices at coordinate 0.5 use the same color limits.
+This is a static 3D field checked against one exact Fourier mode, not a
+3D fluid or particle-evolution simulation.
+Reproduce these still fields with python scripts/build_multidimensional_gallery.py.
+Download the definitions, diagnostics and source hashes
+and computed arrays. These views add no new
+solver or convergence study; the existing FEM and MAC refinement tests remain
+separate evidence.
+
+## Time-dependent tests: movies and saved states — What a movie does not establish# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#what-a-movie-does-not-establish
+Coverage: reading
+
+A visually smooth evolution does not establish mesh convergence, an entropy inequality, shock robustness, long-time turbulent accuracy, or agreement with experiments. The KEEP vortex refinement supplies separate smooth-error measurements. The carbuncle chapter explains why a shock movie alone cannot certify multidimensional stability.
+
+## Time-dependent tests: movies and saved states — Reconstruction comparison clips# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#reconstruction-comparison-clips
+Coverage: reading
+
+The Euler comparison page adds paired first-order/minmod/MC clips of the same forward-step case, with shared color scales and 81 output states per method. Read actual timestamps in the frames: adaptive solver steps need not land on identical intermediate times. These compare reconstructions; they do not add physical cases to the five-case movie catalog. python scripts/build_euler_comparison.py builds them and decodes each MP4 to check its frame count.
+
+## Time-dependent tests: movies and saved states — Reconstruction comparison clips# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/movies/#reconstruction-comparison-clips
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## NASA 2D verification and validation case catalog — NASA 2D verification and validation case catalog [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/
+Coverage: reading
+
+Start with the official NPARC Verification and Validation Archive,
+CFL3D test cases,
+and Turbulence Modeling Resource.
+NASA's TMR information page
+describes the resource's move to GitHub in February 2026.
+The two 15-degree wedge flows are now computed educational Euler baselines.
+The remaining NASA entries below are cataloged candidates. These independent
+calculations are not Wind-US output, experimental validations or reproductions
+of NASA's complete solver/grid comparison. A classical Mach-3 forward-facing
+step and Double Mach Reflection complement the NASA cases.
+
+## NASA 2D verification and validation case catalog — Computed shock tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#computed-shock-tests
+Coverage: reading
+
+Open the shock-containing fields in the gallery.
+Both wedges start from uniform freestream with gamma 1.4, density 1 and sound
+speed 1. The independent body-fitted mesh spans x = −0.5 to 1, the lower wall
+y = max(x,0) tan(15°), and the upper boundary y = 1.2. The higher farfield keeps
+the Mach-2 weak shock below that boundary at the outlet; it differs from the
+height 1 of NASA's Mach-2.5 domain. Inlet and upper-boundary
+states are fixed at freestream, the outlet is extrapolated and the lower wall
+reflects normal momentum. Shared oriented face fluxes conserve the cell totals;
+cell areas and face normals come from the actual quadrilaterals.
+NASA wedge, Mach 2.0: Mach and pressure maps on 240 × 80 cells at t = 3,
+with the theoretical weak-shock line. A 120 × 40 run supplies a second grid.
+NASA setup.
+NASA wedge, Mach 2.5: the same independent meshes and terminal time.
+The reference shock angle is approximately 36.94490°, pressure ratio 2.467500,
+and downstream Mach number 1.873526. The theta–beta–Mach root and normal-shock
+relations supply the reference, with a numerical Rankine–Hugoniot check.
+NASA analytical comparison.
+Classical Mach-3 forward-facing step: a 3 × 1 tunnel with the step at
+x = 0.6 and height 0.2, uniform inflow (density 1.4, pressure 1, velocity 3),
+reflecting walls and an extrapolated exit. A 240 × 80 grid reaches t = 4,
+
+## NASA 2D verification and validation case catalog — Computed shock tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#computed-shock-tests
+Coverage: reading
+
+with 81 saved states and an MP4. Watch the shock reflections.
+This is the classical Emery/Woodward–Colella benchmark, not a NASA-originated
+experiment. The corner treatment differs from the corrected PPM comparison
+in Woodward–Colella §VI.b:
+this baseline applies plain reflection and does not reset entropy or enthalpy
+near the step corner. Corner artifacts and smeared slip lines may remain.
+These use first-order HLL finite volumes and SSPRK2, with CFL 0.4. Wedges
+have no imposed analytical shock in their initial state. Their normalized L1
+density errors compare conservative cell averages with an exactly clipped
+piecewise-constant oblique-shock reference. Wall-pressure medians use the first
+fluid row over 0.5 < x < 0.9; a density-gradient fit over 0.35 < x < 0.85 estimates
+the shock angle. Mach-2 MC still has local time variation at t = 3 (maximum conserved update
+rate approximately 6.08 in the published run); it is not a converged steady
+solution. This residual is exposed alongside the sharper density error.
+Two grids at one finite terminal time do not establish general
+asymptotic order or complete steady convergence. The step has no exact overlay
+and only one published grid; t = 4 is an unsteady snapshot.
+Reproduce with python scripts/build_shock_gallery.py; --reuse renders cached,
+source-checked trajectories. Download run definitions, diagnostics and hashes,
+
+## NASA 2D verification and validation case catalog — Computed shock tests# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#computed-shock-tests
+Coverage: reading
+
+final numerical fields, and the
+step movie manifest.
+
+## NASA 2D verification and validation case catalog — Shock-containing NASA cases still to implement# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#shock-containing-nasa-cases-still-to-implement
+Coverage: reading
+
+The Mach-5 shock/boundary-layer interaction,
+Mach-7 laminar ramp,
+Sajben diffuser and RAE 2822 are later candidates. Their viscous, turbulence or
+gas-model requirements are part of each case; an inviscid wedge image is not
+a substitute for those validations. These cases have no computed exhibit here.
+
+## NASA 2D verification and validation case catalog — Starting with Euler and analytical references# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#starting-with-euler-and-analytical-references
+Coverage: reading
+
+15° wedge, Mach 2.0 — computed baseline: oblique shock and wall pressure with two grids. Roe/HLLE method comparisons remain future work. NASA case.
+15° wedge, Mach 2.5 — computed baseline: shock angle and downstream-state reference. Pair this compression case with the planned expansion corner below. NASA case.
+Prandtl–Meyer 15° expansion, Mach 2.5: expansion-fan structure and analytical Mach/pressure relations. Official archive.
+
+## NASA 2D verification and validation case catalog — Laminar flow, unsteadiness, and pressure Poisson problems# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#laminar-flow-unsteadiness-and-pressure-poisson-problems
+Coverage: reading
+
+Driven cavity: centerline velocities, primary vortex, and corner vortices in a square. NASA uses low-Mach calculations to approximate incompressible flow and compares with Ghia and colleagues. NASA case.
+Blasius laminar flat plate: boundary-layer profiles, skin friction, and wall-normal mesh resolution. NASA case.
+Unsteady laminar circular cylinder: vortex shedding, drag/lift histories, and temporal accuracy; a candidate after dual time stepping. NASA case.
+
+## NASA 2D verification and validation case catalog — Turbulence models, separation, and airfoils# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#turbulence-models-separation-and-airfoils
+Coverage: reading
+
+Zero-pressure-gradient turbulent flat plate: skin friction, turbulence-model implementation verification, and grid convergence. TMR verification.
+2D bump-in-channel: curved-wall pressure and friction, with comparisons between codes using the same turbulence model. TMR verification.
+Driver–Seegmiller backward-facing step: separation, reattachment, Cp/Cf, and velocity profiles. Fix the dataset version, including Reynolds-number definitions and corrections. TMR validation, NPARC.
+Sajben transonic diffuser: internal shocks, back pressure, and shock/boundary-layer interaction. NASA case.
+RAE 2822 transonic airfoil: surface Cp, shocks, and boundary layers. State the case number and corrected Mach number and angle of attack. NASA case.
+NACA 0012: surface pressure, lift/drag, and sensitivity to grids, far-field boundaries, and turbulence models. TMR validation.
+NACA 4412 trailing-edge separation: adverse pressure gradients and trailing-edge separation. TMR validation.
+NASA wall-mounted hump: wall-induced separation and reattachment. Record the applicability of 2D calculations to experiments containing three-dimensional effects. TMR validation.
+2D mixing layer: free-shear-layer growth, velocity, and turbulence quantities. TMR validation.
+2D airfoil near-wake: wake velocity deficit and recovery. TMR validation.
+
+## NASA 2D verification and validation case catalog — Other classical 2D benchmarks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#other-classical-2d-benchmarks
+Coverage: reading
+
+Double Mach Reflection, the Mach 3 forward-facing step, 2D Riemann
+configurations, the isentropic vortex, and odd-even shock/carbuncle tests are
+also useful flux demonstrations. The first two have a representative source
+in Woodward–Colella (1984).
+Our Double Mach Reflection exhibit and the forward step above
+are implemented first-order HLL baselines. Riemann configurations and controlled
+odd-even/carbuncle comparisons remain future work; the smooth KEEP vortex is computed.
+See the separate carbuncle notes for the required stability comparisons.
+Do not label all of these as NASA-originated problems. ONERA M6 is a 3D wing;
+axisymmetric bump and jet cases are also different from planar 2D cases and
+are excluded from the main list.
+
+## NASA 2D verification and validation case catalog — Information to fix for each implementation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#information-to-fix-for-each-implementation
+Coverage: reading
+
+Record the original source, case number, geometry, nondimensionalization,
+Mach/Reynolds numbers, angle of attack, wall/far-field/inlet/outlet boundaries,
+grid sequence, exact turbulence-model variant, convergence residuals, time
+steps, and definitions of Cp/Cf/Cl/Cd. A decreasing residual alone establishes
+neither grid convergence nor agreement with experiments. Add the original
+measurement papers at implementation time rather than citing only NASA's
+resource pages.
+
+## NASA 2D verification and validation case catalog — MUSCL reconstruction comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#muscl-reconstruction-comparisons
+Coverage: reading
+
+Compare first order, minmod and MC.
+The new runs keep acoustic HLL, SSPRK2 and nominal CFL 0.4 fixed. Primitive
+variables are reconstructed from physical gradients at quadrilateral area
+centroids to face midpoints. On the body-fitted grid, x secants account for
+the accompanying physical y displacement. A shared face flux updates both
+neighbors. The limiter choices are minmod(a,b) and
+MC(a,b) = minmod(2a,(a+b)/2,2b); see the limiter definitions.
+Boundary reconstruction excludes solid neighbors and reflects fluid-side
+states. One cellwise factor scales reconstructed deviations when a face
+would have nonpositive density or pressure. Failed SSPRK2 steps halve the
+step size and retry; these events are recorded. Conserved means are not clipped.
+This is a tested safeguard, not a general positivity theorem for this solver.
+Both NASA wedges have all three reconstructions on 120 × 40 and 240 × 80
+meshes at t = 3. Wall pressure, fitted shock angle and integrated density
+errors use the definitions above. A separate periodic entropy wave uses
+velocity (0.7,0.3), pressure 1 and density
+1 + 0.2 sin(2πx) sin(2πy), initialized and compared as exact cell averages.
+Grids 16², 32², 64² and 128² reach t = 0.5. Observed orders are printed in the
+comparison page; MC approaches second order on this smooth test. Limiter
+activation at extrema affects the measured minmod order. Shock errors have
+
+## NASA 2D verification and validation case catalog — MUSCL reconstruction comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#muscl-reconstruction-comparisons
+Coverage: reading
+
+a different convergence regime and do not establish smooth second order.
+The forward-step comparison
+adds minmod and MC stills and 81-state clips on the same 240 × 80 mesh. All
+three clips share density/pressure scales and requested output times, but
+actual intermediate timestamps can differ by one adaptive solver step.
+Nominal CFL and grids do not imply equal computational cost. These are three
+reconstructions of one physical case; the original first-order movie remains
+available. The corner treatment is unchanged and the t = 4 flow is unsteady.
+Reproduce with python scripts/build_euler_comparison.py. Download the
+comparison definitions, diagnostics and hashes
+and final conservative arrays.
+Full trajectories are cached locally under outputs/euler-comparison.
+
+## NASA 2D verification and validation case catalog — MUSCL reconstruction comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/nasa-2d/#muscl-reconstruction-comparisons
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Particle gravity: PM, P³M, Tree, multipoles, and multigrid [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/
+Coverage: reading
+
+Poisson solvers and particle force algorithms answer related questions with different representations. Begin by fixing the Green function, boundary conditions, mass assignment, softening, and force operator. A periodic PM field and an isolated direct-sum field solve different problems, so their raw difference is not a force-accuracy measurement.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Particle–mesh: mass to potential to force# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#particlemesh-mass-to-potential-to-force
+Coverage: reading
+
+In a three-dimensional periodic cube,
+\nabla^2\phi=4\pi G(\rho-\overline\rho),\qquad
+\widehat\phi(\boldsymbol k)=-\frac{4\pi G}{|\boldsymbol k|^2}\widehat\rho(\boldsymbol k)
+\quad(\boldsymbol k\ne0),\qquad \widehat\phi(0)=0.
+Subtracting the mean supplies the periodic compatibility condition; setting the potential’s zero mode fixes its gauge. This choice differs from an isolated sheet, whose horizontal mean produces a real vertical force.
+PM deposits particle masses onto a grid, solves the mesh Poisson equation, differentiates the potential, and interpolates acceleration back to particles. The example uses cloud-in-cell (CIC) weights on eight neighboring mesh nodes in 3D, a continuum Fourier Laplacian symbol, and spectral force derivatives. An even-grid derivative sets its unpaired Nyquist mode to zero. Matched CIC deposition/interpolation and an odd force operator yield zero total internal force to roundoff in the tested periodic example.
+Assignment and interpolation smooth the force. The mesh Green function, discrete derivative, aliasing, grid anisotropy, and any deconvolution all influence the effective particle interaction. Accurate solution of a manufactured mesh mode does not establish accurate close-pair forces.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — P³M: correct the near field without counting it twice# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#p%C2%B3m-correct-the-near-field-without-counting-it-twice
+Coverage: reading
+
+Particle–particle/particle–mesh adds a short-range correction to the mesh force:
+\boldsymbol a_i=\boldsymbol a_i^{\rm PM}
++\sum_{j\in\mathcal N_i}\left(\boldsymbol a_{ij}^{\rm target}
+-\boldsymbol a_{ij}^{\rm mesh,near}\right).
+The subtracted term must correspond to the chosen PM assignment and force operator, or to a consistently designed force split. Adding an unmodified Newtonian pair force to an already complete PM force counts part of the interaction twice. Neighbor lists and clustering determine short-range work. See Hockney’s original P³M code description.
+A production P³M solver, matching correction table, and adaptive refinements are not implemented here.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Barnes–Hut Tree: open the nearby cells# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#barneshut-tree-open-the-nearby-cells
+Coverage: reading
+
+Barnes and Hut (1986) organize particles into an octree. A distant cell is approximated by its mass distribution moments; nearby cells are opened recursively. Our geometric acceptance test is s/d < theta, with cell side s and distance d to its center of mass. A node containing the target is always opened, and direct leaves exclude self-interaction.
+The implemented isolated reference uses G = 1 and Plummer softening:
+\boldsymbol a_i=-\sum_{j\ne i}m_j
+\frac{\boldsymbol x_i-\boldsymbol x_j}
+{(|\boldsymbol x_i-\boldsymbol x_j|^2+\epsilon^2)^{3/2}}.
+The Tree and direct sum use identical particles, masses, and epsilon. Smaller theta usually trades more interactions for lower error, but individual-particle errors need not decrease monotonically. The familiar O(N log N) description is a typical algorithmic scaling under suitable distributions, not a timing result or worst-case guarantee for this Python example.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Multipole expansion: monopole and second moments# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#multipole-expansion-monopole-and-second-moments
+Coverage: reading
+
+Let R point from a cell’s center of mass to the target, delta_a be source offsets, M be total mass, and S = sum m_a delta_a delta_a^T. The center-of-mass dipole vanishes. With s² = R²+epsilon², a Taylor expansion of the same softened kernel gives
+\phi(\boldsymbol R)\approx-G\left[
+\frac{M}{s}+\frac{3\boldsymbol R^T S\boldsymbol R}{2s^5}
+-\frac{\operatorname{tr}S}{2s^3}\right].
+The code differentiates this potential analytically. It retains the full second moment, including its trace; silently substituting an unsoftened traceless quadrupole formula would change the approximation. The gallery compares monopole and second-moment errors against the same direct force sum.
+A fast multipole method also forms and translates local expansions, reusing cell-to-cell interactions. It is more than adding a quadrupole to Barnes–Hut. Greengard and Rokhlin (1987) are the original FMM reading reference; FMM translations are not implemented here.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — TreePM: a different near-field evaluator# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#treepm-a-different-near-field-evaluator
+Coverage: reading
+
+TreePM combines a mesh long-range field with a short-range Tree field. A representative Gaussian potential split has
+\widehat\phi_{\rm long}=\widehat\phi\,e^{-k^2r_s^2},\qquad
+\phi_{\rm short}(r)=-\frac{Gm}{r}\operatorname{erfc}\left(\frac{r}{2r_s}\right).
+The short-range force is the derivative of this potential, not merely Newton’s force times erfc. Cutoffs, periodicity, and softening must match the split. Springel’s GADGET-2 paper provides a primary example. The two independent PM and Tree examples here do not constitute an implemented TreePM solver.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Where multigrid belongs# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#where-multigrid-belongs
+Coverage: reading
+
+Multigrid solves a discretized elliptic equation rather than directly summing particle pairs. A smoother reduces oscillatory error; restriction, a coarse solve, prolongation, and correction address smoother error components. It can replace the grid Poisson solve inside a particle–mesh pipeline, provided its operator, boundary treatment, and particle coupling are specified.
+The existing multigrid implementation solves a 2D five-point negative-Laplacian problem with zero Dirichlet boundaries. It is not yet the isolated 3D particle-gravity solver. Boundary values for an isolated finite mesh may be supplied by multipoles or another open-boundary construction; setting phi = 0 at a nearby box face generally does not reproduce phi tending to zero at infinity.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Reproduce the static checks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#reproduce-the-static-checks
+Coverage: reading
+
+python scripts/build_particle_gravity.py
+This creates the figure and measurement manifest. The Tree experiment uses 192 equal-mass particles, seed 17, epsilon = 0.03, five opening angles, and both moment orders. Its error is ||a_tree−a_direct||₂ / ||a_direct||₂. Counts of accepted nodes and direct pairs are reported; their operation costs differ, so their sum is not a timing comparison.
+The PM test uses a 24³ periodic mesh. A separate density 1+0.2 cos(2 pi x) has potential −0.2 cos(2 pi x)/pi for G = 1. Tests cover CIC mass conservation, periodic wrapping, constant interpolation, self-force, net force, the manufactured Poisson mode, exact Tree opening at theta = 0, and selected force-error refinements. A target-by-target approximate Tree need not preserve pairwise momentum exactly; the manifest records a net-force diagnostic.
+Continue with isolated FFT and slab Green functions, and the symplectic map chapter for the additional requirements on force consistency and time integration.
+
+## Particle gravity: PM, P³M, Tree, multipoles, and multigrid — Reproduce the static checks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particle-gravity/#reproduce-the-static-checks
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Particle methods and smoothed particle hydrodynamics — Particle methods and smoothed particle hydrodynamics [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/
+Coverage: reading
+
+Lagrangian particles carry quantities while moving with a flow. SPH replaces a field value or derivative by a local kernel-weighted particle sum. The independent early papers by Gingold and Monaghan (1977) and Lucy (1977) are historical starting points. The static reconstruction below does not reproduce their stellar calculations.
+
+## Particle methods and smoothed particle hydrodynamics — From an integral to particles# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/#from-an-integral-to-particles
+Coverage: reading
+
+A smoothed field is approximated by
+f_h(x)=\int f(x')W(x-x',h)\,dx'
+\approx\sum_b \frac{m_b}{\rho_b} f_b W(x-x_b,h).
+The volume weight m_b/rho_b matters. Smoothing length h is a kernel scale, not necessarily the particle spacing. Compact support defines the neighbor search; it does not impose a fixed mesh connectivity.
+Our one-dimensional example uses the normalized cubic spline, with q = |x|/h:
+W(x,h)=\frac{2}{3h}\begin{cases}
+1-\frac32q^2+\frac34q^3,&0\le q<1,\\
+\frac14(2-q)^3,&1\le q<2,\\
+0,&q\ge2.
+\end{cases}
+This prefactor is one-dimensional. Two- and three-dimensional kernels require different normalization constants.
+
+## Particle methods and smoothed particle hydrodynamics — Partition of unity and correction# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/#partition-of-unity-and-correction
+Coverage: reading
+
+The raw sum of particle volumes times W need not equal one on a discrete particle set. A Shepard-normalized interpolant divides by that sum. It reproduces a constant wherever the denominator is nonzero, but this interpolation correction alone does not establish conservative dynamics, linear consistency, or stable pressure forces.
+import numpy as np
+from numart.geometry import sph_reconstruct
+p = (np.arange(64) + 0.5) / 64
+x = np.linspace(0, 1, 201)
+f, partition = sph_reconstruct(x, p, np.sin(2*np.pi*p), h=0.04)
+f_corrected, _ = sph_reconstruct(x, p, np.sin(2*np.pi*p), h=0.04, normalize=True)
+The routine uses periodic minimum-image distances on [0,1] and equal volume weights 1/N. It requires 0 < h < 1/4 so the support fits the minimum-image convention. It does not infer physical density from arbitrary unequal particle spacings.
+
+## Particle methods and smoothed particle hydrodynamics — What a fluid solver would additionally need# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/#what-a-fluid-solver-would-additionally-need
+Coverage: reading
+
+Density estimation or a continuity update, a consistent pressure force, momentum and energy evolution, boundary particles, time stepping, neighbor-search updates, and treatment of shocks or tensile/pairing instabilities are additional modeling decisions. Artificial viscosity used in shock-capturing SPH must be distinguished from the physical Newtonian viscous stress tensor.
+Tests check the continuous kernel’s normalization and discrete constant reproduction after normalization. This edition implements kernel reconstruction only, not an SPH flow solver. See time integration for why a particle kick–drift leapfrog and a two-step first-order ODE leapfrog should not be conflated.
+
+## Particle methods and smoothed particle hydrodynamics — Particle gravity is a separate operator# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/#particle-gravity-is-a-separate-operator
+Coverage: reading
+
+PM, P³M, Tree, and multipole methods compute gravitational fields; SPH kernels reconstruct fluid quantities and their derivatives. Read particle gravity, isolated and slab boundary kernels, and symplectic time integration to connect these different parts of a self-gravitating particle model.
+
+## Particle methods and smoothed particle hydrodynamics — Godunov SPH: the Riemann-solver branch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/#godunov-sph-the-riemann-solver-branch
+Coverage: reading
+
+Inutsuka's GSPH connects particle hydrodynamics with pairwise Riemann
+problems. The chapter follows the 2002 convolution-based derivation, identifies
+its 1994 precursor, and links the 2011 MHD extension by Iwasaki and Inutsuka.
+It is a reading and implementation plan; the kernel reconstruction above is
+not a GSPH fluid calculation.
+
+## Particle methods and smoothed particle hydrodynamics — Godunov SPH: the Riemann-solver branch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/particles-sph/#godunov-sph-the-riemann-solver-branch
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — Euler reconstruction: PPM, characteristics, WENO-Z and AUSM [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/
+Coverage: reading
+
+Open the computed comparison. This 1D experiment separates
+reconstruction choices from numerical-flux choices. It extends the original
+componentwise MUSCL/WENO baseline; previous exhibits are retained.
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — What is compared# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#what-is-compared
+Coverage: reading
+
+The reconstruction view compares conservative-component and characteristic
+MUSCL/MC, limited parabolic finite volumes, and finite-difference WENO5-JS/Z.
+FV uses HLLC; FD uses global Lax–Friedrichs flux splitting. Both use SSPRK3,
+nominal CFL 0.3 and the same number of grid locations. Their representations,
+fluxes and error norms differ: this is not an isolated reconstruction or
+matched-cost ranking. Within each method, changing only the basis is a
+controlled component/characteristic comparison.
+The separate flux view fixes conservative characteristic MUSCL/MC and SSPRK3,
+then switches HLLC, acoustic-smoothed Roe, Einfeldt-type HLLE and the explicitly
+defined AUSM baseline below. It does not change the spatial reconstruction.
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — Limited parabolic finite volumes# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#limited-parabolic-finite-volumes
+Coverage: reading
+
+Following the reconstruction idea of Colella–Woodward (1984),
+form a parabola in each cell from its mean and two edges. The inspected public
+1982 author preprint is an earlier
+version, not the final journal layout. This implementation includes limited
+edge interpolation and monotonicity constraints, coupled by method of lines
+to SSPRK3. It excludes original PPM wave tracing, contact steepening, shock
+flattening, Lagrangian evolution and remap. Direct-Eulerian tracing, contact steepening and flattening are now available in the second computed stage; Lagrangian evolution and remap remain future work.
+For a cell mean Q and edges L,R, use the local coordinate ξ in [0,1]:
+ q(\xi)=L+\xi[R-L+q_6(1-\xi)],\qquad q_6=6Q-3(L+R).
+The integral is exactly Q. Limit initial edge interpolation between adjacent
+means; flatten a parabolic extremum and apply the usual curvature bounds.
+Characteristic projection freezes a local conservative eigenbasis in each
+cell, limits projected deviations, then transforms back. Components are
+conservative variables, not primitive variables. Reconstructed left/mid/right
+states share one affine positivity scaling about Q if needed. Their Simpson
+mean remains Q; no conserved mean is clipped. Inadmissible RK stages retry
+with a halved time step. These safeguards do not prove fully discrete positivity.
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — Characteristic finite-difference WENO-Z# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#characteristic-finite-difference-weno-z
+Coverage: reading
+
+For each face freeze a Roe-averaged conservative eigenbasis. Project the
+positive and negative global-LF split flux stencils, reconstruct each
+characteristic component, and transform the resulting face flux back.
+FD evolves point values; it is not FV state reconstruction. Shared flux
+differences conserve the discrete sum on a periodic grid.
+The Z variant uses the JS smoothness indicators with
+ \tau_5=|\beta_0-\beta_2|,\quad
+ \alpha_k^Z=d_k\left[1+\left(\frac{\tau_5}{\beta_k+\epsilon}\right)^2\right],
+ \quad\omega_k^Z=\frac{\alpha_k^Z}{\sum_l\alpha_l^Z},
+ \quad(d_0,d_1,d_2)=(0.1,0.6,0.3).
+Here ε = 10⁻⁶ is fixed and the Z exponent is 2. These choices must accompany
+comparisons; the regularization and normalization of the characteristics affect
+the weights. Borges, Carmona, Costa and Don (2008)
+is the original bibliographic reference. Publisher metadata and the public
+earlier three-author manuscript
+were inspected; that manuscript has different weight conventions. The formula
+above, its exponent and the executable checks define this edition's variant;
+no final-paper figure is reproduced.
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — AUSM: keep the variant explicit# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#ausm-keep-the-variant-explicit
+Coverage: reading
+
+Liou–Steffen (1993) introduced AUSM.
+The local baseline uses a common interface sound speed a = (aL+aR)/2,
+Mach polynomials M± = ±(M±1)²/4 in the subsonic interval, and the cubic
+pressure fractions P± = (M±1)²(2∓M)/4. Supersonic branches use signed upwind
+Mach and pressure fractions. These formulas were cross-checked against the
+official FEST-3D AUSM source.
+This is an independently implemented, specified AUSM-family variant, not
+FEST-3D output or a reproduction of every 1993 sound-speed/pressure option.
+Let Mf = M+(uL/a)+M−(uR/a). Upwind the advected vector (ρ,ρu,ρv,ρH)
+using a max(Mf,0) on the left and a min(Mf,0) on the right, and add
+pL P+(uL/a)+pR P−(uR/a) to normal momentum only. Energy transports total
+enthalpy. Tests include uniform states, both supersonic directions, Mach ±1
+branch limits, stationary/moving contacts and the computed Euler problems.
+AUSM+ (1996) and
+AUSM+-up (2006) are separately defined in the new traced-PPM comparison. The current baseline has no all-speed correction or low-Mach
+verification. None of these names implies universal shock stability; inspect
+the separate odd–even comparison.
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — Problems, references and accuracy# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#problems-references-and-accuracy
+Coverage: reading
+
+Sod: N=200, x∈[0,1], t=0.2, standard states, extrapolated ends.
+Moving contact: N=200, periodic [0,1], u=p=1, density 1 on the first
+half and 2 on the second; one crossing t=1.
+Shu–Osher: N=240, x∈[−5,5], t=1.8, fixed end states, shock at −4,
+left (ρ,u,p)=(3.857143,2.629369,10.33333), right density 1+0.2sin(5x), u=0,p=1.
+The dashed curve is our internal characteristic FD WENO-Z N=960 run, not
+an exact solution or an external-code validation.
+FV initialization integrates conserved quantities. Sod final density errors
+use 128-node Gauss quadrature of the analytic Riemann solution; the saved
+64/128-node discrepancy estimates quadrature sensitivity across discontinuities.
+FD errors are pointwise. Derived FV primitive curves are primitive variables
+of conserved means, not exact primitive means. No exact Shu–Osher error is reported.
+A separate smooth periodic entropy wave uses N=32,64,128 at t=0.2 and
+CFL = 0.25(32/N)^(2/3). This reduces dt proportional to dx^(5/3), making the
+SSPRK3 time error O(dx⁵). Measured WENO orders are about five on this smooth
+case; limited PPM is about two on this sequence because of extremum limiting.
+This is not a global fifth-order guarantee at shocks or arbitrary critical points.
+Reproduce with python scripts/build_reconstruction.py. Download
+profiles, diagnostics and source hashes
+and conserved arrays. The final arrays,
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — Problems, references and accuracy# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#problems-references-and-accuracy
+Coverage: reading
+
+positive-state checks and retry counts apply only to the stated tests.
+
+## Euler reconstruction: PPM, characteristics, WENO-Z and AUSM — Problems, references and accuracy# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reconstruction/#problems-references-and-accuracy
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Exact and reference solutions — Exact and reference solutions [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/
+Coverage: reading
+
+A verification library should say what its answer means. The reference explorer contains 18 cases with formulas, assumptions, source links, point values and, for one-dimensional cases, cell means. It evaluates references; it does not advance a numerical PDE solution.
+
+## Exact and reference solutions — Four different reference categories# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#four-different-reference-categories
+Coverage: reading
+
+Analytic: explicit formulas, including scalar entropy waves, sine translation/decay, dry-bed and vacuum fans, channel profiles and Taylor–Green flow. Floating-point evaluation still has rounding error.
+Semi-analytic: Euler, wet shallow-water and isothermal Riemann solutions. The wave curves are analytic, but matching the middle state requires a numerical scalar root solve.
+Manufactured: prescribe a smooth field and derive the forcing and boundary conditions. The Poisson sine case tests a forced problem chosen for that field.
+Numerical reference: a refined numerical computation. It retains discretization, boundary and time-integration errors. Existing high-resolution atlas comparisons belong here when explicitly identified; they are not additional analytic cases in this library.
+Agreement with a reference verifies a particular setup. It does not validate a physical model against experiments or certify every boundary treatment.
+
+## Exact and reference solutions — Included fields and assumptions# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#included-fields-and-assumptions
+Coverage: reading
+
+The scalar cases are periodic sine advection and heat decay, Burgers shock/fan and quadratic traffic shock/fan. Euler includes Sod, Lax, a double rarefaction and a generated vacuum, all for an ideal gas with gamma 1.4. Shallow water includes a wet dam break, expansion into a dry bed and a dry middle state, with a flat bottom and gravity 1. Isothermal Euler uses constant sound speed 1 and strictly positive initial density; it has no energy equation and no finite vacuum state.
+The viscous cases are planar steady Couette and Poiseuille profiles in a unit channel and a periodic two-dimensional Taylor–Green vortex. Channel profiles are velocity fields, not compressible conserved states. Taylor–Green returns velocity and pressure with a fixed zero-mean pressure gauge. The Poisson manufactured sine returns both the field and its forcing.
+These are canonical, nondimensional setups. Dry-bed/vacuum support in the reference evaluator does not add that capability to the existing positive-state finite-volume solver. Topography, viscosity in Riemann problems, arbitrary equations of state and multidimensional shock interactions are outside this first library.
+
+## Exact and reference solutions — Point values and finite-volume means# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#point-values-and-finite-volume-means
+Coverage: reading
+
+For a conserved state, a finite-volume comparison uses
+\overline{\boldsymbol U}_i(t)=\frac{1}{x_{i+1/2}-x_{i-1/2}}
+\int_{x_{i-1/2}}^{x_{i+1/2}}\boldsymbol U(x,t)\,dx.
+The library integrates density, momentum and total energy for Euler, and depth/density and momentum for shallow-water/isothermal flow. Converting a mean conserved state to primitive variables is generally different from averaging primitive variables. A shock cutting a cell makes a center sample particularly misleading.
+Known shocks, contacts and both edges of rarefaction fans split each integral into smooth pieces. Gauss–Legendre quadrature uses 24 and 48 points per piece; saved means use the 48-point result. The maximum difference between the two orders is a convergence estimate, not a rigorous error bound. This convention also applies to analytic cases: their saved cell means use finite-order quadrature rather than symbolic integration.
+For a nonuniform mesh, the reported error norms are normalized by total domain length:
+L_1=\frac{\sum_i\Delta x_i|e_i|}{\sum_i\Delta x_i},\qquad
+L_2=\left(\frac{\sum_i\Delta x_i e_i^2}{\sum_i\Delta x_i}\right)^{1/2},\qquad
+L_\infty=\max_i|e_i|.
+Each component is reported separately. The Euler/SWE/isothermal equation gallery now uses these conserved cell means. Its saved physical times still come from independent final-time numerical solves.
+
+## Exact and reference solutions — Riemann construction and tolerances# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#riemann-construction-and-tolerances
+Coverage: reading
+
+The self-similar solution uses xi=(x−x0)/t. For Euler the matched unknown is pressure; for shallow water it is depth; for isothermal flow it is density. The implementation brackets a monotone wave-matching residual in the logarithm of that positive unknown, then bisects. The target logarithmic bracket width is 2e−13, with at most 160 bisections and a final residual check of 2e−10 times a characteristic velocity scale. An exact zero residual can terminate earlier. Iterations, final bracket width and residual are saved alongside each case.
+Separating Euler or shallow-water fans can create a middle vacuum/dry region. Those cases bypass the positive-state root solve. Conserved variables vanish there. Velocity is physically undefined in vacuum; the low-level conversion displays zero by convention. Isothermal expansion approaches arbitrarily small positive density instead of a finite vacuum. States outside the supported float64 range raise an error rather than silently clipping the reference.
+The Clawpack Euler chapter and shallow-water chapter describe the wave construction and dry/vacuum cases. Bhat and Fetecau's author manuscript gives the isothermal wave curves for the original Euler system in its Riemann-problem discussion; this library uses that original system, not the paper's regularized model.
+
+## Exact and reference solutions — Viscous and manufactured formulas# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#viscous-and-manufactured-formulas
+Coverage: reading
+
+For a unit-height channel, unit density and viscosity nu, the steady profiles are
+u_{\rm Couette}(y)=y,\qquad
+u_{\rm Poiseuille}(y)=\frac{G}{2\nu}y(1-y),\qquad G=1,\quad\nu=0.1.
+Couette has wall speeds 0 and 1 with zero pressure gradient. Poiseuille has stationary no-slip walls; G is either the negative pressure gradient per unit density or an equivalent body acceleration. These are fully developed planar flows, not pipe flow.
+For Taylor–Green on the periodic square [0,2pi]², with nu=0.1 and unit density,
+u=\sin x\cos y\,e^{-2\nu t},\qquad
+v=-\cos x\sin y\,e^{-2\nu t},\qquad
+p=\frac{\cos(2x)+\cos(2y)}4e^{-4\nu t}.
+The Web explorer displays an x-slice at y=pi/4, not two-dimensional area means. The Python evaluator accepts full 2D coordinates and smooth rectangular box averages. Related methods are in the viscous-flow chapter.
+The manufactured case prescribes u=sin(pi x), giving −u_xx=f=pi² sin(pi x) with homogeneous Dirichlet endpoints. Its source is available through the same object; it is not an arbitrary-source Poisson solver.
+
+## Exact and reference solutions — Reuse and reproduce# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#reuse-and-reproduce
+Coverage: reading
+
+import numpy as np
+from numart.reference_solutions import get_reference, riemann_reference
+ref = get_reference('euler-sod')
+edges = np.array([0., .15, .42, .51, .7, 1.])
+points = ref.point((edges[:-1] + edges[1:]) / 2, t=.2)
+report = ref.cell_average_report(edges, t=.2)
+means = report['values'] # columns: rho, rho*u, E
+# With actual numerical conserved means q of the same shape:
+# errors = ref.compare_means(q, edges, t=.2)
+custom = riemann_reference('shallow-water', (2., 0.), (1., 0.),
+ parameter=9.81)
+tg = get_reference('taylor-green')
+box_mean = tg.box_average([0., 0.], [.2, .3], t=.5)
+Rebuild the saved profiles and figure with MPLCONFIGDIR=.mplconfig python scripts/build_reference_solutions.py. Download the data and numerical source hashes. Python tests compare Euler with an existing independent implementation, check Rankine–Hugoniot jumps and Lax inequalities, rarefaction PDE residuals and invariants, global balances, known integrals, manufactured forcing and Taylor–Green momentum/divergence residuals. The Web build checks the saved schema, wave locations, source hashes and averaging conventions.
+Blasius, Sedov, Noh and additional multidimensional references remain future extensions. LANL ExactPack is an independent source collection to consult for those additions; it is not a dependency or a claim of cross-validation for the cases above.
+
+## Exact and reference solutions — Reuse and reproduce# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/reference-solutions/#reuse-and-reproduce
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## References by original publication year — References by original publication year [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/
+Coverage: reading
+
+Original papers and books are distinguished from sources used to check the implementations. A DOI does not imply that the full text has been inspected or its figures reproduced.
+Each note identifies publicly available originals, later expositions, and original sources that still need verification. NASA case resources appear in the 2D case catalog.
+This file and references.bib are generated from catalog/references.json by python scripts/build_references.py.
+
+## References by original publication year — 1847 · verhulst1847# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1847-verhulst1847
+Coverage: reading
+
+Verhulst, Pierre-François. Sur la loi d’accroissement de la population (Deuxième mémoire). Mémoires de l’Académie royale de Belgique.
+Original bibliographic record · Full text or implementation reference
+Original archival text and metadata available. This is the later 1847 memoir, read in 1846; it must not be labeled the original 1838 logistic note. The early note is not audited in this survey.
+
+## References by original publication year — 1913 · michaelis1913# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1913-michaelis1913
+Coverage: reading
+
+Michaelis, Leonor and Menten, Maud L.. Die Kinetik der Invertinwirkung. Biochemische Zeitschrift.
+Original bibliographic record · Full text or implementation reference
+Original 1913 bibliographic identification through the explicitly labeled Johnson–Goody 2011 translation. This URL identifies the translation, not a 1913 DOI. Original German text not audited; rapid-equilibrium and later quasi-steady-state interpretations are distinguished.
+
+## References by original publication year — 1920 · lotka1920# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1920-lotka1920
+Coverage: reading
+
+Lotka, Alfred J.. Analytical Note on Certain Rhythmic Relations in Organic Systems. Proceedings of the National Academy of Sciences.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record checked. Early rhythmic organic-system model, before the 1925 book and independent Volterra 1926 source. The survey gives a conventional normalized predator–prey system, not a reproduction of the original figures.
+
+## References by original publication year — 1925 · briggs1925# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1925-briggs1925
+Coverage: reading
+
+Briggs, George E. and Haldane, J. B. S.. A Note on the Kinetics of Enzyme Action. Biochemical Journal.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record and original-paper search excerpt checked. Quasi-steady-state enzyme-kinetics reference; not conflated with the original rapid-equilibrium interpretation.
+
+## References by original publication year — 1926 · mckendrick1926# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1926-mckendrick1926
+Coverage: reading
+
+McKendrick, A. G.. Applications of Mathematics to Medical Problems. Proceedings of the Edinburgh Mathematical Society.
+Original bibliographic record · Full text or implementation reference
+Original first-page text checked: read January 1926, received August 1926, in the 1925–26 session volume. Not dated to the much later online digitization. A later von Foerster lineage is not assigned to this author alone.
+
+## References by original publication year — 1926 · volterra1926# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1926-volterra1926
+Coverage: reading
+
+Volterra, Vito. Fluctuations in the Abundance of a Species considered Mathematically. Nature.
+Original bibliographic record · Full text or implementation reference
+Original publisher record and abstract checked. Independent ecological interaction source; Lotka’s earlier publications are cited separately.
+
+## References by original publication year — 1927 · kermack1927# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1927-kermack1927
+Coverage: reading
+
+Kermack, W. O. and McKendrick, A. G.. A contribution to the mathematical theory of epidemics. Proceedings of the Royal Society of London. Series A.
+Original bibliographic record · Full text or implementation reference
+Original publication identified separately from the 1991 reprint. The survey uses the closed homogeneous SIR specialization; it does not reproduce the original general infection-age formulation.
+
+## References by original publication year — 1928 · cfl1928# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1928-cfl1928
+Coverage: reading
+
+Courant, Richard and Friedrichs, Kurt and Lewy, Hans. Über die partiellen Differenzengleichungen der mathematischen Physik. Mathematische Annalen.
+Original bibliographic record · Full text or implementation reference
+Originally published in 1928; the linked source is a later English translation. Background on domains of dependence and the CFL condition.
+
+## References by original publication year — 1937 · fisher1937# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1937-fisher1937
+Coverage: reading
+
+Fisher, R. A.. The wave of advance of advantageous genes. Annals of Eugenics.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and original-text excerpt checked. Population-genetic front source. Fisher–KPP is a conventional family name; the independent KPP 1937 original is not audited here.
+
+## References by original publication year — 1939 · chapman1939# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1939-chapman1939
+Coverage: reading
+
+Chapman, Sydney and Cowling, T. G.. The Mathematical Theory of Non-Uniform Gases. Cambridge University Press.
+Original bibliographic record · Full text or implementation reference
+Original-edition bibliographic preview checked; the 1939 book is not assigned as the invention date of Chapman-Enskog expansion. Third edition appeared in 1970. The atlas gives its own formal unforced isothermal lattice-BGK expansion, not a full audit of this book.
+
+## References by original publication year — 1943 · courant1943# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1943-courant1943
+Coverage: reading
+
+Courant, Richard. Variational methods for the solution of problems of equilibrium and vibrations. Bulletin of the American Mathematical Society.
+Original bibliographic record · Full text or implementation reference
+Original variational reference. The atlas implements an independent continuous P1 Poisson example; it does not reproduce the original numerical examples.
+
+## References by original publication year — 1947 · crank1947# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1947-crank1947
+Coverage: reading
+
+Crank, John and Nicolson, Phyllis. A practical method for numerical evaluation of solutions of partial differential equations of the heat-conduction type. Proceedings of the Cambridge Philosophical Society.
+Original bibliographic record · Full text or implementation reference
+Originally published in 1947; the linked source is a 1996 reprint. This edition implements the theta method for linear diffusion, rather than reproducing the original nonlinear problem.
+
+## References by original publication year — 1948 · burgers1948# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1948-burgers1948
+Coverage: reading
+
+Burgers, Johannes M.. A mathematical model illustrating the theory of turbulence. Advances in Applied Mechanics.
+Original bibliographic record · Full text or implementation reference
+Publisher metadata and summary checked. Classical model reference; the gallery implements the inviscid scalar Riemann problem, not viscous Burgers turbulence or original-paper figures.
+
+## References by original publication year — 1949 · monod1949# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1949-monod1949
+Coverage: reading
+
+Monod, Jacques. The Growth of Bacterial Cultures. Annual Review of Microbiology.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata checked and university-hosted original identified. Historical microbial-growth review; the proposed batch/chemostat benchmark specifies its own yield and feed assumptions.
+
+## References by original publication year — 1949 · thomas1949# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1949-thomas1949
+Coverage: reading
+
+Thomas, Llewellyn Hilleth. Elliptic problems in linear difference equations over a network. Watson Scientific Computing Laboratory, Columbia University.
+Original bibliographic record · Full text or implementation reference
+The original report and a holding URL have not been verified. This provisional record follows the historical citation in Netlib and does not imply direct inspection of the original.
+
+## References by original publication year — 1950 · charney1950# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1950-charney1950
+Coverage: reading
+
+Charney, Jule G. and Fjørtoft, Ragnar and von Neumann, John. Numerical Integration of the Barotropic Vorticity Equation. Tellus.
+Original bibliographic record · Full text or implementation reference
+Publicly accessible original paper. Historical context for stability analysis; the numerical weather forecast is not implemented here.
+
+## References by original publication year — 1952 · hodgkin1952# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1952-hodgkin1952
+Coverage: reading
+
+Hodgkin, A. L. and Huxley, A. F.. A quantitative description of membrane current and its application to conduction and excitation in nerve. The Journal of Physiology.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and the existence of its 2019 modern-convention supplement checked. Physiome CellML encoding identified separately. Voltage offsets, current signs and temperature conventions require an explicitly selected version before implementation.
+
+## References by original publication year — 1952 · turing1952# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1952-turing1952
+Coverage: reading
+
+Turing, Alan M.. The Chemical Basis of Morphogenesis. Philosophical Transactions of the Royal Society of London. Series B.
+Original bibliographic record · Full text or implementation reference
+University-hosted original text inspected for the model setting and instability premise. The survey’s general two-species reaction–diffusion form is a framework, not one uniquely specified Turing kinetic law.
+
+## References by original publication year — 1954 · bgk1954# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1954-bgk1954
+Coverage: reading
+
+Bhatnagar, P. L. and Gross, E. P. and Krook, M.. A Model for Collision Processes in Gases. I. Small Amplitude Processes in Charged and Neutral One-Component Systems. Physical Review.
+Original bibliographic record · Full text or implementation reference
+Original publisher record checked. Continuous kinetic relaxation source, distinguished from later lattice BGK and its discrete-time viscosity correction. No full-paper numerical reproduction.
+
+## References by original publication year — 1954 · lax1954# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1954-lax1954
+Coverage: reading
+
+Lax, Peter D.. Weak solutions of nonlinear hyperbolic equations and their numerical computation. Communications on Pure and Applied Mathematics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. Background on weak solutions and Lax-type differences. The Lax shock-tube parameters have not been matched directly to the original table.
+
+## References by original publication year — 1955 · lighthill1955# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1955-lighthill1955
+Coverage: reading
+
+Lighthill, M. J. and Whitham, G. B.. On kinematic waves. II. A theory of traffic flow on long crowded roads. Proceedings of the Royal Society of London. Series A.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record and publisher-supplied abstract checked. LWR traffic source; the atlas independently chooses a normalized quadratic fundamental diagram. Full original text was not audited.
+
+## References by original publication year — 1956 · lax1956# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1956-lax1956
+Coverage: reading
+
+Lax, Peter D. and Richtmyer, Robert D.. Survey of the stability of linear finite difference equations. Communications on Pure and Applied Mathematics.
+Original bibliographic record · Full text or implementation reference
+Publicly accessible original paper. The equivalence theorem assumes a well-posed linear initial-value problem and a consistent linear approximation.
+
+## References by original publication year — 1956 · richards1956# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1956-richards1956
+Coverage: reading
+
+Richards, Paul I.. Shock Waves on the Highway. Operations Research.
+Original bibliographic record · Full text or implementation reference
+Original publisher record checked. Independent classical traffic-wave source; the atlas uses exact entropy Riemann solutions for its chosen quadratic flux.
+
+## References by original publication year — 1959 · godunov1959# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1959-godunov1959
+Coverage: reading
+
+Godunov, Sergei K.. A difference method for numerical calculation of discontinuous solutions of the equations of hydrodynamics. Matematicheskii Sbornik.
+Original bibliographic record · Full text or implementation reference
+Original publication in 1959, accepted in 1956. The godunov option in this edition is a Godunov-type finite-volume method with approximate fluxes.
+
+## References by original publication year — 1960 · lax1960# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1960-lax1960
+Coverage: reading
+
+Lax, Peter D. and Wendroff, Burton. Systems of conservation laws. Communications on Pure and Applied Mathematics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record. Background for linear-advection Lax–Wendroff and systems of conservation laws.
+
+## References by original publication year — 1961 · fedorenko1961# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1961-fedorenko1961
+Coverage: reading
+
+Fedorenko, Radii P.. A relaxation method for solving elliptic difference equations. Zhurnal Vychislitelnoi Matematiki i Matematicheskoi Fiziki.
+Original bibliographic record · Full text or implementation reference
+Original publication in 1961; English translation in 1962. A historical entry point to multigrid.
+
+## References by original publication year — 1961 · fitzhugh1961# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1961-fitzhugh1961
+Coverage: reading
+
+FitzHugh, Richard. Impulses and Physiological States in Theoretical Models of Nerve Membrane. Biophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record and abstract checked. Two-state excitable/oscillatory model; the survey writes a conventional normalized FitzHugh–Nagumo form, not a claim of identical coefficients or signs across variants.
+
+## References by original publication year — 1961 · rusanov1961# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1961-rusanov1961
+Coverage: reading
+
+Rusanov, Vladimir V.. The calculation of the interaction of non-stationary shock waves with barriers. Zhurnal Vychislitelnoi Matematiki i Matematicheskoi Fiziki.
+Original bibliographic record · Full text or implementation reference
+Russian original in 1961; English translation in 1962. This edition uses a modern local Lax–Friedrichs/Rusanov flux.
+
+## References by original publication year — 1962 · nagumo1962# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1962-nagumo1962
+Coverage: reading
+
+Nagumo, Jinichi and Arimoto, Suguru and Yoshizawa, Shuji. An Active Pulse Transmission Line Simulating Nerve Axon. Proceedings of the IRE.
+Original bibliographic record · Full text or implementation reference
+Bibliographic cross-check only; full original not inspected. Independent electrical pulse-line contribution cited alongside FitzHugh rather than silently assigning both developments to a single paper.
+
+## References by original publication year — 1963 · dahlquist1963# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1963-dahlquist1963
+Coverage: reading
+
+Dahlquist, Germund G.. A special stability problem for linear multistep methods. BIT.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Foundational A-stability reference in the linear-multistep setting; full text not audited. The atlas distinguishes one-step stability functions, multistep root conditions, stiff damping and spatial error norms.
+
+## References by original publication year — 1968 · chorin1968# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1968-chorin1968
+Coverage: reading
+
+Chorin, Alexandre Joel. Numerical solution of the Navier-Stokes equations. Mathematics of Computation.
+Original bibliographic record · Full text or implementation reference
+Original publisher record and author-hosted original checked. Projection source; the independent periodic MAC/SSPRK2 demonstration is not the original boundary/time algorithm.
+
+## References by original publication year — 1970 · keller1970# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1970-keller1970
+Coverage: reading
+
+Keller, Evelyn F. and Segel, Lee A.. Initiation of Slime Mold Aggregation Viewed as an Instability. Journal of Theoretical Biology.
+Original bibliographic record · Full text or implementation reference
+University-hosted original formulation inspected. It includes more biochemical species than the common two-field Keller–Segel reduction used in the survey. No universal critical mass or original-figure reproduction is asserted.
+
+## References by original publication year — 1972 · gierer1972# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1972-gierer1972
+Coverage: reading
+
+Gierer, Alfred and Meinhardt, Hans. A theory of biological pattern formation. Kybernetik.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Short-range activation/long-range inhibition source. The survey states a standard simplified activator–inhibitor variant; full original numerics not reproduced.
+
+## References by original publication year — 1972 · peskin1972# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1972-peskin1972
+Coverage: reading
+
+Peskin, Charles S.. Flow patterns around heart valves: A numerical method. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Bibliographic metadata cross-checked. Immersed-boundary fluid–structure source, distinguished from a biological reaction law. Original full text and valve calculations are not audited or reproduced.
+
+## References by original publication year — 1972 · wilson1972grhd# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1972-wilson1972grhd
+Coverage: reading
+
+Wilson, James R.. Numerical Study of Fluid Flow in a Kerr Space. The Astrophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Original paper inspected for the early Kerr-background gas-flow calculation. Historical reading; not an evolving Einstein–matter solver and not reproduced here.
+
+## References by original publication year — 1973 · reed1973# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1973-reed1973
+Coverage: reading
+
+Reed, W. H. and Hill, T. R.. Triangular mesh methods for the neutron transport equation. Los Alamos Scientific Laboratory.
+Original bibliographic record · Full text or implementation reference
+Public government-report record. This edition implements modal DG for 1D linear advection, rather than triangular-mesh neutron transport.
+
+## References by original publication year — 1974 · hirt1974# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1974-hirt1974
+Coverage: reading
+
+Hirt, C. W. and Amsden, A. A. and Cook, J. L.. An arbitrary Lagrangian-Eulerian computing method for all flow speeds. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher record and abstract. Historical ALE reference; the implemented example is only a 1D moving-volume uniform-state check.
+
+## References by original publication year — 1974 · vanleer1974# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1974-vanleer1974
+Coverage: reading
+
+van Leer, Bram. Towards the ultimate conservative difference scheme. II. Monotonicity and conservation combined in a second-order scheme. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record inspected. Historical monotonicity and conservative second-order reconstruction; not a claim to reproduce the original algorithm.
+
+## References by original publication year — 1977 · alexander1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-alexander1977
+Coverage: reading
+
+Alexander, Roger K.. Diagonally Implicit Runge-Kutta Methods for Stiff O.D.E.'s. SIAM Journal on Numerical Analysis.
+Original bibliographic record · Full text or implementation reference
+Original publisher record checked. Source for the two-stage second-order L-stable SDIRK family; adaptive step doubling in the atlas is a separate implementation choice.
+
+## References by original publication year — 1977 · arakawa1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-arakawa1977
+Coverage: reading
+
+Arakawa, Akio and Lamb, Vivian R.. Computational Design of the Basic Dynamical Processes of the UCLA General Circulation Model. Methods in Computational Physics: Advances in Research and Applications.
+Original bibliographic record · Full text or implementation reference
+Original chapter and bibliographic identity located; full PDF extraction exceeded tool size limits. A/B/C layout is cross-checked with ECMWF/MITgcm documentation. The atlas independently derives and tests centered periodic f-plane Fourier symbols, not a reproduction of the complete UCLA dynamical core.
+
+## References by original publication year — 1977 · brandt1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-brandt1977
+Coverage: reading
+
+Brandt, Achi. Multi-level adaptive solutions to boundary-value problems. Mathematics of Computation.
+Original bibliographic record · Full text or implementation reference
+AMS-hosted original paper. This edition implements a fixed-grid geometric V-cycle, rather than the full adaptive framework.
+
+## References by original publication year — 1977 · gillespie1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-gillespie1977
+Coverage: reading
+
+Gillespie, Daniel T.. Exact stochastic simulation of coupled chemical reactions. The Journal of Physical Chemistry.
+Original bibliographic record · Full text or implementation reference
+University-hosted original inspected for the master-equation/SSA distinction, reaction-channel sampling and well-mixed setting. Exact refers to sampling the specified continuous-time Markov model, not biological completeness or zero Monte Carlo error.
+
+## References by original publication year — 1977 · gingold1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-gingold1977
+Coverage: reading
+
+Gingold, R. A. and Monaghan, J. J.. Smoothed particle hydrodynamics: theory and application to non-spherical stars. Monthly Notices of the Royal Astronomical Society.
+Original bibliographic record · Full text or implementation reference
+Original publisher record. Early SPH paper; this edition implements static 1D kernel reconstruction, not the stellar calculation.
+
+## References by original publication year — 1977 · lucy1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-lucy1977
+Coverage: reading
+
+Lucy, L. B.. A numerical approach to the testing of the fission hypothesis. The Astronomical Journal.
+Original bibliographic record · Full text or implementation reference
+ADS-hosted original article. Independent early particle-method reference; the cubic-spline reconstruction here is not a reproduction of Lucy’s original kernel or dynamics.
+
+## References by original publication year — 1977 · mackey1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-mackey1977
+Coverage: reading
+
+Mackey, Michael C. and Glass, Leon. Oscillation and Chaos in Physiological Control Systems. Science.
+Original bibliographic record · Full text or implementation reference
+Publisher-supplied abstract and bibliographic metadata identified; original full text not audited. Delay-equation model requires a full history function, not only a scalar initial value.
+
+## References by original publication year — 1977 · spectral1977# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1977-spectral1977
+Coverage: reading
+
+Gottlieb, David and Orszag, Steven A.. Numerical Analysis of Spectral Methods: Theory and Applications. SIAM.
+Original bibliographic record · Full text or implementation reference
+Publisher chapter information for a representative spectral-methods monograph. This edition is limited to periodic linear Fourier problems.
+
+## References by original publication year — 1978 · sod1978# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1978-sod1978
+Coverage: reading
+
+Sod, Gary A.. A survey of several finite difference methods for systems of nonlinear hyperbolic conservation laws. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+The DOI identifies the original paper; the source is an implementation reference for the standard Sod problem and exact solution. The original methods and figures are not reproduced in full.
+
+## References by original publication year — 1978 · taylor1978# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1978-taylor1978
+Coverage: reading
+
+Taylor, Peter D. and Jonker, Leo B.. Evolutionary stable strategies and game dynamics. Mathematical Biosciences.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Continuous evolutionary-game dynamics source. Stability, ESS and a generic game equilibrium are not interchangeable.
+
+## References by original publication year — 1979 · ablowitz1979# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1979-ablowitz1979
+Coverage: reading
+
+Ablowitz, Mark J. and Zeppetella, Anthony. Explicit solutions of Fisher’s equation for a special wave speed. Bulletin of Mathematical Biology.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Special normalized wave speed ±5/sqrt(6), distinct from the minimal Fisher–KPP speed; dimensional scaling is stated in the survey.
+
+## References by original publication year — 1979 · israel1979viscous# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1979-israel1979viscous
+Coverage: reading
+
+Israel, W. and Stewart, J. M.. Transient relativistic thermodynamics and kinetic theory. Annals of Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record inspected for the transient dissipative-fluid branch. Reading context only; full kinetic derivation and coefficient restrictions have not been audited or implemented.
+
+## References by original publication year — 1979 · orszag1979# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1979-orszag1979
+Coverage: reading
+
+Orszag, Steven A. and Tang, Cha-Mei. Small-scale structure of two-dimensional magnetohydrodynamic turbulence. Journal of Fluid Mechanics.
+Original bibliographic record · Full text or implementation reference
+The original study concerns incompressible MHD. Distinguish it from the normalization of the modern compressible Orszag–Tang test used here.
+
+## References by original publication year — 1979 · schnakenberg1979# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1979-schnakenberg1979
+Coverage: reading
+
+Schnakenberg, Jürgen. Simple chemical reaction systems with limit cycle behaviour. Journal of Theoretical Biology.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Autocatalytic reaction-network source. The spatial PDE benchmark is a reaction–diffusion extension of chemical kinetics, not automatically a calibrated developmental model.
+
+## References by original publication year — 1979 · shigesada1979# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1979-shigesada1979
+Coverage: reading
+
+Shigesada, Nanako and Kawasaki, Kohkichi and Teramoto, Ei. Spatial segregation of interacting species. Journal of Theoretical Biology.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Cross-diffusion/segregation source. The survey writes a homogeneous-environment reduction, omitting the original environmental-potential terms explicitly.
+
+## References by original publication year — 1979 · vanleer1979# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1979-vanleer1979
+Coverage: reading
+
+van Leer, Bram. Towards the ultimate conservative difference scheme. V. A second-order sequel to Godunov's method. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. This edition uses selectable-limiter MUSCL with SSPRK3, rather than reproducing the original Lagrangian/remap construction.
+
+## References by original publication year — 1980 · patankar1980# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1980-patankar1980
+Coverage: reading
+
+Patankar, Suhas V.. Numerical Heat Transfer and Fluid Flow. CRC Press (current publisher record).
+Original bibliographic record · Full text or implementation reference
+Current publisher first-edition record and contents checked; copyright year 1980. The linked CRC/Routledge record is a current listing of the work. Reading reference for conservative control-volume discretization and pressure-velocity coupling, not evidence of a complete SIMPLE implementation here.
+
+## References by original publication year — 1981 · hockney1981book# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1981-hockney1981book
+Coverage: reading
+
+Hockney, R. W. and Eastwood, J. W.. Computer Simulation Using Particles. McGraw-Hill.
+Original bibliographic record · Full text or implementation reference
+Original book date is 1981, as cited by Barnes and Hut (1986); DOI identifies a later Taylor & Francis reissue. Reference for particle-mesh methods and isolated doubled-domain convolution; the self-cell kernel convention is stated separately in our code.
+
+## References by original publication year — 1981 · hockney1981p3m# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1981-hockney1981p3m
+Coverage: reading
+
+Hockney, R. W.. The P³M Code. CCP5 Information Quarterly, June 1981.
+Original bibliographic record · Full text or implementation reference
+Original newsletter scan hosted by CCP5. Describes mesh forces plus short-range pair corrections. A full P3M solver is not implemented here.
+
+## References by original publication year — 1981 · roe1981# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1981-roe1981
+Coverage: reading
+
+Roe, Philip L.. Approximate Riemann solvers, parameter vectors, and difference schemes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author-uploaded original full text inspected, including the four Property U conditions on pp.359-360. Independent ideal-gas parameter-vector, eigenbasis, jump and consistency checks accompany single discontinuities and an expansion counterexample. Acoustic entropy smoothing is a separate flux modification.
+
+## References by original publication year — 1983 · gray1983# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1983-gray1983
+Coverage: reading
+
+Gray, Peter and Scott, Stephen K.. Autocatalytic reactions in the isothermal, continuous stirred tank reactor: Isolas and other forms of multistability. Chemical Engineering Science.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Well-mixed chemical CSTR source, distinguished from Pearson’s later spatial Gray–Scott pattern study and from a direct biological tissue model.
+
+## References by original publication year — 1983 · hll1983# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1983-hll1983
+Coverage: reading
+
+Harten, Amiram and Lax, Peter D. and van Leer, Bram. On Upstream Differencing and Godunov-Type Schemes for Hyperbolic Conservation Laws. SIAM Review.
+Original bibliographic record · Full text or implementation reference
+Publicly accessible original paper. Background on HLL; the hll implementation here uses Davis-type minimum/maximum acoustic wave speeds.
+
+## References by original publication year — 1984 · colella1984ppm# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1984-colella1984ppm
+Coverage: reading
+
+Colella, Phillip and Woodward, Paul R.. The Piecewise Parabolic Method (PPM) for gas-dynamical simulations. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original 1984 journal metadata; linked public author report is the earlier July 1982 preprint and was inspected for parabolic interpolation/monotonicity. The local method-of-lines limited parabolic FV excludes wave tracing, contact steepening, shock flattening and Lagrange/remap; it is not a full original-PPM reproduction.
+
+## References by original publication year — 1984 · sweby1984# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1984-sweby1984
+Coverage: reading
+
+Sweby, P. K.. High Resolution Schemes Using Flux Limiters for Hyperbolic Conservation Laws. SIAM Journal on Numerical Analysis.
+Original bibliographic record · Full text or implementation reference
+Publisher record and abstract inspected. Historical scalar TVD flux-limiter framework, including the compressive limiter due to Roe. The notebook uses explicitly documented slope conventions and a separate MUSCL/SSPRK3 operator.
+
+## References by original publication year — 1984 · woodward1984# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1984-woodward1984
+Coverage: reading
+
+Woodward, Paul and Colella, Phillip. The numerical simulation of two-dimensional fluid flow with strong shocks. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author-uploaded original text, Section VI.b setup and corner treatment checked 6 November 2026. The atlas computes first-order HLL Double Mach Reflection and Mach-3 forward-step baselines, not the original PPM figures. The step omits the paper’s entropy/enthalpy corner reset and has one published grid.
+
+## References by original publication year — 1985 · takewaki1985cip# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1985-takewaki1985cip
+Coverage: reading
+
+Takewaki, H. and Nishiguchi, A. and Yabe, T.. Cubic interpolated pseudo-particle method (CIP) for solving hyperbolic-type equations. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and indexed abstract inspected; full-text retrieval was unavailable. Early cubic reconstruction with independently specified gradients. The atlas implements a documented constant-speed 1D Hermite case, not all original algorithm variants.
+
+## References by original publication year — 1986 · barnes1986# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1986-barnes1986
+Coverage: reading
+
+Barnes, Josh and Hut, Piet. A hierarchical O(N log N) force-calculation algorithm. Nature.
+Original bibliographic record · Full text or implementation reference
+Original publisher record. The educational octree uses a geometric opening criterion and compares monopole/full second-moment forces with an identical softened direct sum.
+
+## References by original publication year — 1986 · saad1986# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1986-saad1986
+Coverage: reading
+
+Saad, Youcef and Schultz, Martin H.. GMRES: A generalized minimal residual algorithm for solving nonsymmetric linear systems. SIAM Journal on Scientific and Statistical Computing.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Restarted GMRES source; the atlas uses fixed right preconditioning, reorthogonalization, and explicitly recomputed true residuals.
+
+## References by original publication year — 1987 · eno1987# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1987-eno1987
+Coverage: reading
+
+Harten, Amiram and Engquist, Bjorn and Osher, Stanley and Chakravarthy, Sukumar R.. Uniformly high order accurate essentially non-oscillatory schemes, III. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original publication in 1987, distinct from the 1997 reprint. A standalone ENO implementation is planned; this edition implements WENO5-JS.
+
+## References by original publication year — 1987 · greengard1987# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1987-greengard1987
+Coverage: reading
+
+Greengard, L. and Rokhlin, V.. A fast algorithm for particle simulations. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original paper hosted by a university course. FMM reading reference; multipole-to-local translations and an FMM solver are not implemented here.
+
+## References by original publication year — 1987 · turkel1987# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1987-turkel1987
+Coverage: reading
+
+Turkel, Eli. Preconditioned methods for solving the incompressible and low speed compressible equations. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. Low-speed PDE preconditioning is discussed as future work and is distinct from the Jacobi matrix-scaling example.
+
+## References by original publication year — 1988 · brio1988# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1988-brio1988
+Coverage: reading
+
+Brio, Moysey and Wu, Cheng-chin. An upwind differencing scheme for the equations of ideal magnetohydrodynamics. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record for the Brio-Wu coplanar shock tube. Publisher metadata checked; no claim of full-text inspection or exact-solution reproduction. The local HLLD/HLLE comparison records its gamma=2 initial states and numerical grid comparison.
+
+## References by original publication year — 1988 · einfeldt1988# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1988-einfeldt1988
+Coverage: reading
+
+Einfeldt, Bernd. On Godunov-Type Methods for Gas Dynamics. SIAM Journal on Numerical Analysis.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. Background for Einfeldt-type wave-speed estimates in Euler HLLE.
+
+## References by original publication year — 1988 · evans1988# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1988-evans1988
+Coverage: reading
+
+Evans, Charles R. and Hawley, John F.. Simulation of magnetohydrodynamic flows: A constrained transport method. The Astrophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Publicly accessible original paper. This edition uses a Cartesian flux-CT-type construction and does not reproduce every part of the original method.
+
+## References by original publication year — 1988 · shu1988# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1988-shu1988
+Coverage: reading
+
+Shu, Chi-Wang and Osher, Stanley. Efficient implementation of essentially non-oscillatory shock-capturing schemes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. Background on TVD Runge–Kutta and flux-based constructions.
+
+## References by original publication year — 1989 · cockburn1989# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1989-cockburn1989
+Coverage: reading
+
+Cockburn, Bernardo and Shu, Chi-Wang. TVB Runge-Kutta local projection discontinuous Galerkin finite element method for conservation laws. II. General framework. Mathematics of Computation.
+Original bibliographic record · Full text or implementation reference
+Original RKDG/TVB paper. Publisher full-text retrieval was unavailable; later author notes: https://www-users.cse.umn.edu/~cockburn/lecture_notes/DG-4.pdf . The atlas has smooth-advection DG and a separate scalar modified-minmod building block, not the complete RKDG/TVB theorem. Duplicate catalog key cockburn1989tvb was merged for unique-source counting.
+
+## References by original publication year — 1989 · shu1989# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1989-shu1989
+Coverage: reading
+
+Shu, Chi-Wang and Osher, Stanley. Efficient implementation of essentially non-oscillatory shock-capturing schemes, II. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+The DOI identifies the original paper. Initial-condition parameters follow the later Quokka paper. Digitized comparisons with original figures have not been performed.
+
+## References by original publication year — 1990 · yoshida1990# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1990-yoshida1990
+Coverage: reading
+
+Yoshida, Haruo. Construction of higher order symplectic integrators. Physics Letters A.
+Original bibliographic record · Full text or implementation reference
+Original paper hosted by a university course. This edition implements the fourth-order triple composition of symmetric Verlet steps on two smooth 1-DOF Hamiltonians.
+
+## References by original publication year — 1991 · einfeldt1991# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1991-einfeldt1991
+Coverage: reading
+
+Einfeldt, Bernd and Munz, Claus-Dieter and Roe, Philip L. and Sjögreen, Björn. On Godunov-type methods near low densities. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. Background on low-density positivity; this edition uses the standard Toro formulation of the 1–2–3 problem.
+
+## References by original publication year — 1991 · fletcher1991v1# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1991-fletcher1991v1
+Coverage: reading
+
+Fletcher, Clive A. J.. Computational Techniques for Fluid Dynamics 1: Fundamental and General Techniques. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher second-edition record and contents checked. Year follows the listed April 1991 print publication; the same current record displays copyright 1998 and eBook release 2012, which must not be mistaken for a new algorithm date. Reading reference for the textbook scope, not a claim of full-text audit or reproduction of every algorithm.
+
+## References by original publication year — 1991 · fletcher1991v2# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1991-fletcher1991v2
+Coverage: reading
+
+Fletcher, Clive A. J.. Computational Techniques for Fluid Dynamics 2: Specific Techniques for Different Flow Categories. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher second-edition record and contents checked: print and copyright 1991; eBook release 2012 is a later digital issue. Reading reference for the textbook scope, not a claim of full-text audit or reproduction of every algorithm.
+
+## References by original publication year — 1991 · jameson1991# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1991-jameson1991
+Coverage: reading
+
+Jameson, Antony. Time dependent calculations using multigrid, with applications to unsteady flows past airfoils and wings. 10th AIAA Computational Fluid Dynamics Conference.
+Original bibliographic record · Full text or implementation reference
+The DOI identifies the original paper; the linked source is a later exposition by a coauthor. Dual time stepping here is a minimal linear-advection model.
+
+## References by original publication year — 1991 · yabe1991cip# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1991-yabe1991cip
+Coverage: reading
+
+Yabe, T. and Aoki, T.. A universal solver for hyperbolic equations by cubic-polynomial interpolation I. One-dimensional solver. Computer Physics Communications.
+Original bibliographic record · Full text or implementation reference
+Publisher indexed abstract and bibliographic data inspected; full-text retrieval was unavailable. Value-and-gradient cubic CIP evolution is demonstrated for uniform periodic constant-speed scalar advection only.
+
+## References by original publication year — 1992 · qian1992# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1992-qian1992
+Coverage: reading
+
+Qian, Y. H. and d'Humières, D. and Lallemand, P.. Lattice BGK Models for Navier-Stokes Equation. Europhysics Letters.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Lattice BGK source. The D2Q9 model is independently checked using shear-mode decay and a low-Mach channel; no arbitrary-Mach accuracy or full-text reproduction is claimed.
+
+## References by original publication year — 1992 · vanderVorst1992# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1992-vandervorst1992
+Coverage: reading
+
+van der Vorst, Henk A.. Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems. SIAM Journal on Scientific and Statistical Computing.
+Original bibliographic record · Full text or implementation reference
+Original publisher record checked. BiCGSTAB source; the educational implementation reports true residuals, breakdown and iteration-limit failures. Residual monotonicity is not promised.
+
+## References by original publication year — 1993 · liou1993# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1993-liou1993
+Coverage: reading
+
+Liou, Meng-Sing and Steffen, Christopher J., Jr.. A New Flux Splitting Scheme. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original AUSM publisher metadata/abstract inspected; no full 1993-paper inspection is claimed. The independent local AUSM-family baseline uses common arithmetic sound speed and cubic pressure splitting, cross-checked with official FEST-3D documentation, and is not every original variant or AUSM+-up.
+
+## References by original publication year — 1993 · pearson1993# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1993-pearson1993
+Coverage: reading
+
+Pearson, John E.. Complex Patterns in a Simple System. Science.
+Original bibliographic record · Full text or implementation reference
+Author preprint abstract and linked journal DOI checked. Spatial reaction–diffusion patterns from finite-amplitude perturbations; pattern appearance is not by itself evidence of a linear Turing instability.
+
+## References by original publication year — 1994 · hllc1994# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1994-hllc1994
+Coverage: reading
+
+Toro, E. F. and Spruce, M. and Speares, W.. Restoration of the contact surface in the HLL-Riemann solver. Shock Waves.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. This edition uses HLLC with Davis-type wave speeds and does not implement every original wave-speed estimate or WAF construction.
+
+## References by original publication year — 1994 · inutsuka1994# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1994-inutsuka1994
+Coverage: reading
+
+Inutsuka, Shu-ichiro. Godunov-type SPH. Memorie della Società Astronomica Italiana.
+Original bibliographic record · Full text or implementation reference
+Provisional historical record from reference 9 of Inutsuka (2002). The 1994 original has not been inspected; the source link is the later paper, not a reproduction of the 1994 contribution.
+
+## References by original publication year — 1994 · marti1994srriemann# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1994-marti1994srriemann
+Coverage: reading
+
+Martí, José M. and Müller, Ewald. The analytical solution of the Riemann problem in relativistic hydrodynamics. Journal of Fluid Mechanics.
+Original bibliographic record · Full text or implementation reference
+Publisher abstract and bibliographic record inspected. Normal-flow SR Riemann reference; arbitrary transverse velocities need a later extension. Proposed verification source, not an implemented relativistic Riemann solver.
+
+## References by original publication year — 1994 · quirk1994# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1994-quirk1994
+Coverage: reading
+
+Quirk, James J.. A contribution to the great Riemann solver debate. International Journal for Numerical Methods in Fluids.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record and abstract; background for shock instability and complementary fluxes. The local stationary planar row-displacement diagnostic is an independent experiment, not a reproduction of the original moving-shock perturbed-grid duct. Blunt-body carbuncle tests remain pending.
+
+## References by original publication year — 1994 · templates1994# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1994-templates1994
+Coverage: reading
+
+Barrett, Richard and Berry, Michael and Chan, Tony F. and Demmel, James and Donato, June and Dongarra, Jack and Eijkhout, Victor and Pozo, Roldan and Romine, Charles and van der Vorst, Henk. Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods. SIAM.
+Original bibliographic record · Full text or implementation reference
+Publicly available author-side reference material for Jacobi, Gauss–Seidel, preconditioning, and multigrid.
+
+## References by original publication year — 1994 · weno1994# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1994-weno1994
+Coverage: reading
+
+Liu, Xu-Dong and Osher, Stanley and Chan, Tony. Weighted Essentially Non-oscillatory Schemes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. Historical introduction to WENO; the weights implemented here are Jiang–Shu (1996).
+
+## References by original publication year — 1996 · aliev1996# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1996-aliev1996
+Coverage: reading
+
+Aliev, R. R. and Panfilov, A. V.. A simple two-variable model of cardiac excitation. Chaos, Solitons & Fractals.
+Original bibliographic record · Full text or implementation reference
+Physiome-hosted model encoding and bibliographic identification checked; original full paper not audited. A reduced phenomenological cardiac model, not a detailed human ionic-cell model or a complete bidomain model.
+
+## References by original publication year — 1996 · godlewski1996book# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1996-godlewski1996book
+Coverage: reading
+
+Godlewski, Edwige and Raviart, Pierre-Arnaud. Numerical Approximation of Hyperbolic Systems of Conservation Laws. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher first-edition record, description and contents checked: Applied Mathematical Sciences, volume 118, copyright 1996; the 2013 eBook release is a later digital issue. This record identifies the requested first edition, not the revised second edition of 2021 (DOI 10.1007/978-1-0716-1344-3). Reading reference for nonlinear hyperbolic systems and their numerical approximation; full text and all proofs have not been audited.
+
+## References by original publication year — 1996 · jiang1996# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1996-jiang1996
+Coverage: reading
+
+Jiang, Guang-Shan and Shu, Chi-Wang. Efficient Implementation of Weighted ENO Schemes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publicly accessible original paper. Reference for WENO5-JS flux reconstruction, smoothness indicators, and nonlinear weights.
+
+## References by original publication year — 1996 · liou1996# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1996-liou1996
+Coverage: reading
+
+Liou, Meng-Sing. A Sequel to AUSM: AUSM+. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher metadata/abstract inspected. AUSM+ is a separately planned extension; its original wave-speed/pressure choices and properties are not claimed by the local common-sound-speed AUSM baseline.
+
+## References by original publication year — 1996 · ronchi1996# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1996-ronchi1996
+Coverage: reading
+
+Ronchi, C. and Iacono, R. and Paolucci, P. S.. The Cubed Sphere: A New Method for the Solution of Partial Differential Equations in Spherical Geometry. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic search record checked; full text not inspected. Atlas uses an explicitly specified equiangular gnomonic diagram and does not reproduce the paper solver.
+
+## References by original publication year — 1996 · shewchuk1996# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1996-shewchuk1996
+Coverage: reading
+
+Shewchuk, Jonathan Richard. Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator. Springer.
+Original bibliographic record · Full text or implementation reference
+Author-hosted paper. Mesh-generation reading reference; the example meshes use Matplotlib triangulation and do not invoke Triangle.
+
+## References by original publication year — 1997 · ascher1997# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1997-ascher1997
+Coverage: reading
+
+Ascher, Uri M. and Ruuth, Steven J. and Spiteri, Raymond J.. Implicit-explicit Runge-Kutta methods for time-dependent partial differential equations. Applied Numerical Mathematics.
+Original bibliographic record · Full text or implementation reference
+IMEX RK reading reference; bibliographic metadata checked, full original text not audited. The implemented IMEX Euler is first order and is not attributed to this higher-order RK construction.
+
+## References by original publication year — 1997 · banyuls1997# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1997-banyuls1997
+Coverage: reading
+
+Banyuls, F. and Font, J. A. and Ibáñez, J. M. and Martí, J. M. and Miralles, J. A.. Numerical 3+1 General Relativistic Hydrodynamics: A Local Characteristic Approach. The Astrophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Author-institution bibliographic record checked; formulation context cross-checked against Font (2008). Central Valencia reference, without claiming direct inspection of the complete original or an implemented GRHD solver.
+
+## References by original publication year — 1998 · pons1998grriemann# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1998-pons1998grriemann
+Coverage: reading
+
+Pons, J. A. and Font, J. A. and Ibáñez, J. M. and Martí, J. M. and Miralles, J. A.. General Relativistic Hydrodynamics with Special Relativistic Riemann Solvers. Astronomy and Astrophysics.
+Original bibliographic record · Full text or implementation reference
+Author abstract and original-paper scan inspected for the local Minkowskian-coordinate approach connecting GRHD to SR Riemann solvers. Geometric flux/source treatment remains necessary; no solver implemented here.
+
+## References by original publication year — 1999 · komissarov1999rmhd# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#1999-komissarov1999rmhd
+Coverage: reading
+
+Komissarov, S. S.. A Godunov-type scheme for relativistic magnetohydrodynamics. Monthly Notices of the Royal Astronomical Society.
+Original bibliographic record · Full text or implementation reference
+Original publisher abstract inspected for multidimensional Godunov-type relativistic MHD and magnetic-flux conservation. Historical reading, not an implemented RMHD method.
+
+## References by original publication year — 2000 · briggs2000book# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2000-briggs2000book
+Coverage: reading
+
+Briggs, William L. and Henson, Van Emden and McCormick, Steve F.. A Multigrid Tutorial. SIAM.
+Original bibliographic record · Full text or implementation reference
+Publisher book record, contents and front-matter metadata checked. Second edition published in 2000; the 2012 online publication date is a later digital issue. Introductory reading on smoothing, coarse-grid correction, implementation, nonlinear problems and AMG. The atlas geometric Poisson V-cycle is a limited educational baseline, not a reproduction of the entire book.
+
+## References by original publication year — 2000 · elowitz2000# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2000-elowitz2000
+Coverage: reading
+
+Elowitz, Michael B. and Leibler, Stanislas. A synthetic oscillatory network of transcriptional regulators. Nature.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Repressilator source; mRNA and protein variables are retained separately in the proposed model, without silently replacing them by a three-state reduction.
+
+## References by original publication year — 2000 · gardner2000# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2000-gardner2000
+Coverage: reading
+
+Gardner, Timothy S. and Cantor, Charles R. and Collins, James J.. Construction of a genetic toggle switch in Escherichia coli. Nature.
+Original bibliographic record · Full text or implementation reference
+Original bibliographic record and abstract checked. Synthetic bistable gene-network source. The survey uses a normalized mutual-repression model, not a complete encoding of experimental induction protocols.
+
+## References by original publication year — 2000 · toth2000# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2000-toth2000
+Coverage: reading
+
+Tóth, Gábor. The ∇·B = 0 Constraint in Shock-Capturing Magnetohydrodynamics Codes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author-hosted original paper. Reference for CT variants and differences between discrete divergence operators.
+
+## References by original publication year — 2000 · trefethen2000# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2000-trefethen2000
+Coverage: reading
+
+Trefethen, Lloyd N.. Spectral Methods in MATLAB. SIAM.
+Original bibliographic record · Full text or implementation reference
+Author-maintained book page checked: SIAM 2000, sample chapters, programs and errata. Reading reference for spectral differentiation and boundary-value problems; the author notes limited treatment of barycentric interpolation.
+
+## References by original publication year — 2001 · gottlieb2001ssp# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2001-gottlieb2001ssp
+Coverage: reading
+
+Gottlieb, Sigal and Shu, Chi-Wang and Tadmor, Eitan. Strong Stability-Preserving High-Order Time Discretization Methods. SIAM Review.
+Original bibliographic record · Full text or implementation reference
+Author-hosted original manuscript inspected. Conditional inheritance of forward-Euler convex stability, and the distinction between linear and nonlinear SSP. The atlas verifies full-tableau inequalities for its explicit RK methods.
+
+## References by original publication year — 2001 · pandolfi2001# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2001-pandolfi2001
+Coverage: reading
+
+Pandolfi, Maurizio and D’Ambrosio, Domenic. Numerical Instabilities in Upwind Methods: Analysis and Cures for the “Carbuncle” Phenomenon. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher record and abstract. Linearized shock-instability analysis and localized cures; the proposed methods are not implemented in this edition.
+
+## References by original publication year — 2001 · trottenberg2001# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2001-trottenberg2001
+Coverage: reading
+
+Trottenberg, Ulrich and Oosterlee, Cornelius W. and Schüller, Anton. Multigrid. Academic Press.
+Original bibliographic record · Full text or implementation reference
+Publisher first-edition description and contents checked. Uses the conventional 2001 bibliographic year, also cited in Elsevier reference material; the current publisher shop lists release on November 20, 2000. Reference for multigrid theory, local Fourier analysis, parallel methods, systems and AMG. Full text not audited; these topics are not all implemented in the atlas.
+
+## References by original publication year — 2001 · yabe2001csl# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2001-yabe2001csl
+Coverage: reading
+
+Yabe, T. and Tanaka, R. and Nakamura, T. and Xiao, F.. An Exactly Conservative Semi-Lagrangian Scheme (CIP–CSL) in One Dimension. Monthly Weather Review.
+Original bibliographic record · Full text or implementation reference
+Publisher indexed abstract and bibliographic data inspected; full-page retrieval was unavailable. Integral constraints and exactly conservative CIP-CSL are reading context, not implemented by the basic cubic-CIP example.
+
+## References by original publication year — 2002 · dedner2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-dedner2002
+Coverage: reading
+
+Dedner, Andreas and Kemm, Friedemann and Kröner, Dietmar and Munz, Claus-Dieter and Schnitzer, Thomas and Wesenberg, Matthias. Hyperbolic Divergence Cleaning for the MHD Equations. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publicly accessible original paper, published in 2002 despite 2001 appearing in the DOI. This edition uses a simplified GLM model with fixed cleaning speed.
+
+## References by original publication year — 2002 · guo2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-guo2002
+Coverage: reading
+
+Guo, Zhaoli and Zheng, Chuguang and Shi, Baochang. Discrete lattice effects on the forcing term in the lattice Boltzmann method. Physical Review E.
+Original bibliographic record · Full text or implementation reference
+Original publisher record and abstract checked. Force discretization source; the implementation uses the half-force momentum correction and checks low-Mach Poiseuille profiles against an analytic parabola.
+
+## References by original publication year — 2002 · inutsuka2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-inutsuka2002
+Coverage: reading
+
+Inutsuka, Shu-ichiro. Reformulation of Smoothed Particle Hydrodynamics with Riemann Solver. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author preprint and HTML sections 2–4 inspected for convolution, Gaussian overlaps, pair Riemann states, variable smoothing lengths, matched conservative time updates, and the first shock-tube setup. Reading notes and implementation plan only; the atlas implements kernel interpolation, not GSPH dynamics.
+
+## References by original publication year — 2002 · leveque2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-leveque2002
+Coverage: reading
+
+LeVeque, Randall J.. Finite Volume Methods for Hyperbolic Problems. Cambridge University Press.
+Original bibliographic record · Full text or implementation reference
+Publisher/author bibliographic records and Cambridge front matter checked. Paperback ISBN 0-521-00924-3 (978-0-521-00924-9) identifies Finite Volume Methods for Hyperbolic Problems, first published in 2002; retailer wording with Hyperbolic Systems does not identify a separate book. Reading reference for conservation laws, wave-propagation methods, limiters and shallow-water implementations; not a full-text audit.
+
+## References by original publication year — 2002 · murray2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-murray2002
+Coverage: reading
+
+Murray, J. D.. Mathematical Biology I: An Introduction. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher edition metadata checked: third edition print copyright 2002, later eBook publication distinguished. Broad reading reference, not a substitute for original papers or an audited source of every parameter.
+
+## References by original publication year — 2002 · riddaway2002# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-riddaway2002
+Coverage: reading
+
+Riddaway, R. W. and Hortal, M.. Numerical methods. ECMWF Meteorological Training Course Lecture Series.
+Original bibliographic record · Full text or implementation reference
+Official teaching notes inspected for horizontal staggering and A–E grid relationships. PDF carries ECMWF 2002 and revised March 2001, not a new original invention date. Used as an exposition, distinct from Arakawa–Lamb 1977.
+
+## References by original publication year — 2002 · spiteri2002ssp# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2002-spiteri2002ssp
+Coverage: reading
+
+Spiteri, Raymond J. and Ruuth, Steven J.. A New Class of Optimal High-Order Strong-Stability-Preserving Time Discretization Methods. SIAM Journal on Numerical Analysis.
+Original bibliographic record · Full text or implementation reference
+Publisher record and abstract inspected. SSP methods with more stages than their order. The implemented five-stage fourth-order coefficients are taken from the later author-hosted Gottlieb–Ketcheson–Shu review, rather than asserting direct full-text reproduction of this paper.
+
+## References by original publication year — 2003 · gammie2003harm# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2003-gammie2003harm
+Coverage: reading
+
+Gammie, Charles F. and McKinney, Jonathan C. and Tóth, Gábor. HARM: A Numerical Scheme for General Relativistic Magnetohydrodynamics. The Astrophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Author abstract and publication metadata inspected. Conservative GRMHD, HLL, Tóth-type CT, and a magnetized black-hole torus; original formulation distinguished from later evolving-spacetime frameworks. Not reproduced here.
+
+## References by original publication year — 2003 · hairer2003# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2003-hairer2003
+Coverage: reading
+
+Hairer, Ernst and Lubich, Christian and Wanner, Gerhard. Geometric numerical integration illustrated by the Störmer–Verlet method. Acta Numerica.
+Original bibliographic record · Full text or implementation reference
+Original article hosted by a university course. Reference for symplecticity, reversibility, modified equations, and conditional long-time energy estimates; no general exact-energy claim is made.
+
+## References by original publication year — 2003 · saad2003book# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2003-saad2003book
+Coverage: reading
+
+Saad, Yousef. Iterative Methods for Sparse Linear Systems. SIAM.
+Original bibliographic record · Full text or implementation reference
+Publisher second-edition record and author-maintained book page checked; original first edition was 1996. Author page provides the text and errata. Reading reference for Krylov methods and preconditioning; original algorithm papers remain separate citations.
+
+## References by original publication year — 2004 · kageyama2004# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2004-kageyama2004
+Coverage: reading
+
+Kageyama, Akira and Sato, Tetsuya. The Yin-Yang Grid: An Overset Grid in Spherical Geometry. Geochemistry, Geophysics, Geosystems.
+Original bibliographic record · Full text or implementation reference
+Author preprint inspected for patch bounds, coordinate rotation and vector transformation. Atlas diagrams illustrate geometry only; overlap interpolation and a conservative flow solver are not implemented.
+
+## References by original publication year — 2005 · duez2005grmhd# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2005-duez2005grmhd
+Coverage: reading
+
+Duez, Matthew D. and Liu, Yuk Tung and Shapiro, Stuart L. and Stephens, Branson C.. Relativistic Magnetohydrodynamics in Dynamical Spacetimes: Numerical Methods and Tests. Physical Review D.
+Original bibliographic record · Full text or implementation reference
+Author abstract and journal metadata inspected. Coupled Einstein–Maxwell–MHD with BSSN and conservative matter evolution; historical source for the dynamical-spacetime step. No such coupling implemented here.
+
+## References by original publication year — 2005 · miyoshi2005# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2005-miyoshi2005
+Coverage: reading
+
+Miyoshi, Takahiro and Kusano, Kanya. A multi-state HLL approximate Riemann solver for ideal magnetohydrodynamics. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original HLLD bibliographic record; publisher abstract/metadata, not the complete original paper, inspected. Star and double-star equations cross-checked against the linked official Athena++ implementation. The local independent implementation has contact, rotational-wave and standard-test checks; no Athena++ output is reproduced.
+
+## References by original publication year — 2005 · springel2005# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2005-springel2005
+Coverage: reading
+
+Springel, Volker. The cosmological simulation code GADGET-2. Monthly Notices of the Royal Astronomical Society.
+Original bibliographic record · Full text or implementation reference
+Author preprint and publisher record. Reference for TreePM force splitting; the separate PM and Tree laboratories do not implement the GADGET code or a complete TreePM pipeline.
+
+## References by original publication year — 2006 · abgrall2006# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2006-abgrall2006
+Coverage: reading
+
+Abgrall, Rémi. Residual distribution schemes: Current status and future trends. Computers & Fluids.
+Original bibliographic record · Full text or implementation reference
+Author-hosted review. The 2006 date identifies the review, rather than the origin of residual distribution. This edition implements only 1D scalar RD.
+
+## References by original publication year — 2006 · hairer2006book# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2006-hairer2006book
+Coverage: reading
+
+Hairer, Ernst and Lubich, Christian and Wanner, Gerhard. Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher second-edition record and description checked. Reading reference for symplectic and symmetric methods, splitting and long-time behavior; symplecticity is distinct from exact conservation of the original Hamiltonian.
+
+## References by original publication year — 2006 · liou2006# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2006-liou2006
+Coverage: reading
+
+Liou, Meng-Sing. A sequel to AUSM, Part II: AUSM+-up for all speeds. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher metadata/abstract inspected. Planned all-speed AUSM-family extension; the local baseline has no AUSM+-up pressure/velocity correction or low-Mach verification.
+
+## References by original publication year — 2006 · noble2006recovery# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2006-noble2006recovery
+Coverage: reading
+
+Noble, Scott C. and Gammie, Charles F. and McKinney, Jonathan C. and Del Zanna, Luca. Primitive Variable Solvers for Conservative General Relativistic Magnetohydrodynamics. The Astrophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Author abstract and journal metadata inspected for nonlinear conserved-to-primitive recovery and reduced systems. Reading context; current Newtonian primitive conversion is not this relativistic inversion.
+
+## References by original publication year — 2007 · hirsch2007# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2007-hirsch2007
+Coverage: reading
+
+Hirsch, Charles. Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid Dynamics. Butterworth-Heinemann.
+Original bibliographic record · Full text or implementation reference
+Publisher edition record and contents checked. Cites the 2007 second-edition fundamentals volume, not the complete original two-volume set. Reading reference for discretization, grid properties, stability and flow solvers; not an audited implementation source for every chapter.
+
+## References by original publication year — 2007 · leveque2007# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2007-leveque2007
+Coverage: reading
+
+LeVeque, Randall J.. Finite Difference Methods for Ordinary and Partial Differential Equations: Steady-State and Time-Dependent Problems. SIAM.
+Original bibliographic record · Full text or implementation reference
+Author-maintained book list checked for year, title, DOI and companion materials. Reading reference for consistency, stability, boundary-value problems and time stepping; full book not audited here.
+
+## References by original publication year — 2007 · nishikawa2007# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2007-nishikawa2007
+Coverage: reading
+
+Nishikawa, Hiroaki. A first-order system approach for diffusion equation. I: Second-order residual-distribution schemes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked, full text not audited. The atlas implements an independent periodic first-order upwind baseline for the equivalent steady system, not the paper's second-order residual-distribution schemes.
+
+## References by original publication year — 2008 · borges2008# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2008-borges2008
+Coverage: reading
+
+Borges, Rafael and Carmona, Monique and Costa, Bruno and Don, Wai Sun. An improved weighted essentially non-oscillatory scheme for hyperbolic conservation laws. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original 2008 publisher metadata/abstract inspected. A public 2006 three-author earlier manuscript was also consulted and has different weight conventions; no complete final-paper inspection is claimed. The local FD WENO-Z variant explicitly defines tau5=abs(beta0-beta2), exponent 2 and epsilon=1e-6, with characteristic/component tests and smooth refinement.
+
+## References by original publication year — 2008 · font2008grhd# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2008-font2008grhd
+Coverage: reading
+
+Font, José A.. Numerical Hydrodynamics and Magnetohydrodynamics in General Relativity. Living Reviews in Relativity.
+Original bibliographic record · Full text or implementation reference
+Open author review inspected for formulations and historical context. Explicitly the 2008 revision, following the 2000 and 2003 versions; used as review context rather than an invention date or a current code-performance comparison.
+
+## References by original publication year — 2008 · hesthaven2008book# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2008-hesthaven2008book
+Coverage: reading
+
+Hesthaven, Jan S. and Warburton, Tim. Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and Applications. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher copyright-edition record and contents checked: 2008. Reading reference for nodal bases, element operators and DG fluxes. The atlas currently has selected educational DG and basis examples, not all systems treated in the book.
+
+## References by original publication year — 2008 · nishikawa2008# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2008-nishikawa2008
+Coverage: reading
+
+Nishikawa, Hiroaki and Kitamura, Keiichi. Very simple, carbuncle-free, boundary-layer-resolving, rotated-hybrid Riemann solvers. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record and abstract. The 2D rotated solver and carbuncle tests are future work.
+
+## References by original publication year — 2009 · gottlieb2009ssp# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2009-gottlieb2009ssp
+Coverage: reading
+
+Gottlieb, Sigal and Ketcheson, David I. and Shu, Chi-Wang. High Order Strong Stability Preserving Time Discretizations. Journal of Scientific Computing.
+Original bibliographic record · Full text or implementation reference
+Author-hosted 2008 draft of the 2009 review inspected. Section 3.1 supplies the SSPRK(5,4) decimal coefficients; the atlas converts its state combinations to increments and uses the conservative rounded bound C=1.508. SSP order barriers, low-storage, and alternative families are reading context.
+
+## References by original publication year — 2009 · koyama2009# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2009-koyama2009
+Coverage: reading
+
+Koyama, Hiroshi and Ostriker, Eve C.. Gas Properties and Implications for Galactic Star Formation in Numerical Models of the Turbulent, Multiphase Interstellar Medium. The Astrophysical Journal.
+Original bibliographic record · Full text or implementation reference
+Published in 2009, with a December 2008 preprint. Section 2.3 and Appendix A give the Cartesian disk-potential FFT method. Our independent kernel laboratory distinguishes the sampled DFT from a continuous Fourier coefficient and does not reproduce the ISM simulations.
+
+## References by original publication year — 2009 · toro2009# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2009-toro2009
+Coverage: reading
+
+Toro, Eleuterio F.. Riemann Solvers and Numerical Methods for Fluid Dynamics: A Practical Introduction. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher bibliographic record. Background for exact Riemann solutions and the standard double-rarefaction setup.
+
+## References by original publication year — 2009 · williams2009# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2009-williams2009
+Coverage: reading
+
+Williams, Paul D.. A Proposed Modification to the Robert–Asselin Time Filter. Monthly Weather Review.
+Original bibliographic record · Full text or implementation reference
+Publisher record identifies the time-filter paper. The ODE laboratory uses unfiltered leapfrog with RK4 startup and does not implement this filter.
+
+## References by original publication year — 2010 · durran2010# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2010-durran2010
+Coverage: reading
+
+Durran, Dale R.. Numerical Methods for Fluid Dynamics: With Applications to Geophysics. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher second-edition copyright record and description checked. Retitled revision of the earlier geophysical wave-equation text. Reading reference for wave propagation, dispersion, advection and time discretization; not a complete spherical dynamical-core implementation.
+
+## References by original publication year — 2010 · mignone2010glm# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2010-mignone2010glm
+Coverage: reading
+
+Mignone, Andrea and Tzeferacos, Petros. A second-order unsplit Godunov scheme for cell-centered MHD: The CTU-GLM scheme. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Public author manuscript inspected for the conservative GLM equations and longitudinal cleaning subsystem. The local loop test uses MC/SSPRK2 and split psi damping, not the paper's CTU integrator or EGLM variant.
+
+## References by original publication year — 2010 · nishikawa2010# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2010-nishikawa2010
+Coverage: reading
+
+Nishikawa, Hiroaki. A first-order system approach for diffusion equation. II: Unification of advection and diffusion. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Original publisher metadata and abstract checked. Publication year is 2010 despite 2009 in the DOI. Unified advection-diffusion system is reading/future implementation scope.
+
+## References by original publication year — 2010 · zhangshu2010euler# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2010-zhangshu2010euler
+Coverage: reading
+
+Zhang, Xiangxiong and Shu, Chi-Wang. On positivity-preserving high order discontinuous Galerkin schemes for compressible Euler equations on rectangular meshes. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author-hosted manuscript inspected. Convex admissible Euler states, mean-preserving limiting, and additional flux, quadrature, CFL, and SSP requirements. The atlas implements only a common-state reconstruction scaling building block, not the full time-update scheme.
+
+## References by original publication year — 2011 · iwasaki2011gsph# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2011-iwasaki2011gsph
+Coverage: reading
+
+Iwasaki, Kazunari and Inutsuka, Shu-ichiro. Smoothed particle magnetohydrodynamics with a Riemann solver and the method of characteristics. Monthly Notices of the Royal Astronomical Society.
+Original bibliographic record · Full text or implementation reference
+Author preprint inspected for the split between compressive Riemann interactions and Alfvén characteristics, and its test suite. Newtonian particle MHD; separate from relativistic fluid dynamics and the existing grid CT/GLM code. Not implemented here.
+
+## References by original publication year — 2011 · johnson2011# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2011-johnson2011
+Coverage: reading
+
+Johnson, Kenneth A. and Goody, Roger S.. The Original Michaelis Constant: Translation of the 1913 Michaelis–Menten Paper. Biochemistry.
+Original bibliographic record · Full text or implementation reference
+Translation bibliographic record checked. This is a 2011 translation/commentary route to the 1913 original, not an original publication dated 2011.
+
+## References by original publication year — 2013 · golub2013# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2013-golub2013
+Coverage: reading
+
+Golub, Gene H. and Van Loan, Charles F.. Matrix Computations. Johns Hopkins University Press.
+Original bibliographic record · Full text or implementation reference
+Fourth-edition publication and contents checked in the SIAM distribution record; publisher is Johns Hopkins University Press. Reading reference for factorizations, conditioning, eigenproblems and sparse systems; no claim of full-text audit.
+
+## References by original publication year — 2013 · sadowski2013radiation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2013-sadowski2013radiation
+Coverage: reading
+
+Sądowski, Aleksander and Narayan, Ramesh and Tchekhovskoy, Alexander and Zhu, Yucong. Semi-implicit scheme for treating radiation under M1 closure in general relativistic conservative fluid dynamics codes. Monthly Notices of the Royal Astronomical Society.
+Original bibliographic record · Full text or implementation reference
+Author abstract and public original inspected for covariant M1 radiation moments and semi-implicit matter interactions in KORAL. Published 2013, preprint 2012. Radiation closure/source integration is reading context, not implemented here.
+
+## References by original publication year — 2013 · wan2013icon# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2013-wan2013icon
+Coverage: reading
+
+Wan, H. and Giorgetta, M. A. and Zängl, G. and Restelli, M. and Majewski, D. and Bonaventura, L. and Fröhlich, K. and Reinert, D. and Rípodas, P. and Kornblueh, L. and Förstner, J.. The ICON-1.2 hydrostatic atmospheric dynamical core on triangular grids – Part 1: Formulation and performance of the baseline version. Geoscientific Model Development.
+Original bibliographic record · Full text or implementation reference
+Official model-description record and abstract checked for the triangular-grid C-staggering connection. Atlas midpoint-refined icosahedron and barycentric dual are illustrative, unoptimized meshes, not the ICON grid or dynamical core.
+
+## References by original publication year — 2015 · schneider2015cholla# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2015-schneider2015cholla
+Coverage: reading
+
+Schneider, Evan E. and Robertson, Brant E.. Cholla: A New Massively-Parallel Hydrodynamics Code for Astrophysical Simulation. The Astrophysical Journal Supplement Series.
+Original bibliographic record · Full text or implementation reference
+The publicly available accepted author manuscript, especially Appendix A, was inspected to cross-check PPM reconstruction and tracing. The atlas uses an independent specified 1D implementation, not Cholla output, GPU timings or a reproduction of its full multidimensional CTU scheme.
+
+## References by original publication year — 2015 · teukolsky2015# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2015-teukolsky2015
+Coverage: reading
+
+Teukolsky, Saul A.. Short note on the mass matrix for Gauss-Lobatto grid points. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author preprint posted in December 2014, full HTML consulted. Explains exact and GLL-quadrature mass matrices and their rank-one difference. The reference-element notebook tests this distinction; it is not a reproduction of a full spectral-element PDE solver.
+
+## References by original publication year — 2016 · fitzpatrick2016# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2016-fitzpatrick2016
+Coverage: reading
+
+Fitzpatrick, Richard. Fluid Equations in Cylindrical Coordinates. University of Texas at Austin.
+Original bibliographic record · Full text or implementation reference
+Author lecture notes, dated January 22, 2016. Reference for cylindrical fluid operators; the atlas declares its bulk-viscosity and orthonormal-component conventions separately.
+
+## References by original publication year — 2018 · kuya2018# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2018-kuya2018
+Coverage: reading
+
+Kuya, Yuichi and Totani, Kosuke and Kawai, Soshi. Kinetic energy and entropy preserving schemes for compressible flows by split convective forms. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+DOI identifies the original 2018 paper. The authors’ 2022 conference explanation, Eq. (9), is the accessible implementation source for our second-order arithmetic-mean Cartesian baseline. Entropy is not claimed exact to roundoff; no shock stabilization is implemented.
+
+## References by original publication year — 2019 · bemfica2019causality# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2019-bemfica2019causality
+Coverage: reading
+
+Bemfica, Fábio S. and Disconzi, Marcelo M. and Noronha, Jorge. Nonlinear causality of general first-order relativistic viscous hydrodynamics. Physical Review D.
+Original bibliographic record · Full text or implementation reference
+Original author abstract and publisher record inspected. A first-gradient constitutive theory with nonlinear-causality conditions, distinguished from extended-variable theories. Not a universal EOS/transport or discrete-stability guarantee; no viscous relativistic solver implemented.
+
+## References by original publication year — 2019 · kovtun2019stable# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2019-kovtun2019stable
+Coverage: reading
+
+Kovtun, Pavel. First-order relativistic hydrodynamics is stable. Journal of High Energy Physics.
+Original bibliographic record · Full text or implementation reference
+Author abstract and publisher record inspected for stable first-order hydrodynamic frames. Stability results retain the paper assumptions; numerical scheme stability is a separate question. Reading context, not an implemented solver.
+
+## References by original publication year — 2020 · ferziger2020# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2020-ferziger2020
+Coverage: reading
+
+Ferziger, Joel H. and Perić, Milovan and Street, Robert L.. Computational Methods for Fluid Dynamics. Springer.
+Original bibliographic record · Full text or implementation reference
+Publisher edition metadata and contents checked. Uses the fourth-edition copyright year 2020; the publisher lists electronic publication in August 2019. Broad CFD reading reference, including incompressible flow and solution procedures; not a validation claim for all listed applications.
+
+## References by original publication year — 2020 · fest2020ausm# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2020-fest2020ausm
+Coverage: reading
+
+FEST-3D Team. FEST-3D documented AUSM source. .
+Original bibliographic record · Full text or implementation reference
+Official source documentation generated 10 February 2020. Consulted to cross-check common arithmetic interface sound speed, Mach polynomials, cubic pressure fractions and enthalpy transport. The local independent vectorized implementation does not use FEST-3D output.
+
+## References by original publication year — 2020 · saito2020rcip# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2020-saito2020rcip
+Coverage: reading
+
+Saito, Fuyuki and Obase, Takashi and Abe-Ouchi, Ayako. Implementation of the RCIP scheme and its performance for 1-D age computations in ice-sheet models. Geoscientific Model Development.
+Original bibliographic record · Full text or implementation reference
+Open primary paper inspected. CIP-family value/gradient transport, velocity-gradient terms, and rational reconstruction conventions. The atlas does not implement this RCIP ice-age model or its variable-velocity departure correction.
+
+## References by original publication year — 2021 · mignone2021uct# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2021-mignone2021uct
+Coverage: reading
+
+Mignone, Andrea and Del Zanna, Luca. Systematic construction of upwind constrained transport schemes for MHD. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Public 2020 author manuscript inspected, especially CT-Contact equations 20-22. The local shared-corner update uses contact-upwinded transverse EMF derivatives and verifies the one-dimensional face-flux limit; UCT-HLLD itself is not implemented.
+
+## References by original publication year — 2021 · shima2021# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2021-shima2021
+Coverage: reading
+
+Shima, Nao and Kuya, Yuichi and Tamaki, Yoshiharu and Kawai, Soshi. Preventing spurious pressure oscillations in split convective form discretization for compressible flows. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author-university publication record; published in 2021 despite 2020 in the DOI. Pressure-equilibrium-preserving variants are discussed but are not the original arithmetic-mean flux used here.
+
+## References by original publication year — 2022 · deppe2022dgfd# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2022-deppe2022dgfd
+Coverage: reading
+
+Deppe, Nils and Hébert, François and Kidder, Lawrence E. and Teukolsky, Saul A.. A high-order shock capturing discontinuous Galerkin-finite-difference hybrid method for GRMHD. Classical and Quantum Gravity.
+Original bibliographic record · Full text or implementation reference
+Author abstract and publication link inspected. Preprint 2021, journal publication 2022, arXiv update 2024. DG candidate updates and a posteriori FD fallback; not the scalar DG implementation in this atlas.
+
+## References by original publication year — 2022 · kuya2022keep# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2022-kuya2022keep
+Coverage: reading
+
+Kuya, Yuichi and Kawai, Soshi. Stable and non-dissipative kinetic-energy and entropy preserving (KEEP) schemes for compressible flows. Eleventh International Conference on Computational Fluid Dynamics.
+Original bibliographic record · Full text or implementation reference
+Official conference paper, inspected in full. Section 2.2 Eq. (9) specifies the implemented original Cartesian flux; Section 2.1 explicitly limits exact entropy-conservation claims. Other extensions in the paper are not implemented here.
+
+## References by original publication year — 2022 · quokka2022# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2022-quokka2022
+Coverage: reading
+
+Wibking, Benjamin D. and Krumholz, Mark R.. quokka: a code for two-moment AMR radiation hydrodynamics on GPUs. Monthly Notices of the Royal Astronomical Society.
+Original bibliographic record · Full text or implementation reference
+Section 3.1.5 of the public paper is the reference for the adopted Shu–Osher parameters. The Quokka code itself is not reproduced.
+
+## References by original publication year — 2022 · tamaki2022# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2022-tamaki2022
+Coverage: reading
+
+Tamaki, Yoshiharu and Kuya, Yuichi and Kawai, Soshi. Comprehensive analysis of entropy conservation property of non-dissipative schemes for compressible flows: KEEP scheme redefined. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Author-university record and abstract. Analyzes entropy-error terms and redefined KEEP variants with adjustable expansion order; these variants are not implemented in the original-flux exhibit.
+
+## References by original publication year — 2023 · foucart2023neutrino# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2023-foucart2023neutrino
+Coverage: reading
+
+Foucart, Francois. Neutrino transport in general relativistic neutron star merger simulations. Living Reviews in Computational Astrophysics.
+Original bibliographic record · Full text or implementation reference
+Open author review inspected for leakage, moment, and Monte Carlo transport, including unresolved physical-interaction limits. Review context; no neutrino solver implemented.
+
+## References by original publication year — 2024 · asada2024# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2024-asada2024
+Coverage: reading
+
+Asada, Hiroyuki and Maruyama, Kanako and Kawai, Soshi. Temporal discretization for improving kinetic-energy and entropy preservation properties in KEEP schemes. Computers & Fluids.
+Original bibliographic record · Full text or implementation reference
+Publisher record and abstract. Published in 2024 despite 2023 in the DOI. The auxiliary-variable temporal method is not implemented; the exhibit uses classical RK4 with a time-refinement diagnostic.
+
+## References by original publication year — 2024 · deppe2024bns# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2024-deppe2024bns
+Coverage: reading
+
+Deppe, Nils and Foucart, Francois and Bonilla, Marceline S. and others. Binary neutron star mergers using a discontinuous Galerkin-finite difference hybrid method. .
+Original bibliographic record · Full text or implementation reference
+Author abstract inspected. Cited as the June 2024 preprint, updated September 2024; a separate journal record was not verified in this review. Demonstration of DG–FD with dynamical-spacetime mergers, not a simulation reproduced here.
+
+## References by original publication year — 2025 · cao2025pcpdg# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2025-cao2025pcpdg
+Coverage: reading
+
+Cao, Huihui and Peng, Manting and Wu, Kailiang. Robust discontinuous Galerkin methods maintaining physical constraints for general relativistic hydrodynamics. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher abstract, highlights, and record inspected. PCP/OEDG GRHD and primitive recovery under specified formulation/scheme assumptions. Full theorem hypotheses and proofs have not been audited here; no universal positivity or merger-code claim.
+
+## References by original publication year — 2025 · fields2025athenak# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2025-fields2025athenak
+Coverage: reading
+
+Fields, Jacob and Zhu, Hengrui and Radice, David and Stone, James M. and Cook, William and Bernuzzi, Sebastiano and Daszuta, Boris. Performance-Portable Binary Neutron Star Mergers with AthenaK. The Astrophysical Journal Supplement Series.
+Original bibliographic record · Full text or implementation reference
+Author abstract and journal reference checked November 2026. Preprint 2024, journal 2025. Dynamical-spacetime GRMHD, CT, first-order flux correction, and GPU BNS demonstrations; no cross-code speed ranking or local rerun claimed.
+
+## References by original publication year — 2025 · kalinani2025asterx# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2025-kalinani2025asterx
+Coverage: reading
+
+Kalinani, Jay V. and Ji, Liwei and Ennoggi, Lorenzo and others. AsterX: a new open-source GPU-accelerated GRMHD code for dynamical spacetimes. Classical and Quantum Gravity.
+Original bibliographic record · Full text or implementation reference
+Author paper and institution metadata inspected. Online December 2024, 2025 journal issue. GPU-oriented Valencia/Z4c framework with CarpetX/AMReX; source infrastructure does not authorize adding AMR to the atlas, which remains deferred.
+
+## References by original publication year — 2026 · amrvaclimiters# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-amrvaclimiters
+Coverage: reading
+
+MPI-AMRVAC Team. Slope Limiters. .
+Original bibliographic record · Full text or implementation reference
+Official code documentation inspected in November 2026; access year only. Implementation notes on minmod, Superbee, MC, van Leer, van Albada variants, and regularization. The atlas uses an explicitly clipped van Albada form without epsilon smoothing.
+
+## References by original publication year — 2026 · clawpacklimiters# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-clawpacklimiters
+Coverage: reading
+
+Clawpack Development Team. Pyclaw Limiters. .
+Original bibliographic record · Full text or implementation reference
+Official implementation documentation inspected in November 2026; this is an access-year record, not an invention date. Used to distinguish common limiter functions and wave-limiting conventions from the atlas slope reconstruction.
+
+## References by original publication year — 2026 · kitajima2026srgsph# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-kitajima2026srgsph
+Coverage: reading
+
+Kitajima, Kanta and Inutsuka, Shu-ichiro and Seno, Izumi. Special relativistic smoothed particle hydrodynamics based on Riemann solver. Journal of Computational Physics.
+Original bibliographic record · Full text or implementation reference
+Publisher record and author abstract checked 6 November 2026. Journal issue 15 January 2026; preprint October 2025. SRGSPH addresses unequal baryon numbers, variable smoothing lengths, and relativistic shocks/Kelvin–Helmholtz tests. Special relativity only; no SRGSPH implementation or figure reproduction in this atlas.
+
+## References by original publication year — 2026 · mitgcm-c-grid# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-mitgcm-c-grid
+Coverage: reading
+
+MITgcm contributors. C grid staggering of variables. MITgcm documentation.
+Original bibliographic record · Full text or implementation reference
+Official living documentation checked on 6 November 2026. Year denotes access, not invention. Face-normal three-dimensional placement reference; no assertion that the atlas uses the full MITgcm algorithm.
+
+## References by original publication year — 2026 · musolino2026grace# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-musolino2026grace
+Coverage: reading
+
+Musolino, Carlo and Ecker, Christian and Topolski, Konrad and Cassing, Marie and Miler, Keneth and Ng, Harry Ho-Yin and Pierre, Khalil and Most, Elias R. and Rezzolla, Luciano. Open-source framework for GPU-accelerated numerical relativity. Physical Review D (accepted).
+Original bibliographic record · Full text or implementation reference
+APS accepted-paper page checked 6 November 2026: accepted 2 November 2026, not a verified final volume/page record. July 2026 preprint arXiv:2607.09854 uses the GRACE title prefix. Kokkos, CT, Z4c and merger examples are reported; no local implementation or rerun.
+
+## References by original publication year — 2026 · nist-orthogonal# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-nist-orthogonal
+Coverage: reading
+
+NIST Digital Library of Mathematical Functions. Classical orthogonal polynomials: definitions, weights and recurrence relations. .
+Original bibliographic record · Full text or implementation reference
+Living mathematical reference, checked November 2026. Sections 18.2, 18.3 and 18.9 consulted for domains, weights, normalization and recurrences; the year denotes this consultation, not the historical origin of Legendre polynomials.
+
+## References by original publication year — 2026 · numipediark# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-numipediark
+Coverage: reading
+
+Ketcheson, David I.. Numipedia: Runge–Kutta method records. .
+Original bibliographic record · Full text or implementation reference
+Author-maintained coefficient and stability records inspected in November 2026; access year, not an invention date. RK44, SSPRK22, and SSPRK43 records cross-check tableaus, scalar polynomials, and absolute-monotonicity radii.
+
+## References by original publication year — 2026 · powell2026# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-powell2026
+Coverage: reading
+
+Powell, Ken. Philip Lawrence Roe, Professor Emeritus of Aerospace Engineering at the University of Michigan, passed away April 26, 2026, at the age of 87. University of Michigan Aerospace Engineering.
+Original bibliographic record · Full text or implementation reference
+Official university memorial published April 29, 2026. A biographical source, not a numerical-method research paper.
+
+## References by original publication year — 2026 · powell2026# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/references/#2026-powell2026
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — Relativistic hydrodynamics: SRHD, GRHD, and GRMHD [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/
+Coverage: reading
+
+Literature review, checked 6 November 2026. These methods are not implemented
+in the atlas's Newtonian Euler library. The development has several interacting
+branches: conservative shock capture, curved and evolving geometry, magnetic
+constraints, physical-state recovery, high-order methods, radiation, and
+portable parallel computation. Dates below distinguish publication from
+preprint and acceptance dates. This is a selected reading path, not an
+exhaustive review or a ranking of codes.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — What changes from the existing Euler examples?# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#what-changes-from-the-existing-euler-examples
+Coverage: reading
+
+SRHD evolves relativistic matter in flat spacetime. GRHD includes a curved
+metric, which may be prescribed or evolved with Einstein's equations. GRMHD
+also evolves the electromagnetic contribution. A Kerr-background accretion
+calculation and a binary-neutron-star calculation with dynamical spacetime
+therefore test different systems.
+With c = G = 1 and metric signature (-,+,+,+), ideal-fluid equations are
+\nabla_\mu(\rho_0 u^\mu)=0,\qquad
+\nabla_\mu T^{\mu\nu}=0,\qquad
+T^{\mu\nu}=\rho_0 h u^\mu u^\nu+p g^{\mu\nu},\qquad
+h=1+\epsilon+\frac{p}{\rho_0}.
+Here rho0 is rest-mass density and epsilon is specific internal energy. In
+Cartesian SRHD, a common conservative state is
+W=(1-v^2)^{-1/2},\qquad
+D=\rho_0W,\quad S_i=\rho_0hW^2v_i,\quad
+\tau=\rho_0hW^2-p-D.
+It differs from the Newtonian state in the existing benchmarks.
+Primitive recovery is nonlinear. One-dimensional acoustic speeds with zero
+transverse velocity are (v +/- cs)/(1 +/- v cs), not v +/- cs. In a 3+1 GR
+formulation, lapse, shift, spatial volume factors, and metric derivatives
+enter the fluxes and sources. These are structural changes, not a different
+value of gamma. Font (2008) is the
+formulation review used here; the original Valencia reference is below.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — 1972–1998: from curved-background flows to conservative HRSC# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#19721998-from-curved-background-flows-to-conservative-hrsc
+Coverage: reading
+
+Wilson (1972)
+is an early numerical study of gas falling into a Kerr black hole. It provides
+historical context for relativistic fluid computation, rather than a claim
+that fixed-background hydrodynamics solves the full evolving Einstein system.
+The high-resolution shock-capturing (HRSC) branch brings the characteristic
+and conservative methods of classical CFD into relativity.
+Martí and Müller (1994)
+give an exact SR Riemann solution for flow normal to the initial discontinuity.
+That scope matters when selecting multidimensional tests with transverse
+velocities; the original normal-flow reference is not a general transverse
+Riemann solution.
+Banyuls et al. (1997) present the 3+1 local
+characteristic formulation commonly called Valencia. Its conservative state,
+characteristic information, and geometric source terms make modern shock
+capture applicable in GR. It is a central reference, not a claim that all
+earlier relativistic methods were nonconservative.
+Pons et al. (1998) connect GRHD to SR
+Riemann solvers through a local coordinate transformation. Curvature and
+coordinate effects still have to be accounted for outside that local solve.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — 1999–2006: magnetic constraints and dynamical spacetime# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#19992006-magnetic-constraints-and-dynamical-spacetime
+Coverage: reading
+
+Komissarov (1999)
+develops a multidimensional Godunov-type relativistic MHD scheme with magnetic
+flux conservation. HARM, Gammie–McKinney–Tóth (2003)
+combines conservative GRMHD, HLL fluxes, and a Tóth-type CT construction, with
+black-hole torus calculations among its examples. Its original formulation
+must be distinguished from later dynamical-spacetime frameworks.
+Duez et al. (2005) evolve the coupled
+Einstein–Maxwell–MHD system, using BSSN for spacetime and conservative shock
+capture for the matter. This is the additional step needed when matter and
+geometry affect one another dynamically.
+Conservation variables do not remove the need to recover physical fluid
+states. Noble et al. (2006)
+compare nonlinear recovery algorithms, including reductions to one or two
+unknowns. Recovery failure, atmosphere floors, and repairs must be tracked
+separately from truncation error and conserved-variable residuals.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — 2011–2026: the particle branch from GSPH# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#20112026-the-particle-branch-from-gsph
+Coverage: reading
+
+Inutsuka's original GSPH connects to
+Iwasaki–Inutsuka (2011), a Newtonian
+particle MHD method using Riemann problems and Alfvén characteristics.
+It is not itself relativistic.
+Kitajima–Inutsuka–Seno (2026)
+then formulate special relativistic Godunov SPH (SRGSPH). The paper addresses
+convolution-based interactions, unequal baryon numbers, and variable smoothing
+lengths, with shock-tube and Kelvin–Helmholtz examples. It is a direct bridge
+between the requested particle and relativistic branches. The preprint is
+from October 2025; the journal issue is January 2026, despite the DOI's 2025
+identifier. It should not be described as a GRHD implementation.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — 2013 onward: radiation and microphysics add stiff systems# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#2013-onward-radiation-and-microphysics-add-stiff-systems
+Coverage: reading
+
+Sądowski et al. (2013) describe KORAL's
+covariant M1 radiation moments with semi-implicit interaction sources. This
+connects relativistic fluid methods to the atlas's planned implicit and IMEX
+chapters. M1 closes angular moments; it does not solve the full radiation
+distribution without approximation.
+For neutron-star mergers, Foucart (2023)
+reviews leakage, moment, and Monte Carlo neutrino transport and the remaining
+interaction-modeling limitations. Tabulated finite-temperature equations of
+state, composition, transport, and their uncertainties are separate advances
+from the choice of a Riemann flux. Ideal relativistic hydrodynamics also does
+not automatically supply a causal relativistic viscous theory.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — A parallel 1979–2019 branch: causal viscous fluid theory# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#a-parallel-19792019-branch-causal-viscous-fluid-theory
+Coverage: reading
+
+The Newtonian viscous stress cannot simply be
+inserted into relativistic Euler equations without examining causality and
+the initial-value problem. Israel–Stewart (1979)
+provides a central reference for transient dissipative theories with additional
+relaxation variables.
+Bemfica–Disconzi–Noronha (2019) and
+Kovtun (2019) develop a different line:
+appropriate first-gradient constitutive choices and hydrodynamic frames can
+support causal or stable formulations under specified conditions. The former
+paper addresses nonlinear causality without extra extended variables; the
+latter examines stable first-order frames. Their results should not be merged
+into an unconditional claim for every equation of state or transport choice.
+Physical causality, PDE well-posedness, and stability of a discrete time step
+are separate checks. This branch is theory and reading context in the atlas,
+not an implemented viscous relativistic solver.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — 2022–2025: high order with shocks, surfaces, and physical constraints# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#20222025-high-order-with-shocks-surfaces-and-physical-constraints
+Coverage: reading
+
+Deppe et al. (2022) develop a DG–finite
+difference hybrid: attempt a high-order DG update and recompute inadmissible
+regions with robust FD. The 2021 preprint and 2022 publication dates should
+remain distinct. Their binary-neutron-star study (2024 preprint)
+extends the hybrid approach to dynamical spacetime and merger calculations.
+The latter is cited here as a preprint; a separate journal record has not been
+verified in this review.
+Cao–Peng–Wu (2025)
+study physical-constraint-preserving, oscillation-eliminating DG for GRHD,
+including positive thermodynamic states and subluminal velocity under their
+stated scheme assumptions. Their results are not a guarantee for arbitrary
+limiters, fluxes, EOS, or spacetime discretizations. A theorem for a selected
+GRHD formulation and an astrophysical merger-code demonstration are different
+types of evidence.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — 2025–2026: portable GPU computation of the coupled system# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#20252026-portable-gpu-computation-of-the-coupled-system
+Coverage: reading
+
+AthenaK, Fields et al. (2025)
+demonstrates dynamical-spacetime GRMHD and binary-neutron-star mergers on GPUs,
+with CT and first-order flux correction among its numerical ingredients.
+Its preprint is from 2024; the journal reference is ApJS 276, 35 (2025).
+AsterX, Kalinani et al. (2025 issue)
+provides another open GPU-oriented GRMHD framework, based on Valencia and Z4c.
+Its online publication was December 2024. Refinement infrastructure is part
+of those source codes; implementing AMR in this atlas remains deferred.
+GRACE, Musolino et al.
+was accepted by Physical Review D on 2 November 2026, as checked on
+6 November. Its July 2026 preprint
+describes Kokkos-based portability, CT, Z4c coupling, and neutron-star merger
+examples. Acceptance is not a verified final volume/page citation.
+These papers establish examples of portable implementations; they do not
+establish a universal speed or accuracy ranking across hardware and physics.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — What the atlas can reproduce in stages# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#what-the-atlas-can-reproduce-in-stages
+Coverage: reading
+
+The following is an implementation proposal, not a result of this review:
+SRHD: primitive/conservative round trips, characteristic speeds, smooth
+waves, shock tubes, reflection, and transverse-velocity cases. Check EOS
+validity, rho and pressure positivity, and speeds below c.
+SRMHD: add relativistic Alfvén waves, magnetic shock tubes, and a rotor;
+specify the magnetic-divergence operator and every repair/floor.
+Fixed-metric GR: metric-aware flat-space limits, Michel/Bondi accretion,
+equilibrium stars, and torus configurations, with geometric source balance.
+Dynamical GR: couple a separately verified spacetime evolution; monitor
+Einstein constraints, baryon conservation, stellar oscillations, and waveform
+convergence before attempting mergers.
+Radiation or SRGSPH: keep each branch's state, boundary, conservation,
+transport closure, and reference tests explicit. Reuse the Newtonian examples
+as comparisons, not as evidence that a relativistic solver already exists.
+The historical conclusion is that progress comes from the combination of
+these layers. A new high-order reconstruction or a larger GPU run alone does
+not resolve primitive recovery, surface/atmosphere handling, constraint errors,
+or microphysical uncertainty.
+
+## Relativistic hydrodynamics: SRHD, GRHD, and GRMHD — What the atlas can reproduce in stages# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/relativistic-hydrodynamics/#what-the-atlas-can-reproduce-in-stages
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## v0.1.0 — First edition — v0.1.0 — First edition [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/release-notes-v0.1.0/
+Coverage: reading
+
+The first edition of The Art of Numerical Algorithms connects historical
+papers with equations, executable educational implementations, benchmark
+figures, and numerical verification.
+
+## v0.1.0 — First edition — Included# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/release-notes-v0.1.0/#included
+Coverage: reading
+
+An English historical atlas and method notes covering conservation laws, stability, diffusion, boundary conditions, iterative solvers, DG, spectral methods, and MHD.
+A Python library and CLI for Euler, shallow-water, isothermal, linear-advection, diffusion, Poisson, and planar ideal-MHD examples.
+Godunov-type and MUSCL finite volumes, Rusanov/HLL/HLLE/HLLC/Roe fluxes, FD WENO5-JS, modal DG, and Fourier propagation.
+Thomas elimination, matrix-free conjugate gradients, red-black relaxation, and geometric multigrid.
+Minimal dual-time, matrix-scaling, and scalar residual-distribution examples.
+CT and GLM magnetic-constraint demonstrations with distinct divergence diagnostics.
+A 39-entry bibliography with English source notes, generated Markdown and BibTeX, plus a NASA 2D case catalog for future work.
+Automated numerical checks and a gallery-generation workflow for Python 3.9 and 3.12.
+
+## v0.1.0 — First edition — Install and run# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/release-notes-v0.1.0/#install-and-run
+Coverage: reading
+
+Requires Python 3.9 or later. From the repository root:
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install '.[test]'
+python -m pytest -q
+python -m numart.cli gallery --output outputs/gallery
+Start with the reading guide and
+benchmark definitions.
+
+## v0.1.0 — First edition — Scope of this edition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/release-notes-v0.1.0/#scope-of-this-edition
+Coverage: reading
+
+The examples are independently implemented educational models. Their figures
+do not claim to reproduce the original papers' figures. Verification covers
+selected configurations and does not prove general nonlinear stability or
+positivity. Finite-volume and finite-difference errors are identified as
+pointwise comparisons, and CT/GLM divergence measurements name their operators.
+NASA flow cases, multidimensional Euler rotated-hybrid fluxes, low-Mach PDE
+preconditioning, Euler/MHD DG, and multidimensional residual distribution remain
+future work. See the roadmap for next steps and the
+reference notes for unverified original-source details.
+
+## v0.1.0 — First edition — Scope of this edition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/release-notes-v0.1.0/#scope-of-this-edition
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Implementation roadmap — Current priority: shock methods# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#current-priority-shock-methods
+Coverage: reading
+
+Shock-method expansion takes priority over relativity and new subject areas.
+The first published stage adds limited parabolic FV, characteristics, WENO-Z and an AUSM baseline, Roe's Property U with numerical counterexamples, and controlled planar odd–even diagnostics. The second computed stage adds direct-Eulerian traced PPM with independent steepening/flattening switches, specified AUSM+/AUSM+-up fluxes, and conforming-grid cylinder-forebody tests including a directional HLLE/Roe experiment. The recorded strong-jump AUSM+ failure, finite-time bow-shock behavior and unresolved verification are explicit. Lagrange/remap, optimized original Rotated-RHLL, broader strength/rotation studies and external-code comparisons remain future work.
+
+## Implementation roadmap — First edition: executable foundations# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#first-edition-executable-foundations
+Coverage: reading
+
+Version 0.1.0 brings together an educational Python library, a historical atlas,
+English method notes, a bibliographic catalog, comparison figures, and automated
+numerical checks. The repository is the first-edition distribution; the reading
+guide in the README connects the material.
+The NASA case catalog includes computed 15-degree wedge baselines and remaining
+implementation candidates. A separate conforming-grid forebody diagnostic now includes a directional hybrid;
+catalog inclusion alone still does not indicate an implemented simulation.
+
+## Implementation roadmap — Next verification work# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#next-verification-work
+Coverage: reading
+
+Strengthen links between run manifests and saved arrays; report grid and time refinement together with wall-clock costs.
+Add finite-volume cell-average initialization and integrated references, characteristic WENO, positivity limiters, and stronger shock tests.
+Added shallow-water and isothermal Riemann references; topography, well balancing, and numerical dry-bed evolution remain separate implementation steps.
+Extend the new HLLD standard tests with UCT-HLLD, stronger-field cases and external reference-code comparisons.
+Explore nonlinear Fourier methods and dealiasing, Euler DG with limiting, and multidimensional residual distribution.
+Implement low-Mach PDE preconditioning and extend the directional 2D Euler hybrid beyond its stated forebody tests; test entropy correction, positivity, and carbuncle resistance separately.
+Extend elliptic solvers to variable coefficients, anisotropy, line smoothing, FAS, AMG, and 2D mixed boundaries.
+
+## Implementation roadmap — Suggested order for NASA cases# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#suggested-order-for-nasa-cases
+Coverage: reading
+
+Start with wedge and expansion flows to verify 2D Euler fluxes and wall
+boundaries. Use the cavity and Blasius cases to establish viscous, pressure,
+and boundary treatments, then the cylinder to examine unsteady accuracy.
+For RANS, verify model implementations on flat-plate and bump cases before
+moving to airfoils, steps, diffusers, and humps. This order follows dependencies
+and difficulty and complements the atlas's publication chronology.
+
+## Implementation roadmap — Shock gallery: NASA wedges and a forward-facing step# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#shock-gallery-nasa-wedges-and-a-forward-facing-step
+Coverage: reading
+
+Computed the NASA 15-degree wedges at Mach 2.0 and 2.5 with independent
+body-fitted first-order HLL / SSPRK2 finite volumes, two grids and oblique-shock
+references. Added the classical Mach-3 forward step on a 240 × 80 blocked-cell
+mesh, 81 saved states to t = 4 and an MP4, bringing the movie catalog to five.
+The step uses plain reflecting corners, not the entropy/enthalpy reset of the
+original PPM comparison. These are educational inviscid baselines, not Wind-US
+outputs or viscous experimental validations. Setup and limits.
+Mach-5 shock/boundary-layer interaction, Mach-7 viscous ramps and the existing
+transonic diffuser/airfoil cases remain implementation candidates.
+
+## Implementation roadmap — Web edition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#web-edition
+Coverage: reading
+
+The public web edition
+organizes the first-edition library as a historical atlas, method reading room,
+computed gallery, and searchable reference library. Each exhibit connects
+literature, equations, execution, figures, and verification scope.
+The interactive Sod comparison switches between four precomputed MUSCL density
+curves from the Python library. Figures and the original gallery validation
+manifest remain available alongside the complete source edition. Future
+exhibits should continue to distinguish tested educational examples,
+original-figure reproductions, prototypes, literature-only entries, and
+planned work.
+
+## Implementation roadmap — First expansion: interactive numerical notebooks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#first-expansion-interactive-numerical-notebooks
+Coverage: reading
+
+The stability laboratory runs periodic FTCS, upwind, classical LF, and LW
+updates in the browser, with both velocity signs, Fourier amplification,
+pointwise error, and downloadable experiment snapshots. Its numerical kernels
+are checked against the Python implementation across 24 reference cases.
+The convergence notebook makes the existing DG and Euler entropy-wave gallery
+measurements inspectable, including observed slopes and scalar-unknown counts.
+It introduces no new wall-clock ranking or general nonlinear stability claim.
+The experiment guide records definitions and provenance.
+
+## Implementation roadmap — Second expansion: geometry, time, and multidimensional shocks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#second-expansion-geometry-time-and-multidimensional-shocks
+Coverage: reading
+
+Added seven scalar ODE integrators with a temporal notebook; three mesh-connectivity examples with an explorer; 1D SPH kernel reconstruction; a 1D ALE geometric-conservation check; and cylindrical gradient, Newtonian stress, and stress-divergence operators verified against analytic fields. The coordinate and viscosity chapter distinguishes physical components from coordinate-basis tensors.
+The 2D Double Mach Reflection baseline now computes an actual Mach-10 interaction with first-order HLL and SSPRK2. Higher-order reconstruction, full grid refinement, and resolution of the fine wall jet remain future work. The NASA wedge baselines were added later; the cataloged viscous and turbulence cases remain unimplemented. Blunt-body carbuncle comparisons beyond the new planar diagnostic, a complete SPH fluid solver, unstructured flow fluxes, and a complete ALE Euler solver also remain future work. The Roe memorial is sourced from official university records.
+
+## Implementation roadmap — Third expansion: Hamiltonian maps and particle gravity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#third-expansion-hamiltonian-maps-and-particle-gravity
+Coverage: reading
+
+Added fixed-step canonical maps and a notebook for harmonic/quartic oscillators; periodic 3D CIC/FFT PM; an isolated softened octree with monopole/full second moments; isolated doubled-grid convolution; and sampled/continuum slab Green-transform options. Figures have dedicated source manifests. P³M corrections, a coupled TreePM solver, FMM translations, cosmological expansion, shear-periodic remapping, and a gravity-coupled SPH fluid integrator remain future work.
+
+## Implementation roadmap — Fourth expansion: nonsteady movies and smooth KEEP# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#fourth-expansion-nonsteady-movies-and-smooth-keep
+Coverage: reading
+
+Added saved-state output that leaves solver time steps unchanged, four numerical movies with frame inspection and MP4 export, and the original second-order Cartesian KEEP flux with smooth-vortex refinement. Steady fields retain still images. The KEEP implementation excludes shock stabilization, later PEP/redefined variants, high-order curvilinear forms, and the 3D TGV/LES examples discussed in the reading guide.
+
+## Implementation roadmap — Fifth expansion: limiters, RK families, and CIP# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#fifth-expansion-limiters-rk-families-and-cip
+Coverage: reading
+
+Added selectable MUSCL slopes, TVB modified-minmod and positive-reconstruction building blocks, nine explicit RK tableaus with nonlinear stage verification, twelve oscillator methods, and original cubic-Hermite CIP with a conservation counterexample. Full Euler-update positivity is still a separate extension.
+
+## Implementation roadmap — Sixth expansion: equations, sparse systems and kinetic transport# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#sixth-expansion-equations-sparse-systems-and-kinetic-transport
+Coverage: reading
+
+Added nine saved-profile cases across seven equation families, including
+Burgers and LWR traffic. Scalar exact cell averages and conserved cell means of
+semi-analytic Euler/shallow-water/isothermal Riemann references are distinguished.
+The reference library adds 18 formula-based cases,
+including vacuum/dry fans, viscous profiles and a manufactured Poisson field.
+The new continuous P1 FEM, sparse/nonlinear solvers,
+stiff ODE integrators, periodic MAC projection,
+D2Q9–BGK, and first-order hyperbolic diffusion baseline
+have dedicated numerical checks, figures and source-hashed manifests.
+Chapman–Enskog expansion is a formal derivation linked to
+the measured shear viscosity. These educational additions are included in the
+published atlas at https://koyamahr.github.io/numerical-methods-atlas/ . Their
+implementation limits and remaining verification work are stated in each chapter.
+
+## Implementation roadmap — Authorized next work# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#authorized-next-work
+Coverage: reading
+
+Added — Roe's Property U: original four conditions, parameter-vector derivation, jump/consistency/eigenbasis checks and an expansion-discontinuity counterexample; see the explanation.
+Inutsuka's GSPH: Gaussian convolution and specific-volume reconstruction,
+oriented pair Riemann states, a matched conservative energy update, and
+smooth/contact/shock-tube verification before variable smoothing lengths.
+The Iwasaki–Inutsuka GSPMHD extension is a later, separately verified stage;
+see the source notes and staged plan.
+Relativistic hydrodynamics is a source-based extension plan: SRHD recovery
+and characteristic tests before SRMHD, fixed-metric GR, and independently
+verified Einstein–matter coupling. Radiation and SRGSPH are separate branches;
+see the development review checked in November 2026.
+First stage added: limited parabolic FV, conservative characteristics and FD WENO-Z with Sod/contact/Shu–Osher comparisons. Direct-Eulerian tracing/steepening/flattening are now added in the second stage; Lagrange/remap remain separate.
+AUSM common-sound-speed baseline retained; specified AUSM+ and AUSM+-up fluxes, matched traced-PPM cases and a recorded admissibility failure are added in the second stage.
+Completed web stage: HLLD with Brio–Wu, Alfvén-wave refinement and weak field-loop CT-Contact/GLM comparisons; see the MHD tests.
+
+## Implementation roadmap — Authorized next work# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#authorized-next-work
+Coverage: reading
+
+Planned — electromagnetic FDTD (finite-difference time-domain): Yee-grid
+placement, leapfrog Maxwell updates, CFL limits and numerical dispersion;
+start with vacuum-wave and conducting-cavity tests, then absorbing boundaries
+and PML reflection checks. Implementation and dedicated verification are pending.
+Planned — plasma PIC (Particle-in-Cell): start with electrostatic
+particle–Poisson coupling, then electromagnetic particle–Maxwell coupling.
+Cover particle shapes, deposition/gather, Boris pushing, charge-conserving
+current deposition and Gauss-law diagnostics. Plan plasma-oscillation,
+two-stream and Landau-damping tests, with energy, noise and grid/time/particle
+refinement checks. Existing gravitational PM is a separate scoped example.
+The WarpX PIC theory notes
+are a starting reference; no plasma PIC solver is implemented here yet.
+Stiff integration: higher-order IMEX, embedded DIRK, variable-step BDF and operator splitting beyond the implemented BE/BDF2/SDIRK2/IMEX-Euler models.
+Sparse/nonlinear solvers: matrix-free Newton–Krylov, robust reorderings/fill, flexible preconditioning and broader nonlinear benchmarks beyond the implemented fixed-right GMRES/BiCGSTAB and ILU(0).
+Viscous/incompressible flow: wall projection, SIMPLE/PISO, cavity and cylinder-wake validation beyond periodic Taylor–Green.
+
+## Implementation roadmap — Authorized next work# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#authorized-next-work
+Coverage: reading
+
+FEM: mixed velocity–pressure pairs, inf–sup checks, curved/irregular meshes and natural/mixed boundary assembly.
+LBM: MRT/TRT/cumulant collisions, thermal and multiphase models beyond low-Mach isothermal D2Q9–BGK.
+Hyperbolic diffusion: full second-order RD, anisotropy and unified advection/viscous systems beyond the periodic first-order baseline.
+AMR is deferred at the author’s request; it is not part of this expansion.
+
+## Implementation roadmap — Biological and geophysical survey additions# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#biological-and-geophysical-survey-additions
+Coverage: reading
+
+The biological catalog contains 22 survey-only model
+families, with equations, source conventions and proposed verification.
+A practical implementation sequence is logistic/SIR and enzyme kinetics,
+then Fisher fronts, FitzHugh–Nagumo, Schnakenberg and Keller–Segel, with a
+birth–death SSA as a separate stochastic branch. No biological solver or
+biological validation is added by the survey.
+Arakawa A/B/C has variable-location diagrams and
+tested semi-discrete f-plane Fourier symbols. D/E, vertical staggering,
+nonlinear potential-vorticity schemes, Kelvin/Rossby waves and coastlines
+remain additional work. This is not a full geophysical dynamical core.
+
+## Implementation roadmap — Planned machine-learning numerics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#planned-machine-learning-numerics
+Coverage: reading
+
+Status: revision candidates; the dedicated explanations, implementations and
+verification below have not been added. Start with stable function evaluation,
+automatic differentiation and optimization as shared foundations for Volume 1.
+Scientific machine-learning applications are later candidates. These plans do
+not add to implemented-method counts, and no release date is assigned.
+Mixed-precision arithmetic and the design of low-precision GPU computations are
+outside the current scope. Ordinary floating-point roundoff and stable function
+evaluation remain part of the shared foundations.
+ Softmax and log-sum-exp: maximum shifting, log-softmax, exponential
+overflow and underflow. Plan checks for large inputs, invariance under constant
+shifts, probability sums and derivative consistency. See the
+SciPy softmax notes.
+ Cross-entropy and stable loss evaluation: compute directly from logits,
+connect to log-sum-exp, and cover sigmoid and binary cross-entropy. Check finite
+values and analytic gradients for extreme inputs. Start from the
+PyTorch cross-entropy documentation.
+ Automatic differentiation and backpropagation: forward/reverse modes,
+the chain rule, Jacobian–vector products (JVPs), vector–Jacobian products (VJPs)
+and Hessian–vector products. Distinguish symbolic and finite-difference
+derivatives; cover roundoff, nondifferentiable points and intermediate-storage
+
+## Implementation roadmap — Planned machine-learning numerics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#planned-machine-learning-numerics
+Coverage: reading
+
+costs. Use the JAX autodiff guide
+and plan analytic/directional derivative comparisons.
+ Implicit differentiation, adjoints and differentiable solvers:
+sensitivities through linear solves, converged nonlinear systems and time
+evolution. Distinguish unrolling iterations from differentiating the defining
+equations; state Jacobian invertibility, solve tolerances and gradient checks.
+The implicit-differentiation paper
+is a starting reference.
+ Machine-learning optimization: gradient
+descent/SGD, momentum, Adam, L-BFGS and Gauss–Newton/Levenberg–Marquardt.
+Distinguish objective minimization from the existing Newton root solves;
+compare scaling, conditioning, learning rates and gradient norms.
+Do not claim universal convergence or a universal ranking.
+ Application candidate — PINNs and inverse problems: separate PDE,
+initial/boundary and observation losses; compare with conventional finite
+differences/FEM using shared error measures. A lower training loss alone is
+not a PDE-error guarantee. See the authors' PINN notes
+and failure-mode study.
+ Application candidate — neural operators/Fourier neural operators:
+connect learned function-to-solution maps with the existing Fourier bases and
+spectral methods. Plan separate checks of out-of-distribution behavior, grid
+changes, discretization and aliasing errors; changing grid resolution alone
+does not guarantee accuracy. See the
+
+## Implementation roadmap — Planned machine-learning numerics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#planned-machine-learning-numerics
+Coverage: reading
+
+neural-operator paper.
+ Application candidate — symbolic regression and equation discovery:
+search for explicit expressions from data or learned models, separately from
+automatic derivative evaluation. Assess noise, dimensions/symmetries,
+expression complexity and independent-data checks. Consider the study on
+extracting symbolic models from deep learning.
+
+## Implementation roadmap — Planned quantum chemistry and DFT# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#planned-quantum-chemistry-and-dft
+Coverage: reading
+
+Status: planned; implementation and the dedicated literature review have not
+started. No release date is assigned. This is a separate electronic-structure
+branch, with the following development checklist. None of these planned items
+adds to the current implemented-method or equation counts.
+ Schrödinger eigenproblems: begin with one-electron models, including
+the harmonic oscillator and hydrogenic radial problem. Compare finite
+differences, finite elements and spectral discretization, recording boundary,
+domain-truncation and resolution errors separately.
+ Electronic-structure bases: introduce atomic orbitals, Gaussian and
+Slater functions, plane waves and real-space grids. Include overlap matrices
+and generalized eigenproblems. Connect to the existing
+element-basis notebook, while distinguishing its
+mesh-local polynomial examples from molecular orbital basis sets.
+ Coulomb and Hartree potentials: connect electronic charge density to
+Poisson solvers. State electrostatic units, charge signs, isolated/periodic
+boundaries, zero modes and self-interaction conventions explicitly; do not
+silently reuse gravitational signs or normalizations.
+ Hartree–Fock: develop a small closed-shell molecular example with
+matrix assembly, a generalized eigenvalue solve and a self-consistent field
+loop. Verify the required integral machinery before presenting energies.
+
+## Implementation roadmap — Planned quantum chemistry and DFT# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#planned-quantum-chemistry-and-dft
+Coverage: reading
+
+ Kohn–Sham density functional theory: explain the density, effective
+potential and exchange–correlation approximation. Start with an explicitly
+identified LDA model; GGA and later functionals require their own verification.
+ SCF iteration and mixing: compare damping, density/potential mixing
+and Pulay/DIIS acceleration. Report electron-number checks, eigenproblem and
+SCF residuals, energy changes and explicit nonconvergence.
+ Verification examples: use one-electron references and small atoms or
+molecules, with basis/grid refinement and independent reference-code checks.
+Separate discretization error, SCF tolerance and physical-model differences.
+The intended first milestones are a verified one-electron eigensolver, followed
+by a minimal-basis Hartree–Fock example, then a clearly scoped Kohn–Sham DFT
+example. Periodic materials, pseudopotentials, spin-dependent extensions and
+post-Hartree–Fock correlation are later branches, rather than promises of the
+first implementation. This plan does not change the current priority of the
+fluid-method work above, and AMR remains deferred.
+The next editorial priority is to connect shared equations to multiple
+verified discretizations, cost/error evidence and explicit failure cases,
+while retaining separate labels for surveys, prototypes and verified models.
+
+## Implementation roadmap — Planned quantum chemistry and DFT# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#planned-quantum-chemistry-and-dft
+Coverage: reading
+
+Reference-element basis functions now have an executable Legendre/nodal notebook, including exact and quadrature mass, affine metric scaling and triangular P2 shapes. Curved-element metrics, orthogonal simplex modes and higher-order FEM/DG fluid assembly remain separate extensions.
+
+## Implementation roadmap — Verified Euler and MHD comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#verified-euler-and-mhd-comparisons
+Coverage: reading
+
+Added 2D primitive MUSCL with minmod/MC, exact-cell-average smooth refinement, NASA wedge first/second-order comparisons on two grids, and three forward-step reconstruction clips. The comparison page fixes HLL/SSPRK2 and exposes diagnostics. Added full-vector HLLD, Brio–Wu, four-grid circular Alfvén waves and weak magnetic loops on two grids with HLLE/HLLD × CT-Contact/GLM. Source/artifact hashes, conservative arrays, positivity/retry/fallback diagnostics and bilingual scope notes accompany the MHD page. These complete the agreed three web stages; books remain deferred.
+
+## Implementation roadmap — Same-system Poisson solvers# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#same-system-poisson-solvers
+Coverage: reading
+
+The comparison notebook adds Jacobi, weighted Jacobi, red-black GS/SOR, CG, V-cycles, FFT/DST and separable DST+Thomas under one residual target. Two broad-source problems, a single-eigenmode diagnostic, three timing trials and a separate 1D Thomas table expose the differences. Definitions and limits.
+
+## Implementation roadmap — Same-system Poisson solvers# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roadmap/#same-system-poisson-solvers
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Remembering Philip L. Roe — Remembering Philip L. Roe [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roe-memorial/
+Coverage: reading
+
+Philip Lawrence Roe died on April 26, 2026, aged 87. The University of Michigan’s memorial by Ken Powell records his contributions to aerospace engineering, numerical methods, teaching, and the computational fluid dynamics community.
+This atlas remembers him through a question that remains central to its subject: how can a numerical method preserve the wave structure of the equations while making the computation practical?
+
+## Remembering Philip L. Roe — A career in computational fluid dynamics# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roe-memorial/#a-career-in-computational-fluid-dynamics
+Coverage: reading
+
+Roe worked at the Royal Aircraft Establishment from 1962 to 1984, became a professor at Cranfield, and joined the University of Michigan in 1990. He retired in 2021. Michigan’s official retirement memoir documents this chronology and his 2015 AIAA Fluid Dynamics Award. The university memorial also recalls his role with Bram van Leer and Ken Powell in establishing the Keck CFD laboratory.
+
+## Remembering Philip L. Roe — The 1981 idea, still executable# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roe-memorial/#the-1981-idea-still-executable
+Coverage: reading
+
+In Approximate Riemann solvers, parameter vectors, and difference schemes, Roe developed a way to replace a nonlinear interface problem with a carefully constructed linearized system. A defining condition is
+\widetilde A(U_L,U_R)(U_R-U_L)=F(U_R)-F(U_L).
+Together with consistency and a usable characteristic decomposition, this connects a conservative flux difference to recognizable waves. The Sod comparison and the atlas home-page selector let readers inspect one educational 1D Euler implementation of this idea alongside HLL, HLLC, and Rusanov.
+Our code uses acoustic entropy smoothing. It is an independent teaching implementation, not Roe’s original software. His name identifies a much broader body of work than this one exhibit.
+
+## Remembering Philip L. Roe — Precision as a form of respect# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roe-memorial/#precision-as-a-form-of-respect
+Coverage: reading
+
+The same wave resolution that makes an approximate solver useful invites careful questions about entropy, low densities, and multidimensional shocks. The carbuncle chapter treats these as separate numerical issues and points to later research. Studying such limits is part of understanding the method’s contribution.
+Roe’s later interests included Active Flux; the Michigan MICDE profile provides an institutional starting point. Active Flux is a reading direction here, not an implemented solver.
+We dedicate this reading room’s Roe notes to his memory: an invitation to read the original work, examine the equations, and keep testing the computation.
+
+## Remembering Philip L. Roe — Precision as a form of respect# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/roe-memorial/#precision-as-a-form-of-respect
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Runge–Kutta families: stages, order, stability, and SSP — Runge–Kutta families: stages, order, stability, and SSP [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/
+Coverage: reading
+
+RK2 and RK4 denote orders, while SSP describes a stability-inheritance
+property. These labels answer different questions. The
+Runge–Kutta family notebook
+compares nine explicit methods, their full stage coefficients, nonlinear
+predictors, linear stability contours, and measured refinement orders.
+
+## Runge–Kutta families: stages, order, stability, and SSP — One step, several right-hand-side evaluations# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#one-step-several-right-hand-side-evaluations
+Coverage: reading
+
+An explicit s-stage Runge–Kutta method for y′=f(t,y) is
+Y_i=y_n+h\sum_{j<i}a_{ij}k_j,\qquad
+k_i=f(t_n+c_i h,Y_i),\qquad
+y_{n+1}=y_n+h\sum_{i=1}^s b_i k_i,
+\qquad c_i=\sum_{j<i}a_{ij}.
+The Butcher tableau arranges c, A, and b into one coefficient diagram.
+The number of stages s counts RHS evaluations in this implementation. Order p
+means a global error of O(h^p) under the required smoothness, stability, and
+fixed-interval assumptions. Stage predictors Y_i are generally not accurate
+solutions at intermediate times. Stage times can go backward: SSPRK(4,3)
+evaluates at c=(0,1/2,1,1/2). Time-dependent forcing and boundary data must use
+the correct c_i, not just the next chronological fraction of a step.
+
+## Runge–Kutta families: stages, order, stability, and SSP — RK2 is a family# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#rk2-is-a-family
+Coverage: reading
+
+The two-stage, second-order family can be written
+k_1=f(t_n,y_n),\quad
+k_2=f(t_n+\alpha h,y_n+\alpha h k_1),\quad
+y_{n+1}=y_n+h\left[\left(1-\frac1{2\alpha}\right)k_1+
+\frac1{2\alpha}k_2\right].
+Heun / explicit trapezoid takes alpha=1; explicit midpoint takes alpha=1/2;
+Ralston takes alpha=2/3. Heun is also SSPRK(2,2). For the full nonlinear
+methods here, their SSP coefficients are respectively 1, 0, and 1/2, as checked
+from the absolute-monotonicity inequalities for the complete tableau.
+All three have the same scalar linear stability polynomial
+R(z)=1+z+\tfrac12 z^2,\qquad z=h\lambda.
+Consequently their trajectories on y′=lambda y coincide in exact arithmetic.
+Their nonlinear stages and errors need not coincide. The notebook therefore
+also computes y′=−y², y(0)=1, whose exact solution is 1/(1+t). This separates
+methods that an oscillator alone cannot distinguish. One benchmark does not
+establish a universally best RK2 variant.
+
+## Runge–Kutta families: stages, order, stability, and SSP — RK3, classical RK4, and SSP stage counts# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#rk3-classical-rk4-and-ssp-stage-counts
+Coverage: reading
+
+The implemented third-order group contains Kutta's classical three-stage
+method, SSPRK(3,3), and SSPRK(4,3). The first two share
+R(z)=1+z+z²/2+z³/6, but their nonlinear SSP coefficients differ: 0 and 1.
+SSPRK(4,3) uses a fourth RHS evaluation, has C=2, and adds z⁴/48 to that
+polynomial. Four stages do not make it fourth order.
+Classical four-stage RK4 uses weights (1/6,1/3,1/3,1/6). Its stability
+polynomial adds z⁴/24 instead, and it is fourth order. Its general nonlinear
+SSP coefficient is zero. This does not say that every RK4 computation
+oscillates; it says the generic forward-Euler SSP inheritance guarantee is
+unavailable. The Numipedia RK4 record
+lists its tableau and scalar stability properties.
+For comparison, the notebook implements the five-stage fourth-order
+Spiteri–Ruuth SSP method, labeled SSPRK(5,4). Its full coefficients are given
+in section 3.1 of the
+Gottlieb–Ketcheson–Shu review.
+The implementation converts that decimal Shu–Osher form to a Butcher tableau;
+representing increments relative to y_n avoids drift from rounded affine
+weights. It uses the conservative rounded bound C=1.508, rather than claiming
+an exact rational coefficient. Order conditions and nonlinear refinement are
+checked at the supplied coefficient precision.
+For standard explicit RK methods with a positive general nonlinear SSP
+
+## Runge–Kutta families: stages, order, stability, and SSP — RK3, classical RK4, and SSP stage counts# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#rk3-classical-rk4-and-ssp-stage-counts
+Coverage: reading
+
+coefficient, the order is at most four. A four-stage fourth-order explicit
+method cannot have C>0; fourth-order SSP therefore needs additional stages.
+SSPRK(5,4) is one example, not a claim that every five-stage fourth-order
+method is SSP. See Spiteri–Ruuth (2002)
+and Gottlieb–Ketcheson–Shu (2009).
+
+## Runge–Kutta families: stages, order, stability, and SSP — What SSP preserves# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#what-ssp-preserves
+Coverage: reading
+
+Suppose a particular semidiscrete spatial operator L satisfies a convex
+stability property under forward Euler for h ≤ h_FE. An SSP method with
+coefficient C inherits that property under
+h\le C h_{\rm FE}.
+The premise might concern total variation, a norm, or an admissible convex
+set, provided the actual operator and its stage treatment satisfy the premise.
+SSP does not create a TVD spatial discretization, cure an inappropriate
+boundary condition, or supply missing positive Euler states. The
+SSP review by Gottlieb–Shu–Tadmor (2001)
+develops this viewpoint. Compare it with the separate
+slope-limiter and positive-reconstruction
+requirements.
+The family labels are SSPRK(s,p): stages first, order second. In this
+edition, Heun / SSPRK(2,2) has C=1, SSPRK(3,3) has C=1, SSPRK(4,3) has C=2,
+and SSPRK(5,4) has C=1.508 as a rounded bound. The SSP step bound per RHS
+evaluation, C/s, is useful context but is not a wall-clock performance ranking.
+Memory traffic, storage, spatial accuracy, and other stability constraints
+can decide the actual cost.
+
+## Runge–Kutta families: stages, order, stability, and SSP — Linear stability is a separate picture# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#linear-stability-is-a-separate-picture
+Coverage: reading
+
+For y′=lambda y, one step multiplies y by
+R(z)=1+z\,b^T(I-zA)^{-1}{\bf1}.
+The region |R(z)|≤1 is the scalar absolute-stability region. Its boundary is
+sampled on a 401×401 grid over Re(z)∈[−6,2], Im(z)∈[−4,4]. The curves in the
+notebook are approximate contours, not rigorous boundary locations. An
+eigenvalue of a normal linear spatial operator suggests where to evaluate R;
+eigenvalues alone may miss transient growth for a nonnormal operator.
+For the undamped oscillator, RK2 has no nonzero imaginary-axis stability
+interval, while SSPRK(3,3) and classical RK4 do. This concerns the scalar
+linear problem; it does not contradict Heun's SSP property, because forward
+Euler itself has no nonzero stable step on that oscillator.
+
+## Runge–Kutta families: stages, order, stability, and SSP — Other branches of the time-integration family# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#other-branches-of-the-time-integration-family
+Coverage: reading
+
+Embedded RK pairs, such as Dormand–Prince 5(4), use two orders to estimate
+error and select a step. Here those parentheses describe the embedded orders,
+unlike the stage/order pair in SSPRK(s,p). No embedded error estimator,
+adaptive controller, dense output, or FSAL optimization runs in this edition.
+Low-storage RK methods reorganize stage calculations to reduce stored arrays;
+they are not automatically SSP. Implicit RK families include midpoint and
+Gauss/Radau/SDIRK methods, with nonlinear solves and their own stability
+properties. IMEX pairs split explicit and implicit operators. These are
+reading context, except for the existing scalar linear backward-Euler and
+implicit-midpoint demonstrations. The generic rk_step below supports the
+nine explicit tableaus only. Leapfrog is a multistep recurrence; mechanical
+Verlet and the symplectic maps form another distinct branch.
+
+## Runge–Kutta families: stages, order, stability, and SSP — Reproduction and verification# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#reproduction-and-verification
+Coverage: reading
+
+from numart.runge_kutta import rk_step, nonlinear_trajectory
+value, stages = rk_step(lambda t, y: -y*y, 0., 1., 0.5,
+ method="ssprk43", return_stages=True)
+t, y = nonlinear_trajectory("ssprk54", steps=40)
+python scripts/build_runge_kutta.py
+python scripts/sync_web_content.py
+The JSON records all tableaus, contours, 27 one-step stage cases (h=0.25,0.5,1),
+and nine refinement studies (N=10,20,40,80, T=1), plus source hashes. Errors
+use the exact nonlinear solution; stages are actual RHS evaluations. Tests
+check all order conditions through order four, a nonlinear manufactured
+time-dependent equation, complex linear stability factors, full-tableau SSP
+inequalities at the stated C, and scalar MUSCL conservation/TVD under the
+inherited step restriction. These do not turn the existing Euler/WENO solvers
+into selectable-RK or fully positivity-preserving implementations.
+
+## Runge–Kutta families: stages, order, stability, and SSP — Reproduction and verification# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/runge-kutta/#reproduction-and-verification
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Traced PPM, AUSM variants and curved bow shocks — Traced PPM, AUSM variants and curved bow shocks [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/
+Coverage: reading
+
+Open the new computed comparison. This stage adds a direct-Eulerian characteristic-traced PPM update, specified AUSM+ and AUSM+-up fluxes, and a circular-cylinder forebody diagnostic. The earlier method-of-lines reconstruction and planar odd–even experiment retain their original data and scope.
+
+## Traced PPM, AUSM variants and curved bow shocks — Direct-Eulerian PPM and independent switches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#direct-eulerian-ppm-and-independent-switches
+Coverage: reading
+
+numart.ppm_traced reconstructs primitive density, velocity and pressure from conserved cell means. It uses MC-limited parabolic interpolation, optional density contact steepening, optional shock flattening and componentwise parabolic monotonicity constraints. Mean conserved states are updated by a shared face flux. A primitive profile reconstructed from a conserved mean is a second-order representation; it is not an exact average of primitive variables.
+For each primitive profile, with local cell coordinate xi in [0,1],
+q(\xi)=q_L+\xi[\Delta q+q_6(1-\xi)],\qquad
+\Delta q=q_R-q_L,\qquad q_6=6q_i-3(q_L+q_R).
+Average over a fraction sigma of the domain next to either edge:
+I_R(\sigma)=q_R-\frac{\sigma}{2}\left[\Delta q-\left(1-\frac{2\sigma}{3}\right)q_6\right],\qquad
+I_L(\sigma)=q_L+\frac{\sigma}{2}\left[\Delta q+\left(1-\frac{2\sigma}{3}\right)q_6\right].
+The three wave speeds are u−c, u and u+c. For each incoming family, sigma=|lambda| dt/dx. Starting from the fastest incoming wave's domain average, correct the other incoming characteristic components using a primitive eigenbasis frozen at the cell state. These are time-averaged Riemann inputs for one conservative step. Applying an additional SSPRK3 wrapper to this predictor would define a different method. The default flux is HLLC and CFL is 0.4.
+
+## Traced PPM, AUSM variants and curved bow shocks — Direct-Eulerian PPM and independent switches# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#direct-eulerian-ppm-and-independent-switches
+Coverage: reading
+
+The construction follows the direct-Eulerian characteristic-domain approach in the inspected Colella–Woodward author preprint, with the 1984 paper as the original publication. The Cholla author manuscript, Appendix A is an additional algorithmic cross-check. The implementation is independent: it does not reproduce every production-code option, multidimensional CTU, artificial viscosity, Lagrangian evolution or remap. Some displayed Cholla appendix signs/indices are inconsistent with the described neighboring-cell construction; the explicit formulas below and executable checks define this variant.
+
+## Traced PPM, AUSM variants and curved bow shocks — Contact steepening and shock flattening# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#contact-steepening-and-shock-flattening
+Coverage: reading
+
+Steepening changes density edges only. Let D2_i=(rho_(i+1)−2rho_i+rho_(i−1))/6. Require D2_(i−1) D2_(i+1)<0, a relative density jump above 0.01, and a relative pressure jump smaller than 0.1 gamma times the relative density jump. Then
+\widetilde\eta_i=-\frac{D^2_{i+1}-D^2_{i-1}}{\rho_{i+1}-\rho_{i-1}},\qquad
+\eta_i=\operatorname{clip}\!\left(20(\widetilde\eta_i-0.05),0,1\right).
+Blend the density left edge toward rho_(i−1)+delta_rho_(i−1)/2 and the right edge toward rho_(i+1)−delta_rho_(i+1)/2, using MC slopes in those neighboring cells. This suppresses contact spreading but can sharpen an under-resolved smooth density transition. It should not be treated as a universal accuracy improvement.
+Flattening uses S_i=(p_(i+1)−p_(i−1))/(p_(i+2)−p_(i−2)). The preliminary coefficient is clip(10(S_i−0.75),0,1), enabled only for a relative pressure jump at least 1/3 and a compressive velocity difference. Take the larger coefficient of the cell and its lower-pressure neighbor. Every primitive edge is blended toward its cell value before monotonicity enforcement. A coefficient of 1 removes the spatial variation; 0 leaves it unchanged.
+
+## Traced PPM, AUSM variants and curved bow shocks — Contact steepening and shock flattening# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#contact-steepening-and-shock-flattening
+Coverage: reading
+
+Reconstructed inputs that violate density/pressure thresholds of 1e−12 use a common conservative affine scaling about the unchanged cell mean. Invalid completed updates retry with half the time step, up to 14 attempts. These are safeguards, not a fully discrete positivity proof. Failure preserves the last accepted state and actual time. No state clipping, hidden flux substitution or false final-time label is used.
+The four switch combinations use identical flux, nominal CFL and update algorithm. At N=200 for one moving-contact crossing, steepening reduces density error while pressure and velocity stay constant to roundoff. Smooth entropy-wave grids N=32,64,128 show approximately second-order convergence of the complete traced method; no third- or fourth-order time-accuracy claim is made.
+
+## Traced PPM, AUSM variants and curved bow shocks — AUSM+ and AUSM+-up with stated controls# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#ausm-and-ausm-up-with-stated-controls
+Coverage: reading
+
+The older arithmetic-sound-speed AUSM baseline stays separate. The new fluxes use fourth-degree Mach and fifth-degree pressure splitting. For |M|<1,
+\mathcal M_4^\pm(M)=\pm\left[\frac{(M\pm1)^2}{4}+\frac{(M^2-1)^2}{8}\right],\qquad
+\mathcal P_5^\pm(M)=\frac{(M\pm1)^2(2\mp M)}4\pm\alpha M(M^2-1)^2.
+Outside this interval, use signed upwind Mach and pressure fractions. Both variants use the directional critical-enthalpy sound speed employed in the 2006 formulation:
+a_{*,k}^2=\frac{2(\gamma-1)}{\gamma+1}H_k,\qquad
+a_f=\min\left(\frac{a_{*,L}^2}{\max(a_{*,L},u_L)},
+\frac{a_{*,R}^2}{\max(a_{*,R},-u_R)}\right).
+The displayed AUSM+ has alpha=3/16 and no pressure/velocity diffusion terms. It is the specified basic member of this formulation, not a claim to reproduce every 1996 interface-sound-speed option. AUSM+-up uses Kp=0.25, Ku=0.75, sigma=1 and a reference Mach cutoff of 0.1:
+\overline M^2=\frac{M_L^2+M_R^2}{2},\quad
+M_0=\sqrt{\min(1,\max(\overline M^2,M_{\rm ref}^2))},\quad
+f_a=M_0(2-M_0),\quad\alpha=\frac{3}{16}(5f_a^2-4).
+Add the pressure diffusion term to the interface Mach number and velocity diffusion to its pressure:
+M_p=-\frac{K_p}{f_a}\max(1-\overline M^2,0)
+\frac{p_R-p_L}{\overline\rho a_f^2},\qquad
+p_u=-K_u f_a\mathcal P_5^+(M_L)\mathcal P_5^-(M_R)
+(\rho_L+\rho_R)a_f(u_R-u_L).
+
+## Traced PPM, AUSM variants and curved bow shocks — AUSM+ and AUSM+-up with stated controls# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#ausm-and-ausm-up-with-stated-controls
+Coverage: reading
+
+Upwind density, velocity and total enthalpy using the resulting mass-flux sign. Add interface pressure to normal momentum. Tests check uniform flow, both supersonic directions, contacts, stationary normal shocks, sonic branch limits, reversal conservation and rotational covariance.
+Liou (1996) and Liou (2006) are the original references. The sound-speed and diffusion definitions were cross-checked against the official SU2 implementation. Our Python code is independent and supplies no implicit Jacobian or time preconditioning.
+The low-Mach graph varies the cutoff across 0.01,0.1,1 for a tiny fixed pressure jump. It is a flux sensitivity, not verification of a low-Mach vortex, boundary layer or asymptotic-preserving PDE scheme. A cutoff and the time-step restriction remain part of the numerical method.
+
+## Traced PPM, AUSM variants and curved bow shocks — Matched one-dimensional problems and a recorded failure# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#matched-one-dimensional-problems-and-a-recorded-failure
+Coverage: reading
+
+All new 1D runs use traced PPM with CFL 0.4. The flux comparison fixes contact steepening off and shock flattening on. It switches HLLC, old AUSM, AUSM+ and AUSM+-up. These are independent adaptive-CFL runs, not matched-step or matched-cost timings.
+The cases are Sod N=200, moving contact N=200, Shu–Osher N=240, and a strong pressure jump N=200. The first three retain the setups in the earlier comparison. The last uses primitive left (1,0,1000), right (1,0,0.01), gamma=1.4, a jump at x=0.5, extrapolated ends and t=0.01 on [0,1]. Its waves remain away from the boundaries at that time.
+Sod and strong-jump density errors use front-split 24/48-point quadrature of conserved Riemann states. The moving-contact reference returns to its initial cell means after one crossing. Shu–Osher retains the earlier internal characteristic FD WENO-Z N=960 reference; it is numerical, not exact, and no exact error is reported. Point-reference curves and primitive variables of conserved means have distinct conventions.
+
+## Traced PPM, AUSM variants and curved bow shocks — Matched one-dimensional problems and a recorded failure# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#matched-one-dimensional-problems-and-a-recorded-failure
+Coverage: reading
+
+The stated strong-jump AUSM+ configuration exhausts its admissibility retries before t=0.01. Its table reports failure and the actual stopping time; it is excluded from the final-time curves. The download retains the last accepted conserved state and reason. This demonstrates that the implemented flux, reconstruction safeguards and nominal CFL together do not establish update positivity. Other completed runs can also require retries; inspect their counts.
+
+## Traced PPM, AUSM variants and curved bow shocks — A conservative mesh around the cylinder nose# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#a-conservative-mesh-around-the-cylinder-nose
+Coverage: reading
+
+The 2D experiment covers only the upstream half of a unit circular cylinder: r in [1,4], theta in [pi/2,3pi/2], with flow in the positive x direction. Straight-sided annular quadrilaterals conform to the polygonal approximation of the body. Two grids have 24×48 and 48×96 cells. Radius and angle are uniformly spaced, but physical cells are not squares.
+Cartesian conserved variables use face-normal numerical fluxes with shared face lengths. Polygon areas, radial chord normals and angular-face normals obey geometric closure to roundoff. This avoids curvilinear momentum source terms. Tests check free-stream preservation when the wall is disabled, reflection of wall-normal momentum, zero wall mass/energy flux and the integrated flux budget.
+Use rho_inf=1.4, p_inf=1, u_inf=6, v_inf=0, gamma=1.4, giving sound speed 1 and Mach 6. The inner wall is inviscid slip; the outer boundary is fixed free stream and both angular exits extrapolate. Initial conditions are free stream, optionally modified by
+\rho(r,\theta)=\rho_\infty\left[1+\epsilon
+e^{-((r-1.5)/0.3)^2}\sin\bigl(12(\theta-\pi)\bigr)\right],\qquad
+\epsilon\in\{0,10^{-4}\}.
+
+## Traced PPM, AUSM variants and curved bow shocks — A conservative mesh around the cylinder nose# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#a-conservative-mesh-around-the-cylinder-nose
+Coverage: reading
+
+Velocity and pressure are unchanged initially. The perturbation is a density mode, not a displaced mesh or shock front. The angular wavelength is held fixed under refinement. Both controls and seeded runs use first-order geometric FV, SSPRK2, CFL 0.4 and terminal time 2. CFL uses the sum of all face spectral radii; it is not numerically identical to the 1D CFL rule. There are 20 forebody runs: five fluxes, two grids and two seed amplitudes.
+
+## Traced PPM, AUSM variants and curved bow shocks — Directional HLLE and Roe composition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#directional-hlle-and-roe-composition
+Coverage: reading
+
+For a face normal n, choose n1 along the velocity jump and n2 perpendicular to it; orient their signs to make alpha_k=n dot n_k nonnegative. If the velocity jump is below 1e−10 in these nondimensional units, n1 is face-tangential and n2 face-normal. Define
+\widehat{\boldsymbol F}(\boldsymbol n)=
+\alpha_1\widehat{\boldsymbol F}_{\rm HLLE}(\boldsymbol n_1)+
+\alpha_2\widehat{\boldsymbol F}_{\rm Roe}(\boldsymbol n_2),\qquad
+\boldsymbol n=\alpha_1\boldsymbol n_1+\alpha_2\boldsymbol n_2.
+The same left/right physical states are rotated into each local frame. Rotate momentum fluxes back to Cartesian coordinates before combining. A normal velocity jump selects HLLE; a purely tangential shear selects Roe in the face-normal direction. Constant states remain consistent because physical Euler flux is linear in the normal vector. The construction also passes flux-reversal conservation and rotation tests.
+This is a specified rotated-hybrid experiment, inspired by Nishikawa and Kitamura (2008). It is not the earlier pressure-sensor Roe/HLLE blend, and does not claim an optimized reproduction of the publication's Rotated-RHLL dissipation formula. The tiny-jump fallback and dimensional tolerance are explicit implementation choices.
+
+## Traced PPM, AUSM variants and curved bow shocks — What the forebody results establish# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#what-the-forebody-results-establish
+Coverage: reading
+
+The five fluxes are acoustically smoothed Roe, Einfeldt-type HLLE, AUSM+, AUSM+-up and directional HLLE/Roe. Each image shares one color range across its five field panels. The slip-wall pressure coefficient uses the actual wall-normal momentum flux; the two cells nearest the nose define the reported nose pressure.
+The normal-shock jump followed by isentropic deceleration gives the inviscid centerline stagnation-pressure reference p0,2=46.8152057161. It is a scalar streamline reference, not an exact bow-shock field. The boundary layer and wake are absent. The nose pressure, reflection defect, remaining normalized update rate, positivity and integrated conservation residual are all saved.
+On the fine seeded grid, Roe develops a large density reflection defect and its nose pressure falls to about 25.0. The fine HLLE nose pressure is about 47.38; the corresponding coarse value is about 48.81. The directional method and AUSM variants have different perturbation and grid responses. In particular, the directional method can amplify roundoff in its unperturbed control: a symmetric-looking initial state is not an exact discrete symmetry guarantee for that nonlinear direction selection. Inspect both controls and histories rather than selecting a single attractive image.
+
+## Traced PPM, AUSM variants and curved bow shocks — What the forebody results establish# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#what-the-forebody-results-establish
+Coverage: reading
+
+These are terminal snapshots of an evolving calculation. Nonzero update rates and two grid levels do not certify a converged steady solution, an asymptotic convergence order, or universal carbuncle freedom. Longer-time and time-step studies, other Mach numbers, rotated grids, external-code comparisons and further rotated-hybrid variants remain verification work. Full-cylinder viscous drag, lift, shedding and Strouhal validation are a separate task.
+
+## Traced PPM, AUSM variants and curved bow shocks — Reproduction and saved data# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#reproduction-and-saved-data
+Coverage: reading
+
+Run MPLCONFIGDIR=.mplconfig python scripts/build_shock_expansion.py. The builder caches forebody runs only when the numerical source hashes and full configuration match. Download controls, diagnostics and source hashes and conserved states and mesh vertices/areas. Failed 1D entries include actual times and last accepted states; they must not be compared as if they reached the requested final time. All PNGs and the compressed arrays have hashes in the manifest.
+The independent checks cover characteristic-domain integrals, switch selectivity, periodic conserved sums, pressure/velocity contact equilibrium, smooth refinement, AUSM branch identities and normal shocks, rotated-flux consistency/covariance, mesh closure and wall/global flux budgets. Passing these checks does not remove the flow-specific limits above.
+
+## Traced PPM, AUSM variants and curved bow shocks — Reproduction and saved data# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/shock-expansion/#reproduction-and-saved-data
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Site coverage and counting rules — Site coverage and counting rules [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/
+Coverage: reading
+
+Published web edition, counted 2026-11-07. These are counts of catalog entries and documented examples, not a claim that every entry is a verified end-to-end solver.
+42 equation/model entries · 90 methods and building blocks · 140 journal/conference papers · 177 total sources.
+There are 9 saved-profile equation-gallery cases across 7 equation families, and 47 reading chapters including this inventory.
+
+## Site coverage and counting rules — Equations and models# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#equations-and-models
+Coverage: reading
+
+Named equation/model entries, not scalar component equations or mathematically disjoint families. Includes frameworks and auxiliary formulations; variants share one entry except the three separately explained SR/GR fluid systems. Biological entries are imported once from their own catalog.
+15 entries have scoped local examples; 27 are reading-only, including all 22 biological survey entries. A coupled system is one entry; its individual component equations do not increase the count. Poisson/Laplace and dimensional variants share entries. Named frameworks and specialized kinetic laws can both appear, so this is not a count of mathematically disjoint families.
+
+## Site coverage and counting rules — Physics & mathematical models# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#physics-amp-mathematical-models
+Coverage: reading
+
+Linear advection — Local example.
+Heat / diffusion — Local example.
+Poisson / Laplace — Local example.
+Inviscid Burgers — Local example.
+LWR traffic flow — Local example.
+Compressible Euler — Local example.
+Shallow water, including the rotating linear model — Local example. Wet 1D flow and linear rotating Fourier symbols; no full geophysical dynamical core.
+Isothermal Euler — Local example.
+Ideal MHD — Local example.
+Incompressible Navier–Stokes — Local example.
+Isothermal lattice BGK — Local example.
+Hamiltonian oscillators — Local example.
+Gravitational particle model — Local example. Static force evaluations and boundary kernels; no coupled self-gravitating fluid evolution.
+Bratu nonlinear boundary-value problem — Local example.
+Auxiliary hyperbolic diffusion system — Local example. Periodic first-order steady-solution baseline, not physical-time heat diffusion.
+
+## Site coverage and counting rules — Relativistic models# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#relativistic-models
+Coverage: reading
+
+Special-relativistic hydrodynamics — Reading only. Literature review; no local relativistic solver.
+General-relativistic hydrodynamics — Reading only. Literature review; no local relativistic solver.
+General-relativistic MHD — Reading only. Literature review; no local relativistic solver.
+Relativistic radiation moments / M1 — Reading only. Literature review; no local relativistic solver.
+Causal relativistic viscous fluid — Reading only. Literature review; no local relativistic solver.
+
+## Site coverage and counting rules — Biological model survey# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#biological-model-survey
+Coverage: reading
+
+Logistic population growth — Reading only. The linked original is the later 1847 memoir; the 1838 note itself was not audited. The differential equation is not the discrete logistic map.
+Michaelis–Menten and full enzyme kinetics — Reading only. The 1913 rapid-equilibrium interpretation and the 1925 quasi-steady-state derivation must remain distinct.
+Lotka–Volterra predator–prey — Reading only.
+McKendrick age-structured population — Reading only. This is the classical age-transport form; the later von Foerster lineage is acknowledged without treating its date as the first appearance.
+SIR and SEIR compartment models — Reading only. The original general epidemic framework is broader than this SIR specialization. Population-count and fraction conventions give different β definitions.
+Fisher–KPP invasion front — Reading only. Fisher–KPP is a conventional family name; the independent KPP 1937 original remains an archival follow-up. The exact special speed is not the minimal speed.
+Monod growth and chemostat — Reading only. This writes one constant-yield extension of saturation growth, not a universal metabolic model.
+Hodgkin–Huxley membrane dynamics — Reading only. The original squid-axon model is not a calibrated human cardiac model. No single rate parameter set is selected by this survey.
+
+## Site coverage and counting rules — Biological model survey# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#biological-model-survey
+Coverage: reading
+
+Turing reaction–diffusion framework — Reading only. A spot image or unequal diffusion coefficients alone do not establish a Turing mechanism. Boundary conditions determine the available modes.
+FitzHugh–Nagumo excitation and recovery — Reading only. This is a common normalized variant; cubic coefficients, recovery signs and nondimensionalization differ between formulations.
+Keller–Segel chemotaxis — Reading only. This is a common two-field reduction of a more detailed original formulation. Blowup thresholds depend on dimension, domain, boundary and chemical dynamics.
+Gierer–Meinhardt activator–inhibitor — Reading only. Source densities, saturation and baseline production vary across the model family. This simplified formula is not a verbatim transcription of every original variant.
+Fluid–elastic structure and immersed boundaries — Reading only. Immersed boundary is a numerical coupling method, not itself a closed biological constitutive equation. The existing periodic MAC solver does not implement this coupling.
+Chemical master equation and Gillespie SSA — Reading only. The 1977 paper is a foundational SSA reference, not a priority claim for all master equations. SSA is a solver; the reaction network is the model. A seed documents a trajectory, not an ensemble validation.
+
+## Site coverage and counting rules — Biological model survey# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#biological-model-survey
+Coverage: reading
+
+Mackey–Glass delayed physiological feedback — Reading only. A scalar initial value alone is insufficient. The delayed ODE is distinct from a spatial reaction–diffusion model.
+Replicator evolutionary game dynamics — Reading only. No universal Lyapunov function or equivalence of fixed point and evolutionarily stable strategy is assumed.
+Schnakenberg reaction–diffusion — Reading only. A mathematical chemical pattern model; matching a visual biological pattern does not calibrate it to a tissue.
+Shigesada–Kawasaki–Teramoto cross-diffusion — Reading only. The displayed homogeneous-environment reduction omits the original environmental-potential terms. It is not equivalent to two independent scalar diffusion equations.
+Gray–Scott spatial autocatalysis — Reading only. 1983 is the well-mixed CSTR source; Pearson 1993 is the spatial pattern reference. Spot division does not by itself demonstrate cell division or a linear Turing instability.
+Aliev–Panfilov cardiac excitation — Reading only. Monodomain/bidomain tissue models add conductivity tensors and, for bidomain, an extracellular elliptic constraint. They are not automatically included by this two-variable model.
+Repressilator mRNA–protein network — Reading only. The six-variable form is distinct from a reduced three-protein oscillator; oscillations are parameter-dependent.
+
+## Site coverage and counting rules — Biological model survey# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#biological-model-survey
+Coverage: reading
+
+Genetic toggle switch — Reading only. Bistability is not guaranteed for arbitrary Hill exponents or production rates. Induction, mRNA dynamics and noise are additional model choices.
+
+## Site coverage and counting rules — Numerical method inventory# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#numerical-method-inventory
+Coverage: reading
+
+Named numerical methods and building blocks with a reading chapter. Aliases count once; RK stages, dimensions, parameter combinations, mesh layouts and theoretical conditions do not add methods. A family and a separately explained algorithm may both appear. Not a count of mutually exclusive end-to-end solvers.
+85 entries have scoped local examples; 5 are reading-only. Reconstruction limiters, preconditioners and coupling operators are building blocks, not complete PDE solvers. Mesh layouts, CFL conditions and theorems are not counted as numerical methods.
+
+## Site coverage and counting rules — Spatial discretization# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#spatial-discretization
+Coverage: reading
+
+Forward spatial difference — Local example.
+Backward spatial difference — Local example.
+Centered spatial difference — Local example.
+Upwind finite differences — Local example.
+Lax–Friedrichs — Local example.
+Lax–Wendroff — Local example.
+Godunov-type finite volumes — Local example.
+MUSCL reconstruction — Local example.
+WENO5-JS — Local example.
+Discontinuous Galerkin / Legendre — Local example.
+Fourier differentiation and evolution — Local example.
+Cubic-Hermite CIP — Local example.
+Continuous P1 Galerkin FEM — Local example.
+Limited PPM reconstruction — Local example. Method-of-lines parabolic FV and a separate direct-Eulerian traced primitive PPM with contact steepening and shock flattening switches. No Lagrange/remap or multidimensional CTU.
+Euler characteristic reconstruction — Local example. Local conservative FV basis or face-frozen Roe FD basis; controlled component/characteristic comparisons.
+FD WENO5-Z — Local example. Global LF splitting, exponent 2, fixed epsilon 1e-6; point values, not FV state interpolation.
+
+## Site coverage and counting rules — Riemann fluxes & corrections# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#riemann-fluxes-amp-corrections
+Coverage: reading
+
+Rusanov / local Lax–Friedrichs flux — Local example.
+HLL — Local example.
+HLLC — Local example.
+Roe — Local example.
+HLLE / Einfeldt wave speeds — Local example.
+Acoustic Roe entropy correction — Local example.
+Rotated-hybrid Riemann solver — Local example. Explicit directional HLLE/Roe composition with unit-normal flux checks and conforming cylinder-forebody controls. Distinct from the optimized 2008 Rotated-RHLL formula; no universal carbuncle-free claim.
+HLLD MHD Riemann solver — Local example. Full-vector adiabatic HLLD/HLLE with Brio-Wu, circular Alfven refinement and weak field-loop tests. CT-Contact and GLM, not UCT-HLLD.
+AUSM-family flux splitting — Local example. Arithmetic-sound-speed AUSM plus specified critical-sound-speed AUSM+ and AUSM+-up. Matched traced-PPM cases, a recorded strong-jump failure and forebody tests; no low-Mach PDE certification.
+
+## Site coverage and counting rules — Limiters & admissibility# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#limiters-amp-admissibility
+Coverage: reading
+
+Minmod — Local example.
+Superbee — Local example.
+Monotonized central / MC — Local example.
+Van Leer limiter — Local example.
+Clipped Van Albada limiter — Local example.
+TVB modified minmod — Local example.
+Mean-preserving positive-state scaling — Local example. Reconstruction building block; no full Euler-update positivity guarantee.
+
+## Site coverage and counting rules — Time integration# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#time-integration
+Coverage: reading
+
+Forward Euler — Local example.
+Backward Euler — Local example.
+Heun / SSPRK(2,2) — Local example.
+Explicit midpoint RK2 — Local example.
+Ralston RK2 — Local example.
+Kutta RK3 — Local example.
+SSPRK(3,3) — Local example.
+SSPRK(4,3) — Local example.
+Classical RK4 — Local example.
+SSPRK(5,4) — Local example.
+Implicit midpoint — Local example.
+Two-step leapfrog — Local example.
+Crank–Nicolson — Local example.
+BDF2 — Local example.
+L-stable SDIRK2 — Local example.
+IMEX Euler — Local example.
+Adaptive SDIRK2 / step doubling — Local example.
+Symplectic Euler — Local example.
+Velocity Verlet / particle leapfrog — Local example.
+Yoshida fourth-order composition — Local example.
+
+## Site coverage and counting rules — Linear & nonlinear solvers# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#linear-amp-nonlinear-solvers
+Coverage: reading
+
+Thomas tridiagonal elimination — Local example.
+Jacobi iteration — Local example.
+Gauss–Seidel iteration — Local example.
+Successive over-relaxation / SOR — Local example.
+Conjugate gradients — Local example.
+Red-black Gauss–Seidel — Local example.
+Geometric multigrid V-cycle — Local example.
+Restarted GMRES — Local example.
+BiCGSTAB — Local example.
+Jacobi / diagonal preconditioning — Local example.
+Unpivoted ILU(0) — Local example.
+Armijo-damped Newton — Local example.
+Newton–Krylov with assembled Jacobian — Local example.
+
+## Site coverage and counting rules — Coupling, constraints & particles# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#coupling-constraints-amp-particles
+Coverage: reading
+
+Dual time stepping — Local example.
+Scalar residual distribution — Local example. 1D P1 upwind equivalent, not multidimensional Euler RD.
+Low-Mach PDE preconditioning — Reading only.
+Constrained transport / CT — Local example. Original arithmetic flux-CT OT baseline plus contact-upwinded CT loop tests. Native face divergence; not UCT-HLLD.
+GLM divergence cleaning — Local example. Original Rusanov OT baseline plus HLLD/HLLE loop tests with an exact longitudinal cleaning solve and split damping. Native cell-centered divergence.
+MAC pressure projection — Local example.
+D2Q9–BGK collision and streaming — Local example.
+Guo forcing — Local example.
+Half-way bounce-back — Local example.
+First-order hyperbolic diffusion baseline — Local example.
+SPH kernel reconstruction — Local example.
+ALE uniform-state / geometric-conservation model — Local example. Moving-volume scalar check; no complete ALE Euler solver.
+Godunov SPH / GSPH — Reading only.
+
+## Site coverage and counting rules — Particle fields & gravity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#particle-fields-amp-gravity
+Coverage: reading
+
+Cloud-in-cell assignment and interpolation — Local example.
+FFT particle–mesh forces — Local example.
+Barnes–Hut octree — Local example.
+Monopole and second-moment expansion — Local example.
+Isolated doubled-grid FFT convolution — Local example.
+Horizontal-periodic slab Green-function FFT — Local example.
+P³M short-range correction — Reading only.
+TreePM force splitting — Reading only.
+Fast multipole translations — Reading only.
+
+## Site coverage and counting rules — Additional formulations# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#additional-formulations
+Coverage: reading
+
+Original Cartesian KEEP split flux — Local example.
+
+## Site coverage and counting rules — Element bases & approximation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#element-bases-amp-approximation
+Coverage: reading
+
+Legendre modal basis / orthonormal scaling — Local example. Reference-element tabulation, derivatives, projection and affine mass/stiffness matrices.
+Lagrange nodal basis / GLL collocation — Local example. Interval cardinal functions, modal transforms, exact versus quadrature mass, and P1/P2 triangle shapes.
+
+## Site coverage and counting rules — Papers versus all sources# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#papers-versus-all-sources
+Coverage: reading
+
+Unique bibliographic publications classified as journal articles or conference papers, deduplicated by DOI or author/title/year. Includes reviews, translations and explicitly labeled accepted papers; not a claim that every full text was inspected. Books, chapters, reports, preprints and documentation are separate.
+Unique cataloged works across all publication types. An original publication and a later translation are separate works; duplicate DOI records are not. NASA case links in prose are not catalog records.
+137 journal-article records, including reviews, translations and explicitly labeled accepted papers.
+3 conference papers.
+22 books.
+2 book chapters.
+3 technical/teaching reports.
+10 other records, including documentation and a separately identified preprint.
+A duplicate Cockburn–Shu 1989 record was merged. Burgers 1948 is classified as a book chapter. The former 146-record total included that duplicate; subsequent source additions are reflected in the current unique-work totals above. An original paper and a separately published translation remain separate works. The bibliography does not claim that every full text has been inspected; source notes preserve the inspection status.
+
+## Site coverage and counting rules — Reproduction# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#reproduction
+Coverage: reading
+
+The named registry is catalog/coverage.json; biological entries and publication types come from their respective catalogs. python scripts/build_coverage.py checks unique publication identities and local reading links, then generates the counts and this inventory. The website build runs that audit before rendering. Parameter choices, time frames, repeated equations in prose and test function counts do not increase these totals.
+Download the counted inventory and source hashes. Browse the reference catalog, equation gallery, biological survey or implementation roadmap.
+
+## Site coverage and counting rules — Reproduction# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/site-coverage/#reproduction
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Sparse and nonlinear systems: measure the actual residual — Sparse and nonlinear systems: measure the actual residual [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/sparse-nonlinear/
+Coverage: reading
+
+Implemented: COO-to-CSR assembly, restarted GMRES, BiCGSTAB, Jacobi and
+unpivoted ILU(0), and Armijo-damped Newton with dense or Krylov inner solves.
+These are small, inspectable real-arithmetic examples.
+
+## Sparse and nonlinear systems: measure the actual residual — 1986–1992: nonsymmetric Krylov methods# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/sparse-nonlinear/#19861992-nonsymmetric-krylov-methods
+Coverage: reading
+
+Saad–Schultz (1986) introduces GMRES;
+van der Vorst (1992) introduces BiCGSTAB.
+The implemented GMRES uses Arnoldi reorthogonalization and small Hessenberg
+least squares, restarting after a specified number of inner iterations.
+BiCGSTAB has explicit breakdown reporting; it need not have monotone residuals.
+Both implementations apply a fixed right preconditioner:
+A M^{-1} z=b,\qquad x=M^{-1}z,
+\qquad \|b-Ax\|_2\leq\max(\mathrm{atol},\mathrm{rtol}\|b\|_2).
+The stopping history recomputes the true residual. Jacobi uses diagonal
+scaling. ILU(0) retains the supplied nonzero structure, with no fill, pivoting
+or reordering; tiny pivots raise an explicit failure. This is not a robust
+replacement for a production sparse factorization.
+
+## Sparse and nonlinear systems: measure the actual residual — Newton and conditioning# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/sparse-nonlinear/#newton-and-conditioning
+Coverage: reading
+
+Newton solves J(x)δ=−F(x), then chooses a backtracked step length with an
+Armijo residual decrease. The Newton–Krylov demonstration assembles J and
+uses GMRES; it is not matrix free. Bratu's equation is checked against an
+analytic solution at two spatial resolutions, including inner-solve failures.
+A small residual is not automatically a small solution error:
+\frac{\|x-\hat x\|}{\|x\|}
+\leq \kappa(A)\frac{\|b-A\hat x\|}{\|b\|}.
+Condition number, eigenvalue distribution and nonnormality describe different
+features. A smaller condition number alone does not rank restarted GMRES.
+CG still requires an SPD operator and suitable SPD preconditioning; generic
+ILU(0) is not asserted to satisfy that requirement.
+The nonsymmetric example is first-order upwind advection plus centered diffusion
+with zero Dirichlet data. Iteration counts have different per-iteration costs;
+the figure makes no wall-clock ranking. See the data and source hashes,
+FEM assembly, and implicit ODE stages.
+
+## Sparse and nonlinear systems: measure the actual residual — Newton and conditioning# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/sparse-nonlinear/#newton-and-conditioning
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Differences, CFL, von Neumann analysis, and Lax — Differences, CFL, von Neumann analysis, and Lax [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/
+Coverage: reading
+
+Try the interactive stability laboratory and read the experiment guide to connect the formulas below with live browser calculations.
+
+## Differences, CFL, von Neumann analysis, and Lax — Choose space and time discretizations separately# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/#choose-space-and-time-discretizations-separately
+Coverage: reading
+
+Forward, backward, and centered spatial differences are
+D_+u_j=\frac{u_{j+1}-u_j}{h},\qquad
+D_-u_j=\frac{u_j-u_{j-1}}h,\qquad
+D_0u_j=\frac{u_{j+1}-u_{j-1}}{2h}.
+For smooth functions, the first two are first-order accurate and the centered
+stencil is second order. Compare them with numart.advection.finite_difference.
+For linear advection u_t+a u_x=0, upwinding follows information propagation:
+use a backward difference for a>0 and a forward difference for a<0.
+A forward difference is therefore not synonymous with an upwind difference.
+Forward Euler in time gives u^{n+1}=u^n+Δt L_h u^n; backward Euler gives
+u^{n+1}=u^n+Δt L_h u^{n+1} and requires a system solve. A backward spatial
+stencil alone does not make a method implicit.
+
+## Differences, CFL, von Neumann analysis, and Lax — CFL: can the stencil reach the information it needs?# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/#cfl-can-the-stencil-reach-the-information-it-needs
+Coverage: reading
+
+For constant-coefficient periodic advection with an explicit nearest-neighbor
+stencil, domain-of-dependence reasoning requires |a|Δt/h ≤ 1. The constant
+changes with the stencil, Runge–Kutta method, DG degree, and dimension.
+Explicit diffusion introduces a Δt=O(h²) restriction. A CFL condition is
+generally necessary rather than sufficient for stability.
+Courant–Friedrichs–Lewy (1928).
+Forward-time, centered-space (FTCS) advection is a counterexample. Substituting
+a Fourier mode u_j^n=G^n e^{ijθ} gives
+G=1-i C\sin θ,\quad |G|^2=1+C^2\sin^2 θ,
+\qquad C=a\Delta t/h.
+Some modes grow even when |C|<1. The scheme is unstable under ordinary
+fixed-CFL grid refinement.
+
+## Differences, CFL, von Neumann analysis, and Lax — Lax–Friedrichs and Lax–Wendroff# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/#laxfriedrichs-and-laxwendroff
+Coverage: reading
+
+The classical Lax–Friedrichs scheme is
+u_j^{n+1}=\tfrac12(u_{j+1}^n+u_{j-1}^n)
+-\tfrac C2(u_{j+1}^n-u_{j-1}^n),\qquad
+G=\cos θ-iC\sin θ.
+Since |G|²=1-(1-C²)sin²θ, periodic linear advection is stable for |C|≤1.
+Classical LF uses the numerical-viscosity coefficient h/Δt. Rusanov uses a
+local maximum wave speed; WENO here uses global LF flux splitting. These are
+different discrete constructions.
+Lax (1954).
+Lax–Wendroff is
+u_j^{n+1}=u_j^n-\tfrac C2(u_{j+1}^n-u_{j-1}^n)
++\tfrac{C^2}{2}(u_{j+1}^n-2u_j^n+u_{j-1}^n),
+G=1-iC\sin θ+C^2(\cos θ-1),\quad
+|G|^2=1-4C^2(1-C^2)\sin^4(θ/2).
+Its stability condition for this problem is also |C|≤1. Second-order accuracy
+does not itself suppress oscillations near discontinuities.
+Lax–Wendroff (1960).
+Tests compare the analytical amplification factors from amplification with
+actual mode evolution from difference_step. The gallery seeds a small
+Nyquist perturbation and compares C=0.8 with C=1.1.
+
+## Differences, CFL, von Neumann analysis, and Lax — The Lax–Richtmyer equivalence theorem# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/#the-laxrichtmyer-equivalence-theorem
+Coverage: reading
+
+Consider a well-posed linear initial-value problem in an appropriate Banach
+space and a consistent linear difference approximation. When stability
+means uniform boundedness of the discrete evolution operators over a fixed
+finite time interval, stability is equivalent to convergence.
+Lax–Richtmyer (1956), original paper.
+Writing the error as e^{n+1}=S_h e^n+Δt τ^n, the bound ||S_h^m||≤M_T gives
+||e^n||≤M_T||e^0||+M_T T max||τ^k||. Consistency makes the truncation-error
+term tend to zero, providing the basic stability-to-convergence argument.
+The converse requires a uniform-boundedness argument.
+The theorem does not directly certify nonlinear Euler, WENO, shocks, or
+arbitrary boundary treatments. The Fourier criterion |G|≤1 used here applies
+to periodic, constant-coefficient scalar problems. Boundaries, variable
+coefficients, nonnormal matrices, and multistep schemes need additional analysis.
+
+## Differences, CFL, von Neumann analysis, and Lax — Time steps in the first edition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/#time-steps-in-the-first-edition
+Coverage: reading
+
+Euler and barotropic systems: Δt=C h/max(|u|+c), with default C=0.3.
+DG: Δt=C h/((2p+1)|a|), with default C=0.2.
+2D MHD: Δt=C/[max(s_x)/h+max(s_y)/h], with default C=0.3.
+These conservative choices are checked on selected examples. They are not
+rigorous nonlinear stability limits for every initial condition.
+For definitions and comparisons of A-stability, L-stability and L1/L2/L∞ error norms,
+see the shared accuracy and stability guide.
+
+## Differences, CFL, von Neumann analysis, and Lax — Time steps in the first edition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stability/#time-steps-in-the-first-edition
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Stiff integration: solve the stage, control the time error — Stiff integration: solve the stage, control the time error [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stiff-integration/
+Coverage: reading
+
+Implemented: backward Euler, constant-step BDF2 with backward-Euler startup,
+two-stage SDIRK2, first-order IMEX Euler, and adaptive SDIRK2 by step doubling.
+All nonlinear stages use damped Newton and report failure explicitly.
+
+## Stiff integration: solve the stage, control the time error — Implicit stages and stability# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stiff-integration/#implicit-stages-and-stability
+Coverage: reading
+
+Backward Euler solves y_new−y_old−h f(t_new,y_new)=0. BDF2 solves
+\frac{3y_{n+1}-4y_n+y_{n-1}}{2h}=f(t_{n+1},y_{n+1}).
+Alexander (1977) is the source for the
+L-stable, two-stage, second-order singly diagonally implicit family used here:
+\gamma=1-1/\sqrt2,\qquad
+A=\begin{pmatrix}\gamma&0\\1-\gamma&\gamma\end{pmatrix},
+\quad b=(1-\gamma,\gamma),\quad c=(\gamma,1).
+Each diagonal stage is a separate nonlinear solve. An implicit method can
+permit steps beyond an explicit stability limit, while accuracy still limits
+useful step size. A converged Newton residual measures the stage equation,
+not the temporal discretization error.
+
+## Stiff integration: solve the stage, control the time error — Adaptive and split steps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stiff-integration/#adaptive-and-split-steps
+Coverage: reading
+
+The adaptive implementation compares one full SDIRK2 step with two half steps.
+The local error estimate is (y_half−y_full)/3, scaled by
+atol+rtol max(|y_old|,|y_half|). It accepts the two-half-step value, without
+Richardson extrapolation, and adjusts h with exponent −1/3. Rejected trials
+and accepted steps are counted; reaching a trial limit raises an error.
+IMEX Euler evaluates one part explicitly and the other implicitly. This
+minimal first-order split is not the higher-order IMEX RK constructions of
+Ascher–Ruuth–Spiteri (1997).
+The explicit part retains its own stability restriction. Variable-step BDF,
+embedded DIRK pairs and operator splitting remain extensions.
+The stiff test y′=−1000(y−cos t)−sin t has exact solution cos t when y(0)=1.
+The manifest records maximum errors at actual
+integration nodes and adaptive step counts. Separate tests verify order on a
+nonlinear, nonautonomous ODE and strong damping of a stiff decay mode.
+The coarse stiff-forced refinement is not in a uniform second-order regime.
+BDF2 startup and stiff order reduction affect the maximum-over-nodes error;
+the nonlinear nonstiff order test checks the formal temporal order separately.
+For definitions and comparisons of A-stability, L-stability and L1/L2/L∞ error norms,
+see the shared accuracy and stability guide.
+
+## Stiff integration: solve the stage, control the time error — Adaptive and split steps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/stiff-integration/#adaptive-and-split-steps
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Symplectic integration: a canonical map, not an exact energy promise — Symplectic integration: a canonical map, not an exact energy promise [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/
+Coverage: reading
+
+A symplectic integrator advances a Hamiltonian system while preserving its canonical two-form. This is the map property behind the good long-time behavior of many orbital and particle integrators. It does not generally preserve the original Hamiltonian exactly. The Hamiltonian map notebook separates those two questions with computed examples.
+
+## Symplectic integration: a canonical map, not an exact energy promise — What the map preserves# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#what-the-map-preserves
+Coverage: reading
+
+For state z = (q,p), Hamilton’s equations and the symplectic condition are
+\dot z=J\nabla H(z),\qquad J=\begin{pmatrix}0&I\\-I&0\end{pmatrix},
+\qquad D\Phi_h(z)^T J D\Phi_h(z)=J.
+The last identity says that each numerical step is a canonical transformation. For one degree of freedom it is equivalent to det(D Phi) = 1, preserving oriented phase-plane area. In higher dimensions, preservation of total volume alone is weaker than symplecticity.
+Three separate properties should be tested: preservation of the two-form, preservation of H, and time symmetry Phi_(−h) = Phi_h^(−1). Symplectic Euler already illustrates the distinction: it is symplectic but is neither exactly energy preserving nor time symmetric in general.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Split the Hamiltonian, compose exact subflows# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#split-the-hamiltonian-compose-exact-subflows
+Coverage: reading
+
+For a unit-mass separable system H(q,p) = p²/2 + V(q), the two subflows are a drift and a kick:
+D_h(q,p)=(q+hp,p),\qquad K_h(q,p)=(q,p-h\nabla V(q)).
+Each is symplectic; compositions remain symplectic. The notebook includes kick–drift symplectic Euler, and the symmetric second-order Störmer–Verlet update
+p_{n+1/2}=p_n-\frac h2\nabla V(q_n),\quad
+q_{n+1}=q_n+h p_{n+1/2},\quad
+p_{n+1}=p_{n+1/2}-\frac h2\nabla V(q_{n+1}).
+This is the mechanical Leapfrog/velocity-Verlet formulation. It differs from the two-step scalar recurrence in the earlier time-integration notebook.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Fourth order by composition# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#fourth-order-by-composition
+Coverage: reading
+
+Writing S2(h) for a Verlet step, one fourth-order composition is
+S_4(h)=S_2(a h)\,S_2(b h)\,S_2(a h),\qquad
+a=\frac1{2-2^{1/3}},\quad b=-\frac{2^{1/3}}{2-2^{1/3}}.
+Yoshida (1990) develops higher-order symplectic compositions. Here b is negative: an internal substep goes backward in time. The construction is suitable for the smooth conservative examples used here; simply applying it to irreversible diffusion, shocks, or collision handling is not justified. Higher order also does not establish unconditional stability or an equal-cost advantage.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Energy and a modified Hamiltonian# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#energy-and-a-modified-hamiltonian
+Coverage: reading
+
+Backward error analysis describes a nearby, generally formal modified Hamiltonian. Under smoothness, bounded-trajectory, small-step, and related hypotheses, this explains small long-time energy errors. It does not assert an exact invariant of the original H for every orbit or step size. Hairer, Lubich, and Wanner (2003) develop this geometric viewpoint and its assumptions.
+For the special oscillator H = (p²+q²)/2, kick–drift–kick Verlet preserves the quadratic invariant
+I_h=\frac12p^2+\frac12\left(1-\frac{h^2}{4}\right)q^2
+up to roundoff. H itself oscillates. This invariant is not a claim that its unscaled Hamiltonian flow is exactly the numerical time-h map. The oscillator map is bounded for |h| < 2; above that limit it can be symplectic and unstable.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Implicit midpoint and RK4 as comparisons# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#implicit-midpoint-and-rk4-as-comparisons
+Coverage: reading
+
+Implicit midpoint is symplectic and time symmetric when its endpoint equation is solved accurately. It preserves the quadratic oscillator H to roundoff here. It need not exactly conserve a nonquadratic H. Classical RK4 is fourth order but is generally neither symplectic nor time symmetric. Good short-time accuracy alone does not certify the map’s geometry.
+The second test problem is H = p²/2 + q²/2 + q⁴/4, a smooth nonlinear oscillator. It makes midpoint’s special quadratic-energy conservation visibly distinguishable from a general claim.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Reproducible notebook and checks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#reproducible-notebook-and-checks
+Coverage: reading
+
+from numart.hamiltonian import trajectory, energy, canonical_step, J
+t, z = trajectory(h=0.2, steps=1000, method='yoshida4', system='quartic')
+print(max(abs((energy(z, 'quartic')-energy(z[0], 'quartic'))/energy(z[0], 'quartic'))))
+_, M = canonical_step([0.7, 0.4], 0.2, 'yoshida4', 'quartic', True)
+print(M.T @ J @ M - J)
+The computed dataset and source manifest supplies 30 Python trajectories: five methods, two Hamiltonians, and h = 0.1, 0.2, or 0.4, all to T = 200 from (q,p) = (1,0.2). Plotted trajectories contain at most 1001 samples; maximum energy errors use every integration step. The phase-patch view applies one step to a square centered at (0.7,0.4). Its sampled polygon boundary is an illustration; the displayed local defect uses an analytic map Jacobian at the patch center.
+Tests check refinement orders against the exact oscillator, analytic Jacobians against independent finite differences, the canonical identity on both potentials, time reversal for symmetric methods, the Verlet quadratic invariant, and the difference between quadratic and nonquadratic midpoint energy. The gallery and notebook are educational fixed-step examples, not orbit-accuracy or timing rankings.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Connecting to particle gravity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#connecting-to-particle-gravity
+Coverage: reading
+
+A fixed step and a force that is the gradient of a consistent position-dependent potential support the splitting argument. A generic approximate Tree force, changing opening decisions, ad hoc mesh interpolation, or state-dependent step selection does not automatically retain that proof. Force approximation and time integration need joint tests. Continue with particle gravity and Poisson solvers and gravity boundary kernels.
+
+## Symplectic integration: a canonical map, not an exact energy promise — Connecting to particle gravity# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/symplectic/#connecting-to-particle-gravity
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Textbooks: where to look next — Textbooks: where to look next [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/
+Coverage: reading
+
+A working bookshelf for this atlas. Choose a book by the question you need to answer; this is a reading guide, not a ranking. Bibliographic years below identify the cited editions, not the invention dates of algorithms.
+The links lead to publisher records or author-maintained pages. We checked edition metadata and available descriptions or contents, not every derivation in every book. Chapter suggestions describe the atlas connection; they do not claim that all of a textbook has been implemented.
+A short starting path: Hirsch for the CFD framework; LeVeque for conservation laws and finite-volume reasoning; Toro for Riemann solvers; Patankar for pressure–velocity coupling; Saad for sparse iterative solves. Return to original papers when tracing a particular algorithm.
+Search the full reference library · All cataloged books · Download BibTeX
+Covers are supplied by Open Library for the listed ISBN. Each card links to Amazon Japan and the publisher or bibliographic record. The title stays visible when a cover is unavailable.
+
+## Textbooks: where to look next — CFD foundations and incompressible flow# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#cfd-foundations
+Coverage: reading
+
+Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid DynamicsLoading coverCover unavailable
+Open Library record
+ISBN 9780750665940
+
+## Textbooks: where to look next — Hirsch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hirsch2007
+Coverage: reading
+
+Hirsch, Charles. Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid Dynamics. Butterworth-Heinemann, 2007 · edition 2.
+Use this for the CFD framework: equations, grid properties, consistency, stability, discretization and solution procedures. The cited 2007 book is the second-edition fundamentals volume.
+Atlas connections: Differences, CFL, von Neumann analysis, and Lax · Structured, unstructured, and triangular meshes · Time integration and leapfrog.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+hirsch2007
+
+## Textbooks: where to look next — Hirsch# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hirsch2007
+Coverage: reading
+
+Computational Techniques for Fluid Dynamics 1: Fundamental and General TechniquesLoading coverCover unavailable
+Cover: Open Library
+ISBN 9783540530589
+
+## Textbooks: where to look next — Fletcher / Volume I# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#fletcher1991v1
+Coverage: reading
+
+Fletcher, Clive A. J. Computational Techniques for Fluid Dynamics 1: Fundamental and General Techniques. Springer, 1991 · edition 2.
+Use Volume I for PDE classification, weighted residual methods, steady and diffusion problems, and linear/nonlinear convection. It supplies the common numerical tools before the flow-specific algorithms of Volume II.
+Atlas connections: Differences, CFL, von Neumann analysis, and Lax · Continuous finite elements: from weak form to sparse assembly · Diffusion, elliptic equations, boundary conditions, and iteration.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+fletcher1991v1
+
+## Textbooks: where to look next — Fletcher / Volume I# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#fletcher1991v1
+Coverage: reading
+
+Computational Techniques for Fluid Dynamics 2: Specific Techniques for Different Flow CategoriesLoading coverCover unavailable
+Open Library record
+ISBN 9783540536017
+
+## Textbooks: where to look next — Fletcher / Volume II# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#fletcher1991v2
+Coverage: reading
+
+Fletcher, Clive A. J. Computational Techniques for Fluid Dynamics 2: Specific Techniques for Different Flow Categories. Springer, 1991 · edition 2.
+Use Volume II to connect the general techniques of Volume I to different flow-equation categories and their computational solution procedures. Read assumptions and boundary conditions alongside each algorithm.
+Atlas connections: Incompressible flow: project with compatible discrete operators · Preconditioning, dual time stepping, and residual distribution · Polar and cylindrical coordinates: tensors and viscosity.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+fletcher1991v2
+
+## Textbooks: where to look next — Fletcher / Volume II# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#fletcher1991v2
+Coverage: reading
+
+Computational Methods for Fluid DynamicsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9783319996912
+
+## Textbooks: where to look next — Ferziger · Perić · Street# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#ferziger2020
+Coverage: reading
+
+Ferziger, Joel H.; Perić, Milovan; Street, Robert L. Computational Methods for Fluid Dynamics. Springer, 2020 · edition 4.
+Use this when connecting discrete operators to a practical CFD solution procedure, especially incompressible pressure–velocity coupling and boundary conditions.
+Atlas connections: Incompressible flow: project with compatible discrete operators · Polar and cylindrical coordinates: tensors and viscosity.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+ferziger2020
+
+## Textbooks: where to look next — Ferziger · Perić · Street# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#ferziger2020
+Coverage: reading
+
+Numerical Heat Transfer and Fluid FlowLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780891165224
+
+## Textbooks: where to look next — Patankar# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#patankar1980
+Coverage: reading
+
+Patankar, Suhas V. Numerical Heat Transfer and Fluid Flow. CRC Press (current publisher record), 1980.
+Use this for the physical logic of control-volume balances and SIMPLE-type pressure–velocity coupling. Keep the book exposition separate from the original algorithm papers.
+Atlas connections: Incompressible flow: project with compatible discrete operators · Euler reconstruction: PPM, characteristics, WENO-Z and AUSM.
+Amazon Japan ↗
+Publisher / record ↗
+patankar1980
+
+## Textbooks: where to look next — Conservation laws, Riemann solvers and shocks# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hyperbolic
+Coverage: reading
+
+Finite Volume Methods for Hyperbolic ProblemsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780521009249
+
+## Textbooks: where to look next — LeVeque / finite volume# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#leveque2002
+Coverage: reading
+
+LeVeque, Randall J. Finite Volume Methods for Hyperbolic Problems. Cambridge University Press, 2002.
+Use this for weak solutions, finite-volume reasoning, wave propagation, limiters and multidimensional conservation laws. Companion Clawpack material connects the theory to computation.
+Atlas connections: Euler reconstruction: PPM, characteristics, WENO-Z and AUSM · Slope limiters: minmod, Superbee, MC, van Leer, and van Albada · Equation gallery: choose the equation before the algorithm.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+leveque2002
+
+## Textbooks: where to look next — LeVeque / finite volume# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#leveque2002
+Coverage: reading
+
+Riemann Solvers and Numerical Methods for Fluid Dynamics: A Practical IntroductionLoading coverCover unavailable
+Cover: Open Library
+ISBN 9783540252023
+
+## Textbooks: where to look next — Toro# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#toro2009
+Coverage: reading
+
+Toro, Eleuterio F. Riemann Solvers and Numerical Methods for Fluid Dynamics: A Practical Introduction. Springer, 2009 · edition 3.
+Use this when deriving or comparing exact and approximate Euler Riemann solvers, contact waves and high-resolution shock-capturing methods.
+Atlas connections: Preconditioning, dual time stepping, and residual distribution · Euler reconstruction: PPM, characteristics, WENO-Z and AUSM · Benchmark library.
+Amazon Japan ↗
+Publisher / record ↗
+toro2009
+
+## Textbooks: where to look next — Toro# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#toro2009
+Coverage: reading
+
+Numerical Approximation of Hyperbolic Systems of Conservation LawsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780387945293
+
+## Textbooks: where to look next — Godlewski · Raviart# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#godlewski1996book
+Coverage: reading
+
+Godlewski, Edwige; Raviart, Pierre-Arnaud. Numerical Approximation of Hyperbolic Systems of Conservation Laws. Springer, 1996 · edition 1.
+Use this for a mathematical treatment of nonlinear hyperbolic systems and their numerical approximation, including Riemann problems and gas dynamics. Read it alongside LeVeque for finite-volume reasoning and Toro for solver construction. This entry cites the 1996 first edition; a revised second edition appeared in 2021.
+Atlas connections: Preconditioning, dual time stepping, and residual distribution · Euler reconstruction: PPM, characteristics, WENO-Z and AUSM · A-stability, L-stability and error norms.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+godlewski1996book
+
+## Textbooks: where to look next — Finite differences and linear algebra# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#common-numerics
+Coverage: reading
+
+Finite Difference Methods for Ordinary and Partial Differential Equations: Steady-State and Time-Dependent ProblemsLoading coverCover unavailable
+Open Library record
+ISBN 9780898716290
+
+## Textbooks: where to look next — LeVeque / finite differences# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#leveque2007
+Coverage: reading
+
+LeVeque, Randall J. Finite Difference Methods for Ordinary and Partial Differential Equations: Steady-State and Time-Dependent Problems. SIAM, 2007.
+Use this for the consistency–stability–convergence chain, ordinary differential equations, boundary-value problems and finite-difference PDE solvers.
+Atlas connections: A-stability, L-stability and error norms · Time integration and leapfrog · Diffusion, elliptic equations, boundary conditions, and iteration.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+leveque2007
+
+## Textbooks: where to look next — LeVeque / finite differences# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#leveque2007
+Coverage: reading
+
+Matrix ComputationsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9781421407944
+
+## Textbooks: where to look next — Golub · Van Loan# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#golub2013
+Coverage: reading
+
+Golub, Gene H.; Van Loan, Charles F. Matrix Computations. Johns Hopkins University Press, 2013 · edition 4.
+Use this for conditioning, stable matrix factorizations, least squares and eigenproblems before choosing a solver solely by its name.
+Atlas connections: Sparse and nonlinear systems: measure the actual residual · Diffusion, elliptic equations, boundary conditions, and iteration.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+golub2013
+
+## Textbooks: where to look next — Golub · Van Loan# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#golub2013
+Coverage: reading
+
+Iterative Methods for Sparse Linear SystemsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780898715347
+
+## Textbooks: where to look next — Saad# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#saad2003book
+Coverage: reading
+
+Saad, Yousef. Iterative Methods for Sparse Linear Systems. SIAM, 2003 · edition 2.
+Use this for Krylov subspaces, GMRES, BiCG-family methods and preconditioners. The author provides the second-edition text and corrections.
+Atlas connections: Sparse and nonlinear systems: measure the actual residual · Diffusion, elliptic equations, boundary conditions, and iteration.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+saad2003book
+
+## Textbooks: where to look next — Saad# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#saad2003book
+Coverage: reading
+
+Templates for the Solution of Linear Systems: Building Blocks for Iterative MethodsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780898713282
+
+## Textbooks: where to look next — Barrett et al. / Templates# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#templates1994
+Coverage: reading
+
+Barrett, Richard; Berry, Michael; Chan, Tony F.; Demmel, James; Donato, June; Dongarra, Jack; Eijkhout, Victor; Pozo, Roldan; Romine, Charles; van der Vorst, Henk. Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods. SIAM, 1994.
+Use this open reference as a compact algorithm-and-selection companion for iterative linear solvers, with attention to matrix assumptions.
+Atlas connections: Sparse and nonlinear systems: measure the actual residual · Diffusion, elliptic equations, boundary conditions, and iteration.
+Amazon Japan ↗
+Publisher / record ↗
+templates1994
+
+## Textbooks: where to look next — Multigrid: intuition, analysis and implementation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#multigrid
+Coverage: reading
+
+A Multigrid TutorialLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780898714623
+
+## Textbooks: where to look next — Briggs · Henson · McCormick / A Multigrid Tutorial# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#briggs2000book
+Coverage: reading
+
+Briggs, William L.; Henson, Van Emden; McCormick, Steve F. A Multigrid Tutorial. SIAM, 2000 · edition 2.
+Start here for why relaxation damps oscillatory error while coarse grids address the remaining smooth error. Follow the model problems into residual correction, restriction, prolongation and a working multigrid cycle. The second edition also introduces nonlinear problems and AMG.
+Atlas connections: Diffusion, elliptic equations, boundary conditions, and iteration · Sparse and nonlinear systems: measure the actual residual.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+briggs2000book
+
+## Textbooks: where to look next — Briggs · Henson · McCormick / A Multigrid Tutorial# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#briggs2000book
+Coverage: reading
+
+MultigridLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780127010700
+
+## Textbooks: where to look next — Trottenberg · Oosterlee · Schüller / Multigrid# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#trottenberg2001
+Coverage: reading
+
+Trottenberg, Ulrich; Oosterlee, Cornelius W.; Schüller, Anton. Multigrid. Academic Press, 2001 · edition 1.
+Use this as the detailed reference after the tutorial: elementary multigrid theory, local Fourier analysis, smoother and coarse-grid choices, parallel implementation, systems and an AMG appendix. For the atlas Poisson comparison, use it to ask why a cycle converges and how its work changes; AMG, anisotropy and parallel performance need separate implementations and tests.
+Atlas connections: Diffusion, elliptic equations, boundary conditions, and iteration · Sparse and nonlinear systems: measure the actual residual · Particle gravity: PM, P³M, Tree, multipoles, and multigrid.
+Amazon Japan ↗
+Publisher / record ↗
+trottenberg2001
+
+## Textbooks: where to look next — Spectral bases and discontinuous Galerkin# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#high-order
+Coverage: reading
+
+Spectral Methods in MATLABLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780898714654
+
+## Textbooks: where to look next — Trefethen# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#trefethen2000
+Coverage: reading
+
+Trefethen, Lloyd N. Spectral Methods in MATLAB. SIAM, 2000.
+Use this for spectral differentiation, Fourier/Chebyshev examples and short reproducible programs. Supplement its limited barycentric-interpolation coverage.
+Atlas connections: Interactive experiment guide · Orthogonal polynomials and mesh basis functions.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+trefethen2000
+
+## Textbooks: where to look next — Trefethen# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#trefethen2000
+Coverage: reading
+
+Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and ApplicationsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9780387720654
+
+## Textbooks: where to look next — Hesthaven · Warburton# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hesthaven2008book
+Coverage: reading
+
+Hesthaven, Jan S.; Warburton, Tim. Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and Applications. Springer, 2008.
+Use this to connect nodal polynomial bases, quadrature and reference-element operators to DG interface fluxes and PDE algorithms.
+Atlas connections: Orthogonal polynomials and mesh basis functions · Interactive experiment guide.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+hesthaven2008book
+
+## Textbooks: where to look next — Time integration, geophysics and particles# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#time-geophysics-particles
+Coverage: reading
+
+Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential EquationsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9783540306634
+
+## Textbooks: where to look next — Hairer · Lubich · Wanner# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hairer2006book
+Coverage: reading
+
+Hairer, Ernst; Lubich, Christian; Wanner, Gerhard. Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations. Springer, 2006 · edition 2.
+Use this for symplectic maps, symmetric compositions, splitting and backward error analysis. Preserving symplectic structure does not mean exactly preserving the original Hamiltonian.
+Atlas connections: Symplectic integration: a canonical map, not an exact energy promise · Time integration and leapfrog.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+hairer2006book
+
+## Textbooks: where to look next — Hairer · Lubich · Wanner# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hairer2006book
+Coverage: reading
+
+Numerical Methods for Fluid Dynamics: With Applications to GeophysicsLoading coverCover unavailable
+Cover: Open Library
+ISBN 9781441964113
+
+## Textbooks: where to look next — Durran# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#durran2010
+Coverage: reading
+
+Durran, Dale R. Numerical Methods for Fluid Dynamics: With Applications to Geophysics. Springer, 2010 · edition 2.
+Use this for dispersion, advection and time discretization in geophysical flows. Read it alongside the spherical-mesh and variable-staggering notes.
+Atlas connections: Spherical meshes and Arakawa A, B and C grids · Runge–Kutta families: stages, order, stability, and SSP.
+Amazon Japan ↗
+Publisher / record ↗
+Author / source ↗
+durran2010
+
+## Textbooks: where to look next — Durran# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#durran2010
+Coverage: reading
+
+Computer Simulation Using ParticlesLoading coverCover unavailable
+Open Library record
+ISBN 9780070291089
+
+## Textbooks: where to look next — Hockney · Eastwood# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hockney1981book
+Coverage: reading
+
+Hockney, R. W.; Eastwood, J. W. Computer Simulation Using Particles. McGraw-Hill, 1981.
+Use this for particle–mesh thinking, force assignment and Fourier-based field calculations. The cited original year is 1981; the linked DOI is a later reissue.
+Atlas connections: Particle gravity: PM, P³M, Tree, multipoles, and multigrid · Gravity kernels: isolated FFTs and a periodic slab.
+Amazon Japan ↗
+Publisher / record ↗
+hockney1981book
+
+## Textbooks: where to look next — Hockney · Eastwood# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/textbooks/#hockney1981book
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## Time integration and leapfrog — Time integration and leapfrog [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/
+Coverage: reading
+
+Spatial reconstruction and time integration are independent choices. After spatial discretization, a PDE becomes an ODE system dU/dt = L(U). Accuracy, stability, monotonicity, dissipation, and cost then depend on both parts. The time integration notebook isolates the temporal choice using y′ = i y, y(0) = 1.
+
+## Time integration and leapfrog — Twelve methods on one oscillator# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/#twelve-methods-on-one-oscillator
+Coverage: reading
+
+The exact solution exp(i t) follows the unit circle. Forward Euler and backward Euler are first order: the former grows on this undamped oscillator, while the latter damps it. The explicit RK2 family includes Heun / SSPRK(2,2), explicit midpoint, and Ralston. Kutta RK3, SSPRK(3,3), and SSPRK(4,3) are third order; classical RK4 and SSPRK(5,4) are fourth order. Implicit midpoint is second order and preserves the amplitude of this linear oscillator. Its phase still has error. Read the RK family chapter and use the family notebook for stage/order/SSP comparisons and nonlinear tests.
+For y′ = lambda y, define z = lambda delta t. One-step amplification factors include
+R_{\rm FE}=1+z,\quad R_{\rm BE}=\frac1{1-z},\quad
+R_{\rm midpoint}=\frac{1+z/2}{1-z/2}.
+The RK factors are the exponential Taylor polynomial through degree two, three, or four for the three RK2 variants, Kutta RK3 / SSPRK(3,3), or classical RK4 on this scalar linear equation. SSPRK(4,3) instead has a degree-four term z⁴/48; SSPRK(5,4) has an additional degree-five term. Shared scalar amplification does not make nonlinear RK stages identical. SSP properties depend on a forward-Euler bound for the spatial operator; they are not unconditional stability.
+
+## Time integration and leapfrog — Leapfrog needs two roots# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/#leapfrog-needs-two-roots
+Coverage: reading
+
+The centered, two-step first-order-system recurrence is
+y^{n+1}=y^{n-1}+2z y^n,\qquad
+\xi_\pm=z\pm\sqrt{1+z^2}.
+The root tending to +1 as z tends to zero carries the physical mode; the root tending to −1 carries a computational mode alternating between steps. Both roots and their multiplicities matter. For z = i sigma, distinct roots have unit modulus when |sigma| < 1. At |sigma| = 1 the repeated root can give linearly growing solutions; do not include that endpoint in a general boundedness claim. Above it, one root grows geometrically.
+A starting value is required in addition to y(0). This implementation takes one RK4 step, optionally adding a real perturbation epsilon to y(1). At lambda = 0 that perturbation gives even samples equal to 1 and odd samples equal to 1+epsilon: a direct computational-mode demonstration. For the notebook’s oscillator it also perturbs the physical mode.
+Time filters such as the Robert–Asselin family modify this behavior, with their own damping and accuracy tradeoffs; see Williams (2009). No filter is applied in this edition.
+
+## Time integration and leapfrog — Particle leapfrog is a different formulation# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/#particle-leapfrog-is-a-different-formulation
+Coverage: reading
+
+A staggered kick–drift scheme for position and velocity, or velocity Verlet for a second-order mechanical system, is often also called leapfrog. Its variables live at different temporal locations and its symplectic interpretation uses that structure. The scalar recurrence above is not a demonstration of a complete SPH particle integrator or a proof of long-time energy conservation for general mechanics.
+
+## Time integration and leapfrog — Reproduce and read the notebook# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/#reproduce-and-read-the-notebook
+Coverage: reading
+
+from numart.time_integration import linear_trajectory, leapfrog_roots
+t, y = linear_trajectory(rate=1j, dt=0.1, steps=200, method='leapfrog')
+print(leapfrog_roots(0.1j))
+The browser selects from Python-computed trajectories with fixed final time 20, twelve methods, seven step sizes, and three leapfrog starting perturbations. Axes expand for unstable samples. A matching time interval is not an equal-cost comparison: implicit solves and RK stages differ. Tests measure temporal refinement orders and check the leapfrog roots, alternating mode, and midpoint amplitude. These oscillator trajectories evaluate the scalar stability factor, which is algebraically equivalent to RK stages on this linear test equation; the separate family notebook evaluates full nonlinear stages.
+Continue with the spatial stability laboratory, SPH, and ALE.
+
+## Time integration and leapfrog — Canonical mechanical maps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/#canonical-mechanical-maps
+Coverage: reading
+
+The symplectic integration chapter now implements mechanical kick–drift–kick Verlet, a fourth-order Yoshida composition, symplectic Euler, and implicit midpoint on harmonic and quartic Hamiltonians. The map notebook compares them with RK4, separating canonical structure from exact energy conservation.
+
+## Time integration and leapfrog — Canonical mechanical maps# [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/en/read/time-integration/#canonical-mechanical-maps
+Coverage: reading
+
+Historical atlas →Computed gallery →
+
+## A安定性、L安定性、誤差ノルム — A安定性、L安定性、誤差ノルム [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+A安定性（A-stability）とL安定性（L-stability）は、線形の減衰モードに対する時間積分法の応答を表します。一方、L1・L2・L∞は誤差の大きさと分布を測ります。安定な手法でも誤差は大きくなり得ます。また、代数残差が小さくてもPDEの誤差が小さいとは限りません。
+
+## A安定性、L安定性、誤差ノルム — A安定性と左半平面# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/#a-stability-concerns-the-whole-left-half-plane
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+1ステップ法をy′=λyに適用し、z=λΔtと置きます。安定性関数を使うと、
+y_{n+1}=R(z)y_n,\qquad
+\mathcal S=\{z\in\mathbb C:|R(z)|\leq1\}.
+と表せます。絶対安定領域が閉左半平面全体を含むとき、その手法はA安定です。Rはこの領域に極を持ってはいけません。このテストではRe λ≤0のスカラーモードが、任意の正の時間刻みで増大しません。Dahlquist（1963）は線形多段階法におけるA安定性の基礎文献です。ここでは比較を明確にするため、1ステップ法の表記を使います。
+前進Euler法のR(z)=1+zは、負の実軸上で−2≤z≤0の範囲だけ安定です。整合的な陽的RK法はA安定にはなりません。定数ではない安定性多項式が、負の実軸に沿って有界でないためです。また、陰解法であることだけではA安定性を保証しません。
+
+## A安定性、L安定性、誤差ノルム — L安定性と非常に硬いモードの減衰# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/#l-stability-also-damps-infinitely-stiff-modes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+L安定な1ステップ法はA安定であり、さらに次を満たします。
+\lim_{|z|\to\infty,\;\operatorname{Re}z<0}R(z)=0.
+この性質によって、選んだ時間刻みよりずっと速く変化するモードが減衰します。後退Euler法はR(z)=1/(1−z)なので、A安定かつL安定です。Crank–Nicolson法／台形則は、
+R_{CN}(z)=\frac{1+z/2}{1-z/2},\qquad
+\lim_{z\to-\infty}R_{CN}(z)=-1.
+を持ちます。A安定ですがL安定ではなく、非常に硬い負の実モードは符号を交互に変え、ゆっくりしか減衰しません。陰的中点則も線形スカラー問題では同じR(z)を持ちますが、非線形問題での更新は台形則と異なります。z=−1000では、1ステップの倍率は後退Eulerが約0.001、CNが約−0.996で、厳密な倍率はexp(−1000)です。
+実装したSDIRK2では、
+\gamma=1-1/\sqrt2,\qquad
+R(z)=\frac{1+(1-2\gamma)z}{(1-\gamma z)^2}.
+です。極は右半平面にあり、A安定で、大きなzでの極限はゼロです。Alexander（1977）に対応するL安定な2段階の公式です。BDF2は2ステップ法なので、単一のR(z)を無理に割り当てるのではなく、特性根と寄生モードを解析します。
+以上は線形絶対安定性の性質です。精度、非線形の縮小性、SSP／TVDの継承、正値性、境界安定性は別に確認する必要があります。非正規演算子の一時的な増大は、固有値だけでは見落とす場合もあります。A安定な時間積分でも非整合な空間離散化は修復できず、L安定でも時間解像度が不足した過渡現象を正確には解けません。
+
+## A安定性、L安定性、誤差ノルム — 連続的なL1・L2・L∞誤差# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/#continuous-l1-l2-and-l-errors
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+領域Ω上のスカラー誤差e(x)=u_h(x)−u_ref(x)について、
+\|e\|_{L^1}=\int_\Omega |e|\,dV,\qquad
+\|e\|_{L^2}=\left(\int_\Omega |e|^2\,dV\right)^{1/2},\qquad
+\|e\|_{L^\infty}=\operatorname*{ess\,sup}_{x\in\Omega}|e(x)|.
+と定義します。L1は絶対誤差の積分、L2は大きな誤差をより強く重み付けした量、L∞は測度ゼロの集合を除いた最悪誤差です。コンパクト領域上の連続誤差では、本質的上限（essential supremum）は最大値に一致します。不連続解では、跳びの点だけに与えた値は連続ノルムを変えません。
+体積Vの領域では、平均絶対誤差（MAE）はL1/V、二乗平均平方根誤差（RMS）はL2/√Vです。規格化したこれらの量はuと同じ物理単位を持ちますが、規格化前の積分ノルムには長さのべきも含まれます。異なる大きさの領域を比べる前に、規約を明示してください。
+
+## A安定性、L安定性、誤差ノルム — 離散的な重みと参照解の表現# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/#discrete-weights-and-the-reference-representation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+有限体積法で、数値セル平均と参照セル平均の誤差をe_i、正のセル体積をV_iとすると、
+E_1=\sum_iV_i|e_i|,\qquad
+E_2=\left(\sum_iV_i|e_i|^2\right)^{1/2},\qquad
+E_\infty=\max_i|e_i|.
+です。一様格子ではV_i=h^dです。単位区間では、それぞれMAE、RMS、セル平均誤差の最大値になります。非一様格子では、重みなしの算術平均は一般に正しい空間重みを与えません。e=(1,3)、セル体積(0.75,0.25)ならE1=1.5、E2=√3、E∞=3であり、重みなしの平均とは異なります。
+ベクトルのEuclidノルムnp.linalg.norm(e)には、物理的な離散L2ノルムのh^(d/2)が含まれません。そのまま異なる格子間で比較すると、見かけの収束指数が変わります。相対誤差E_p/||u_ref||_pでは参照ノルムを明示し、分母がゼロなら未定義です。正則化を入れる場合も明記します。
+セル中心での参照点値は、厳密なセル平均ではありません。DGとFEMには要素内部の再構成と求積が必要で、係数ベクトルのノルムが自動的に関数のL2ノルムになるわけではありません。同様に、標本点の最大誤差は標本上のL∞診断であり、高次再構成場の厳密な上限とは限りません。単位の異なるベクトル成分は分けて報告するか、明示した尺度で無次元化します。
+
+## A安定性、L安定性、誤差ノルム — 収束、衝撃波、代数残差# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/#convergence-shocks-and-algebraic-residuals
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+同じ物理時刻と誤差規約で計算を揃えたとき、実測収束次数は、
+p_{obs}=\frac{\log(E_{coarse}/E_{fine})}{\log(h_{coarse}/h_{fine})}.
+です。時間誤差、参照解の誤差、求積誤差、丸め誤差、反復の未収束は空間次数を隠す場合があります。時間刻みは別に細分化するか、Δtとhの関係を明示します。適応ODEの許容誤差は、成分尺度に基づく局所誤差の制御であり、大域的な空間L2誤差の保証ではありません。
+衝撃波近傍ではノルムごとに振る舞いが異なります。例えば、幅O(h)の範囲にO(1)の誤差があれば、L1=O(h)、L2=O(√h)、L∞=O(1)です。これは単純なスケーリング例で、衝撃波ソルバー一般の収束率を主張するものではありません。L1の収束が有用でも、位置のずれた跳びが最大値ノルムで収束するとは限りません。
+Ax=bの残差はr=b−Axです。解誤差はx_num−x_exact=−A^(−1)rなので、条件数が関わります。代数残差は離散方程式との不一致を測り、離散化誤差は離散方程式の解と連続問題の解を比較します。疎行列・非線形ソルバーとLax–Richtmyerの説明も参照してください。
+
+## A安定性、L安定性、誤差ノルム — 各展示が報告する量# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/accuracy-stability/#where-the-atlas-reports-each-quantity
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+方程式ギャラリー：保存した単位区間の分布についてL1／MAE、L2／RMS、標本上のL∞を報告します。厳密セル平均、Eulerの参照点値、参照解なしを区別します。
+ブラウザー安定性実験：点値のL1／MAEと増幅係数を報告します。再構成した有限体積関数のノルムを測るものではありません。
+P1 FEM：三角形内部でL2誤差とH1半ノルム誤差を積分します。
+周期MAC流：速度成分を組み合わせたRMS誤差と、離散発散の絶対値の最大を報告します。これらは異なる診断量です。
+硬い方程式の積分：受理した時間節点上の最大誤差を、非線形段階残差や局所誤差推定とは分けて報告します。
+各展示の既存の規約は維持します。この章の追加によって点値をセル平均に読み替えたり、未実施の最大誤差計算を保証したりはしません。
+
+## 発展的な勾配制限：TVBと正値性保存 — 発展的な勾配制限：TVBと正値性保存 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced-limiters/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+勾配制限ノートは、TVBスカラー実験と、別の保存的Euler状態スケーリングを含みます。滑らかな極値の精度低下と、許容できない熱力学状態という異なる失敗を扱います。
+
+## 発展的な勾配制限：TVBと正値性保存 — TVB修正minmod# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced-limiters/#tvb-modified-minmod
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+候補増分vと隣接増分a、bに対して、
+\widetilde m(v,a,b)=
+\begin{cases}
+v,&|v|\le M\Delta x^2,\\
+m(v,a,b),&\text{otherwise},
+\end{cases}
+と定義します。mは一般化minmodで、共通符号なら最小絶対値、符号不一致ならゼロです。スカラー例ではv=(a+b)/2を選びます。M=0ではTVD実験の2増分minmodに一致します。M>0なら、隣の勾配が逆符号でも十分小さな増分を残し、滑らかなピークの曲率を保てます。
+dx²閾値は、RKDGで滑らかな極値の面偏差が持つ尺度に対応します。係数の単位は解の単位／長さ²で、普遍的な無次元定数ではありません。従属変数や座標を尺度変換するならMを再検討し、増分と微分でも閾値を変える必要があります。
+Cockburn・Shu（1989）はTVB RKDGの枠組みを発展させます。初版が実装するのはスカラー有限体積の修正minmodという構成要素で、完全なRKDGやその定理ではありません。ノートは正弦波・矩形波でM=0、10、50を計算します。小さな極値を認めるとTVは各ステップで減るとは限らず、大きなMでは不連続の近くに小さな振動も許します。Mの変更だけで任意の方式の一様TVB限界は証明できません。Euler系のTVB拡張は未実装です。
+
+## 発展的な勾配制限：TVBと正値性保存 — 密度の正値性と圧力の正値性は別の制約# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced-limiters/#positive-density-and-pressure-are-different-constraints
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+理想気体の保存変数U=(rho,m,E)について、
+p(U)=(\gamma-1)\left(E-\frac{|m|^2}{2\rho}\right),\qquad
+\mathcal G=\{U:\rho>0,\ p(U)>0\}.
+です。正の密度だけでは正の内部エネルギーは保証されません。TVD、TVB、エントロピー修正、目に見える振動がないことから、Euler状態が許容されるとは限りません。rhoとEが正でも、運動エネルギーが過大なら負圧になり得ます。
+
+## 発展的な勾配制限：TVBと正値性保存 — 平均を保つスケーリング# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced-limiters/#a-mean-preserving-scaling-building-block
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+許容される保存セル平均Ubarから始め、与えた全再構成点へ同じ係数を使います。
+\widehat U_\alpha=\bar U+\theta(U_\alpha-\bar U),\qquad 0\le\theta\le1.
+元の点の求積平均がUbarなら、変換後も保たれます。この構成では全成分・全点に共通のthetaを使うことが重要です。rho、圧力、全エネルギーを独立に切り詰めても、この保存性はありません。
+まず最小再構成密度からthetaを制限します。
+\theta_\rho=\min\left(1,
+\frac{\bar\rho-\epsilon_\rho}{\bar\rho-\rho_{\min}}\right)
+\quad\text{if }\rho_{\min}<\epsilon_\rho;
+\qquad\theta_\rho=1\text{ otherwise}.
+その後、すべての点がp(Uhat)≥epsilon_pを満たすまで[0,theta_rho]でthetaを縮めます。理想気体圧力は正密度で凹関数なので、線分の許容部分は平均を含み、二分法で探せます。実装は64反復と丸めを避ける小さな後退を使います。密度・圧力下限は入力パラメータで、質量やエネルギーを挿入するものではありません。悪い平均はエラーにします。この方法で不正な平均を中心に縮めても、保存性と正値性を同時に修復できません。
+Zhang・Shu（2010）の凸スケーリングの考え方を、単純な共通状態スケーリングと数値的圧力探索で使います。原著の2段階の密度多項式・状態制限を逐語的に再現するものではありません。対象は与えた点だけで、その間の任意の多項式値まで自動的に制限しません。
+
+## 発展的な勾配制限：TVBと正値性保存 — 実演が実際に検証するもの# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced-limiters/#what-the-demonstration-actually-verifies
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+3節点セルはxi=−1、0、1、正のGauss–Lobatto重み(1/6,2/3,1/6)、gamma=1.4、Ubar=(1,0,2.5)です。生の状態をUbar+xi×deltaとし、密度違反にはdelta=(1.2,0,0)、圧力違反には(0,3,0)、両方の違反には(1.2,3,1)を選びます。実数演算で重み付き平均はUbarです。図は3節点だけを標本化し、epsilon_rho=epsilon_p=1e-8で、theta、制限後最小密度・圧力、保存平均の欠損を報告します。構成した再構成テストで、爆風や膨張波の時間積分ではありません。
+import numpy as np
+from numart.limiters import positive_reconstruction
+mean = np.array([1., 0., 2.5])
+raw = mean + np.array([-1., 0., 1.])[:, None] * [0., 3., 0.]
+limited, theta = positive_reconstruction(mean, raw)
+テストでは、既に許容される再構成が不変であること、不正平均の拒否、3失敗例での両下限と保存的求積平均を確認します。
+
+## 発展的な勾配制限：TVBと正値性保存 — 再構成から完全離散の保証へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced-limiters/#from-reconstruction-to-a-fully-discrete-guarantee
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+完全な正値性保存Euler法には、整合する正値性保存流束、界面状態を含む正の求積分解、対応する波速／CFL制約、必要な全段階での制限も必要です。SSP時間積分が前進Eulerの正値性を伝えるのは、その性質と刻み制約が既に成り立つ場合だけです。ソース項と境界処理にも独自の検証が必要です。
+この補助関数は既存のEuler MUSCL、差分WENO、CT／GLM、KEEPの時間更新へ接続していません。既存の限界はそのままです。今後は各段階の許容性・保存性、真空近傍の二重膨張波、強い爆風を確認してから、時間全体の正値性を主張すべきです。多次元・非理想状態方程式にも追加解析が必要です。
+
+## 前処理、二重時間積分、残差分配法 — 条件数とPDE前処理# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced/#condition-numbers-and-pde-preconditioning
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Ax=bの2ノルム条件数はκ₂(A)=σmax/σminです。特定の反復の収束率ではなく、摂動への感度を測ります。左前処理はP^{-1}Ax=P^{-1}b、右前処理はAP^{-1}y=b, x=P^{-1}yです。対称正定値系では、P^{-1/2}AP^{-1/2}によって対称性を保った比較ができます。
+conditioning_exampleはA=S B Sを構成し、Bを1次元Poisson行列、Sを対角スケーリングとします。対称Jacobiスケーリングによる条件数の変化を示すもので、Turkelの低Mach流前処理行列を実装するものではありません。
+圧縮性PDEでは、低Mach数で対流と音響の特性速度が大きく異なると、別の前処理問題が生じます。Γ(U) ∂U/∂τ + R(U)=0のような擬似時間系は、特性速度、収束、数値散逸を変えます。Γの導出、変数変換、Mach数依存係数、境界の整合性には追加の検証が必要です。物理時間微分を無差別に置き換えると、時間依存解が変わります。Turkel（1987）。
+
+## 前処理、二重時間積分、残差分配法 — 二重時間積分# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced/#dual-time-stepping
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+dU/dt+R(U)=0に物理時間のBDF2を適用すると、
+\frac{3U^{n+1}-4U^n+U^{n-1}}{2\Delta t}+R(U^{n+1})=0.
+です。各物理ステップでQの擬似時間方程式、
+\frac{dQ}{d\tau}+\frac{3Q-4U^n+U^{n-1}}{2\Delta t}+R(Q)=0,
+を定常状態まで進めます。最初のステップは後退Eulerで開始します。物理時間の精度はΔt、空間誤差、内部の未収束に依存し、大きな物理CFL数だけでは正確な時間発展を示せません。Jameson（1991）。
+dual_time_advectionは最小の周期1次元例です。BDF1／BDF2の陰的風上移流を、Jacobi擬似時間反復で解きます。内部残差閾値はtol*max(1,||b||∞)、既定値はtol=1e-10です。反復上限までに収束しなければエラーにします。テストではBDF2離散方程式の独立した密行列解と比較します。Jamesonの圧縮性流体マルチグリッド全体ではなく、簡約モデルです。
+
+## 前処理、二重時間積分、残差分配法 — 残差分配法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced/#residual-distribution-schemes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+要素残差Φ_K=∫K ∇·F(U) dVを節点へ配り、Σ_{i∈K} Φ_i^K=Φ_Kを保ちます。この保存条件が連続有限要素と風上の考え方をつなぎます。Abgrall（2006）の著者公開総説。
+rd_residualは1次元P1スカラー移流の最小例です。Φ_K=a(u_{i+1}-u_i)全体を下流節点へ与え、集中質量hで割ります。この場合に1次風上差分と等価であることをテストします。2次元三角形のN／LDA、非線形混合、時間整合質量行列、Euler系は未実装です。
+
+## 前処理、二重時間積分、残差分配法 — Roe、エントロピー修正、Einfeldt、回転ソルバー# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced/#roe-entropy-fixes-einfeldt-and-rotated-solvers
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+RoeはF_R-F_L=Ã(U_R-U_L)を満たす線形化と固有系を使います。初版はsqrt(ρ)重みのu、Hとã²=(γ-1)(H̃-ũ²/2)を作り、波強度と固有ベクトルによって散逸を加えます。Roe（1981）。
+エントロピー修正は、絶対値がδ未満の音響固有値を(λ²+δ²)/(2δ)で置き換えます。HLLEは、強い低密度膨張に対してEinfeldt型の左右波速を使う別の流束です。Roeのエントロピー修正、HLLEの正値性、カーバンクル処理は別の問題を扱います。Einfeldt（1988）、Einfeldtら（1991）。
+回転ハイブリッド・リーマンソルバーは面法線以外の方向も使って流束を組み合わせ、衝撃波に対する頑健性とせん断層の解像を両立させます。座標を回すだけではこの構成になりません。方向分解HLLE/Roe合成と円柱前半部テストを追加しました。明示的な2流束の実験であり、原型Rotated-RHLLの散逸式を最適化して再現したものとは区別します。Nishikawa–Kitamura（2008）。
+
+## 前処理、二重時間積分、残差分配法 — RoeのProperty U# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/advanced/#roes-property-u
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Roeの1981年論文の著者公開全文、359〜360頁の4条件は、(i)固定した状態対ごとに保存変数空間から流束空間への線形写像である、(ii)状態が一致する極限で物理Jacobianになる、(iii)状態ジャンプを流束ジャンプへ厳密に写す、(iv)固有ベクトルが線形独立、です。2状態への依存そのものが線形という意味ではありません。物理的な理想気体Eulerでは、以下の構成は実数の音響・接触速度も持ちます。
+以下はアトラスで実装し、独立に検査する代数です。U=(ρ,ρu,E)、H=(E+p)/ρ、z=√ρ(1,u,H)とすると、
+ U(z)=\begin{pmatrix}z_1^2\\z_1z_2\\
+ (z_1z_3+(\gamma-1)z_2^2/2)/\gamma\end{pmatrix},\qquad
+ F(z)=\begin{pmatrix}z_1z_2\\
+ ((\gamma+1)z_2^2/2+(\gamma-1)z_1z_3)/\gamma\\z_2z_3\end{pmatrix}.
+です。両方が2次式なので、中点のJacobian B=∂U/∂z、C=∂F/∂zはΔU=B(z̄)Δz、ΔF=C(z̄)Δzを厳密に満たします。したがってÃ=C(z̄)B(z̄)⁻¹はジャンプ条件を持ち、z̄の比から、
+ \widetilde u=\frac{\sqrt{\rho_L}u_L+\sqrt{\rho_R}u_R}{\sqrt{\rho_L}+\sqrt{\rho_R}},\quad
+ \widetilde H=\frac{\sqrt{\rho_L}H_L+\sqrt{\rho_R}H_R}{\sqrt{\rho_L}+\sqrt{\rho_R}},\quad
+ \widetilde c^2=(\gamma-1)(\widetilde H-\widetilde u^2/2).
+を得ます。同一状態では連鎖則からCB⁻¹=∂F/∂Uです。別に構成した固有系の速度はũ−c̃,ũ,ũ+c̃で、c̃>0なら3固有ベクトルが状態空間を張ります。パラメータ行列・固有基底・解析Jacobianと、決定的に生成した2000組の物理状態で照合します。
+単一の非零Rankine–HugoniotジャンプΔF=sΔUならÃΔU=sΔUであり、そのジャンプは速度sの固有空間に属します。無修正Roe流束が孤立した接触面・衝撃波を認識する理由です。任意の再構成・時間離散化を施した衝撃波計算全体が厳密になる意味ではありません。|λ|の平滑化は行列恒等式を変えずに流束を変え、静止衝撃波を広げる場合があります。
+膨張不連続もジャンプ関係を満たし得ます。静止垂直衝撃波の左右を逆転した対はProperty Uを満たしますが、無修正Roe流束はエントロピーを満たすリーマン参照と異なります。ジャンプ性質とエントロピー選択を同一視できない数値反例です。エントロピー修正は追加の設計で、いずれも多次元のカーバンクル保証ではありません。
+python scripts/build_shock_robustness.pyで行列検査・移動／静止衝撃波・接触面・膨張反例を診断マニフェストに保存します。
+
+## 任意Lagrange–Euler法 — 任意Lagrange–Euler法 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/ale/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Euler型セルは固定され、流体が面を横切ります。Lagrange型セルは流体とともに動きます。ALEでは格子速度wを流速uとは独立に選べます。Hirt・Amsden・Cook（1974）は古典的な全速度ALE定式化を与えます。
+
+## 任意Lagrange–Euler法 — 流束は動く面に対する相対量# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/ale/#the-flux-is-relative-to-the-moving-face
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+移動する検査体積K(t)にReynolds輸送定理を適用すると、
+\frac{d}{dt}\int_{K(t)}U\,dV
++\int_{\partial K(t)}\left[F(U)\cdot n-(w\cdot n)U\right]dS=0.
+です。w=0がEuler型です。格子の法線速度を流体の法線速度に合わせるとLagrange質量流束の極限になります。ただし物質面を通じても圧力は運動量・エネルギーを伝えるため、質量流束をゼロにしても全Euler流束がゼロになるわけではありません。
+
+## 任意Lagrange–Euler法 — 幾何も保存則に従う# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/ale/#geometry-must-obey-a-conservation-law-too
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+一様状態を一様に保つには、セル体積の変化と面運動を整合させます。
+\frac{d|K|}{dt}=\int_{\partial K}w\cdot n\,dS.
+離散的な対応が幾何保存則（geometric conservation law, GCL）です。格子移動と流体更新で掃引体積が一致しないと、個別には正確そうでも定数データから偽の流れを生じる場合があります。
+
+## 任意Lagrange–Euler法 — 再現可能な1ステップの検査# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/ale/#a-reproducible-one-step-check
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+numart.geometry.moving_volume_uniform_testは、端点を固定して[0,1]の面を滑らかな正弦変位で変形します。面速度は実際の変位をdelta tで割った値です。定数スカラーqの示量量Vqを相対流束(a−w)qで更新し、新体積で割ります。両方に同じ変位を使います。
+import numpy as np
+from numart.geometry import moving_volume_uniform_test
+old_faces, new_faces, q = moving_volume_uniform_test(phase=0.8)
+print(np.max(np.abs(q - 1)))
+複数の変形位相で、一様状態が丸め誤差の範囲で保たれることを確認します。振幅制約は正のセル幅を保証します。1次元移動体積の恒等式検査であり、ALE Eulerソルバーや非一様データの精度検証ではありません。
+
+## 任意Lagrange–Euler法 — 格子移動、再配置、歪み# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/ale/#mesh-motion-remapping-and-distortion
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+完全なALE法は、頂点を動かし、Lagrangeまたは相対流束ステップを解き、より良い格子へ再配置する場合があります。保存的再配置、格子の絡まり、境界移動、時間整合性には追加の検証が必要です。総質量を保つ再配置でも、正値性や定数状態の保存に失敗する場合があります。
+格子の章で位相と運動を分け、座標の章で移動検査体積とテンソル基底の変更を区別してください。xをrへ置き換えたり、描画頂点を動かしたりするだけでALE法になるわけではありません。
+
+## テスト計算ライブラリ — テスト計算ライブラリ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+1次元の各Problemは、方程式、領域、終了時刻、境界、初期条件、参照解、引用キーを保持します。get_problem(name)により、すべての手法から同じ定義を使えます。配列の最後の軸が変数で、Eulerは(ρ,ρu,E)、浅水流は(h,hu)、等温流は(ρ,ρu)です。
+
+## テスト計算ライブラリ — 滑らかな問題# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#smooth-problems
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+線形移流は周期区間[0,1]、速度a、初期値sin(2πx)を使います。厳密な平行移動解と差分・DG・Fourier法を比較します。DGはモード型Legendre P0／P1／P2、風上境界流束、SSPRK3です。Ppの空間次数と時間3次積分を区別してください。DGの未知数は要素数×(p+1)です。Fourier法は線形モードを時間方向に厳密に積分し、このギャラリーから同一コストや同一自由度での順位は導きません。非線形積、エイリアシング除去、Gibbs現象の処理は今後の課題です。
+entropy-waveはEulerのρ=1+0.2sin(2πx)、u=1,p=1,γ=1.4、周期区間[0,1]、t=1を使います。密度だけが移動する厳密解で、滑らかな解の精度と周期保存性を検証できます。等温Eulerには独立したエネルギー・エントロピー変数がないため、同じEulerエントロピー波問題は使えません。
+
+## テスト計算ライブラリ — 衝撃波管# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#shock-tubes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Sod：[0,1]、x0=0.5、左(ρ,u,p)=(1,0,1)、右(0.125,0,0.1)、γ=1.4、t=0.2です。境界はゼロ勾配外挿で、主要な波は終了時刻までに境界へ達しません。厳密リーマンソルバーは二分法で整合する圧力を求め、衝撃波、接触波、膨張波を標本化します。真空を含む厳密解には対応していません。Sod（1978）、厳密解実装の参照先。
+Lax：[-5,5]、x0=0、左(0.445,0.698,3.528)、右(0.5,0,0.571)、γ=1.4、t=1.3、外挿境界です。LaxテストとLax–Friedrichs法は、同じ人名でも別の対象です。後の文献で使われる標準的なパラメータを採用し、1954年原論文の表との直接照合はしていません。
+Shu–Osher：[-5,5]、x0=-4、t=1.8、γ=1.4、左(3.857143,2.629369,10.33333)、右(1+0.2sin(5x),0,1)です。仮想セルは領域端で評価した初期状態に固定します。終了時刻の厳密参照解はなく、初版の図はMUSCLとWENOの数値結果を比較します。Shu–Osher（1989）、Quokkaの採用パラメータ §3.1.5。
+
+## テスト計算ライブラリ — 低密度とEinfeldt型のテスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#low-densities-and-einfeldt-type-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+double-rarefactionは[0,1]、x0=0.5、左(1,-2,0.4)、右(1,2,0.4)、γ=1.4、t=0.15です。強い膨張を起こすこの設定は1–2–3問題とも呼ばれます。選定した正値性テストでは区分一定再構成とHLLEを使います。この保証が高次MUSCLやWENOに移るわけではありません。Einfeldtら（1991）。
+
+## テスト計算ライブラリ — 浅水流と等温流# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#shallow-water-and-isothermal-flow
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+dam-breakは平坦底面の浅水流で、g=1、左h=2、右h=1、u=0、[0,1]、t=0.1です。乾燥床、地形ソース、静水平衡を保つ離散化、濡れ・乾きの処理は未対応です。isothermalはp=cs²ρ、cs=1、左ρ=1、右ρ=0.125、u=0を同じ領域・時間区間で解きます。いずれも外挿境界です。初版ではソルバー、許容状態、保存形を検査します。参照解ライブラリに半解析Riemann状態と保存変数セル平均を追加し、方程式ギャラリーで使います。この2ケースの元のProblem.referenceは未設定のままです。新しい評価にはget_referenceを使ってください。LeVeque（2002）。
+
+## テスト計算ライブラリ — リーマン流束と再構成# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#riemann-fluxes-and-reconstruction
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+RusanovとHLLはEuler・浅水・等温流に対応します。HLLC、Roe、HLLEは現在、理想気体Eulerだけに対応します。HLLは局所音響速度の最小・最大、HLLEはRoe平均を含むEinfeldt型推定を使います。Roeは音響固有値にδ=0.1ãの2次エントロピー平滑化を適用し、接触固有値は変更しません。低密度の正値性修正や、一般的なエントロピー安定流束の構成とは別です。
+MUSCLは基本変数についてminmod（既定）、Superbee、MC、van Leer、切り詰めたvan Albadaを選べます。勾配制限を参照してください。WENO5-JSは点値流束と大域LF分割を使う、成分別の有限差分実装です。後述の別章に特性再構成・WENO-Zを追加し、この従来ソルバーは変更していません。完全離散の正値性保存は今後の課題です。別の発展的な勾配制限ではTVB修正minmodとEulerの正値再構成スケーリングを実装していますが、これらのEuler時間更新とは結合していません。
+誤差はpointwiseと表示します。有限体積セル平均と差分点値は厳密には交換できません。Orszag–Tangの定義と限界はMHD、拡散・Poisson問題は楕円型問題を参照してください。
+
+## テスト計算ライブラリ — テスト問題と手法を対応させる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#matching-the-benchmark-to-the-scheme
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+原型KEEPの展示では滑らかな等エントロピー渦と保存量診断を使います。素の中心流束には衝撃波安定化がなく、Sod／DMRソルバーとはしていません。動画ガイドでは、滑らかな流れ、衝撃波捕獲、MHDの計算を区別し、定常場は静止図で示します。
+
+## テスト計算ライブラリ — 方程式から始めるスカラー比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#equation-first-scalar-comparisons
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+方程式ギャラリーでは、厳密なセル積分を持つBurgers・LWR交通流のリーマン問題、移流・熱拡散モードを加えています。既存のSod、水深が正のダム崩壊、等温流の基準計算にもつなぎ、参照解の規約を明示します。
+
+## テスト計算ライブラリ — 再構成・流束テストの拡充# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/benchmarks/#expanded-reconstruction-and-flux-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+新しい再構成章と操作できる比較に、制限付き放物線FV・保存特性変数・FD WENO-Z・変種を明示したAUSM系列基準例を追加しました。上記の従来コードは成分ごとの基準例として残します。平面衝撃波の感度とRoeのProperty Uは別に検証します。
+
+## 生物モデル方程式と数値検証 — 生物モデル方程式と数値検証 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+個体群の増殖から確率的な遺伝子制御、流体構造連成まで、22の生物・生物由来モデルを選び、保存則CFDの外へ方程式の地図を広げます。22項目すべてが文献調査とベンチマーク設計案です。この追加では生物ソルバーを実装しておらず、生物系のシミュレーション結果も示していません。
+以下は慣用的な簡略形・規格化形です。出典はモデルの系譜を示し、すべての係数や変数が原論文と一致するという意味ではありません。構造化カタログに、各項目の引用、数値的な課題、検証目標、範囲を記録しています。現代数理生物学の網羅的総説ではなく、数値計算の多様性を重視した選定です。出典確認日は2026年11月6日です。
+
+## 生物モデル方程式と数値検証 — 生物の問いと数値計算法の対応# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#which-biological-questions-exercise-which-algorithms
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+個体群・生態： ロジスティック増殖、捕食被食、Fisher前線、交差拡散、レプリケータ動力学は、正値性、不変集合、長時間挙動、空間侵入を調べます。
+人口構造・感染症： 年齢輸送と区画モデルは、更新境界、収支、区画の非負性、閾値を調べます。
+生化学・代謝： 酵素反応とMonod増殖は、硬いODE、保存則、縮約モデルを結びます。
+形態形成： Turing解析、Gierer–Meinhardt、Schnakenberg、Gray–Scottでは、物理的な不安定性と数値的な模様選択を分けます。
+興奮： Hodgkin–Huxley、FitzHugh–Nagumo、Aliev–Panfilovでは、硬い反応とパルス伝導、不応期、らせん波を結びます。
+遺伝子制御・雑音： 遅延フィードバック、トグル、リプレシレーター、化学マスター方程式には、履歴補間、分岐解析、ジャンプ過程のシミュレーションなどが必要です。
+生体力学： 流体と弾性構造には、流体方程式に加えて構成力と連成離散化が必要です。
+既存の拡散・楕円型解法、有限要素法、疎行列・Newton法、硬い系の時間積分、非圧縮投影法は、その部品になります。既存のテストが、ここで追加した生物系を検証しているわけではありません。
+
+## 生物モデル方程式と数値検証 — 歴史順のモデルカタログ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#historical-model-catalog
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+年は初期の出典または選んだ発展を指し、排他的な先取権の主張ではありません。後年の空間拡張、縮約、翻訳は各項目で区別します。
+
+## 生物モデル方程式と数値検証 — 01 · 1838 · ロジスティック個体群増殖（Logistic population growth）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#01-1838-logistic-population-growth
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+個体群・生態・文献調査のみ。 環境収容力Kによる密度制限付き増殖です。生物系ODEの最も基本的な比較問題になります。
+\dot N=rN(1-N/K).
+数値的な課題。 正値性、平衡点、Kを越えるオーバーシュートを調べます。滑らかに見える曲線でも不変区間を破る場合があります。
+検証案。 N0>0でN(t)=K/[1+(K/N0−1)exp(−rt)]と比較し、時間精度と0、K付近の振る舞いを測ります。
+モデルの規約。 リンク先は後年の1847年の論文です。1838年の短報自体は未確認です。この微分方程式は離散ロジスティック写像とは異なります。
+出典：Verhulst, Pierre-François (1847)。
+
+## 生物モデル方程式と数値検証 — 02 · 1913 · Michaelis–Mentenと完全酵素反応系（Michaelis–Menten and full enzyme kinetics）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#02-1913-michaelismenten-and-full-enzyme-kinetics
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+生化学反応・文献調査のみ。 酵素の飽和反応です。質量作用則の全体系は過渡的な複合体Cを解き、縮約速度則は速い変数を消去します。
+E+S\mathrel{\mathop{\rightleftharpoons}^{k_1}_{k_{-1}}}C\mathrel{\mathop{\longrightarrow}^{k_2}}E+P,\qquad v=V_{\max}S/(K_M+S).
+数値的な課題。 速い初期層と硬さがあり、全体系と縮約系では適用範囲が異なります。通常の準定常近似ではKM=(k−1+k2)/k1です。
+検証案。 閉じた反応機構でE+C、S+C+Pの保存を確認します。酵素と基質の尺度比を変え、縮約系と全体系の差を評価します。縮約を厳密解とは扱いません。
+モデルの規約。 1913年の迅速平衡の解釈と、1925年の準定常状態による導出を区別します。
+出典：Michaelis–Menten（1913、2011年の翻訳を参照）, Briggs, George E. and Haldane, J. B. S. (1925), Johnson, Kenneth A. and Goody, Roger S. (2011)。
+
+## 生物モデル方程式と数値検証 — 03 · 1920 · Lotka–Volterra捕食・被食（Lotka–Volterra predator–prey）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#03-1920-lotkavolterra-predatorprey
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+個体群・生態・文献調査のみ。 被食者の増殖と捕食を結合したモデルで、位相平面と長時間積分のテストになります。
+\dot x=\alpha x-\beta xy,\qquad\dot y=\delta xy-\gamma y.
+数値的な課題。 正値性と閉軌道の人工的な減衰・増幅を調べます。この理想化モデルの周期軌道は吸引的な極限周期軌道ではありません。
+検証案。 正のx,yについてH=δx−γ ln(x)+βy−α ln(y)を追跡し、刻みを細かくしたときの軌道ドリフトを比較します。
+出典：Lotka, Alfred J. (1920), Volterra, Vito (1926)。
+
+## 生物モデル方程式と数値検証 — 04 · 1926 · McKendrick年齢構造個体群（McKendrick age-structured population）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#04-1926-mckendrick-age-structured-population
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+構造化個体群の輸送・文献調査のみ。 個体は年齢aの方向へ単位速度で移動し、新生個体は非局所的な更新境界から入ります。
+\partial_t n+\partial_a n=-\mu(a)n,\qquad n(0,t)=\int_0^\infty b(a)n(a,t)\,da.
+数値的な課題。 年齢方向の風上・有限体積輸送、出生境界の求積、無限年齢区間の打ち切りを扱います。
+検証案。 コホートに沿う特性曲線上の生存率と、d∫n da/dt=出生−死亡を確認します。最高年齢からの人工的な流出も含めます。
+モデルの規約。 古典的な年齢輸送の形です。後年のvon Foersterの系譜も認めますが、その年を初出とは扱いません。
+出典：McKendrick, A. G. (1926)。
+
+## 生物モデル方程式と数値検証 — 05 · 1927 · SIR・SEIR区画モデル（SIR and SEIR compartment models）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#05-1927-sir-and-seir-compartment-models
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+感染症区画・文献調査のみ。 閉じた一様混合系における規格化人口比のモデルです。SEIRでは曝露区画と発症への遷移率を追加します。
+\dot s=-\beta si,\quad\dot i=\beta si-\gamma i,\quad\dot r=\gamma i,\quad s+i+r=1.
+数値的な課題。 各区画の非負性、全人口の不変性、流行ピーク時刻の解像を確認します。
+検証案。 閉じたSIRで総和1と、β>0,s>0におけるi+s−(γ/β)ln(s)を確認します。初期増殖率βs0−γと最終規模の関係も比較します。
+モデルの規約。 元の一般的な流行理論は、このSIRへの特殊化より広いものです。人数と人口比ではβの定義が変わります。
+出典：Kermack, W. O. and McKendrick, A. G. (1927)。
+
+## 生物モデル方程式と数値検証 — 06 · 1937 · Fisher–KPP侵入前線（Fisher–KPP invasion front）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#06-1937-fisherkpp-invasion-front
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+個体群・生態・文献調査のみ。 侵入個体群や有利な対立遺伝子の空間的な拡大を反応拡散前線で表します。
+u_t=D\Delta u+ru(1-u),\qquad 0\leq u\leq1.
+数値的な課題。 前線速度の時空間誤差、先端の解像、正値性、有限領域の境界による汚染を調べます。
+検証案。 c=5√(Dr/6)のAblowitz–Zeppetella厳密前線を用います。最小速度2√(Dr)を調べる場合は、十分大きな領域と適切に急減する初期値が必要です。
+モデルの規約。 Fisher–KPPは慣用的な系統名です。独立したKPPの1937年原論文の確認は今後の課題です。ここでの特殊な厳密前線の速度は最小速度ではありません。
+出典：Fisher, R. A. (1937), Ablowitz, Mark J. and Zeppetella, Anthony (1979)。
+
+## 生物モデル方程式と数値検証 — 07 · 1949 · Monod増殖とケモスタット（Monod growth and chemostat）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#07-1949-monod-growth-and-chemostat
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+生化学反応・文献調査のみ。 栄養制限を受ける生物量X、基質S、収率Y、希釈率dのケモスタットモデルです。d=0では閉じた回分培養になります。
+\mu(S)=\mu_{\max}\frac{S}{K_S+S},\quad\dot X=(\mu(S)-d)X,\quad\dot S=d(S_{in}-S)-\mu(S)X/Y.
+数値的な課題。 閾値付近のウォッシュアウト、資源と増殖の尺度差、正値性、収率と速度定数の区別に注意します。
+検証案。 d=0でS+X/Yを確認します。d>0ではd(S+X/Y)/dt=d[Sin−(S+X/Y)]を用い、ウォッシュアウト平衡も検証します。
+モデルの規約。 飽和増殖を一定収率で拡張した一例であり、代謝全般の普遍モデルではありません。
+出典：Monod, Jacques (1949)。
+
+## 生物モデル方程式と数値検証 — 08 · 1952 · Hodgkin–Huxley膜動態（Hodgkin–Huxley membrane dynamics）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#08-1952-hodgkinhuxley-membrane-dynamics
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+興奮系・文献調査のみ。 膜電位とゲート変数z=m,h,nでイオン性の興奮膜を記述します。ケーブルへの拡張では軸方向の電流を追加します。
+C_m\dot V=I_{app}-\bar g_{Na}m^3h(V-E_{Na})-\bar g_Kn^4(V-E_K)-g_L(V-E_L),\quad\dot z=\alpha_z(V)(1-z)-\beta_z(V)z.
+数値的な課題。 ゲートの硬さ、速度式の除去可能特異点、ゲートの範囲、電位・電流の符号と温度の規約を確認します。
+検証案。 版が明示されたCellML等の規約を選び、静止平衡と電位固定時のゲート緩和を検証してから、スパイク時刻と波形の収束を調べます。
+モデルの規約。 原論文のイカ巨大軸索モデルは、ヒト心筋に較正したモデルではありません。この調査では特定の速度パラメータ組を選定していません。
+出典：Hodgkin, A. L. and Huxley, A. F. (1952)。
+
+## 生物モデル方程式と数値検証 — 09 · 1952 · Turing反応拡散の枠組み（Turing reaction–diffusion framework）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#09-1952-turing-reactiondiffusion-framework
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+模様形成・文献調査のみ。 一様な反応平衡のまわりで拡散駆動の模様が生じる枠組みです。f,gを一意に指定するモデルではありません。
+u_t=D_u\Delta u+f(u,v),\qquad v_t=D_v\Delta v+g(u,v).
+数値的な課題。 物理不安定性と数値不安定性、領域の固有モード、離散Laplacianの分散関係の誤差を区別します。
+検証案。 反応則を指定し、J−k²diag(Du,Dv)の固有値と初期のFourierモード成長を比較します。拡散駆動不安定性を論じる前にk=0の反応平衡が安定であることを示します。
+モデルの規約。 斑点画像や拡散係数の差だけではTuring機構の証明になりません。境界条件が許容モードを決めます。
+出典：Turing, Alan M. (1952)。
+
+## 生物モデル方程式と数値検証 — 10 · 1961 · FitzHugh–Nagumoの興奮と回復（FitzHugh–Nagumo excitation and recovery）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#10-1961-fitzhughnagumo-excitation-and-recovery
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+興奮系・文献調査のみ。 速い興奮と遅い回復を規格化したモデルです。空間へ拡張するとパルス、不応期、らせん波を表します。
+v_t=D\Delta v+v-v^3/3-w+I,\qquad w_t=\epsilon(v+a-bw).
+数値的な課題。 硬い時間尺度分離、分割誤差、波速の収束、数値的な波の分裂を調べます。
+検証案。 まずODEの固定点・ヌルクラインと微小摂動の固有値を確認します。2次元らせん動画の前に1次元パルスの収束を調べます。
+モデルの規約。 広く使われる規格化形の一例です。3次項の係数、回復項の符号、無次元化は定式化によって異なります。
+出典：FitzHugh, Richard (1961), Nagumo, Jinichi and Arimoto, Suguru and Yoshizawa, Shuji (1962)。
+
+## 生物モデル方程式と数値検証 — 11 · 1970 · Keller–Segel走化性（Keller–Segel chemotaxis）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#11-1970-kellersegel-chemotaxis
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+走化性・文献調査のみ。 細胞密度nが走化性物質の勾配に沿って移動します。τc=0では化学物質の部分問題が楕円型になります。
+n_t=D_n\Delta n-\chi\nabla\cdot(n\nabla c),\qquad\tau_c c_t=D_c\Delta c+\alpha n-\lambda c.
+数値的な課題。 相互に結合した流束、正値性、質量保存、集中ピークを扱います。人工的な負値を物理的な凝集や爆発と取り違えないようにします。
+検証案。 細胞の全流束が境界でゼロなら∫nを保存します。一様平衡と線形成長を調べ、特異性を論じる前にピークと領域の収束を確認します。凝集例の前に滑らかな製造解を用います。
+モデルの規約。 より詳細な元の定式化からの一般的な2変数縮約です。爆発閾値は次元、領域、境界条件、化学物質の時間発展に依存します。
+出典：Keller, Evelyn F. and Segel, Lee A. (1970)。
+
+## 生物モデル方程式と数値検証 — 12 · 1972 · Gierer–Meinhardt活性化・抑制（Gierer–Meinhardt activator–inhibitor）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#12-1972-gierermeinhardt-activatorinhibitor
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+模様形成・文献調査のみ。 短距離の活性化と長距離の抑制を組み合わせた、代表的な簡略モデルです。
+a_t=D_a\Delta a+\rho a^2/h-\mu a+\sigma_a,\qquad h_t=D_h\Delta h+\rho_h a^2-\nu h.
+数値的な課題。 抑制因子が分母に入るため特異化の可能性があります。hの正値性、細いピーク、反応の硬さを明示的に扱います。
+検証案。 正の一様平衡を選び、分散関係と抑制因子の正値性を確認してから、ピーク幅と模様の波長の収束を調べます。
+モデルの規約。 発生源密度、飽和、基礎生成はモデルの派生形で異なります。この簡略式は各原形をそのまま転記したものではありません。
+出典：Gierer, Alfred and Meinhardt, Hans (1972)。
+
+## 生物モデル方程式と数値検証 — 13 · 1972 · 流体・弾性構造と埋め込み境界（Fluid–elastic structure and immersed boundaries）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#13-1972-fluidelastic-structure-and-immersed-boundaries
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+生体力学・文献調査のみ。 流体と変形構造の連成です。力・構成則を与えることで、弁や膜などの生物学的対象を扱えます。
+\rho(\boldsymbol u_t+\boldsymbol u\cdot\nabla\boldsymbol u)=-\nabla p+\mu\Delta\boldsymbol u+\boldsymbol f,\quad\nabla\cdot\boldsymbol u=0,\quad\boldsymbol X_t=\boldsymbol u(\boldsymbol X,t).
+数値的な課題。 硬い弾性力、圧力投影、Euler–Lagrange間の補間・力分配、体積の漏れが問題になります。
+検証案。 弾性エネルギーと力をまず指定します。単純に緩和する境界で、力の受け渡し、補間と分配の随伴性、流体の発散、囲まれた体積のドリフトを確認します。
+モデルの規約。 埋め込み境界は数値的な結合法であり、それだけで閉じた生物構成方程式になるわけではありません。既存の周期MACソルバーはこの連成を実装していません。
+出典：Peskin, Charles S. (1972)。
+
+## 生物モデル方程式と数値検証 — 14 · 1977 · 化学マスター方程式とGillespie SSA（Chemical master equation and Gillespie SSA）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#14-1977-chemical-master-equation-and-gillespie-ssa
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+確率反応網・文献調査のみ。 整数分子数、反応ジャンプνj、反応傾向関数ajを用います。SSAはこの連続時間Markovモデルの軌道を標本化します。
+\partial_t P(\boldsymbol n,t)=\sum_j\left[a_j(\boldsymbol n-\boldsymbol\nu_j)P(\boldsymbol n-\boldsymbol\nu_j,t)-a_j(\boldsymbol n)P(\boldsymbol n,t)\right].
+数値的な課題。 組合せを含む正しい反応傾向関数、事象順序、吸収状態、統計誤差を確認します。tau-leapingは別の近似です。
+検証案。 一定率kの∅→Xと率γnのX→∅を用いると、定常分子数はPoisson(k/γ)です。集団平均・分散・分布を信頼区間とともに比較します。
+モデルの規約。 1977年論文はSSAの基礎文献であり、全てのマスター方程式の起源を主張するものではありません。SSAは解法で、反応網がモデルです。乱数種は軌道を特定しますが集団検証にはなりません。
+出典：Gillespie, Daniel T. (1977)。
+
+## 生物モデル方程式と数値検証 — 15 · 1977 · Mackey–Glass遅延生理フィードバック（Mackey–Glass delayed physiological feedback）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#15-1977-mackeyglass-delayed-physiological-feedback
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+遅延・遺伝子制御・文献調査のみ。 規格化した生理制御系の遅延フィードバックです。遅延が安定性と振動挙動を変えます。
+\dot x(t)=\frac{\beta x(t-\tau)}{1+x(t-\tau)^p}-\gamma x(t).
+数値的な課題。 区間[−τ,0]の履歴関数、遅延値の補間、伝播する導関数の不連続、遅延を考慮した適応刻みを扱います。
+検証案。 τ=0のODE極限、一定平衡の履歴、外力付き製造解を確認します。カオス軌道の点ごとの一致を無期限に要求せず、長時間統計を比較します。
+モデルの規約。 スカラー初期値だけでは問題が定まりません。遅延ODEと空間反応拡散モデルは別です。
+出典：Mackey, Michael C. and Glass, Leon (1977)。
+
+## 生物モデル方程式と数値検証 — 16 · 1978 · レプリケータ進化ゲーム動態（Replicator evolutionary game dynamics）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#16-1978-replicator-evolutionary-game-dynamics
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+進化動力学・文献調査のみ。 指定した行列ゲームで、各戦略の比率が相対利得に応じて増減します。
+\dot x_i=x_i[(A\boldsymbol x)_i-\boldsymbol x^TA\boldsymbol x],\qquad x_i\geq0,\quad\sum_i x_i=1.
+数値的な課題。 確率単体の保持、絶滅境界付近の挙動、中立周期と吸引平衡の違いを調べます。
+検証案。 単体の総和、不変な境界面、解析的に選んだゲーム平衡を確認します。不変量やLyapunov関数はゲームに適したものを用います。
+モデルの規約。 普遍的なLyapunov関数や、固定点と進化的安定戦略の同値性を仮定しません。
+出典：Taylor, Peter D. and Jonker, Leo B. (1978)。
+
+## 生物モデル方程式と数値検証 — 17 · 1979 · Schnakenberg反応拡散（Schnakenberg reaction–diffusion）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#17-1979-schnakenberg-reactiondiffusion
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+模様形成・文献調査のみ。 単純な自己触媒反応則を空間へ拡張したもので、再現可能なTuring不安定性の発生テストに適しています。
+u_t=D_u\Delta u+a-u+u^2v,\qquad v_t=D_v\Delta v+b-u^2v.
+数値的な課題。 反応の硬さ、濃度の正値性、反応系のHopf不安定性と空間的なTuring不安定性の違いを調べます。
+検証案。 u*=a+b、v*=b/(a+b)²を確認し、固定した境界条件のもとで、離散・連続の線形化作用素とモード成長率を比較します。
+モデルの規約。 数理的な化学模様モデルです。生物の模様に似た画像ができても、組織への較正にはなりません。
+出典：Schnakenberg, Jürgen (1979)。
+
+## 生物モデル方程式と数値検証 — 18 · 1979 · Shigesada–Kawasaki–Teramoto交差拡散（Shigesada–Kawasaki–Teramoto cross-diffusion）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#18-1979-shigesadakawasakiteramoto-cross-diffusion
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+個体群・生態・文献調査のみ。 密度依存の自己・相互分散を伴う競争が、空間的な棲み分けを生みます。
+u_t=\Delta[(d_1+\alpha_{11}u+\alpha_{12}v)u]+u(a_1-b_1u-c_1v),\quad v_t=\Delta[(d_2+\alpha_{21}u+\alpha_{22}v)v]+v(a_2-b_2u-c_2v).
+数値的な課題。 結合した非線形拡散行列、単純なスカラー最大原理の議論が使えなくなること、正値性、エントロピーに整合した離散化を扱います。
+検証案。 滑らかな製造解と一定平衡から始めます。反応なし・法線流束なしでは各種の質量を保存します。エントロピー則を主張する前に係数の仮定を確認します。
+モデルの規約。 表示式は一様環境への縮約で、元の環境ポテンシャル項を省いています。独立した2本のスカラー拡散方程式とは異なります。
+出典：Shigesada, Nanako and Kawasaki, Kohkichi and Teramoto, Ei (1979)。
+
+## 生物モデル方程式と数値検証 — 19 · 1983 · Gray–Scott空間自己触媒反応（Gray–Scott spatial autocatalysis）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#19-1983-grayscott-spatial-autocatalysis
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+模様形成・文献調査のみ。 供給と減衰を含む化学反応モデルです。空間へ拡張すると多様な斑点や波を生じます。
+u_t=D_u\Delta u-uv^2+F(1-u),\qquad v_t=D_v\Delta v+uv^2-(F+k)v.
+数値的な課題。 F,k、拡散、領域、有限振幅の初期摂動への感度があります。格子尺度の模様や丸め誤差が長時間の形態に影響する場合もあります。
+検証案。 全パラメータと摂動の乱数種を記録します。一様状態(1,0)と初期摂動応答を検証し、定量的な観測量の格子・時間収束を調べます。
+モデルの規約。 1983年は一様混合CSTRの出典で、空間模様はPearson 1993が出典です。斑点分裂だけでは細胞分裂や線形Turing不安定性を示しません。
+出典：Gray, Peter and Scott, Stephen K. (1983), Pearson, John E. (1993)。
+
+## 生物モデル方程式と数値検証 — 20 · 1996 · Aliev–Panfilov心筋興奮（Aliev–Panfilov cardiac excitation）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#20-1996-alievpanfilov-cardiac-excitation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+興奮系・文献調査のみ。 心筋波と回復特性を表す、現象論的に縮約した興奮・回復モデルです。
+u_t=D\Delta u-ku(u-a)(u-1)-uv,\quad v_t=\left(\epsilon_0+\frac{\mu_1v}{u+\mu_2}\right)[-v-ku(u-b-1)].
+数値的な課題。 回復過程の硬さ、分母の挙動、波速・回復曲線の解像度と時間分割への感度を調べます。
+検証案。 モデルの符号化版とパラメータを指定し、2次元リエントリーの前に単一細胞と1次元伝導の収束を確立します。らせん画像だけでなく回復曲線を比較します。
+モデルの規約。 単領域・双領域の組織モデルは伝導率テンソルを追加し、双領域では細胞外の楕円型制約も加わります。この2変数モデルに自動的に含まれるものではありません。
+出典：Aliev, R. R. and Panfilov, A. V. (1996)。
+
+## 生物モデル方程式と数値検証 — 21 · 2000 · Repressilator mRNA・タンパク質回路（Repressilator mRNA–protein network）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#21-2000-repressilator-mrnaprotein-network
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+遅延・遺伝子制御・文献調査のみ。 3つの抑制遺伝子を環状に結びます。mRNAとタンパク質を両方保持すると状態変数は6つになります。
+\dot m_i=\frac{\alpha}{1+p_{i-1}^n}+\alpha_0-m_i,\quad\dot p_i=\beta(m_i-p_i),\qquad i=1,2,3\ \text{cyclic}.
+数値的な課題。 複数の分解尺度、振動の発生、位相誤差、決定論的周期と単一細胞の雑音を伴う挙動の差を調べます。
+検証案。 対称平衡と線形安定性を確認します。過渡時間を明示し、その後の周期と振幅を時間刻みの細分化で比較します。
+モデルの規約。 6変数形と3タンパク質への縮約形は異なります。振動の有無はパラメータに依存します。
+出典：Elowitz, Michael B. and Leibler, Stanislas (2000)。
+
+## 生物モデル方程式と数値検証 — 22 · 2000 · 遺伝子トグルスイッチ（Genetic toggle switch）# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#22-2000-genetic-toggle-switch
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+遅延・遺伝子制御・文献調査のみ。 相互抑制によって双安定スイッチが生じうる、規格化された遺伝子モデルです。
+\dot u=\frac{\alpha_1}{1+v^p}-u,\qquad\dot v=\frac{\alpha_2}{1+u^q}-v.
+数値的な課題。 パラメータに依存する双安定性、鞍点の分離曲線、連続追跡、吸引域境界付近の摂動への感度を調べます。
+検証案。 全ての正の平衡とJacobian固有値を求めます。十分遅いパラメータ追跡と複数初期値で履歴現象を検証します。
+モデルの規約。 任意のHill指数や生成率で双安定性が保証されるわけではありません。誘導、mRNA動態、雑音は追加のモデル選択です。
+出典：Gardner, Timothy S. and Cantor, Charles R. and Collins, James J. (2000)。
+
+## 生物モデル方程式と数値検証 — 動画の前に組み立てる検証経路# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#a-verification-path-before-attractive-movies
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+最初の実装順として、ロジスティック／SIR → 酵素反応の全体系 → Fisher前線 → FitzHugh–Nagumoパルス → Schnakenbergモード → Keller–Segel凝集を提案します。捕食被食はHamilton系ノートと並行して長時間不変量を調べ、出生死滅SSAを最初の確率的分岐にできます。Gray–Scottはその後の視覚的な化学展示に向きますが、供給率、空間尺度、初期摂動、出典を明示します。これは実装順の提案で、歴史順とは別です。
+
+## 生物モデル方程式と数値検証 — 非線形前線の厳密解# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#an-exact-nonlinear-front
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+尺度化したFisher方程式では、Ablowitz–Zeppetella（1979）の特殊な前線が、決定論的な比較基準になります。
+u(x,t)=\left[1+\exp\left(\sqrt{\frac r{6D}}(x-ct-x_0)\right)\right]^{-2},
+\qquad c=5\sqrt{\frac{Dr}{6}}.
+有限区間では、厳密解に一致する時間依存境界値を与えるか、境界を十分遠ざけて打ち切りの影響を測ります。前線位置、形状のノルム、時間・空間の細分化をそれぞれ比較します。この特殊な陽表示の前線は最小速度の前線より速く進みます。両者を混同すると、解法に存在しない誤差を検出してしまいます。
+
+## 生物モデル方程式と数値検証 — 模様の発生を定量的に調べる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#pattern-onset-is-a-quantitative-test
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+選んだ2種反応系の平衡でJacobian Jを作ります。連続体では波数ベクトルkのFourierモードを、次の作用素が発展させます。
+L(k)=J-|k|^2\operatorname{diag}(D_u,D_v).
+一様な正方格子と中心差分Laplacianでは、|k|²を次で置き換えます。
+\kappa_h^2=\frac4{h^2}
+\left[\sin^2(k_xh/2)+\sin^2(k_yh/2)\right].
+小振幅の固有モードをひとつ与え、初期の指数成長を測って、両方の分散関係と比較します。k=0の反応系が安定で非零モードが不安定なら、選んだ拡散駆動不安定性を診断できます。非線形段階の斑点だけでは診断できません。Schnakenbergはこの実験に単純な反応則を与えますが、Turing自身の例と黙って置き換えてはいけません。周期境界とゼロ流束境界では許されるモードが異なります。
+
+## 生物モデル方程式と数値検証 — 解法を評価する前にモデルを固定する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#preserve-the-model-before-judging-the-method
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+将来の各計算では、有次元・規格化変数、全パラメータ、初期・境界条件、単位、必要なら乱数種、モデルの版と出典を指定します。収支には境界流束と生成項を含めます。すべての生物反応拡散問題が各種の質量を保存するわけではありません。値を切り詰める正値化は総量や絶滅閾値を変える場合があります。拡散部分を陰的に解くだけでは、分割更新全体の正値性は証明できません。
+確率反応網では、離散化・モデル近似と有限標本集団の統計的不確かさを分けます。非線形反応網でODE解が確率系の厳密な平均に一致するとは限りません。遅延方程式では履歴関数と補間則を記録します。生化学の縮約では、モデル縮約誤差と積分誤差を別々に測ります。
+
+## 生物モデル方程式と数値検証 — 出典と今後の分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/biological-models/#sources-and-further-branches
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Murrayの第3版入門書（2002）は、これらの分野を横断する読書経路になります。PhysiomeのHodgkin–HuxleyワークスペースとAliev–Panfilovの符号化は、実装パラメータを選ぶ前に確認すべきモデルの版の参照先です。独立した検証データではありません。
+今後の独立した調査対象には、神経集団場、空間確率反応拡散、細胞内極性と質量保存反応網、細胞周期のサイズ構造、頂点・位相場による細胞力学、腫瘍と栄養の自由境界、遺伝的浮動を含む集団遺伝学などがあります。現在の22項目が生物モデルの全範囲を尽くすという主張ではありません。指定した方程式に対する数値検証と、生物個体や実験データに対する妥当性検証も異なります。
+方程式ギャラリー、歴史アトラス、全参考文献へ戻れます。
+
+## カーバンクル現象 — カーバンクル現象 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+強い衝撃波を多次元方式で捕獲すると、偽の膨らみ、筋、横方向に交互の状態が現れる場合があります。このカーバンクル不安定性は離散流体問題の性質で、衝撃波が鋭く見えるだけでは正確さを示せません。格子に沿う衝撃波は特に有効な検査です。
+Quirk（1994）はGodunov型ソルバーの失敗を示し、相補的な流束切替を動機付けます。Pandolfi・D’Ambrosio（2001）は衝撃波関連不安定性と局所的対策を解析します。以下の診断の問いはそれらを背景とし、普遍的な機構や新しい安定性証明を主張しません。
+
+## カーバンクル現象 — 1次元流束が2次元で失敗する理由# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/#why-a-one-dimensional-flux-can-fail-in-two-dimensions
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+面法線のRoe流束は、
+\widehat F_n=\tfrac12(F_n(U_L)+F_n(U_R))
+-\tfrac12\sum_k |\widetilde\lambda_k|\,\alpha_k\widetilde r_k.
+です。特性分解は音響・接触・せん断波に異なる散逸を与えます。静止した格子沿い衝撃波では、隣接列の擾乱が弱く減衰する横モードや離散衝撃波構造と相互作用します。接触波の高解像と、すべての強い多次元衝撃波の安定化は別の要求です。再構成、流束、時間積分、格子、境界を含む方式全体が関わります。
+**奇偶分離（odd–even decoupling）**は隣り合う列が交互に振る舞うことで、有用な診断です。カーバンクル研究と関係しますが、すべての論文で同じテストを指すわけではありません。鈍頭物体の衝撃波の膨らみと、摂動を加えた平面衝撃波では幾何と境界が違います。
+
+## カーバンクル現象 — 3つの異なる問い# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/#three-different-questions
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+エントロピー修正：音速をまたぐ膨張波が許容されない膨張衝撃波になる問題に、小さな音響固有値の平滑化で対処します。それだけで多次元強衝撃波の安定性は保証しません。
+正値性：密度・圧力を許容範囲に保つ問題で、波速限界、適切なCFL、正値再構成を使います。正の状態でもカーバンクルは生じ得ます。
+横方向の頑健性：衝撃波に沿う摂動が格子依存の人工物へ育たないことを、独自の多次元検証で確認します。
+ライブラリの1次元Roeエントロピー平滑化は最初の項目です。Sodや二重膨張波を通過しても、3番目には答えられません。
+
+## カーバンクル現象 — 対策とトレードオフ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/#remedies-and-their-tradeoffs
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+2波HLL／HLLEやRusanovは、接触波解像ソルバーより接触・せん断へ多くの散逸を加えることが一般的です。センサーで鋭い流束と散逸的流束を局所混合する方法や、純粋な面法線処理が見落とす方向へ散逸を与える回転・多次元流束もあります。Nishikawa・Kitamura（2008）に回転ハイブリッド法があります。
+これらは設計の方向で、交換可能な保証ではありません。センサーは物理的なせん断層も減衰させ得て、過剰散逸は対象構造を失いながら不安定性を隠します。波速推定を明示してください。このアトラスの2次元基準はDavis型限界のHLLで、すべてのEinfeldt HLLE変種ではありません。
+
+## カーバンクル現象 — 適切な比較で測るもの# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/#what-an-honest-comparison-must-measure
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+摂動付き平面強衝撃波、続いて管理した格子列の鈍頭物体流を使います。Mach数、面に対する衝撃波位置、摂動振幅・波長、境界、再構成、CFL、終了時刻を固定し、Roe、HLL／HLLE、提案ハイブリッドを比較します。格子をずらす・回す比較も繰り返します。
+周期的な横方向列について、選んだ衝撃波法線位置での交互密度診断の一例は、
+A_\pi(i,t)=\left|\frac{1}{N_y}\sum_{j=0}^{N_y-1}(-1)^j
+\bigl(\rho_{i,j}(t)-\overline\rho_i(t)\bigr)\right|.
+です。時間履歴と衝撃波近傍の最大値を、位置、横速度、圧力、正値性とともに記録します。移動衝撃波では固定列だけでなく衝撃波の近傍を追い、他の波長にも独自の診断を用意します。小さな最終残差や滑らかな等高線だけでは不十分です。
+
+## カーバンクル現象 — 初版の状況# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/#status-in-this-edition
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+二重Mach反射は斜め衝撃波干渉の実際の1次HLL計算です。管理したRoe対HLLのカーバンクル比較ではなく、カーバンクルがない保証を与えません。後述の平面衝撃波節に管理した行摂動診断を追加しました。別の段階では、物体に沿う格子の円柱前半部スナップショットと対照計算を追加しました。物理的な円筒粘性応力と数値衝撃波散逸も別の演算子です。
+Roeの業績、流束のテスト、実装ロードマップへ進んでください。
+
+## カーバンクル現象 — 計算した平面odd–even診断# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/carbuncle/#computed-planar-oddeven-diagnostic
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+条件を揃えた比較を開く。独立したテストとして、[0,1] × [0,0.25]、γ=1.4、上流(ρ,u,v,p)=(1.4,6,0,1)、厳密な垂直衝撃波の下流状態を使い、定常Mach 6衝撃波を計算します。x両端は固定、yは周期、セルは正方形です。64 × 16と128 × 32、t=0.2、空間1次・SSPRK2・CFL 0.3を比較します。衝撃波はx=0.5の面上、または右へ半セル移動した位置です。行ごとに±10⁻⁴Δxずらした波面を、保存平均としてx方向に厳密積分して初期化します。各設定に無摂動対照計算を用意します。
+無修正Roe、音響平滑化δ=0.1c̃付きRoe、Davis HLL、Einfeldt型HLLE、圧力センサー付きRoe／HLLE混合、共通音速・3次圧力分割のAUSM基準例を比較します。空間・時間設定は同じですが、刻み数・計算費用は等しいとは限りません。混合はS=max_neighbors |p_neighbor−p|/min(p_neighbor,p)、θ=clip((S−0.05)/0.2,0,1)、面では隣接セルの最大θを使い、F=(1−θ)F_Roe_fixed+θF_HLLEとします。x方向の圧力差でも近くの横方向面のHLLEが作動します。明示した教育用センサーであり、論文の回転ハイブリッドや普遍的対策ではありません。
+|x−xshock|<0.1でmax_i Aπ、圧力・密度の正値性、再試行回数、横速度、各行の積分質量欠損による位置を測ります。最後の位置は点ごとに検出した波面位置ではありません。密度図は横方向の行平均からの差を、比較内で共通の正負色範囲で示します。履歴の対数表示は10⁻¹⁶で下限を設けますが、生の値も保存しています。状態のクリップや隠れた流束切替はありません。
+面に一致したRoeでは選んだ行モードが成長し、半セルの移動で応答が大きく変わります。エントロピー修正はこの位置依存性を除きません。HLL／HLLEや他の流束も、名称ではなく記録した条件で評価します。特殊なNyquist摂動では密度の行が分離しても横速度0の対称性を保つため、一般的な横運動の検査にはなりません。
+再現はpython scripts/build_shock_robustness.pyです。全摂動・対照履歴、設定、ソースハッシュと最終保存変数場を取得できます。原型Quirkの移動衝撃波・摂動格子ダクトや鈍頭物体のこぶではありません。円柱前半部は別段階の計算例として追加しました。他波長、格子回転、広いCFL・強度の検査は今後で、カーバンクルを生じないとの主張はしません。単一ジャンプの代数はProperty Uを参照してください。
+
+## Chapman–Enskog展開：分布から輸送へ — Chapman–Enskog展開：分布から輸送へ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/chapman-enskog/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Chapman–Enskog（チャップマン–エンスコッグ）展開は、運動論的な緩和と、ゆっくり変化する流体場を分けます。古典的な運動論はChapman・Cowlingの『The Mathematical Theory of Non-Uniform Gases』（初版1939年、第3版1970年）で扱われています。書籍の出版年は展開の発明年ではありません。この章では、外力なし・等温・低Mach数の格子BGKについて、独立した導出を示します。
+
+## Chapman–Enskog展開：分布から輸送へ — 小さなパラメータと可解条件# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/chapman-enskog/#a-small-parameter-and-solvability
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+遅い変化を整理するパラメータεを導入します。
+f_q=f_q^{(0)}+\epsilon f_q^{(1)}+\epsilon^2 f_q^{(2)}+\cdots,
+\quad \partial_t=\epsilon\partial_{t_1}+\epsilon^2\partial_{t_2},
+\quad \nabla=\epsilon\nabla_1.
+保存モーメントは局所平衡が担うため、高次補正の質量・運動量モーメントはゼロです。
+\sum_q f_q^{(k)}=0,\quad
+\sum_q\boldsymbol c_q f_q^{(k)}=0\quad (k\geq1).
+これらは展開の制約で、非平衡応力を消す指示ではありません。f^(1)の応力モーメントが粘性輸送を生みます。
+
+## Chapman–Enskog展開：分布から輸送へ — 離散時間のTaylor項を残す# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/chapman-enskog/#keep-the-discrete-time-taylor-term
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+格子BGKの並進側をD_q=∂t+c_q·∇で展開します。格子時間単位のTaylor展開はD_q f_q + D_q² f_q/2から始まり、次数ごとに、
+f_q^{(0)}=f_q^{eq},\qquad
+f_q^{(1)}=-\tau D_{1q} f_q^{eq},
+\partial_{t_2} f_q^{eq}
++\left(1-\frac1{2\tau}\right)D_{1q}f_q^{(1)}
+=-\frac{f_q^{(2)}}{\tau}.
+を得ます。1次の質量・運動量モーメントが連続の式とEuler部分を、2次の応力補正がNewton粘性部分を与えます。D2Q9平衡の等方性、低Mach近似、上の係数から、せん断動粘性係数は、
+\nu=c_s^2\left(\tau-\frac12\right)\Delta t.
+となります。ここでτは、緩和に使う格子時間ステップ数を表す無次元量で、物理的な緩和時間はτ_relax=τΔtです。一方、連続時間BGKでは対応する等温モデルのν=c_s²τ_relaxとなり、並進のTaylor半ステップはありません。定義を混ぜると粘性を誤ります。
+
+## Chapman–Enskog展開：分布から輸送へ — この導出が示す範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/chapman-enskog/#what-this-derivation-does-and-does-not-establish
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+D2Q9実験は式へ代入するだけでなく、せん断減衰から粘性を測ります。Qianら（1992）が格子モデルの出典で、BGKの原典は連続運動論の緩和を扱います。Guoら（2002）の外力離散化は別で、上の無外力の代数ではそのソース項を導出していません。
+打切った等温平衡に対して、小さな勾配と小さなMach数を仮定する、平衡近傍の形式的な漸近展開です。衝撃波近傍の安定性、任意の緩和時間、エネルギー方程式の回復、一般的な希薄気体Boltzmannソルバーとしての妥当性を保証しません。Burnett次数の輸送や熱的衝突モデルには、追加モーメントと解析が必要です。
+
+## CIP：値と勾配を運ぶ — CIP：値と勾配を運ぶ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+原型のcubic-interpolated pseudo-particle（CIP）は場と空間微分を保持し、風上の3次分布を再構成します。広い族はconstrained interpolation profileとも呼ばれます。CIPノートは定速周期スカラー移流の原型多項式を実装し、値だけの線形補間と比較して、拡散、勾配輸送、振動、細分化、保存性を調べます。
+歴史的出典はTakewaki–Nishiguchi–Yabe（1985）、Yabe–Aoki（1991）です。Saito–Obase–Abe-Ouchi（2020）はCIP族の値・勾配発展と有理関数型を説明しますが、氷床応用とRCIPはこの多項式例とは別です。
+
+## CIP：値と勾配を運ぶ — 特性線と追加の未知数# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/#characteristics-and-an-additional-unknown
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+定速aでは、
+f_t+a f_x=0,\qquad g=f_x,\qquad g_t+a g_x=0.
+です。到着点x_iから出発点x_d=x_i−a dtへ逆追跡し、古い風上区間のfとgをそこで補間します。gは独立した発展変数で、毎ステップ新しいfの差分に置き換えません。N節点のCIPは2N、線形比較はN個のスカラー未知数です。
+変速では勾配方程式に伸長が入り、
+g_t+a g_x=-a_xg.
+です。ソース、速度変化、圧縮性には追加更新と特性線処理が必要です。a_x≠0ではトレーサーf_t+a f_x=0と保存密度f_t+(af)_x=0も異なります。初版は両形式が一致する定速だけを使います。
+
+## CIP：値と勾配を運ぶ — 4つの端点条件で3次式を決める# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/#four-endpoint-constraints-determine-a-cubic
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+幅hの区間で規格化座標s∈[0,1]を使うと、
+P(s)=H_{00}(s)f_L+hH_{10}(s)g_L+H_{01}(s)f_R+hH_{11}(s)g_R,
+\begin{aligned}
+H_{00}&=2s^3-3s^2+1,&H_{10}&=s^3-2s^2+s,\\
+H_{01}&=-2s^3+3s^2,&H_{11}&=s^3-s^2.
+\end{aligned}
+です。端点値と物理微分を再現し、新状態はf_i=P(s_d)、g_i=P′(s_d)/hです。P′はsで微分します。正のaでは区間[x_{i−1},x_i]とs_d=1−a dt/h、負では[x_i,x_{i+1}]とs_d=−a dt/hです。出発点を隣接区間に収めるため|a|dt/h≤1とし、等号なら両配列を厳密に1節点移動します。
+この定速問題に対する完全な特性線・再配置更新であり、任意のRKで進める空間右辺ではありません。RKの族に並ぶ方法で、その係数表の一員ではありません。一般の半Lagrange法は複数セルを越えられますが、この隣接セル例の範囲外です。
+
+## CIP：値と勾配を運ぶ — 再現可能なスカラーテスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/#reproducible-scalar-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+周期[0,1]にN=128の点x_i=i/Nを置きます。ノートはa=±1、Courant絶対値0.25、0.6、1、終了時刻0.25、1を選び、最終刻みを短縮します。設定ごとに終了時刻まで独立に解き、保存解間の補間はしません。
+滑らかな分布は1+0.2sin(2πx)で、初期gは解析微分または周期中心差分です。矩形パルスは[0.2,0.4)で1、他で0、初期勾配はゼロまたは中心差分です。標本化した不連続でゼロを使うのは明示した規約で、そこでの解析微分ではないため、矩形波の厳密勾配誤差は表示しません。
+参照fは厳密に移動した点値標本で、有限体積勾配制限ノートのセル平均とは異なります。L1は平均絶対点誤差です。初期勾配の選択は急峻な分布へ大きく影響し得ます。基本3次式にTVD・単調性・正値性の制限はなく、矩形波に過大・過小値が現れます。線形比較は同じ符号付き特性線の点値更新で、|C|≤1では1次風上と代数的に同じです。
+滑らかな解の細分化はN=32、64、128、256、a=1、Courant=0.6、T=0.37です。両勾配初期化で値誤差は3次へ近づき、勾配誤差は別に記録します。3次補間だけで反復再配置後の大域4次精度を主張できません。整数Courantは特殊な厳密移動なので一般次数の推定には使いません。N状態の線形法と2N状態のCIPに同一コストの順位も付けません。
+
+## CIP：値と勾配を運ぶ — 正弦波だけでは保存性を証明できない# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/#why-a-sine-wave-is-not-a-conservation-proof
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+周期区分Hermite再構成の厳密積分は、
+M=\sum_i\left[\frac h2(f_i+f_{i+1})+
+\frac{h^2}{12}(g_i-g_{i+1})\right]=h\sum_i f_i.
+です。一様・定速で割合sだけ再配置すると、1ステップ変化は、
+\Delta M=h^2\,[H_{10}(s)+H_{11}(s)]\sum_i g_i.
+です。解析的正弦勾配と中心差分の初期和はゼロなので、一般の保存的再配置性がなくても、表示スカラー例は積分を丸め誤差まで保つ場合があります。
+別の反例は、N=32、全節点でf_i=1、g_i=1の正当な周期C1 Hermite場です。これは定数関数ではありません。各区間に小さな3次波形があり、節点間で微分が変わります。厳密積分は1で、厳密移動はそれを保ちますが、C=0.35の1回のCIP再配置は、
+s=0.65,\qquad \Delta M=h\,s(1-s)(1-2s)=-0.0021328125.
+を与えます。最初の4区間で、元の再構成の厳密移動とCIP場を比べます。性質の主張を検証するため意図的に作った格子スケールの例で、すべての滑らかな流れの質量誤差予測ではありません。粗い求積ではなく解析積分を使います。容易な問題の小誤差から、より強い保証は導けません。
+
+## CIP：値と勾配を運ぶ — 保存型・形状保存型の分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/#conservative-and-shape-preserving-branches
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+CIP–CSL（Yabeら、2001）は積分制約と保存的半Lagrange輸送を導入します。有理CIP／RCIPは再構成を変え、別の変種は形状制約を加えます。保存性と有界性には独自の定義とテストが必要で、CIPという名称だけからは導けません。
+初版は原型の1次元3次式だけを実装します。CIP–CSL2／CSL4、RCIP、流体の移流・非移流分割、多次元混合微分、完全な圧縮性・多相ソルバーは読書の背景です。既存Euler衝撃波管の再構成と流束は変更していません。
+
+## CIP：値と勾配を運ぶ — 再現# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/cip/#reproduce
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+from numart.cip import solve_advection, mass_counterexample
+wave = solve_advection(profile="sine", speed=-1., cfl=0.6)
+pulse = solve_advection(profile="square", gradient="centered")
+print(mass_counterexample()["mass_after"])
+python scripts/build_cip.py
+python scripts/sync_web_content.py
+docs/figures/cip.jsonはCIP／線形の48組の設定、微分配列、診断、3つの収束系列、保存性反例、ソースハッシュを記録します。ブラウザーはPython計算結果を選びます。テストでは3次再構成・微分の厳密性、両方向、1セル移動、定数保存、滑らかな収束、振動、解析的質量変化の恒等式を確認します。
+
+## 極・円筒座標：テンソルと粘性 — 極・円筒座標：テンソルと粘性 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+以下は円筒座標(r,phi,z)、phiはラジアン、r>0として、正規直交基底(e_r,e_phi,e_z)の物理成分を使います。平面極座標場はu_z=0、全z微分をゼロにします。座標基底のテンソル成分には別の計量因子があり、規約を混ぜると粘性力を誤ります。
+円筒流体方程式の導出はRichard Fitzpatrickの講義を参照してください。この章は一般の体積粘性の規約を明示し、解析的な場で検査します。
+
+## 極・円筒座標：テンソルと粘性 — 速度勾配：基底も微分する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#velocity-gradient-differentiate-the-basis-too
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+L_ij=e_i·((e_j·grad)u)とします。行は速度成分、列は微分方向です。
+L=\begin{pmatrix}
+\partial_r u_r & (\partial_\phi u_r-u_\phi)/r & \partial_z u_r\\
+\partial_r u_\phi & (\partial_\phi u_\phi+u_r)/r & \partial_z u_\phi\\
+\partial_r u_z & (\partial_\phi u_z)/r & \partial_z u_z
+\end{pmatrix}.
+−u_phi/rと+u_r/rは基底の回転から生じます。D=(L+L^T)/2、theta=tr(L)を定義すると、
+\theta=\nabla\cdot u=\partial_r u_r+\frac{u_r}{r}
++\frac{\partial_\phi u_\phi}{r}+\partial_z u_z.
+です。numart.coordinatesの入力partials[...,i,j]は、物理速度成分iを座標j=(r,phi,z)で普通に微分した値です。phi微分そのものを渡し、既にrで割った値を渡さないでください。
+
+## 極・円筒座標：テンソルと粘性 — Newton応力：独立な6成分すべて# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#newtonian-stress-all-six-independent-components
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+全応力sigma=−p I+tau、せん断粘性mu、体積粘性zetaとして、3次元構成則は、
+\tau=2\mu D+\lambda\theta I,\qquad
+\lambda=\zeta-\frac23\mu.
+です。Stokes仮説はzeta=0という物質の仮定で、非圧縮条件theta=0とは異なります。mu>0、zeta≥0なら粘性散逸は非負です。
+\begin{aligned}
+\tau_{rr}&=2\mu\,\partial_r u_r+\lambda\theta,\\
+\tau_{\phi\phi}&=\frac{2\mu}{r}(u_r+\partial_\phi u_\phi)+\lambda\theta,\\
+\tau_{zz}&=2\mu\,\partial_z u_z+\lambda\theta,\\
+\tau_{r\phi}&=\mu\left(\partial_r u_\phi-\frac{u_\phi}{r}
++\frac{\partial_\phi u_r}{r}\right),\\
+\tau_{rz}&=\mu(\partial_z u_r+\partial_r u_z),\\
+\tau_{\phi z}&=\mu\left(\partial_z u_\phi+\frac{\partial_\phi u_z}{r}\right).
+\end{aligned}
+下付き添字は共変座標基底ではなく物理成分を表します。工学的な非対角せん断速度は対応するDの2倍ですが、上の式へさらに2を掛けてはいけません。
+
+## 極・円筒座標：テンソルと粘性 — 応力の発散：単位体積あたりの粘性力# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#stress-divergence-the-viscous-force-per-volume
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+対称な物理応力テンソルのf=div(tau)は、
+\begin{aligned}
+f_r&=\partial_r\tau_{rr}+\frac1r\partial_\phi\tau_{r\phi}
++\partial_z\tau_{rz}+\frac{\tau_{rr}-\tau_{\phi\phi}}r,\\
+f_\phi&=\partial_r\tau_{r\phi}+\frac1r\partial_\phi\tau_{\phi\phi}
++\partial_z\tau_{\phi z}+\frac{2\tau_{r\phi}}r,\\
+f_z&=\partial_r\tau_{rz}+\frac1r\partial_\phi\tau_{\phi z}
++\partial_z\tau_{zz}+\frac{\tau_{rz}}r.
+\end{aligned}
+です。加速度への寄与はf/rho、圧力の−grad(p)は別です。応力微分に係数変化を含めれば、空間変化するmu・zetaにも使えます。Pythonのpartials[...,i,j,k]は物理応力成分(i,j)の座標k微分です。
+
+## 極・円筒座標：テンソルと粘性 — 一定粘性とベクトルLaplacian# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#constant-viscosity-and-the-vector-laplacian
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+mu・lambdaが一定の場合に限り、力を、
+f=\mu\nabla^2 u+(\mu+\lambda)\nabla\theta.
+と簡略化できます。スカラーgについて、
+\Delta_s g=\frac1r\partial_r(r\partial_r g)
++\frac1{r^2}\partial_\phi^2g+\partial_z^2g.
+と置くと、ベクトルLaplacianの物理成分は、
+\begin{aligned}
+(\nabla^2u)_r&=\Delta_su_r-\frac{u_r}{r^2}
+-\frac2{r^2}\partial_\phi u_\phi,\\
+(\nabla^2u)_\phi&=\Delta_su_\phi-\frac{u_\phi}{r^2}
++\frac2{r^2}\partial_\phi u_r,\\
+(\nabla^2u)_z&=\Delta_su_z.
+\end{aligned}
+です。非圧縮・一定粘性でも、thetaが消えるだけで径・方位方向の計量項は残ります。変係数でmuを微分の外へ出すと2D·grad(mu)、theta grad(lambda)を落とすため、応力発散全体を評価します。
+
+## 極・円筒座標：テンソルと粘性 — 軸対称、極座標断面、物質加速度# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#axisymmetry-polar-slices-and-material-acceleration
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+軸対称はphi微分を消しますが、u_r/r、−u_phi/r、応力発散の計量項を消しません。旋回もあり得ます。3次元Newton流体の平面極座標断面では2mu/3補正とtau_zz=lambda thetaを残します。真の2次元構成モデルでは偏差のトレース減算が異なるため、別に宣言します。
+スカラー移流微分はD_s/Dt=partial_t+u_r partial_r+(u_phi/r)partial_phi+u_z partial_zです。ベクトル物質加速度には径・方位方向の追加項があります。
+a_r=\frac{D_su_r}{Dt}-\frac{u_\phi^2}{r},\qquad
+a_\phi=\frac{D_su_\phi}{Dt}+\frac{u_ru_\phi}{r},\qquad
+a_z=\frac{D_su_z}{Dt}.
+これらの慣性項は粘性の計量項とは別です。
+
+## 極・円筒座標：テンソルと粘性 — 座標基底テンソルと変換# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#coordinate-basis-tensors-and-transformations
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+円筒座標基底は(partial_r,partial_phi,partial_z)=(e_r,r e_phi,e_z)、計量はdiag(1,r²,1)です。物理u_phi=r u^phi、物理tau_phi,phi=r² tau^{phi,phi}=tau_{phi,phi}^{coordinate}/r²となります。共変・反変・物理成分の配列は、この因子なしには交換できません。
+非ゼロChristoffel記号にはGamma^r_phi,phi=−r、Gamma^phi_r,phi=Gamma^phi_phi,r=1/rがあります。共変微分は上で明示した基底変化を取り込みます。列をe_r、e_phi、e_zとする直交行列Qで、L_cart=Q L_cyl Q^T、tau_cart=Q tau_cyl Q^Tと直交座標へ変換します。
+
+## 極・円筒座標：テンソルと粘性 — 解析的検査と軸# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/coordinates-viscosity/#analytic-checks-and-the-axis
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+剛体回転：u_phi=Omega rではLが反対称、D=0、粘性応力ゼロです。partial_r u_phiだけでは偽のせん断を生みます。
+円管Poiseuille流：u_z=Umax(1−r²/R²)でtau_rz=−2mu Umax r/R²、f_z=−4mu Umax/R²です。定常軸運動量にはdp/dz=f_zが必要です。
+円形Couette流：u_phi=A r+B/rでtau_rphi=−2mu B/r²となり、境界外の方位粘性力発散はゼロです。
+直交座標のアフィン場：ランダムな一定直交速度勾配を円筒へ変換し戻します。一定直交応力も角方向の基底微分を含めれば発散ゼロです。
+散逸恒等式も検査します。
+\tau:D=2\mu D_{\rm dev}:D_{\rm dev}+\zeta\theta^2\ge0.
+関数はr>0を要求します。軸ではrを任意の小数に置き換えず、正則性と解析極限を使います。滑らかな軸対称場はu_r・u_phi=O(r)、u_z=u_z(0)+O(r²)で、軸方向成分のスカラー径Laplacianは2partial_r²u_zへ向かいます。非軸対称の正則直交場は異なる成分極限を持ち、一様な直交平行移動でもu_r=O(r)とは限りません。
+import numpy as np
+from numart.coordinates import cylindrical_velocity_gradient, newtonian_stress
+r, omega = 0.7, 2.0
+u = np.array([0., omega*r, 0.])
+du = np.zeros((3,3)); du[1,0] = omega
+L = cylindrical_velocity_gradient(r, u, du)
+assert np.allclose(newtonian_stress(L), 0.)
+コードは指定点のテンソル恒等式を検査します。円筒Navier–StokesのPDEソルバー、軸境界方式、球座標実装は今後の課題です。
+
+## 二重Mach反射 — 二重Mach反射 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/double-mach/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+2次元理想気体Euler方程式で、壁に反射するMach 10衝撃波を計算します。Woodward・Colella（1984）に関連するテストで、現代の実装参照としてNASAのLAVAチュートリアルがあります。
+
+## 二重Mach反射 — 方程式と初期状態# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/double-mach/#equations-and-initial-states
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+gamma=1.4、領域[0,4]×[0,1]、保存状態U=(rho,rho u,rho v,E)、E=p/(gamma−1)+rho(u²+v²)/2を使います。初期衝撃波は底壁のx=1/6で交わり、壁と60度です。
+x_s(y,0)=\frac16+\frac{y}{\sqrt3}.
+左の衝撃波後方状態は(rho,u,v,p)=(8,8.25sqrt(3)/2,−4.125,116.5)、右の未擾乱状態は(1.4,0,0,1)です。上流音速が1なので、法線伝播速度10がMach 10に対応します。
+初期セル値はセル中心が衝撃波のどちら側かで決め、切断セル平均を厳密積分しません。移動する入射衝撃波線は、
+x_s(y,t)=\frac16+\frac{y+20t}{\sqrt3}.
+です。これらの状態は法線方向の移動Rankine–Hugoniot関係を満たし、テストは法線(sqrt(3)/2,−1/2)、速度10を使います。
+
+## 二重Mach反射 — 境界と離散化# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/double-mach/#boundary-conditions-and-discretization
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+左は衝撃波後方状態、右はゼロ勾配流出です。底面のx<1/6は後方状態を供給し、残りの壁では法線運動量を反射します。上面はx_s(1,t)で両状態を選び、SSPRK2の各段階では対応時刻の境界を使います。
+区分一定有限体積、Davis型の最小・最大音響速度を使う2波HLL、非分割流束発散で計算し、刻みは、
+\Delta t=C\left[\frac{\max(|u|+c)}{\Delta x}
++\frac{\max(|v|+c)}{\Delta y}\right]^{-1}.
+で制限します。表示計算はNx=256、Ny=64、delta x=delta y=1/64、C=0.4、終了時刻0.2、811ステップです。最終最小密度1.4、最小圧力1.0は、この計算の実測診断であって一般的な正値性定理ではありません。
+
+## 二重Mach反射 — 再現と確認# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/double-mach/#reproduce-and-inspect
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+python -m numart.cli run double-mach --n 64 --cfl 0.4 --output outputs/double-mach
+--nはNyを定め、Nx=4Nyです。solution.npz、run.json、double-mach.pngを保存します。ギャラリーには計算記録と保存状態配列があり、qの形状は(Nx,Ny,4)、x・yはセル中心です。記録には生成時のソースハッシュと作業ツリー状態を含めます。
+
+## 二重Mach反射 — 図が示す範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/double-mach/#what-the-figure-establishes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+図は計算した入射・反射波形を密度と30等高線で示します。1次空間再構成は意図的に拡散的で、高解像度PPMや適応計算の細い壁面ジェットと巻上がりは解像しません。厳密終了時刻解、格子収束、原論文の図の数値化比較は含みません。
+テストでは同一状態流束、周期一様状態、入射波跳躍、移動上面・反射壁、粗格子の許容状態を確認します。反射模様全体の収束は示しておらず、高次再構成、細分化、独立参照コード比較が必要です。
+強衝撃波不安定性はカーバンクルへ進んでください。このHLL図からRoe実装の安定・不安定は判断できません。
+
+## 二重Mach反射 — 反射の時間発展を見る# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/double-mach/#watch-the-reflection-evolve
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+保存状態の動画は同じ256×64計算の密度・圧力を示します。実際の物理時刻、ステップ、固定色範囲、フレーム検査、MP4出力があります。標本化の定義を参照してください。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 放物型問題：拡散を時間発展させる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#parabolic-problems-evolving-diffusion
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+区間[0,1]でゼロDirichlet境界と初期値sin(πx)を与え、u_t=νu_xxを解きます。参照解はu=exp(-νπ²t)sin(πx)です。numart.linear.diffusion_1dは内部節点の値を返します。
+空間2次中心差分とθ法を組み合わせると、
+(I-\theta\nu\Delta t D_{xx})u^{n+1}
+=(I+(1-\theta)\nu\Delta t D_{xx})u^n.
+となります。
+θ=0：FTCS。r=νΔt/h²≤1/2が必要です。
+θ=1：後退Euler法。時間1次精度で、線形拡散に対して無条件安定です。
+θ=1/2：Crank–Nicolson法。時間2次精度で、線形拡散に対してA安定です。
+Fourier増幅係数はG=[1-4(1-θ)r sin²(ξ/2)]/[1+4θr sin²(ξ/2)]です。rが大きいとCrank–NicolsonではGが負になり、高周波モードは安定なまま符号を交互に変えます。安定性、正値性、単調性、時間解像度は別々に確認します。Crank–Nicolson（1947）。
+spectral_diffusionは別の周期問題を解き、各Fourier係数にexp(-νk²t)を掛けます。Dirichlet差分問題と精度を比べる際は、境界条件の違いを考慮します。
+
+## 拡散、楕円型方程式、境界条件、反復法 — Thomas消去：陰的時間積分から三重対角系へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#thomas-elimination-from-implicit-steps-to-tridiagonal-systems
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+下側対角をa、対角をb、上側対角をcとすると、前進消去はm_i=a_i/b'_{i-1}、b'_i=b_i-m_i c_{i-1}、d'_i=d_i-m_i d'_{i-1}です。後退代入はx_i=(d'_i-c_i x_{i+1})/b'_iです。計算量と記憶量はともにO(N)です。
+thomasは入力を変更せず、小さなピボットでエラーにします。ピボット選択を行わないため、任意の三重対角行列に安全に使えるわけではありません。ここでの拡散行列は狭義対角優位です。1949年のThomas報告の原文は未確認で、歴史的な引用と現代の実装の検証は別の主張です。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 楕円型問題：Poisson方程式# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#elliptic-problems-the-poisson-equation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+符号規約は-Δu=fです。1次元では三重対角系とThomas消去、2次元では5点差分と行列を陽に作らない共役勾配法またはマルチグリッドを使います。既定の製造解は1次元のsin(πx)と2次元のsin(πx)sin(πy)です。線形方程式の残差と、連続解に対する離散化誤差を分けて確認します。
+
+## 拡散、楕円型方程式、境界条件、反復法 — Dirichlet・Neumann・Robin境界条件# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#dirichlet-neumann-and-robin-boundaries
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Dirichlet条件は値u=g_D、Neumann条件は外向き法線微分∂u/∂n=g_N、Robin条件はαu+β∂u/∂n=gを指定します。法線微分は左端で-u_x、右端で+u_xです。外向きの伝導熱流束は-k∂u/∂nなので、何を指定したかと符号の両方が重要です。
+poisson_boundary_1dにBoundary.dirichlet(value)、Boundary.neumann(value)、またはBoundary(alpha,beta,value)を渡します。Robin・Neumann条件では仮想点を消去し、端点の重みを半分にします。時間依存のdiffusion_1dは、現在ゼロDirichlet境界に対応しています。
+純NeumannのPoisson解は、加法定数を除いてしか決まりません。発散定理から、
+\int_\Omega f\,dV=-\int_{\partial\Omega}g_N\,dS.
+が必要です。実装は台形求積に対応する離散適合条件を確認し、指定した平均で定数を固定します。既定平均はゼロです。Robin係数によっても一意性が失われる場合があります。周期Poisson問題も、端点を同一視したうえでゼロモードの適合条件と平均の制約が必要です。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 反復行列のスペクトル半径# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#spectral-radius-of-the-iteration-matrix
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Ax=bを解く定常反復x^{k+1}=T x^k+cでは、誤差はe^{k+1}=T e^kに従います。有限次元では、すべての初期誤差について収束することとρ(T)<1は同値です。ここでρ(T)=max |λ_i(T)|をスペクトル半径（spectral radius）と呼びます。べき級数の収束半径R=1/limsup |a_n|^{1/n}や、Newton反復の収束域とは異なります。
+A=D+L+Uとすると、JacobiはT=-D^{-1}(L+U)、Gauss–SeidelはT=-(D+L)^{-1}U、SORはT=(D+ωL)^{-1}[(1-ω)D-ωU]です。iteration_matrixとspectral_radiusで小行列の例を調べられます。非正規行列はρ<1でも一時的に誤差が増える場合があります。系の条件数κ(A)と反復行列のスペクトル半径ρ(T)は異なる性質を測ります。Netlib Templates。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 赤黒Gauss–Seidel法とSOR# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#red-black-gaussseidel-and-sor
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+5点差分格子を(i+j) mod 2で2色に分けます。一方の色の更新は他方の色だけに依存するため、赤、黒の順に更新します。ω=1がGauss–Seidelで、SOR緩和には0<ω<2を使います。ただし、この範囲だけで任意の非対称系の収束を保証することはできません。実装対象は、対称正定値のDirichlet Poisson問題です。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 幾何マルチグリッドのVサイクル# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#geometric-multigrid-v-cycle
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+細格子で赤黒Gauss–Seidelを3回スイープします。
+r_h=f_h-A_h u_hを計算します。
+全重み付け（full weighting）で残差を粗格子へ制限します。
+粗格子の誤差方程式を再帰的に解きます。
+双線形補間で補正を細格子へ延長します。
+細格子でさらに3回スイープします。
+各辺の内部節点数はN=2^k-1です。粗格子では5点演算子を再離散化し、未知数が1つの最粗格子は直接解きます。テストでは補間、制限、格子間隔、境界の整合性を確認します。変係数、異方性、曲線格子、代数マルチグリッド（AMG）、完全近似方式（FAS）は初版の範囲外です。Fedorenko（1961）、Brandt（1977）。
+学習の入口にはBriggs–Henson–McCormick『A Multigrid Tutorial』第2版（2000）、局所Fourier解析・アルゴリズム設計・発展的応用を詳しく調べるにはTrottenberg–Oosterlee–Schüller『Multigrid』を参照してください。教科書案内で使い分けを説明しています。両書は、ここで実装した幾何Vサイクルより広い範囲を扱います。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 粒子と円盤の重力# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#particle-and-disk-gravity
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+粒子重力の章はPM、P³M、ツリー、多重極、マルチグリッドをつなぎます。重力境界核はHockney–Eastwoodの孤立畳み込みとKoyama–OstrikerのスラブFourier核を加えます。既存のマルチグリッド例は2次元ゼロDirichlet演算子を維持し、3次元開放境界の重力ソルバーではありません。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 拡散・楕円型問題への別の道# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#further-routes-to-diffusion-and-elliptic-problems
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+弱形式の組立ては連続P1 FEM、非対称系はGMRES／ILUと非線形解法、補助勾配による擬似時間反復は西川の双曲型拡散法を参照してください。方程式ギャラリーでは物理時間での熱拡散を別に示します。
+A安定性・L安定性とL1／L2／L∞誤差ノルムの定義と比較は、精度と安定性の共通ガイドを参照してください。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 同じ離散系でのPoisson比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#same-system-poisson-comparison
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Poissonソルバーノートを開く。2次元の全手法で、単位正方形・ゼロDirichlet境界・定数係数・同じ五点差分SPD系を解きます。N=31,63,127は1辺の内部節点数で、未知数はN²です。反復初期値はすべて0とし、CGを含め毎回再計算した真の残差で停止します。
+ (A_hu)_{ij}=\frac{4u_{ij}-u_{i-1,j}-u_{i+1,j}-u_{i,j-1}-u_{i,j+1}}{h^2},\quad
+ h=\frac1{N+1},\qquad
+ \frac{\|f-A_hu\|_2}{\|f\|_2}\le 10^{-8}.
+右辺には滑らかな広帯域の製造解と、正負2つの局在源を使います。製造解はu=x(1−x)e^(2x)y(1−y)e^(−1.5y)で、f=−Δuを解析微分します。局在源は100exp(−[(x−0.28)²+(y−0.35)²]/0.006)−60exp(−[(x−0.70)²+(y−0.65)²]/0.012)で、連続厳密解は用意していません。未収束による代数誤差はFFT／DSTの離散参照との差の節点RMS、連続解との差の節点RMSは離散化誤差です。連続積分のL2ノルムではなく、残差を小さくしても2次の離散化誤差は残ります。
+別のN=31の単一波診断ではu=sin(πx)sin(πy)、f=2π²uです。これは離散行列の1固有ベクトルなので、厳密算術のCGは0初期値から1反復で解けます。一般性能を比べる唯一の問題には適さず、通常は広帯域の右辺を使います。
+比較する設定はJacobi、重み付きJacobi（ω=2/3）、赤黒Gauss–Seidel、赤黒SOR、前処理なしCG、既存の幾何マルチグリッドV-cycle、DST＋Thomas、FFT／DST直接法です。SORはこのモデル・順序に対してω=2/[1+sin(π/(N+1))]を使い、任意の格子・演算子で最適とはしません。掃引・CG反復・V-cycleの仕事量は異なります。MGは各階層で前後3回の赤黒GSと粗格子処理を行うため、サイクル数は細格子の掃引数ではありません。NetlibのSOR解説も参照してください。
+FFT経路は定義されたDST-Iを奇拡張とNumPy FFTで直交規格化して計算します。差分演算子の1次元固有値λk=4h⁻²sin²[kπ/(2(N+1))]を使い、2次元ではλk+λlで割ります。連続波数k²に置き換えず、同じ離散演算子を解きます。ゼロDirichletと周期境界は別物で、実装にSciPy依存はありません。
+単純なThomas法は1次元の三重対角系を解きます。2次元の分離直接法ではyを変換し、N本のシフト付き三重対角x系をThomasで解いて逆変換するため、DST＋Thomasと呼びます。一般の2次元Thomasソルバーではありません。両FFT／DST経路は定数係数・一様矩形格子・分離境界を利用します。別の1次元表ではu=x(1−x)e^(2x)、N=63,255,1023で単純ThomasとFFT／DSTを比較します。
+
+## 拡散、楕円型方程式、境界条件、反復法 — 時間計測と取得できる検証記録# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/elliptic/#timing-protocol-and-downloadable-evidence
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+N=7でコード経路を予備実行した後、各設定を3回計算し、中央値の試行自身の収束履歴を表示します。壁時計時間には設定・配列確保・毎単位の真の残差検査・履歴記録を含み、import、問題・参照生成、ファイルI/O、作図を除きます。試行間で因子分解・固有値を使い回しません。1次元計測にも最終残差検査を含めます。環境情報と3回すべての時間を保存します。Pythonループとコンパイル済みNumPy処理の費用が異なり、1台の診断実装の計測であって、実装・機械に依存しないアルゴリズム順位ではありません。
+直接法は完了点だけを描きます。長い履歴は表示点を間引き、残差10⁻¹⁴未満を表示下限に置きます。表・取得データは生の値を保持し、NPZには選択試行の全残差・時刻・最終場を保存します。CGの再帰残差は方向を決めますが、収束判定は真の残差です。履歴が単調に減るとは限りません。
+再現はpython scripts/build_poisson_comparison.pyです。設定・標本履歴・時間・ソースハッシュと場・選択試行の全履歴を取得できます。独立な正弦行列によるDST検査、密行列直接解との照合、真の残差・全手法の解の一致、ゼロ右辺、製造解の2次細分化をテストします。変数係数・異方性・非構造格子・周期／純Neumann零空間・並列性能は別の比較が必要です。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — 方程式ギャラリー：計算法の前に方程式を選ぶ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Web版の方程式ギャラリーでは、保存した分布、物理時刻の操作、固定した描画範囲、初期・境界条件、特性速度、計算法と論文へのリンクを用意しています。7系統の方程式に対して9ケースを収録しています。データはpython scripts/build_equation_gallery.pyで生成した計算結果です。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — 平行移動と拡散# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/#translation-and-diffusion
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+線形移流u_t+u_x=0は周期正弦波を平行移動します。1次風上法と前進Euler法を組み合わせ、厳密に移動したセル平均と比較します。熱拡散u_t=0.02u_xxは同じFourierモードを減衰させます。空間中心差分と前進Euler法にνΔt/Δx²≤0.4を使います。いずれも離散平均を保存します。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — Burgers方程式の衝撃波と膨張波# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/#burgers-shocks-and-fans
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Burgers（1948）を古典的モデルの出典とし、この展示では非粘性のスカラー保存則を使います。
+u_t+(u^2/2)_x=0,\qquad f'(u)=u.
+左から右へ値が減る跳びは、速度(u_L+u_R)/2の衝撃波になります。値が増える跳びは膨張波（rarefaction fan）となり、初期の跳びを原点とする座標ではu=x/tです。厳密Godunov流束はエントロピー解を選択し、音速をまたぐBurgers膨張波の内部ではゼロ流束を選びます。厳密曲線はセル積分から作るため、セルを横切る衝撃波を点値として扱いません。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — 交通流では渋滞が車と逆向きに進む# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/#traffic-a-jam-can-move-against-the-cars
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Lighthill–Whitham（1955）とRichards（1956）が独立に提案した古典的な交通流の出典です。この展示では規格化した2次の基本図を選びます。すべての交通流モデルがこの形を持つという主張ではありません。
+\rho_t+[\rho(1-\rho)]_x=0,\qquad 0\leq\rho\leq1.
+車両速度は1−ρですが、小さな密度擾乱の速度は1−2ρです。密度が0.3から0.9に跳ぶと、車は正の速度でも衝撃波は速度−0.2で進みます。流束が凹関数なので、逆向きの跳びでは渋滞が解消する膨張波が生じます。
+Burgersと交通流には、MUSCL minmod、Godunov流束、SSPRK3、CFL≤0.4を使います。密度の上下限を検査し、ソルバー内で黙って切り詰めることはしません。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — 流体系と運動論的方法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/#fluid-systems-and-kinetic-methods
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+既存のEuler Sod問題、水深が正の浅水ダム崩壊、等温流の密度跳躍を追加ケースとして接続しています。3ケースとも半解析Riemann解の保存変数セル平均を重ねます。既知の波面でGauss積分を分割し、24点・48点の差を積分の収束の目安とします。参照解ライブラリでは式、求根の残差、点値と平均の違いを説明します。乾床の参照式は、正値状態を要求する数値ソルバーを乾床に対応させるものではありません。モデルと正の水深に関する条件はテスト問題の定義で説明しています。
+格子Boltzmann法、Chapman–Enskog展開、周期非圧縮流、双曲型拡散法には別の計算展示があります。方程式、運動論モデル、離散化は異なる選択です。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — 保存時刻と再現性# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/#saved-times-and-reproducibility
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+スカラーのスナップショットは完了した計算ステップを観測するため、実際の時刻は要求した表示時刻と少しずれる場合があります。出力要求によって計算軌道は変わりません。既存の1次元流体系にはスナップショットAPIがないため、表示する各時刻は**個別に実行した計算（independent solves）**であることを明示し、それぞれ表示時刻で終了させています。再生はそれらの計算をつなぎ、途中の時間ステップが同一であることを意味しません。流出境界での平均変化には境界流束が含まれ、質量損失とは表示しません。
+分布とソースハッシュをダウンロード。追加の収束検証は、アトラス初期の検証記録と区別しています。
+
+## 方程式ギャラリー：計算法の前に方程式を選ぶ — 方程式の地図を広げる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/equation-gallery/#additional-equation-maps
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+生物モデル調査は22系統のモデルを、原典と検証案とともに整理しています。生物の数値シミュレーションは追加していません。Arakawa格子の章では、線形回転浅水系のA／B／C Fourier記号を計算で比較します。新しい流体動画ではありません。これらの実装範囲は、上の9つの計算済みケースと区別します。
+A安定性・L安定性とL1／L2／L∞誤差ノルムの定義と比較は、精度と安定性の共通ガイドを参照してください。
+
+## インタラクティブ実験ガイド — インタラクティブ実験ガイド [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Web版には安定性実験室と収束実験ノートがあります。実験室はブラウザーで計算し、収束ノートは初期ギャラリーの記録にある測定値を表示します。根拠となるデータの出所は異なります。
+
+## インタラクティブ実験ガイド — ブラウザー内の周期移流# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#periodic-advection-in-the-browser
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+モデルは次の周期移流方程式です。
+u_t+a u_x=0,\qquad x\in[0,1],\qquad u(x+1,t)=u(x,t).
+セル中心に置いた64個の標本点、h=1/64、速度a=+1またはa=-1、Δt=|C|hを使います。符号付きCourant数はC=aΔt/hです。画面では0.05≤|C|≤1.5と0〜100時間ステップを選べます。厳密な比較値は、連続的に移動した分布u(x-at,0)を同じ格子点で標本化します。
+初期値は正弦波、[0.25,0.65)で1、それ以外で0の矩形パルス、または小さな高周波摂動を加えた正弦波から選べます。
+u(x,0)=\sin(2\pi x)+10^{-3}
+\left[\sin(2\pi(N/2)x)+\cos(2\pi(N/4)x)\right].
+摂動にはNyquistモードと、それより短波数の格子スケールのモードを含めます。丸め誤差だけに頼らず不安定な増幅を見えるようにしています。矩形パルスは拡散や分散振動を示すためのもので、滑らかな解の収束テストではありません。
+
+## インタラクティブ実験ガイド — 4つの離散更新# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#four-discrete-updates
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+numart.advection.difference_stepとブラウザーは、FTCS、風上、古典的Lax–Friedrichs、Lax–Wendroffを実装しています。風上法は速度の符号で差分の向きを切り替えます。背景は安定性の章を参照してください。FTCSでは、
+u_j^{n+1}=u_j^n-\frac C2(u_{j+1}^n-u_{j-1}^n),\qquad
+G(\theta)=1-iC\sin\theta.
+となります。増幅係数の2乗は1+C²sin²θです。依存領域から必要な|C|≤1を満たしても、ゼロでないCでは増幅するモードが存在します。風上、LF、LWは、この周期・定係数問題に対して|C|≤1でFourier安定条件を満たします。
+解のグラフと|G(θ)|を同時に更新します。最大値は64点格子の実データに対応する、異なるすべての離散Fourier波数で評価します。破線は|G|=1を示します。解が増幅すると縦軸の範囲を広げ、計算値を切り捨てません。点値L1誤差、最大振幅、算術平均の変化は別々に報告します。
+これらの性質は、この線形周期モデルについてのものです。非線形系、別の境界、別の時間積分へ自動的に引き継ぐことはできません。不安定な増大では、桁落ちや浮動小数点丸めによって平均値の測定も損なわれる場合があります。
+
+## インタラクティブ実験ガイド — 再現性と出力# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#reproducibility-and-export
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+ブラウザーの計算カーネルを、Python実装で作った24の参照ケースと比較しています。4手法、符号付きCourant数6通り、各ケース12回更新です。テストでは標本配列全体と複素Fourier増幅係数を比較します。別のテストで、CFL=1での厳密な1セル移動、方向反転、周期折返し、収束次数の算術を確認します。参照データはnumart/advection.pyのSHA-256を記録し、ソースが変わると参照データを更新するまでブラウザー数値テストは失敗します。
+実験データのダウンロードには、設定、格子座標、初期・計算・厳密標本、診断量、Python参照ハッシュを含めます。記録するのはJavaScriptによる計算です。ブラウザー内でPythonを実行しているという意味ではありません。
+Pythonで同じ差分を適用する例です。
+import numpy as np
+from numart.advection import difference_step
+n, courant, steps = 64, 0.8, 40
+x = (np.arange(n) + 0.5) / n
+q = np.sin(2 * np.pi * x)
+for _ in range(steps):
+ q = difference_step(q, courant, "lax-wendroff")
+exact = np.sin(2 * np.pi * (x - courant * steps / n))
+print("pointwise L1 error:", np.mean(abs(q - exact)))
+
+## インタラクティブ実験ガイド — 格子細分化の結果を読む# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#reading-a-refinement-study
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+ノートには初版のdocs/figures/validation.jsonの測定値を使います。ソースハッシュと実行環境のバージョンを含む元の記録をダウンロードできます。これらはブラウザー実験室より前のデータであり、新しい実行時間の測定ではありません。
+隣り合う格子間の実測次数は、
+p_{\mathrm{obs}}=
+\frac{\log(E_{\mathrm{coarse}}/E_{\mathrm{fine}})}
+{\log(N_{\mathrm{fine}}/N_{\mathrm{coarse}})}.
+です。
+DG移流：周期スカラー輸送、終了時刻0.2、CFL 0.2、N=8,16,32,64、モード型Legendre P0／P1／P2とSSPRK3を使います。誤差は実装の求積点で標本化したRMSであり、別途積分したL2ノルムではありません。PpではN(p+1)個のスカラー未知数を持ちます。横軸を要素数と未知数で切り替えても、データは変わりません。滑らかな解の空間次数1、2、3と、SSPRK3の時間3次精度が期待される挙動を説明します。
+Eulerエントロピー波：終了時刻1、CFL 0.3、N=40,80,160で、基本変数minmod MUSCLまたは成分別の差分WENO5-JSとSSPRK3を使います。誤差は密度点値のL1です。WENOの空間5次再構成が時間3次誤差を消すわけではなく、この有限系列の傾きから完全離散化の漸近5次収束を保証することはできません。Eulerでは点またはセルごとに3つのスカラー状態成分を持ちます。同じ未知数でも、計算量や近似空間が同じとは限りません。
+誤差の減少、観測した傾き、正値性、小さな発散、性能比較は異なる問いに答えます。ノートではこれらを区別します。残る検証項目はテスト問題の定義と実装ロードマップを参照してください。
+
+## インタラクティブ実験ガイド — 時間軌道と格子の接続# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#temporal-trajectories-and-mesh-connectivity
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+時間積分ノートは、12手法についてPythonで計算したy′=i yの軌道を選択表示します。終了時刻は20で固定し、刻み幅、leapfrog初期化摂動、2つの特性根、標本誤差、振幅を示します。これは事前計算したODEの結果であり、空間安定性実験室のブラウザー内計算とは異なります。時間積分の定義を参照してください。
+格子エクスプローラーは、頂点とセルを明示した3つのデータセットを表示します。セルを選ぶと面を共有する隣接セルが強調されます。ドロップダウンとキーボード操作可能な多角形で同じ選択ができます。幾何は固定され、流体計算は行いません。格子の定義、ALE、SPHを参照してください。
+どちらもscripts/sync_web_content.pyで生成するfoundations.jsonを公開し、時間積分・幾何モジュールのSHA-256を含めています。Pythonのテストでは収束次数、leapfrogモード、中点則の振幅、カーネル規格化、格子位相、移動体積での一様状態保存を確認します。
+
+## インタラクティブ実験ガイド — Hamilton写像# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#hamiltonian-maps
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hamilton系ノートは、Pythonで計算した30ケースを必要時に読み込みます。同じ固定刻みでエネルギー誤差を比較し、各写像の位相軌道や正方形境界の像を調べます。解析的な局所Jacobianの診断によって、シンプレクティック構造とエネルギー保存を区別します。定義を参照してください。データと図はpython scripts/build_hamiltonian.pyで再生成します。
+
+## インタラクティブ実験ガイド — 非定常動画とKEEP# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#nonsteady-movie-and-keep-exhibits
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+動画ギャラリーは、実際に保存した計算状態と物理時刻を、固定した色範囲とMP4出力で示します。KEEPは、厳密解のある滑らかな渦で評価し、空間・時間細分化とエントロピー診断を分けています。この滑らかな流れの計算から、衝撃波捕獲の性質は主張しません。
+
+## インタラクティブ実験ガイド — 勾配制限と発展的な再構成# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#slope-limiters-and-advanced-reconstruction
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+勾配制限ノートはPythonで計算した45曲線と、滑らかな解の収束6例、Euler再構成の構成的な失敗3例を読み込みます。minmod、Superbee、MC、van Leer、切り詰めたvan Albadaを選び、スカラー周期問題の全変動と質量、同じHLLC流束によるSodを比較します。スカラー誤差は厳密セル平均を使い、Sodでは点値の規約を維持します。1次法と勾配無制限の比較例はスカラー移流だけに適用します。
+発展操作ではTVBのM=0、10、50を選び、保存的な正値状態スケーリングを示します。勾配の定義と追加の仮定を参照してください。python scripts/build_limiters.pyがソースハッシュ付きのdocs/figures/limiters.jsonを作り、標準の同期処理がWeb版へコピーします。スカラーTVBの例や正値再構成の補助関数だけでは、完全離散Euler法の正値性は保証されません。
+
+## インタラクティブ実験ガイド — Runge–Kutta法の系譜# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#rungekutta-family-notebook
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+RK法ノートでは固定刻みの陽的RK公式9種を比較します。3つのRK2法は線形安定性多項式を共有しますが、非線形y′=−y²では異なります。1ステップの幅を選び、実際の右辺評価に使う段階予測値を見て、標本化した安定領域と終了時刻の収束を比較します。形式次数、段数、非線形SSP係数、右辺評価回数を分けて表示します。RKの章で定義と条件付きSSPの仮定を説明します。python scripts/build_runge_kutta.pyが図示データとソース記録を作ります。振動子ノートには時間積分法が12種あり、陰的手法はスカラー線形モデルに限ります。
+
+## インタラクティブ実験ガイド — CIPによる値と勾配の輸送# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/experiments/#cip-value-and-gradient-transport
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+CIPノートは、一様周期格子のスカラー移流で、原型の3次Hermite CIPと線形の点補間を比較します。独立に輸送する勾配、初期勾配の選択、滑らかな解の収束、矩形パルスのオーバーシュート、解析的な保存性の反例を示します。定義を参照してください。点値と有限体積平均は交換できません。同期前にpython scripts/build_cip.pyで再生成します。
+A安定性・L安定性とL1／L2／L∞誤差ノルムは、精度と安定性の共通ガイドを参照してください。
+
+## 連続有限要素法：弱形式から疎行列の組立てへ — 連続有限要素法：弱形式から疎行列の組立てへ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/fem/
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+実装済み：区間とアフィン三角形上の連続P1要素、Dirichlet条件付きPoisson問題、整合質量行列、求積による誤差ノルム。アトラスの不連続Galerkin移流の例とは別です。
+
+## 連続有限要素法：弱形式から疎行列の組立てへ — 1943年：変分法による道# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/fem/#1943-a-variational-route
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Courant（1943）は変分的な考え方の基礎文献です。この章の小さな実装は独立した現代的なP1の例で、原著の例の再現ではありません。
+−Δu=fに対し、境界でu=gを指定します。境界でゼロになる試験関数を掛け、部分積分すると、
+\int_\Omega \nabla u_h\cdot\nabla v_h\,d\Omega
+=\int_\Omega f v_h\,d\Omega.
+となります。u_hを節点係数と連続区分線形基底関数の積の和で表します。三角形Kの形状関数の勾配は一定なので、
+K^K_{ij}=|K|\nabla\phi_i\cdot\nabla\phi_j,
+\qquad M^K_{ij}=\frac{|K|}{12}(1+\delta_{ij}).
+です。共有節点では要素からの寄与をCSR形式へ集めます。ゼロでないDirichlet値を右辺へ移してから、行と列を対称に消去します。行だけを処理すると、CGで重要な対称性が壊れます。この例はILU前処理付きGMRESを使います。
+
+## 連続有限要素法：弱形式から疎行列の組立てへ — 検証結果を読む# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/fem/#inspect-the-evidence
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+製造解は単位正方形上のsin(πx)sin(πy)です。L2とH1半ノルム誤差は節点だけで測らず、要素内部で積分します。滑らかな解に対する期待次数は2と1です。テストではアフィンパッチ、ゼロでない境界値、境界消去前の定数零空間、整合質量の総量も確認します。
+from numart.fem import poisson_2d
+result = poisson_2d(16)
+print(result.residual, result.u.shape)
+python scripts/build_equation_gallery.pyで再現します。専用の計算記録に誤差とソースハッシュを残します。速度・圧力の混合要素、inf–sup条件、曲線格子、一般のNeumann／Robin条件の組立て、適応細分化は今後の課題です。現在の射影法の例はスタガード差分格子を使います。
+A安定性・L安定性とL1／L2／L∞誤差ノルムは、精度と安定性の共通ガイドを参照してください。
+
+## 球面メッシュとArakawa A・B・C格子 — 球面メッシュとArakawa A・B・C格子 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+A／B／Cは格子上で異なる変数を置く位置を指定し、精度次数、セル形状、時間積分の分類ではありません。構造長方形格子はいずれの配置も使えます。従来の比較はArakawa–Lamb（1977）、機関による解説はECMWF数値計算法ノートを参照してください。
+本実装は、球面メッシュの幾何図、線形周期f平面浅水系の配置図と検証済みFourier記号です。A／B／Cの非線形気象・海洋モデルや、新しい完全な流体計算ではありません。
+
+## 球面メッシュとArakawa A・B・C格子 — 球面には複数の座標チャートを使う# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#spherical-meshes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+メッシュの幾何と変数の配置は別の選択です。cubed-sphereにもC格子配置を使え、三角形メッシュにも辺法線速度を置けます。A／B／Cという名前だけでは、球面の接続関係や計量は決まりません。
+半径Rの球面で、緯度をφ、経度をλとすると、
+ ds^2=R^2\left(d\varphi^2+\cos^2\varphi\,d\lambda^2\right),
+ \qquad \Delta s_\lambda\simeq R\cos\varphi\,\Delta\lambda.
+地理的な極は物理的な特異点ではありません。極では経度が定義できず、極の近くでは同じ経度刻みに対する距離が小さくなります。そのため陽的な波・移流計算のCFL制約が厳しくなり得ます。極フィルター、縮約格子、スペクトル法などの対処法もあり、メッシュの置換だけが選択肢ではありません。以下の3構成は単一の緯度経度チャートで生じる極への集中を回避しつつ、接続や計量の問題を導入します。自動的に等面積になるわけではありません。
+
+## 球面メッシュとArakawa A・B・C格子 — 陰陽格子：低緯度パッチを二つ重ねる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#yin-yang
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Kageyama–Sato（2004）は同じ形の緯度経度パッチ二つを組み合わせます。各パッチ自身の座標では、
+ |\varphi|\leq\pi/4+\delta,\qquad |\lambda|\leq3\pi/4+\delta,
+ \qquad
+ \boldsymbol{x}^{\mathrm{Yang}}=
+ \begin{pmatrix}-1&0&0\\0&0&1\\0&1&0\end{pmatrix}
+ \boldsymbol{x}^{\mathrm{Yin}}.
+回転により各チャートの極は相手の低緯度領域に入ります。図はδ=3°で、紫は重複領域であり、第3のパッチではありません。各成分は直交した緯度経度座標と馴染みのある計量を保持します。重複領域を通した境界データの受け渡しが必要です。スカラー値の補間だけでは全体の質量保存は保証されず、重複領域の所有・重みと保存的な接続の設計が必要です。速度成分は局所接平面の基底間で回転させます。ここではその仕組みを説明し、重合格子の輸送ソルバーは実装していません。
+
+## 球面メッシュとArakawa A・B・C格子 — Cubed-sphere：六つの面を接続する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#cubed-sphere
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+六面構成の代表的な文献はRonchi–Iacono–Paolucci（1996）です。この図では等角刻みの心射図法を選びます。外向き法線nと接方向e₁、e₂からなる面の正規直交フレームに対し、
+ \boldsymbol{x}(\xi,\eta)=R\,
+ \frac{\boldsymbol{n}+\tan\xi\,\boldsymbol{e}_1+\tan\eta\,\boldsymbol{e}_2}
+ {\left\lVert\boldsymbol{n}+\tan\xi\,\boldsymbol{e}_1+\tan\eta\,\boldsymbol{e}_2\right\rVert},
+ \qquad -\pi/4\leq\xi,\eta\leq\pi/4.
+図は各面8×8セルです。隣り合う面の境界は一致し、立方体の各頂点では3面が接続します。緯度経度の極は避けられますが、この写像は面内で一般に非直交で、セル面積と計量係数も変化します。別のcubed-sphere投影では性質が異なります。継ぎ目で隣接添字、ベクトル成分、数値流束を整合させる必要があり、連続に見える図だけでは演算子の検証になりません。
+
+## 球面メッシュとArakawa A・B・C格子 — 正二十面体の三角形と双対格子# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#icosahedral
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+20枚の三角形から始め、辺の中点で各三角形を4分割し、新しい頂点を球面へ動径方向に投影します。細分化レベルLでは、
+ F=20\,4^L,\qquad E=30\,4^L,\qquad V=10\,4^L+2,
+ \qquad V-E+F=2.
+レベル2は三角形320枚、辺480本、頂点162個です。12頂点だけ隣接数が5で、それ以外は6です。共有辺の中点を通して隣接する三角形の中心を結ぶと、五角形12枚と残りが六角形の双対ができます。ここでは正規化した三角形の重心を使うため、重心型双対であり、Voronoi／Delaunayの直交対という意味ではありません。この未最適化の例では最大三角形面積は最小の約1.275倍です。準一様と等面積は同じではありません。個数の公式はこの規則的細分化に対するもので、任意の球面非構造格子にそのまま当てはまるわけではありません。
+ICONのモデル解説は三角形の幾何とC型配置を組み合わせる例です。この図は最適化されたICON格子やその力学コアではありません。発散・勾配・渦度・波の分散の精度は、整合した離散演算子に依存します。
+
+## 球面メッシュとArakawa A・B・C格子 — 接続・ベクトル・図で検証した範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#spherical-interface-checks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+チャート間で成分が異なっても、物理的な接ベクトルは一つです。同一のCartesian座標系で正規直交した接基底を列に持つ行列をE_A、E_Bとすると、
+ \boldsymbol{v}=E_A\boldsymbol{u}_A=E_B\boldsymbol{u}_B,
+ \qquad \boldsymbol{u}_B=E_B^{\mathsf T}E_A\boldsymbol{u}_A.
+この式は正規直交した物理成分用です。非直交座標の共変・反変成分には、対応する計量と双対基底が必要です。継ぎ目で成分配列を二つコピーするだけでは不十分です。有限体積法の共有面では、隣接セルの収支に同じ積分流束を逆符号で使います。重合格子では、重複部分の収支の定義も必要です。両パッチの面積を全て足すと一部を二重に数えます。
+幾何テストでは単位半径、立方体面の境界節点の一致、正二十面体格子の辺の接続数と頂点の次数、Eulerの関係、球面三角形面積の合計4πを確認します。決定論的な等面積点サンプルで陰陽格子の被覆と重複も確認しますが、サンプルによる確認は被覆の数学的証明ではありません。再生成は python scripts/build_spherical_meshes.py で行えます。幾何マニフェストに構成、面積統計、ソース・画像のハッシュを記録しています。これらは輸送精度、継ぎ目の保存性、地球流体の波の収束を保証しません。次の検証として、滑らかなトレーサーを全ての継ぎ目を越えて回転させて全質量を測り、平衡した浅水波を格子細分化で比較するのが適切です。
+
+## 球面メッシュとArakawa A・B・C格子 — A・B・Cは相対配置を表す# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#a-b-and-c-specify-relative-placement
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+正方形セル幅Δで、自由表面摂動ηをスカラー中心(i+1/2,j+1/2)に置きます。uはx速度、vはy速度です。
+A格子：η、u、vを同じ中心に置きます。
+B格子：ηは中心、u・vは両方とも頂点(i,j)です。
+C格子：ηは中心、uはx法線面(i,j+1/2)、vはy法線面(i+1/2,j)です。
+原点を中心から頂点に移すと図の規約が逆に見える場合がありますが、相対配置は変わりません。モデル間の添字を比べる前に、位置と成分方向を描いてください。
+C格子では面法線速度から自然にセル発散が得られ、スカラーの中心間差から面圧力勾配が得られます。既存の周期MAC射影もこの配置です。ただし一致するのは空間位置で、MACと海洋C格子コアのCoriolis・移流・境界・時間方式まで同じとは限りません。MITgcm公式のスタガード配置は、この面法線配置を3次元で示します。
+
+## 球面メッシュとArakawa A・B・C格子 — 回転と重力波で違いを見る# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#rotation-and-gravity-waves-make-the-difference-visible
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+一定平均水深H、一定Coriolis係数fでは、
+u_t-fv=-g\eta_x,\qquad v_t+fu=-g\eta_y,
+\qquad\eta_t+H(u_x+v_y)=0.
+です。連続系にはゼロ周波数の地衡流分岐と、重力波分岐、
+\omega^2=f^2+c^2(k^2+\ell^2),\qquad c=\sqrt{gH},\qquad L_D=c/|f|.
+があります。離散分散関係は位置と演算子に依存します。各格子に中心2次の圧力・発散演算子を使い、C格子のCoriolisにはu・v位置間の対称4点補間を使います。物理配置の位相を除いた実効波数は、
+\begin{aligned}
+A:\quad &\widetilde k=\sin(k\Delta)/\Delta,
+&\widetilde\ell=\sin(\ell\Delta)/\Delta,&\quad f_h=f,\\
+B:\quad &\widetilde k=2\sin(k\Delta/2)\cos(\ell\Delta/2)/\Delta,
+&\widetilde\ell=2\cos(k\Delta/2)\sin(\ell\Delta/2)/\Delta,&\quad f_h=f,\\
+C:\quad &\widetilde k=2\sin(k\Delta/2)/\Delta,
+&\widetilde\ell=2\sin(\ell\Delta/2)/\Delta,&\quad f_h=f\cos(k\Delta/2)\cos(\ell\Delta/2).
+\end{aligned}
+です。計算する基準系はω_h²=f_h²+c²(k̃²+ℓ̃²)です。エネルギー尺度化状態(u,v,cη/H)の3×3 Fourier生成行列は歪Hermiteで、固有値は0、±iω_hです。半離散の結果であり、空間が線形エネルギーを保存しても、時間積分は位相誤差・減衰・不安定性を加え得ます。
+
+## 球面メッシュとArakawa A・B・C格子 — チェッカーボードと未解像の変形半径# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#checkerboards-and-an-unresolved-deformation-radius
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+中心A格子の圧力勾配は、座標方向に最短の交互高さモードを見ません。B格子基準系は軸方向だけの零モードを除きますが、対角高さチェッカーボードを残します。C格子の勾配・発散はそのモードを結合しますが、単純Coriolis平均は一部の最短波で消えます。異なる演算子効果であり、単一の普遍的チェッカーボード診断ではありません。
+図はL_D/Δ=0.25、2で軸・対角波を比較します。この正方格子演算子では対角方向のA・Bは重なり、軸方向は異なります。変形半径が未解像だと、Coriolis平均はC格子の慣性周波数近傍の分岐を強く歪め得ます。「Cが常に最良」とは結論できません。解像された重力波、粗格子の地衡流調節、方向誤差は別のテストです。C配置を変えずにCoriolis離散化だけで比較は変わります。
+
+## 球面メッシュとArakawa A・B・C格子 — D・E、鉛直スタガード、磁場格子# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#d-and-e-vertical-staggering-and-magnetic-grids
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+D格子はCに対してu・vの面位置を交換し、uをy法線面、vをx法線面に置きます。矢印は依然として物理x・y成分なので、Cの速度配列を改名するだけではDの図になりません。E格子は一般にBを45度回転した配置と見なされ、添字と解像可能な波数集合を整合して扱う必要があります。説明のみで記号は未実装です。
+水平Arakawa配置と、Lorenz対Charney–Phillipsの鉛直配置は別です。同様にMHDのCTは面・辺で磁場発散恒等式を保ちますが、Arakawa C浅水法と同義ではありません。それぞれ整合する離散演算子が必要です。
+
+## 球面メッシュとArakawa A・B・C格子 — 根拠と次の地球流体テスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/geophysical-grids/#evidence-and-the-next-geophysical-benchmarks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+numart.geophysical_gridsがA／B／C記号を供給します。独立に物理格子差分をFourier波へ作用させて比較し、歪Hermiteエネルギー構造、地衡流ゼロ分岐、長波の2次収束、異なる短波零モードを検査します。python scripts/build_geophysical_grids.pyで図を再現し、記録に仮定・標本周波数・ソースハッシュを残します。
+今後は地衡流調節、慣性重力波、沿岸Kelvin波、β平面Rossby波、続いて渦位と非線形エネルギー・エンストロフィー収支が適切です。現行の一定f記号は、β平面Rossby伝播、海岸、球面計量、地形、濡れ・乾きを検証しません。非線形Arakawa Jacobianやエネルギー・エンストロフィー保存浅水流束は別のアルゴリズムで、A／B／Cを選ぶだけでは不変量は得られません。
+
+## 重力核：孤立FFTと周期スラブ — 重力核：孤立FFTと周期スラブ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gravity-boundaries/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+境界条件はPoissonソルバーの定義の一部です。有限の孤立質量、完全周期の密度偏差、上下が真空で水平周期の円盤は異なるGreen関数を持ち、配列のゼロ埋めだけでは適切な核を選べません。
+孤立構成はComputer Simulation Using ParticlesのHockney–Eastwood倍領域畳み込みに従います。円盤はKoyama・Ostriker（2009）、ApJ 693、1316–1345第2.3節・付録A（著者プレプリント）を参照します。水平周期、鉛直領域倍増、モード依存鏡像補正を使います。以下は独自に明示した変換規格化で核を導出・検査し、有限標本DFTと連続Fourier係数を区別します。
+
+## 重力核：孤立FFTと周期スラブ — 孤立重力：倍格子上の線形畳み込み# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gravity-boundaries/#isolated-gravity-linear-convolution-on-a-doubled-grid
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+G=1で3次元孤立ポテンシャルは、
+\phi(\boldsymbol x)=-\int\frac{\rho(\boldsymbol x')}{|\boldsymbol x-\boldsymbol x'|}\,d^3x'.
+です。Nx×Ny×Nzの密度を2Nx×2Ny×2Nzへゼロ埋めし、倍領域の符号付き格子差で核を作ります。密度FFTと核FFTを掛け、逆変換後に元の物理領域を取り出します。
+\phi_{\rm physical}=\Delta V\,
+\mathcal R\,\operatorname{IFFT}\bigl[
+\operatorname{FFT}(\rho_{\rm padded})\operatorname{FFT}(K_{\rm doubled})\bigr].
+取り出す領域内の源・標的の距離は各方向で元の領域長より小さいため、倍領域の循環畳み込みが所望の非周期離散畳み込みに一致します。周期鏡像を遠ざけるだけより強い性質です。核を通常の周期記号−4pi/k²へ置き換えると別問題になります。
+特異な原点核を明示する必要があります。isolated_potentialはself_kernelを既定ゼロ、それ以外を−1/rとし、有限源セルでの核積分はしません。直接格子和との丸め誤差での一致は畳み込みとゼロ埋めを検証し、高次の連続精度や唯一正しい自己セル規約を示すものではありません。孤立有限質量では無限遠でphi→0とできますが、表面密度が非ゼロのスラブでは一般にできません。
+
+## 重力核：孤立FFTと周期スラブ — スラブの水平Fourier変換# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gravity-boundaries/#horizontal-fourier-transform-of-a-slab
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+x・yを周期とし、長さLzの鉛直区間外で密度をゼロにします。水平波数k_perpに対し、規約を、
+\widehat\rho_{\boldsymbol k}(z)=\frac1{L_xL_y}
+\int\rho(x,y,z)e^{-i(k_xx+k_yy)}\,dx\,dy,\qquad
+k=\sqrt{k_x^2+k_y^2}.
+とします。Poisson方程式は(partial_z²−k²)phi_hat=4pi G rho_hatです。4pi Gを含む完全な重力核は、
+\mathcal G_k(s)=\begin{cases}
+-\dfrac{2\pi G}{k}e^{-k|s|},&k>0,\\
+2\pi G|s|,&k=0,
+\end{cases}\qquad
+\widehat\phi_{\boldsymbol k}(z)=\int\mathcal G_k(z-z')\widehat\rho_{\boldsymbol k}(z')\,dz'.
+です。重力係数を核に含める符号規約で、文献によっては外に出します。s=0の微分の跳びが4pi Gとなり、符号・規格化を確認できます。非ゼロ水平モードは外部で減衰し、ゼロモードは水平平均質量薄層です。外部に有限の力があり、ポテンシャルは減衰しません。
+
+## 重力核：孤立FFTと周期スラブ — 鉛直Fourier係数と鏡像因子# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gravity-boundaries/#the-vertical-fourier-coefficient-and-the-image-factor
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+必要な距離は|s|<Lzだけです。核を長さ2Lzの距離区間へ周期延長し、k_z,ell=pi ell/Lzとします。k>0の連続積分は、
+\widetilde{\mathcal G}_{k,\ell}
+=\int_{-L_z}^{L_z}\mathcal G_k(s)e^{-ik_{z,\ell}s}\,ds
+=-\frac{4\pi G}{k^2+k_{z,\ell}^2}
+\left[1-(-1)^\ell e^{-kL_z}\right].
+です。偶関数の指数と余弦を積分して得られます。角括弧が通常の完全周期Poisson乗数との違いです。同じことは、zを倍増し、水平モード係数exp(−k Lz)の負の鏡像密度をLzずらして加え、通常の非ゼロPoisson乗数を適用しても表せます。
+水平k=0モードの連続係数は、
+\widetilde{\mathcal G}_{0,\ell}=
+\begin{cases}
+2\pi G L_z^2,&\ell=0,\\
+\dfrac{4\pi G[(-1)^\ell-1]}{k_{z,\ell}^2},&\ell\ne0.
+\end{cases}
+です。この規約の全ゼロ係数は加法的なポテンシャル定数を決め、別の定数ゲージでも力は同じです。しかし水平k=0モード全体を落とすと、物理的な平均薄層を消してしまいます。本スラブソルバーは平均密度を引きません。
+
+## 重力核：孤立FFTと周期スラブ — 標本DFTは別の数値的対象# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gravity-boundaries/#a-sampled-dft-is-a-different-numerical-object
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+dz=Lz/Nz、s_jを2Nz個の符号付き鉛直格子差とすると、離散求積の乗数は、
+\widetilde{\mathcal G}^{\rm sampled}_{k,\ell}
+=\Delta z\sum_{j=0}^{2N_z-1}\mathcal G_k(s_j)
+ e^{-2\pi i j\ell/(2N_z)}.
+です。標本核DFTの厳密なdz倍で、有限Nzでは上の連続積分とは同じではありません。k>0の実数値は等比級数で、
+\widetilde{\mathcal G}^{\rm sampled}_{k,\ell}
+=-\frac{2\pi G\Delta z}{k}
+\frac{\sinh(k\Delta z)}{\cosh(k\Delta z)-\cos(\pi\ell/N_z)}
+\left[1-(-1)^\ell e^{-kL_z}\right].
+とも評価できます。k=0には独立した分岐を使い、桁落ちとゼロ除算を避けます。sinh・cosh・cosの展開により、固定した解像モードでdz→0なら連続係数を回復し、テストで収束を測ります。連続係数を有限標本和そのものと誤表示しないための区別です。
+slab_green_transformはsampledとcontinuumの両表現を公開します。slab_potentialの既定は標本核で、FFT結果が独立した鉛直直接求積に一致します。連続オプションは解析係数を適用します。小さな独立実装の核実験室で、原論文の全数値選択や星間物質シミュレーションの再現ではありません。
+
+## 重力核：孤立FFTと周期スラブ — 銀河計算の前に境界の物理を確かめる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gravity-boundaries/#check-the-boundary-physics-before-a-galaxy-calculation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+import numpy as np
+from numart.gravity_boundaries import isolated_potential, slab_potential
+rho = np.ones((8,8,16))
+phi_slab = slab_potential(rho) # horizontal mean mode retained
+phi_isolated = isolated_potential(rho, spacing=(1/8,1/8,1/16))
+2配列は別の境界問題です。テストは、境界近くの源も含む孤立FFTと非周期直接和、平均平面の2次ポテンシャル・内部線形加速度、正弦薄層の指数場を確認します。表面密度Sigmaの薄層では平均ポテンシャルは2pi G Sigma |z−z0|、非ゼロモードはexp(−k|z−z0|)で減衰します。
+核の検証記録にはソースハッシュと表示検査の実測誤差があります。
+通常の水平周期を使い、せん断周期の再配置はしません。実用化前には質量割当て、自己セル積分、鉛直求積精度、力の微分、重力・流体結合を検査する必要があります。粒子重力、マルチグリッド、Hamilton写像へ進んでください。
+
+## Godunov平滑化粒子流体力学（GSPH） — Godunov平滑化粒子流体力学（GSPH） [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gsph/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+状況：出典に基づく文献ノートと実装計画。 既存のSPH例は場を再構成し、GSPH流体の時間発展は行いません。GSPHの計算結果は主張していません。
+
+## Godunov平滑化粒子流体力学（GSPH） — Inutsukaの定式化# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gsph/#inutsuka39s-formulation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Inutsuka（2002）は、流体方程式の畳み込みから粒子発展を導きます。粒子対のリーマン問題が相互作用の圧力・速度を与え、別に規定する衝撃波人工粘性を置き換えます。リーマン散逸自体は残ります。式の参照先は著者のプレプリント第2〜3節です。先行する1994年のGodunov-type SPHへの貢献も引用されていますが、その原報告は未確認です。
+共通のGaussian平滑化長で、比体積V=1/rhoを線形近似すると、重なり係数は原著式48〜52より、
+C_{ij}=\frac{V_i-V_j}{|\mathbf x_i-\mathbf x_j|},\qquad
+D_{ij}=\frac{V_i+V_j}{2},\qquad
+V_{ij}^{2}(h)=D_{ij}^{2}+\frac{h^2 C_{ij}^{2}}4.
+です。式65は粒子対圧力を運動量更新に使います。
+\frac{d\mathbf v_i}{dt}
+=-2\sum_j m_j P^*_{ij}V_{ij}^{2}(h)
+\nabla_i W(\mathbf x_i-\mathbf x_j,\sqrt{2}h).
+これは共通hのGaussian形式です。保存性の議論には、原論文の可変hの式と、時間中心化した内部エネルギー更新が必要です。既存のSPH力の圧力だけを変えても、その導出にはなりません。
+
+## Godunov平滑化粒子流体力学（GSPH） — 既存の展示をつなぐ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gsph/#connecting-the-existing-exhibits
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+実装への道は粒子カーネル、Eulerリーマンソルバー、移動粒子の時間積分を結びます。現在の補間はコンパクトな3次カーネル、上の導出はGaussianとその重なりを使います。幅の規約を明示する必要があります。既存の固定格子流束はF(U)を返しますが、GSPH対更新には向きを整合させた星状態の圧力・速度が必要です。流束関数の再利用だけでは完全な粒子相互作用は得られません。
+
+## Godunov平滑化粒子流体力学（GSPH） — 段階的な検証計画# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gsph/#a-staged-verification-plan
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+カーネル重なり、比体積再構成、対の向き、等質量・不等質量、一様圧力の整合性を確認します。
+整合した時間更新で対の力と内部エネルギーを進め、適応平滑化長を加える前に運動量・全エネルギーの変化を測ります。
+粒子間隔と平滑化尺度を制御した滑らかな音響波・接触波移流を解き、補間と時間刻みの細分化を分けます。
+原論文最初の衝撃波管（式89、図2）をEuler厳密解と比較し、その後に共通のSod・Shu–Osher問題を加えます。粒子質量、間隔、近傍、境界のリザーバー、再構成を記録します。
+最初の掲載衝撃波管は、基本変数の左右状態(rho,v,p)=(1,0,1)、(0.5,0,0.2)、gamma=1.4、t=0.2です。アトラスの他の場所で使う標準Sodとは異なります。以上は検証目標であり、GSPHの計算済み結果ではありません。
+
+## Godunov平滑化粒子流体力学（GSPH） — MHDの分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gsph/#the-mhd-branch
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Iwasaki・Inutsuka（2011）は粒子法を拡張し、圧縮性相互作用には磁気圧を含む非線形リーマン問題、Alfvén波には特性線を使います。論文はAlfvén波、衝撃波管、Orszag–Tang、ローター、磁化爆風のテストを含みます。別のGSPMHD実装への方向で、既存の格子CT／GLMはこれを実装していません。粒子磁場の発散と引張り不安定性には独自の検証が必要です。
+
+## Godunov平滑化粒子流体力学（GSPH） — 特殊相対論への発展# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/gsph/#special-relativistic-continuation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Kitajima・Inutsuka・Seno（2026）は、相対論的リーマンソルバー、不等な粒子バリオン数、可変平滑化長を使うSRGSPHを開発しています。プレプリントは2025年、掲載号は2026年です。特殊相対論であり、一般相対論的流体ソルバーではありません。SRHD／GRHD発展の調査へ進んでください。
+
+## 数値計算法の歴史アトラス — 数値計算法の歴史アトラス [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+年は原著の出版年を基準とし、必要に応じて翻訳、再版、オンライン公開の年を区別します。このアトラスは代表的な出典をたどる読書の道案内であり、すべての発明や優先権を確定するものではありません。参考文献一覧では、未確認の事項も含め、各出典と実装の関係を記録しています。
+
+## 数値計算法の歴史アトラス — 古典的な基礎：方程式、差分、反復# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#classical-foundations-equations-differences-and-iteration
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+前進・後退・中心差分、Euler時間積分、Fourier展開、熱伝導、Laplace・Poisson方程式から始めます。Dirichlet、Neumann、Robin条件を導入する前に、境界の値と境界を通る流束を区別します。これらの数学的な起源は、後に数値流体力学で使われるようになる時代より前にあります。
+
+## 数値計算法の歴史アトラス — 1928年：CFL条件と依存領域# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#1928-cfl-and-domains-of-dependence
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Courant–Friedrichs–Lewyは、連続問題の依存領域と離散ステンシルが届く範囲を比較します。線形移流でC=a Δt/Δxを変え、必要条件と十分条件を区別します。CFLの原論文、導出と実験を参照してください。
+
+## 数値計算法の歴史アトラス — 1939〜1943年：運動論の漸近展開と変分的な組立て# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19391943-kinetic-asymptotics-and-variational-assembly
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Chapman–Cowlingの運動論の本は1939年に出版されました。これは書籍の出版年であり、Chapman–Enskog展開の発明年ではありません。Courant（1943）は変分問題と区分的な表現を結び付けます。P1 FEMの展示では、独立に作った疎行列Poisson問題を実装しています。
+
+## 数値計算法の歴史アトラス — 1947〜1950年：拡散、陰解法、線形安定性# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19471950-diffusion-implicit-methods-and-linear-stability
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Crank–Nicolson（1947）、一般に1949年の報告へ帰されるThomasの三重対角消去、Charney–Fjørtoft–von Neumannの数値予報研究（1950）における安定性解析へ進みます。Thomas報告の原文はここでは未確認です。1950年論文は歴史的な背景として扱い、von Neumann解析がその論文だけから始まったとは主張しません。拡散数r=ν Δt/Δx²をA安定性、単調性、陰的な線形方程式系へ結び付けます。拡散と線形ソルバー。
+Burgers（1948）は、並行する非線形モデルの分岐を与えます。方程式ギャラリーでは非粘性の衝撃波・膨張波問題を使い、原著の乱流解析を再現しているわけではありません。
+
+## 数値計算法の歴史アトラス — 1954〜1961年：Lax、Godunov、保存形# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19541961-lax-godunov-and-conservation-form
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Lax（1954）、Lax–Richtmyer（1956）、Godunov（1959）、Lax–Wendroff（1960）、Rusanov（1961）を通して、弱解、数値流束、衝撃波速度、数値粘性、分散へ進みます。線形問題の収束に関するLax–Richtmyer定理と、非線形保存的近似の弱極限に関するLax–Wendroff型の結果では、仮定が異なります。
+本実装のmethod="godunov"は、近似リーマン流束を使うGodunov型有限体積法を意味し、原著の厳密流束アルゴリズム全体の再現ではありません。
+BGK（1954）は運動論的な緩和モデルを与えます。Lighthill–Whitham（1955）とRichards（1956）は、保存則を交通波へ結び付けます。これらの別々の分岐は、単一の発明年表としてではなく、明示した方程式と出典を介してギャラリーでつながります。
+
+## 数値計算法の歴史アトラス — 1961〜1977年：緩和、マルチグリッド、局所基底と大域基底# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19611977-relaxation-multigrid-and-local-and-global-bases
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Fedorenko（1961）、Reed–Hill（1973）、Gottlieb–Orszag（1977）、Brandt（1977）をたどります。Poisson反復を、高周波誤差の平滑化と、滑らかな誤差の粗格子補正に分けます。DGは要素ごとの多項式を境界流束でつなぎ、スペクトル法は大域基底を使います。それ以前のGalerkin法やFourierの考え方が数学的な背景です。Poissonとマルチグリッド、numart.advection.dg_advectionを参照してください。
+Chorin（1968）から非圧縮流の射影法へ進みます。Alexander（1977）はSDIRKの分岐を与えます。ソース項の扱いや適応誤差制御は、手法の線形安定性関数とは別の要素です。
+
+## 数値計算法の歴史アトラス — 1978〜1983年：共通テスト問題と高解像度流束# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19781983-shared-benchmarks-and-high-resolution-fluxes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Sod（1978）、van LeerのMUSCL（1979）、Orszag–Tang（1979）、Roe（1981）、Harten–Lax–van Leer（1983）へ進みます。同じSod問題で接触波と音響波の解像度を比べます。初版のMUSCLはminmodと線の方法を使い、van Leerの原型であるLagrange移動・再配置とは異なります。原著の非圧縮Orszag–Tang研究と、今日の圧縮性テストの規格化も区別します。テスト問題の定義、MHD。
+
+## 数値計算法の歴史アトラス — 1984〜1989年：TVD勾配とTVBによる極値の緩和# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19841989-tvd-slopes-and-tvb-extrema-relaxation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Sweby（1984）はスカラー流束制限の条件を整理します。Cockburn–Shu（1989）はTVB RKDGの枠組みを発展させます。5種類の勾配制限を比較し、別の構成要素であるTVBと正値状態スケーリングを調べます。後者ではZhang–Shu（2010）の正値性の枠組みも紹介し、必要な流束、求積、CFL、SSP条件を示します。
+
+## 数値計算法の歴史アトラス — 1985〜1991年：3次分布と輸送する勾配# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19851991-cubic-profiles-and-transported-gradients
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Takewaki–Nishiguchi–Yabe（1985）とYabe–Aoki（1991）が、3次の値・勾配輸送であるCIPの系譜を発展させます。CIPの章では定速のスカラー例を計算し、後の保存型・有理関数型の分岐と区別します。構成したHermite場のテストにより、低拡散性と質量保存の保証を分けます。
+
+## 数値計算法の歴史アトラス — 1987〜1989年：高次精度、前処理、磁場の制約# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19871989-higher-order-preconditioning-and-magnetic-constraints
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+HartenらのENO（1987）、Turkelの低速流前処理（1987）、Einfeldt（1988）、Evans–HawleyのCT（1988）、Shu–Osher（1988、1989）、Cockburn–ShuのRKDG（1989）へ進みます。高次補間だけでは頑健な衝撃波捕獲は保証されず、エントロピー修正と正値性は別に扱う必要があります。Shu–Osher問題は衝撃波と滑らかな密度波を組み合わせます。
+
+## 数値計算法の歴史アトラス — 1991〜1996年：非定常反復、低密度、HLLC、WENO# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#19911996-unsteady-iteration-low-densities-hllc-and-weno
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Einfeldtら（1991）、Jameson（1991）、Toro–Spruce–Speares（1994）、Liu–Osher–Chan（1994）、Jiang–Shu（1996）をたどり、物理時間と擬似時間、低密度での破綻、接触波の回復、非線形WENO重みを学びます。1994年のWENOの起源と、初版に実装したWENO5-JS（1996）を区別します。前処理と二重時間積分。
+
+## 数値計算法の歴史アトラス — 2000〜2008年：多次元での頑健性と制約# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#20002008-multidimensional-robustness-and-constraints
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Tóth（2000）、Dednerら（2002）、Abgrallの残差分配法の総説（2006）、Nishikawa–Kitamura（2008）をたどります。離散CT／GLM演算子、保存的な残差分配、回転ハイブリッド流束、カーバンクル不安定性を調べます。2006年はRDの総説の年であり、残差分配法の発明年ではありません。
+Inutsuka（2002）は、粒子対ごとのリーマン問題を使う畳み込みに基づいたSPH発展という、並行する粒子法の分岐を加えます。GSPHの章では1994年の先行研究、2002年の詳細な定式化、Iwasaki–Inutsuka（2011）によるMHD拡張を区別します。文献ノートと今後の流体ソルバーの計画であり、既存の静的なSPH再構成とは別です。
+
+## 数値計算法の歴史アトラス — 2001〜2009年：SSPの継承とRunge–Kuttaの追加段階# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#20012009-ssp-inheritance-and-additional-rungekutta-stages
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Gottlieb–Shu–Tadmor（2001）、Spiteri–Ruuth（2002）、Gottlieb–Ketcheson–Shu（2009）は、スカラー線形安定性と、条件付きの非線形安定性の継承を区別します。SSPの分岐における発展であり、Runge–Kutta法そのものの起源ではありません。RK系譜の章はRK2の各種公式、RK4、SSPRK(s,p)を、実際の非線形段階と細分化で比較します。
+
+## 数値計算法の歴史アトラス — 相対論の分岐：1972〜2026年# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#relativistic-branch-19722026
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+SRHD／GRHD／GRMHDの調査は、WilsonのKerr背景計算（1972）、厳密SRリーマン解（1994）、Valencia（1997）、局所座標系ソルバー（1998）、相対論的な磁場制約、HARM（2003）、動的時空、非線形の基本変数回復を結び付けます。後の分岐には放射、DG–FD混合法、物理状態の制約、GPU向け合体コードを含みます。SRGSPH（2026）はInutsukaの粒子定式化へつながります。出典と出版状況は2026年11月6日時点の確認を記録しており、相対論ソルバーの実装は追加していません。
+
+## 数値計算法の歴史アトラス — 現代的な検証と妥当性確認へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#toward-modern-verification-and-validation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+NASAの2次元テスト問題集では、数値的な検証（verification）と、実験に対する物理的な妥当性確認（validation）を区別します。今後の展示は原典、現在のデータ入手先、実装状況、検証根拠を結び付ける必要があります。
+
+## 数値計算法の歴史アトラス — 移動格子、粒子、時間モード# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#moving-meshes-particles-and-temporal-modes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+固定格子の歴史には並行する分岐があります。Hirt・Amsden・Cook（1974）は古典的なALEの枠組みを与え、Gingold・Monaghan（1977）とLucy（1977）は独立した初期SPHの出典です。ALE、粒子、格子の各章で、幾何と運動の表現の違いをつなぎます。コードが実装するのは小さな再構成と幾何保存の例であり、原著の流体計算そのものではありません。
+時間積分の章は2ステップleapfrogの漸化式と計算モードの根を示します。時間フィルターの説明ではWilliams（2009）による後の改良を参照しますが、leapfrogの発明をその論文へ帰してはいません。
+二重Mach反射の展示では2次元衝撃波干渉を実際に計算します。Quirk（1994）とPandolfi・D’Ambrosio（2001）から、別に用意したカーバンクルの文献ノートへ進みます。Philip L. Roeを偲んででは大学による2026年の追悼を記録し、1981年の貢献へ立ち返ります。
+
+## 数値計算法の歴史アトラス — 粒子場と正準的な時間写像# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#particle-fields-and-canonical-time-maps
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+HockneyのP³Mの解説（1981）、Barnes–Hut（1986）、Greengard–Rokhlin（1987）は格子・木・展開に基づく場の計算をつなぎます。Yoshida（1990）は高次のシンプレクティック合成への道を与えます。重力とHamilton写像の章では役割の違いを明示します。Koyama–Ostriker（2009）は、境界核の章にある円盤ポテンシャルFFTの参照文献です。
+
+## 数値計算法の歴史アトラス — 滑らかな流れの構造と適切なテスト選択# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#smooth-flow-structure-and-honest-test-selection
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Kuya・Totani・Kawai（2018）は、圧縮性流れの離散化KEEPの系譜を導入します。KEEPの章では原型の直交座標2次形式を実装し、後のエントロピー、圧力平衡、時間方向への拡張と区別します。滑らかな渦の収束と保存状態による動画は衝撃波捕獲テストとは別です。運動エネルギーの整合性も見た目の滑らかさも、一般的な安定性の保証ではありません。
+
+## 数値計算法の歴史アトラス — 並行するソルバーの分岐：1986〜2010年# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#parallel-solver-branches-19862010
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+GMRES（1986）とBiCGSTAB（1992）は非対称疎行列系のソルバーを与えます。Qianら（1992）とGuoら（2002）から、格子BGKと外力の展示へ進みます。Nishikawa（2007）は1階の双曲型拡散系を開発し、移流拡散への拡張は2010年に出版されました。解説では、原型の2次残差分配法と本実装の1次有限体積ベースラインを区別します。
+
+## 数値計算法の歴史アトラス — 生物と地球流体の分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/history/#biological-and-geophysical-branches
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+生物方程式の調査では、個体群増殖からLotka／Volterra、年齢構造、SIRへ進み、Fisher前線、Turing形態形成、興奮性膜、走化性、確率反応回路、合成遺伝子回路をたどります。原著、翻訳、簡約モデルにはそれぞれ出典注記があります。22項目はすべて文献調査のみです。
+Arakawa–Lamb（1977）は、変数配置を地球流体の波へ結び付けます。A／B／Cの章では、独立に計算したf平面の中心差分記号を比較します。水平格子の分類は、鉛直スタガード配置や非線形不変量の保存とは別の性質です。
+
+## 西川の双曲型拡散法：1階系を反復する — 西川の双曲型拡散法：1階系を反復する [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/hyperbolic-diffusion/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Hiroaki Nishikawa（2007）は、2次精度の残差分配法を含め、定常拡散への1階双曲型系の方法を導入します。2010年の拡張は移流と拡散を統一します。年はDOIに含まれる年ではなく、学術誌の出版年です。
+本実装は周期1次元の1次風上有限体積法とSSPRK2による基準例です。定常方程式の等価性を示し、原論文の2次多次元RD構成は実装していません。
+
+## 西川の双曲型拡散法：1階系を反復する — 解と勾配を発展させる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/hyperbolic-diffusion/#evolve-the-solution-and-its-gradient
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+定常問題−νu_xx=fに対し、pと擬似時間τを導入します。
+\partial_\tau u-\nu\partial_x p=f,\qquad
+\partial_\tau p-\frac1{T_r}\partial_x u=-\frac p{T_r}.
+収束時にはp=u_xとなり、元の定常拡散方程式を回復します。同次流束Jacobianの固有値は、
+\lambda_\pm=\pm\sqrt{\nu/T_r}.
+です。緩和時間T_rは擬似時間の伝播・減衰を制御する数値パラメータで、物理的な拡散係数ではありません。T_rを固定した双曲型Courant制約はhに比例し、ソースを陽的に扱うと緩和の制約も加わります。そのため、この例では、
+\Delta\tau=\frac{C}{a/h+1/T_r},\qquad
+ a=\sqrt{\nu/T_r},\quad C\leq\frac12.
+を使います。有限の擬似時間ごとに物理的な熱方程式が回復されるわけではありません。熱ギャラリーの物理時間曲線をこの反復履歴に置き換えると、別の問題になります。時間精度を持つ拡張には追加の解析が必要です。
+
+## 西川の双曲型拡散法：1階系を反復する — 残差の収束と離散化誤差# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/hyperbolic-diffusion/#residual-convergence-and-discretization-error
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+製造した定常参照解は、周期単位区間上で平均ゼロのsin(2πx)、外力はν(2π)²sin(2πx)です。初期平均で定数零モードを固定します。両方の方程式残差を測り、組合せたRMS診断では勾配残差を2πで尺度化します。残差が小さくても1次風上の空間誤差は消えません。N=32、64、128でその誤差を別に検査します。計算記録にはステップ数と擬似時間刻みを残し、同一コストでの高速化は主張しません。
+Thomas法とマルチグリッド、疎行列前処理、物理的な拡散のギャラリーと比較してください。異方的拡散、高次面再構成、粘性Navier–Stokesとの結合、完全なRD定式化は今後の拡張です。出版社の書誌情報と要旨は確認していますが、原論文の完全な再現は主張していません。
+
+## 非圧縮流：整合する離散演算子で射影する — 非圧縮流：整合する離散演算子で射影する [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/incompressible/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+実装済み：単位密度・周期2次元Navier–StokesをMAC格子で扱い、対流・粘性を中心差分、時間を射影付きSSPRK2、Poissonを離散FFT逆演算で解きます。
+
+## 非圧縮流：整合する離散演算子で射影する — 1968年：射影法の分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/incompressible/#1968-the-projection-branch
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Chorin（1968）が射影法の原典です。本実装の周期RKモデルは原理を示し、原著の境界処理や時間刻みを再現するものではありません。
+速度成分は異なる面、圧力はセル中心に置きます。周期格子の内積でD=−Gᵀとなるよう発散Dと勾配Gを選ぶと、
+DG\phi=D\boldsymbol u^*,\qquad
+\boldsymbol u=\boldsymbol u^*-G\phi,\qquad D\boldsymbol u=0.
+です。FFTが逆にするのは連続の−|k|²ではなく、DGの記号です。
+\lambda_h=-\frac4{h^2}
+\left[\sin^2(k_xh/2)+\sin^2(k_yh/2)\right].
+圧力定数は未定なので平均をゼロにし、周期適合性のためPoissonソースから平均を引きます。テストでは随伴恒等式、射影の冪等性、エネルギーの非増加、発散除去を確認します。
+
+## 非圧縮流：整合する離散演算子で射影する — Taylor–Greenによる検証# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/incompressible/#taylorgreen-verification
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+[0,2π)²、粘性νで、
+u=\sin x\cos y\,e^{-2\nu t},\qquad
+v=-\cos x\sin y\,e^{-2\nu t}.
+を使います。T=0.5、ν=0.1、N=16、32、64で速度誤差が2次収束します。平均運動エネルギーはe^(−4νt)/4です。段階の射影乗数を黙って物理圧力と呼ぶことはせず、最後の圧力推定を運動量右辺から再構成します。圧力次数の検証は主張していません。
+再現可能な測定値には離散発散の絶対値の最大を含めます。陽的時間刻みには移流・粘性の両制約が残ります。粘着壁キャビティ、SIMPLE／PISO、円柱後流、混合FEM、乱流モデル、実験に対する妥当性確認は、この周期テストでは実装していません。別の低Mach数LBMモデルと比較してください。
+Arakawa A／B／C比較ではMAC配置を地球流体の文脈に置きます。面位置が一致しても、Coriolisや渦位のアルゴリズムが自動的に備わるわけではありません。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — KEEP法：滑らかな流れの釣合いと限界を検証する [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+KEEPはkinetic-energy and entropy preservingの略です。東北大学のYuichi Kuya、Kosuke Totani、Soshi Kawaiによる、圧縮性保存方程式間の低散逸な釣合いを目指す研究です。2018年の原論文を出発点とし、著者の2022年会議解説、特に第2.2節・式9が本実装の直交座標流束を示します。
+展示は原型の2次精度・算術平均・直交座標流束と周期境界、古典的RK4です。後のKEEPすべてを実装するものではありません。滑らかな渦の時間発展を再生できます。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — どの量を保存するか# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/#which-quantities-should-be-preserved
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+滑らかな周期非粘性流では、質量、運動量、全エネルギーは保存量です。ただし圧縮性流の運動エネルギー単独は一般に一定ではありません。圧力仕事が運動・内部エネルギーを交換します。K=integral rho |u|²/2として、
+\frac{dK}{dt}=\int p\,\nabla\cdot u\,dV.
+です。運動エネルギー整合な対流離散化は、質量・運動量の不整合な積の公式から偽の運動エネルギー源を作るべきではありません。圧縮性渦にdK/dt=0を課すこととは違います。
+無次元のエントロピー代理量を、
+S_* = \int\rho\log\left(\frac{p}{\rho^\gamma}\right)dV.
+で測ります。固定組成の理想気体では、物理エントロピーとの差は定数係数と質量の加法項です。初期等エントロピー状態でS_*がほぼゼロなら、初期質量あたりの変化が有用です。初期S_*で割ると条件が悪くなります。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — 実装した2点流束# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/#the-implemented-two-point-flux
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+上線を左右の算術平均、u_nを直交面の法線速度、e=p/[rho(gamma−1)]とすると、基準流束は、
+\begin{aligned}
+C&=\overline\rho\,\overline u_n,\\
+F_{\rho u_i}&=C\,\overline u_i+\overline p\,\delta_{in},\\
+F_E&=C\left[\frac12\boldsymbol u_L\cdot\boldsymbol u_R+\overline e\right]
++\frac12(u_{n,L}p_R+u_{n,R}p_L).
+\end{aligned}
+です。質量流束はCです。交差速度の運動項と交差圧力仕事には意味があり、物理流束全体の都合のよい平均に置き換えると離散エネルギー交換が変わります。空間2次の中心2点流束差分法で、リーマンソルバーの散逸はありません。
+テストでは同一状態の整合性、左右対称性、主変数の周期保存、半離散運動エネルギー・圧力仕事の恒等式を検証します。RK4は時間打切り誤差を加え、すべての半離散恒等式を厳密に継承しません。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — 最初の適切なテスト：滑らかな等エントロピー渦の移流# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/#appropriate-first-test-smooth-isentropic-vortex-advection
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+gamma=1.4、周期正方形[−10,10]²、背景速度(1,0.5)、渦強度beta=3です。移動中心からの相対座標をX、Y、r²=X²+Y²として、参照解は、
+\begin{aligned}
+u&=1-\frac{\beta Y}{2\pi}e^{(1-r^2)/2},&
+v&=0.5+\frac{\beta X}{2\pi}e^{(1-r^2)/2},\\
+T&=1-\frac{(\gamma-1)\beta^2}{8\gamma\pi^2}e^{1-r^2},&
+\rho&=T^{1/(\gamma-1)},\qquad p=\rho^\gamma.
+\end{aligned}
+です。全平面の渦は解析的に移動します。長さ20の箱の最小像座標では、この設定の境界裾が浮動小数点で有意でない程度となり、顕著な周期境界の跳びを避けます。解析温度の正値性を明示的に確認します。
+静止図の研究は48²、96²、192²セル、CFL0.25、t=1です。密度点値L1、主保存量のずれ、質量あたりのS_*変化を報告します。別の96²計算でCFLを半分にし、時間刻みの寄与を調べます。測定記録に実際の誤差を示し、滑らかな解の期待空間次数は2です。一方、動画は96²でt=4までの定性的な時間履歴で、細分化の代わりではありません。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — 次に適切なテスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/#appropriate-next-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+圧縮性・非粘性3次元Taylor–Green渦は主要なKEEPテストです。周期箱[0,2 pi]³、参照密度、gamma、初期Mach数、速度振幅、初期圧力摂動、時間積分を固定します。格子・時間細分化で全エネルギー、運動エネルギー、圧力膨張、エントロピー、密度・温度RMS、解像スペクトルを追い、圧力仕事の交換と数値散逸を分けます。原論文は非粘性等方乱流も扱います。初版にはこれらの3次元計算はなく、2次元断面では3次元の渦伸長を置き換えられません。
+滑らかな一定圧力の密度波は圧力・速度平衡を検証する有用な診断ですが、その性質は流束の変種に依存します。本実装の原型算術平均流束はこの初期値に非ゼロの半離散圧力残差を生じ、通過したとせず限界をテストに記録します。Shimaら（2021）は圧力平衡保存の分割形を研究しています。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — エントロピー、衝撃波、方式の版に関する注意# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/#caveats-entropy-shocks-and-the-scheme-version
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+保存型という名称は丸め誤差までの厳密なエントロピー保存ではありません。 著者は2022年解説で改善された挙動と厳密保存を区別します。Tamaki・Kuya・Kawai（2022）は残る誤差と調整可能な近似次数のKEEP再定義を扱います。本実装はその再定義や厳密な対数平均エントロピー保存流束ではありません。
+衝撃波にはエントロピー生成が必要です。 散逸なしの中心流束には、非振動で許容される衝撃波を選ぶ一般的な仕組みがありません。Sod、Shu–Osher、二重Mach反射を、この無安定化の基準法の受入れテストにはしていません。限界や振動の診断として衝撃波管を解くことはできますが、検証済みの衝撃波捕獲とは表示すべきではありません。KEEPを基にした全手法がすべての衝撃波管を解けないという普遍的主張にもできません。
+衝撃波安定化は手法を変えます。 センサー、人工粘性、風上混合、フィルター、他のエントロピー安定構成には独自の定義と検証が必要です。衝撃波・接触波の厚み、振動、正値性、追加散逸を記録し、滑らかな基準法と安定化拡張を分けます。ここにその拡張はありません。
+正値性定理はありません。 表示した滑らかな計算の正密度・正圧力は、真空近傍や任意の解像度不足に対する頑健性を示しません。非物理状態では切り詰めず停止します。
+時間積分と境界も重要です。 Asada・Maruyama・Kawai（2024）は時間方向の保存を扱います。本実装のRK4・周期一様格子は、その方式、高次・曲線座標KEEP、非整合節点処理、壁モデル、実用LESを実装していません。
+
+## KEEP法：滑らかな流れの釣合いと限界を検証する — 再現# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/keep/#reproduce
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+python scripts/build_keep.py
+python -m pip install '.[movies]'
+python scripts/build_movies.py
+最初のコマンドが滑らかな解の誤差図とソース記録を作り、動画ビルドが動画ギャラリーへKEEP渦を加えます。衝撃波テスト、カーバンクル、シンプレクティックHamilton写像との違いも参照してください。流体のエネルギー・エントロピー整合性と、力学時間写像のシンプレクティック性は異なります。
+
+## 格子Boltzmann法：衝突、並進、流体運動の回復 — 格子Boltzmann法：衝突、並進、流体運動の回復 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/lattice-boltzmann/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+実装済み：低Mach数・等温D2Q9–BGK、Guo体積力、周期境界、静止した中間壁バウンスバック。格子単位はΔx=Δt=ρ_ref=1、c_s²=1/3です。
+
+## 格子Boltzmann法：衝突、並進、流体運動の回復 — 1954年から1992年、2002年へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/lattice-boltzmann/#1954-1992-2002
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Bhatnagar–Gross–Krook（1954）の緩和モデルは格子BGKに先行します。Qian–d'Humières–Lallemand（1992）が格子BGK、Guo–Zheng–Shi（2002）が本実装の外力離散化の出典です。異なる発展として扱います。
+D2Q9には静止分布1つ、軸方向4つ、対角方向4つがあり、それぞれの重みは4/9、1/9、1/36です。平衡分布は、
+f_q^{eq}=w_q\rho\left[1+3\boldsymbol c_q\cdot\boldsymbol u
++\frac92(\boldsymbol c_q\cdot\boldsymbol u)^2
+-\frac32|\boldsymbol u|^2\right].
+です。衝突で分布を緩和し、その後に整数格子速度に沿って各分布を並進させます。
+f_q(\boldsymbol x+\boldsymbol c_q,t+1)
+=f_q(\boldsymbol x,t)-\frac{f_q-f_q^{eq}}{\tau}+S_q.
+力密度Fに対し、Guo外力は、
+S_q=w_q\left(1-\frac1{2\tau}\right)
+\left[3(\boldsymbol c_q-\boldsymbol u)
++9(\boldsymbol c_q\cdot\boldsymbol u)\boldsymbol c_q\right]\cdot\boldsymbol F,
+\quad
+\rho\boldsymbol u=\sum_q f_q\boldsymbol c_q+\frac{\boldsymbol F}{2}.
+を使います。密度は分布の総和、圧力はc_s²ρ、動粘性係数はν=c_s²(τ−1/2)です。Chapman–Enskogの導出で離散時間の半ステップ補正を説明します。τ>1/2はこの粘性を正にしますが、一般的な非線形安定性の保証ではありません。
+
+## 格子Boltzmann法：衝突、並進、流体運動の回復 — 独立した2つのテスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/lattice-boltzmann/#two-independent-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+周期的な横せん断波はexp(−νk²t)で減衰し、独立に粘性を測れます。外力駆動Poiseuille流の厳密分布はu_x=F_x y(H−y)/(2ρ_refν)です。壁は最外の流体節点中心ではなく、その半格子間隔外に置きます。τ=0.8、最大速度0.01を固定し、Ny=8、16、32で壁位置と細分化を検証します。初期過渡は最も遅い粘性減衰時間の12倍まで計算し、有限時間誤差と空間誤差を区別します。
+データ記録にはチャネル誤差、Mach数、力の設定、ステップ数があります。単体テストでは周期質量・運動量保存と平衡モーメントも確認します。BGKは単一緩和の基準例です。MRT／TRT、エントロピー型・キュムラント衝突、熱的・圧縮性LBM、移動壁、多相モデルは今後の拡張です。射影法の流れは別の離散系を解き、非圧縮性へのもうひとつの道を与えます。
+
+## 勾配制限：minmod、Superbee、MC、van Leer、van Albada — 勾配制限：minmod、Superbee、MC、van Leer、van Albada [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/limiters/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+勾配制限は、線形な高次再構成を局所勾配の非線形な選択に置き換えます。勾配制限ノートで、同じ格子・時間積分に対する5種の選択と、1次・無制限のスカラー基準例を比較できます。
+
+## 勾配制限：minmod、Superbee、MC、van Leer、van Albada — 再構成と比の規約# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/limiters/#reconstruction-and-the-ratio-convention
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+一様セルの後退・前進増分を、
+a_i=\bar u_i-\bar u_{i-1},\qquad b_i=\bar u_{i+1}-\bar u_i,
+\qquad r_i=a_i/b_i,\qquad s_i=\phi(r_i)b_i.
+とし、セルiから再構成する2状態を、
+u_{i+1/2}^{L}=\bar u_i+\tfrac12s_i,\qquad
+u_{i-1/2}^{R}=\bar u_i-\tfrac12s_i.
+とします。実装はa、bを直接使うため、平坦部の分母ゼロに数値epsilonや任意の比は不要です。符号が異なる場合、または一方がゼロなら制限勾配はゼロです。これらは増分であり、微分が必要なときだけセル幅で割ります。
+
+## 勾配制限：minmod、Superbee、MC、van Leer、van Albada — 5つの制限関数# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/limiters/#five-limiter-functions
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+以下はいずれもr≤0でゼロです。r>0では、
+\begin{aligned}
+\phi_{\rm minmod}(r)&=\min(1,r),\\
+\phi_{\rm Superbee}(r)&=\max\{\min(2r,1),\min(r,2)\},\\
+\phi_{\rm MC}(r)&=\min\{2r,(1+r)/2,2\},\\
+\phi_{\rm van\ Leer}(r)&=2r/(1+r),\\
+\phi_{\rm van\ Albada}(r)&=(r^2+r)/(r^2+1).
+\end{aligned}
+です。van Albadaは切り詰めた対称形式で、epsilon正則化はありません。別の形式は極値近傍で異なります。MCはmonotonized centralの略です。すべてphi(1)=1と、図示するスカラー条件0≤phi(r)≤min(2r,2)を満たします。スカラー流束制限の枠組みとRoeの圧縮的構成はSweby（1984）、実装規約はClawpackとMPI-AMRVACを参照してください。同じ名称でも、変数、時間積分、epsilonの選択が同じとは限りません。
+Minmodは同符号の小さい増分を選びます。Superbeeはより圧縮的で、滑らかな特徴を平坦部へ変える場合があります。MCとvan Leerは多くの単調領域でminmodより勾配を残します。ノートでは誤差、全変動、オーバーシュートの測定で傾向を確かめます。すべての問題で最良の制限関数はありません。
+
+## 勾配制限：minmod、Superbee、MC、van Leer、van Albada — 計算による比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/limiters/#computed-comparisons
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+スカラー方程式u_t+a u_x=0を周期区間[0,1]で解きます。全計算は保存的有限体積、風上界面流束、SSPRK(3,3)、N=200、|a|dt/dx≤0.3、終了時刻1で、最終ステップを短縮します。a=±1の両方向を計算し、[0.2,0.4]の単位矩形パルスとsin(2πx)を使います。初期値・参照値は、部分的に覆われたセルや正弦波のsinc係数を含む厳密セル平均です。表示L1もこれを使います。周期全変動は末尾から先頭への跳びを含み、質量はdx×総和です。最大TVは初期状態を含む全保存フルステップ診断から求めます。
+1次比較は勾配ゼロです。無制限比較は同じ流束とSSPRK3で中心勾配(a+b)/2を使い、振動を生じ得ます。完全離散のLax–Wendroff法ではありません。
+別のSod比較は既存の理想気体設定、gamma=1.4、N=200、t=0.2、HLLC、基本変数再構成、CFL=0.3のSSPRK3で、勾配選択だけを変えます。密度誤差は既存規約どおり点値であり、厳密セル平均誤差ではありません。流出境界のため、周期スカラーの質量・TV診断はこのパネルへ適用しません。
+滑らかな正弦波をN=40、80、160、t=0.2で細分化し、L1誤差と次数を報告します。2次という名称は滑らかな領域の整合性であり、極値での一様な点値精度や不連続の2次誤差を意味しません。
+
+## 勾配制限：minmod、Superbee、MC、van Leer、van Albada — TVDはスカラー更新全体の性質# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/limiters/#tvd-is-a-property-of-the-complete-scalar-update
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+このスカラーMUSCL演算子では、示した勾配条件と|a|dt/dx≤1/2によりTVDの前進Euler構成要素が得られ、SSPRK3はその範囲で凸安定性を保ちます。ソルバーもCFLをこの範囲に制限します。テストでは両方向、周期保存、フルステップ全変動、上下限、CFL=1/2のランダムデータ前進Eulerを確認します。
+同じ関数をEuler基本変数の各成分に使っても、一般の系のTVD定理、エントロピー条件、正のセル平均の保証にはなりません。特性再構成と完全離散正値性は別の拡張です。TVBの極値緩和と保存的正値スケーリングは発展的な勾配制限を参照してください。
+
+## 勾配制限：minmod、Superbee、MC、van Leer、van Albada — 再現と確認# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/limiters/#reproduce-and-inspect
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+python -m numart.cli run sod --method muscl --riemann hllc --limiter superbee --n 200
+python scripts/build_limiters.py
+python scripts/sync_web_content.py
+from numart import get_problem, solve
+from numart.tvd import solve_advection
+sod = solve(get_problem("sod"), limiter="mc")
+pulse = solve_advection(profile="square", limiter="van-leer", speed=-1.)
+docs/figures/limiters.jsonは全描画配列、細分化、診断、ソースハッシュを記録します。ブラウザーはPython計算曲線を選び、別のPDE実装を実行しません。既定MUSCLはminmodのままで、制限関数オプションはWENO5や2次元Euler／MHD基準例には適用しません。
+
+## 構造格子、非構造格子、三角形格子 — 構造格子、非構造格子、三角形格子 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/meshes/
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+格子は幾何と**接続関係（connectivity）**を表します。セル形状と添字付けは異なる選択です。三角形は構造格子を分割して作ることも、不規則な非構造三角形分割でつなぐこともできます。格子エクスプローラーで違いを確認できます。
+
+## 構造格子、非構造格子、三角形格子 — 構造格子# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/meshes/#structured-meshes
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+論理的な長方形格子では添字(i,j)を付けられ、隣接セルの添字を予測できます。直交長方形が最も単純な例ですが、物体適合の曲線格子でも構造的な添字を維持できます。その場合、計量項、面法線、セル体積は幾何から求めます。複数の添字空間を結ぶのがマルチブロック格子です。
+最初の例は単位正方形上の8×6の長方形セルです。同じ検査コードをすべての例に使えるよう、接続関係も明示的に出力します。
+
+## 構造格子、非構造格子、三角形格子 — 三角形と非構造の接続関係# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/meshes/#triangles-and-unstructured-connectivity
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+各長方形を2つに分ければ、基になる格子パターンを保ったまま形状を三角形へ変えられます。3つ目の例は、決定的に配置した不規則な内部点と固定正方形境界から三角形分割を作ります。MatplotlibのDelaunay三角形分割を使い、Triangleパッケージの呼出しではありません。ShewchukのTriangle論文は、歴史とアルゴリズムを学ぶ参照文献です。
+非構造ソルバーは通常、頂点、セル、面、所有セルと隣接セルの関係を記憶します。境界面には隣接セルが1つ、内部面には2つあります。この画面が強調するのは面を共有する隣接セルで、頂点だけを共有するすべてのセルではありません。番号の位置は頂点平均によるセル中心です。三角形では面積重心に一致します。
+
+## 構造格子、非構造格子、三角形格子 — 保存性は面ごとの約束# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/meshes/#conservation-is-a-face-contract
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+面積|K|の有限体積Kに対して、
+\frac{d}{dt}(|K|\overline U_K)
+=-\sum_{f\subset\partial K}|f|\,\widehat F(U_K,U_{K_f};n_{K,f}).
+となります。内部面から両側セルへは、大きさが同じで符号が逆の流束が寄与します。この相殺は、Kが四角形か三角形かに依存しません。頂点を反時計回りに並べると、辺変位(dx,dy)に対する外向き単位法線は(dy,−dx)/lengthです。符号付き多角形面積で、向きの反転や退化したセルを検出できます。
+
+## 構造格子、非構造格子、三角形格子 — 格子品質と実装範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/meshes/#quality-and-implementation-scope
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+小さな角度、歪み、縦横比、非直交性、体積の変動は、再構成や安定性にそれぞれ異なる影響を与えます。Delaunay接続だけで、適切な境界層解像度や任意点群の十分な最小角は保証されません。ここでは格子品質の最適化は行いません。
+numart.geometry.example_meshesが3例を供給します。テストでは正のセル面積、全体の単位面積、面隣接グラフの連結、相互的な隣接関係、これらの単連結領域での平面Euler関係V−E+F_cells=1を確認します。幾何・接続の実演であり、非構造Eulerや粘性流ソルバーは今後の課題です。
+ALEの移動セル、SPH粒子、円筒座標の計量とテンソルへ進んでください。
+
+## 構造格子、非構造格子、三角形格子 — 変数のスタガード配置は別の選択# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/meshes/#variable-staggering-is-another-choice
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Arakawa A／B／C配置は、与えられた格子上の中心、角、面にどの変数を置くかを指定します。構造・非構造の接続関係や時間次数とは独立です。対応する章では、Coriolis平均と検証したFourier記号を明示し、既存のMAC配置と回転浅水波を結び付けます。
+
+## MHD：制約輸送法と発散クリーニング — MHD：制約輸送法と発散クリーニング [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+GSPH／GSPMHDノートは別の粒子法の分岐を説明します。相対論的発展の調査は、CT、基本変数回復、動的時空を含むSRMHD・GRMHDをたどります。以下のNewton力学的な平面モデルは、どちらも実装していません。
+
+## MHD：制約輸送法と発散クリーニング — 問題と単位# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#problem-and-units
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+従来のOrszag–Tang基準例は周期単位正方形上の平面2次元理想MHDで、γ=5/3、μ0=1、vz=Bz=0です。配列添字は[x,y,variable]、状態はq=(ρ,mx,my,E,Bx,By,ψ)、E=p/(γ-1)+ρ(vx²+vy²)/2+(Bx²+By²)/2です。Orszag–Tangの初期条件は、
+\rho=\frac{25}{36\pi},\quad p=\frac5{12\pi},\quad
+\mathbf v=(-\sin2\pi y,\sin2\pi x),\quad
+\mathbf B=\frac1{\sqrt{4\pi}}(-\sin2\pi y,\sin4\pi x).
+です。広く使われる圧縮性テストの規格化で、Orszag–Tang（1979）の元の非圧縮MHD研究の完全な再現ではありません。MASCLET論文は、この圧縮性規格化の参照先のひとつです。
+
+## MHD：制約輸送法と発散クリーニング — CT：同じ辺電場を共有する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#ct-share-the-same-edge-electric-field
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+磁場の法線成分をセル面に置き、角で共有するEzによって両方向を更新します。例えばBx <- Bx - Δt D_y Ez、By <- By + Δt D_x Ezです。対応する発散更新には-D_xD_y Ez+D_yD_x Ez=0が現れ、一致する離散発散を保存します。
+初版は、Rusanov面流束から求めた電場を算術平均する単純なflux-CTを使います。面のリーマン問題は共通の法線磁場を使い、基本変数の圧力を保つよう界面エネルギーを調整します。更新後のセル中心磁場は面から平均します。全エネルギーを非保存的に再設定することはありません。Evans–Hawleyの全座標系の詳細やAthenaの風上CTを再現するものではありません。Evans–Hawley（1988）、Tóth（2000）。
+
+## MHD：制約輸送法と発散クリーニング — GLM：発散誤差を輸送・減衰させる# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#glm-transport-and-damp-divergence-errors
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+セル中心磁場Bと補助変数ψを用いて、
+\partial_t\mathbf B+\nabla\cdot(\mathbf v\mathbf B-\mathbf B\mathbf v)+\nabla\psi=0,
+\qquad
+\partial_t\psi+c_h^2\nabla\cdot\mathbf B=-\alpha\psi.
+を解きます。誘導流束成分はF_i(B_j)=v_i B_j-B_i v_j+δij ψです。初版はch=3を固定し、α=damping*ch/h、damping=0.18を使います。線形ψ減衰を分離して指数的に積分し、残りを1次Rusanov流束と前進Eulerで更新します。エネルギーはψ²を含まない通常のMHDエネルギーです。この教育用Dedner型モデルはGLM／EGLM定式化の一部を扱います。Dednerら（2002）。
+
+## MHD：制約輸送法と発散クリーニング — ∇·Bを測る# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#measuring-b
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+CTは面磁場の差分、GLMはセル中心磁場の中心差分を使います。異なる離散発散の値から直接順位を付けられないため、記録には演算子名を含めます。固定した比較的散逸の強いGLM波速と対称なOT初期値では、中心差分発散が極めて小さいままの場合があります。OTだけではクリーニング性能の根拠として不十分です。
+別の診断としてmagnetic_error=0.01でBx += 0.01sin(2πx)を加え、初期気体圧力を保つようエネルギーを調整します。これは標準OT問題ではありません。発散波の輸送・減衰を調べ、減衰と数値粘性による誤差減少を区別します。CTは初期の離散制約を保存しますが、既存の磁気単極子誤差を自動的に取り除くものではありません。
+
+## MHD：制約輸送法と発散クリーニング — 検証範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#verification-scope
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+テストでは周期質量・全エネルギー、選定ケースの密度・圧力の正値性、CTの発散保存、GLMの注入誤差除去を確認します。後述のHLLD節にBrio–Wu、Alfvén波の格子細分化、磁場ループを追加しました。外部参照コードとの比較は今後の課題です。低解像度・1次OT図は、磁場制約の処理を学ぶ導入例です。
+
+## MHD：制約輸送法と発散クリーニング — 時間発展# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#time-evolution
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+動画ギャラリーには、64²のOrszag–TangのCTとGLMの動画があります。実際の適応CFLスナップショット時刻と、それぞれの離散発散診断は異なります。再生から同一精度の順位は導きません。
+
+## MHD：制約輸送法と発散クリーニング — HLLDと標準波動テスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#hlld-and-standard-wave-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+HLLDの比較を開く。新しい理想MHD計算は、上の平面Orszag–Tang基準例と異なり、速度・磁場の3成分をすべて保持します。μ0=1、q=(ρ,ρvx,ρvy,ρvz,E,Bx,By,Bz)、E=p/(γ−1)+ρ|v|²/2+|B|²/2です。HLLDは外側の高速波の間で接触波と2つの回転波を解像します。中間のstar／double-star状態では共通の法線磁場を使い、不正な状態ではHLLEに切り替え、面ごとの回数を記録します。原典の書誌はMiyoshi–Kusano（2005）、式の照合には公開されたAthena++ HLLD実装を使いました。独立した教育実装であり、Athena++の実行や原論文全体の再現ではありません。
+3テストとも基本変数のMC勾配・SSPRK2・面の正値性のための縮小を使い、時間刻み再試行・HLLE切替を記録します。保存平均値はクリップしません。選定ケースの正値性は一般的な頑健性の証明ではありません。
+Brio–Wu：γ=2、[0,1]のx=0.5で、左(ρ,p,By)=(1,1,1)、右(0.125,0.1,−1)、Bx=0.75、速度とBzは0。開放端、t=0.1、CFL 0.35です。400セルのHLLE／HLLDと800セルのHLLDを比較します。厳密解の重ね描きや普遍的な一意性の主張ではなく、数値格子比較です。Brio–Wu（1988）。
+円偏波Alfvén波：γ=5/3、ρ=1、p=0.1、Bx=1、(By,Bz)=0.1(cos(2πx),sin(2πx))、(vy,vz)=−(By,Bz)、vx=0。周期単位区間で1周期t=1、CFL 0.35です。厳密な保存変数セル平均には、sincで平均した横磁場と一定の全エネルギーを使います。平均磁場の二乗からエネルギーを作り直しません。HLLEとHLLDの32・64・128・256セルで、横磁場の平均絶対誤差の最細格子の観測次数は両方とも約1.98です。
+弱い磁場ループ：γ=5/3、ρ=p=1、v=(2,1,0)、Az=10⁻³max(0.3−r,0)。周期2 × 1領域、t=1、CFL 0.3、64 × 32と128 × 64セルです。CT／GLMそれぞれでHLLE・HLLDを比較します。有限磁場の平行移動は診断用の参照であり、厳密解ではありません。磁気力は小さいものの0ではありません。
+
+## MHD：制約輸送法と発散クリーニング — ループ問題のCT-ContactとGLMの範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/mhd/#ct-contact-and-glm-scope-in-the-loop-test
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+CTは角のポテンシャルの離散回転から面磁場を初期化します。角のEMFの横方向微分には面の質量流束の符号による接触波の風上化を使います（Mignone–Del Zanna（2021）の式20〜22のCT-Contact）。格子に沿う1次元極限で面の誘導流束に一致します。UCT-HLLDではありません。SSPRKの各段階で共有回転により面発散を保存し、セル磁場を面から平均します。全エネルギーは再設定しません。
+GLMはセルAzの中心差分回転からセル磁場を初期化し、面で縦方向部分系を先に解きます。
+ B_n^*=\frac{B_{n,L}+B_{n,R}}2-\frac{\psi_R-\psi_L}{2c_h},\qquad
+ \psi^*=\frac{\psi_L+\psi_R}2-\frac{c_h(B_{n,R}-B_{n,L})}2.
+HLLD／HLLEへ共通のBnを渡し、面の基本変数圧力を保ちます。Bn・ψの流束はψ・ch²Bn*です。ch=4、減衰率0.18ch/hでSSPRK2の前後にψを半刻みずつ指数減衰させます。Eにはψのエネルギーを含めません。Mignone–Tzeferacos（2010）の縦方向解法を参考にした保存的GLMモデルであり、同論文のCTU積分やEGLM変種ではありません。固定クリーニング速度は時間刻み数にも影響します。
+初期磁場の離散化と離散発散演算子が異なり、磁気エネルギー比は各計算自身の初期セル磁場エネルギーで規格化します。同一精度・同一計算費用でのCT／GLMの順位は導けません。128 × 64ではCTの最大面発散は4 × 10⁻¹⁶未満、GLMの最大中心差分発散は約3.7 × 10⁻⁴です。これらは演算子に依存するB/長さの次元の数値です。公開ループ計算のHLLE切替・再試行はすべて0でした。外部コードとの比較、強磁場ループ、UCT-HLLDは今後の課題です。
+再現はpython scripts/build_mhd_tests.pyです。設定・診断・ハッシュと計算済み保存変数配列を取得できます。
+
+## 時間依存テスト：動画と保存状態 — 時間依存テスト：動画と保存状態 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+動画ギャラリーを開く。
+衝撃波反射、渦の移流、磁場形成など、時間発展自体が問いに含まれる場合に動画を使います。定常解、製造平衡分布、最終楕円場は静止図のままです。反復に対する残差はアルゴリズムの履歴で、物理時間の流体動画ではありません。
+
+## 時間依存テスト：動画と保存状態 — 計算した5つの動画# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#five-computed-movies
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+二重Mach反射：256×64セルのMach 10・2次元Euler、t=0〜0.2、1次HLL、SSPRK2、CFL0.4。細い壁面ジェットは未解像です。設定を参照してください。
+CTのOrszag–Tang：64²の周期平面理想MHD、t=0〜0.5、1次Rusanov、前進Euler、CFL0.3。磁場発散はスタガード面演算子です。
+GLMのOrszag–Tang：同じ解像度・物理区間、クリーニング速度3、減衰0.18を固定。発散はセル中心の中心差分です。CT／GLM図は同一精度の順位ではありません。MHD定義を参照してください。
+原型KEEPの滑らかな等エントロピー渦：[−10,10]²の96²周期Euler、t=0〜4、2次算術平均直交KEEPと古典的RK4、CFL0.25。衝撃波安定化、圧力平衡拡張、厳密エントロピー保証は含みません。KEEPの章を参照してください。
+Mach 3前向きステップ：240 × 80セル、t=0〜4、1次HLL・SSPRK2、CFL 0.4。x=0.6から高さ0.2の段差を、格子面に一致する障害物セルで表します。通常の反射境界で、角のエントロピー・エンタルピー再設定は行いません。診断から固体セルを除きます。古典的な非粘性テストであり、NASA実験の妥当性確認ではありません。衝撃波問題の定義を参照してください。
+毎動画に密度と圧力を併記します。リポジトリのソルバーの数値状態から描いたもので、補間した模式図や原論文動画の再現ではありません。
+
+## 時間依存テスト：動画と保存状態 — 実際の物理時刻と不変の時間刻み# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#actual-physical-times-unchanged-time-steps
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+初期・最終を含む81出力時刻を要求し、それぞれを最初に通過した完了計算状態を保存します。要求時刻へ合わせるための刻み短縮も、解の補間もしません。粗い1ステップが複数要求を越えれば同じ状態が代表します。全フレームに実時刻とステップ数を付けます。
+公開用動画は各81の異なる状態です。CT・GLMは時間刻みが違うため、同じフレーム番号でも途中の物理時刻は一致しない場合があります。比較前に時刻を確認してください。出力を有効にしても最終状態・数値履歴が不変であることをテストします。
+
+## 時間依存テスト：動画と保存状態 — 固定色範囲と明示的な再生# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#fixed-scales-and-explicit-playback
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+密度・圧力の色範囲は、各計算の全保存状態の最小・最大で固定します。範囲ラベルが一致しない限り、別動画の同じ色を同じ値と見なしてはいけません。プレーヤー横の最小・最大は表示状態の実測値で、正値性定理ではありません。
+再生を押すまで始まりません。一時停止、先頭・末尾、前後、保存フレームスライダー、速度、任意のループで検査できます。速度は表示速度で、シミュレーションを変えません。標準12fpsなら81フレームは6.75秒です。物理時刻は画像内にも残します。
+通常のMP4プレーヤーとMP4・フレーム保存も使えます。MP4は音声なしH.264、検査画像は可逆WebPです。圧縮は表示処理で、計算へ戻りません。
+
+## 時間依存テスト：動画と保存状態 — 再現と検証# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#reproduce-and-verify
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+python -m pip install '.[movies]'
+python scripts/build_movies.py
+python scripts/check_movies.py
+ビルダーは公開フレーム、MP4、動画カタログをwebsite/public/assets/moviesへ保存します。完全な数値スナップショットも、Git対象外のoutputs/moviesへ圧縮NumPy配列で保存します。カタログにはソース・画像・動画・数値状態のハッシュ、ソフトウェア版、手法、境界、物理尺度、各フレーム診断があります。
+検査ではハッシュ・メタデータを確認し、各画像を開き、MP4を復号して寸法、再生率、全フレーム数を検証します。--quick --output <directory>は小格子の短い検査で、カタログにも区別し、公開用の本計算とはしません。
+
+## 時間依存テスト：動画と保存状態 — 多次元の場を示す静止図# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#multidimensional-still-fields
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+数値ギャラリーは2D・3Dの空間場を先頭に表示し、上記5動画への入口もまとめています。次元と分野の絞り込みを組み合わせられます。「全次元・診断図」では1次元比較とアルゴリズムの診断図も表示します。
+既存ソルバーから、次の3つの場の静止図を追加しました。
+2次元三角形P1 Poisson：24 × 24の正方形を分割した1152三角形、ゼロDirichlet境界、厳密解sin(πx)sin(πy)。第2パネルは節点誤差で、連続的なL2・H1誤差は要素内部で別に測ります。
+2次元周期Taylor–Green：64 × 64 MACセル、粘性0.1、t=0.5。速さ・矢印の表示だけ面速度をセル中心へ平均し、速度RMS・発散の診断には元のMAC配列を使います。
+3次元周期Poisson：32³のFFT計算、密度1 + 0.3 cos(2πx)cos(4πy)cos(2πz)、G=1、平均ゼロのポテンシャル。各座標0.5の直交3断面を共通の色範囲で示します。一つの厳密Fourierモードと照合した静的な3次元場で、3次元流体や粒子の時間発展ではありません。
+python scripts/build_multidimensional_gallery.pyで再現できます。定義・診断量・ソースハッシュと計算配列をダウンロードできます。新しいソルバーや収束実験を追加したわけではなく、既存のFEM・MACの細分化検査は別の検証です。
+5本目の動画はpython scripts/build_shock_gallery.pyで作成し、独立した衝撃波動画カタログに記録します。プレーヤーは両方のカタログを統合します。完全な保存状態はoutputs/shock-galleryにあります。
+
+## 時間依存テスト：動画と保存状態 — 動画だけでは示せないこと# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#what-a-movie-does-not-establish
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+滑らかな見た目だけでは、格子収束、エントロピー不等式、衝撃波の頑健性、長時間乱流精度、実験一致は示せません。KEEP渦の収束には独立した滑らか誤差の測定があり、カーバンクルの章は衝撃波動画だけで多次元安定性を保証できない理由を説明します。
+
+## 時間依存テスト：動画と保存状態 — 再構成の比較動画# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/movies/#reconstruction-comparison-clips
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Euler比較ページでは、同じ前向きステップ問題について1次・minmod・MCの動画を並べ、共通の色範囲と各81出力状態で比較できます。適応時間刻みの途中時刻は完全には一致しないため、フレーム内の実際の時刻を確認してください。再構成の比較であり、5物理問題の動画カタログの問題数は増えません。python scripts/build_euler_comparison.pyで生成し、各MP4を復号してフレーム数を確認します。
+
+## NASAの2次元検証・妥当性確認問題集 — NASAの2次元検証・妥当性確認問題集 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+公式のNPARC Verification and Validation Archive、CFL3Dテスト、Turbulence Modeling Resourceから始めてください。NASAのTMR案内は2026年2月のGitHub移行を説明します。
+15°楔の2ケースは、教育用Euler基準計算を追加しました。 それ以外のNASA項目は候補です。独立した実装による計算で、Wind-USの出力、実験による妥当性確認、NASAのソルバー・格子比較全体の再現ではありません。古典的なMach 3前向きステップと二重Mach反射も併せて示します。
+
+## NASAの2次元検証・妥当性確認問題集 — 計算した衝撃波テスト# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#computed-shock-tests
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+ギャラリーで衝撃波を伴う場を見る。両楔は比熱比1.4、流入密度1・音速1の一様流から開始します。独立した物体適合格子はx=−0.5〜1、下壁y=max(x,0)tan(15°)、上端y=1.2です。Mach 2の弱い衝撃波が出口で上端へ届かない高さを使い、NASAのMach 2.5領域の高さ1とは異なります。流入・上端は一様流固定、流出は外挿、下壁は法線運動量を反射します。実際の四角形から面積・法線を求め、共有する面流束を逆符号で組み込んでセル総量を保存します。
+NASA楔、Mach 2.0：240 × 80セル、t=3のMach数・圧力分布と、理論上の弱い斜め衝撃波の線。120 × 40セルでも計算しています。NASA設定。
+NASA楔、Mach 2.5：同じ独立格子と終了時刻。参照の衝撃波角は約36.94490°、圧力比2.467500、下流Mach数1.873526です。θ–β–M関係の求根と垂直衝撃波の関係から参照状態を求め、Rankine–Hugoniot関係も数値検査します。NASA解析比較。
+古典的Mach 3前向きステップ：長さ3・高さ1の流路、x=0.6から高さ0.2の段差。密度1.4・圧力1・速度3の一様流入、反射壁、外挿流出です。240 × 80セルでt=4まで計算し、81保存状態とMP4を公開します。衝撃波反射の動画。NASA発祥の実験ではなく、Emery／Woodward–Colellaの古典的テストです。Woodward–Colella §VI.bの補正付きPPM比較とは異なり、今回の基準計算は通常の反射境界だけを使い、角近傍のエントロピー・エンタルピー再設定を行いません。角からの数値的な影響や、ぼやけた滑り線が残り得ます。
+手法は1次HLL有限体積法・SSPRK2、CFL 0.4です。楔の初期値へ解析的な衝撃波を埋め込んではいません。密度の規格化L1誤差は、衝撃波直線でセルを厳密に切り分けた参照セル平均と比較します。壁圧は0.5<x<0.9の最初の流体セル列の中央値、衝撃波角は0.35<x<0.85の密度勾配から推定します。同じ有限終了時刻の2格子だけでは、一般的な漸近次数や完全な定常収束は保証しません。ステップには厳密解の重ね描きがなく、公開格子は1つです。t=4は非定常のスナップショットです。
+python scripts/build_shock_gallery.pyで再現し、--reuseでソースを照合した保存軌道を再描画できます。計算条件・診断量・ハッシュ、最終数値場、ステップ動画の記録を公開します。
+
+## NASAの2次元検証・妥当性確認問題集 — 衝撃波を含むNASA問題の未実装項目# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#shock-containing-nasa-cases-still-to-implement
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Mach 5衝撃波・境界層干渉、Mach 7層流ランプ、Sajbenディフューザー、RAE 2822は後続候補です。各問題に必要な粘性・乱流・気体モデルも検証の一部であり、非粘性楔の図では代用できません。これらの計算展示はまだありません。
+
+## NASAの2次元検証・妥当性確認問題集 — Eulerと解析参照解から始める# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#starting-with-euler-and-analytical-references
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+15度楔、Mach 2.0 — 基準計算済み：2格子の斜め衝撃波と壁圧。Roe／HLLEの手法比較は今後です。NASA問題。
+15度楔、Mach 2.5 — 基準計算済み：衝撃波角・下流状態の理論比較。次の膨張角の予定と対にする圧縮例。NASA問題。
+Prandtl–Meyerの15度膨張、Mach 2.5：膨張扇と解析Mach・圧力関係。公式アーカイブ。
+
+## NASAの2次元検証・妥当性確認問題集 — 層流、非定常性、圧力Poisson# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#laminar-flow-unsteadiness-and-pressure-poisson-problems
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+駆動キャビティ：正方形内の中心線速度、主渦、隅渦。NASAは低Mach計算で非圧縮流を近似し、Ghiaらと比較します。NASA問題。
+Blasius層流平板：境界層分布、壁面摩擦、壁法線格子解像度。NASA問題。
+非定常層流円柱：渦放出、抗力・揚力履歴、時間精度。二重時間積分の後の候補です。NASA問題。
+
+## NASAの2次元検証・妥当性確認問題集 — 乱流モデル、剥離、翼型# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#turbulence-models-separation-and-airfoils
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+ゼロ圧力勾配の乱流平板：壁面摩擦、乱流モデル実装、格子収束。TMR検証。
+2次元流路内バンプ：曲壁の圧力・摩擦を同じ乱流モデルのコード間で比較。TMR検証。
+Driver–Seegmiller後向きステップ：剥離・再付着、Cp／Cf、速度分布。Reynolds数の定義や補正を含むデータ版を固定します。TMR妥当性確認、NPARC。
+Sajben遷音速ディフューザー：内部衝撃波、背圧、衝撃波・境界層干渉。NASA問題。
+RAE 2822遷音速翼型：表面Cp、衝撃波、境界層。ケース番号、補正Mach数・迎角を明示します。NASA問題。
+NACA 0012：表面圧力、揚抗力、格子・遠方境界・乱流モデルの感度。TMR妥当性確認。
+NACA 4412後縁剥離：逆圧力勾配と後縁剥離。TMR妥当性確認。
+NASA壁面ハンプ：壁誘起の剥離・再付着。3次元効果を含む実験へ2次元計算が適用できる範囲を記録します。TMR妥当性確認。
+2次元混合層：自由せん断層の成長、速度、乱流量。TMR妥当性確認。
+2次元翼型近傍後流：速度欠損と回復。TMR妥当性確認。
+
+## NASAの2次元検証・妥当性確認問題集 — 他の古典的2次元問題# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#other-classical-2d-benchmarks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+二重Mach反射、Mach 3前向きステップ、2次元リーマン配置、等エントロピー渦、奇偶衝撃波・カーバンクルも有用です。前二者の代表的出典はWoodward–Colella（1984）です。本二重Mach反射と上記ステップは実装済み1次HLL基準例で、滑らかなKEEP渦も計算済みです。リーマン配置と管理した奇偶衝撃波・カーバンクル比較は今後です。カーバンクルノートを参照してください。
+すべてをNASA発祥と呼んではいけません。ONERA M6は3次元翼で、軸対称バンプ・ジェットも平面2次元とは異なるため、主一覧から除きます。
+
+## NASAの2次元検証・妥当性確認問題集 — 実装ごとに固定する情報# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#information-to-fix-for-each-implementation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+原典、ケース番号、幾何、無次元化、Mach／Reynolds数、迎角、壁・遠方・流入・流出境界、格子列、正確な乱流モデル変種、収束残差、時間刻み、Cp／Cf／Cl／Cdの定義を記録します。残差減少だけでは格子収束や実験一致は示せません。実装時にはNASAの紹介ページだけでなく、元の測定論文も加えてください。
+Mach 2のMC計算はt=3でも局所的な時間変動が残り、最大保存変数更新率は約6.08です。定常収束解ではありません。密度誤差の改善と併せて更新率も公開します。
+
+## NASAの2次元検証・妥当性確認問題集 — MUSCL再構成の比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/nasa-2d/#muscl-reconstruction-comparisons
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+1次・minmod・MCを比較する。新しい計算は音響HLL、SSPRK2、公称CFL 0.4を共通にしています。四角形の面積重心で基本変数の物理勾配を求め、面の中点へ再構成します。物体適合格子では、x方向の割線に伴う物理的なyの変位も補正します。共有面流束を両隣のセルへ加えます。制限関数はminmod(a,b)とMC(a,b)=minmod(2a,(a+b)/2,2b)です。制限関数の定義も参照してください。境界再構成では固体近傍を除き、流体側の状態を反射します。面の密度・圧力が非正になる場合は、セルごとに共通の係数で再構成偏差を縮めます。SSPRK2の段階が失敗したら時間刻みを半分にして再試行し、回数を記録します。保存平均値はクリップしません。これは検証した保護処理であり、このソルバー全体の正値性の一般的証明ではありません。
+両NASA楔について、120 × 40と240 × 80の格子で3再構成をt=3まで計算しました。壁圧・衝撃波角・積分密度誤差は前述の定義です。別の周期エントロピー波では速度(0.7,0.3)、圧力1、密度1+0.2sin(2πx)sin(2πy)を用い、初期化・比較とも厳密なセル平均値で行います。16²、32²、64²、128²でt=0.5まで計算し、比較ページに観測次数を表示します。この滑らかな問題ではMCが2次精度に近づきます。極値での制限関数の作動はminmodの観測次数に影響します。衝撃波誤差の収束領域は異なり、滑らかな解の2次精度の根拠にはなりません。
+前向きステップの比較には、同じ240 × 80格子でのminmod・MCの静止画と81状態の動画を加えました。3動画は密度・圧力の色範囲と要求出力時刻を共通にしますが、実際の途中時刻は適応時間刻み1段分ずれる場合があります。公称CFL・格子が同じでも計算費用は等しくありません。同一の物理問題を3再構成で比較しており、従来の1次動画も引き続き閲覧できます。角の処理は同じで、t=4は非定常流れです。
+再現はpython scripts/build_euler_comparison.pyです。比較の設定・診断・ハッシュと最終保存変数配列を取得できます。全軌道はローカルのoutputs/euler-comparisonへ保存します。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Poissonソルバーと粒子力アルゴリズムは、関係する問いに異なる表現で答えます。Green関数、境界、質量割当て、軟化、力演算子を先に固定します。周期PMと孤立直接和は別の問題なので、差をそのまま力精度とはできません。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — 粒子格子法：質量からポテンシャル、力へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#particlemesh-mass-to-potential-to-force
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+3次元周期立方体では、
+\nabla^2\phi=4\pi G(\rho-\overline\rho),\qquad
+\widehat\phi(\boldsymbol k)=-\frac{4\pi G}{|\boldsymbol k|^2}\widehat\rho(\boldsymbol k)
+\quad(\boldsymbol k\ne0),\qquad \widehat\phi(0)=0.
+です。平均を引くことで周期適合条件を満たし、ポテンシャルのゼロモードでゲージを固定します。水平平均が実際の鉛直力を生む孤立薄層とは異なります。
+PMは質量を格子へ割り当て、Poissonを解き、ポテンシャルを微分して粒子へ加速度を補間します。例は3次元の8近傍節点へのcloud-in-cell（CIC）、連続Fourier Laplacian記号、スペクトル力微分を使います。偶数格子微分では対を持たないNyquistモードをゼロにします。整合したCIC割当て・補間と奇対称力演算子により、選定した周期例で内部力の総和が丸め誤差までゼロになります。
+割当て・補間は力を平滑化します。格子Green関数、離散微分、エイリアシング、格子異方性、デコンボリューションが実効相互作用へ影響します。製造した格子モードを正確に解いても、近接対の力精度は示せません。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — P³M：近距離を二重計上せず補正する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#p%C2%B3m-correct-the-near-field-without-counting-it-twice
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+粒子・粒子／粒子・格子法は格子力に短距離補正を加えます。
+\boldsymbol a_i=\boldsymbol a_i^{\rm PM}
++\sum_{j\in\mathcal N_i}\left(\boldsymbol a_{ij}^{\rm target}
+-\boldsymbol a_{ij}^{\rm mesh,near}\right).
+引く項は、選んだPM割当て・力演算子、または整合設計の力分割に対応する必要があります。完全なPMへ未修正Newton対力を加えると一部を二重計上します。近傍リストと集積が短距離の計算量を決めます。HockneyのP³Mコード原解説を参照してください。
+実用P³M、対応する補正表、適応細分化は未実装です。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — Barnes–Hutツリー：近いセルを開く# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#barneshut-tree-open-the-nearby-cells
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Barnes・Hut（1986）は粒子を八分木にまとめます。遠方セルは質量分布のモーメントで近似し、近方セルは再帰的に開きます。本実装の幾何受理条件はs/d<thetaで、sはセル辺長、dは重心までの距離です。標的を含むノードは常に開き、直接葉では自己相互作用を除きます。
+孤立参照はG=1とPlummer軟化です。
+\boldsymbol a_i=-\sum_{j\ne i}m_j
+\frac{\boldsymbol x_i-\boldsymbol x_j}
+{(|\boldsymbol x_i-\boldsymbol x_j|^2+\epsilon^2)^{3/2}}.
+ツリーと直接和は粒子、質量、epsilonを同じにします。小thetaは通常、相互作用数を増やして誤差を減らしますが、個別粒子誤差は単調とは限りません。O(N log N)は適切な分布での代表的な尺度で、このPython例の時間測定や最悪計算量の保証ではありません。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — 多重極：単極と2次モーメント# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#multipole-expansion-monopole-and-second-moments
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+セル重心から標的へのR、源のずれdelta_a、総質量M、S=sum m_a delta_a delta_a^Tとします。重心の双極は消えます。s²=R²+epsilon²として、同じ軟化核のTaylor展開は、
+\phi(\boldsymbol R)\approx-G\left[
+\frac{M}{s}+\frac{3\boldsymbol R^T S\boldsymbol R}{2s^5}
+-\frac{\operatorname{tr}S}{2s^3}\right].
+です。コードはこのポテンシャルを解析微分します。トレースを含む全2次モーメントを残し、非軟化・トレースなし四重極式へ黙って置換すると近似が変わります。図は単極・2次モーメントを同じ直接力和と比較します。
+高速多重極法（FMM）は局所展開も作って移動し、セル間相互作用を再利用します。Barnes–Hutへ四重極を加えるだけではありません。Greengard・Rokhlin（1987）が原典で、展開移動は未実装です。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — TreePM：別の近距離評価# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#treepm-a-different-near-field-evaluator
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+TreePMは格子長距離場とツリー短距離場を結びます。代表的なGaussianポテンシャル分割は、
+\widehat\phi_{\rm long}=\widehat\phi\,e^{-k^2r_s^2},\qquad
+\phi_{\rm short}(r)=-\frac{Gm}{r}\operatorname{erfc}\left(\frac{r}{2r_s}\right).
+です。短距離力はこのポテンシャルの微分であり、Newton力にerfcを掛けるだけではありません。打切り、周期性、軟化も分割に整合させます。SpringelのGADGET-2論文が一次例です。ここでの独立したPMとツリーの2例は、TreePM実装を構成しません。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — マルチグリッドの位置付け# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#where-multigrid-belongs
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+マルチグリッドは対力の直接和ではなく、離散楕円型方程式を解きます。平滑化で振動誤差を減らし、制限・粗格子解・延長・補正で滑らかな成分を扱います。演算子・境界・粒子結合を指定すれば、粒子格子のPoisson解法を置き換えられます。
+既存実装は2次元5点負Laplacian、ゼロDirichlet境界で、孤立3次元粒子重力ではありません。有限孤立格子の境界値には多重極や開放境界構成が使え、近い箱面でphi=0とするだけでは一般に無限遠phi→0を再現しません。
+
+## 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド — 静的な検査を再現する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particle-gravity/#reproduce-the-static-checks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+python scripts/build_particle_gravity.py
+図と測定記録を作ります。ツリー例は等質量192粒子、seed17、epsilon=0.03、開口角5種、モーメント次数2種です。誤差は||a_tree−a_direct||₂/||a_direct||₂です。受理ノード数と直接対数を報告しますが、操作コストが異なるため和を時間比較には使いません。
+PMは24³周期格子です。別の密度1+0.2cos(2pi x)はG=1でポテンシャル−0.2cos(2pi x)/piを持ちます。テストはCIC質量保存、周期折返し、定数補間、自己力、総力、製造モード、theta=0の厳密開放、選定した力誤差収束を扱います。標的ごとの近似ツリーは対運動量を厳密には保たない場合があるため、記録に総力診断を含めます。
+孤立FFTとスラブGreen関数、力と時間積分の追加要件を扱うシンプレクティック写像へ進んでください。
+
+## 粒子法と平滑化粒子流体力学 — 粒子法と平滑化粒子流体力学 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particles-sph/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Lagrange粒子は流れとともに移動しながら量を運びます。SPHは場の値や微分を、局所カーネルで重み付けした粒子和で近似します。独立した初期論文Gingold・Monaghan（1977）とLucy（1977）が歴史的な出発点です。以下の静的再構成は、原著の恒星計算を再現するものではありません。
+
+## 粒子法と平滑化粒子流体力学 — 積分から粒子へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particles-sph/#from-an-integral-to-particles
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+平滑化した場を、
+f_h(x)=\int f(x')W(x-x',h)\,dx'
+\approx\sum_b \frac{m_b}{\rho_b} f_b W(x-x_b,h).
+で近似します。体積重みm_b/rho_bが重要です。平滑化長hはカーネルの尺度で、必ずしも粒子間隔ではありません。コンパクトな台が近傍探索を定めますが、固定格子の接続を課すわけではありません。
+1次元例では、q=|x|/hとして規格化した3次スプラインを使います。
+W(x,h)=\frac{2}{3h}\begin{cases}
+1-\frac32q^2+\frac34q^3,&0\le q<1,\\
+\frac14(2-q)^3,&1\le q<2,\\
+0,&q\ge2.
+\end{cases}
+この係数は1次元のものです。2・3次元では別の規格化定数が必要です。
+
+## 粒子法と平滑化粒子流体力学 — 1の分割と補正# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particles-sph/#partition-of-unity-and-correction
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+離散粒子集合では、粒子体積とWの積の総和は1とは限りません。Shepard規格化補間は、その総和で割ります。分母がゼロでなければ定数を再現しますが、この補間補正だけで保存的な運動、線形整合性、安定な圧力力が保証されるわけではありません。
+import numpy as np
+from numart.geometry import sph_reconstruct
+p = (np.arange(64) + 0.5) / 64
+x = np.linspace(0, 1, 201)
+f, partition = sph_reconstruct(x, p, np.sin(2*np.pi*p), h=0.04)
+f_corrected, _ = sph_reconstruct(x, p, np.sin(2*np.pi*p), h=0.04, normalize=True)
+この関数は[0,1]の周期最小像距離と、等しい体積重み1/Nを使います。台が最小像の規約に収まるよう、0<h<1/4が必要です。任意の不等間隔粒子から物理密度を推定するものではありません。
+
+## 粒子法と平滑化粒子流体力学 — 流体ソルバーに追加で必要なもの# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particles-sph/#what-a-fluid-solver-would-additionally-need
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+密度推定または連続の式の更新、整合する圧力力、運動量・エネルギー発展、境界粒子、時間積分、近傍探索更新、衝撃波や引張り・ペアリング不安定性の扱いは、追加のモデル選択です。衝撃波捕獲SPHの人工粘性は、物理的なNewton流体の粘性応力テンソルと区別します。
+テストでは連続カーネルの規格化と、補正後の離散定数再現を確認します。初版はカーネル再構成のみで、SPH流体ソルバーではありません。時間積分では、粒子kick–drift leapfrogと1階ODEの2ステップleapfrogを混同しない理由を説明します。
+
+## 粒子法と平滑化粒子流体力学 — 粒子重力は別の演算子# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particles-sph/#particle-gravity-is-a-separate-operator
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+PM、P³M、ツリー、多重極は重力場を計算し、SPHカーネルは流体量と微分を再構成します。粒子重力、孤立・スラブ境界核、シンプレクティック時間積分で、自己重力粒子モデルの異なる構成要素を結び付けてください。
+
+## 粒子法と平滑化粒子流体力学 — Godunov SPH：リーマンソルバーへの分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/particles-sph/#godunov-sph-the-riemann-solver-branch
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+InutsukaのGSPHは粒子流体と粒子対のリーマン問題を結び付けます。2002年の畳み込みによる導出、1994年の先行研究、Iwasaki・Inutsukaの2011年MHD拡張をたどる文献ノートと実装計画です。上のカーネル再構成はGSPH流体計算ではありません。
+
+## Euler再構成：PPM・特性変数・WENO-Z・AUSM — Euler再構成：PPM・特性変数・WENO-Z・AUSM [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reconstruction/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+計算済み比較を開く。1次元で再構成と数値流束を区別して調べます。従来の成分ごとのMUSCL／WENO基準例を残して拡張します。
+
+## Euler再構成：PPM・特性変数・WENO-Z・AUSM — 比較するもの# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reconstruction/#what-is-compared
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+再構成表示では、保存変数成分／特性変数でのMUSCL・MC、制限付き放物線有限体積、有限差分WENO5-JS／Zを比較します。FVはHLLC、FDは大域Lax–Friedrichs流束分離を使い、ともにSSPRK3、公称CFL 0.3、同じ格子点数です。表現・流束・誤差ノルムが異なり、再構成だけの比較や同じ計算費用での順位ではありません。各手法内で基底だけを変える比較は条件を揃えています。
+別の流束表示は保存特性変数MUSCL・MCとSSPRK3を固定し、HLLC、音響エントロピー修正付きRoe、Einfeldt型HLLE、後述のAUSM基準例を切り替えます。
+
+## Euler再構成：PPM・特性変数・WENO-Z・AUSM — 制限付き放物線有限体積# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reconstruction/#limited-parabolic-finite-volumes
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Colella–Woodward（1984）の再構成の考え方に沿い、セル平均と両端値から放物線を作ります。確認した公開資料は1982年の著者プレプリントで、最終学術誌版とは異なります。本実装は端値補間・単調性制約を含み、method of linesでSSPRK3と結合します。この経路には波追跡・接触面急峻化・衝撃波平坦化を含めません。それらを加えた直接Euler型は第2段階で提供します。Lagrange発展・remapは今後の課題です。
+セル平均Q、端値L,R、ξ∈[0,1]として、
+ q(\xi)=L+\xi[R-L+q_6(1-\xi)],\qquad q_6=6Q-3(L+R).
+とすれば、積分平均は厳密にQです。隣接平均の範囲で端値を制限し、極値を平坦化して曲率制約を適用します。セル内で固定した保存変数の特性基底へ偏差を射影し、制限して戻します。「成分」は基本変数ではなく保存変数です。必要なら左端・中点・右端にQまわりの共通の正値縮小を施し、Simpson平均Qを保ちます。保存平均をクリップせず、不正なRK段階では時間刻みを半分にして再試行します。完全離散正値性の一般的証明ではありません。
+
+## Euler再構成：PPM・特性変数・WENO-Z・AUSM — 特性変数の有限差分WENO-Z# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reconstruction/#characteristic-finite-difference-weno-z
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+各面でRoe平均の保存変数特性基底を固定します。正負の大域LF分離流束を射影し、特性成分ごとに再構成して面流束へ戻します。FDは点値を進める方式で、FVの状態再構成とは異なります。周期格子では共有流束差分により離散和を保存します。
+Z変種はJSの滑らかさ指標を使い、
+ \tau_5=|\beta_0-\beta_2|,\quad
+ \alpha_k^Z=d_k\left[1+\left(\frac{\tau_5}{\beta_k+\epsilon}\right)^2\right],
+ \quad\omega_k^Z=\frac{\alpha_k^Z}{\sum_l\alpha_l^Z},
+ \quad(d_0,d_1,d_2)=(0.1,0.6,0.3).
+とします。ε=10⁻⁶、Zの指数2を固定します。正則化と特性基底の規格化は重みに影響するため、比較条件に含めます。原典の書誌はBorges・Carmona・Costa・Don（2008）です。出版社メタデータと以前の3著者の草稿を確認しましたが、草稿は重みの規約が異なります。上の式・指数と実行検証が本版の変種を定義し、最終論文の図は再現していません。
+
+## Euler再構成：PPM・特性変数・WENO-Z・AUSM — AUSMは変種を明示する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reconstruction/#ausm-keep-the-variant-explicit
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+AUSMの原典はLiou–Steffen（1993）です。本基準例は共通面音速a=(aL+aR)/2、亜音速のMach分割M±=±(M±1)²/4、3次圧力分割P±=(M±1)²(2∓M)/4を使います。超音速側は符号に従う風上分割です。式はFEST-3Dの公式AUSMソースと照合しました。定義を明示した独立のAUSM系列実装であり、FEST-3Dの計算結果や1993年の全音速・圧力選択肢の再現ではありません。
+Mf=M+(uL/a)+M−(uR/a)を使い、(ρ,ρu,ρv,ρH)を左のa max(Mf,0)と右のa min(Mf,0)で輸送します。pL P+(uL/a)+pR P−(uR/a)を法線運動量だけに加え、エネルギーには全エンタルピーを輸送します。一様場、両向き超音速、Mach ±1の分岐、静止・移動接触面、Euler問題を検証します。
+AUSM+（1996）、AUSM+-up（2006）は新しい波追跡PPM比較で別々に定義しています。現基準例に全速度補正や低Mach検証はありません。名称だけで普遍的な衝撃波安定性は導けません。odd–even比較も参照してください。
+
+## Euler再構成：PPM・特性変数・WENO-Z・AUSM — 問題・参照・精度# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reconstruction/#problems-references-and-accuracy
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Sod：N=200、[0,1]、t=0.2、標準状態、外挿端。
+移動接触面：N=200、周期[0,1]、u=p=1、前半の密度1・後半2、1周t=1。
+Shu–Osher：N=240、[−5,5]、t=1.8、固定端。x=−4の左は(ρ,u,p)=(3.857143,2.629369,10.33333)、右は密度1+0.2sin(5x)、u=0,p=1。破線は本実装の特性FD WENO-Z・N=960で、厳密解や外部コード検証ではありません。
+FVの初期値は保存量を積分します。Sodの最終密度誤差は解析リーマン解の128点Gauss求積を使い、64／128点の差で不連続を跨ぐ求積感度を記録します。FD誤差は点値です。FV基本変数曲線は保存平均からの変換で、基本変数そのものの厳密平均ではありません。Shu–Osherの厳密誤差は報告しません。
+別の滑らかな周期エントロピー波をN=32,64,128、t=0.2、CFL=0.25(32/N)^(2/3)で計算します。dt∝dx^(5/3)によりSSPRK3の時間誤差をO(dx⁵)へ抑えます。この問題のWENO観測次数は約5、極値制限のある放物線FVは約2です。衝撃波や任意の臨界点での5次精度保証ではありません。
+再現はpython scripts/build_reconstruction.pyです。分布・診断・ソースハッシュと保存変数配列を取得できます。正値性・再試行回数は、ここで示したテストの範囲です。
+
+## 厳密解・参照解ライブラリ — 厳密解・参照解ライブラリ [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+検証用ライブラリでは「正解」が何を意味するかを明示します。参照解エクスプローラーには、式、仮定、出典、点値、1次元ではセル平均を備えた18ケースを収録しています。参照解を評価する機能であり、数値的なPDEの時間発展は行いません。
+
+## 厳密解・参照解ライブラリ — 4種類の参照解# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/#four-different-reference-categories
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+解析解（analytic）：スカラーのエントロピー波、正弦波の移流・減衰、乾床・真空への膨張波、チャネル流、Taylor–Green流などの陽な式です。浮動小数点評価の丸め誤差は残ります。
+半解析解（semi-analytic）：Euler、水深が正の浅水流、等温流のRiemann解です。波の曲線は解析的ですが、中間状態の接続にはスカラー方程式の数値的な求根が必要です。
+製造解（manufactured）：滑らかな場を先に与え、外力と境界条件を導きます。Poissonの正弦波ケースは、その場に合わせて選んだ強制問題を検証します。
+数値参照解（numerical reference）：細かい格子などで計算した数値解です。離散化・境界・時間積分の誤差が残ります。既存アトラスの高解像度比較は、該当する場合にこの区分を明示します。本ライブラリの解析解ケースとしては追加していません。
+参照解との一致は、特定の設定についての実装検証です。実験との比較による物理モデルの妥当性確認や、任意の境界処理の保証とは異なります。
+
+## 厳密解・参照解ライブラリ — 収録する場と仮定# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/#included-fields-and-assumptions
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+スカラーには周期正弦波の移流と熱減衰、Burgersの衝撃波・膨張波、2次交通流モデルの衝撃波・膨張波があります。EulerにはSod、Lax、二重膨張波、生成される真空を収録し、比熱比1.4の理想気体を使います。浅水流には水深が正のダム崩壊、乾床への膨張、中央の乾燥領域を収録し、平坦な底面と重力1を使います。等温Eulerは一定音速1、初期密度は厳密に正とし、エネルギー方程式や有限の真空状態を持ちません。
+粘性流は単位幅の平面チャネルにおける定常Couette・Poiseuille速度分布と、周期的な2次元Taylor–Green渦です。チャネルの出力は速度であり、圧縮流の保存変数ではありません。Taylor–Greenは速度と平均ゼロに固定した圧力を返します。Poisson製造解は場と外力の両方を提供します。
+いずれも標準的な無次元設定です。参照解の乾床・真空への対応は、既存の正値状態を要求する有限体積ソルバーに、その機能を追加するものではありません。地形、粘性Riemann問題、一般の状態方程式、多次元衝撃波相互作用は初回の対象外です。
+
+## 厳密解・参照解ライブラリ — 点値と有限体積セル平均# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/#point-values-and-finite-volume-means
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+保存変数を有限体積法で比較するときは、次のセル平均を使います。
+\overline{\boldsymbol U}_i(t)=\frac{1}{x_{i+1/2}-x_{i-1/2}}
+\int_{x_{i-1/2}}^{x_{i+1/2}}\boldsymbol U(x,t)\,dx.
+Eulerでは密度・運動量・全エネルギー、浅水・等温流では水深または密度と運動量を積分します。保存変数の平均を基本変数に変換したものは、一般に基本変数自体の平均とは異なります。衝撃波がセルを横切るとき、セル中心の点値で代用すると特に誤解を招きます。
+既知の衝撃波・接触面・膨張波の両端で積分区間を滑らかな部分に分け、各部分に24点と48点のGauss–Legendre積分を適用します。保存する平均は48点の結果です。両次数の最大差は収束の目安であり、厳密な誤差上限ではありません。この規則は解析解にも適用し、保存セル平均は記号積分ではなく有限次数の求積で計算します。
+非一様格子での誤差ノルムは全領域長で規格化します。
+L_1=\frac{\sum_i\Delta x_i|e_i|}{\sum_i\Delta x_i},\qquad
+L_2=\left(\frac{\sum_i\Delta x_i e_i^2}{\sum_i\Delta x_i}\right)^{1/2},\qquad
+L_\infty=\max_i|e_i|.
+成分ごとに報告します。方程式ギャラリーのEuler・浅水・等温流にも、これらの保存変数セル平均を接続しました。保存時刻の数値解は引き続き、最終時刻を変えて独立に実行した計算です。
+
+## 厳密解・参照解ライブラリ — Riemann解の構成と許容誤差# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/#riemann-construction-and-tolerances
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+自己相似変数xi=(x−x0)/tを使います。接続する未知量はEulerでは圧力、浅水では水深、等温流では密度です。正の未知量の対数に対して単調な波接続残差を挟み込み、二分法を適用します。対数区間幅の目標は2e−13、二分法は最大160回、最終残差は特性速度スケールの2e−10倍以内であることを検査します。残差が厳密にゼロなら、それ以前に停止できます。反復回数、最終区間幅、残差をケースごとに保存します。
+Eulerや浅水の膨張波が離れると、中央に真空・乾燥領域が生じる場合があります。その場合は正状態の求根を省略します。保存変数はすべてゼロです。真空中の速度は物理的に未定義ですが、低レベルの変換では表示上の規約としてゼロとします。等温流では有限の真空の代わりに、非常に小さい正の密度になります。float64の対応範囲を超える状態は、黙って切り詰めずエラーにします。
+ClawpackのEulerの章と浅水の章は、波の構成と乾床・真空を説明しています。Bhat・Fetecauの著者原稿のRiemann問題の議論には、元の等温Euler系の波曲線があります。本ライブラリは、その元の系を使い、論文の正則化モデルは使いません。
+
+## 厳密解・参照解ライブラリ — 粘性流と製造解の式# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/#viscous-and-manufactured-formulas
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+単位幅・単位密度・動粘性係数nuの平面チャネルでは、定常分布は次式です。
+u_{\rm Couette}(y)=y,\qquad
+u_{\rm Poiseuille}(y)=\frac{G}{2\nu}y(1-y),\qquad G=1,\quad\nu=0.1.
+Couetteでは壁速度が0と1、圧力勾配はゼロです。Poiseuilleでは両壁が静止したno-slip条件で、Gは密度で割った負の圧力勾配、または等価な体積力加速度です。十分に発達した平面流であり、円管流ではありません。
+周期正方形[0,2pi]²のTaylor–Green解は、nu=0.1、単位密度で次のとおりです。
+u=\sin x\cos y\,e^{-2\nu t},\qquad
+v=-\cos x\sin y\,e^{-2\nu t},\qquad
+p=\frac{\cos(2x)+\cos(2y)}4e^{-4\nu t}.
+Webではy=pi/4のx方向断面を表示し、2次元セル面積平均ではありません。Pythonは2次元座標と滑らかな長方形セルの平均に対応します。関連する方法は粘性流の章を参照してください。
+製造解はu=sin(pi x)を与え、−u_xx=f=pi² sin(pi x)、両端は同次Dirichlet条件とします。同じオブジェクトから外力を取得できます。任意の外力に対するPoissonソルバーではありません。
+
+## 厳密解・参照解ライブラリ — 再利用と再現# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/reference-solutions/#reuse-and-reproduce
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+import numpy as np
+from numart.reference_solutions import get_reference, riemann_reference
+ref = get_reference('euler-sod')
+edges = np.array([0., .15, .42, .51, .7, 1.])
+points = ref.point((edges[:-1] + edges[1:]) / 2, t=.2)
+report = ref.cell_average_report(edges, t=.2)
+means = report['values'] # columns: rho, rho*u, E
+# With actual numerical conserved means q of the same shape:
+# errors = ref.compare_means(q, edges, t=.2)
+custom = riemann_reference('shallow-water', (2., 0.), (1., 0.),
+ parameter=9.81)
+tg = get_reference('taylor-green')
+box_mean = tg.box_average([0., 0.], [.2, .3], t=.5)
+保存分布と図はMPLCONFIGDIR=.mplconfig python scripts/build_reference_solutions.pyで再生成できます。データと数値実装のソースハッシュをダウンロード。Pythonでは、既存の独立なEuler実装との比較、Rankine–Hugoniot条件とLax不等式、膨張波のPDE残差と不変量、全領域の収支、既知の積分、製造解の外力、Taylor–Greenの運動量・発散残差を検証します。Webのビルドでは保存データの形式、波の位置、ソースハッシュ、平均値の規約を検査します。
+Blasius、Sedov、Nohや追加の多次元参照解は今後の拡張です。LANL ExactPackはそれらを追加する際に参照できる独立した資料集です。現時点の依存ライブラリではなく、上のケースをExactPackと相互検証したという意味でもありません。
+
+## 原著の出版年順に並べた参考文献 — 原著の出版年順に並べた参考文献 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+原著論文・書籍と、実装を確認するために用いた資料を区別します。DOIの存在は、全文の閲覧や図の再現を意味しません。各出典注記に、公開原著、後年の解説、未確認の原資料を記しています。NASAの資料は2次元問題カタログにもあります。
+著者名・原題・誌名・出典注記は、英語版と共通の原表記を保持しています。見出しや案内は日本語です。
+この章とreferences.bibは、catalog/references.jsonから生成します。書誌データの正本は共通であり、翻訳によって文献数は増えません。
+
+## 原著の出版年順に並べた参考文献 — 1847 · verhulst1847# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1847-verhulst1847
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Verhulst, Pierre-François. Sur la loi d’accroissement de la population (Deuxième mémoire). Mémoires de l’Académie royale de Belgique.
+原著の書誌情報 · 全文または実装の参照資料
+Original archival text and metadata available. This is the later 1847 memoir, read in 1846; it must not be labeled the original 1838 logistic note. The early note is not audited in this survey.
+
+## 原著の出版年順に並べた参考文献 — 1913 · michaelis1913# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1913-michaelis1913
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Michaelis, Leonor and Menten, Maud L.. Die Kinetik der Invertinwirkung. Biochemische Zeitschrift.
+原著の書誌情報 · 全文または実装の参照資料
+Original 1913 bibliographic identification through the explicitly labeled Johnson–Goody 2011 translation. This URL identifies the translation, not a 1913 DOI. Original German text not audited; rapid-equilibrium and later quasi-steady-state interpretations are distinguished.
+
+## 原著の出版年順に並べた参考文献 — 1920 · lotka1920# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1920-lotka1920
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Lotka, Alfred J.. Analytical Note on Certain Rhythmic Relations in Organic Systems. Proceedings of the National Academy of Sciences.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record checked. Early rhythmic organic-system model, before the 1925 book and independent Volterra 1926 source. The survey gives a conventional normalized predator–prey system, not a reproduction of the original figures.
+
+## 原著の出版年順に並べた参考文献 — 1925 · briggs1925# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1925-briggs1925
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Briggs, George E. and Haldane, J. B. S.. A Note on the Kinetics of Enzyme Action. Biochemical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record and original-paper search excerpt checked. Quasi-steady-state enzyme-kinetics reference; not conflated with the original rapid-equilibrium interpretation.
+
+## 原著の出版年順に並べた参考文献 — 1926 · mckendrick1926# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1926-mckendrick1926
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+McKendrick, A. G.. Applications of Mathematics to Medical Problems. Proceedings of the Edinburgh Mathematical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Original first-page text checked: read January 1926, received August 1926, in the 1925–26 session volume. Not dated to the much later online digitization. A later von Foerster lineage is not assigned to this author alone.
+
+## 原著の出版年順に並べた参考文献 — 1926 · volterra1926# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1926-volterra1926
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Volterra, Vito. Fluctuations in the Abundance of a Species considered Mathematically. Nature.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record and abstract checked. Independent ecological interaction source; Lotka’s earlier publications are cited separately.
+
+## 原著の出版年順に並べた参考文献 — 1927 · kermack1927# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1927-kermack1927
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kermack, W. O. and McKendrick, A. G.. A contribution to the mathematical theory of epidemics. Proceedings of the Royal Society of London. Series A.
+原著の書誌情報 · 全文または実装の参照資料
+Original publication identified separately from the 1991 reprint. The survey uses the closed homogeneous SIR specialization; it does not reproduce the original general infection-age formulation.
+
+## 原著の出版年順に並べた参考文献 — 1928 · cfl1928# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1928-cfl1928
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Courant, Richard and Friedrichs, Kurt and Lewy, Hans. Über die partiellen Differenzengleichungen der mathematischen Physik. Mathematische Annalen.
+原著の書誌情報 · 全文または実装の参照資料
+Originally published in 1928; the linked source is a later English translation. Background on domains of dependence and the CFL condition.
+
+## 原著の出版年順に並べた参考文献 — 1937 · fisher1937# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1937-fisher1937
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Fisher, R. A.. The wave of advance of advantageous genes. Annals of Eugenics.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and original-text excerpt checked. Population-genetic front source. Fisher–KPP is a conventional family name; the independent KPP 1937 original is not audited here.
+
+## 原著の出版年順に並べた参考文献 — 1939 · chapman1939# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1939-chapman1939
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Chapman, Sydney and Cowling, T. G.. The Mathematical Theory of Non-Uniform Gases. Cambridge University Press.
+原著の書誌情報 · 全文または実装の参照資料
+Original-edition bibliographic preview checked; the 1939 book is not assigned as the invention date of Chapman-Enskog expansion. Third edition appeared in 1970. The atlas gives its own formal unforced isothermal lattice-BGK expansion, not a full audit of this book.
+
+## 原著の出版年順に並べた参考文献 — 1943 · courant1943# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1943-courant1943
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Courant, Richard. Variational methods for the solution of problems of equilibrium and vibrations. Bulletin of the American Mathematical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Original variational reference. The atlas implements an independent continuous P1 Poisson example; it does not reproduce the original numerical examples.
+
+## 原著の出版年順に並べた参考文献 — 1947 · crank1947# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1947-crank1947
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Crank, John and Nicolson, Phyllis. A practical method for numerical evaluation of solutions of partial differential equations of the heat-conduction type. Proceedings of the Cambridge Philosophical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Originally published in 1947; the linked source is a 1996 reprint. This edition implements the theta method for linear diffusion, rather than reproducing the original nonlinear problem.
+
+## 原著の出版年順に並べた参考文献 — 1948 · burgers1948# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1948-burgers1948
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Burgers, Johannes M.. A mathematical model illustrating the theory of turbulence. Advances in Applied Mechanics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher metadata and summary checked. Classical model reference; the gallery implements the inviscid scalar Riemann problem, not viscous Burgers turbulence or original-paper figures.
+
+## 原著の出版年順に並べた参考文献 — 1949 · monod1949# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1949-monod1949
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Monod, Jacques. The Growth of Bacterial Cultures. Annual Review of Microbiology.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata checked and university-hosted original identified. Historical microbial-growth review; the proposed batch/chemostat benchmark specifies its own yield and feed assumptions.
+
+## 原著の出版年順に並べた参考文献 — 1949 · thomas1949# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1949-thomas1949
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Thomas, Llewellyn Hilleth. Elliptic problems in linear difference equations over a network. Watson Scientific Computing Laboratory, Columbia University.
+原著の書誌情報 · 全文または実装の参照資料
+The original report and a holding URL have not been verified. This provisional record follows the historical citation in Netlib and does not imply direct inspection of the original.
+
+## 原著の出版年順に並べた参考文献 — 1950 · charney1950# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1950-charney1950
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Charney, Jule G. and Fjørtoft, Ragnar and von Neumann, John. Numerical Integration of the Barotropic Vorticity Equation. Tellus.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly accessible original paper. Historical context for stability analysis; the numerical weather forecast is not implemented here.
+
+## 原著の出版年順に並べた参考文献 — 1952 · hodgkin1952# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1952-hodgkin1952
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hodgkin, A. L. and Huxley, A. F.. A quantitative description of membrane current and its application to conduction and excitation in nerve. The Journal of Physiology.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and the existence of its 2019 modern-convention supplement checked. Physiome CellML encoding identified separately. Voltage offsets, current signs and temperature conventions require an explicitly selected version before implementation.
+
+## 原著の出版年順に並べた参考文献 — 1952 · turing1952# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1952-turing1952
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Turing, Alan M.. The Chemical Basis of Morphogenesis. Philosophical Transactions of the Royal Society of London. Series B.
+原著の書誌情報 · 全文または実装の参照資料
+University-hosted original text inspected for the model setting and instability premise. The survey’s general two-species reaction–diffusion form is a framework, not one uniquely specified Turing kinetic law.
+
+## 原著の出版年順に並べた参考文献 — 1954 · bgk1954# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1954-bgk1954
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Bhatnagar, P. L. and Gross, E. P. and Krook, M.. A Model for Collision Processes in Gases. I. Small Amplitude Processes in Charged and Neutral One-Component Systems. Physical Review.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record checked. Continuous kinetic relaxation source, distinguished from later lattice BGK and its discrete-time viscosity correction. No full-paper numerical reproduction.
+
+## 原著の出版年順に並べた参考文献 — 1954 · lax1954# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1954-lax1954
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Lax, Peter D.. Weak solutions of nonlinear hyperbolic equations and their numerical computation. Communications on Pure and Applied Mathematics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. Background on weak solutions and Lax-type differences. The Lax shock-tube parameters have not been matched directly to the original table.
+
+## 原著の出版年順に並べた参考文献 — 1955 · lighthill1955# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1955-lighthill1955
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Lighthill, M. J. and Whitham, G. B.. On kinematic waves. II. A theory of traffic flow on long crowded roads. Proceedings of the Royal Society of London. Series A.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record and publisher-supplied abstract checked. LWR traffic source; the atlas independently chooses a normalized quadratic fundamental diagram. Full original text was not audited.
+
+## 原著の出版年順に並べた参考文献 — 1956 · lax1956# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1956-lax1956
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Lax, Peter D. and Richtmyer, Robert D.. Survey of the stability of linear finite difference equations. Communications on Pure and Applied Mathematics.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly accessible original paper. The equivalence theorem assumes a well-posed linear initial-value problem and a consistent linear approximation.
+
+## 原著の出版年順に並べた参考文献 — 1956 · richards1956# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1956-richards1956
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Richards, Paul I.. Shock Waves on the Highway. Operations Research.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record checked. Independent classical traffic-wave source; the atlas uses exact entropy Riemann solutions for its chosen quadratic flux.
+
+## 原著の出版年順に並べた参考文献 — 1959 · godunov1959# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1959-godunov1959
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Godunov, Sergei K.. A difference method for numerical calculation of discontinuous solutions of the equations of hydrodynamics. Matematicheskii Sbornik.
+原著の書誌情報 · 全文または実装の参照資料
+Original publication in 1959, accepted in 1956. The godunov option in this edition is a Godunov-type finite-volume method with approximate fluxes.
+
+## 原著の出版年順に並べた参考文献 — 1960 · lax1960# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1960-lax1960
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Lax, Peter D. and Wendroff, Burton. Systems of conservation laws. Communications on Pure and Applied Mathematics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record. Background for linear-advection Lax–Wendroff and systems of conservation laws.
+
+## 原著の出版年順に並べた参考文献 — 1961 · fedorenko1961# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1961-fedorenko1961
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Fedorenko, Radii P.. A relaxation method for solving elliptic difference equations. Zhurnal Vychislitelnoi Matematiki i Matematicheskoi Fiziki.
+原著の書誌情報 · 全文または実装の参照資料
+Original publication in 1961; English translation in 1962. A historical entry point to multigrid.
+
+## 原著の出版年順に並べた参考文献 — 1961 · fitzhugh1961# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1961-fitzhugh1961
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+FitzHugh, Richard. Impulses and Physiological States in Theoretical Models of Nerve Membrane. Biophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record and abstract checked. Two-state excitable/oscillatory model; the survey writes a conventional normalized FitzHugh–Nagumo form, not a claim of identical coefficients or signs across variants.
+
+## 原著の出版年順に並べた参考文献 — 1961 · rusanov1961# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1961-rusanov1961
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Rusanov, Vladimir V.. The calculation of the interaction of non-stationary shock waves with barriers. Zhurnal Vychislitelnoi Matematiki i Matematicheskoi Fiziki.
+原著の書誌情報 · 全文または実装の参照資料
+Russian original in 1961; English translation in 1962. This edition uses a modern local Lax–Friedrichs/Rusanov flux.
+
+## 原著の出版年順に並べた参考文献 — 1962 · nagumo1962# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1962-nagumo1962
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Nagumo, Jinichi and Arimoto, Suguru and Yoshizawa, Shuji. An Active Pulse Transmission Line Simulating Nerve Axon. Proceedings of the IRE.
+原著の書誌情報 · 全文または実装の参照資料
+Bibliographic cross-check only; full original not inspected. Independent electrical pulse-line contribution cited alongside FitzHugh rather than silently assigning both developments to a single paper.
+
+## 原著の出版年順に並べた参考文献 — 1963 · dahlquist1963# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1963-dahlquist1963
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Dahlquist, Germund G.. A special stability problem for linear multistep methods. BIT.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Foundational A-stability reference in the linear-multistep setting; full text not audited. The atlas distinguishes one-step stability functions, multistep root conditions, stiff damping and spatial error norms.
+
+## 原著の出版年順に並べた参考文献 — 1968 · chorin1968# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1968-chorin1968
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Chorin, Alexandre Joel. Numerical solution of the Navier-Stokes equations. Mathematics of Computation.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record and author-hosted original checked. Projection source; the independent periodic MAC/SSPRK2 demonstration is not the original boundary/time algorithm.
+
+## 原著の出版年順に並べた参考文献 — 1970 · keller1970# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1970-keller1970
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Keller, Evelyn F. and Segel, Lee A.. Initiation of Slime Mold Aggregation Viewed as an Instability. Journal of Theoretical Biology.
+原著の書誌情報 · 全文または実装の参照資料
+University-hosted original formulation inspected. It includes more biochemical species than the common two-field Keller–Segel reduction used in the survey. No universal critical mass or original-figure reproduction is asserted.
+
+## 原著の出版年順に並べた参考文献 — 1972 · gierer1972# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1972-gierer1972
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gierer, Alfred and Meinhardt, Hans. A theory of biological pattern formation. Kybernetik.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Short-range activation/long-range inhibition source. The survey states a standard simplified activator–inhibitor variant; full original numerics not reproduced.
+
+## 原著の出版年順に並べた参考文献 — 1972 · peskin1972# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1972-peskin1972
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Peskin, Charles S.. Flow patterns around heart valves: A numerical method. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Bibliographic metadata cross-checked. Immersed-boundary fluid–structure source, distinguished from a biological reaction law. Original full text and valve calculations are not audited or reproduced.
+
+## 原著の出版年順に並べた参考文献 — 1972 · wilson1972grhd# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1972-wilson1972grhd
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Wilson, James R.. Numerical Study of Fluid Flow in a Kerr Space. The Astrophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Original paper inspected for the early Kerr-background gas-flow calculation. Historical reading; not an evolving Einstein–matter solver and not reproduced here.
+
+## 原著の出版年順に並べた参考文献 — 1973 · reed1973# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1973-reed1973
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Reed, W. H. and Hill, T. R.. Triangular mesh methods for the neutron transport equation. Los Alamos Scientific Laboratory.
+原著の書誌情報 · 全文または実装の参照資料
+Public government-report record. This edition implements modal DG for 1D linear advection, rather than triangular-mesh neutron transport.
+
+## 原著の出版年順に並べた参考文献 — 1974 · hirt1974# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1974-hirt1974
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hirt, C. W. and Amsden, A. A. and Cook, J. L.. An arbitrary Lagrangian-Eulerian computing method for all flow speeds. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record and abstract. Historical ALE reference; the implemented example is only a 1D moving-volume uniform-state check.
+
+## 原著の出版年順に並べた参考文献 — 1974 · vanleer1974# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1974-vanleer1974
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+van Leer, Bram. Towards the ultimate conservative difference scheme. II. Monotonicity and conservation combined in a second-order scheme. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record inspected. Historical monotonicity and conservative second-order reconstruction; not a claim to reproduce the original algorithm.
+
+## 原著の出版年順に並べた参考文献 — 1977 · alexander1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-alexander1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Alexander, Roger K.. Diagonally Implicit Runge-Kutta Methods for Stiff O.D.E.'s. SIAM Journal on Numerical Analysis.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record checked. Source for the two-stage second-order L-stable SDIRK family; adaptive step doubling in the atlas is a separate implementation choice.
+
+## 原著の出版年順に並べた参考文献 — 1977 · arakawa1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-arakawa1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Arakawa, Akio and Lamb, Vivian R.. Computational Design of the Basic Dynamical Processes of the UCLA General Circulation Model. Methods in Computational Physics: Advances in Research and Applications.
+原著の書誌情報 · 全文または実装の参照資料
+Original chapter and bibliographic identity located; full PDF extraction exceeded tool size limits. A/B/C layout is cross-checked with ECMWF/MITgcm documentation. The atlas independently derives and tests centered periodic f-plane Fourier symbols, not a reproduction of the complete UCLA dynamical core.
+
+## 原著の出版年順に並べた参考文献 — 1977 · brandt1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-brandt1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Brandt, Achi. Multi-level adaptive solutions to boundary-value problems. Mathematics of Computation.
+原著の書誌情報 · 全文または実装の参照資料
+AMS-hosted original paper. This edition implements a fixed-grid geometric V-cycle, rather than the full adaptive framework.
+
+## 原著の出版年順に並べた参考文献 — 1977 · gillespie1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-gillespie1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gillespie, Daniel T.. Exact stochastic simulation of coupled chemical reactions. The Journal of Physical Chemistry.
+原著の書誌情報 · 全文または実装の参照資料
+University-hosted original inspected for the master-equation/SSA distinction, reaction-channel sampling and well-mixed setting. Exact refers to sampling the specified continuous-time Markov model, not biological completeness or zero Monte Carlo error.
+
+## 原著の出版年順に並べた参考文献 — 1977 · gingold1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-gingold1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gingold, R. A. and Monaghan, J. J.. Smoothed particle hydrodynamics: theory and application to non-spherical stars. Monthly Notices of the Royal Astronomical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record. Early SPH paper; this edition implements static 1D kernel reconstruction, not the stellar calculation.
+
+## 原著の出版年順に並べた参考文献 — 1977 · lucy1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-lucy1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Lucy, L. B.. A numerical approach to the testing of the fission hypothesis. The Astronomical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+ADS-hosted original article. Independent early particle-method reference; the cubic-spline reconstruction here is not a reproduction of Lucy’s original kernel or dynamics.
+
+## 原著の出版年順に並べた参考文献 — 1977 · mackey1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-mackey1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Mackey, Michael C. and Glass, Leon. Oscillation and Chaos in Physiological Control Systems. Science.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher-supplied abstract and bibliographic metadata identified; original full text not audited. Delay-equation model requires a full history function, not only a scalar initial value.
+
+## 原著の出版年順に並べた参考文献 — 1977 · spectral1977# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1977-spectral1977
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gottlieb, David and Orszag, Steven A.. Numerical Analysis of Spectral Methods: Theory and Applications. SIAM.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher chapter information for a representative spectral-methods monograph. This edition is limited to periodic linear Fourier problems.
+
+## 原著の出版年順に並べた参考文献 — 1978 · sod1978# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1978-sod1978
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Sod, Gary A.. A survey of several finite difference methods for systems of nonlinear hyperbolic conservation laws. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+The DOI identifies the original paper; the source is an implementation reference for the standard Sod problem and exact solution. The original methods and figures are not reproduced in full.
+
+## 原著の出版年順に並べた参考文献 — 1978 · taylor1978# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1978-taylor1978
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Taylor, Peter D. and Jonker, Leo B.. Evolutionary stable strategies and game dynamics. Mathematical Biosciences.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Continuous evolutionary-game dynamics source. Stability, ESS and a generic game equilibrium are not interchangeable.
+
+## 原著の出版年順に並べた参考文献 — 1979 · ablowitz1979# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1979-ablowitz1979
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Ablowitz, Mark J. and Zeppetella, Anthony. Explicit solutions of Fisher’s equation for a special wave speed. Bulletin of Mathematical Biology.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Special normalized wave speed ±5/sqrt(6), distinct from the minimal Fisher–KPP speed; dimensional scaling is stated in the survey.
+
+## 原著の出版年順に並べた参考文献 — 1979 · israel1979viscous# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1979-israel1979viscous
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Israel, W. and Stewart, J. M.. Transient relativistic thermodynamics and kinetic theory. Annals of Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record inspected for the transient dissipative-fluid branch. Reading context only; full kinetic derivation and coefficient restrictions have not been audited or implemented.
+
+## 原著の出版年順に並べた参考文献 — 1979 · orszag1979# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1979-orszag1979
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Orszag, Steven A. and Tang, Cha-Mei. Small-scale structure of two-dimensional magnetohydrodynamic turbulence. Journal of Fluid Mechanics.
+原著の書誌情報 · 全文または実装の参照資料
+The original study concerns incompressible MHD. Distinguish it from the normalization of the modern compressible Orszag–Tang test used here.
+
+## 原著の出版年順に並べた参考文献 — 1979 · schnakenberg1979# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1979-schnakenberg1979
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Schnakenberg, Jürgen. Simple chemical reaction systems with limit cycle behaviour. Journal of Theoretical Biology.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Autocatalytic reaction-network source. The spatial PDE benchmark is a reaction–diffusion extension of chemical kinetics, not automatically a calibrated developmental model.
+
+## 原著の出版年順に並べた参考文献 — 1979 · shigesada1979# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1979-shigesada1979
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Shigesada, Nanako and Kawasaki, Kohkichi and Teramoto, Ei. Spatial segregation of interacting species. Journal of Theoretical Biology.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Cross-diffusion/segregation source. The survey writes a homogeneous-environment reduction, omitting the original environmental-potential terms explicitly.
+
+## 原著の出版年順に並べた参考文献 — 1979 · vanleer1979# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1979-vanleer1979
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+van Leer, Bram. Towards the ultimate conservative difference scheme. V. A second-order sequel to Godunov's method. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. This edition uses selectable-limiter MUSCL with SSPRK3, rather than reproducing the original Lagrangian/remap construction.
+
+## 原著の出版年順に並べた参考文献 — 1980 · patankar1980# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1980-patankar1980
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Patankar, Suhas V.. Numerical Heat Transfer and Fluid Flow. CRC Press (current publisher record).
+原著の書誌情報 · 全文または実装の参照資料
+Current publisher first-edition record and contents checked; copyright year 1980. The linked CRC/Routledge record is a current listing of the work. Reading reference for conservative control-volume discretization and pressure-velocity coupling, not evidence of a complete SIMPLE implementation here.
+
+## 原著の出版年順に並べた参考文献 — 1981 · hockney1981book# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1981-hockney1981book
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hockney, R. W. and Eastwood, J. W.. Computer Simulation Using Particles. McGraw-Hill.
+原著の書誌情報 · 全文または実装の参照資料
+Original book date is 1981, as cited by Barnes and Hut (1986); DOI identifies a later Taylor & Francis reissue. Reference for particle-mesh methods and isolated doubled-domain convolution; the self-cell kernel convention is stated separately in our code.
+
+## 原著の出版年順に並べた参考文献 — 1981 · hockney1981p3m# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1981-hockney1981p3m
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hockney, R. W.. The P³M Code. CCP5 Information Quarterly, June 1981.
+原著の書誌情報 · 全文または実装の参照資料
+Original newsletter scan hosted by CCP5. Describes mesh forces plus short-range pair corrections. A full P3M solver is not implemented here.
+
+## 原著の出版年順に並べた参考文献 — 1981 · roe1981# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1981-roe1981
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Roe, Philip L.. Approximate Riemann solvers, parameter vectors, and difference schemes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author-uploaded original full text inspected, including the four Property U conditions on pp.359-360. Independent ideal-gas parameter-vector, eigenbasis, jump and consistency checks accompany single discontinuities and an expansion counterexample. Acoustic entropy smoothing is a separate flux modification.
+
+## 原著の出版年順に並べた参考文献 — 1983 · gray1983# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1983-gray1983
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gray, Peter and Scott, Stephen K.. Autocatalytic reactions in the isothermal, continuous stirred tank reactor: Isolas and other forms of multistability. Chemical Engineering Science.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Well-mixed chemical CSTR source, distinguished from Pearson’s later spatial Gray–Scott pattern study and from a direct biological tissue model.
+
+## 原著の出版年順に並べた参考文献 — 1983 · hll1983# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1983-hll1983
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Harten, Amiram and Lax, Peter D. and van Leer, Bram. On Upstream Differencing and Godunov-Type Schemes for Hyperbolic Conservation Laws. SIAM Review.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly accessible original paper. Background on HLL; the hll implementation here uses Davis-type minimum/maximum acoustic wave speeds.
+
+## 原著の出版年順に並べた参考文献 — 1984 · colella1984ppm# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1984-colella1984ppm
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Colella, Phillip and Woodward, Paul R.. The Piecewise Parabolic Method (PPM) for gas-dynamical simulations. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original 1984 journal metadata; linked public author report is the earlier July 1982 preprint and was inspected for parabolic interpolation/monotonicity. The local method-of-lines limited parabolic FV excludes wave tracing, contact steepening, shock flattening and Lagrange/remap; it is not a full original-PPM reproduction.
+
+## 原著の出版年順に並べた参考文献 — 1984 · sweby1984# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1984-sweby1984
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Sweby, P. K.. High Resolution Schemes Using Flux Limiters for Hyperbolic Conservation Laws. SIAM Journal on Numerical Analysis.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record and abstract inspected. Historical scalar TVD flux-limiter framework, including the compressive limiter due to Roe. The notebook uses explicitly documented slope conventions and a separate MUSCL/SSPRK3 operator.
+
+## 原著の出版年順に並べた参考文献 — 1984 · woodward1984# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1984-woodward1984
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Woodward, Paul and Colella, Phillip. The numerical simulation of two-dimensional fluid flow with strong shocks. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author-uploaded original text, Section VI.b setup and corner treatment checked 6 November 2026. The atlas computes first-order HLL Double Mach Reflection and Mach-3 forward-step baselines, not the original PPM figures. The step omits the paper’s entropy/enthalpy corner reset and has one published grid.
+
+## 原著の出版年順に並べた参考文献 — 1985 · takewaki1985cip# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1985-takewaki1985cip
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Takewaki, H. and Nishiguchi, A. and Yabe, T.. Cubic interpolated pseudo-particle method (CIP) for solving hyperbolic-type equations. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and indexed abstract inspected; full-text retrieval was unavailable. Early cubic reconstruction with independently specified gradients. The atlas implements a documented constant-speed 1D Hermite case, not all original algorithm variants.
+
+## 原著の出版年順に並べた参考文献 — 1986 · barnes1986# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1986-barnes1986
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Barnes, Josh and Hut, Piet. A hierarchical O(N log N) force-calculation algorithm. Nature.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record. The educational octree uses a geometric opening criterion and compares monopole/full second-moment forces with an identical softened direct sum.
+
+## 原著の出版年順に並べた参考文献 — 1986 · saad1986# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1986-saad1986
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Saad, Youcef and Schultz, Martin H.. GMRES: A generalized minimal residual algorithm for solving nonsymmetric linear systems. SIAM Journal on Scientific and Statistical Computing.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Restarted GMRES source; the atlas uses fixed right preconditioning, reorthogonalization, and explicitly recomputed true residuals.
+
+## 原著の出版年順に並べた参考文献 — 1987 · eno1987# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1987-eno1987
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Harten, Amiram and Engquist, Bjorn and Osher, Stanley and Chakravarthy, Sukumar R.. Uniformly high order accurate essentially non-oscillatory schemes, III. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original publication in 1987, distinct from the 1997 reprint. A standalone ENO implementation is planned; this edition implements WENO5-JS.
+
+## 原著の出版年順に並べた参考文献 — 1987 · greengard1987# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1987-greengard1987
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Greengard, L. and Rokhlin, V.. A fast algorithm for particle simulations. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original paper hosted by a university course. FMM reading reference; multipole-to-local translations and an FMM solver are not implemented here.
+
+## 原著の出版年順に並べた参考文献 — 1987 · turkel1987# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1987-turkel1987
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Turkel, Eli. Preconditioned methods for solving the incompressible and low speed compressible equations. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. Low-speed PDE preconditioning is discussed as future work and is distinct from the Jacobi matrix-scaling example.
+
+## 原著の出版年順に並べた参考文献 — 1988 · brio1988# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1988-brio1988
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Brio, Moysey and Wu, Cheng-chin. An upwind differencing scheme for the equations of ideal magnetohydrodynamics. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record for the Brio-Wu coplanar shock tube. Publisher metadata checked; no claim of full-text inspection or exact-solution reproduction. The local HLLD/HLLE comparison records its gamma=2 initial states and numerical grid comparison.
+
+## 原著の出版年順に並べた参考文献 — 1988 · einfeldt1988# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1988-einfeldt1988
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Einfeldt, Bernd. On Godunov-Type Methods for Gas Dynamics. SIAM Journal on Numerical Analysis.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. Background for Einfeldt-type wave-speed estimates in Euler HLLE.
+
+## 原著の出版年順に並べた参考文献 — 1988 · evans1988# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1988-evans1988
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Evans, Charles R. and Hawley, John F.. Simulation of magnetohydrodynamic flows: A constrained transport method. The Astrophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly accessible original paper. This edition uses a Cartesian flux-CT-type construction and does not reproduce every part of the original method.
+
+## 原著の出版年順に並べた参考文献 — 1988 · shu1988# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1988-shu1988
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Shu, Chi-Wang and Osher, Stanley. Efficient implementation of essentially non-oscillatory shock-capturing schemes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. Background on TVD Runge–Kutta and flux-based constructions.
+
+## 原著の出版年順に並べた参考文献 — 1989 · cockburn1989# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1989-cockburn1989
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Cockburn, Bernardo and Shu, Chi-Wang. TVB Runge-Kutta local projection discontinuous Galerkin finite element method for conservation laws. II. General framework. Mathematics of Computation.
+原著の書誌情報 · 全文または実装の参照資料
+Original RKDG/TVB paper. Publisher full-text retrieval was unavailable; later author notes: https://www-users.cse.umn.edu/~cockburn/lecture_notes/DG-4.pdf . The atlas has smooth-advection DG and a separate scalar modified-minmod building block, not the complete RKDG/TVB theorem. Duplicate catalog key cockburn1989tvb was merged for unique-source counting.
+
+## 原著の出版年順に並べた参考文献 — 1989 · shu1989# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1989-shu1989
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Shu, Chi-Wang and Osher, Stanley. Efficient implementation of essentially non-oscillatory shock-capturing schemes, II. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+The DOI identifies the original paper. Initial-condition parameters follow the later Quokka paper. Digitized comparisons with original figures have not been performed.
+
+## 原著の出版年順に並べた参考文献 — 1990 · yoshida1990# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1990-yoshida1990
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Yoshida, Haruo. Construction of higher order symplectic integrators. Physics Letters A.
+原著の書誌情報 · 全文または実装の参照資料
+Original paper hosted by a university course. This edition implements the fourth-order triple composition of symmetric Verlet steps on two smooth 1-DOF Hamiltonians.
+
+## 原著の出版年順に並べた参考文献 — 1991 · einfeldt1991# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1991-einfeldt1991
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Einfeldt, Bernd and Munz, Claus-Dieter and Roe, Philip L. and Sjögreen, Björn. On Godunov-type methods near low densities. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. Background on low-density positivity; this edition uses the standard Toro formulation of the 1–2–3 problem.
+
+## 原著の出版年順に並べた参考文献 — 1991 · fletcher1991v1# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1991-fletcher1991v1
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Fletcher, Clive A. J.. Computational Techniques for Fluid Dynamics 1: Fundamental and General Techniques. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher second-edition record and contents checked. Year follows the listed April 1991 print publication; the same current record displays copyright 1998 and eBook release 2012, which must not be mistaken for a new algorithm date. Reading reference for the textbook scope, not a claim of full-text audit or reproduction of every algorithm.
+
+## 原著の出版年順に並べた参考文献 — 1991 · fletcher1991v2# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1991-fletcher1991v2
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Fletcher, Clive A. J.. Computational Techniques for Fluid Dynamics 2: Specific Techniques for Different Flow Categories. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher second-edition record and contents checked: print and copyright 1991; eBook release 2012 is a later digital issue. Reading reference for the textbook scope, not a claim of full-text audit or reproduction of every algorithm.
+
+## 原著の出版年順に並べた参考文献 — 1991 · jameson1991# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1991-jameson1991
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Jameson, Antony. Time dependent calculations using multigrid, with applications to unsteady flows past airfoils and wings. 10th AIAA Computational Fluid Dynamics Conference.
+原著の書誌情報 · 全文または実装の参照資料
+The DOI identifies the original paper; the linked source is a later exposition by a coauthor. Dual time stepping here is a minimal linear-advection model.
+
+## 原著の出版年順に並べた参考文献 — 1991 · yabe1991cip# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1991-yabe1991cip
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Yabe, T. and Aoki, T.. A universal solver for hyperbolic equations by cubic-polynomial interpolation I. One-dimensional solver. Computer Physics Communications.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher indexed abstract and bibliographic data inspected; full-text retrieval was unavailable. Value-and-gradient cubic CIP evolution is demonstrated for uniform periodic constant-speed scalar advection only.
+
+## 原著の出版年順に並べた参考文献 — 1992 · qian1992# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1992-qian1992
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Qian, Y. H. and d'Humières, D. and Lallemand, P.. Lattice BGK Models for Navier-Stokes Equation. Europhysics Letters.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Lattice BGK source. The D2Q9 model is independently checked using shear-mode decay and a low-Mach channel; no arbitrary-Mach accuracy or full-text reproduction is claimed.
+
+## 原著の出版年順に並べた参考文献 — 1992 · vanderVorst1992# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1992-vandervorst1992
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+van der Vorst, Henk A.. Bi-CGSTAB: A Fast and Smoothly Converging Variant of Bi-CG for the Solution of Nonsymmetric Linear Systems. SIAM Journal on Scientific and Statistical Computing.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record checked. BiCGSTAB source; the educational implementation reports true residuals, breakdown and iteration-limit failures. Residual monotonicity is not promised.
+
+## 原著の出版年順に並べた参考文献 — 1993 · liou1993# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1993-liou1993
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Liou, Meng-Sing and Steffen, Christopher J., Jr.. A New Flux Splitting Scheme. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original AUSM publisher metadata/abstract inspected; no full 1993-paper inspection is claimed. The independent local AUSM-family baseline uses common arithmetic sound speed and cubic pressure splitting, cross-checked with official FEST-3D documentation, and is not every original variant or AUSM+-up.
+
+## 原著の出版年順に並べた参考文献 — 1993 · pearson1993# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1993-pearson1993
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Pearson, John E.. Complex Patterns in a Simple System. Science.
+原著の書誌情報 · 全文または実装の参照資料
+Author preprint abstract and linked journal DOI checked. Spatial reaction–diffusion patterns from finite-amplitude perturbations; pattern appearance is not by itself evidence of a linear Turing instability.
+
+## 原著の出版年順に並べた参考文献 — 1994 · hllc1994# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1994-hllc1994
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Toro, E. F. and Spruce, M. and Speares, W.. Restoration of the contact surface in the HLL-Riemann solver. Shock Waves.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. This edition uses HLLC with Davis-type wave speeds and does not implement every original wave-speed estimate or WAF construction.
+
+## 原著の出版年順に並べた参考文献 — 1994 · inutsuka1994# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1994-inutsuka1994
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Inutsuka, Shu-ichiro. Godunov-type SPH. Memorie della Società Astronomica Italiana.
+原著の書誌情報 · 全文または実装の参照資料
+Provisional historical record from reference 9 of Inutsuka (2002). The 1994 original has not been inspected; the source link is the later paper, not a reproduction of the 1994 contribution.
+
+## 原著の出版年順に並べた参考文献 — 1994 · marti1994srriemann# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1994-marti1994srriemann
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Martí, José M. and Müller, Ewald. The analytical solution of the Riemann problem in relativistic hydrodynamics. Journal of Fluid Mechanics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher abstract and bibliographic record inspected. Normal-flow SR Riemann reference; arbitrary transverse velocities need a later extension. Proposed verification source, not an implemented relativistic Riemann solver.
+
+## 原著の出版年順に並べた参考文献 — 1994 · quirk1994# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1994-quirk1994
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Quirk, James J.. A contribution to the great Riemann solver debate. International Journal for Numerical Methods in Fluids.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record and abstract; background for shock instability and complementary fluxes. The local stationary planar row-displacement diagnostic is an independent experiment, not a reproduction of the original moving-shock perturbed-grid duct. Blunt-body carbuncle tests remain pending.
+
+## 原著の出版年順に並べた参考文献 — 1994 · templates1994# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1994-templates1994
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Barrett, Richard and Berry, Michael and Chan, Tony F. and Demmel, James and Donato, June and Dongarra, Jack and Eijkhout, Victor and Pozo, Roldan and Romine, Charles and van der Vorst, Henk. Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods. SIAM.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly available author-side reference material for Jacobi, Gauss–Seidel, preconditioning, and multigrid.
+
+## 原著の出版年順に並べた参考文献 — 1994 · weno1994# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1994-weno1994
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Liu, Xu-Dong and Osher, Stanley and Chan, Tony. Weighted Essentially Non-oscillatory Schemes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. Historical introduction to WENO; the weights implemented here are Jiang–Shu (1996).
+
+## 原著の出版年順に並べた参考文献 — 1996 · aliev1996# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1996-aliev1996
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Aliev, R. R. and Panfilov, A. V.. A simple two-variable model of cardiac excitation. Chaos, Solitons & Fractals.
+原著の書誌情報 · 全文または実装の参照資料
+Physiome-hosted model encoding and bibliographic identification checked; original full paper not audited. A reduced phenomenological cardiac model, not a detailed human ionic-cell model or a complete bidomain model.
+
+## 原著の出版年順に並べた参考文献 — 1996 · godlewski1996book# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1996-godlewski1996book
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Godlewski, Edwige and Raviart, Pierre-Arnaud. Numerical Approximation of Hyperbolic Systems of Conservation Laws. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher first-edition record, description and contents checked: Applied Mathematical Sciences, volume 118, copyright 1996; the 2013 eBook release is a later digital issue. This record identifies the requested first edition, not the revised second edition of 2021 (DOI 10.1007/978-1-0716-1344-3). Reading reference for nonlinear hyperbolic systems and their numerical approximation; full text and all proofs have not been audited.
+
+## 原著の出版年順に並べた参考文献 — 1996 · jiang1996# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1996-jiang1996
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Jiang, Guang-Shan and Shu, Chi-Wang. Efficient Implementation of Weighted ENO Schemes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly accessible original paper. Reference for WENO5-JS flux reconstruction, smoothness indicators, and nonlinear weights.
+
+## 原著の出版年順に並べた参考文献 — 1996 · liou1996# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1996-liou1996
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Liou, Meng-Sing. A Sequel to AUSM: AUSM+. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher metadata/abstract inspected. AUSM+ is a separately planned extension; its original wave-speed/pressure choices and properties are not claimed by the local common-sound-speed AUSM baseline.
+
+## 原著の出版年順に並べた参考文献 — 1996 · ronchi1996# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1996-ronchi1996
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Ronchi, C. and Iacono, R. and Paolucci, P. S.. The Cubed Sphere: A New Method for the Solution of Partial Differential Equations in Spherical Geometry. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic search record checked; full text not inspected. Atlas uses an explicitly specified equiangular gnomonic diagram and does not reproduce the paper solver.
+
+## 原著の出版年順に並べた参考文献 — 1996 · shewchuk1996# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1996-shewchuk1996
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Shewchuk, Jonathan Richard. Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Author-hosted paper. Mesh-generation reading reference; the example meshes use Matplotlib triangulation and do not invoke Triangle.
+
+## 原著の出版年順に並べた参考文献 — 1997 · ascher1997# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1997-ascher1997
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Ascher, Uri M. and Ruuth, Steven J. and Spiteri, Raymond J.. Implicit-explicit Runge-Kutta methods for time-dependent partial differential equations. Applied Numerical Mathematics.
+原著の書誌情報 · 全文または実装の参照資料
+IMEX RK reading reference; bibliographic metadata checked, full original text not audited. The implemented IMEX Euler is first order and is not attributed to this higher-order RK construction.
+
+## 原著の出版年順に並べた参考文献 — 1997 · banyuls1997# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1997-banyuls1997
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Banyuls, F. and Font, J. A. and Ibáñez, J. M. and Martí, J. M. and Miralles, J. A.. Numerical 3+1 General Relativistic Hydrodynamics: A Local Characteristic Approach. The Astrophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Author-institution bibliographic record checked; formulation context cross-checked against Font (2008). Central Valencia reference, without claiming direct inspection of the complete original or an implemented GRHD solver.
+
+## 原著の出版年順に並べた参考文献 — 1998 · pons1998grriemann# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1998-pons1998grriemann
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Pons, J. A. and Font, J. A. and Ibáñez, J. M. and Martí, J. M. and Miralles, J. A.. General Relativistic Hydrodynamics with Special Relativistic Riemann Solvers. Astronomy and Astrophysics.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and original-paper scan inspected for the local Minkowskian-coordinate approach connecting GRHD to SR Riemann solvers. Geometric flux/source treatment remains necessary; no solver implemented here.
+
+## 原著の出版年順に並べた参考文献 — 1999 · komissarov1999rmhd# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#1999-komissarov1999rmhd
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Komissarov, S. S.. A Godunov-type scheme for relativistic magnetohydrodynamics. Monthly Notices of the Royal Astronomical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher abstract inspected for multidimensional Godunov-type relativistic MHD and magnetic-flux conservation. Historical reading, not an implemented RMHD method.
+
+## 原著の出版年順に並べた参考文献 — 2000 · briggs2000book# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2000-briggs2000book
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Briggs, William L. and Henson, Van Emden and McCormick, Steve F.. A Multigrid Tutorial. SIAM.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher book record, contents and front-matter metadata checked. Second edition published in 2000; the 2012 online publication date is a later digital issue. Introductory reading on smoothing, coarse-grid correction, implementation, nonlinear problems and AMG. The atlas geometric Poisson V-cycle is a limited educational baseline, not a reproduction of the entire book.
+
+## 原著の出版年順に並べた参考文献 — 2000 · elowitz2000# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2000-elowitz2000
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Elowitz, Michael B. and Leibler, Stanislas. A synthetic oscillatory network of transcriptional regulators. Nature.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Repressilator source; mRNA and protein variables are retained separately in the proposed model, without silently replacing them by a three-state reduction.
+
+## 原著の出版年順に並べた参考文献 — 2000 · gardner2000# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2000-gardner2000
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gardner, Timothy S. and Cantor, Charles R. and Collins, James J.. Construction of a genetic toggle switch in Escherichia coli. Nature.
+原著の書誌情報 · 全文または実装の参照資料
+Original bibliographic record and abstract checked. Synthetic bistable gene-network source. The survey uses a normalized mutual-repression model, not a complete encoding of experimental induction protocols.
+
+## 原著の出版年順に並べた参考文献 — 2000 · toth2000# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2000-toth2000
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Tóth, Gábor. The ∇·B = 0 Constraint in Shock-Capturing Magnetohydrodynamics Codes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author-hosted original paper. Reference for CT variants and differences between discrete divergence operators.
+
+## 原著の出版年順に並べた参考文献 — 2000 · trefethen2000# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2000-trefethen2000
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Trefethen, Lloyd N.. Spectral Methods in MATLAB. SIAM.
+原著の書誌情報 · 全文または実装の参照資料
+Author-maintained book page checked: SIAM 2000, sample chapters, programs and errata. Reading reference for spectral differentiation and boundary-value problems; the author notes limited treatment of barycentric interpolation.
+
+## 原著の出版年順に並べた参考文献 — 2001 · gottlieb2001ssp# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2001-gottlieb2001ssp
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gottlieb, Sigal and Shu, Chi-Wang and Tadmor, Eitan. Strong Stability-Preserving High-Order Time Discretization Methods. SIAM Review.
+原著の書誌情報 · 全文または実装の参照資料
+Author-hosted original manuscript inspected. Conditional inheritance of forward-Euler convex stability, and the distinction between linear and nonlinear SSP. The atlas verifies full-tableau inequalities for its explicit RK methods.
+
+## 原著の出版年順に並べた参考文献 — 2001 · pandolfi2001# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2001-pandolfi2001
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Pandolfi, Maurizio and D’Ambrosio, Domenic. Numerical Instabilities in Upwind Methods: Analysis and Cures for the “Carbuncle” Phenomenon. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record and abstract. Linearized shock-instability analysis and localized cures; the proposed methods are not implemented in this edition.
+
+## 原著の出版年順に並べた参考文献 — 2001 · trottenberg2001# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2001-trottenberg2001
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Trottenberg, Ulrich and Oosterlee, Cornelius W. and Schüller, Anton. Multigrid. Academic Press.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher first-edition description and contents checked. Uses the conventional 2001 bibliographic year, also cited in Elsevier reference material; the current publisher shop lists release on November 20, 2000. Reference for multigrid theory, local Fourier analysis, parallel methods, systems and AMG. Full text not audited; these topics are not all implemented in the atlas.
+
+## 原著の出版年順に並べた参考文献 — 2001 · yabe2001csl# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2001-yabe2001csl
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Yabe, T. and Tanaka, R. and Nakamura, T. and Xiao, F.. An Exactly Conservative Semi-Lagrangian Scheme (CIP–CSL) in One Dimension. Monthly Weather Review.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher indexed abstract and bibliographic data inspected; full-page retrieval was unavailable. Integral constraints and exactly conservative CIP-CSL are reading context, not implemented by the basic cubic-CIP example.
+
+## 原著の出版年順に並べた参考文献 — 2002 · dedner2002# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-dedner2002
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Dedner, Andreas and Kemm, Friedemann and Kröner, Dietmar and Munz, Claus-Dieter and Schnitzer, Thomas and Wesenberg, Matthias. Hyperbolic Divergence Cleaning for the MHD Equations. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publicly accessible original paper, published in 2002 despite 2001 appearing in the DOI. This edition uses a simplified GLM model with fixed cleaning speed.
+
+## 原著の出版年順に並べた参考文献 — 2002 · guo2002# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-guo2002
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Guo, Zhaoli and Zheng, Chuguang and Shi, Baochang. Discrete lattice effects on the forcing term in the lattice Boltzmann method. Physical Review E.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher record and abstract checked. Force discretization source; the implementation uses the half-force momentum correction and checks low-Mach Poiseuille profiles against an analytic parabola.
+
+## 原著の出版年順に並べた参考文献 — 2002 · inutsuka2002# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-inutsuka2002
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Inutsuka, Shu-ichiro. Reformulation of Smoothed Particle Hydrodynamics with Riemann Solver. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author preprint and HTML sections 2–4 inspected for convolution, Gaussian overlaps, pair Riemann states, variable smoothing lengths, matched conservative time updates, and the first shock-tube setup. Reading notes and implementation plan only; the atlas implements kernel interpolation, not GSPH dynamics.
+
+## 原著の出版年順に並べた参考文献 — 2002 · leveque2002# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-leveque2002
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+LeVeque, Randall J.. Finite Volume Methods for Hyperbolic Problems. Cambridge University Press.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher/author bibliographic records and Cambridge front matter checked. Paperback ISBN 0-521-00924-3 (978-0-521-00924-9) identifies Finite Volume Methods for Hyperbolic Problems, first published in 2002; retailer wording with Hyperbolic Systems does not identify a separate book. Reading reference for conservation laws, wave-propagation methods, limiters and shallow-water implementations; not a full-text audit.
+
+## 原著の出版年順に並べた参考文献 — 2002 · murray2002# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-murray2002
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Murray, J. D.. Mathematical Biology I: An Introduction. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher edition metadata checked: third edition print copyright 2002, later eBook publication distinguished. Broad reading reference, not a substitute for original papers or an audited source of every parameter.
+
+## 原著の出版年順に並べた参考文献 — 2002 · riddaway2002# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-riddaway2002
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Riddaway, R. W. and Hortal, M.. Numerical methods. ECMWF Meteorological Training Course Lecture Series.
+原著の書誌情報 · 全文または実装の参照資料
+Official teaching notes inspected for horizontal staggering and A–E grid relationships. PDF carries ECMWF 2002 and revised March 2001, not a new original invention date. Used as an exposition, distinct from Arakawa–Lamb 1977.
+
+## 原著の出版年順に並べた参考文献 — 2002 · spiteri2002ssp# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2002-spiteri2002ssp
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Spiteri, Raymond J. and Ruuth, Steven J.. A New Class of Optimal High-Order Strong-Stability-Preserving Time Discretization Methods. SIAM Journal on Numerical Analysis.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record and abstract inspected. SSP methods with more stages than their order. The implemented five-stage fourth-order coefficients are taken from the later author-hosted Gottlieb–Ketcheson–Shu review, rather than asserting direct full-text reproduction of this paper.
+
+## 原著の出版年順に並べた参考文献 — 2003 · gammie2003harm# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2003-gammie2003harm
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gammie, Charles F. and McKinney, Jonathan C. and Tóth, Gábor. HARM: A Numerical Scheme for General Relativistic Magnetohydrodynamics. The Astrophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and publication metadata inspected. Conservative GRMHD, HLL, Tóth-type CT, and a magnetized black-hole torus; original formulation distinguished from later evolving-spacetime frameworks. Not reproduced here.
+
+## 原著の出版年順に並べた参考文献 — 2003 · hairer2003# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2003-hairer2003
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hairer, Ernst and Lubich, Christian and Wanner, Gerhard. Geometric numerical integration illustrated by the Störmer–Verlet method. Acta Numerica.
+原著の書誌情報 · 全文または実装の参照資料
+Original article hosted by a university course. Reference for symplecticity, reversibility, modified equations, and conditional long-time energy estimates; no general exact-energy claim is made.
+
+## 原著の出版年順に並べた参考文献 — 2003 · saad2003book# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2003-saad2003book
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Saad, Yousef. Iterative Methods for Sparse Linear Systems. SIAM.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher second-edition record and author-maintained book page checked; original first edition was 1996. Author page provides the text and errata. Reading reference for Krylov methods and preconditioning; original algorithm papers remain separate citations.
+
+## 原著の出版年順に並べた参考文献 — 2004 · kageyama2004# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2004-kageyama2004
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kageyama, Akira and Sato, Tetsuya. The Yin-Yang Grid: An Overset Grid in Spherical Geometry. Geochemistry, Geophysics, Geosystems.
+原著の書誌情報 · 全文または実装の参照資料
+Author preprint inspected for patch bounds, coordinate rotation and vector transformation. Atlas diagrams illustrate geometry only; overlap interpolation and a conservative flow solver are not implemented.
+
+## 原著の出版年順に並べた参考文献 — 2005 · duez2005grmhd# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2005-duez2005grmhd
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Duez, Matthew D. and Liu, Yuk Tung and Shapiro, Stuart L. and Stephens, Branson C.. Relativistic Magnetohydrodynamics in Dynamical Spacetimes: Numerical Methods and Tests. Physical Review D.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and journal metadata inspected. Coupled Einstein–Maxwell–MHD with BSSN and conservative matter evolution; historical source for the dynamical-spacetime step. No such coupling implemented here.
+
+## 原著の出版年順に並べた参考文献 — 2005 · miyoshi2005# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2005-miyoshi2005
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Miyoshi, Takahiro and Kusano, Kanya. A multi-state HLL approximate Riemann solver for ideal magnetohydrodynamics. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original HLLD bibliographic record; publisher abstract/metadata, not the complete original paper, inspected. Star and double-star equations cross-checked against the linked official Athena++ implementation. The local independent implementation has contact, rotational-wave and standard-test checks; no Athena++ output is reproduced.
+
+## 原著の出版年順に並べた参考文献 — 2005 · springel2005# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2005-springel2005
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Springel, Volker. The cosmological simulation code GADGET-2. Monthly Notices of the Royal Astronomical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Author preprint and publisher record. Reference for TreePM force splitting; the separate PM and Tree laboratories do not implement the GADGET code or a complete TreePM pipeline.
+
+## 原著の出版年順に並べた参考文献 — 2006 · abgrall2006# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2006-abgrall2006
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Abgrall, Rémi. Residual distribution schemes: Current status and future trends. Computers & Fluids.
+原著の書誌情報 · 全文または実装の参照資料
+Author-hosted review. The 2006 date identifies the review, rather than the origin of residual distribution. This edition implements only 1D scalar RD.
+
+## 原著の出版年順に並べた参考文献 — 2006 · hairer2006book# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2006-hairer2006book
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hairer, Ernst and Lubich, Christian and Wanner, Gerhard. Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher second-edition record and description checked. Reading reference for symplectic and symmetric methods, splitting and long-time behavior; symplecticity is distinct from exact conservation of the original Hamiltonian.
+
+## 原著の出版年順に並べた参考文献 — 2006 · liou2006# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2006-liou2006
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Liou, Meng-Sing. A sequel to AUSM, Part II: AUSM+-up for all speeds. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher metadata/abstract inspected. Planned all-speed AUSM-family extension; the local baseline has no AUSM+-up pressure/velocity correction or low-Mach verification.
+
+## 原著の出版年順に並べた参考文献 — 2006 · noble2006recovery# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2006-noble2006recovery
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Noble, Scott C. and Gammie, Charles F. and McKinney, Jonathan C. and Del Zanna, Luca. Primitive Variable Solvers for Conservative General Relativistic Magnetohydrodynamics. The Astrophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and journal metadata inspected for nonlinear conserved-to-primitive recovery and reduced systems. Reading context; current Newtonian primitive conversion is not this relativistic inversion.
+
+## 原著の出版年順に並べた参考文献 — 2007 · hirsch2007# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2007-hirsch2007
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hirsch, Charles. Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid Dynamics. Butterworth-Heinemann.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher edition record and contents checked. Cites the 2007 second-edition fundamentals volume, not the complete original two-volume set. Reading reference for discretization, grid properties, stability and flow solvers; not an audited implementation source for every chapter.
+
+## 原著の出版年順に並べた参考文献 — 2007 · leveque2007# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2007-leveque2007
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+LeVeque, Randall J.. Finite Difference Methods for Ordinary and Partial Differential Equations: Steady-State and Time-Dependent Problems. SIAM.
+原著の書誌情報 · 全文または実装の参照資料
+Author-maintained book list checked for year, title, DOI and companion materials. Reading reference for consistency, stability, boundary-value problems and time stepping; full book not audited here.
+
+## 原著の出版年順に並べた参考文献 — 2007 · nishikawa2007# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2007-nishikawa2007
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Nishikawa, Hiroaki. A first-order system approach for diffusion equation. I: Second-order residual-distribution schemes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked, full text not audited. The atlas implements an independent periodic first-order upwind baseline for the equivalent steady system, not the paper's second-order residual-distribution schemes.
+
+## 原著の出版年順に並べた参考文献 — 2008 · borges2008# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2008-borges2008
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Borges, Rafael and Carmona, Monique and Costa, Bruno and Don, Wai Sun. An improved weighted essentially non-oscillatory scheme for hyperbolic conservation laws. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original 2008 publisher metadata/abstract inspected. A public 2006 three-author earlier manuscript was also consulted and has different weight conventions; no complete final-paper inspection is claimed. The local FD WENO-Z variant explicitly defines tau5=abs(beta0-beta2), exponent 2 and epsilon=1e-6, with characteristic/component tests and smooth refinement.
+
+## 原著の出版年順に並べた参考文献 — 2008 · font2008grhd# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2008-font2008grhd
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Font, José A.. Numerical Hydrodynamics and Magnetohydrodynamics in General Relativity. Living Reviews in Relativity.
+原著の書誌情報 · 全文または実装の参照資料
+Open author review inspected for formulations and historical context. Explicitly the 2008 revision, following the 2000 and 2003 versions; used as review context rather than an invention date or a current code-performance comparison.
+
+## 原著の出版年順に並べた参考文献 — 2008 · hesthaven2008book# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2008-hesthaven2008book
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hesthaven, Jan S. and Warburton, Tim. Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and Applications. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher copyright-edition record and contents checked: 2008. Reading reference for nodal bases, element operators and DG fluxes. The atlas currently has selected educational DG and basis examples, not all systems treated in the book.
+
+## 原著の出版年順に並べた参考文献 — 2008 · nishikawa2008# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2008-nishikawa2008
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Nishikawa, Hiroaki and Kitamura, Keiichi. Very simple, carbuncle-free, boundary-layer-resolving, rotated-hybrid Riemann solvers. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record and abstract. The 2D rotated solver and carbuncle tests are future work.
+
+## 原著の出版年順に並べた参考文献 — 2009 · gottlieb2009ssp# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2009-gottlieb2009ssp
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Gottlieb, Sigal and Ketcheson, David I. and Shu, Chi-Wang. High Order Strong Stability Preserving Time Discretizations. Journal of Scientific Computing.
+原著の書誌情報 · 全文または実装の参照資料
+Author-hosted 2008 draft of the 2009 review inspected. Section 3.1 supplies the SSPRK(5,4) decimal coefficients; the atlas converts its state combinations to increments and uses the conservative rounded bound C=1.508. SSP order barriers, low-storage, and alternative families are reading context.
+
+## 原著の出版年順に並べた参考文献 — 2009 · koyama2009# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2009-koyama2009
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Koyama, Hiroshi and Ostriker, Eve C.. Gas Properties and Implications for Galactic Star Formation in Numerical Models of the Turbulent, Multiphase Interstellar Medium. The Astrophysical Journal.
+原著の書誌情報 · 全文または実装の参照資料
+Published in 2009, with a December 2008 preprint. Section 2.3 and Appendix A give the Cartesian disk-potential FFT method. Our independent kernel laboratory distinguishes the sampled DFT from a continuous Fourier coefficient and does not reproduce the ISM simulations.
+
+## 原著の出版年順に並べた参考文献 — 2009 · toro2009# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2009-toro2009
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Toro, Eleuterio F.. Riemann Solvers and Numerical Methods for Fluid Dynamics: A Practical Introduction. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher bibliographic record. Background for exact Riemann solutions and the standard double-rarefaction setup.
+
+## 原著の出版年順に並べた参考文献 — 2009 · williams2009# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2009-williams2009
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Williams, Paul D.. A Proposed Modification to the Robert–Asselin Time Filter. Monthly Weather Review.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record identifies the time-filter paper. The ODE laboratory uses unfiltered leapfrog with RK4 startup and does not implement this filter.
+
+## 原著の出版年順に並べた参考文献 — 2010 · durran2010# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2010-durran2010
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Durran, Dale R.. Numerical Methods for Fluid Dynamics: With Applications to Geophysics. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher second-edition copyright record and description checked. Retitled revision of the earlier geophysical wave-equation text. Reading reference for wave propagation, dispersion, advection and time discretization; not a complete spherical dynamical-core implementation.
+
+## 原著の出版年順に並べた参考文献 — 2010 · mignone2010glm# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2010-mignone2010glm
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Mignone, Andrea and Tzeferacos, Petros. A second-order unsplit Godunov scheme for cell-centered MHD: The CTU-GLM scheme. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Public author manuscript inspected for the conservative GLM equations and longitudinal cleaning subsystem. The local loop test uses MC/SSPRK2 and split psi damping, not the paper's CTU integrator or EGLM variant.
+
+## 原著の出版年順に並べた参考文献 — 2010 · nishikawa2010# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2010-nishikawa2010
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Nishikawa, Hiroaki. A first-order system approach for diffusion equation. II: Unification of advection and diffusion. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Original publisher metadata and abstract checked. Publication year is 2010 despite 2009 in the DOI. Unified advection-diffusion system is reading/future implementation scope.
+
+## 原著の出版年順に並べた参考文献 — 2010 · zhangshu2010euler# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2010-zhangshu2010euler
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Zhang, Xiangxiong and Shu, Chi-Wang. On positivity-preserving high order discontinuous Galerkin schemes for compressible Euler equations on rectangular meshes. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author-hosted manuscript inspected. Convex admissible Euler states, mean-preserving limiting, and additional flux, quadrature, CFL, and SSP requirements. The atlas implements only a common-state reconstruction scaling building block, not the full time-update scheme.
+
+## 原著の出版年順に並べた参考文献 — 2011 · iwasaki2011gsph# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2011-iwasaki2011gsph
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Iwasaki, Kazunari and Inutsuka, Shu-ichiro. Smoothed particle magnetohydrodynamics with a Riemann solver and the method of characteristics. Monthly Notices of the Royal Astronomical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Author preprint inspected for the split between compressive Riemann interactions and Alfvén characteristics, and its test suite. Newtonian particle MHD; separate from relativistic fluid dynamics and the existing grid CT/GLM code. Not implemented here.
+
+## 原著の出版年順に並べた参考文献 — 2011 · johnson2011# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2011-johnson2011
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Johnson, Kenneth A. and Goody, Roger S.. The Original Michaelis Constant: Translation of the 1913 Michaelis–Menten Paper. Biochemistry.
+原著の書誌情報 · 全文または実装の参照資料
+Translation bibliographic record checked. This is a 2011 translation/commentary route to the 1913 original, not an original publication dated 2011.
+
+## 原著の出版年順に並べた参考文献 — 2013 · golub2013# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2013-golub2013
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Golub, Gene H. and Van Loan, Charles F.. Matrix Computations. Johns Hopkins University Press.
+原著の書誌情報 · 全文または実装の参照資料
+Fourth-edition publication and contents checked in the SIAM distribution record; publisher is Johns Hopkins University Press. Reading reference for factorizations, conditioning, eigenproblems and sparse systems; no claim of full-text audit.
+
+## 原著の出版年順に並べた参考文献 — 2013 · sadowski2013radiation# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2013-sadowski2013radiation
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Sądowski, Aleksander and Narayan, Ramesh and Tchekhovskoy, Alexander and Zhu, Yucong. Semi-implicit scheme for treating radiation under M1 closure in general relativistic conservative fluid dynamics codes. Monthly Notices of the Royal Astronomical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and public original inspected for covariant M1 radiation moments and semi-implicit matter interactions in KORAL. Published 2013, preprint 2012. Radiation closure/source integration is reading context, not implemented here.
+
+## 原著の出版年順に並べた参考文献 — 2013 · wan2013icon# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2013-wan2013icon
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Wan, H. and Giorgetta, M. A. and Zängl, G. and Restelli, M. and Majewski, D. and Bonaventura, L. and Fröhlich, K. and Reinert, D. and Rípodas, P. and Kornblueh, L. and Förstner, J.. The ICON-1.2 hydrostatic atmospheric dynamical core on triangular grids – Part 1: Formulation and performance of the baseline version. Geoscientific Model Development.
+原著の書誌情報 · 全文または実装の参照資料
+Official model-description record and abstract checked for the triangular-grid C-staggering connection. Atlas midpoint-refined icosahedron and barycentric dual are illustrative, unoptimized meshes, not the ICON grid or dynamical core.
+
+## 原著の出版年順に並べた参考文献 — 2015 · schneider2015cholla# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2015-schneider2015cholla
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Schneider, Evan E. and Robertson, Brant E.. Cholla: A New Massively-Parallel Hydrodynamics Code for Astrophysical Simulation. The Astrophysical Journal Supplement Series.
+原著の書誌情報 · 全文または実装の参照資料
+The publicly available accepted author manuscript, especially Appendix A, was inspected to cross-check PPM reconstruction and tracing. The atlas uses an independent specified 1D implementation, not Cholla output, GPU timings or a reproduction of its full multidimensional CTU scheme.
+
+## 原著の出版年順に並べた参考文献 — 2015 · teukolsky2015# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2015-teukolsky2015
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Teukolsky, Saul A.. Short note on the mass matrix for Gauss-Lobatto grid points. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author preprint posted in December 2014, full HTML consulted. Explains exact and GLL-quadrature mass matrices and their rank-one difference. The reference-element notebook tests this distinction; it is not a reproduction of a full spectral-element PDE solver.
+
+## 原著の出版年順に並べた参考文献 — 2016 · fitzpatrick2016# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2016-fitzpatrick2016
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Fitzpatrick, Richard. Fluid Equations in Cylindrical Coordinates. University of Texas at Austin.
+原著の書誌情報 · 全文または実装の参照資料
+Author lecture notes, dated January 22, 2016. Reference for cylindrical fluid operators; the atlas declares its bulk-viscosity and orthonormal-component conventions separately.
+
+## 原著の出版年順に並べた参考文献 — 2018 · kuya2018# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2018-kuya2018
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kuya, Yuichi and Totani, Kosuke and Kawai, Soshi. Kinetic energy and entropy preserving schemes for compressible flows by split convective forms. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+DOI identifies the original 2018 paper. The authors’ 2022 conference explanation, Eq. (9), is the accessible implementation source for our second-order arithmetic-mean Cartesian baseline. Entropy is not claimed exact to roundoff; no shock stabilization is implemented.
+
+## 原著の出版年順に並べた参考文献 — 2019 · bemfica2019causality# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2019-bemfica2019causality
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Bemfica, Fábio S. and Disconzi, Marcelo M. and Noronha, Jorge. Nonlinear causality of general first-order relativistic viscous hydrodynamics. Physical Review D.
+原著の書誌情報 · 全文または実装の参照資料
+Original author abstract and publisher record inspected. A first-gradient constitutive theory with nonlinear-causality conditions, distinguished from extended-variable theories. Not a universal EOS/transport or discrete-stability guarantee; no viscous relativistic solver implemented.
+
+## 原著の出版年順に並べた参考文献 — 2019 · kovtun2019stable# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2019-kovtun2019stable
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kovtun, Pavel. First-order relativistic hydrodynamics is stable. Journal of High Energy Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and publisher record inspected for stable first-order hydrodynamic frames. Stability results retain the paper assumptions; numerical scheme stability is a separate question. Reading context, not an implemented solver.
+
+## 原著の出版年順に並べた参考文献 — 2020 · ferziger2020# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2020-ferziger2020
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Ferziger, Joel H. and Perić, Milovan and Street, Robert L.. Computational Methods for Fluid Dynamics. Springer.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher edition metadata and contents checked. Uses the fourth-edition copyright year 2020; the publisher lists electronic publication in August 2019. Broad CFD reading reference, including incompressible flow and solution procedures; not a validation claim for all listed applications.
+
+## 原著の出版年順に並べた参考文献 — 2020 · fest2020ausm# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2020-fest2020ausm
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+FEST-3D Team. FEST-3D documented AUSM source. .
+原著の書誌情報 · 全文または実装の参照資料
+Official source documentation generated 10 February 2020. Consulted to cross-check common arithmetic interface sound speed, Mach polynomials, cubic pressure fractions and enthalpy transport. The local independent vectorized implementation does not use FEST-3D output.
+
+## 原著の出版年順に並べた参考文献 — 2020 · saito2020rcip# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2020-saito2020rcip
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Saito, Fuyuki and Obase, Takashi and Abe-Ouchi, Ayako. Implementation of the RCIP scheme and its performance for 1-D age computations in ice-sheet models. Geoscientific Model Development.
+原著の書誌情報 · 全文または実装の参照資料
+Open primary paper inspected. CIP-family value/gradient transport, velocity-gradient terms, and rational reconstruction conventions. The atlas does not implement this RCIP ice-age model or its variable-velocity departure correction.
+
+## 原著の出版年順に並べた参考文献 — 2021 · mignone2021uct# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2021-mignone2021uct
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Mignone, Andrea and Del Zanna, Luca. Systematic construction of upwind constrained transport schemes for MHD. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Public 2020 author manuscript inspected, especially CT-Contact equations 20-22. The local shared-corner update uses contact-upwinded transverse EMF derivatives and verifies the one-dimensional face-flux limit; UCT-HLLD itself is not implemented.
+
+## 原著の出版年順に並べた参考文献 — 2021 · shima2021# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2021-shima2021
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Shima, Nao and Kuya, Yuichi and Tamaki, Yoshiharu and Kawai, Soshi. Preventing spurious pressure oscillations in split convective form discretization for compressible flows. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author-university publication record; published in 2021 despite 2020 in the DOI. Pressure-equilibrium-preserving variants are discussed but are not the original arithmetic-mean flux used here.
+
+## 原著の出版年順に並べた参考文献 — 2022 · deppe2022dgfd# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2022-deppe2022dgfd
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Deppe, Nils and Hébert, François and Kidder, Lawrence E. and Teukolsky, Saul A.. A high-order shock capturing discontinuous Galerkin-finite-difference hybrid method for GRMHD. Classical and Quantum Gravity.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and publication link inspected. Preprint 2021, journal publication 2022, arXiv update 2024. DG candidate updates and a posteriori FD fallback; not the scalar DG implementation in this atlas.
+
+## 原著の出版年順に並べた参考文献 — 2022 · kuya2022keep# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2022-kuya2022keep
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kuya, Yuichi and Kawai, Soshi. Stable and non-dissipative kinetic-energy and entropy preserving (KEEP) schemes for compressible flows. Eleventh International Conference on Computational Fluid Dynamics.
+原著の書誌情報 · 全文または実装の参照資料
+Official conference paper, inspected in full. Section 2.2 Eq. (9) specifies the implemented original Cartesian flux; Section 2.1 explicitly limits exact entropy-conservation claims. Other extensions in the paper are not implemented here.
+
+## 原著の出版年順に並べた参考文献 — 2022 · quokka2022# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2022-quokka2022
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Wibking, Benjamin D. and Krumholz, Mark R.. quokka: a code for two-moment AMR radiation hydrodynamics on GPUs. Monthly Notices of the Royal Astronomical Society.
+原著の書誌情報 · 全文または実装の参照資料
+Section 3.1.5 of the public paper is the reference for the adopted Shu–Osher parameters. The Quokka code itself is not reproduced.
+
+## 原著の出版年順に並べた参考文献 — 2022 · tamaki2022# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2022-tamaki2022
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Tamaki, Yoshiharu and Kuya, Yuichi and Kawai, Soshi. Comprehensive analysis of entropy conservation property of non-dissipative schemes for compressible flows: KEEP scheme redefined. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Author-university record and abstract. Analyzes entropy-error terms and redefined KEEP variants with adjustable expansion order; these variants are not implemented in the original-flux exhibit.
+
+## 原著の出版年順に並べた参考文献 — 2023 · foucart2023neutrino# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2023-foucart2023neutrino
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Foucart, Francois. Neutrino transport in general relativistic neutron star merger simulations. Living Reviews in Computational Astrophysics.
+原著の書誌情報 · 全文または実装の参照資料
+Open author review inspected for leakage, moment, and Monte Carlo transport, including unresolved physical-interaction limits. Review context; no neutrino solver implemented.
+
+## 原著の出版年順に並べた参考文献 — 2024 · asada2024# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2024-asada2024
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Asada, Hiroyuki and Maruyama, Kanako and Kawai, Soshi. Temporal discretization for improving kinetic-energy and entropy preservation properties in KEEP schemes. Computers & Fluids.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record and abstract. Published in 2024 despite 2023 in the DOI. The auxiliary-variable temporal method is not implemented; the exhibit uses classical RK4 with a time-refinement diagnostic.
+
+## 原著の出版年順に並べた参考文献 — 2024 · deppe2024bns# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2024-deppe2024bns
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Deppe, Nils and Foucart, Francois and Bonilla, Marceline S. and others. Binary neutron star mergers using a discontinuous Galerkin-finite difference hybrid method. .
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract inspected. Cited as the June 2024 preprint, updated September 2024; a separate journal record was not verified in this review. Demonstration of DG–FD with dynamical-spacetime mergers, not a simulation reproduced here.
+
+## 原著の出版年順に並べた参考文献 — 2025 · cao2025pcpdg# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2025-cao2025pcpdg
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Cao, Huihui and Peng, Manting and Wu, Kailiang. Robust discontinuous Galerkin methods maintaining physical constraints for general relativistic hydrodynamics. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher abstract, highlights, and record inspected. PCP/OEDG GRHD and primitive recovery under specified formulation/scheme assumptions. Full theorem hypotheses and proofs have not been audited here; no universal positivity or merger-code claim.
+
+## 原著の出版年順に並べた参考文献 — 2025 · fields2025athenak# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2025-fields2025athenak
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Fields, Jacob and Zhu, Hengrui and Radice, David and Stone, James M. and Cook, William and Bernuzzi, Sebastiano and Daszuta, Boris. Performance-Portable Binary Neutron Star Mergers with AthenaK. The Astrophysical Journal Supplement Series.
+原著の書誌情報 · 全文または実装の参照資料
+Author abstract and journal reference checked November 2026. Preprint 2024, journal 2025. Dynamical-spacetime GRMHD, CT, first-order flux correction, and GPU BNS demonstrations; no cross-code speed ranking or local rerun claimed.
+
+## 原著の出版年順に並べた参考文献 — 2025 · kalinani2025asterx# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2025-kalinani2025asterx
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kalinani, Jay V. and Ji, Liwei and Ennoggi, Lorenzo and others. AsterX: a new open-source GPU-accelerated GRMHD code for dynamical spacetimes. Classical and Quantum Gravity.
+原著の書誌情報 · 全文または実装の参照資料
+Author paper and institution metadata inspected. Online December 2024, 2025 journal issue. GPU-oriented Valencia/Z4c framework with CarpetX/AMReX; source infrastructure does not authorize adding AMR to the atlas, which remains deferred.
+
+## 原著の出版年順に並べた参考文献 — 2026 · amrvaclimiters# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-amrvaclimiters
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+MPI-AMRVAC Team. Slope Limiters. .
+原著の書誌情報 · 全文または実装の参照資料
+Official code documentation inspected in November 2026; access year only. Implementation notes on minmod, Superbee, MC, van Leer, van Albada variants, and regularization. The atlas uses an explicitly clipped van Albada form without epsilon smoothing.
+
+## 原著の出版年順に並べた参考文献 — 2026 · clawpacklimiters# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-clawpacklimiters
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Clawpack Development Team. Pyclaw Limiters. .
+原著の書誌情報 · 全文または実装の参照資料
+Official implementation documentation inspected in November 2026; this is an access-year record, not an invention date. Used to distinguish common limiter functions and wave-limiting conventions from the atlas slope reconstruction.
+
+## 原著の出版年順に並べた参考文献 — 2026 · kitajima2026srgsph# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-kitajima2026srgsph
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Kitajima, Kanta and Inutsuka, Shu-ichiro and Seno, Izumi. Special relativistic smoothed particle hydrodynamics based on Riemann solver. Journal of Computational Physics.
+原著の書誌情報 · 全文または実装の参照資料
+Publisher record and author abstract checked 6 November 2026. Journal issue 15 January 2026; preprint October 2025. SRGSPH addresses unequal baryon numbers, variable smoothing lengths, and relativistic shocks/Kelvin–Helmholtz tests. Special relativity only; no SRGSPH implementation or figure reproduction in this atlas.
+
+## 原著の出版年順に並べた参考文献 — 2026 · mitgcm-c-grid# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-mitgcm-c-grid
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+MITgcm contributors. C grid staggering of variables. MITgcm documentation.
+原著の書誌情報 · 全文または実装の参照資料
+Official living documentation checked on 6 November 2026. Year denotes access, not invention. Face-normal three-dimensional placement reference; no assertion that the atlas uses the full MITgcm algorithm.
+
+## 原著の出版年順に並べた参考文献 — 2026 · musolino2026grace# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-musolino2026grace
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Musolino, Carlo and Ecker, Christian and Topolski, Konrad and Cassing, Marie and Miler, Keneth and Ng, Harry Ho-Yin and Pierre, Khalil and Most, Elias R. and Rezzolla, Luciano. Open-source framework for GPU-accelerated numerical relativity. Physical Review D (accepted).
+原著の書誌情報 · 全文または実装の参照資料
+APS accepted-paper page checked 6 November 2026: accepted 2 November 2026, not a verified final volume/page record. July 2026 preprint arXiv:2607.09854 uses the GRACE title prefix. Kokkos, CT, Z4c and merger examples are reported; no local implementation or rerun.
+
+## 原著の出版年順に並べた参考文献 — 2026 · nist-orthogonal# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-nist-orthogonal
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+NIST Digital Library of Mathematical Functions. Classical orthogonal polynomials: definitions, weights and recurrence relations. .
+原著の書誌情報 · 全文または実装の参照資料
+Living mathematical reference, checked November 2026. Sections 18.2, 18.3 and 18.9 consulted for domains, weights, normalization and recurrences; the year denotes this consultation, not the historical origin of Legendre polynomials.
+
+## 原著の出版年順に並べた参考文献 — 2026 · numipediark# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-numipediark
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Ketcheson, David I.. Numipedia: Runge–Kutta method records. .
+原著の書誌情報 · 全文または実装の参照資料
+Author-maintained coefficient and stability records inspected in November 2026; access year, not an invention date. RK44, SSPRK22, and SSPRK43 records cross-check tableaus, scalar polynomials, and absolute-monotonicity radii.
+
+## 原著の出版年順に並べた参考文献 — 2026 · powell2026# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/references/#2026-powell2026
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Powell, Ken. Philip Lawrence Roe, Professor Emeritus of Aerospace Engineering at the University of Michigan, passed away April 26, 2026, at the age of 87. University of Michigan Aerospace Engineering.
+原著の書誌情報 · 全文または実装の参照資料
+Official university memorial published April 29, 2026. A biographical source, not a numerical-method research paper.
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 相対論的流体力学：SRHD、GRHD、GRMHD [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+2026年11月6日確認の文献調査。 アトラスのNewton力学的Eulerライブラリには未実装です。保存的衝撃波捕獲、曲がった・動く幾何、磁場制約、物理状態回復、高次法、放射、可搬並列計算が相互に発展してきました。出版、プレプリント、受理の年を区別する、選定した読書の道案内であり、網羅調査やコードの順位ではありません。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 既存Eulerから何が変わるか# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#what-changes-from-the-existing-euler-examples
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+SRHDは平坦時空の相対論的物質、GRHDは与えた、またはEinstein方程式で進める曲がった計量、GRMHDは電磁寄与も扱います。Kerr背景の降着と動的時空の連星中性子星では、検証する系が異なります。
+c=G=1、計量符号(−,+,+,+)の理想流体方程式は、
+\nabla_\mu(\rho_0 u^\mu)=0,\qquad
+\nabla_\mu T^{\mu\nu}=0,\qquad
+T^{\mu\nu}=\rho_0 h u^\mu u^\nu+p g^{\mu\nu},\qquad
+h=1+\epsilon+\frac{p}{\rho_0}.
+です。rho0は静止質量密度、epsilonは比内部エネルギーです。直交SRHDの代表的な保存状態は、
+W=(1-v^2)^{-1/2},\qquad
+D=\rho_0W,\quad S_i=\rho_0hW^2v_i,\quad
+\tau=\rho_0hW^2-p-D.
+で、既存テストのNewton状態とは異なります。基本変数回復は非線形です。横速度ゼロの1次元音響速度もv±csではなく(v±cs)/(1±v cs)です。3+1 GRではlapse、shift、空間体積因子、計量微分が流束・ソースへ入ります。gammaの値の変更ではなく構造的な変化です。形式の総説はFont（2008）、Valenciaの原典は以下です。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 1972〜1998年：曲がった背景から保存的HRSCへ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#19721998-from-curved-background-flows-to-conservative-hrsc
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Wilson（1972）はKerrブラックホールへの気体落下の初期計算です。歴史的背景であり、固定背景流体が動的Einstein系全体を解くという意味ではありません。
+高解像度衝撃波捕獲（HRSC）は古典CFDの特性・保存法を相対論へ移します。Martí・Müller（1994）の厳密SRリーマン解は初期不連続に垂直な流れを対象とします。横速度のある多次元テストでは範囲が重要で、一般の横流れリーマン解ではありません。
+Banyulsら（1997）は、Valenciaと呼ばれる3+1局所特性形式を示します。保存状態、特性情報、幾何ソースによりGRへ現代的衝撃波捕獲を適用します。中心的な出典ですが、それ以前の全手法が非保存だったという主張ではありません。Ponsら（1998）は局所座標変換でGRHDとSRリーマンソルバーを結びます。局所求解の外では曲率・座標効果を別に扱います。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 1999〜2006年：磁場制約と動的時空# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#19992006-magnetic-constraints-and-dynamical-spacetime
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Komissarov（1999）は磁束保存を持つ多次元Godunov型相対論MHDを開発します。HARM、Gammie–McKinney–Tóth（2003）は保存形GRMHD、HLL、Tóth型CTを組み合わせ、ブラックホールトーラスなどを計算します。原型と後の動的時空の枠組みを区別します。
+Duezら（2005）は、時空にBSSN、物質に保存的衝撃波捕獲を使い、結合Einstein–Maxwell–MHDを進めます。物質と幾何が動的に影響し合うために必要な追加段階です。
+保存変数でも物理状態の回復は必要です。Nobleら（2006）は1・2未知数への縮約を含む非線形回復を比較します。回復失敗、大気の下限、修復を、打切り誤差や保存変数残差と分けて追跡する必要があります。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 2011〜2026年：GSPHからの粒子分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#20112026-the-particle-branch-from-gsph
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Inutsukaの原GSPHから、リーマン問題とAlfvén特性線を使うNewton粒子MHDのIwasaki–Inutsuka（2011）へ進みます。この方法自体は相対論的ではありません。
+Kitajima–Inutsuka–Seno（2026）は**特殊相対論的Godunov SPH（SRGSPH）**を定式化します。畳み込み相互作用、不等バリオン数、可変平滑化長を、衝撃波管・Kelvin–Helmholtz例で扱い、粒子と相対論の分岐を直接つなぎます。プレプリントは2025年10月、掲載号は2026年1月で、DOIの2025表記と異なります。GRHD実装とは呼べません。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 2013年以降：放射と微視的物理による硬い系# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#2013-onward-radiation-and-microphysics-add-stiff-systems
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Sądowskiら（2013）は、半陰的相互作用ソースを持つKORALの共変M1放射モーメントを説明します。相対論流体とアトラスの陰解法・IMEXの計画をつなぎます。M1は角度モーメントの閉包で、放射分布全体を近似なしに解くものではありません。
+中性子星合体についてFoucart（2023）は、leakage、モーメント、Monte Carloニュートリノ輸送と相互作用モデルの限界を総説します。有限温度EOS表、組成、輸送、不確かさはリーマン流束の選択とは別の発展です。理想相対論流体から、因果的な粘性理論が自動的に得られるわけでもありません。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 並行する1979〜2019年の分岐：因果的な粘性流体# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#a-parallel-19792019-branch-causal-viscous-fluid-theory
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Newton流体の粘性応力を、因果性・初期値問題を調べずに相対論Eulerへ入れることはできません。Israel–Stewart（1979）は追加緩和変数を持つ過渡散逸理論の中心的出典です。
+Bemfica–Disconzi–Noronha（2019）とKovtun（2019）は別の系譜で、適切な1階勾配の構成選択と流体フレームが、条件付きで因果的・安定な形式を可能にします。前者は追加拡張変数なしの非線形因果性、後者は安定な1階フレームを扱います。任意EOS・輸送に対する無条件の主張へ合体させてはいけません。物理因果性、PDEの適切性、離散刻みの安定性は別の検査です。理論・読書の背景で、粘性相対論ソルバーは未実装です。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 2022〜2025年：衝撃波・表面・物理制約を伴う高次法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#20222025-high-order-with-shocks-surfaces-and-physical-constraints
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Deppeら（2022）は、高次DG更新を試し、不適切な領域を頑健な差分で再計算するDG–FD混合法です。2021年プレプリントと2022年出版を区別します。連星中性子星研究の2024年プレプリントは、動的時空・合体へ拡張します。後者はプレプリントとして引用し、別の学術誌記録は本調査では未確認です。
+Cao–Peng–Wu（2025）は、GRHDの物理制約保存・振動除去DGを研究し、方式の仮定下で正の熱力学状態と光速未満の速度を扱います。任意の制限関数、流束、EOS、時空離散化への保証ではありません。選んだGRHD形式の定理と、天体合体コードの実演は別の根拠です。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — 2025〜2026年：結合系の可搬GPU計算# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#20252026-portable-gpu-computation-of-the-coupled-system
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+AthenaK、Fieldsら（2025）はGPU上の動的時空GRMHDと連星中性子星合体を実演し、CTと1次流束補正などを使います。プレプリントは2024年、学術誌はApJS 276、35（2025）です。AsterX、Kalinaniらの2025年掲載号も公開GPU向けGRMHDで、ValenciaとZ4cに基づきます。オンライン出版は2024年12月です。細分化基盤は原コードの一部で、このアトラスのAMRは引き続き保留です。
+GRACE、Musolinoらは、11月6日確認時点で2026年11月2日にPhysical Review Dで受理されています。2026年7月プレプリントはKokkos可搬性、CT、Z4c結合、中性子星合体を説明します。受理は最終巻・ページの確認ではありません。これらは可搬実装の例であり、異なるハードウェア・物理間の普遍的な速度・精度順位ではありません。
+
+## 相対論的流体力学：SRHD、GRHD、GRMHD — アトラスで段階的に再現できること# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/relativistic-hydrodynamics/#what-the-atlas-can-reproduce-in-stages
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+以下は実装案で、本調査の計算結果ではありません。
+SRHD：基本・保存変数の往復、特性速度、滑らかな波、衝撃波管、反射、横速度例。EOSの有効性、正密度・正圧、光速未満を確認します。
+SRMHD：相対論Alfvén波、磁場衝撃波管、ローターを加え、磁場発散演算子と全修復・下限を明示します。
+固定計量GR：計量対応の平坦極限、Michel／Bondi降着、平衡星、トーラスを、幾何ソースの釣合いとともに確認します。
+動的GR：独立検証した時空発展を結合し、合体の前にEinstein制約、バリオン保存、星の振動、波形収束を測ります。
+放射またはSRGSPH：状態、境界、保存、輸送閉包、参照テストを各分岐で明示します。Newton例は比較に使い、相対論ソルバーが既にある根拠にはしません。
+進歩はこれらの層の組合せから生まれます。新しい高次再構成や大きなGPU計算だけでは、基本変数回復、表面・大気処理、制約誤差、微視的物理の不確かさは解消しません。
+
+## v0.1.0 初版 — v0.1.0 初版 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/release-notes-v0.1.0/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+初版The Art of Numerical Algorithmsは、歴史的な論文を、方程式、実行可能な教育用実装、テスト図、数値検証へ結び付けました。
+
+## v0.1.0 初版 — 収録内容# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/release-notes-v0.1.0/#included
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+保存則、安定性、拡散、境界、反復、DG、スペクトル、MHDを扱う英語の歴史アトラスと計算法ノート。
+Euler、浅水、等温、線形移流、拡散、Poisson、平面理想MHDのPythonライブラリとCLI。
+Godunov型・MUSCL有限体積、Rusanov／HLL／HLLE／HLLC／Roe、差分WENO5-JS、モードDG、Fourier伝播。
+Thomas消去、行列不要の共役勾配、赤黒緩和、幾何マルチグリッド。
+最小の二重時間、行列スケーリング、スカラー残差分配の例。
+発散診断を区別したCT・GLMの磁場制約実演。
+英語出典注記付き39項目の文献、生成Markdown・BibTeX、今後のNASA2次元問題集。
+Python3.9・3.12の自動数値検査とギャラリー生成。
+
+## v0.1.0 初版 — インストールと実行# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/release-notes-v0.1.0/#install-and-run
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Python3.9以降が必要です。リポジトリのルートで実行します。
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install '.[test]'
+python -m pytest -q
+python -m numart.cli gallery --output outputs/gallery
+読書ガイドとテスト問題の定義から始めてください。
+
+## v0.1.0 初版 — 初版の範囲# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/release-notes-v0.1.0/#scope-of-this-edition
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+独立した教育用モデルで、図は原論文図の再現を主張しません。選定した設定の検証であり、一般的な非線形安定性や正値性を証明するものではありません。有限体積・差分の誤差は点値比較と明示し、CT／GLMは発散演算子名を示します。
+NASA流れ、多次元Euler回転ハイブリッド、低Mach PDE前処理、Euler／MHD DG、多次元残差分配は今後の課題です。ロードマップと、原典の未確認事項を記した参考文献を参照してください。
+
+## 実装ロードマップ — 現在の最優先：衝撃波手法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#current-priority-shock-methods
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+相対論・新分野より、衝撃波手法の拡充を優先します。最初の公開段階として制限付き放物線FV・特性変数・WENO-Z・AUSM基準例、数値反例を含むRoeのProperty U、管理した平面odd–even診断を追加しました。第2段階では、急峻化・平坦化を独立に切り替える直接Euler型波追跡PPM、定義を明示したAUSM+／AUSM+-up、方向分解HLLE/Roe実験を含む物体適合格子の円柱前半部を追加しました。強圧力差でのAUSM+停止、有限時刻の弓形衝撃波、未解決の検証を明示します。Lagrange/remap、原型Rotated-RHLLの最適化、幅広い強度・回転条件、外部コード比較は今後です。
+
+## 実装ロードマップ — 初版：実行可能な基礎# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#first-edition-executable-foundations
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+v0.1.0は教育用Pythonライブラリ、歴史アトラス、英語解説、文献カタログ、比較図、自動数値検査をまとめています。リポジトリが初版配布物で、READMEのガイドが資料をつなぎます。
+NASA問題集には計算済みの15°楔の基準例と未実装候補が含まれます。別の物体適合格子の前面診断に方向分解ハイブリッドを追加しました。カタログへの収録だけでは、引き続き実装済みを意味しません。
+
+## 実装ロードマップ — 次の検証# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#next-verification-work
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+計算記録と保存配列を強く結び、格子・時間細分化と実行時間を併記します。
+有限体積セル平均の初期化・積分参照、特性WENO、正値制限、強い衝撃波テストを加えます。
+浅水・等温Riemann参照解を追加しました。地形、静水平衡保存、数値的な乾床の発展は別段階で扱います。
+新しいHLLD標準テストを、UCT-HLLD・強磁場問題・外部参照コード比較へ広げます。
+非線形Fourierとエイリアシング除去、制限付きEuler DG、多次元残差分配を調べます。
+低Mach PDE前処理を実装し、方向分解2次元Eulerハイブリッドを前面テスト以外へ広げます。エントロピー修正、正値性、カーバンクルを別々に確認します。
+楕円解法を変係数、異方性、線緩和、FAS、AMG、2次元混合境界へ拡張します。
+
+## 実装ロードマップ — NASA問題の推奨順序# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#suggested-order-for-nasa-cases
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+楔・膨張で2次元Euler流束と壁境界を検証し、キャビティ・Blasiusで粘性・圧力・境界を整え、円柱で非定常精度を調べます。RANSでは平板・バンプでモデル実装を確認してから、翼型、ステップ、ディフューザー、ハンプへ進みます。依存関係と難しさに沿う順序で、出版年順の歴史を補います。
+
+## 実装ロードマップ — 衝撃波ギャラリー：NASA楔と前向きステップ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#shock-gallery-nasa-wedges-and-a-forward-facing-step
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+NASAの15°楔、Mach 2.0／2.5を、独立した物体適合1次HLL・SSPRK2有限体積法で計算し、2格子と斜め衝撃波の参照を追加しました。古典的Mach 3前向きステップは240 × 80の障害物セル格子でt=4まで計算し、81保存状態とMP4を追加して動画は合計5本になりました。ステップ角は通常の反射境界で、元のPPM比較のエントロピー・エンタルピー再設定は使いません。教育用の非粘性基準例であり、Wind-US出力や粘性実験の妥当性確認ではありません。設定と限界を参照してください。Mach 5衝撃波・境界層干渉、Mach 7粘性ランプ、既存の遷音速ディフューザー・翼型は実装候補です。
+
+## 実装ロードマップ — Web版# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#web-edition
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Web版は、初版を歴史アトラス、解説、計算図、文献検索に整理します。各展示が文献・方程式・実行・図・検証範囲をつなぎます。
+ホームのSod比較はPython計算済みMUSCL密度4曲線を切り替えます。図と初期ギャラリー検証記録も完全なソース版とともに公開します。今後も、検証した教育例、原論文図の再現、試作、文献のみ、計画を区別します。
+
+## 実装ロードマップ — 第1拡張：インタラクティブ数値ノート# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#first-expansion-interactive-numerical-notebooks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+安定性実験室はブラウザーで周期FTCS・風上・古典LF・LWを計算し、両速度方向、Fourier増幅、点値誤差、データ保存を提供します。Python24参照ケースと数値カーネルを比較しています。
+収束ノートは既存DG・Eulerエントロピー波の測定値、実測傾き、スカラー未知数を調べられます。新しい実行時間順位や一般的非線形安定性は主張しません。実験ガイドに定義と来歴があります。
+
+## 実装ロードマップ — 第2拡張：幾何、時間、多次元衝撃波# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#second-expansion-geometry-time-and-multidimensional-shocks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+スカラーODE積分器7種と時間ノート、格子接続3例とエクスプローラー、1次元SPH再構成、1次元ALE幾何保存、円筒勾配・Newton応力・応力発散の解析検証を追加しました。座標・粘性の章は物理成分と座標基底を区別します。
+二重Mach反射は1次HLL・SSPRK2でMach10干渉を実際に計算します。高次再構成、完全格子収束、細い壁面ジェットは今後で、NASA楔の基準例は後に追加しましたが、カタログの粘性・乱流問題は未実装です。平面診断を超える鈍頭物体カーバンクル比較、完全SPH、非構造流束、完全ALE Eulerも今後です。Roe追悼は大学の公式記録に基づきます。
+
+## 実装ロードマップ — 第3拡張：Hamilton写像と粒子重力# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#third-expansion-hamiltonian-maps-and-particle-gravity
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+調和・4次振動子の固定刻み正準写像とノート、周期3次元CIC／FFT PM、単極・全2次モーメントの孤立軟化八分木、孤立倍格子畳み込み、標本・連続スラブGreen変換を追加しました。図には専用ソース記録があります。P³M補正、結合TreePM、FMM移動、宇宙膨張、せん断周期再配置、重力結合SPH流体積分は今後の課題です。
+
+## 実装ロードマップ — 第4拡張：非定常動画と滑らかなKEEP# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#fourth-expansion-nonsteady-movies-and-smooth-keep
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+計算刻みを変えない保存状態、フレーム検査・MP4付き4動画、原型2次直交KEEPと滑らかな渦の収束を追加しました。定常場は静止図です。KEEPは衝撃波安定化、後のPEP・再定義、高次曲線形、3次元TGV／LESを含みません。
+
+## 実装ロードマップ — 第5拡張：勾配制限、RK族、CIP# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#fifth-expansion-limiters-rk-families-and-cip
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+MUSCL勾配の選択、TVB修正minmodと正値再構成、非線形段階検証付き9陽的RK係数表、12振動子手法、保存性反例付き原型3次Hermite CIPを追加しました。Euler時間更新全体の正値性は別の拡張です。
+
+## 実装ロードマップ — 第6拡張：方程式、疎行列、運動論輸送# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#sixth-expansion-equations-sparse-systems-and-kinetic-transport
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Burgers・LWR交通流を含む7系統9ケースの保存分布を追加しました。スカラー厳密セル平均と、Euler・浅水・等温の半解析Riemann参照解の保存変数セル平均を区別します。参照解ライブラリには、真空・乾床の膨張波、粘性速度分布、Poisson製造解を含む18ケースを追加しました。
+連続P1 FEM、疎行列・非線形解法、硬いODE、周期MAC射影、D2Q9–BGK、1次双曲型拡散に専用検査・図・ソースハッシュがあります。Chapman–Enskog展開は測定したせん断粘性へつなぐ形式導出です。これらの教育用実装は新しいアトラスで公開済みです。各章に実装範囲と残る検証を示しています。
+
+## 実装ロードマップ — 承認済みの次の作業# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#authorized-next-work
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+追加済み — RoeのProperty U：原典の4条件、パラメータベクトルの導出、ジャンプ・整合性・固有基底の検査、膨張不連続の反例。解説を参照。
+InutsukaのGSPH：Gaussian畳み込み、比体積再構成、向き付き粒子対リーマン状態、整合保存エネルギー更新を、可変平滑化長の前に滑らか・接触・衝撃波管で検証します。Iwasaki–InutsukaのGSPMHDは後の独立段階です。出典と計画。
+相対論流体：SRHD回復・特性を先に検査し、SRMHD、固定計量GR、独立検証Einstein物質結合へ進みます。放射とSRGSPHは別の分岐です。2026年11月確認の調査。
+第1段階を追加：制限付き放物線FV、保存特性変数、FD WENO-ZのSod・接触面・Shu–Osher比較。直接Euler型の波追跡・急峻化・平坦化は第2段階に追加しました。Lagrange/remapは別課題です。
+従来のAUSM共通音速基準例を維持し、第2段階に定義を明示したAUSM+／AUSM+-up、波追跡PPM条件を揃えた比較、許容状態を保てない停止例を追加しました。
+Web実装済み：HLLD、Brio–Wu、Alfvén波の格子細分化、弱い磁場ループのCT-Contact／GLM比較。MHDテストを参照。
+予定 — 電磁場のFDTD（時間領域有限差分法）：Yee格子の変数配置、leapfrogによるMaxwell方程式の更新、CFL制限、数値分散。真空中の波と導体空洞のテストから始め、吸収境界・PMLの反射検査へ進みます。実装と専用の検証は未完了です。
+予定 — プラズマPIC（Particle-in-Cell法）：静電的な粒子–Poisson連成から、電磁的な粒子–Maxwell連成へ進みます。粒子形状、格子への割当てと場の補間、Boris法、電荷保存電流割当て、Gauss則の診断を扱います。プラズマ振動、two-stream不安定性、Landau減衰を検証候補とし、エネルギー・ノイズ・格子／時間／粒子数依存性を確認します。既存の重力PM例とは適用範囲を分けます。WarpXのPIC理論ノートを出発点とし、プラズマPICソルバーは現時点では未実装です。
+硬い積分：BE／BDF2／SDIRK2／IMEX Eulerを超える高次IMEX、埋込みDIRK、可変BDF、演算子分割。
+疎行列・非線形：固定右GMRES／BiCGSTAB・ILU(0)を超える行列不要Newton–Krylov、頑健な並べ替え・フィル、可変前処理、広い非線形テスト。
+粘性・非圧縮：周期Taylor–Greenを超える壁射影、SIMPLE／PISO、キャビティ・円柱後流の妥当性確認。
+FEM：速度・圧力混合対、inf–sup、曲線・不規則格子、自然・混合境界組立て。
+LBM：低Mach等温D2Q9–BGKを超えるMRT／TRT／キュムラント、熱的・多相モデル。
+双曲型拡散：周期1次基準を超える完全2次RD、異方性、移流・粘性の統一系。
+著者の要望によりAMRは保留で、今回の拡張に含みません。
+
+## 実装ロードマップ — 生物・地球流体の調査追加# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#biological-and-geophysical-survey-additions
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+生物カタログは22系統を文献のみで整理し、方程式、出典規約、検証案を含みます。実装順はロジスティック／SIR・酵素反応からFisher前線、FitzHugh–Nagumo、Schnakenberg、Keller–Segelへ進め、出生・死亡SSAを独立した確率分岐とします。生物ソルバーや生物の妥当性確認は追加していません。
+Arakawa A／B／Cは配置図と検証済み半離散f平面記号を持ちます。D／E、鉛直配置、非線形渦位、Kelvin／Rossby、海岸は追加課題で、完全な地球流体コアではありません。
+
+## 実装ロードマップ — 機械学習に関連する数値計算の改訂候補# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#planned-machine-learning-numerics
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+状態：改訂候補。以下の専用解説・実装・検証はまだ追加していません。 第1巻の共通基盤につながる安定な関数評価、自動微分、最適化を先に扱い、科学技術機械学習の応用は後続の候補とします。予定項目を実装済み手法数には加えず、公開時期も未定です。
+混合精度演算・低精度GPU計算の設計は、今回のスコープから外します。通常の浮動小数点の丸め誤差と、安定な関数評価は共通基礎として扱います。
+ softmaxとlog-sum-exp：最大値を引くシフト、log-softmax、指数関数のオーバーフローとアンダーフロー。大きな入力、定数シフトに対する不変性、確率和、微分の整合性を検証候補とします。SciPyのsoftmax解説を参照します。
+ 交差エントロピーと安定な損失評価：確率を経由せずlogitsから計算する方法、log-sum-expとの関係、sigmoidと二値交差エントロピー。極端な入力での有限値と解析的な勾配を確認します。PyTorchの交差エントロピー解説を出発点とします。
+ 自動微分・逆伝播：前進／逆モード、連鎖律、Jacobian–vector積（JVP）、vector–Jacobian積（VJP）、Hessian–vector積。記号微分・有限差分との違い、丸め誤差、非微分点、保存する中間値とメモリの関係を扱います。JAXの自動微分解説を参照し、解析微分・方向微分との比較を計画します。
+ 陰関数微分・随伴法と微分可能なソルバー：線形求解、収束した非線形系、時間発展を通した感度計算。反復を展開して微分する方法と、方程式から微分する方法を区別し、Jacobianの可逆性、求解許容誤差、勾配検査を明記します。陰関数微分の原論文を調査の入口とします。
+ 機械学習向け最適化：勾配降下・SGD、momentum、Adam、L-BFGS、Gauss–Newton／Levenberg–Marquardt。既存のNewtonによる方程式求解と目的関数の最小化を区別し、尺度・条件数、学習率、勾配ノルムを比較します。すべての目的関数に対する収束保証や優劣は主張しません。
+ 応用候補 — PINNsと逆問題：PDE残差、初期・境界条件、観測データの損失を分け、通常の差分・FEMと同じ誤差指標で比較します。学習損失の低下だけをPDE解の精度保証とはしません。PINNsの著者解説と失敗モードの研究を参照します。
+ 応用候補 — Neural Operator／Fourier Neural Operator：入力関数から解関数への写像を学習する考え方を、既存のFourier基底・スペクトル法と接続します。学習分布外、格子変更、離散化・aliasing誤差を独立に確認する計画とし、格子を変更できることだけで精度を保証しません。Neural Operator原論文を参照します。
+ 応用候補 — 記号回帰と方程式発見：データや学習モデルから明示的な数式を探す方法。微分の自動計算と区別し、ノイズ、次元・対称性、式の複雑さ、別データでの再現性を評価します。深層学習から記号モデルを抽出する研究を調査候補とします。
+
+## 実装ロードマップ — 量子化学・DFTの開発予定# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#planned-quantum-chemistry-and-dft
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+状態：予定。実装と専用の文献調査は未着手で、公開時期は未定です。 電子状態計算を独立した分岐として、次の開発リストに記録します。予定項目を現在の実装済み手法数や方程式数には加えません。
+ Schrödinger固有値問題：調和振動子、水素型原子の動径問題などの1電子モデルから開始。有限差分・有限要素・スペクトル離散化を比較し、境界・領域打切り・解像度の誤差を分けて記録します。
+ 電子状態計算の基底：原子軌道、Gaussian・Slater関数、平面波、実空間格子。重なり行列と一般化固有値問題を含めます。既存の要素基底ノートと接続し、メッシュ内の多項式基底と分子軌道用の基底集合を区別します。
+ Coulomb・Hartreeポテンシャル：電子の電荷密度とPoisson解法を接続。静電単位系、電荷の符号、孤立・周期境界、ゼロモード、自己相互作用の規約を明記し、重力の符号や規格化をそのまま流用しません。
+ Hartree–Fock：小さな閉殻分子を対象に、行列組立て・一般化固有値解法・自己無撞着場（SCF）反復を実装。必要な積分計算を検証してからエネルギーを提示します。
+ Kohn–Sham密度汎関数法（DFT）：密度・有効ポテンシャル・交換相関近似を解説。使用するLDAモデルを明示して開始し、GGA以降は個別に検証します。
+ SCF反復と混合：減衰、密度・ポテンシャル混合、Pulay／DIIS加速を比較。電子数、固有値問題とSCFの残差、エネルギー変化、未収束を報告します。
+ 検証例：1電子の参照解、小さな原子・分子を使い、基底・格子の細分化と独立した参照コードで確認。離散化誤差、SCF許容誤差、物理モデルの差を分けます。
+最初の到達点は、検証済みの1電子固有値ソルバー、最小基底のHartree–Fock例、適用範囲を明示したKohn–Sham DFT例の順です。周期物質、擬ポテンシャル、スピン依存の拡張、post-Hartree–Fock相関は後続の独立課題とし、初期実装の完成範囲には含めません。この予定の追加で上記の流体計算法の優先順位は変えず、AMRも引き続き保留します。
+今後の編集は、同じ方程式を複数の検証済み離散化、コスト・誤差、明示した失敗へ結び付けることを優先し、調査・試作・検証済みモデルの表示を維持します。
+
+## 実装ロードマップ — 検証付きEuler・MHD比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#verified-euler-and-mhd-comparisons
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+2次元基本変数MUSCLのminmod／MC、厳密セル平均の滑らかな解の細分化、NASA楔の2格子での1次・2次再構成比較、前向きステップの3再構成動画を追加しました。比較ページではHLL／SSPRK2を固定し、診断値を表示します。完全な3成分のHLLD、Brio–Wu、4格子の円偏波Alfvén波、2格子の弱い磁場ループでのHLLE／HLLD × CT-Contact／GLMを追加しました。MHDページにはソース・成果物ハッシュ、保存変数配列、正値性・再試行・切替診断と日英の適用範囲があります。合意したWebの3段階を完了し、書籍は後回しです。
+
+## 実装ロードマップ — 同一Poisson系のソルバー比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roadmap/#same-system-poisson-solvers
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+比較ノートに、Jacobi・重み付きJacobi・赤黒GS／SOR・CG・V-cycle・FFT／DST・分離DST＋Thomasを追加しました。同じ残差停止条件、2つの広帯域問題、単一固有モード診断、3回の時間計測と1次元Thomas表を備えます。定義と限界を参照してください。
+
+## Philip L. Roeを偲んで — Philip L. Roeを偲んで [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roe-memorial/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Philip Lawrence Roeは2026年4月26日、87歳で逝去しました。Michigan大学のKen Powellによる追悼は、航空宇宙、数値計算法、教育、数値流体の共同体への貢献を記しています。
+このアトラスは、方程式の波構造を保ちながら実用的な計算をどう実現するか、という中心的な問いを通してRoeを偲びます。
+
+## Philip L. Roeを偲んで — 数値流体力学における歩み# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roe-memorial/#a-career-in-computational-fluid-dynamics
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+1962〜1984年にRoyal Aircraft Establishmentで勤務し、Cranfield教授を経て1990年にMichigan大学へ移り、2021年に退職しました。大学の公式退職記録はこの経歴と2015年AIAA Fluid Dynamics Awardを記します。追悼にはBram van Leer、Ken PowellとKeck CFD研究室を設立した役割もあります。
+
+## Philip L. Roeを偲んで — 今も実行できる1981年の考え方# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roe-memorial/#the-1981-idea-still-executable
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Approximate Riemann solvers, parameter vectors, and difference schemesで、非線形界面問題を注意深く構成した線形化系へ置き換える方法を発展させました。定義的条件のひとつは、
+\widetilde A(U_L,U_R)(U_R-U_L)=F(U_R)-F(U_L).
+です。整合性と利用可能な特性分解によって、保存的流束差を認識できる波へつなぎます。Sod比較とホームの選択画面で、教育用1次元Euler実装をHLL、HLLC、Rusanovと比べられます。
+本コードは音響エントロピー平滑化を使う独立した教育用実装で、Roeの元ソフトウェアではありません。彼の名が示す研究は、この展示ひとつよりはるかに広いものです。
+
+## Philip L. Roeを偲んで — 敬意としての正確さ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/roe-memorial/#precision-as-a-form-of-respect
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+近似ソルバーを有用にする波解像度は、エントロピー、低密度、多次元衝撃波への精密な問いを促します。カーバンクルの章は別々の数値課題として後の研究へつなぎます。限界を学ぶことも貢献の理解の一部です。
+後の関心にはActive Fluxがあり、Michigan MICDEの紹介が大学の出発点になります。ここでは読書の方向で、実装済みではありません。
+原典を読み、方程式を確かめ、計算を検証し続けるための招きとして、この解説のRoeノートをその記憶へ捧げます。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — Runge–Kutta法：段数、次数、安定性、SSP [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+RK2・RK4は次数、SSPは安定性の継承を表し、異なる問いに答えます。RK系譜ノートでは、9つの陽解法の全段階係数、非線形予測値、線形安定領域、実測収束次数を比べます。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — 1ステップと複数の右辺評価# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#one-step-several-right-hand-side-evaluations
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+y′=f(t,y)の陽的s段RK法は、
+Y_i=y_n+h\sum_{j<i}a_{ij}k_j,\qquad
+k_i=f(t_n+c_i h,Y_i),\qquad
+y_{n+1}=y_n+h\sum_{i=1}^s b_i k_i,
+\qquad c_i=\sum_{j<i}a_{ij}.
+です。Butcher表はc、A、bを係数図にまとめます。段数sは本実装の右辺評価回数です。次数pは、必要な滑らかさ・安定性・固定区間の仮定で大域誤差O(h^p)を意味します。段階予測値Y_iは一般に途中時刻の高精度解ではありません。段階時刻は逆戻りする場合があり、SSPRK(4,3)はc=(0,1/2,1,1/2)で評価します。時間依存外力・境界値には、次の時刻順の割合ではなく正しいc_iを使います。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — RK2はひとつの族# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#rk2-is-a-family
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+2段・2次の族を、
+k_1=f(t_n,y_n),\quad
+k_2=f(t_n+\alpha h,y_n+\alpha h k_1),\quad
+y_{n+1}=y_n+h\left[\left(1-\frac1{2\alpha}\right)k_1+
+\frac1{2\alpha}k_2\right].
+と書けます。Heun／陽的台形則はalpha=1、陽的中点は1/2、Ralstonは2/3です。HeunはSSPRK(2,2)でもあります。ここでの完全な非線形法のSSP係数は、それぞれ1、0、1/2で、全Butcher表の絶対単調性不等式から確認します。
+3法ともスカラー線形安定性多項式は、
+R(z)=1+z+\tfrac12 z^2,\qquad z=h\lambda.
+です。そのため、厳密算術ではy′=lambda yの軌道は同じですが、非線形段階や誤差は一致するとは限りません。ノートでは厳密解1/(1+t)を持つy′=−y²、y(0)=1も計算し、振動子だけでは見分けられない違いを示します。ひとつの問題から普遍的に最良のRK2は決められません。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — RK3、古典的RK4、SSPの段数# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#rk3-classical-rk4-and-ssp-stage-counts
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+実装した3次群は、Kuttaの古典的3段、SSPRK(3,3)、SSPRK(4,3)です。前二者はR(z)=1+z+z²/2+z³/6を共有しますが、非線形SSP係数は0と1です。SSPRK(4,3)は4回目の右辺評価を使い、C=2、追加項z⁴/48を持ちます。4段だから4次になるわけではありません。
+古典的4段RK4の重みは(1/6,1/3,1/3,1/6)です。安定性多項式はz⁴/24を加え、4次精度です。一般の非線形SSP係数はゼロです。すべてのRK4計算が振動するのではなく、一般的な前進EulerからのSSP継承保証が使えないという意味です。NumipediaのRK4記録に係数表とスカラー安定性があります。
+比較用にSpiteri–Ruuthの5段4次SSP法SSPRK(5,4)も実装します。全係数はGottlieb–Ketcheson–Shu総説第3.1節です。小数Shu–Osher形式をButcher表へ変換し、y_nからの増分で表現することで丸めたアフィン重みのずれを避けます。厳密有理係数とはせず、控えめな丸め限界C=1.508を使い、与えた精度で次数条件と非線形収束を検査します。
+一般の非線形SSP係数が正の標準陽的RK法では次数は最大4です。4段4次の陽解法はC>0を持てないため、4次SSPには追加段が必要です。SSPRK(5,4)は一例で、すべての5段4次法がSSPなのではありません。Spiteri–Ruuth（2002）、Gottlieb–Ketcheson–Shu（2009）。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — SSPが保存するもの# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#what-ssp-preserves
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+特定の半離散空間演算子Lが、h≤h_FEで前進Eulerに対して凸安定性を満たすとします。係数CのSSP法は、
+h\le C h_{\rm FE}.
+でそれを継承します。前提は全変動、ノルム、許容凸集合などですが、実際の演算子と段階処理が条件を満たす必要があります。SSPはTVD空間離散化を生み出したり、不適切な境界を直したり、欠けたEuler正値状態を補ったりはしません。Gottlieb–Shu–Tadmor（2001）の総説がこの視点を説明します。勾配制限と正値再構成の別の要件と比較してください。
+表記は**SSPRK(s,p)**で、先が段数、後が次数です。初版ではHeun／SSPRK(2,2)はC=1、SSPRK(3,3)は1、SSPRK(4,3)は2、SSPRK(5,4)は丸め限界1.508です。右辺評価あたりのSSP刻み限界C/sは参考になりますが、実行時間の順位ではありません。メモリー転送、記憶量、空間精度、他の安定制約が実際のコストを左右します。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — 線形安定性は別の図# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#linear-stability-is-a-separate-picture
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+y′=lambda yでは、1ステップの倍率は、
+R(z)=1+z\,b^T(I-zA)^{-1}{\bf1}.
+です。|R(z)|≤1がスカラー絶対安定領域です。Re(z)∈[−6,2]、Im(z)∈[−4,4]の401×401格子で境界を標本化し、曲線は近似等高線であって厳密な境界位置ではありません。正規な線形空間演算子なら固有値からRの評価位置を考えられますが、非正規演算子の一時的増大は固有値だけでは見落とします。
+無減衰振動子でRK2には虚軸上のゼロでない安定区間がなく、SSPRK(3,3)と古典的RK4にはあります。これはスカラー線形問題の性質で、前進Euler自身もこの振動子でゼロでない安定刻みを持たないため、HeunのSSP性とは矛盾しません。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — 時間積分の他の分岐# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#other-branches-of-the-time-integration-family
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Dormand–Prince 5(4)などの埋込みRK対は、2つの次数で誤差と刻みを推定します。この括弧は埋込み次数で、SSPRK(s,p)の段数・次数とは違います。初版では埋込み誤差推定、適応制御、連続出力、FSAL最適化は実行しません。
+低記憶RKは段階計算を組み替えて配列を減らしますが、自動的にSSPにはなりません。陰的RKには中点、Gauss／Radau／SDIRKなどがあり、非線形求解と独自の安定性を持ちます。IMEX対は陽的・陰的演算子を分けます。既存のスカラー線形後退Euler・陰的中点の実演を除き、ここでは読書の背景です。下の汎用rk_stepは9つの陽的Butcher表だけに対応します。leapfrogは多段階漸化式、力学Verletとシンプレクティック写像はさらに別の分岐です。
+
+## Runge–Kutta法：段数、次数、安定性、SSP — 再現と検証# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/runge-kutta/#reproduction-and-verification
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+from numart.runge_kutta import rk_step, nonlinear_trajectory
+value, stages = rk_step(lambda t, y: -y*y, 0., 1., 0.5,
+ method="ssprk43", return_stages=True)
+t, y = nonlinear_trajectory("ssprk54", steps=40)
+python scripts/build_runge_kutta.py
+python scripts/sync_web_content.py
+JSONには全係数表、等高線、27個の1ステップ段階例（h=0.25、0.5、1）、9つの細分化（N=10、20、40、80、T=1）、ソースハッシュを記録します。誤差は厳密な非線形解を使い、段階は実際の右辺評価です。テストでは4次までの全次数条件、非線形製造時間依存方程式、複素線形安定係数、指定Cでの全係数表SSP不等式、継承した刻み制約でのスカラーMUSCL保存／TVDを確認します。既存Euler／WENOがRK選択可能や完全正値性保存になるわけではありません。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 波追跡PPM、AUSM系と曲面前方の衝撃波 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+新しい計算比較を開く。直接Euler型の特性波追跡PPM更新、定義を明示したAUSM+・AUSM+-up流束、円柱の前半部の診断を追加しました。以前のmethod of linesによる再構成と平面衝撃波のodd–even実験は、従来のデータと適用範囲を維持します。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 直接Euler型PPMと独立したスイッチ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#direct-eulerian-ppm-and-independent-switches
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+numart.ppm_tracedは保存変数セル平均から密度・速度・圧力の基本変数を再構成します。MC制限した放物線補間、任意の密度接触面急峻化、衝撃波平坦化、成分ごとの放物線単調性制約を使います。セル平均保存量は共有面流束で更新します。平均保存変数から作る基本変数分布は2次精度の表現であり、基本変数の厳密な平均ではありません。
+セル内座標xi∈[0,1]では、各成分の分布は次式です。
+q(\xi)=q_L+\xi[\Delta q+q_6(1-\xi)],\qquad
+\Delta q=q_R-q_L,\qquad q_6=6q_i-3(q_L+q_R).
+各端から幅sigmaの領域にわたる平均を取ります。
+I_R(\sigma)=q_R-\frac{\sigma}{2}\left[\Delta q-\left(1-\frac{2\sigma}{3}\right)q_6\right],\qquad
+I_L(\sigma)=q_L+\frac{\sigma}{2}\left[\Delta q+\left(1-\frac{2\sigma}{3}\right)q_6\right].
+特性速度はu−c、u、u+cです。面に到達する各波族にsigma=|lambda| dt/dxを使います。最速の到達波の領域平均を出発点として、セル状態に固定した基本変数の固有ベクトルを使い、他の到達波成分を補正します。これらは1回の保存更新に用いる時間平均Riemann入力です。この予測の外側にさらにSSPRK3を適用すると別の方法になります。既定値はHLLCとCFL 0.4です。
+確認したColella–Woodward著者プレプリントの直接Euler型特性領域の考え方に従い、1984年論文を原典とします。Cholla著者原稿の付録Aも手順の照合に使いました。独立した実装であり、全プロダクションコードの選択肢、多次元CTU、人工粘性、Lagrange発展、remapを再現するものではありません。Cholla付録に表示された一部の符号・添字は、説明されている隣接セル構成と整合しないため、ここに示す式と実行検証で本変種を定義します。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 接触面急峻化と衝撃波平坦化# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#contact-steepening-and-shock-flattening
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+急峻化は密度の端値だけを変えます。D2_i=(rho_(i+1)−2rho_i+rho_(i−1))/6とし、D2_(i−1) D2_(i+1)<0、相対密度差が0.01より大きいこと、相対圧力差が相対密度差の0.1 gamma倍より小さいことを要求します。そのとき、
+\widetilde\eta_i=-\frac{D^2_{i+1}-D^2_{i-1}}{\rho_{i+1}-\rho_{i-1}},\qquad
+\eta_i=\operatorname{clip}\!\left(20(\widetilde\eta_i-0.05),0,1\right).
+左端をrho_(i−1)+delta_rho_(i−1)/2、右端をrho_(i+1)−delta_rho_(i+1)/2に近づけます。delta_rhoは隣接セルのMC制限勾配です。接触面の拡散を抑えますが、解像されていない滑らかな密度遷移も急にする場合があります。普遍的な精度改善とは扱いません。
+平坦化はS_i=(p_(i+1)−p_(i−1))/(p_(i+2)−p_(i−2))を使います。予備係数clip(10(S_i−0.75),0,1)は、相対圧力差が1/3以上で、速度差が圧縮的な場所だけで有効にします。対象セルと低圧側隣接セルの大きい係数を採用し、単調性制約の前に、すべての基本変数の端値をセル値へ近づけます。係数1では空間変動が消え、0では変更しません。
+再構成入力が密度・圧力の1e−12という閾値を満たさない場合、変更しないセル平均を中心に、保存変数の共通アフィンスケーリングを適用します。更新後が非物理的なら時間刻みを半分にして最大14回試行します。これらは対策であり、完全離散化の正値性の証明ではありません。停止時は最後の許容状態と実際の時刻を残します。状態の切り詰め、非表示の流束切替、誤った最終時刻ラベルは使いません。
+4つのスイッチ組合せは、同じ流束・名目CFL・更新法を使います。N=200で接触面が1周期移動する問題では、急峻化が密度誤差を減らし、圧力と速度は丸め誤差程度で一定です。滑らかなエントロピー波のN=32,64,128では、波追跡を含む全手法がほぼ2次収束します。時間3次・4次という主張ではありません。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 条件を明示したAUSM+とAUSM+-up# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#ausm-and-ausm-up-with-stated-controls
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+従来の算術平均音速AUSMは別に維持します。新しい流束は4次Mach分割と5次圧力分割を使います。|M|<1で、
+\mathcal M_4^\pm(M)=\pm\left[\frac{(M\pm1)^2}{4}+\frac{(M^2-1)^2}{8}\right],\qquad
+\mathcal P_5^\pm(M)=\frac{(M\pm1)^2(2\mp M)}4\pm\alpha M(M^2-1)^2.
+その外では符号に応じた風上Mach・圧力分率を使います。両変種とも、2006年の定式化で用いられる方向別の臨界エンタルピー音速を採用します。
+a_{*,k}^2=\frac{2(\gamma-1)}{\gamma+1}H_k,\qquad
+a_f=\min\left(\frac{a_{*,L}^2}{\max(a_{*,L},u_L)},
+\frac{a_{*,R}^2}{\max(a_{*,R},-u_R)}\right).
+表示する**AUSM+**はalpha=3/16で、圧力・速度拡散項を使いません。この定式化の基本形を明示したもので、1996年のすべての界面音速の選択肢を再現する主張ではありません。AUSM+-upではKp=0.25、Ku=0.75、sigma=1、参照Mach数の下限を0.1とします。
+\overline M^2=\frac{M_L^2+M_R^2}{2},\quad
+M_0=\sqrt{\min(1,\max(\overline M^2,M_{\rm ref}^2))},\quad
+f_a=M_0(2-M_0),\quad\alpha=\frac{3}{16}(5f_a^2-4).
+圧力拡散を界面Mach数に、速度拡散を界面圧力に加えます。
+M_p=-\frac{K_p}{f_a}\max(1-\overline M^2,0)
+\frac{p_R-p_L}{\overline\rho a_f^2},\qquad
+p_u=-K_u f_a\mathcal P_5^+(M_L)\mathcal P_5^-(M_R)
+(\rho_L+\rho_R)a_f(u_R-u_L).
+得られた質量流束の符号で密度・速度・全エンタルピーを風上化し、法線運動量には界面圧力を加えます。一様流、両方向の超音速風上化、接触面、定常垂直衝撃波、音速分岐の接続、向き反転時の保存性、回転共変性を検証します。
+原典はLiou（1996）とLiou（2006）です。音速と拡散項の定義はSU2公式実装と照合しました。Pythonは独立実装で、陰的Jacobianや時間前処理は提供しません。
+低Machグラフは、小さな固定圧力差に対し下限を0.01、0.1、1と変えます。これは流束の感度であり、低Mach渦・境界層・漸近保存的PDE手法の検証ではありません。下限値と時間刻み制限も数値的方法の一部です。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 条件を揃えた1次元問題と停止例# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#matched-one-dimensional-problems-and-a-recorded-failure
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+新しい1次元計算は波追跡PPMとCFL 0.4を使います。流束比較では接触面急峻化を無効、衝撃波平坦化を有効に固定し、HLLC、旧AUSM、AUSM+、AUSM+-upを切り替えます。独立した適応CFL計算であり、ステップ数や費用を揃えた比較ではありません。
+Sod N=200、移動接触面N=200、Shu–Osher N=240、強い圧力跳躍N=200を使います。最初の3つは以前の比較と同じ定義です。最後は基本変数が左(1,0,1000)、右(1,0,0.01)、gamma=1.4、区間[0,1]、x=0.5の跳び、両端外挿、t=0.01です。この時刻まで波は境界に到達しません。
+Sodと強圧力差の密度誤差は、保存変数Riemann状態を波面で分割した24点・48点求積を使います。接触面は1周期で初期セル平均へ戻ります。Shu–Osherは従来の内部的な特性FD WENO-Z N=960参照計算を使います。数値参照解であり厳密解ではないため、厳密誤差は報告しません。参照点値と平均保存変数の基本変数は、異なる規約です。
+この強圧力差のAUSM+設定では、t=0.01に達する前に許容状態を得る再試行を使い切ります。表に失敗と実際の停止時刻を表示し、最終時刻の曲線から除外します。ダウンロードには最後の許容保存状態と理由を残します。流束・再構成対策・名目CFLだけでは更新の正値性が保証されない例です。完了した他の計算にも再試行があるため、回数を確認してください。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 円柱前面に沿う保存的メッシュ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#a-conservative-mesh-around-the-cylinder-nose
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+単位半径円柱の上流側半分だけを扱います。r∈[1,4]、theta∈[pi/2,3pi/2]、流れは正のx方向です。直線辺を持つ環状四角形が、円柱の多角形近似に沿います。格子は24×48と48×96の2水準です。半径と角度は等間隔ですが、物理的なセルは正方形ではありません。
+Cartesian保存変数を、共有する面長と面法線流束で更新します。多角形面積、半径方向弦面の法線、角方向面の法線は、丸め誤差程度で幾何学的な閉鎖条件を満たします。曲線座標の運動量ソース項は不要です。壁を無効にした一様流保存、壁法線運動量の反射、壁の質量・エネルギー流束ゼロ、全領域流束収支を検証します。
+rho_inf=1.4、p_inf=1、u_inf=6、v_inf=0、gamma=1.4で、音速1・Mach 6です。内壁は非粘性slip、外周は一様流固定、角方向の両出口は外挿です。初期一様流に、必要に応じ次の密度摂動を加えます。
+\rho(r,\theta)=\rho_\infty\left[1+\epsilon
+e^{-((r-1.5)/0.3)^2}\sin\bigl(12(\theta-\pi)\bigr)\right],\qquad
+\epsilon\in\{0,10^{-4}\}.
+初期速度と圧力は変えません。メッシュや衝撃波位置を動かす摂動ではなく、密度の角方向モードです。細分化しても角波長は一定です。対照計算と摂動計算には、空間1次の幾何学的有限体積法、SSPRK2、CFL 0.4、終了時刻2を使います。CFLは全セル面のスペクトル半径の和から定め、1次元のCFL規則と数値的に同一ではありません。5流束×2格子×2摂動振幅で計20計算です。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — HLLEとRoeの方向分解による合成# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#directional-hlle-and-roe-composition
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+面法線nに対して、速度差の方向にn1、その直交方向にn2を選びます。alpha_k=n dot n_kが非負になるよう符号を揃えます。この無次元設定で速度差が1e−10以下なら、n1を面接線、n2を面法線とします。
+\widehat{\boldsymbol F}(\boldsymbol n)=
+\alpha_1\widehat{\boldsymbol F}_{\rm HLLE}(\boldsymbol n_1)+
+\alpha_2\widehat{\boldsymbol F}_{\rm Roe}(\boldsymbol n_2),\qquad
+\boldsymbol n=\alpha_1\boldsymbol n_1+\alpha_2\boldsymbol n_2.
+同じ左右の物理状態を各局所座標系に回転し、運動量流束をCartesian座標へ戻してから合成します。法線方向の速度差ではHLLE、純粋な接線せん断では面法線方向のRoeが選ばれます。物理Euler流束は法線に線形なので、一様状態の整合性を保ちます。流束反転の保存性と回転検証も通過します。
+Nishikawa・Kitamura（2008）を着想源とした、定義を明示したrotated-hybridの実験です。従来の圧力センサーRoe/HLLE混合とは異なり、原論文の最適化されたRotated-RHLL散逸式を再現したという主張でもありません。微小速度差時の切替と次元を持つ許容値は、明示した実装上の選択です。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 前面計算から分かること# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#what-the-forebody-results-establish
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+5流束は音響エントロピー平滑化したRoe、Einfeldt型HLLE、AUSM+、AUSM+-up、方向分解HLLE/Roeです。各画像の5つの場は共通の色範囲です。slip壁圧力係数は実際の壁法線運動量流束を使い、よどみ点に最も近い2セルから先端圧力を報告します。
+垂直衝撃波の跳躍と、その後の等エントロピー減速から、非粘性中心流線のよどみ圧参照値p0,2=46.8152057161を得ます。これはスカラーの流線参照値であり、弓形衝撃波全体の厳密場ではありません。境界層と後流は含みません。先端圧力、反射対称性の欠損、残る規格化更新率、正値性、積分保存残差を保存します。
+細格子・摂動ありのRoeでは密度の反射対称性欠損が大きくなり、先端圧力は約25.0へ低下します。細格子HLLEは約47.38、粗格子は約48.81です。方向分解法とAUSM系にも、それぞれ異なる格子・摂動への応答があります。特に方向分解法は摂動なしの対照計算でも丸め誤差を増幅し得ます。非線形な方向選択では、対称に見える初期状態が厳密な離散対称性を保証しません。見栄えのよい1枚だけでなく、対照計算と履歴の両方を見てください。
+これらは発展中の計算の終了時刻スナップショットです。更新率がゼロではなく、2格子だけなので、収束した定常解、漸近収束次数、普遍的なカーバンクル非発生を認定しません。長時間・時間刻みの検証、別Mach数、回転格子、外部コードとの照合、他のrotated-hybrid変種は残る検証です。円柱全体の粘性抗力・揚力・渦放出・Strouhal数は別課題です。
+
+## 波追跡PPM、AUSM系と曲面前方の衝撃波 — 再現と保存データ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/shock-expansion/#reproduction-and-saved-data
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+MPLCONFIGDIR=.mplconfig python scripts/build_shock_expansion.pyを実行します。前面計算のキャッシュは、数値ソースのハッシュと全設定が一致した場合だけ再利用します。条件・診断・ソースハッシュと保存状態・格子頂点・面積をダウンロードできます。停止した1次元計算には実際の時刻と最後の許容状態を含めます。要求最終時刻へ到達したものとして比較してはいけません。すべてのPNGと圧縮配列のハッシュも記録します。
+独立した検証は、特性領域積分、スイッチの選択性、周期保存量、接触面の圧力・速度平衡、滑らかな収束、AUSM分岐の恒等式と垂直衝撃波、回転流束の整合性・共変性、格子閉鎖、壁・全領域の流束収支を扱います。これらの通過は、上に記した流れ固有の限界を取り除くものではありません。
+
+## 収録範囲と数え方 — 収録範囲と数え方 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+公開Web版、集計日2026-11-07。数えるのはカタログ項目と記載した実験例です。すべての項目が検証済みの完全なソルバーであるという意味ではありません。
+方程式・モデル42項目・計算法と構成要素90項目・学術誌／会議論文140件・全参考資料177件。
+保存済み計算を用いる方程式ギャラリーは7系統・9例、読書章はこの一覧を含め47章です。
+
+## 収録範囲と数え方 — 方程式とモデル# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#equations-and-models
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+名前付きの方程式・モデルを数えます。スカラー成分や数学的に互いに独立な系統の数ではありません。枠組みや補助定式化を含み、通常は派生形を一つにまとめます。ただし個別に説明するSR／GRの流体系3種類は分けます。生物モデルは専用カタログから一度だけ取り込みます。
+ローカル実験のある項目は15、文献解説のみは27で、後者には生物調査22項目すべてを含みます。連成系は一項目とし、成分方程式では増やしません。Poisson／Laplaceや次元の違いもまとめます。枠組みと個別反応則が並ぶため、数学的に独立した系統数ではありません。
+一覧の詳細な範囲注記は原文（英語）を保持します。各章の日本語本文も併せて参照できます。
+
+## 収録範囲と数え方 — 物理・数学モデル# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#physics-amp-mathematical-models
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+線形移流（Linear advection） — ローカル実験あり。
+熱・拡散（Heat / diffusion） — ローカル実験あり。
+Poisson／Laplace方程式（Poisson / Laplace） — ローカル実験あり。
+非粘性Burgers方程式（Inviscid Burgers） — ローカル実験あり。
+LWR交通流（LWR traffic flow） — ローカル実験あり。
+圧縮性Euler方程式（Compressible Euler） — ローカル実験あり。
+浅水方程式（線形回転モデルを含む）（Shallow water, including the rotating linear model） — ローカル実験あり。 Wet 1D flow and linear rotating Fourier symbols; no full geophysical dynamical core.
+等温Euler方程式（Isothermal Euler） — ローカル実験あり。
+理想MHD（Ideal MHD） — ローカル実験あり。
+非圧縮Navier–Stokes方程式（Incompressible Navier–Stokes） — ローカル実験あり。
+等温格子BGK（Isothermal lattice BGK） — ローカル実験あり。
+Hamilton振動子（Hamiltonian oscillators） — ローカル実験あり。
+重力粒子モデル（Gravitational particle model） — ローカル実験あり。 Static force evaluations and boundary kernels; no coupled self-gravitating fluid evolution.
+Bratu非線形境界値問題（Bratu nonlinear boundary-value problem） — ローカル実験あり。
+補助変数による双曲型拡散系（Auxiliary hyperbolic diffusion system） — ローカル実験あり。 Periodic first-order steady-solution baseline, not physical-time heat diffusion.
+
+## 収録範囲と数え方 — 相対論モデル# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#relativistic-models
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+特殊相対論的流体力学（Special-relativistic hydrodynamics） — 文献解説のみ。 Literature review; no local relativistic solver.
+一般相対論的流体力学（General-relativistic hydrodynamics） — 文献解説のみ。 Literature review; no local relativistic solver.
+一般相対論的MHD（General-relativistic MHD） — 文献解説のみ。 Literature review; no local relativistic solver.
+相対論的放射モーメント／M1（Relativistic radiation moments / M1） — 文献解説のみ。 Literature review; no local relativistic solver.
+因果的な相対論的粘性流体（Causal relativistic viscous fluid） — 文献解説のみ。 Literature review; no local relativistic solver.
+
+## 収録範囲と数え方 — 生物モデル調査# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#biological-model-survey
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+ロジスティック個体群増殖（Logistic population growth） — 文献解説のみ。 The linked original is the later 1847 memoir; the 1838 note itself was not audited. The differential equation is not the discrete logistic map.
+Michaelis–Mentenと完全酵素反応系（Michaelis–Menten and full enzyme kinetics） — 文献解説のみ。 The 1913 rapid-equilibrium interpretation and the 1925 quasi-steady-state derivation must remain distinct.
+Lotka–Volterra捕食・被食（Lotka–Volterra predator–prey） — 文献解説のみ。
+McKendrick年齢構造個体群（McKendrick age-structured population） — 文献解説のみ。 This is the classical age-transport form; the later von Foerster lineage is acknowledged without treating its date as the first appearance.
+SIR・SEIR区画モデル（SIR and SEIR compartment models） — 文献解説のみ。 The original general epidemic framework is broader than this SIR specialization. Population-count and fraction conventions give different β definitions.
+Fisher–KPP侵入前線（Fisher–KPP invasion front） — 文献解説のみ。 Fisher–KPP is a conventional family name; the independent KPP 1937 original remains an archival follow-up. The exact special speed is not the minimal speed.
+Monod増殖とケモスタット（Monod growth and chemostat） — 文献解説のみ。 This writes one constant-yield extension of saturation growth, not a universal metabolic model.
+
+## 収録範囲と数え方 — 生物モデル調査# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#biological-model-survey
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Hodgkin–Huxley膜動態（Hodgkin–Huxley membrane dynamics） — 文献解説のみ。 The original squid-axon model is not a calibrated human cardiac model. No single rate parameter set is selected by this survey.
+Turing反応拡散の枠組み（Turing reaction–diffusion framework） — 文献解説のみ。 A spot image or unequal diffusion coefficients alone do not establish a Turing mechanism. Boundary conditions determine the available modes.
+FitzHugh–Nagumoの興奮と回復（FitzHugh–Nagumo excitation and recovery） — 文献解説のみ。 This is a common normalized variant; cubic coefficients, recovery signs and nondimensionalization differ between formulations.
+Keller–Segel走化性（Keller–Segel chemotaxis） — 文献解説のみ。 This is a common two-field reduction of a more detailed original formulation. Blowup thresholds depend on dimension, domain, boundary and chemical dynamics.
+Gierer–Meinhardt活性化・抑制（Gierer–Meinhardt activator–inhibitor） — 文献解説のみ。 Source densities, saturation and baseline production vary across the model family. This simplified formula is not a verbatim transcription of every original variant.
+流体・弾性構造と埋め込み境界（Fluid–elastic structure and immersed boundaries） — 文献解説のみ。 Immersed boundary is a numerical coupling method, not itself a closed biological constitutive equation. The existing periodic MAC solver does not implement this coupling.
+
+## 収録範囲と数え方 — 生物モデル調査# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#biological-model-survey
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+化学マスター方程式とGillespie SSA（Chemical master equation and Gillespie SSA） — 文献解説のみ。 The 1977 paper is a foundational SSA reference, not a priority claim for all master equations. SSA is a solver; the reaction network is the model. A seed documents a trajectory, not an ensemble validation.
+Mackey–Glass遅延生理フィードバック（Mackey–Glass delayed physiological feedback） — 文献解説のみ。 A scalar initial value alone is insufficient. The delayed ODE is distinct from a spatial reaction–diffusion model.
+レプリケータ進化ゲーム動態（Replicator evolutionary game dynamics） — 文献解説のみ。 No universal Lyapunov function or equivalence of fixed point and evolutionarily stable strategy is assumed.
+Schnakenberg反応拡散（Schnakenberg reaction–diffusion） — 文献解説のみ。 A mathematical chemical pattern model; matching a visual biological pattern does not calibrate it to a tissue.
+Shigesada–Kawasaki–Teramoto交差拡散（Shigesada–Kawasaki–Teramoto cross-diffusion） — 文献解説のみ。 The displayed homogeneous-environment reduction omits the original environmental-potential terms. It is not equivalent to two independent scalar diffusion equations.
+Gray–Scott空間自己触媒反応（Gray–Scott spatial autocatalysis） — 文献解説のみ。 1983 is the well-mixed CSTR source; Pearson 1993 is the spatial pattern reference. Spot division does not by itself demonstrate cell division or a linear Turing instability.
+
+## 収録範囲と数え方 — 生物モデル調査# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#biological-model-survey
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Aliev–Panfilov心筋興奮（Aliev–Panfilov cardiac excitation） — 文献解説のみ。 Monodomain/bidomain tissue models add conductivity tensors and, for bidomain, an extracellular elliptic constraint. They are not automatically included by this two-variable model.
+Repressilator mRNA・タンパク質回路（Repressilator mRNA–protein network） — 文献解説のみ。 The six-variable form is distinct from a reduced three-protein oscillator; oscillations are parameter-dependent.
+遺伝子トグルスイッチ（Genetic toggle switch） — 文献解説のみ。 Bistability is not guaranteed for arbitrary Hill exponents or production rates. Induction, mRNA dynamics and noise are additional model choices.
+
+## 収録範囲と数え方 — 計算法の一覧# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#numerical-method-inventory
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+名前付きの離散化法、積分法、線形・非線形解法、連成演算子を数えます。パラメータの違いでは増やしません。
+ローカル実験のある項目は85、文献解説のみは5です。再構成の制限関数、前処理、連成演算子は構成要素であり、完全なPDEソルバーではありません。格子配置、CFL条件、定理は計算法の数に含めません。
+
+## 収録範囲と数え方 — 空間離散化# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#spatial-discretization
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+空間前進差分（Forward spatial difference） — ローカル実験あり。
+空間後退差分（Backward spatial difference） — ローカル実験あり。
+空間中心差分（Centered spatial difference） — ローカル実験あり。
+風上差分（upwind）（Upwind finite differences） — ローカル実験あり。
+Lax–Friedrichs法（Lax–Friedrichs） — ローカル実験あり。
+Lax–Wendroff法（Lax–Wendroff） — ローカル実験あり。
+Godunov型有限体積法（Godunov-type finite volumes） — ローカル実験あり。
+MUSCL再構成（MUSCL reconstruction） — ローカル実験あり。
+WENO5-JS（WENO5-JS） — ローカル実験あり。
+不連続Galerkin法／Legendre（Discontinuous Galerkin / Legendre） — ローカル実験あり。
+Fourier微分と時間発展（Fourier differentiation and evolution） — ローカル実験あり。
+3次Hermite CIP（Cubic-Hermite CIP） — ローカル実験あり。
+連続P1 Galerkin有限要素法（Continuous P1 Galerkin FEM） — ローカル実験あり。
+制限付きPPM再構成（Limited PPM reconstruction） — ローカル実験あり。 Method-of-lines parabolic FV and a separate direct-Eulerian traced primitive PPM with contact steepening and shock flattening switches. No Lagrange/remap or multidimensional CTU.
+Eulerの特性変数再構成（Euler characteristic reconstruction） — ローカル実験あり。 Local conservative FV basis or face-frozen Roe FD basis; controlled component/characteristic comparisons.
+有限差分WENO5-Z（FD WENO5-Z） — ローカル実験あり。 Global LF splitting, exponent 2, fixed epsilon 1e-6; point values, not FV state interpolation.
+
+## 収録範囲と数え方 — リーマン流束と修正# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#riemann-fluxes-amp-corrections
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Rusanov／局所Lax–Friedrichs流束（Rusanov / local Lax–Friedrichs flux） — ローカル実験あり。
+HLL（HLL） — ローカル実験あり。
+HLLC（HLLC） — ローカル実験あり。
+Roe法（Roe） — ローカル実験あり。
+HLLE／Einfeldt波速（HLLE / Einfeldt wave speeds） — ローカル実験あり。
+Roe音響波のエントロピー修正（Acoustic Roe entropy correction） — ローカル実験あり。
+回転ハイブリッド・リーマンソルバー（Rotated-hybrid Riemann solver） — ローカル実験あり。 Explicit directional HLLE/Roe composition with unit-normal flux checks and conforming cylinder-forebody controls. Distinct from the optimized 2008 Rotated-RHLL formula; no universal carbuncle-free claim.
+HLLDのMHDリーマン解法（HLLD MHD Riemann solver） — ローカル実験あり。 Full-vector adiabatic HLLD/HLLE with Brio-Wu, circular Alfven refinement and weak field-loop tests. CT-Contact and GLM, not UCT-HLLD.
+AUSM系列の流束分割（AUSM-family flux splitting） — ローカル実験あり。 Arithmetic-sound-speed AUSM plus specified critical-sound-speed AUSM+ and AUSM+-up. Matched traced-PPM cases, a recorded strong-jump failure and forebody tests; no low-Mach PDE certification.
+
+## 収録範囲と数え方 — 勾配制限と許容状態# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#limiters-amp-admissibility
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Minmod（Minmod） — ローカル実験あり。
+Superbee（Superbee） — ローカル実験あり。
+単調中心勾配制限／MC（Monotonized central / MC） — ローカル実験あり。
+Van Leer勾配制限（Van Leer limiter） — ローカル実験あり。
+切り詰めたVan Albada勾配制限（Clipped Van Albada limiter） — ローカル実験あり。
+TVB修正minmod（TVB modified minmod） — ローカル実験あり。
+平均を保つ正値状態スケーリング（Mean-preserving positive-state scaling） — ローカル実験あり。 Reconstruction building block; no full Euler-update positivity guarantee.
+
+## 収録範囲と数え方 — 時間積分# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#time-integration
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+前進Euler法（Forward Euler） — ローカル実験あり。
+後退Euler法（Backward Euler） — ローカル実験あり。
+Heun法／SSPRK(2,2)（Heun / SSPRK(2,2)） — ローカル実験あり。
+陽的中点RK2（Explicit midpoint RK2） — ローカル実験あり。
+Ralston RK2（Ralston RK2） — ローカル実験あり。
+Kutta RK3（Kutta RK3） — ローカル実験あり。
+SSPRK(3,3)（SSPRK(3,3)） — ローカル実験あり。
+SSPRK(4,3)（SSPRK(4,3)） — ローカル実験あり。
+古典的RK4（Classical RK4） — ローカル実験あり。
+SSPRK(5,4)（SSPRK(5,4)） — ローカル実験あり。
+陰的中点則（Implicit midpoint） — ローカル実験あり。
+2ステップleapfrog法（Two-step leapfrog） — ローカル実験あり。
+Crank–Nicolson法（Crank–Nicolson） — ローカル実験あり。
+BDF2（BDF2） — ローカル実験あり。
+L安定なSDIRK2（L-stable SDIRK2） — ローカル実験あり。
+IMEX Euler（IMEX Euler） — ローカル実験あり。
+適応SDIRK2／ステップ倍分割（Adaptive SDIRK2 / step doubling） — ローカル実験あり。
+シンプレクティックEuler法（Symplectic Euler） — ローカル実験あり。
+速度Verlet／粒子leapfrog法（Velocity Verlet / particle leapfrog） — ローカル実験あり。
+吉田の4次合成法（Yoshida fourth-order composition） — ローカル実験あり。
+
+## 収録範囲と数え方 — 線形・非線形ソルバー# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#linear-amp-nonlinear-solvers
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Thomas法／三重対角消去（Thomas tridiagonal elimination） — ローカル実験あり。
+Jacobi反復（Jacobi iteration） — ローカル実験あり。
+Gauss–Seidel反復（Gauss–Seidel iteration） — ローカル実験あり。
+逐次過緩和法／SOR（Successive over-relaxation / SOR） — ローカル実験あり。
+共役勾配法（Conjugate gradients） — ローカル実験あり。
+赤黒Gauss–Seidel法（Red-black Gauss–Seidel） — ローカル実験あり。
+幾何マルチグリッドVサイクル（Geometric multigrid V-cycle） — ローカル実験あり。
+再始動GMRES（Restarted GMRES） — ローカル実験あり。
+BiCGSTAB（BiCGSTAB） — ローカル実験あり。
+Jacobi／対角前処理（Jacobi / diagonal preconditioning） — ローカル実験あり。
+ピボット選択なしILU(0)（Unpivoted ILU(0)） — ローカル実験あり。
+Armijo減衰Newton法（Armijo-damped Newton） — ローカル実験あり。
+組み立てたJacobianによるNewton–Krylov法（Newton–Krylov with assembled Jacobian） — ローカル実験あり。
+
+## 収録範囲と数え方 — 結合・制約・粒子# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#coupling-constraints-amp-particles
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+二重時間積分（Dual time stepping） — ローカル実験あり。
+スカラー残差分配法（Scalar residual distribution） — ローカル実験あり。 1D P1 upwind equivalent, not multidimensional Euler RD.
+低Mach数のPDE前処理（Low-Mach PDE preconditioning） — 文献解説のみ。
+制約輸送法／CT（Constrained transport / CT） — ローカル実験あり。 Original arithmetic flux-CT OT baseline plus contact-upwinded CT loop tests. Native face divergence; not UCT-HLLD.
+GLM発散クリーニング（GLM divergence cleaning） — ローカル実験あり。 Original Rusanov OT baseline plus HLLD/HLLE loop tests with an exact longitudinal cleaning solve and split damping. Native cell-centered divergence.
+MAC圧力射影法（MAC pressure projection） — ローカル実験あり。
+D2Q9–BGK衝突・並進（D2Q9–BGK collision and streaming） — ローカル実験あり。
+Guo外力（Guo forcing） — ローカル実験あり。
+中間壁バウンスバック（Half-way bounce-back） — ローカル実験あり。
+1次の双曲型拡散ベースライン（First-order hyperbolic diffusion baseline） — ローカル実験あり。
+SPHカーネル再構成（SPH kernel reconstruction） — ローカル実験あり。
+ALE一様状態・幾何保存モデル（ALE uniform-state / geometric-conservation model） — ローカル実験あり。 Moving-volume scalar check; no complete ALE Euler solver.
+Godunov SPH／GSPH（Godunov SPH / GSPH） — 文献解説のみ。
+
+## 収録範囲と数え方 — 粒子場と重力# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#particle-fields-amp-gravity
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Cloud-in-cellの割当てと補間（Cloud-in-cell assignment and interpolation） — ローカル実験あり。
+FFT粒子格子力（FFT particle–mesh forces） — ローカル実験あり。
+Barnes–Hut八分木（Barnes–Hut octree） — ローカル実験あり。
+単極と2次モーメント展開（Monopole and second-moment expansion） — ローカル実験あり。
+孤立境界の倍格子FFT畳み込み（Isolated doubled-grid FFT convolution） — ローカル実験あり。
+水平周期スラブGreen関数FFT（Horizontal-periodic slab Green-function FFT） — ローカル実験あり。
+P³M短距離補正（P³M short-range correction） — 文献解説のみ。
+TreePM力分割（TreePM force splitting） — 文献解説のみ。
+高速多重極法の移動演算（Fast multipole translations） — 文献解説のみ。
+
+## 収録範囲と数え方 — 追加の定式化# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#additional-formulations
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+直交座標の原KEEP分割流束（Original Cartesian KEEP split flux） — ローカル実験あり。
+
+## 収録範囲と数え方 — 要素基底・関数近似# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#element-bases-amp-approximation
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+Legendreモード基底・正規直交化（Legendre modal basis / orthonormal scaling） — ローカル実験あり。 Reference-element tabulation, derivatives, projection and affine mass/stiffness matrices.
+Lagrange節点基底・GLL選点法（Lagrange nodal basis / GLL collocation） — ローカル実験あり。 Interval cardinal functions, modal transforms, exact versus quadrature mass, and P1/P2 triangle shapes.
+
+## 収録範囲と数え方 — 論文数と全資料数の区別# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#papers-versus-all-sources
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+論文数は学術誌論文と会議論文です。総説、翻訳、採録済みであることを明記した論文も含みます。全参考資料は、それに書籍、章、技術資料、文書、個別に識別したプレプリント等を加えた、重複を除く出版物の数です。
+137件：学術誌論文（総説・翻訳・採録済み論文を含む）
+3件：会議論文
+22件：書籍
+2件：書籍の章
+3件：技術・教育レポート
+10件：その他の資料・文書・プレプリント
+Cockburn–Shu 1989の重複書誌を統合し、Burgers 1948を書籍の章に分類しました。以前の146レコードには重複があり、その後の出典追加も現在の重複を除く総数に反映しています。原著と別途出版された翻訳は異なる出版物です。すべての全文を確認済みとは主張せず、確認状態を各出典注記に残します。
+
+## 収録範囲と数え方 — 再現方法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/site-coverage/#reproduction
+Coverage: reading
+Source note: 英語原文が更新されています。この日本語訳は旧版に対応します。
+
+名前付き登録簿はcatalog/coverage.jsonです。生物項目と出版物の種別は各専用カタログを参照します。python scripts/build_coverage.pyが出版物の同一性とローカル章リンクを検査し、数と一覧を生成します。Webビルドもこの検査を実行します。パラメータ、保存フレーム、本文での方程式の繰り返し、テスト関数の数では増やしません。翻訳ファイルも章の総数を増やしません。
+集計一覧と出典ハッシュをダウンロード。参考文献、方程式ギャラリー、生物モデル、実装ロードマップも参照できます。
+
+## 疎行列・非線形方程式系：真の残差を測る — 疎行列・非線形方程式系：真の残差を測る [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/sparse-nonlinear/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+実装済み：COOからCSRへの組立て、再始動GMRES、BiCGSTAB、Jacobi、ピボット選択なしILU(0)、密行列またはKrylov内部解法を使うArmijo減衰Newton法。内部を確認できる小規模な実数演算の例です。
+
+## 疎行列・非線形方程式系：真の残差を測る — 1986〜1992年：非対称Krylov法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/sparse-nonlinear/#19861992-nonsymmetric-krylov-methods
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Saad–Schultz（1986）がGMRES、van der Vorst（1992）がBiCGSTABを導入します。本実装のGMRESはArnoldi再直交化と小さなHessenberg最小二乗問題を使い、指定した内部反復回数で再始動します。BiCGSTABは破綻を明示し、残差は単調に減るとは限りません。
+両実装は固定した右前処理を適用します。
+A M^{-1} z=b,\qquad x=M^{-1}z,
+\qquad \|b-Ax\|_2\leq\max(\mathrm{atol},\mathrm{rtol}\|b\|_2).
+停止判定の履歴では真の残差を再計算します。Jacobiは対角スケーリングです。ILU(0)は与えた非ゼロ構造だけを保ち、追加のフィル、ピボット選択、並べ替えを行いません。非常に小さなピボットでは明示的に失敗します。実用的な頑健な疎行列分解を置き換えるものではありません。
+
+## 疎行列・非線形方程式系：真の残差を測る — Newton法と条件数# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/sparse-nonlinear/#newton-and-conditioning
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Newton法はJ(x)δ=−F(x)を解き、残差に対するArmijo減少条件を満たすよう後退探索でステップ長を選びます。Newton–Krylovの例はJを組み立ててGMRESを使い、行列不要方式ではありません。Bratu方程式を2つの空間解像度で解析解と比較し、内部求解の失敗も検査します。
+残差が小さくても、解誤差が小さいとは限りません。
+\frac{\|x-\hat x\|}{\|x\|}
+\leq \kappa(A)\frac{\|b-A\hat x\|}{\|b\|}.
+条件数、固有値分布、非正規性は異なる性質を表します。条件数が小さいことだけで再始動GMRESの優劣は決められません。CGには引き続き対称正定値演算子と適切な対称正定値前処理が必要で、一般のILU(0)がその条件を満たすとはしていません。
+非対称の例は、ゼロDirichlet条件での1次風上移流と中心差分拡散です。1反復あたりの計算量が異なるため、図では実行時間の順位を付けません。データとソースハッシュ、FEMの組立て、陰的ODE段階も参照してください。
+
+## 差分、CFL条件、von Neumann解析、Laxの定理 — 差分、CFL条件、von Neumann解析、Laxの定理 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stability/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+安定性実験室と実験ガイドで、以下の式をブラウザー内の計算と結び付けて確かめられます。
+
+## 差分、CFL条件、von Neumann解析、Laxの定理 — 空間と時間の離散化を別々に選ぶ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stability/#choose-space-and-time-discretizations-separately
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+前進差分（forward difference）、後退差分（backward difference）、中心差分（centered difference）は、それぞれ次のように定義します。
+D_+u_j=\frac{u_{j+1}-u_j}{h},\qquad
+D_-u_j=\frac{u_j-u_{j-1}}h,\qquad
+D_0u_j=\frac{u_{j+1}-u_{j-1}}{2h}.
+滑らかな関数に対して、前二者は1次、中心差分は2次精度です。numart.advection.finite_differenceで比較できます。線形移流u_t+a u_x=0の風上差分（upwind difference）は情報の伝播方向に従い、a>0では後退差分、a<0では前進差分を使います。したがって、前進差分と風上差分は同じ意味ではありません。
+時間方向の前進Euler法はu^{n+1}=u^n+Δt L_h u^n、後退Euler法はu^{n+1}=u^n+Δt L_h u^{n+1}で、後者では方程式系を解きます。空間に後退差分を使うだけで陰解法になるわけではありません。
+
+## 差分、CFL条件、von Neumann解析、Laxの定理 — CFL条件と数値的な依存領域# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stability/#cfl-can-the-stencil-reach-the-information-it-needs
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+定係数・周期移流を隣接格子点までの陽的差分で解く場合、依存領域の議論から|a|Δt/h ≤ 1が必要です。この定数は差分、Runge–Kutta法、DGの次数、次元によって変わります。陽的拡散にはΔt=O(h²)の制約が現れます。CFL条件は一般に安定性の必要条件であり、十分条件ではありません。Courant–Friedrichs–Lewy（1928）。
+時間前進・空間中心差分（FTCS）の移流が反例です。Fourierモードu_j^n=G^n e^{ijθ}を代入すると、
+G=1-i C\sin θ,\quad |G|^2=1+C^2\sin^2 θ,
+\qquad C=a\Delta t/h.
+となり、|C|<1でも増幅するモードがあります。通常のCFL数を固定した格子細分化に対して、この方式は不安定です。
+
+## 差分、CFL条件、von Neumann解析、Laxの定理 — Lax–Friedrichs法とLax–Wendroff法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stability/#laxfriedrichs-and-laxwendroff
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+古典的なLax–Friedrichs法は、
+u_j^{n+1}=\tfrac12(u_{j+1}^n+u_{j-1}^n)
+-\tfrac C2(u_{j+1}^n-u_{j-1}^n),\qquad
+G=\cos θ-iC\sin θ.
+です。|G|²=1-(1-C²)sin²θより、この周期線形移流問題では|C|≤1で安定です。古典的LFの数値粘性係数はh/Δtです。Rusanov流束は局所最大波速を使い、本実装のWENOは大域LF流束分割を使います。これらは異なる離散構成です。Lax（1954）。
+Lax–Wendroff法は、
+u_j^{n+1}=u_j^n-\tfrac C2(u_{j+1}^n-u_{j-1}^n)
++\tfrac{C^2}{2}(u_{j+1}^n-2u_j^n+u_{j-1}^n),
+であり、増幅係数は、
+G=1-iC\sin θ+C^2(\cos θ-1),\quad
+|G|^2=1-4C^2(1-C^2)\sin^4(θ/2).
+です。この問題での安定条件は同じく|C|≤1です。2次精度であること自体は、不連続近傍の振動を抑える保証にはなりません。Lax–Wendroff（1960）。
+テストではamplificationによる解析的な増幅係数と、difference_stepによる実際のモード発展を比較します。図では小さなNyquist摂動を加え、C=0.8とC=1.1を比較しています。
+
+## 差分、CFL条件、von Neumann解析、Laxの定理 — Lax–Richtmyerの同値定理# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stability/#the-laxrichtmyer-equivalence-theorem
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+適切なBanach空間上の適切に設定された線形初期値問題と、整合的な線形差分近似を考えます。固定した有限時間区間で離散発展演算子が一様有界であることを安定性とすると、安定性と収束性は同値です。Lax–Richtmyer（1956）の原論文。
+誤差をe^{n+1}=S_h e^n+Δt τ^nと書けば、||S_h^m||≤M_Tから||e^n||≤M_T||e^0||+M_T T max||τ^k||を得ます。整合性により打切り誤差の項がゼロへ向かい、安定性から収束性を導く基本的な議論になります。逆向きには一様有界性の議論が必要です。
+この定理から、非線形Euler、WENO、衝撃波、任意の境界処理の正しさを直接保証することはできません。ここでのFourier条件|G|≤1は、周期・定係数のスカラー問題に適用しています。境界、変係数、非正規行列、多段階法には追加の解析が必要です。
+
+## 差分、CFL条件、von Neumann解析、Laxの定理 — 初版で用いる時間刻み# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stability/#time-steps-in-the-first-edition
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Euler系・バロトロピック系：Δt=C h/max(|u|+c)、既定値C=0.3。
+DG：Δt=C h/((2p+1)|a|)、既定値C=0.2。
+2次元MHD：Δt=C/[max(s_x)/h+max(s_y)/h]、既定値C=0.3。
+これらは選定した例で確認した控えめな設定です。すべての初期条件に対する厳密な非線形安定限界ではありません。
+A安定性・L安定性とL1／L2／L∞誤差ノルムの定義と比較は、精度と安定性の共通ガイドを参照してください。
+
+## 硬い方程式の積分：段階を解き、時間誤差を制御する — 硬い方程式の積分：段階を解き、時間誤差を制御する [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stiff-integration/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+実装済み：後退Euler法、その初期化を使う固定刻みBDF2、2段階SDIRK2、1次IMEX Euler、ステップ倍分割による適応SDIRK2。すべての非線形段階に減衰Newton法を使い、失敗を明示します。
+
+## 硬い方程式の積分：段階を解き、時間誤差を制御する — 陰的段階と安定性# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stiff-integration/#implicit-stages-and-stability
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+後退Euler法はy_new−y_old−h f(t_new,y_new)=0を解きます。BDF2は、
+\frac{3y_{n+1}-4y_n+y_{n-1}}{2h}=f(t_{n+1},y_{n+1}).
+を解きます。ここで使うL安定、2段階、2次精度の単一対角陰的公式の出典はAlexander（1977）です。
+\gamma=1-1/\sqrt2,\qquad
+A=\begin{pmatrix}\gamma&0\\1-\gamma&\gamma\end{pmatrix},
+\quad b=(1-\gamma,\gamma),\quad c=(\gamma,1).
+各対角段階は別々の非線形求解です。陰解法では陽解法の安定限界を超える刻みを使える場合がありますが、実用的な刻み幅は精度でも制限されます。収束したNewton残差が測るのは段階方程式であり、時間離散化誤差ではありません。
+
+## 硬い方程式の積分：段階を解き、時間誤差を制御する — 適応刻みと陽陰分割# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/stiff-integration/#adaptive-and-split-steps
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+適応実装はSDIRK2の1全ステップと2半ステップを比べます。局所誤差推定は(y_half−y_full)/3で、atol+rtol max(|y_old|,|y_half|)で尺度化します。Richardson外挿はせず、2半ステップの値を採用し、指数−1/3でhを調整します。棄却試行と受理ステップを数え、試行上限に達するとエラーにします。
+IMEX Eulerは一方を陽的、他方を陰的に評価します。この最小の1次分割は、Ascher–Ruuth–Spiteri（1997）の高次IMEX RK構成ではありません。陽的部分には独自の安定制約が残ります。可変刻みBDF、埋込みDIRK対、演算子分割は今後の拡張です。
+硬いテストy′=−1000(y−cos t)−sin tは、y(0)=1のとき厳密解cos tを持ちます。計算記録は、実際の積分節点での最大誤差と適応ステップ数を残します。別のテストで、非線形・非自律ODEの次数と、硬い減衰モードの強い減衰を確認します。
+外力付きの硬い問題の粗い刻み列は、一様な2次収束の範囲にはありません。BDF2の開始処理と硬い系の次数低下が、節点全体の最大誤差へ影響します。形式的な時間次数は、非線形・非硬性の次数テストで別に確認します。
+A安定性・L安定性とL1／L2／L∞誤差ノルムは、精度と安定性の共通ガイドを参照してください。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — シンプレクティック積分：正準写像とエネルギーを分ける [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+シンプレクティック積分器は正準2形式を保ちながらHamilton系を進めます。多くの軌道・粒子積分の良い長時間挙動を支える写像の性質ですが、元のHamiltonianを一般に厳密保存するわけではありません。Hamilton写像ノートは2つの問いを計算例で分けます。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — 写像が保存するもの# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#what-the-map-preserves
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+状態z=(q,p)に対し、Hamilton方程式とシンプレクティック条件は、
+\dot z=J\nabla H(z),\qquad J=\begin{pmatrix}0&I\\-I&0\end{pmatrix},
+\qquad D\Phi_h(z)^T J D\Phi_h(z)=J.
+です。最後の恒等式は各数値ステップが正準変換であることを示します。1自由度ではdet(D Phi)=1と同値で、向き付き位相面積を保ちます。高次元で総体積だけを保つ条件は、それより弱いものです。
+2形式の保存、Hの保存、時間対称性Phi_(−h)=Phi_h^(−1)を別々に検査します。シンプレクティックEulerはその違いの例で、一般に厳密エネルギー保存でも時間対称でもありません。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — Hamiltonianを分けて厳密な部分流を合成する# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#split-the-hamiltonian-compose-exact-subflows
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+単位質量の可分系H(q,p)=p²/2+V(q)では、2つの部分流はドリフトとキックです。
+D_h(q,p)=(q+hp,p),\qquad K_h(q,p)=(q,p-h\nabla V(q)).
+それぞれがシンプレクティックで、合成もそうなります。ノートにはkick–driftのシンプレクティックEulerと、対称2次のStörmer–Verlet、
+p_{n+1/2}=p_n-\frac h2\nabla V(q_n),\quad
+q_{n+1}=q_n+h p_{n+1/2},\quad
+p_{n+1}=p_{n+1/2}-\frac h2\nabla V(q_{n+1}).
+があります。これは力学のleapfrog／速度Verletで、時間積分ノートの2ステップスカラー漸化式とは異なります。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — 合成で4次へ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#fourth-order-by-composition
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+VerletステップをS2(h)とすると、4次合成の一例は、
+S_4(h)=S_2(a h)\,S_2(b h)\,S_2(a h),\qquad
+a=\frac1{2-2^{1/3}},\quad b=-\frac{2^{1/3}}{2-2^{1/3}}.
+です。Yoshida（1990）は高次シンプレクティック合成を発展させます。bが負なので内部部分ステップは時間を逆行します。ここでの滑らかな保存系には適しますが、不可逆な拡散、衝撃波、衝突処理へ単に適用することは正当化されません。高次でも無条件安定や同一コストの優位性は示せません。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — エネルギーと修正Hamiltonian# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#energy-and-a-modified-hamiltonian
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+後退誤差解析は近傍の、一般には形式的な修正Hamiltonianを記述します。滑らかさ、有界軌道、小刻みなどの仮定で、小さな長時間エネルギー誤差を説明できます。すべての軌道・刻みで元のHが厳密不変とはしません。Hairer・Lubich・Wanner（2003）が幾何学的な視点と仮定を論じます。
+特別な振動子H=(p²+q²)/2では、kick–drift–kick Verletは、
+I_h=\frac12p^2+\frac12\left(1-\frac{h^2}{4}\right)q^2
+を丸め誤差まで保存し、H自体は振動します。この不変量から、係数を変えていないHamiltonian流が厳密に数値の時間h写像だとは言えません。|h|<2では有界ですが、それを超えるとシンプレクティックなまま不安定になり得ます。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — 陰的中点則とRK4の比較# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#implicit-midpoint-and-rk4-as-comparisons
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+陰的中点則は端点方程式を正確に解くとシンプレクティックかつ時間対称です。この2次振動子ではHを丸め誤差まで保存しますが、非2次Hを厳密保存するとは限りません。古典的RK4は4次ですが、一般にはシンプレクティックでも時間対称でもありません。短時間精度の良さだけでは写像の幾何は保証されません。
+第2問題はH=p²/2+q²/2+q⁴/4という滑らかな非線形振動子です。中点則の特別な2次エネルギー保存と一般的主張の違いが見えるようになります。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — 再現可能なノートと検査# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#reproducible-notebook-and-checks
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+from numart.hamiltonian import trajectory, energy, canonical_step, J
+t, z = trajectory(h=0.2, steps=1000, method='yoshida4', system='quartic')
+print(max(abs((energy(z, 'quartic')-energy(z[0], 'quartic'))/energy(z[0], 'quartic'))))
+_, M = canonical_step([0.7, 0.4], 0.2, 'yoshida4', 'quartic', True)
+print(M.T @ J @ M - J)
+計算データとソース記録は、5手法、2つのHamiltonian、h=0.1、0.2、0.4の30軌道を、(q,p)=(1,0.2)からT=200まで供給します。描画軌道は最大1001標本ですが、最大エネルギー誤差は全積分ステップを使います。位相パッチは(0.7,0.4)中心の正方形へ1ステップ作用させます。標本多角形は図示で、局所欠損は中心の解析的な写像Jacobianを使います。
+テストは厳密振動子に対する収束、解析Jacobianと独立差分、両ポテンシャルの正準恒等式、対称法の時間反転、Verletの2次不変量、中点則の2次・非2次エネルギーの違いを確認します。教育用固定刻み例であり、軌道精度や時間コストの順位ではありません。
+
+## シンプレクティック積分：正準写像とエネルギーを分ける — 粒子重力へつなぐ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/symplectic/#connecting-to-particle-gravity
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+固定刻みと、整合した位置依存ポテンシャルの勾配である力が分割合成の議論を支えます。一般の近似ツリー力、変化する開口判定、場当たり的な格子補間、状態依存の刻み選択が、その証明を自動的に保つわけではありません。力近似と時間積分を合同で検査する必要があります。粒子重力とPoisson解法、重力境界核へ進んでください。
+
+## 教科書案内：次に何を調べるか — 教科書案内：次に何を調べるか [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+このアトラスから参照するための書棚です。知りたい問いから選ぶ読書案内で、順位付けではありません。以下の年は引用する版の年であり、アルゴリズムの発明年ではありません。
+リンク先は出版社の書誌情報や著者管理のページです。版情報と公開されている紹介・目次を確認しており、各書のすべての導出を点検したという意味ではありません。関連章はアトラスとの接点を示し、教科書全体の実装を意味しません。
+最初の道筋： CFDの枠組みにはHirsch、保存則と有限体積法の考え方にはLeVeque、RiemannソルバーにはToro、圧力・速度連成にはPatankar、疎行列の反復解法にはSaad。個々の手法の由来を追うときは原論文にも戻ってください。
+参考文献庫を検索 · 登録済みの書籍のみ · BibTeXをダウンロード
+表紙は記載したISBNに対応するOpen Libraryの画像を表示します。各カードにAmazon Japanと出版社・書誌情報へのリンクがあります。表紙を取得できない場合も書名を表示します。
+
+## 教科書案内：次に何を調べるか — CFDの基礎と非圧縮流れ# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#cfd-foundations
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid Dynamics表紙を読み込み中表紙画像なし
+Open Libraryの書誌情報
+ISBN 9780750665940
+
+## 教科書案内：次に何を調べるか — Hirsch# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hirsch2007
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Hirsch, Charles. Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid Dynamics. Butterworth-Heinemann, 2007・第2版.
+支配方程式、格子の性質、整合性・安定性、離散化から解法まで、CFD全体の枠組みを調べる本です。引用する2007年版は第2版の基礎巻です。
+アトラスの関連章：差分、CFL条件、von Neumann解析、Laxの定理 · 構造格子、非構造格子、三角形格子 · 時間積分とleapfrog法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+hirsch2007
+
+## 教科書案内：次に何を調べるか — Hirsch# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hirsch2007
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Computational Techniques for Fluid Dynamics 1: Fundamental and General Techniques表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9783540530589
+
+## 教科書案内：次に何を調べるか — Fletcher / Volume I# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#fletcher1991v1
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Fletcher, Clive A. J. Computational Techniques for Fluid Dynamics 1: Fundamental and General Techniques. Springer, 1991・第2版.
+I巻はPDEの分類、重み付き残差法、定常・拡散問題、線形・非線形移流を調べるために。II巻の流れ別の解法に進む前の共通の数値的道具を扱います。
+アトラスの関連章：差分、CFL条件、von Neumann解析、Laxの定理 · 連続有限要素法：弱形式から疎行列の組立てへ · 拡散、楕円型方程式、境界条件、反復法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+fletcher1991v1
+
+## 教科書案内：次に何を調べるか — Fletcher / Volume I# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#fletcher1991v1
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Computational Techniques for Fluid Dynamics 2: Specific Techniques for Different Flow Categories表紙を読み込み中表紙画像なし
+Open Libraryの書誌情報
+ISBN 9783540536017
+
+## 教科書案内：次に何を調べるか — Fletcher / Volume II# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#fletcher1991v2
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Fletcher, Clive A. J. Computational Techniques for Fluid Dynamics 2: Specific Techniques for Different Flow Categories. Springer, 1991・第2版.
+II巻はI巻の一般的手法を、流れの方程式の各分類とその数値解法に結びつけるために。各アルゴリズムと合わせて仮定や境界条件も確認します。
+アトラスの関連章：非圧縮流：整合する離散演算子で射影する · 前処理、二重時間積分、残差分配法 · 極・円筒座標：テンソルと粘性.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+fletcher1991v2
+
+## 教科書案内：次に何を調べるか — Fletcher / Volume II# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#fletcher1991v2
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Computational Methods for Fluid Dynamics表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9783319996912
+
+## 教科書案内：次に何を調べるか — Ferziger · Perić · Street# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#ferziger2020
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Ferziger, Joel H.; Perić, Milovan; Street, Robert L. Computational Methods for Fluid Dynamics. Springer, 2020・第4版.
+離散演算子を実際のCFD計算手順に結びつける際に。特に非圧縮流れの圧力・速度連成や境界条件を調べる入口です。
+アトラスの関連章：非圧縮流：整合する離散演算子で射影する · 極・円筒座標：テンソルと粘性.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+ferziger2020
+
+## 教科書案内：次に何を調べるか — Ferziger · Perić · Street# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#ferziger2020
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Numerical Heat Transfer and Fluid Flow表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780891165224
+
+## 教科書案内：次に何を調べるか — Patankar# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#patankar1980
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Patankar, Suhas V. Numerical Heat Transfer and Fluid Flow. CRC Press (current publisher record), 1980.
+コントロールボリュームの収支とSIMPLE型の圧力・速度連成を、物理的な考え方から理解したいときに。教科書の解説と手法の原論文は区別します。
+アトラスの関連章：非圧縮流：整合する離散演算子で射影する · Euler再構成：PPM・特性変数・WENO-Z・AUSM.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+patankar1980
+
+## 教科書案内：次に何を調べるか — 保存則・Riemannソルバー・衝撃波# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hyperbolic
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Finite Volume Methods for Hyperbolic Problems表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780521009249
+
+## 教科書案内：次に何を調べるか — LeVeque / finite volume# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#leveque2002
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+LeVeque, Randall J. Finite Volume Methods for Hyperbolic Problems. Cambridge University Press, 2002.
+弱解、有限体積法の考え方、波の伝播、リミター、多次元保存則を調べるときに。Clawpack関連資料から理論と実装を結びつけられます。
+アトラスの関連章：Euler再構成：PPM・特性変数・WENO-Z・AUSM · 勾配制限：minmod、Superbee、MC、van Leer、van Albada · 方程式ギャラリー：計算法の前に方程式を選ぶ.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+leveque2002
+
+## 教科書案内：次に何を調べるか — LeVeque / finite volume# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#leveque2002
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Riemann Solvers and Numerical Methods for Fluid Dynamics: A Practical Introduction表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9783540252023
+
+## 教科書案内：次に何を調べるか — Toro# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#toro2009
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Toro, Eleuterio F. Riemann Solvers and Numerical Methods for Fluid Dynamics: A Practical Introduction. Springer, 2009・第3版.
+Euler方程式の厳密・近似Riemannソルバー、接触波、高解像度の衝撃波捕獲法を導出・比較したいときに。
+アトラスの関連章：前処理、二重時間積分、残差分配法 · Euler再構成：PPM・特性変数・WENO-Z・AUSM · テスト計算ライブラリ.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+toro2009
+
+## 教科書案内：次に何を調べるか — Toro# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#toro2009
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Numerical Approximation of Hyperbolic Systems of Conservation Laws表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780387945293
+
+## 教科書案内：次に何を調べるか — Godlewski · Raviart# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#godlewski1996book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Godlewski, Edwige; Raviart, Pierre-Arnaud. Numerical Approximation of Hyperbolic Systems of Conservation Laws. Springer, 1996・第1版.
+非線形双曲型保存則系とその数値近似を数学的に学び、Riemann問題や気体力学を詳しく調べるための本です。有限体積法の考え方にはLeVeque、ソルバーの構成にはToroを併読するとつながります。この項目は1996年初版を引用し、2021年の改訂第2版も案内します。
+アトラスの関連章：前処理、二重時間積分、残差分配法 · Euler再構成：PPM・特性変数・WENO-Z・AUSM · A安定性、L安定性、誤差ノルム.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+godlewski1996book
+
+## 教科書案内：次に何を調べるか — 差分法と線形代数# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#common-numerics
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Finite Difference Methods for Ordinary and Partial Differential Equations: Steady-State and Time-Dependent Problems表紙を読み込み中表紙画像なし
+Open Libraryの書誌情報
+ISBN 9780898716290
+
+## 教科書案内：次に何を調べるか — LeVeque / finite differences# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#leveque2007
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+LeVeque, Randall J. Finite Difference Methods for Ordinary and Partial Differential Equations: Steady-State and Time-Dependent Problems. SIAM, 2007.
+整合性・安定性・収束の関係、常微分方程式、境界値問題、偏微分方程式の差分法を調べるときに。
+アトラスの関連章：A安定性、L安定性、誤差ノルム · 時間積分とleapfrog法 · 拡散、楕円型方程式、境界条件、反復法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+leveque2007
+
+## 教科書案内：次に何を調べるか — LeVeque / finite differences# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#leveque2007
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Matrix Computations表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9781421407944
+
+## 教科書案内：次に何を調べるか — Golub · Van Loan# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#golub2013
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Golub, Gene H.; Van Loan, Charles F. Matrix Computations. Johns Hopkins University Press, 2013・第4版.
+手法名だけでソルバーを選ぶ前に、条件数、安定な行列分解、最小二乗、固有値問題を確認するための本です。
+アトラスの関連章：疎行列・非線形方程式系：真の残差を測る · 拡散、楕円型方程式、境界条件、反復法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+golub2013
+
+## 教科書案内：次に何を調べるか — Golub · Van Loan# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#golub2013
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Iterative Methods for Sparse Linear Systems表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780898715347
+
+## 教科書案内：次に何を調べるか — Saad# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#saad2003book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Saad, Yousef. Iterative Methods for Sparse Linear Systems. SIAM, 2003・第2版.
+Krylov部分空間、GMRES、BiCG系の手法、前処理を調べるときに。著者のページで第2版の本文と訂正情報が公開されています。
+アトラスの関連章：疎行列・非線形方程式系：真の残差を測る · 拡散、楕円型方程式、境界条件、反復法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+saad2003book
+
+## 教科書案内：次に何を調べるか — Saad# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#saad2003book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780898713282
+
+## 教科書案内：次に何を調べるか — Barrett et al. / Templates# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#templates1994
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Barrett, Richard; Berry, Michael; Chan, Tony F.; Demmel, James; Donato, June; Dongarra, Jack; Eijkhout, Victor; Pozo, Roldan; Romine, Charles; van der Vorst, Henk. Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods. SIAM, 1994.
+行列に必要な仮定を確認しながら、反復線形解法のアルゴリズムと選び方を手短に引く公開リファレンスです。
+アトラスの関連章：疎行列・非線形方程式系：真の残差を測る · 拡散、楕円型方程式、境界条件、反復法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+templates1994
+
+## 教科書案内：次に何を調べるか — マルチグリッド：直観・解析・実装# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#multigrid
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+A Multigrid Tutorial表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780898714623
+
+## 教科書案内：次に何を調べるか — Briggs · Henson · McCormick / A Multigrid Tutorial# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#briggs2000book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Briggs, William L.; Henson, Van Emden; McCormick, Steve F. A Multigrid Tutorial. SIAM, 2000・第2版.
+緩和法が振動的な誤差を減らし、粗格子が残った滑らかな誤差を扱う理由を知る入口です。モデル問題から残差補正、制限・延長、マルチグリッドサイクルの実装へ進めます。第2版では非線形問題やAMGも導入します。
+アトラスの関連章：拡散、楕円型方程式、境界条件、反復法 · 疎行列・非線形方程式系：真の残差を測る.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+briggs2000book
+
+## 教科書案内：次に何を調べるか — Briggs · Henson · McCormick / A Multigrid Tutorial# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#briggs2000book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Multigrid表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780127010700
+
+## 教科書案内：次に何を調べるか — Trottenberg · Oosterlee · Schüller / Multigrid# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#trottenberg2001
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Trottenberg, Ulrich; Oosterlee, Cornelius W.; Schüller, Anton. Multigrid. Academic Press, 2001・第1版.
+入門の次に引く詳しい参考書です。マルチグリッドの基礎理論、局所Fourier解析、スムーザーと粗格子の選び方、並列実装、連立系、付録のAMGを調べられます。アトラスのPoisson比較では、サイクルが収束する理由と仕事量を考えるために参照します。AMG・異方性・並列性能には個別の実装と検証が必要です。
+アトラスの関連章：拡散、楕円型方程式、境界条件、反復法 · 疎行列・非線形方程式系：真の残差を測る · 粒子重力：PM、P³M、ツリー、多重極、マルチグリッド.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+trottenberg2001
+
+## 教科書案内：次に何を調べるか — スペクトル基底と不連続Galerkin法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#high-order
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Spectral Methods in MATLAB表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780898714654
+
+## 教科書案内：次に何を調べるか — Trefethen# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#trefethen2000
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Trefethen, Lloyd N. Spectral Methods in MATLAB. SIAM, 2000.
+スペクトル微分、Fourier・Chebyshevの例、短い再現用プログラムを調べるときに。重心補間の扱いは限られるため補足資料も参照します。
+アトラスの関連章：インタラクティブ実験ガイド · Orthogonal polynomials and mesh basis functions.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+trefethen2000
+
+## 教科書案内：次に何を調べるか — Trefethen# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#trefethen2000
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and Applications表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9780387720654
+
+## 教科書案内：次に何を調べるか — Hesthaven · Warburton# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hesthaven2008book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Hesthaven, Jan S.; Warburton, Tim. Nodal Discontinuous Galerkin Methods: Algorithms, Analysis, and Applications. Springer, 2008.
+節点多項式基底、求積、参照要素の演算子を、DGの要素間流束やPDE計算法につなげるための本です。
+アトラスの関連章：Orthogonal polynomials and mesh basis functions · インタラクティブ実験ガイド.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+hesthaven2008book
+
+## 教科書案内：次に何を調べるか — 時間積分・地球流体・粒子法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#time-geophysics-particles
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9783540306634
+
+## 教科書案内：次に何を調べるか — Hairer · Lubich · Wanner# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hairer2006book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Hairer, Ernst; Lubich, Christian; Wanner, Gerhard. Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations. Springer, 2006・第2版.
+シンプレクティック写像、対称合成法、分割法、後退誤差解析を調べるときに。シンプレクティック構造の保存と元のHamiltonianの厳密保存は異なります。
+アトラスの関連章：シンプレクティック積分：正準写像とエネルギーを分ける · 時間積分とleapfrog法.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+hairer2006book
+
+## 教科書案内：次に何を調べるか — Hairer · Lubich · Wanner# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hairer2006book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Numerical Methods for Fluid Dynamics: With Applications to Geophysics表紙を読み込み中表紙画像なし
+表紙出典：Open Library
+ISBN 9781441964113
+
+## 教科書案内：次に何を調べるか — Durran# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#durran2010
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Durran, Dale R. Numerical Methods for Fluid Dynamics: With Applications to Geophysics. Springer, 2010・第2版.
+地球流体の分散、移流、時間離散化を調べるときに。球面メッシュと変数配置の解説と合わせて参照してください。
+アトラスの関連章：球面メッシュとArakawa A・B・C格子 · Runge–Kutta法：段数、次数、安定性、SSP.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+著者・参照資料 ↗
+durran2010
+
+## 教科書案内：次に何を調べるか — Durran# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#durran2010
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Computer Simulation Using Particles表紙を読み込み中表紙画像なし
+Open Libraryの書誌情報
+ISBN 9780070291089
+
+## 教科書案内：次に何を調べるか — Hockney · Eastwood# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/textbooks/#hockney1981book
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+Hockney, R. W.; Eastwood, J. W. Computer Simulation Using Particles. McGraw-Hill, 1981.
+粒子・メッシュの考え方、力の割当て、Fourier変換による場の計算を調べるときに。初版は1981年で、リンク先DOIは後年の再刊です。
+アトラスの関連章：粒子重力：PM、P³M、ツリー、多重極、マルチグリッド · 重力核：孤立FFTと周期スラブ.
+Amazon Japan ↗
+出版社・書誌情報 ↗
+hockney1981book
+
+## 時間積分とleapfrog法 — 時間積分とleapfrog法 [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/time-integration/
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+空間再構成と時間積分は独立した選択です。空間離散化後、PDEはODE系dU/dt = L(U)になります。精度、安定性、単調性、散逸、計算量は両者に依存します。時間積分ノートではy′=i y、y(0)=1を使い、時間積分の選択を切り分けます。
+
+## 時間積分とleapfrog法 — ひとつの振動子と12手法# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/time-integration/#twelve-methods-on-one-oscillator
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+厳密解exp(i t)は単位円をたどります。前進Eulerと後退Eulerは1次精度で、この無減衰振動子に対して前者は増幅、後者は減衰します。陽的RK2にはHeun／SSPRK(2,2)、陽的中点、Ralstonがあります。Kutta RK3、SSPRK(3,3)、SSPRK(4,3)は3次、古典的RK4とSSPRK(5,4)は4次です。陰的中点則は2次で、この線形振動子の振幅を保存しますが、位相には誤差があります。RK系譜の章と系譜ノートで段数・次数・SSP、非線形テストを比較できます。
+y′=lambda yに対してz=lambda delta tと置くと、1ステップ増幅係数の例は、
+R_{\rm FE}=1+z,\quad R_{\rm BE}=\frac1{1-z},\quad
+R_{\rm midpoint}=\frac{1+z/2}{1-z/2}.
+です。このスカラー線形方程式では、3種のRK2、Kutta RK3／SSPRK(3,3)、古典的RK4のRK係数は、それぞれ2次、3次、4次までの指数関数のTaylor多項式になります。SSPRK(4,3)には4次項z⁴/48、SSPRK(5,4)には5次項もあります。同じスカラー増幅係数でも、非線形RK段階が同じとは限りません。SSP性は空間演算子の前進Euler限界に依存し、無条件安定ではありません。
+
+## 時間積分とleapfrog法 — leapfrog法には2つの根が必要# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/time-integration/#leapfrog-needs-two-roots
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+1階の方程式系を中心差分で進める2ステップ漸化式は、
+y^{n+1}=y^{n-1}+2z y^n,\qquad
+\xi_\pm=z\pm\sqrt{1+z^2}.
+です。zがゼロへ向かうと+1へ近づく根が物理モード、−1へ近づく根がステップごとに交互に変わる計算モードを担います。両方の根と重複度が重要です。z=i sigmaでは、|sigma|<1なら異なる2根の絶対値は1です。|sigma|=1では重根によって線形増大する解があり得るため、一般的な有界性の主張に端点を含めてはいけません。その上では一方の根が等比的に増幅します。
+y(0)に加えて開始値が必要です。本実装ではRK4で1ステップ進め、必要に応じてy(1)へ実摂動epsilonを加えます。lambda=0なら、偶数番目の標本は1、奇数番目は1+epsilonとなり、計算モードを直接示せます。ノートの振動子では物理モードも同時に変化します。
+Robert–Asselin系などの時間フィルターは、減衰と精度のトレードオフを伴って挙動を変えます。Williams（2009）を参照してください。初版にはフィルターを適用していません。
+
+## 時間積分とleapfrog法 — 粒子leapfrogは別の定式化# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/time-integration/#particle-leapfrog-is-a-different-formulation
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+位置と速度をずらして更新するkick–drift法や、2階の力学系に対する速度Verletも、leapfrogと呼ばれることがあります。変数が異なる時刻位置にあり、シンプレクティックな解釈にはその構造を使います。上のスカラー漸化式は、完全なSPH粒子積分器の実演でも、一般の力学系の長時間エネルギー保存の証明でもありません。
+
+## 時間積分とleapfrog法 — ノートを再現して読む# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/time-integration/#reproduce-and-read-the-notebook
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+from numart.time_integration import linear_trajectory, leapfrog_roots
+t, y = linear_trajectory(rate=1j, dt=0.1, steps=200, method='leapfrog')
+print(leapfrog_roots(0.1j))
+ブラウザーでは、終了時刻20でPython計算した軌道から、12手法、7刻み幅、leapfrog開始摂動3種を選べます。不安定な標本では軸範囲が広がります。陰的求解とRK段数が異なるため、同じ時間区間でも同じ計算量とは限りません。テストでは時間収束次数、leapfrogの根、交互モード、中点則の振幅を確認します。
+これらの振動子軌道はスカラー安定性係数を評価し、この線形テスト方程式ではRK段階と代数的に等価です。別の系譜ノートでは完全な非線形段階を評価します。空間安定性実験室、SPH、ALEへ進んでください。
+
+## 時間積分とleapfrog法 — 正準的な力学写像# [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/ja/read/time-integration/#canonical-mechanical-maps
+Coverage: reading
+Source note: 日本語訳はドラフトです。数式・計算・参照資料は英語原文と照合できます。
+
+シンプレクティック積分の章では、調和・4次Hamilton系に対して、力学的なkick–drift–kick Verlet、吉田の4次合成、シンプレクティックEuler、陰的中点則を実装します。写像ノートではRK4と比較し、正準構造と厳密なエネルギー保存を分けます。
+
+## 数値計算アトラス [ja]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/
+Coverage: overview
+
+方程式、離散化、実装、ベンチマークをたどる。衝撃波、流体、Poisson、時間積分、粒子法、有限要素法を学ぶ。
+教育用実装・限定的な検証・文献調査・開発予定が混在。各章の範囲を確認。量子化学・Hartree–Fock・DFTは今後の予定で専用実装は未着手。
+
+## Numerical Methods Atlas [en]
+
+Source: https://koyamahr.github.io/numerical-methods-atlas/
+Coverage: overview
+
+Equations, discretization, implementation and benchmarks: shocks, fluids, Poisson, time integration, particle methods and finite elements.
+Contains educational implementations, limited verification, literature surveys and plans. Check each chapter. Quantum chemistry, Hartree–Fock and DFT are planned, with no dedicated implementation yet.

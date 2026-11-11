@@ -1,6 +1,8 @@
 (() => {
   const copy = {
   "ja": {
+    "guideTitle": "何を学ぶ？ 何を計算する？",
+    "guideAction": "自分のLLMで相談する →",
     "rootsDescription": "小山 洋から4代先に、湯川秀樹。いつものAIで自分の学術系譜を調べ、結果を貼り付けて系図や画像を作れます。",
     "rootsAction": "自分のルーツを調べる",
     "entryPhotos": "写真",
@@ -60,6 +62,8 @@
     "backHome": "ポートフォリオへ戻る"
   },
   "en": {
+    "guideTitle": "What would you like to learn or calculate?",
+    "guideAction": "Explore with your own LLM →",
     "rootsDescription": "Four academic links from Hiroshi Koyama to Hideki Yukawa. Research your own lineage with your usual AI, then paste the result to create a family tree and image. Japanese interface.",
     "rootsAction": "Explore your academic roots",
     "entryPhotos": "Photographs",
