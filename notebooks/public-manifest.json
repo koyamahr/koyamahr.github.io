@@ -12020,13 +12020,13 @@
     },
     {
       "path": "bibliography.html",
-      "bytes": 27718,
-      "sha256": "262c950871a78e3a550ea46961a31328610863581ecfb464a9280fc88181a0f5"
+      "bytes": 28226,
+      "sha256": "929ab7f83c81ccde95e9271454807bd3f27b8edb516892ceab95466a56e6e319"
     },
     {
       "path": "bibliography.json",
-      "bytes": 18244,
-      "sha256": "146bcb4d98edc60d6b4c92c388576187464056bf7733dd55accfe7cb720dd69f"
+      "bytes": 18837,
+      "sha256": "37cf62c208bc0d6a34beb42b27b91182c5cd45b5cfceccec1f2d74f16b7872aa"
     },
     {
       "path": "catalog.js",
@@ -12046,7 +12046,7 @@
     {
       "path": "index.html",
       "bytes": 4922,
-      "sha256": "185932bd6a0562972adf924c4205e9bbafb45189bf80177cc2d05a45ee900f68"
+      "sha256": "d217f88dea76e356c22e51953da36b970a7ed9eb1a04304da40dcc9b4090f9d6"
     },
     {
       "path": "library.css",
@@ -12084,5 +12084,5 @@
       "sha256": "c30ba5547f8e6f0d8654faa25e5223d1f0d5e4ceda0fd90211c19a52aec6d204"
     }
   ],
-  "bibliographic_entries": 52
+  "bibliographic_entries": 53
 }

@@ -651,6 +651,23 @@
         "type": "owner_confirmation",
         "confirmed_on": "2026-11-11"
       }
+    },
+    {
+      "id": "b109",
+      "source_ids": [
+        "hdd-inutsuka"
+      ],
+      "title": "犬塚修一郎のノート（正式表題未確認）",
+      "creator": "犬塚修一郎",
+      "kind": "講義資料",
+      "note": "所蔵者の記憶とHDDの保存目録から登録。正式な表題・本文・資料の作成者表記は、原本確認待ち。",
+      "title_status": "tentative",
+      "creator_source": {
+        "type": "owner_recollection_and_filename",
+        "confirmed_on": "2026-11-11",
+        "body_checked": false
+      },
+      "reference_url": null
     }
   ]
 }
