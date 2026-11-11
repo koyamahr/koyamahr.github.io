@@ -12020,8 +12020,8 @@
     },
     {
       "path": "catalog.js",
-      "bytes": 170667,
-      "sha256": "56d60552826c3714c4d5cfe88e9266f50059ac6e1e2a2f8ce38d94f0ec6b5a74"
+      "bytes": 172034,
+      "sha256": "9cd708b9b23a74edd35face7c61b7ba16fa8603c097066192db67927e9c28d4a"
     },
     {
       "path": "favicon.ico",
@@ -12036,7 +12036,7 @@
     {
       "path": "index.html",
       "bytes": 4450,
-      "sha256": "2dbc080c4ec0b8aa527682cbfe9f5eaa64bc916de63095afeef86ac3f7f240a6"
+      "sha256": "b7f1c5bc69be7d6a3a149ef4f6a20b704e5c0c30954879a2d44d2e6131e1cbb3"
     },
     {
       "path": "library.css",
@@ -12051,12 +12051,12 @@
     {
       "path": "notebook.html",
       "bytes": 4693,
-      "sha256": "880a853f0f563a4302d4c920604fe2815fc0de5f5fbfcb14f199c796a3b01bc1"
+      "sha256": "5d6d14986f2ec0a7afaff4f02d8038cb21d297dcb3e20d88cccb983664fa282a"
     },
     {
       "path": "notebook.js",
-      "bytes": 5613,
-      "sha256": "9c48e03a9eac671b2939bf3b8ab5b313a3e771e0f1ed2fbfdfb595bd3caa0ac3"
+      "bytes": 6067,
+      "sha256": "a4512e13f7d488d40dd591e0245685de47464c94544d46f698f52ae1fdb2a4ed"
     },
     {
       "path": "quantum-a-excerpt.md",
