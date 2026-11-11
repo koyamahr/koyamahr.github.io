@@ -39,6 +39,10 @@ To add a book or update availability:
 
 The site hosts cover images and descriptions; reading samples are reached through the Amazon product page. Book manuscripts and EPUB files are not included.
 
+## Notebook viewing release
+
+The reviewed notebook collection is published at `/notebooks/`: 41 notebooks and 1,170 selected pages, with pixel-level redactions retained. Only the existing public viewing assets and licensing notices are included. Private originals, OCR audit records and the original repository history remain outside this repository. `notebooks/public-manifest.json` records the viewing file hashes. Publish new notebook material only after the same allowlist, redaction and metadata checks.
+
 ## Homepage editing
 
 The final `#contact` section displays the public address `koyamarium@gmail.com` and links directly to `mailto:koyamarium@gmail.com`. Japanese and English copy explain that the visitor’s email application opens. Keep the default Japanese HTML and the translations in `home.js` synchronized.

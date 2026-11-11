@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="1993年の手書きの量子力学ノート。原本を眺め、目次をたどり、数式を読み直す、小さな学習アーカイブ。">
+  <meta name="theme-color" content="#193f3c">
+  <title>量子力学 A | 大学ノート</title><link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+<style id="rights-notice-style">.rights-notice{box-sizing:border-box;max-width:1240px;width:100%;margin:32px auto 0;padding:20px 24px;border-top:1px solid #c8c4ba;color:#56564e;background:transparent;font:13px/1.7 system-ui,sans-serif}.rights-notice p{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0!important}.rights-notice a{color:inherit;text-underline-offset:3px}.rights-notice span{overflow-wrap:anywhere}</style>
+</head>
+<body>
+<a class="skip" href="#reader">ノートへ進む</a>
+<header class="masthead">
+  <a class="brand" href="#overview" aria-label="大学ノート トップ">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="6" y="3" width="22" height="26" rx="2"/><path d="M11 3v26M3 9h6M3 16h6M3 23h6M16 10h7M16 15h7"/></svg>
+    <span>大学ノート<small>COLLEGE NOTES</small></span>
+  </a>
+  <nav aria-label="メイン"><a href="#reader">ノートを読む</a><a href="#transcript">清書を読む</a><a href="#about">この書庫について</a></nav>
+  <span class="edition">試作版 <span>01</span></span>
+</header>
+<main>
+<section id="overview" class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> KYOTO-U / PHYSICS</div>
+    <p class="series">手書きの学びを、もう一度。</p>
+    <h1>量子力学 <em>A</em><span>Quantum Mechanics</span></h1>
+    <p class="intro">物質波から、確率の解釈へ。<br>1993年春のノートを、ページをめくりながら<br class="desktop">読み返すための小さな書庫です。</p>
+    <div class="hero-actions"><a class="button primary" href="#reader">ノートを開く <span aria-hidden="true">↗</span></a><a class="text-link" href="assets/quantum-a/quantum-a-sample.pdf" download>5ページのPDF <span aria-hidden="true">↓</span></a></div>
+    <dl class="facts"><div><dt>記録時期</dt><dd>1993<span>年4月</span></dd></div><div><dt>試し読み</dt><dd>05<span> / 68 ページ</span></dd></div><div><dt>原本の解像度</dt><dd>300<span> dpi</span></dd></div></dl>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <span class="plate-number">NOTE / 001</span>
+    <div class="back-sheet"></div>
+    <div class="hero-sheet"><img src="assets/quantum-a/clean/03.png" alt="" width="2150" height="3100"><span>21 APRIL 1993</span></div>
+    <div class="art-caption"><span class="tiny-line"></span> 波の確率解釈 / 原本 p.3</div>
+  </div>
+</section>
+
+<section id="reader" class="reader-section" aria-labelledby="reader-title">
+  <div class="section-heading"><div><p class="eyebrow">01 / THE NOTEBOOK</p><h2 id="reader-title">手書きのページを読む</h2></div><p>書き込みも、考えた跡も、そのままに。<br>先頭5ページを試し読みできます。</p></div>
+  <div class="reader-shell">
+    <aside class="contents" aria-label="ページ目次">
+      <div class="contents-heading"><span>ページ目次</span><span>01—05</span></div>
+      <ol id="page-list">
+        <li><button data-page="1"><img src="assets/quantum-a/thumb/01.webp" alt="" width="290" height="418"><span><small>01</small><strong>状態ベクトルと光量子</strong><span>量子論の公準・参考文献</span></span></button></li>
+        <li><button data-page="2"><img src="assets/quantum-a/thumb/02.webp" alt="" width="290" height="418"><span><small>02</small><strong>物質波と波束</strong><span>de Broglie 波・群速度</span></span></button></li>
+        <li><button data-page="3" aria-current="page"><img src="assets/quantum-a/thumb/03.webp" alt="" width="290" height="418"><span><small>03</small><strong>波の確率解釈</strong><span>干渉・確率密度</span></span></button></li>
+        <li><button data-page="4"><img src="assets/quantum-a/thumb/04.webp" alt="" width="290" height="418"><span><small>04</small><strong>デルタ関数と期待値</strong><span>規格化・位置と運動量</span></span></button></li>
+        <li><button data-page="5"><img src="assets/quantum-a/thumb/05.webp" alt="" width="290" height="418"><span><small>05</small><strong>物理量と演算子</strong><span>全エネルギー・エルミート性</span></span></button></li>
+      </ol>
+      <div class="contents-note"><span>この先のページ</span><p>全68ページのうち、先頭5ページを収録した試作です。</p></div>
+    </aside>
+    <div class="reader-main">
+      <div class="reader-toolbar">
+        <div class="segmented" role="group" aria-label="画像の表示方法"><button data-mode="clean" aria-pressed="true">整形版</button><button data-mode="original" aria-pressed="false">原本</button><button data-mode="compare" aria-pressed="false">左右比較</button></div>
+        <div class="page-controls"><button id="prev" aria-label="前のページ">←</button><label class="sr-only" for="page-select">ページを選ぶ</label><select id="page-select"><option value="1">01 / 05</option><option value="2">02 / 05</option><option value="3" selected>03 / 05</option><option value="4">04 / 05</option><option value="5">05 / 05</option></select><button id="next" aria-label="次のページ">→</button></div>
+      </div>
+      <div class="page-caption"><div><span id="page-kicker">ORIGINAL PAGE 03</span><h3 id="page-title">波の確率解釈</h3></div><a id="image-link" href="assets/quantum-a/clean/03.png" target="_blank" rel="noopener">画像を大きく開く ↗</a></div>
+      <div class="image-viewport" id="image-viewport" tabindex="0" role="region" aria-label="ノート画像。上下にスクロールして閲覧できます">
+        <div id="image-panels" class="image-panels">
+          <figure id="original-panel" hidden><figcaption>原本画像</figcaption><img id="original-image" src="assets/quantum-a/original/03.png" alt="量子力学A 原本3ページ目" width="2150" height="3040"></figure>
+          <figure id="clean-panel"><figcaption>余白・傾きを整えた閲覧版</figcaption><img id="clean-image" src="assets/quantum-a/clean/03.png" alt="量子力学A 整形版3ページ目" width="2150" height="3100"></figure>
+        </div>
+      </div>
+      <div class="reader-bottom"><p id="page-date">原本の日付：93.4.21</p><div class="zoom"><label for="zoom">拡大</label><input id="zoom" type="range" min="100" max="180" step="10" value="100"><output id="zoom-label" for="zoom">100%</output></div></div>
+      <p class="image-note">整形版は余白と傾きのみを調整。文字や罫線を残し、数式の補完やノイズ除去は行っていません。</p>
+      <p id="reader-status" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<section id="transcript" class="transcript-section" aria-labelledby="transcript-title">
+  <div class="section-heading"><div><p class="eyebrow">02 / A CLOSER READING</p><h2 id="transcript-title">数式を、読み直す。</h2></div><a class="text-link" href="#page-3" id="source-link">原本3ページ目へ ↗</a></div>
+  <div class="transcript-layout">
+    <aside class="transcript-aside"><span class="source-tag">原本 p.3 より</span><h3>波の確率解釈</h3><p>干渉を表す式から、位置と運動量の二つの表示へ。</p><div class="editorial-note"><strong>清書について</strong><p>手書きノートの一部を再編集した例です。見出し・説明のつながり・数式の記法を整理しています。</p><p>逐語的な全文翻刻ではなく、ノート全体の正誤確認は未実施です。</p></div><a href="quantum-a-excerpt.md" download class="text-link">Markdownを保存 ↓</a></aside>
+    <article class="transcript-body">
+      <span class="chapter-number">I.</span><h3>干渉と確率振幅</h3>
+      <p>二つのスリット a, b を通る経路に対応する振幅を、それぞれ ψ<sub>a</sub>, ψ<sub>b</sub> とします。ノートでは、二つの振幅の重ね合わせを次のように展開しています。</p>
+      <div class="equation" aria-label="重ね合わせの確率密度と干渉項"><math display="block"><mrow><msup><mrow><mo>|</mo><msub><mi>ψ</mi><mi>a</mi></msub><mo>+</mo><msub><mi>ψ</mi><mi>b</mi></msub><mo>|</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>|</mo><msub><mi>ψ</mi><mi>a</mi></msub><mo>|</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>|</mo><msub><mi>ψ</mi><mi>b</mi></msub><mo>|</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>ψ</mi><mi>a</mi><mo>∗</mo></msubsup><msub><mi>ψ</mi><mi>b</mi></msub><mo>+</mo><msub><mi>ψ</mi><mi>a</mi></msub><msubsup><mi>ψ</mi><mi>b</mi><mo>∗</mo></msubsup></mrow></math><small>(1)</small></div>
+      <p>最後の二項が<strong>干渉項</strong>です。電子一つずつはスポットとして観測されますが、それらを集めると干渉縞が再現される、と原本には記されています。</p>
+      <p>位置 <b>r</b> における確率密度を |ψ(<b>r</b>)|² とし、全空間での確率の和が1になるように規格化します。</p>
+      <div class="equation"><math display="block"><mrow><mo>∫</mo><msup><mrow><mo>|</mo><mi>ψ</mi><mo>(</mo><mi mathvariant="bold">r</mi><mo>)</mo><mo>|</mo></mrow><mn>2</mn></msup><mspace width=".2em"/><msup><mi mathvariant="normal">d</mi><mn>3</mn></msup><mi mathvariant="bold">r</mi><mo>=</mo><mn>1</mn></mrow></math><small>(2)</small></div>
+      <span class="chapter-number">II.</span><h3>位置表示と運動量表示</h3>
+      <p>ページの後半では、位置の波動関数 ψ(<b>r</b>) をフーリエ分解し、運動量表示の振幅 A(<b>p</b>) へとつなげています。</p>
+      <div class="equation"><math display="block"><mrow><mi>ψ</mi><mo>(</mo><mi mathvariant="bold">r</mi><mo>)</mo><mo>=</mo><mfrac><mn>1</mn><msup><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>ℏ</mi><mo>)</mo></mrow><mfrac><mn>3</mn><mn>2</mn></mfrac></msup></mfrac><mo>∫</mo><mi>A</mi><mo>(</mo><mi mathvariant="bold">p</mi><mo>)</mo><msup><mi>e</mi><mrow><mfrac><mi>i</mi><mi>ℏ</mi></mfrac><mi mathvariant="bold">p</mi><mo>·</mo><mi mathvariant="bold">r</mi></mrow></msup><mspace width=".2em"/><msup><mi mathvariant="normal">d</mi><mn>3</mn></msup><mi mathvariant="bold">p</mi></mrow></math><small>(3)</small></div>
+      <div class="equation"><math display="block"><mrow><mi>A</mi><mo>(</mo><mi mathvariant="bold">p</mi><mo>)</mo><mo>=</mo><mfrac><mn>1</mn><msup><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>ℏ</mi><mo>)</mo></mrow><mfrac><mn>3</mn><mn>2</mn></mfrac></msup></mfrac><mo>∫</mo><mi>ψ</mi><mo>(</mo><mi mathvariant="bold">r</mi><mo>)</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi>i</mi><mi>ℏ</mi></mfrac><mi mathvariant="bold">p</mi><mo>·</mo><mi mathvariant="bold">r</mi></mrow></msup><mspace width=".2em"/><msup><mi mathvariant="normal">d</mi><mn>3</mn></msup><mi mathvariant="bold">r</mi></mrow></math><small>(4)</small></div>
+      <p>位置表示と運動量表示の規格化は対応します。この関係をデルタ関数で確かめる計算が、次のページに続きます。</p>
+      <a class="next-reading" href="#page-4" id="continuation-link"><span><small>CONTINUE READING / p.4</small><strong>デルタ関数と期待値</strong></span><span aria-hidden="true">→</span></a>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="about-section"><p class="eyebrow">03 / ABOUT THIS ARCHIVE</p><div><h2>学んだ時間を、<br>読める形で残す。</h2><div><p>高校・大学時代のノートや学習資料を整理するアーカイブの試作です。まずは「量子力学 A」の先頭5ページを、原本画像・整形画像・抜粋の清書として収録しました。</p><p>記録年は原本3〜5ページの「93.4.21」をもとに1993年と解釈しています。所属分類は保存元の <span class="inline-code">kyoto-u</span> に基づきます。目次の見出しは閲覧のために付けたものです。</p><p class="about-small">原本：QuantumA.tiff / 全68ページ / 300dpi・白黒<br>収録範囲：原本1〜5ページ / 清書：原本3ページの一部</p></div></div></section>
+</main>
+<footer><a class="footer-brand" href="#overview">大学ノート <span>COLLEGE NOTES</span></a><p>手書きの記録を、これからの読者へ。</p><a href="#overview">ページの先頭へ ↑</a></footer>
+<noscript><p class="noscript">ページ切り替えにはJavaScriptを使用します。<a href="assets/quantum-a/quantum-a-sample.pdf">5ページのPDF</a>でも閲覧できます。</p></noscript>
+<footer class="rights-notice" aria-label="利用条件 / Licensing"><p><a href="https://koyamarium.github.io/rights/">利用条件 / Rights &amp; reuse</a><span>Original code: MIT · Text, figures &amp; photos: separate terms</span></p></footer>
+</body>
+</html>

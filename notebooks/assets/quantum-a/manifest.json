@@ -1,0 +1,77 @@
+{
+  "source": "QuantumA.tiff",
+  "source_sha256": "0d57a3596bb1e32a1bbbfccd8fe3d679d465ef48ef015f472e391a7f4e5f4e2c",
+  "source_pages": 68,
+  "dpi": [
+    300.0,
+    300.0
+  ],
+  "processing": "Crop binder margin, deskew, pad. No denoising, line removal, content synthesis, or OCR replacement.",
+  "pages": [
+    {
+      "title": "状態ベクトルと光量子",
+      "topics": "量子論の公準・参考文献・光子のエネルギーと運動量",
+      "date": "Apr. 14（年の記載なし）",
+      "page": 1,
+      "deskew_degrees": -0.06,
+      "crop_box": [
+        220,
+        65,
+        2140,
+        2960
+      ]
+    },
+    {
+      "title": "物質波と波束",
+      "topics": "Bohr の原子模型・de Broglie 波・位相速度と群速度",
+      "date": "Apr. 21（年の記載なし）",
+      "page": 2,
+      "deskew_degrees": -0.06,
+      "crop_box": [
+        10,
+        65,
+        1980,
+        2960
+      ]
+    },
+    {
+      "title": "波の確率解釈",
+      "topics": "電子の干渉・確率密度・位置表示と運動量表示",
+      "date": "93.4.21",
+      "page": 3,
+      "deskew_degrees": -0.06,
+      "crop_box": [
+        145,
+        65,
+        2140,
+        2960
+      ]
+    },
+    {
+      "title": "デルタ関数と期待値",
+      "topics": "規格化・Dirac のデルタ関数・位置と運動量の期待値",
+      "date": "93.4.21",
+      "page": 4,
+      "deskew_degrees": -0.06,
+      "crop_box": [
+        10,
+        65,
+        1980,
+        2960
+      ]
+    },
+    {
+      "title": "物理量と演算子",
+      "topics": "全エネルギーの期待値・物理量演算子・エルミート性",
+      "date": "93.4.21",
+      "page": 5,
+      "deskew_degrees": -0.06,
+      "crop_box": [
+        145,
+        65,
+        2140,
+        2960
+      ]
+    }
+  ]
+}
