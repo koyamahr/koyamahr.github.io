@@ -30,7 +30,7 @@ export function tokens(value) {
  return [...new Set(out)].slice(0,100);
 }
 export function allowedURL(value){
- try {const u=new URL(value);return u.protocol==='https:' && !u.username&&!u.password&&(u.hostname==='koyamahr.github.io'&&!u.port&&/^\/(numerical-methods-atlas|the-art-of-thermal-instability)\//.test(u.pathname));}catch{return false;}
+ try {const u=new URL(value);return u.protocol==='https:' && !u.username&&!u.password&&(u.hostname==='koyamarium.github.io'&&!u.port&&/^\/(numerical-methods-atlas|the-art-of-thermal-instability)\//.test(u.pathname));}catch{return false;}
 }
 export function makeEngine(data){
  const docs=data.records.filter(r=>allowedURL(r.url)).map(r=>({...r, terms:new Set(tokens(r.title+' '+r.section+' '+r.text+' '+(r.keywords||''))), titleTerms:new Set(tokens(r.title+' '+r.section+' '+(r.keywords||'')))}));

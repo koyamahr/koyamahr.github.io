@@ -76,8 +76,8 @@ const html = `<!doctype html>
   <meta property="og:title" content="小山 洋 | Computing Policy Archive">
   <meta property="og:description" content="計算科学を支える、政策の記録。文部科学省への2度の出向と、HPCI・ポスト「京」の公開資料。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://koyamahr.github.io/hpci-policy/">
-  <link rel="canonical" href="https://koyamahr.github.io/hpci-policy/">
+  <meta property="og:url" content="https://koyamarium.github.io/hpci-policy/">
+  <link rel="canonical" href="https://koyamarium.github.io/hpci-policy/">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css?v=${comparisonVersion}">
   <link rel="stylesheet" href="comparison.css?v=${comparisonVersion}">
@@ -155,7 +155,7 @@ const html = `<!doctype html>
   </div>
   <script id="comparison-data" type="application/json">${JSON.stringify(comparison).replace(/</g, '\\u003c')}</script>
   <script id="archive-data" type="application/json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
-<footer class="rights-notice" aria-label="利用条件 / Licensing"><p><a href="https://koyamahr.github.io/rights/">利用条件 / Rights &amp; reuse</a><span>Original code: MIT · Text, figures &amp; photos: separate terms</span></p></footer></body>
+<footer class="rights-notice" aria-label="利用条件 / Licensing"><p><a href="https://koyamarium.github.io/rights/">利用条件 / Rights &amp; reuse</a><span>Original code: MIT · Text, figures &amp; photos: separate terms</span></p></footer></body>
 </html>
 `;
 await writeFile(new URL('comparison-data.csv', directory), comparisonCSV(comparison));

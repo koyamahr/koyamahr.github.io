@@ -5,7 +5,7 @@
       "ja": "数値計算アトラス",
       "en": "Numerical Methods Atlas"
     },
-    "url": "https://koyamahr.github.io/numerical-methods-atlas/",
+    "url": "https://koyamarium.github.io/numerical-methods-atlas/",
     "description": {
       "ja": "方程式、離散化、実装、ベンチマークをたどる。衝撃波、流体、Poisson、時間積分、粒子法、有限要素法を学ぶ。",
       "en": "Equations, discretization, implementation and benchmarks: shocks, fluids, Poisson, time integration, particle methods and finite elements."
@@ -22,7 +22,7 @@
       "ja": "熱的不安定性の研究アーカイブ",
       "en": "The Art of Thermal Instability"
     },
-    "url": "https://koyamahr.github.io/the-art-of-thermal-instability/",
+    "url": "https://koyamarium.github.io/the-art-of-thermal-instability/",
     "description": {
       "ja": "星間ガスの冷たい相と暖かい相、Fieldの熱的不安定性、冷却・加熱、線形成長、伝導を論文・式・計算例からたどる。",
       "en": "Interstellar cold and warm phases, Field thermal instability, cooling/heating, linear growth and conduction through papers, equations and numerical examples."

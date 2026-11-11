@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import json, re, sys, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
-ORIGIN = 'https://koyamahr.github.io'
+ORIGIN = 'https://koyamarium.github.io'
 DOMAINS = [
  ('numerical', '/numerical-methods-atlas/', '数値計算アトラス', 'Numerical Methods Atlas'),
  ('thermal', '/the-art-of-thermal-instability/', '熱的不安定性', 'Thermal Instability'),
@@ -54,7 +54,7 @@ class Prose(HTMLParser):
    self.parts.append(data)
 def fetch(url):
  parsed=urllib.parse.urlparse(url)
- if parsed.scheme!='https' or parsed.netloc!='koyamahr.github.io':raise ValueError('Non-public-site source')
+ if parsed.scheme!='https' or parsed.netloc!='koyamarium.github.io':raise ValueError('Non-public-site source')
  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'KoyamaSiteGuide/1.0'}),timeout=35) as r:
   if urllib.parse.urlparse(r.url).netloc!=parsed.netloc:raise ValueError('Unexpected redirect')
   body=r.read(3_000_001)
@@ -81,7 +81,7 @@ def main():
    if len(urls)>250:raise ValueError('Review sitemap growth before indexing')
    for url in urls:
     p=urllib.parse.urlparse(url)
-    if p.netloc!='koyamahr.github.io' or not p.path.startswith(prefix):raise ValueError('Unexpected sitemap URL')
+    if p.netloc!='koyamarium.github.io' or not p.path.startswith(prefix):raise ValueError('Unexpected sitemap URL')
     if domain=='numerical' and not re.search(r'/(en|ja)/read/[^/]+/$',p.path):continue
     tasks.append((domain,url))
   def read(task):
@@ -113,7 +113,7 @@ def main():
  for domain in ['all']+[d[0] for d in DOMAINS]:
   rows=[r for r in records if domain=='all' or r['domain']==domain]
   text='# Hiroshi Koyama — public site knowledge pack\n\nSnapshot: '+data['version']+'\nCaptured (UTC): '+stamp+'\n\n'
-  text+='For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamahr.github.io/rights/\n\n'
+  text+='For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamarium.github.io/rights/\n\n'
   text+='## Coverage\n\nOnly Numerical Methods Atlas reading chapters and Thermal Instability static pages: extracted public text (figures and interactive code omitted), plus two curated project overviews. Astrophysics lessons and other portfolio works are outside this guide. Japanese drafts and English originals may differ. Mathematical rendering can be incomplete; consult the original. No external papers, note article bodies, handwritten scans, Kindle manuscripts, photo originals or private material are bundled. Not a claim that your LLM will read every entry.\n\n'
   for r in rows:text+='## '+r['title']+(' — '+r['section'] if r['section'] else '')+' ['+r['lang']+']\n\nSource: '+r['url']+'\nCoverage: '+r['kind']+'\n'+('Source note: '+r['notice']+'\n' if r.get('notice') else '')+'\n'+r['text']+'\n\n'
   (ROOT/'guide/packs'/f'{domain}.md').write_text('\n'.join(line.rstrip() for line in text.splitlines()).rstrip()+'\n')

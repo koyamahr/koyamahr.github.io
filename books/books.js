@@ -19,7 +19,7 @@
   }
   if (document.body.classList.contains('books-page')) {
     let saved;
-    try { saved = localStorage.getItem('koyamahr.home.language'); } catch {}
+    try { saved = localStorage.getItem('koyamarium.home.language'); } catch {}
     const requested = new URL(location.href).searchParams.get('lang');
     document.documentElement.lang = supported(requested) ? requested : saved === 'en' ? 'en' : 'ja';
     document.querySelector('.books-language').hidden = false;
@@ -29,7 +29,7 @@
       const url = new URL(location.href);
       url.searchParams.set('lang', lang);
       history.replaceState(null, '', url);
-      try { localStorage.setItem('koyamahr.home.language', lang); } catch {}
+      try { localStorage.setItem('koyamarium.home.language', lang); } catch {}
       renderLanguage();
     }));
   }

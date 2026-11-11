@@ -109,13 +109,13 @@
     document.querySelectorAll('[data-history]').forEach(link => { link.href = 'history.html?lang=' + lang; });
     document.getElementById('record-search').placeholder = strings.searchPlaceholder;
     document.getElementById('committee-search').placeholder = strings.committeePlaceholder;
-    if (save) { try { localStorage.setItem('koyamahr.home.language', lang); } catch {} }
+    if (save) { try { localStorage.setItem('koyamarium.home.language', lang); } catch {} }
     const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null, '', url);
     filterRecords();
     filterCommittees();
     document.dispatchEvent(new CustomEvent('archive-language-change', { detail: lang }));
   }
-  let saved; try { saved = localStorage.getItem('koyamahr.home.language'); } catch {}
+  let saved; try { saved = localStorage.getItem('koyamarium.home.language'); } catch {}
   const requested = new URLSearchParams(location.search).get('lang');
   setLanguage(['ja', 'en'].includes(requested) ? requested : saved === 'en' ? 'en' : 'ja');
   document.querySelector('.lang-switch').hidden = false;

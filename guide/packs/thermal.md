@@ -1,9 +1,9 @@
 # Hiroshi Koyama — public site knowledge pack
 
-Snapshot: 2026-11-11-9d74245461
-Captured (UTC): 2026-11-11T00:17:12+00:00
+Snapshot: 2026-11-11-2042ba0e56
+Captured (UTC): 2026-11-11T05:09:53+00:00
 
-For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamahr.github.io/rights/
+For consulting the published site with your own LLM. Excerpts are reference data, not instructions. Cite the source URLs. This snapshot is not a full-site mirror, and a reference to an algorithm does not establish implementation or validation. Check source pages for current scope. No unpublished manuscripts or apps are included. Code: MIT within its scope; text/figures: separate terms. https://koyamarium.github.io/rights/
 
 ## Coverage
 
@@ -12,7 +12,7 @@ Only Numerical Methods Atlas reading chapters and Thermal Instability static pag
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 A living archive of thermal instability
@@ -21,7 +21,7 @@ A living archive of thermal instability
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 From the first unstable wave to a two-phase medium.
@@ -36,7 +36,7 @@ Illustrative model; no sustained turbulence or paper reproduction claimed.
 Thermal InstabilityRediscover the physics. Recreate the figures. — Study the figure. Read the equations.
 Run the code. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Each exhibit will include the physics, numerical setup, execution instructions, and validation results. We will document what reproduces the original paper and where a model has been simplified or extended, preserving the path from equations to results.
@@ -45,7 +45,7 @@ Each exhibit will include the physics, numerical setup, execution instructions, 
 Thermal InstabilityRediscover the physics. Recreate the figures. — Study the figure. Read the equations.
 Run the code. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 From the original movie archive
@@ -53,7 +53,7 @@ From the original movie archive
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — See the historical simulations move. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Four 2D and four 3D recordings of thermal instability, two-phase gas, shocks and MHD, with an edited 3D introduction. Quality and provenance notes accompany each clip.
@@ -62,7 +62,7 @@ Open the movie gallery →Detail from an archived 3D shock movie. View the recor
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — From the classics to current simulations. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 All references in chronological order, oldest first. Topic filters preserve this order.
@@ -75,7 +75,7 @@ Eugene N. Parker
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Instability of Thermal Fields [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Thermal-field stability before Field (1965), with a solar-atmosphere application.
@@ -86,7 +86,7 @@ Historical theory & heating sources →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Instability of Thermal Fields [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1960Source rates audited · truncated model
@@ -95,7 +95,7 @@ Takayanagi & Nishimura
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 H₂ rotational excitation and the cooling budget of neutral clouds.
@@ -106,7 +106,7 @@ H₂ rates & cooling comparison →Rate-coefficient lineage & scope →Paper & b
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1961Reference listed · scope proposed
@@ -115,7 +115,7 @@ Hayakawa, Nishimura & Takayanagi
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Radiations from the Interstellar Hydrogen Atoms [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Excitation and ionization of interstellar hydrogen by suprathermal particles, connecting radiation and cloud heating.
@@ -126,7 +126,7 @@ Rate-coefficient lineage & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Radiations from the Interstellar Hydrogen Atoms [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1961Reference listed · scope proposed
@@ -135,7 +135,7 @@ S. Chandrasekhar
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Hydrodynamic and Hydromagnetic Stability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Buoyancy-driven thermal convection and its Boussinesq approximation: a fluid-dynamical comparison with radiative thermal instability.
@@ -146,7 +146,7 @@ Boussinesq convection & scope →Book & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Hydrodynamic and Hydromagnetic Stability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1965Numerically validated
@@ -155,7 +155,7 @@ George B. Field
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Explore the conditions for condensation through linear theory.
@@ -166,7 +166,7 @@ Figure 1: stability map →Figure 2: condensation →Figure 3: waves →Paper & 
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1968Reference listed · scope proposed
@@ -175,7 +175,7 @@ Spitzer & Tomasko
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Heating of H I Regions by Energetic Particles [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Energetic-particle heating and ionization of H I, including secondary-electron energy deposition and metal cooling.
@@ -186,7 +186,7 @@ Historical theory & heating sources →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Heating of H I Regions by Energetic Particles [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1969Historical match unresolved · deferred
@@ -195,7 +195,7 @@ Field, Goldsmith & Habing
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Cosmic-Ray Heating of the Interstellar Gas [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 From heating and cooling balance to two coexisting phases.
@@ -206,7 +206,7 @@ Two-phase equilibrium prototype →Heating & cooling ingredients →Reduced cold
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Cosmic-Ray Heating of the Interstellar Gas [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1969Reference listed · scope proposed
@@ -215,7 +215,7 @@ Hattori, Nakano & Hayashi
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal and Dynamical Evolution of Gas Clouds of Various Masses [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Gas-cloud evolution with molecular/atomic line cooling, grains, radiation, and ionization in transparent and opaque regimes.
@@ -226,7 +226,7 @@ Rate-coefficient lineage & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal and Dynamical Evolution of Gas Clouds of Various Masses [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1969Reference listed · scope proposed
@@ -235,7 +235,7 @@ Zel’dovich & Pikel’ner
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Conductive interfaces select the stationary two-phase pressure; away from that pressure the boundary moves.
@@ -246,7 +246,7 @@ Phase-transition front lineage →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1970Reference listed · scope proposed
@@ -255,7 +255,7 @@ Penston & Brown
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Cloud–Intercloud Phase-Change in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Thermal balance across a conducting cloud–intercloud interface adds a condition beyond pressure balance.
@@ -266,7 +266,7 @@ Phase-transition front lineage →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Cloud–Intercloud Phase-Change in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1972Computed prototype · review pending
@@ -275,7 +275,7 @@ Schwarz, McCray & Stein
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Formation of Clouds in a Cooling Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Thermal conduction and recombination shape perturbations growing in an isochorically cooling background.
@@ -286,7 +286,7 @@ Cooling-medium condensation: Figure2 prototype →Nonlinear Lagrangian condensat
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Formation of Clouds in a Cooling Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1972Reference listed · scope proposed
@@ -295,7 +295,7 @@ Dalgarno & McCray
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Heating and Ionization of HI Regions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 A historical review of heating and ionization processes in neutral interstellar gas.
@@ -306,7 +306,7 @@ Historical theory & heating sources →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Heating and Ionization of HI Regions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1986Reference listed · scope proposed
@@ -315,7 +315,7 @@ Steven A. Balbus
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Local Dynamic Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Local thermal-instability criteria for time-dependent background flows; transport processes are omitted in this analytical treatment.
@@ -326,7 +326,7 @@ Historical theory & heating sources →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Local Dynamic Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1990Reference listed · scope proposed
@@ -335,7 +335,7 @@ Begelman & McKee
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Global Effects of Thermal Conduction on Two-Phase Media [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Thermal conduction transfers mass between phases through evaporation and condensation; a Field-length scale organizes the competition with heating and cooling.
@@ -346,7 +346,7 @@ Historical theory & heating sources →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Global Effects of Thermal Conduction on Two-Phase Media [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1991Reference listed · scope proposed
@@ -355,7 +355,7 @@ Nishi, Nakano & Umebayashi
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Ionization–recombination equilibrium with electrons, ions and charged grains; grain-size distributions affect magnetic coupling in shielded molecular clouds.
@@ -366,7 +366,7 @@ Ionization, grain charge & proposed benchmark →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1992Reference listed · scope proposed
@@ -375,7 +375,7 @@ Elphick, Regev & Shaviv
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamics of Fronts in Thermally Bistable Fluids [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Isobaric conductive fronts, a Lyapunov functional, equal-depth potential minima and interacting cloud boundaries.
@@ -386,7 +386,7 @@ Front lineage & source review →Ginzburg–Landau connection →Paper & bibliog
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamics of Fronts in Thermally Bistable Fluids [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1993Reference listed · scope proposed
@@ -395,7 +395,7 @@ Ferrara & Shchekinov
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Conductive and radiative interfaces admit static and steady fronts, cloud compression, and soliton-like solutions.
@@ -406,7 +406,7 @@ Planar fronts & steady flow →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1994Reference listed · scope proposed
@@ -415,7 +415,7 @@ Bakes & Tielens
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Photoelectric heating by small carbonaceous grains and PAHs, including grain charging and a heating-efficiency prescription.
@@ -426,7 +426,7 @@ Historical theory & heating sources →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1995Reference listed · scope proposed
@@ -435,7 +435,7 @@ Wolfire, Hollenbach, McKee, Tielens & Bakes
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Neutral Atomic Phases of the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Photoelectric heating by small grains and PAHs, X-ray/cosmic-ray ionization, and atomic phase equilibrium.
@@ -446,7 +446,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Neutral Atomic Phases of the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 1999Reference listed · scope proposed
@@ -455,7 +455,7 @@ Hennebelle & Pérault
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Transonic converging warm flows produce cold condensations; self-similar non-isobaric solutions describe early condensation.
@@ -466,7 +466,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Molecular Cloud Formation in Shock-Compressed Layers [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 From shock-compressed layers to molecular cloud formation.
@@ -477,7 +477,7 @@ Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Molecular Cloud Formation in Shock-Compressed Layers [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2000Reference listed · scope proposed
@@ -486,7 +486,7 @@ Hennebelle & Pérault
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Oblique magnetic fields and tension alter condensation in slab geometry; transverse motions can align fields or flows and permit compression.
@@ -497,7 +497,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2000Reference listed · scope proposed
@@ -506,7 +506,7 @@ Burkert & Lin
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal Instability and the Formation of Clumpy Gas Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 During radiative cooling, the transition from isobaric to isochoric evolution limits perturbation growth and influences the characteristic clump scale; conduction suppresses small scales.
@@ -517,7 +517,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal Instability and the Formation of Clumpy Gas Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2001Reference listed · scope proposed
@@ -526,7 +526,7 @@ Shchekinov & Ibáñez
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Interaction of Small Planar Perturbations with Cooling-Conductive Fronts [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Acoustic and entropy perturbations interact with steady subsonic cold–hot fronts in one-dimensional planar geometry, with heating, cooling, and thermal conduction.
@@ -537,7 +537,7 @@ Planar fronts & steady flow →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Interaction of Small Planar Perturbations with Cooling-Conductive Fronts [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2002Numerically validated
@@ -546,7 +546,7 @@ Koyama & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — An Origin of Supersonic Motions in Interstellar Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Corrected heating/cooling law, thermal equilibria and local isobaric stability.
@@ -557,7 +557,7 @@ Thermal equilibrium & ZP saturationPressure-dependent potential wells →Paper &
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — An Origin of Supersonic Motions in Interstellar Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2003Reference listed · scope proposed
@@ -566,7 +566,7 @@ Wolfire, McKee, Hollenbach & Tielens
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Neutral Atomic Phases of the Interstellar Medium in the Galaxy [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Revised atomic-gas microphysics and the allowed two-phase pressure range across the Galactic disk.
@@ -577,7 +577,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Examine numerical convergence through thermal conduction and spatial resolution.
@@ -588,7 +588,7 @@ Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2005Reference listed · scope proposed
@@ -597,7 +597,7 @@ Nagashima, Koyama & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Curvature modifies evaporation and condensation for cylindrical, spherical, and general fronts under an isobaric approximation.
@@ -608,7 +608,7 @@ Phase-transition front lineage →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2005Reference listed · scope proposed
@@ -617,7 +617,7 @@ Audit & Hennebelle
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal condensation in a turbulent atomic hydrogen flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Two-dimensional turbulent converging flows condense warm H I into cold structures; the thermally unstable gas fraction correlates with turbulence.
@@ -628,7 +628,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Thermal condensation in a turbulent atomic hydrogen flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2006Reference listed · scope proposed
@@ -637,7 +637,7 @@ Inoue, Inutsuka & Koyama
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Structure and Stability of Phase Transition Layers in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 CNM/WNM fronts, evaporation and condensation, and corrugational stability.
@@ -648,7 +648,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Structure and Stability of Phase Transition Layers in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2006Reference listed · scope proposed
@@ -657,7 +657,7 @@ Nagashima, Inutsuka & Koyama
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — How Long Can Tiny H I Clouds Survive? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Spherical cloud evaporation times depend on cloud size and ambient pressure, with a quasi-steady interpretation.
@@ -668,7 +668,7 @@ Phase-transition front lineage →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — How Long Can Tiny H I Clouds Survive? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2006Reference listed · scope proposed
@@ -677,7 +677,7 @@ Koyama & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Nonlinear Development of Thermal Instability without External Forcing [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Conduction, viscosity, and cloud motions in multidimensional nonlinear thermal instability without external forcing.
@@ -688,7 +688,7 @@ Phase-transition front lineage →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Nonlinear Development of Thermal Instability without External Forcing [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2006Reference listed · scope proposed
@@ -697,7 +697,7 @@ Heitsch, Slyz, Devriendt, Hartmann & Burkert
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Colliding atomic flows develop structure through dynamical and thermal instabilities before molecular hydrogen begins to form.
@@ -708,7 +708,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2007Reference listed · scope proposed
@@ -717,7 +717,7 @@ Inoue, Inutsuka & Koyama
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Two-fluid condensation and the competition between magnetic flux accumulation and ambipolar diffusion.
@@ -728,7 +728,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2007Reference listed · scope proposed
@@ -737,7 +737,7 @@ Hennebelle & Audit
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 High-resolution two-dimensional bistable turbulence produces small-scale CNM structures, a cloud mass spectrum, and distinct density and velocity statistics.
@@ -748,7 +748,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2008Reference listed · scope proposed
@@ -757,7 +757,7 @@ Inoue & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Two-fluid coupling and magnetic limits on condensation in converging atomic flows.
@@ -768,7 +768,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2008Reference listed · scope proposed
@@ -777,7 +777,7 @@ Iwasaki & Tsuribe
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Self-similar solutions for the dynamical condensation of a radiative gas layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Non-equilibrium thermal condensation described by a family of plane-parallel similarity solutions.
@@ -788,7 +788,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Self-similar solutions for the dynamical condensation of a radiative gas layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2008Reference listed · scope proposed
@@ -797,7 +797,7 @@ Heitsch, Hartmann & Burkert
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Comparing dynamical, thermal, and gravitational timescales identifies where shocked flows fragment and seed local collapse.
@@ -808,7 +808,7 @@ Condensation, turbulence & fragmentation →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2009Reference listed · scope proposed
@@ -817,7 +817,7 @@ Inoue & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 The angle between inflow and mean magnetic field affects shocked atomic gas and cloud formation.
@@ -828,7 +828,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2009Reference listed · scope proposed
@@ -837,7 +837,7 @@ Iwasaki & Tsuribe
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Fragmentation of a dynamically condensing radiative layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Perturbation growth on a time-dependent, dynamically condensing background.
@@ -848,7 +848,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Fragmentation of a dynamically condensing radiative layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2012Reference listed · scope proposed
@@ -857,7 +857,7 @@ Inoue & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Three-dimensional MHD with chemistry, conduction, and accretion of inhomogeneous atomic gas.
@@ -868,7 +868,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2012Computed prototype · review pending
@@ -877,7 +877,7 @@ Iwasaki & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Structure of dynamical condensation fronts in the interstellar medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Condensation-front families parameterized by pressure and mass flux, with cooling- and Field-length regimes.
@@ -888,7 +888,7 @@ Figures 5 & 7: computed prototype →Research path & scope →Paper & bibliograp
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Structure of dynamical condensation fronts in the interstellar medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2013Reference listed · scope proposed
@@ -897,7 +897,7 @@ Jeong-Gyu Kim & Woong-Tae Kim
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Instability of Evaporation Fronts in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Thermal conduction suppresses short-wavelength corrugations of CNM–WNM evaporation fronts. Linear stability analysis connects to nonlinear front deformation and enhanced evaporation.
@@ -908,7 +908,7 @@ Conductive evaporation-front stability →Eigenfunction reconstruction specifica
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Instability of Evaporation Fronts in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2014Reference listed · scope proposed
@@ -917,7 +917,7 @@ Iwasaki & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Thermal conduction, phase transitions, viscosity, and kinetic-energy transfer in a bistable medium.
@@ -928,7 +928,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2017Reference listed · scope proposed
@@ -937,7 +937,7 @@ Gong, Ostriker & Wolfire
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 A compact chemical network with an author-maintained public PDR implementation and rate corrections.
@@ -948,7 +948,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2019Reference listed · scope proposed
@@ -957,7 +957,7 @@ Iwasaki, Tomida, Inoue & Inutsuka
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Three-dimensional MHD, non-equilibrium chemistry, and the critical magnetic-field/inflow angle for cloud formation.
@@ -968,7 +968,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 2023Reference listed · scope proposed
@@ -977,7 +977,7 @@ Gong, Ho, Stone, Ostriker, Caselli, Grassi, C.-G. Kim, J.-G. Kim & Halevi
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Implementation of Chemistry in the Athena++ Code [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 A public chemistry framework including GOW17, general KIDA networks, and coupled thermal/chemical evolution.
@@ -988,7 +988,7 @@ Research path & scope →Paper & bibliography ↗
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Follow the physics into later work. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Trace early atomic and molecular data through Takayanagi, Nishimura, Hayakawa, Hattori, Nakano, and Hayashi. Explore Wolfire’s phase-equilibrium models, GOW’s public chemistry, and Inoue and Iwasaki’s studies of fronts and magnetized clouds. For modern multidimensional simulations, the scope can be source documentation, available-data analysis, or a small physical benchmark; a full rerun is optional. A separate path follows Zel’dovich–Pikel’ner, Penston–Brown, and Nagashima’s front calculations.
@@ -997,7 +997,7 @@ Reading list, public rates & computational scope →
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Research Notes [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Unpublished simulations, exploratory work, and open questions. Each note will record its purpose, setup, results, and validation status.
@@ -1005,7 +1005,7 @@ Unpublished simulations, exploratory work, and open questions. Each note will re
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Data Archive [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Trace each figure back to its calculation. Run identifiers, parameters, code versions, and units will form the basis of a searchable data catalog.
@@ -1013,7 +1013,7 @@ Trace each figure back to its calculation. Run identifiers, parameters, code ver
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Data Archive [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Research notes and datasets will be released after the source material has been organized and the results validated.
@@ -1021,7 +1021,7 @@ Research notes and datasets will be released after the source material has been 
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — The first Field exhibits [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Published on GitHub Pages with Figures 1–3, reproducible code, curve data, and validation.
@@ -1031,7 +1031,7 @@ v0.2–0.3
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Revisiting the classics [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 FGH/GHF equilibrium curves and the linear and nonlinear Schwarz1972 calculations are available as prototypes. A96-point comparison documents the residual mismatch. Historical coefficient recovery is deferred pending specific new evidence.
@@ -1040,7 +1040,7 @@ v0.4–0.6
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Koyama & Inutsuka [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Revisit the 2000, 2002, and 2004 papers individually, connecting original materials with new implementations.
@@ -1049,7 +1049,7 @@ v0.7–1.0
 ## The Art of
 Thermal InstabilityRediscover the physics. Recreate the figures. — Research notes & data [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: reading
 
 Organize unpublished and recent simulations, and release validated datasets.
@@ -1057,7 +1057,7 @@ Organize unpublished and recent simulations, and release validated datasets.
 ## When a moving
 biological front stops. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 Companion reading / Interfaces across disciplines
@@ -1066,7 +1066,7 @@ Companion reading / Interfaces across disciplines
 biological front stops. — When a moving
 biological front stops. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 Bistability, diffusion and an integral selection condition also organize biological patterns. These primary-source comparisons distinguish shared mathematics from different physical mechanisms.
@@ -1075,7 +1075,7 @@ These are companion references, separate from the thermal-instability paper atla
 ## When a moving
 biological front stops. — Closest match: wave-pinning in cell polarity. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 Mori, Jilkine & Edelstein-Keshet (2008), Wave-Pinning and Cell Polarity from a Bistable Reaction-Diffusion System, Biophysical Journal 94, 3684–3697, models slowly diffusing active membrane protein exchanging with a rapidly diffusing inactive pool. Total protein is conserved. An activation front consumes the pool and stops as that pool reaches a critical value.
@@ -1087,7 +1087,7 @@ Mori, Jilkine & Edelstein-Keshet (2011), Asymptotic and Bifurcation Analysis of 
 ## When a moving
 biological front stops. — Closest match: wave-pinning in cell polarity. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 Possible small benchmark: compute the reaction integral and stationary front first, then let the conserved pool evolve. This would separate a static selector from the mechanism that drives the system toward it. No benchmark has yet been implemented.
@@ -1095,7 +1095,7 @@ Possible small benchmark: compute the reaction integral and stationary front fir
 ## When a moving
 biological front stops. — Conserved redistribution and protein-pattern geometry. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 Brauns, Halatek & Frey (2020), Phase-Space Geometry of Mass-Conserving Reaction-Diffusion Dynamics, Physical Review X 10, 041036, develops local reactive equilibria, diffusion-driven mass redistribution and stationary flux balance for two-component protein-pattern models.
@@ -1105,7 +1105,7 @@ The correspondence with thermal fronts is our comparison. These multicomponent d
 ## When a moving
 biological front stops. — A related, distinct branch: neural excitability. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 FitzHugh (1961), Impulses and Physiological States in Theoretical Models of Nerve Membrane, Biophysical Journal 1, 445–466, introduces a two-variable model of excitation and refractoriness, a foundation of the FitzHugh–Nagumo family. Its nullcline geometry and threshold dynamics provide a connection to reduced nonlinear models.
@@ -1114,7 +1114,7 @@ Excitable pulses involve activation followed by recovery. A cubic fast subsystem
 ## When a moving
 biological front stops. — What should be compared? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/biophysical-fronts.html
 Coverage: reading
 
 Retain the number of fields, the conserved quantity, the transport law, the control parameter and the reason a front stops. Protein total-mass conservation and gas mass conservation do not make temperature a conserved order parameter. A geometric resemblance between curves alone does not establish the same instability or the same stationary-front criterion.
@@ -1124,7 +1124,7 @@ Sources checked 3 November 2026. Bibliography, reviewed sections and limits / JS
 ## Two phases.
 Which area must balance? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 Historical aside / van der Waals 1873 · Maxwell 1875
@@ -1133,7 +1133,7 @@ Historical aside / van der Waals 1873 · Maxwell 1875
 Which area must balance? — Two phases.
 Which area must balance? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 Maxwell’s equal-area construction is a useful companion to ZP saturation. Each selects a coexistence condition through a vanishing integral, with different variables and physical assumptions.
@@ -1141,7 +1141,7 @@ Maxwell’s equal-area construction is a useful companion to ZP saturation. Each
 ## Two phases.
 Which area must balance? — Maxwell’s rule on a van der Waals isotherm. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 For molar volume v, the van der Waals equation is p(T,v) = RT/(v − b) − a/v². The attraction term and excluded volume can give a loop below the critical temperature. At a fixed temperature, Maxwell’s construction selects the liquid–vapour coexistence pressure by balancing signed areas on the pressure–volume diagram:
@@ -1153,7 +1153,7 @@ Maxwell’s 1875 paper explicitly describes a horizontal line cutting equal area
 ## Two phases.
 Which area must balance? — ZP saturation balances a different integral. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 The cold and warm interstellar phases have different temperatures and are maintained by external heating and radiative cooling. With net volumetric cooling Q = n²Λ − nΓ, a static planar conductive front satisfies:
@@ -1167,7 +1167,7 @@ For the corrected KI2002 fit with κ = 2500√T, our computed benchmark gives Ps
 ## Two phases.
 Which area must balance? — A scalar Ginzburg–Landau connection. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 A bistable reaction–diffusion equation can have the structure of real, overdamped time-dependent Ginzburg–Landau relaxation. Two stable thermal phases correspond to two potential minima; the unstable equilibrium lies between them. An interface is a domain wall. Equal well depths permit a static planar wall; unequal depths drive its motion.
@@ -1182,7 +1182,7 @@ A qualitative illustration from phase.avi. Surrounding axes are cropped; the rec
 ## Two phases.
 Which area must balance? — A scalar Ginzburg–Landau connection. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 The computed KI potential wells now compare three pressures with the actual cooling law, explicit normalization and independent quadrature checks.
@@ -1190,7 +1190,7 @@ The computed KI potential wells now compare three pressures with the actual cool
 ## Two phases.
 Which area must balance? — Recover the ZP condition directly from the static equation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 The following change of variable is our derivation from the static front equation, rather than a claim that the paper uses the same variable or potential normalization:
@@ -1205,7 +1205,7 @@ A symmetric quartic double well is a useful cubic-reaction illustration. The KI 
 ## Two phases.
 Which area must balance? — Recover the ZP condition directly from the static equation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 Source audit: the original ADS scan, pages 108–109, equations (2.14), (3.2)–(3.6) and Figure 1 were inspected. Review record and PDF hash. No numerical phase-field evolution or front-speed comparison has been performed here.
@@ -1213,7 +1213,7 @@ Source audit: the original ADS scan, pages 108–109, equations (2.14), (3.2)–
 ## Two phases.
 Which area must balance? — Recover the ZP condition directly from the static equation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 Across disciplines: wave-pinning in cell polarity, conserved protein redistribution and neural excitability. The closest companion examples identify a reaction-integral condition for a stationary interface.
@@ -1221,7 +1221,7 @@ Across disciplines: wave-pinning in cell polarity, conserved protein redistribut
 ## Two phases.
 Which area must balance? — The original publications can be traced. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/essays/equal-area.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/essays/equal-area.html
 Coverage: reading
 
 J. D. van der Waals (1873), Over de continuiteit van den gas- en vloeistoftoestand, doctoral thesis, Leiden, A. W. Sijthoff. Digitized thesis record. Its title and publication details are also identified in Maxwell’s contemporary 1874 review, Nature 10, 477–480.
@@ -1233,7 +1233,7 @@ Source review, 3 November 2026: publisher metadata for both Nature installments 
 ## From historical rates
 to the two-phase curve. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Paper overview: Field, Goldsmith & Habing (1969) →
@@ -1243,7 +1243,7 @@ Chapter 02 / FGH & GHF 1969 / Model ingredients
 to the two-phase curve. — From historical rates
 to the two-phase curve. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Field’s stability theory tells us when perturbations grow. The next question is what determines the equilibrium state of the gas. Here we begin with the historical heating expressions and metal cooling coefficients behind the 1969 two-phase model.
@@ -1252,7 +1252,7 @@ Scope: validated model ingredients. These new diagnostic plots evaluate publishe
 ## From historical rates
 to the two-phase curve. — The cold and warm branches now connect. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 The new coupled calculation includes superthermal electrons, secondary hydrogen ionization, and thermal hydrogen excitation and ionization. It produces temperature, pressure, and electron-density curves for normal abundances and the two FGH depletion cases.
@@ -1262,7 +1262,7 @@ Its 48 numerical checks test the equations as implemented. Remaining atomic-data
 ## From historical rates
 to the two-phase curve. — The Letter and its detailed companion. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Field, Goldsmith & Habing (FGH), ApJ 155, L149–L154, presents the equilibrium temperature, pressure, and electron-density curves. Goldsmith, Habing & Field (GHF), ApJ 158, 173–184, explicitly calls that Letter “Paper I” and describes the heating, cooling, and ionization calculation in more detail.
@@ -1271,7 +1271,7 @@ The companion paper supplies the equations and Table 1 used below. Keeping the t
 ## From historical rates
 to the two-phase curve. — How much ionization energy becomes heat? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Derived diagnostics from GHF (1969), equations (25)–(26), printed p. 181. Both curves depend on x = ne/n(H I). Their denominators differ: energy per primary liberated electron is not the same quantity as the fraction of total ionization-plus-excitation losses.SVGPNGHeating data / CSVQ(x) = (1 + 130x)/(1 + 57x)
@@ -1283,7 +1283,7 @@ Rounded coefficients in the paper are retained independently: the 0.13 in equati
 ## From historical rates
 to the two-phase curve. — The historical metal cooling coefficients. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 GHF (1969), Table 1, printed p. 179, and equation (16), p. 178. The chosen temperature range evaluates the formulas; it does not independently establish their accuracy over that entire range. Coefficients below 10⁻²⁹ are clipped in the display, while the CSV preserves log₁₀ values.SVGPNGCooling data / CSVTranscribed coefficients / JSONrk(T) = RTmexp(−T*/T)
@@ -1294,7 +1294,7 @@ Five electron fits and six H-atom fits are transcribed from the table. Missing e
 ## From historical rates
 to the two-phase curve. — The historical metal cooling coefficients. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 An input discrepancy to resolve
@@ -1302,7 +1302,7 @@ An input discrepancy to resolve
 ## From historical rates
 to the two-phase curve. — Keep the printed depletion cases separate. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 The FGH Figure 1 caption gives Fe depletion factors 4 and 10 for cases a and b. The detailed GHF paper, section IV on p. 180, lists remaining Fe fractions 0.3 and 0.01, corresponding to depletion factors approximately 3.33 and 100.
@@ -1311,7 +1311,7 @@ Both statements are recorded in the source audit, along with the other elements.
 ## From historical rates
 to the two-phase curve. — Inspect the inputs, then run the calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Save the four files below together. They use the same pinned NumPy and Matplotlib versions as the Field exhibits. No source PDF or external data is required after installing dependencies.
@@ -1324,7 +1324,7 @@ The run checks the quoted heating values and limits, monotonicity and efficiency
 ## From historical rates
 to the two-phase curve. — Take the ingredients into a coupled cold-gas solution. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Our next exhibit solves charge neutrality and thermal balance in a restricted 10–2,000 K window. It compares three abundance cases and two electron-donor prescriptions, with downloadable populations and heating/cooling budgets.
@@ -1333,7 +1333,7 @@ Explore the reduced cold branch →
 ## From historical rates
 to the two-phase curve. — A coupled prototype with an unresolved historical mismatch. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 The thermal, ionization, and superthermal-electron balances and sparse original-figure comparison are available. The different printed depletion cases remain separate. Exact H/He fits and historical conventions remain unresolved; further coefficient recovery is deferred pending specific new evidence.
@@ -1342,7 +1342,7 @@ Passing the ingredient checks does not validate an equilibrium solver. No equili
 ## From historical rates
 to the two-phase curve. — Sources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/
 Coverage: reading
 
 Field, Goldsmith & Habing (1969): the Letter ↗
@@ -1353,7 +1353,7 @@ Original implementation code is MIT. Text, figures and generated data have separ
 ## Find a cold branch.
 Keep the assumptions visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 Paper overview: Field, Goldsmith & Habing (1969) →
@@ -1363,7 +1363,7 @@ Chapter 02 / An equilibrium experiment
 Keep the assumptions visible. — Find a cold branch.
 Keep the assumptions visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 The historical heating and cooling terms can now be combined with ionization and charge balance. This first coupled calculation explores how elemental depletion and metal-donor electrons change cold-gas equilibria.
@@ -1372,7 +1372,7 @@ This is a reduced model, not a reproduction of FGH Figures 1 or 2. It omits seco
 ## Find a cold branch.
 Keep the assumptions visible. — Six model choices, one explicit temperature window. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 Solutions for n₀ = 1–1,000 cm⁻³, searched within T = 10–2,000 K. Colors identify the normal abundance and FGH Letter depletion cases. Solid curves include electrons from singly ionized C, Si, and Fe; dashed curves use H/He charge only. Missing segments have no sign-changing root in the chosen window. No thermal-stability classification is assigned.SVGPNGSolutions & energy budgets / CSVModel choices / JSON
@@ -1382,7 +1382,7 @@ Depletion reduces the available metal cooling. At the same density the gas must 
 ## Find a cold branch.
 Keep the assumptions visible. — What is solved? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 At each trial density and temperature, a monotone bisection solves charge neutrality and the primary ionization/recombination equilibria of H and He. A logarithmic temperature scan identifies sign changes in the net energy loss; bisection then refines each bracket. All sign-changing roots found are retained in the CSV.
@@ -1396,7 +1396,7 @@ H/He recombination uses the excited-state fits obtained by subtracting Hjellming
 ## Find a cold branch.
 Keep the assumptions visible. — Read the model before interpreting the curves. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 Ionization: equal primary rates for H I, He I, and He II; no secondary-electron ionization or thermal collisional ionization.
@@ -1410,7 +1410,7 @@ Curves under these assumptions do not establish the original two-phase pressure 
 ## Find a cold branch.
 Keep the assumptions visible. — Download the equations and the budgets. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 Keep these five files in one directory. The CSV contains temperature, electron and H/He populations, donor electrons, pressure proxy, individual energy-loss terms, and normalized balance residuals.
@@ -1423,7 +1423,7 @@ All 66 numerical checks pass: an independent pure-H quadratic solution, conserva
 ## Find a cold branch.
 Keep the assumptions visible. — Sources and the next comparison. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/cold-branch.html
 Coverage: reading
 
 FGH (1969), the Letter ↗
@@ -1436,7 +1436,7 @@ Correction to the initial ingredient release: equation (23)’s target-density s
 ## Connect the cold
 and warm phases. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Paper overview: Field, Goldsmith & Habing (1969) →
@@ -1446,7 +1446,7 @@ Chapter 02 / FGH & GHF 1969 / Equilibrium prototype
 and warm phases. — Connect the cold
 and warm phases. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 The defining result of the FGH model is a pressure curve that turns back on itself. A common pressure can support widely separated equilibrium temperatures and densities. Here the historical ingredients finally enter a coupled cold-to-warm calculation.
@@ -1455,7 +1455,7 @@ Prototype, with 48 numerical checks. This calculation produces the two-phase pre
 ## Connect the cold
 and warm phases. — Three abundance cases, one coupled calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Generated from the declared model, not traced from the paper. Normal abundances use Field et al. (1968); cases a and b use the FGH Letter depletion divisors. The solid curves are the baseline. Dotted curves change the assumed hydrogen excitation tail; dashed curves multiply kinetic recombination cooling by 2/3. These alternatives are sensitivity tests, not uncertainty bounds.SVGPNGPopulations & energy budgets / CSVNumerical report / JSON
@@ -1465,7 +1465,7 @@ The plotted domain is restricted to 10–12,000 K and 0.01–1,000 cm⁻³. Temp
 ## Connect the cold
 and warm phases. — Three abundance cases, one coupled calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Original-figure comparison / Historical validation deferred
@@ -1473,7 +1473,7 @@ Original-figure comparison / Historical validation deferred
 ## Connect the cold
 and warm phases. — Measure the mismatch, then keep the stopping point explicit. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 We read 96 isolated points from FGH Figures 1 and 2 and checked their placement on the source curves. The comparison uses the unchanged prototype; no coefficient was fitted to these readings. Further recovery of the historical coefficients is deferred until specific new evidence becomes available.
@@ -1483,7 +1483,7 @@ The refined normal-abundance warm pressure maximum is 1,516.7 K cm⁻³, compare
 ## Connect the cold
 and warm phases. — Measure the mismatch, then keep the stopping point explicit. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Figure 1 is scored as density at the reference temperature, avoiding arbitrary branch selection near a nearly vertical curve. Figure 2 is scored as pressure or electron density at the reference density, only where there is a unique model temperature root. All candidates would be retained for ambiguous cases; none of these sampled points is unscored. The report gives separate signed and RMS log residuals for each case and quantity; the metrics must not be pooled.
@@ -1492,7 +1492,7 @@ The FGH Figure 1 caption assumes a transition from depleted cases a/b to normal 
 ## Connect the cold
 and warm phases. — What the coefficient audit resolved. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 GHF Table 1, the equation (13) heating coefficients, and the Field et al. (1968) abundance baseline were visually rechecked. No transcription error was found in these inputs. The earlier Fe cascade discussion also cautions against adding extra lower-level population factors to coefficients that describe total excitation losses.
@@ -1503,7 +1503,7 @@ Stopping note: the original excitation fit, thermal He processes, recombination 
 ## Connect the cold
 and warm phases. — Recompute this comparison. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Keep the seven prototype files listed below, then add these three files beside them. The source PDF is unnecessary to rerun the comparison; its hash, render coordinates, and calibration are recorded in the configuration.
@@ -1514,7 +1514,7 @@ The comparison passes 80 checks of calibration, numerical roots, scan refinement
 ## Connect the cold
 and warm phases. — What changed from the reduced cold branch? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 The solver now includes cosmic-ray production and removal of 20-eV superthermal electrons, secondary hydrogen ionization, thermal hydrogen excitation and ionization, and direct electron heating. These interact with H/He recombination, charge neutrality, historical metal cooling, and free-free emission.
@@ -1526,7 +1526,7 @@ These follow GHF equations (13) and (20). Heating is evaluated directly from the
 ## Connect the cold
 and warm phases. — The atomic-data gap is explicit. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 GHF p. 178 prints the hydrogen ionization triangle: threshold 13.6 eV, peak cross section 1.2 × 10⁻¹⁶ cm² at 50 eV, and zero at 300 eV. Its Maxwellian average is integrated analytically and checked against independent numerical quadrature.
@@ -1537,7 +1537,7 @@ Thermal He excitation and ionization are omitted. He I recombination uses the hy
 ## Connect the cold
 and warm phases. — Run and inspect the calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Save these seven files together. The calculation needs no PDF or network access once its pinned dependencies are installed.
@@ -1550,7 +1550,7 @@ The 48 checks cover Maxwellian integration, charge balance, superthermal product
 ## Connect the cold
 and warm phases. — Historical validation remains open. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 The sparse original-figure comparison above is complete. Further coefficient recovery is deferred; the original excitation fit, recombination convention, omitted processes, and historical implementation remain to be resolved. The source audit also keeps the different depletion values printed in FGH and GHF separate.
@@ -1561,7 +1561,7 @@ Original implementation code is MIT. Text, figures and generated data have separ
 ## Connect the cold
 and warm phases. — A bounded ZP saturation search. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 This supplementary calculation uses the existing approximate FGH/GHF model with instantaneous ionization equilibrium, P/kB = (n0 + ne)T, and an explicitly assumed neutral-gas conductivity κ = 2500√T. It is not a recovery of historical FGH saturation values. The depleted warm branches remain model extensions beyond the source’s cold-side depletion prescription.
@@ -1572,7 +1572,7 @@ FGH b prototype extension: conditional Psat/kB = 3733.32 K cm⁻³. Cold endpoin
 ## Connect the cold
 and warm phases. — A bounded ZP saturation search. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/fgh-1969/two-phase.html
 Coverage: reading
 
 Here n0 counts H+He nuclei, nH = 0.9 n0, and the pressure includes electrons. The downloadable results also record ne and hydrogen-nucleus density. These numbers cannot be compared directly with a pure-H density column without retaining the convention. Finite-grid pressure searches, refined quadrature, root thermal balance and a nonnegative static-front flux-square integral are checked. Remaining input uncertainties dominate numerical precision.
@@ -1581,7 +1581,7 @@ Search / PythonAssumptionsPressure search / CSVConditional roots and checks / JS
 ## How thermal conduction
 sets a small-scale limit. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 Paper overview: George B. Field (1965) →
@@ -1591,7 +1591,7 @@ Exhibit 01 / Field 1965 / Figure 2
 sets a small-scale limit. — How thermal conduction
 sets a small-scale limit. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 A fresh calculation of the condensation-mode growth rate in a uniform gas.
@@ -1602,7 +1602,7 @@ Recomputed and numerically validated. This exhibit recomputes the published equa
 ## How thermal conduction
 sets a small-scale limit. — The figure, recomputed. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 Field (1965), Figure 2, printed p. 540. α = 1/2, γ = 5/3; β = 0, 0.01, 0.1, 1. Both axes are dimensionless. Only the unstable branch and its neutral endpoints are drawn. Line styles and typography have been updated.SVG figurePNG figureCurve data / CSVValidation / JSON
@@ -1610,7 +1610,7 @@ Field (1965), Figure 2, printed p. 540. α = 1/2, γ = 5/3; β = 0, 0.01, 0.1, 1
 ## How thermal conduction
 sets a small-scale limit. — Long wavelengths [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 For this choice of α, the gas is stable to an isochoric perturbation but unstable to isobaric condensation. At small wavenumber, the finite sound speed limits the growth; the normalized rate tends to zero linearly with wavenumber.
@@ -1618,7 +1618,7 @@ For this choice of α, the gas is stable to an isochoric perturbation but unstab
 ## How thermal conduction
 sets a small-scale limit. — Short wavelengths [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 Without conduction, the rate approaches 0.3. With conduction, temperature perturbations are smoothed on small scales. Each conducting curve reaches a finite cutoff beyond which the linear system is stable.
@@ -1626,7 +1626,7 @@ Without conduction, the rate approaches 0.3. With conduction, temperature pertur
 ## How thermal conduction
 sets a small-scale limit. — Short wavelengths [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 From the paper to the calculation
@@ -1634,7 +1634,7 @@ From the paper to the calculation
 ## How thermal conduction
 sets a small-scale limit. — One cubic, one growing root. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 Field writes perturbations as exp(nt + i k·r): positive real n means growth. Using equations (27) and (38), define q = k/kρ, x = n/(kρc), α = kT/kρ, and β = kρ/kK. Here c is the adiabatic sound speed and the three characteristic wavenumbers are defined by equation (16).
@@ -1646,7 +1646,7 @@ For β > 0, the neutral cutoff is qc = √[(1 − α)/β]: approximately 7.0711,
 ## How thermal conduction
 sets a small-scale limit. — Download. Run. Inspect. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 Save the three files below into one folder. Use Python 3.9 or later; the initial run used Python 3.9, NumPy 2.0.2, and Matplotlib 3.9.4. The calculation needs no source PDF, random seed, or external input data.
@@ -1659,7 +1659,7 @@ Outputs: PNG and SVG figures, sampled curve data, and a validation report. The r
 ## How thermal conduction
 sets a small-scale limit. — Check the physics behind the curves. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 Compare the positive cubic root with eigenvalues of the independently assembled linearized fluid equations (11)–(14).
@@ -1672,7 +1672,7 @@ The source equation, parameters, and overall curve shapes have been checked. A d
 ## How thermal conduction
 sets a small-scale limit. — Source and next steps. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/
 Coverage: reading
 
 George B. Field (1965), Thermal Instability, The Astrophysical Journal 142, 531–567. Equations (15)–(16), (27), (38)–(39); Figure 2. Read the original paper at ADS ↗
@@ -1681,7 +1681,7 @@ Original implementation code is MIT. Text, figures and generated data have separ
 
 ## A map of growing modes. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 Paper overview: George B. Field (1965) →
@@ -1689,7 +1689,7 @@ Exhibit 03 / Field 1965 / Figure 1
 
 ## A map of growing modes. — A map of growing modes. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 The stability domains place condensation and acoustic growth in a common plane. Two straight neutral lines count growing roots; two hatched regions distinguish oscillation from non-oscillatory evolution.
@@ -1697,14 +1697,14 @@ Equation-based reconstruction, numerically validated. The presentation is modern
 
 ## A map of growing modes. — The domains, recomputed. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 Field (1965), Figure 1, printed p. 536; γ = 5/3. Color indicates the number of roots with positive real part, counted with multiplicity. Hatching means three real distinct roots. Neutral lines are treated separately. The circular annotation guide in the original is omitted because it is not a stability boundary.SVG figurePNG figureDomain grid / CSVConductive paths / CSVValidation / JSON
 
 ## A map of growing modes. — Conduction is already on the horizontal axis. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 Equation (17) defines y = n/(kc), σρ = kρ/k, and σT′ = kT/k + k/kK. The horizontal coordinate includes the positive thermal-conduction contribution. Both coordinates and y are dimensionless; c is the adiabatic sound speed.
@@ -1713,21 +1713,21 @@ Equation (18). This normalization uses kc; Figures 2 and 3 instead use kρc.
 
 ## A map of growing modes. — The neutral lines [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 The solid line σρ = σT′ has a zero root and is the isobaric neutral line. The dashed line σρ = −(γ − 1)σT′ has purely imaginary roots and is the isentropic neutral line.
 
 ## A map of growing modes. — The hatched thorns [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 The discriminant boundary changes the character of the roots. Inside the hatching, all three roots are real and distinct. Outside, there is one real root and a complex conjugate pair. The hatching is not an additional instability threshold.
 
 ## A map of growing modes. — The hatched thorns [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 A growing root means Re(y) > 0. A complex conjugate pair with positive real part counts as two growing roots. Away from neutral lines, the count is:
@@ -1737,7 +1737,7 @@ Here 1[condition] is 1 when the condition is true, otherwise 0. On neutral lines
 
 ## A map of growing modes. — Keep Field’s sign convention. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 Write t = σT′ and r = σρ. Field’s equation (19) defines:
@@ -1747,7 +1747,7 @@ For this definition, D < 0 gives three real roots, while D > 0 gives a complex p
 
 ## A map of growing modes. — Follow a path into Figures 2 and 3. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 With q = k/kρ > 0, equation (28) gives r = 1/q and t = α/q + βq = αr + β/r. The green paths use α = 1/2, as in Figure 2; the brown paths use α = −2, as in Figure 3. Each family has β = 0.01, 0.1, 1, with dotted zero-conduction reference rays.
@@ -1756,7 +1756,7 @@ A path can cross the wave neutral line while condensation is still unstable. The
 
 ## A map of growing modes. — Build the map from its equations. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 Save these three files together. The recorded environment uses Python 3.9.6, NumPy 2.0.2, and Matplotlib 3.9.4. No source PDF, external data, or local helper module is needed after installing dependencies.
@@ -1767,7 +1767,7 @@ python3 -m venv .venv
 
 ## A map of growing modes. — Check the roots behind every region. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 Compare analytical root counts and D-based topology with numerical roots on an independent grid, away from boundaries.
@@ -1780,7 +1780,7 @@ The graph is reconstructed from the published equations, with modernized colorin
 
 ## A map of growing modes. — Source and related exhibits. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-1.html
 Coverage: reading
 
 George B. Field (1965), Thermal Instability, The Astrophysical Journal 142, 531–567. Figure 1; equations (17)–(28). Original paper at ADS ↗
@@ -1790,7 +1790,7 @@ Original implementation code is MIT. Text, figures and generated data have separ
 
 ## When sound waves grow. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 Paper overview: George B. Field (1965) →
@@ -1798,7 +1798,7 @@ Exhibit 02 / Field 1965 / Figure 3
 
 ## When sound waves grow. — When sound waves grow. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 An oscillation can grow while it travels. Figure 3 follows the real part of the acoustic wave pair in Field’s dispersion relation, with α = −2.
@@ -1806,35 +1806,35 @@ Recomputed and numerically validated. The calculation selects the complex wave p
 
 ## When sound waves grow. — The wave mode, recomputed. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 Field (1965), Figure 3, printed p. 540. α = −2, γ = 5/3; β = 0, 0.01, 0.1, 1. Both axes are dimensionless. Growing branches and neutral endpoints are shown; the CSV also includes signed damping rates and frequencies.SVG figurePNG figureGrowth & frequency / CSVValidation / JSON
 
 ## When sound waves grow. — The real part: growth [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 Write x = ξ + iη, with time normalized by kρc. The real part ξ sets the exponential growth or decay of the disturbance. Positive ξ is an oscillatory instability, also called overstability.
 
 ## When sound waves grow. — The imaginary part: frequency [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 The two conjugate roots have opposite frequencies and equal growth rates. The code keeps the positive-frequency member, η > 0. The figure plots ξ; the CSV retains both ξ and η.
 
 ## When sound waves grow. — The imaginary part: frequency [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 At long wavelengths, Re(x) tends to zero quadratically with q = k/kρ. Without conduction it approaches 0.1 at short wavelengths. Increasing conduction reduces growth and introduces a finite wave cutoff.
 
 ## When sound waves grow. — The growing wave is not the fastest root. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 As in Figure 2, define x = n/(kρc), q = k/kρ, α = kT/kρ, β = kρ/kK, and s = α + βq². The same dispersion relation applies:
@@ -1846,7 +1846,7 @@ Equation (40) provides a separate check on ξ = Re(x):
 
 ## When sound waves grow. — A damped wave can coexist with condensation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 The wave cutoff follows equation (26): qc = √[(−α − 1/(γ − 1))/β] = √(0.5/β). For β = 0.01, 0.1, and 1 this is approximately 7.0711, 2.2361, and 0.7071. The first is just outside the plotted interval.
@@ -1855,7 +1855,7 @@ The wave mode is damped above its cutoff. This does not imply stability of the w
 
 ## When sound waves grow. — Run the second calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 Download these four files into the same folder. reproduce.py supplies the shared dispersion relation and fluid matrix; reproduce-wave.py selects and validates the wave pair. The recorded environment used Python 3.9.6, NumPy 2.0.2, and Matplotlib 3.9.4.
@@ -1868,7 +1868,7 @@ No source PDF, network access, or external input data is needed after installing
 
 ## When sound waves grow. — Follow the wave all the way to damping. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 Compare both members of the complex pair against the eigenvalues of the linearized fluid equations.
@@ -1882,7 +1882,7 @@ The plotted geometry has been inspected against the scan, but no error relative 
 
 ## When sound waves grow. — Source and related exhibit. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/field-1965/figure-3.html
 Coverage: reading
 
 George B. Field (1965), Thermal Instability, The Astrophysical Journal 142, 531–567. Figure 3, equations (15), (26)–(27), (30), (38)–(40). Original paper at ADS ↗
@@ -1891,14 +1891,14 @@ Original implementation code is MIT. Text, figures and generated data have separ
 
 ## An archive in motion. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 From the original movie archive / recovered November 2026
 
 ## An archive in motion. — An archive in motion. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Clouds emerge, shocks gather gas, and magnetized structures evolve. Four 2D and four 3D recordings bring the historical calculations back to the browser. Browse 2D movies →
@@ -1906,7 +1906,7 @@ Archival footage, selected for visual demonstration. These movies have not been 
 
 ## An archive in motion. — A short introduction in 3D. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download the edited selection
@@ -1914,14 +1914,14 @@ Download the edited selection
 
 ## An archive in motion. — Keep the original picture in view. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Play one recording at a time. Each retains its original aspect ratio, annotations and temporal sequence. Small lettering is best inspected at native size using the MP4 link. Downloading or enlarging a recording does not recover detail absent from the source.
 
 ## An archive in motion. — A developing layer and its close-up [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -1935,7 +1935,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — Two-phase gas and its pressure-density track [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -1949,7 +1949,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — An MHD-labelled layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -1963,7 +1963,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — Growing and merging structures [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -1977,7 +1977,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — Thermal instability in 3D [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -1991,7 +1991,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — A shock sweeps up warm gas [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -2005,7 +2005,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — A magnetized shock in 3D [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -2019,7 +2019,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — Thermal instability with MHD [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Download MP4
@@ -2033,7 +2033,7 @@ MP4 · Poster / PNG
 
 ## An archive in motion. — What these recordings can tell us. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 They are effective visual demonstrations at compact gallery sizes. Their native resolutions are 500–800 pixels wide and their cadences are 3–10 fps. Fine textures can look grainy, and low-frame-rate motion is visibly stepped. They are suitable as historical exhibits; they are not high-resolution, full-screen source material.
@@ -2042,7 +2042,7 @@ The gallery was curated from 87 video files, representing 55 byte-distinct recor
 
 ## An archive in motion. — What these recordings can tell us. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/gallery/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/gallery/
 Coverage: reading
 
 Materials molecular-dynamics movies and related materials CG are excluded, along with unrelated footage and journal-supplement movies from other collections. Source originals remain untouched. Full-frame versions use H.264/yuv420p, retain the original dimensions and cadence, and add no spatial or temporal interpolation. The showreel has its own explicit crop and excerpt log.
@@ -2051,7 +2051,7 @@ Sources, edit log & media hashes / JSONSelection & quality notes / JSONEditing a
 ## Classify the interface
 by following its trajectory. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 Paper overview: Iwasaki & Inutsuka (2012) →
@@ -2061,7 +2061,7 @@ Iwasaki & Inutsuka 2012 / Figures 5 and 7 / Computed prototype
 by following its trajectory. — Classify the interface
 by following its trajectory. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 A pressure and a mass flux can select very different connections between cold and warm gas. We solve the steady front equations behind the paper’s classification diagrams, starting from the cold neutral medium.
@@ -2071,7 +2071,7 @@ This is a computed subset prepared for technical review, not a completed reprodu
 by following its trajectory. — Classify the interface
 by following its trajectory. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 The KI2002 equilibrium benchmark documents the corrected coefficients used here, stable and unstable branches, and all three equilibrium intersections at the ZP saturation pressure.
@@ -2079,7 +2079,7 @@ The KI2002 equilibrium benchmark documents the corrected coefficients used here,
 ## Classify the interface
 by following its trajectory. — Toward Figure 5: pressure and condensation flux. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 29 pressure samples × 45 flux samples. Each cell is computed from the printed model. The white dashed curve is the condensation ZP separatrix, found by matching phase integrations from the cold and warm equilibria. Gray inputs lack the outgoing CNM saddle on the implemented density branch. White is unresolved. The source jcrit overlay remains to be audited.PNGSVGAll decisions / CSVComputed boundaries / CSV
@@ -2089,7 +2089,7 @@ The condensation flux is plotted as −j divided by mH × (1 cm⁻³) × (1 km s
 ## Classify the interface
 by following its trajectory. — Toward Figure 7: extend the pressure range. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 33 × 49 samples. The dark dashed curve marks Tcrit = 10,000 K. Here the white region consists of 669 samples with no terminal point inside the declared 20,000 K search window; it is not assigned a physical class by extrapolating the rate fit. It must not be read as an absence of steady solutions in the paper.PNGSVGAll decisions / CSVComputed boundaries / CSV
@@ -2098,7 +2098,7 @@ The published Figure 7 extends beyond the bistable-pressure interval. This proto
 ## Classify the interface
 by following its trajectory. — Check the equilibrium landmarks first. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 Equations (5)–(7) set the thermal equilibrium curve. Equation (16), the conductivity-weighted net-loss integral, selects the saturation pressure.Equilibrium data / CSVSVG
@@ -2108,7 +2108,7 @@ At Pc/kB = 3,000 K cm⁻³, the matched condensation ZP flux is −j = 0.0031599
 ## Classify the interface
 by following its trajectory. — What is being solved? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 ρv = j   ·   ρv² + P = M
@@ -2120,7 +2120,7 @@ For node-like targets, the solver follows log(F) and refines the remaining tempe
 ## Classify the interface
 by following its trajectory. — Two implementation questions to discuss with the authors. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 Continuation of the CNM boundary: at large imposed flux, the implemented plus-density branch can lose its outgoing CNM saddle. How should the boundary or branch be continued to recover the rest of the published C–C coverage?
@@ -2131,7 +2131,7 @@ The first technical milestone is agreement on these model choices. Quantitative 
 ## Classify the interface
 by following its trajectory. — Run the steady calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 Download the five files below into one directory. This is a small steady ODE calculation rather than a multidimensional simulation. The report records actual runtime; changing the grid or solver settings changes the cost.
@@ -2145,7 +2145,7 @@ Passing these checks does not validate the masked regions, the omitted jcrit ove
 ## Classify the interface
 by following its trajectory. — Source. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/iwasaki-2012/
 Coverage: reading
 
 Iwasaki & Inutsuka (2012), source preprint ↗
@@ -2155,7 +2155,7 @@ The inspected PDF is arXiv:1204.5532v2, 14 May 2012. The template’s 2002/2018 
 ## One cooling law.
 Two stable phases. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Paper overview: Koyama & Inutsuka (2002) →
@@ -2165,7 +2165,7 @@ Koyama & Inutsuka 2002 / Corrected analytic fit / Equilibrium benchmark
 Two stable phases. — One cooling law.
 Two stable phases. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Balance heating and cooling, follow the stable and unstable branches, and locate the pressure that supports a static planar conductive front.
@@ -2174,7 +2174,7 @@ A new diagnostic of the corrected model, with numerical validation. This does no
 ## One cooling law.
 Two stable phases. — Temperature, density and pressure. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Pure atomic H: n = ρ/mH and P/kB = nT. The corrected fit gives isobaric instability between 184.000 and 5039.419 K, corresponding to densities between 0.993567 and 8.681810 cm⁻³. The endpoints are marginal. Dots mark the cold, intermediate and warm intersections at the ZP saturation pressure.PNGSVGEquilibria / CSV
@@ -2185,7 +2185,7 @@ The turning pressures are Pmin/kB = 1597.453 and Pmax/kB = 5007.000 K cm⁻³. T
 ## One cooling law.
 Two stable phases. — ZP saturation and its equilibrium points. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Psat/kB = 2822.884297 K cm⁻³. For a planar, static front with zero conductive flux at each end, integrate d(κ dT/dx)/dx = Q to obtain ∫TcTw κ(T) Q(T,P) dT = 0. We use κ = 2500√T erg cm⁻¹ K⁻¹ s⁻¹. An unweighted equal-area construction on the pressure–density plot would give a different condition.
@@ -2193,7 +2193,7 @@ Psat/kB = 2822.884297 K cm⁻³. For a planar, static front with zero conductive
 ## One cooling law.
 Two stable phases. — Cold endpoint [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 T = 54.980188 K
@@ -2203,7 +2203,7 @@ Isobarically stable
 ## One cooling law.
 Two stable phases. — Intermediate intersection [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 T = 1364.881273 K
@@ -2213,7 +2213,7 @@ Isobarically unstable
 ## One cooling law.
 Two stable phases. — Warm endpoint [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 T = 6417.132178 K
@@ -2223,7 +2223,7 @@ Isobarically stable
 ## One cooling law.
 Two stable phases. — Warm endpoint [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 The intermediate point is the third intersection of the common-pressure line with the equilibrium curve. It is not a third asymptotic endpoint of this cold-to-warm static front. Uniform equilibria have no temperature gradient; conduction selects the connecting front without moving the equilibrium curve.
@@ -2234,7 +2234,7 @@ For the FGH/GHF prototype, the bounded saturation search is recorded separately.
 ## One cooling law.
 Two stable phases. — Pressure tilts the two thermal wells. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Compare P/Psat = 0.9, 1 and 1.1 using the same corrected cooling law, pure-H density convention and Parker conductivity as the equilibrium benchmark. This is a new static-front diagnostic of the model, not an original-paper figure reproduction.
@@ -2244,7 +2244,7 @@ Full comparison / SVGFull comparison / PNGStacked temperature panels / SVGAll cu
 ## One cooling law.
 Two stable phases. — The coordinate and potential have explicit definitions. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Q(T,P) = n²Λ(T) − nΓ, n = (P/kB)/T
@@ -2258,7 +2258,7 @@ At a thermal equilibrium, ∂²V/∂θ² = (∂Q/∂T)P / κ. Thus the two isoba
 ## One cooling law.
 Two stable phases. — Below saturation [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 P/kB = 2540.596 K cm⁻³.
@@ -2268,7 +2268,7 @@ The warm minimum is deeper.
 ## One cooling law.
 Two stable phases. — At saturation [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 P/kB = 2822.884 K cm⁻³.
@@ -2278,7 +2278,7 @@ The two minima have equal depth within numerical tolerance.
 ## One cooling law.
 Two stable phases. — Above saturation [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 P/kB = 3105.173 K cm⁻³.
@@ -2288,7 +2288,7 @@ The cold minimum is deeper.
 ## One cooling law.
 Two stable phases. — Equal depths recover the static-front condition. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 θ_xx = Q = ∂V/∂θ
@@ -2302,7 +2302,7 @@ Potential calculation / PythonPotential configurationShared cooling model
 ## One cooling law.
 Two stable phases. — Equal depths recover the static-front condition. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Historical aside: van der Waals, Maxwell’s equal-area rule, and why ZP saturation uses a different integral. Primary publications traced to 1873–1875. A scalar Ginzburg–Landau connection follows the ZP condition to equal potential minima.
@@ -2310,7 +2310,7 @@ Historical aside: van der Waals, Maxwell’s equal-area rule, and why ZP saturat
 ## One cooling law.
 Two stable phases. — Use the corrected coefficients. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 Λ(T) / Γ = 10⁷ exp[−118400 / (T + 1000)]
@@ -2323,7 +2323,7 @@ No separate journal erratum was located in the arXiv record and targeted searche
 ## One cooling law.
 Two stable phases. — Run the calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ki-2002/
 Coverage: reading
 
 python -m pip install -r requirements.txt
@@ -2334,7 +2334,7 @@ Model / PythonFigures and checks / PythonConfigurationSource auditDependenciesIn
 ## Reconstruct the mode.
 Keep its components coupled. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 Kim & Kim2013 / Source-audited specification / Not yet computed
@@ -2343,7 +2343,7 @@ Kim & Kim2013 / Source-audited specification / Not yet computed
 Keep its components coupled. — Reconstruct the mode.
 Keep its components coupled. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 Matching a growth-rate curve is only part of the task. The required result is the spatial eigenfunction, with its temperature, velocity, flux and pressure information preserved under one amplitude and phase convention.
@@ -2352,7 +2352,7 @@ This page defines the reconstruction and its acceptance criteria. No Kim2013 bac
 ## Reconstruct the mode.
 Keep its components coupled. — Figure9 is the primary comparison. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 The MU69 example compares temperature and transverse velocity on two different transverse cuts. The reconstruction must produce both curves from the same mode:
@@ -2366,7 +2366,7 @@ The origin is fixed by T = √(T1T2). Temperature divided by Tbackground is a po
 ## Reconstruct the mode.
 Keep its components coupled. — Match the paper’s background model first. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 The source uses the corrected KI cooling fit but a constant conductivity κ = 10⁵ erg cm⁻¹ s⁻¹ K⁻¹, with m = 1.37mH, n = ρ/m and γ = 5/3. Its reported saturation pressure is Psat/kB = 2282 K cm⁻³. The existing KI/Iwasaki benchmark instead uses κ = 2500√T and has a different computed saturation pressure. Copying its front unchanged would change the problem.
@@ -2375,7 +2375,7 @@ Reconstruct the steady boundary-value problem and its mass-flux eigenvalue from 
 ## Reconstruct the mode.
 Keep its components coupled. — Five state components, one eigenfunction. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 xi = x / ell_D1
@@ -2393,7 +2393,7 @@ Use the paper’s C1 = 1 convention, or a documented equivalent single gauge. Ex
 ## Reconstruct the mode.
 Keep its components coupled. — Required verification gates. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 Background: converge the thermal front, mass flux and energy balance before solving for perturbations.
@@ -2408,7 +2408,7 @@ A full nonlinear two-dimensional run is a separate, optional task. The coupled F
 ## Reconstruct the mode.
 Keep its components coupled. — Source questions remain visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/kim-kim-2013/
 Coverage: reading
 
 The inspected v2 text on page5 gives Lf = 0.13 pc for the 1800 K cm⁻³ evaporation example, whereas Table1 gives 0.29 pc. This must be checked against the journal version and definitions. It is not a reason to tune a coordinate scale. The Figure9 initial-value amplitude convention also needs clarification before claiming an absolute-amplitude reproduction.
@@ -2416,7 +2416,7 @@ Source review: arXiv1310.2940v2, 6 December2013. Sections2–3 and AppendixA rea
 
 ## Thermal condensation in a turbulent atomic hydrogen flow — Thermal condensation in a turbulent atomic hydrogen flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
 Coverage: reading
 
 Audit & Hennebelle · 2005
@@ -2426,7 +2426,7 @@ Two-dimensional turbulent converging flows condense warm H I into cold structure
 
 ## Thermal condensation in a turbulent atomic hydrogen flow — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
 Coverage: reading
 
 Start with the semi-analytical model for unstable gas and its relation to turbulence. Reanalyse published diagnostics or available outputs after a provenance audit. A full high-resolution two-dimensional run is optional.
@@ -2434,14 +2434,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## Thermal condensation in a turbulent atomic hydrogen flow — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## Thermal condensation in a turbulent atomic hydrogen flow — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2450,7 +2450,7 @@ Read this reference in its research path →
 
 ## Thermal condensation in a turbulent atomic hydrogen flow — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/audit-hennebelle-2005/
 Coverage: reading
 
 1999 · Hennebelle & Pérault — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus
@@ -2462,7 +2462,7 @@ Coverage: reading
 
 ## The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
 Coverage: reading
 
 Bakes & Tielens · 1994
@@ -2472,7 +2472,7 @@ Photoelectric heating by small carbonaceous grains and PAHs, including grain cha
 
 ## The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
 Coverage: reading
 
 Trace the photoelectric-heating input used in later neutral-gas models. Audit radiation-field normalization, electron density, grain population, temperature range, and net gas–grain energy exchange before plotting the efficiency fit.
@@ -2480,14 +2480,14 @@ Source review: Bibliography and source overview checked; equations, target figur
 
 ## The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
 Coverage: reading
 
 Historical theory & heating sources →
 
 ## The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2495,7 +2495,7 @@ Read this reference in its research path →
 
 ## The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/bakes-tielens-1994/
 Coverage: reading
 
 1995 · Wolfire, Hollenbach, McKee, Tielens & Bakes — The Neutral Atomic Phases of the Interstellar Medium
@@ -2505,7 +2505,7 @@ Coverage: reading
 
 ## Local Dynamic Thermal Instability — Local Dynamic Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/balbus-1986/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/balbus-1986/
 Coverage: reading
 
 Steven A. Balbus · 1986
@@ -2515,7 +2515,7 @@ Local thermal-instability criteria for time-dependent background flows; transpor
 
 ## Local Dynamic Thermal Instability — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/balbus-1986/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/balbus-1986/
 Coverage: reading
 
 Compare the loss-per-unit-mass convention and the derivative of loss/T with Field’s equilibrium criterion. This is analytical background, not a conduction-resolved nonlinear simulation exhibit.
@@ -2523,14 +2523,14 @@ Source review: Bibliography and source overview checked; equations, target figur
 
 ## Local Dynamic Thermal Instability — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/balbus-1986/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/balbus-1986/
 Coverage: reading
 
 Historical theory & heating sources →
 
 ## Local Dynamic Thermal Instability — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/balbus-1986/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/balbus-1986/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2539,7 +2539,7 @@ Read this reference in its research path →
 
 ## Local Dynamic Thermal Instability — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/balbus-1986/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/balbus-1986/
 Coverage: reading
 
 1953 · Eugene N. Parker — Instability of Thermal Fields
@@ -2548,7 +2548,7 @@ Coverage: reading
 
 ## Global Effects of Thermal Conduction on Two-Phase Media — Global Effects of Thermal Conduction on Two-Phase Media [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
 Coverage: reading
 
 Begelman & McKee · 1990
@@ -2558,7 +2558,7 @@ Thermal conduction transfers mass between phases through evaporation and condens
 
 ## Global Effects of Thermal Conduction on Two-Phase Media — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
 Coverage: reading
 
 Audit the Field-length definition and the assumptions of classical conduction, uniform pressure, and small cloud filling factor. Compare reduced evolution equations while retaining the original thermal model and application.
@@ -2566,14 +2566,14 @@ Source review: Bibliography and source overview checked; equations, target figur
 
 ## Global Effects of Thermal Conduction on Two-Phase Media — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
 Coverage: reading
 
 Historical theory & heating sources →
 
 ## Global Effects of Thermal Conduction on Two-Phase Media — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2581,7 +2581,7 @@ Read this reference in its research path →
 
 ## Global Effects of Thermal Conduction on Two-Phase Media — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/begelman-mckee-1990/
 Coverage: reading
 
 1953 · Eugene N. Parker — Instability of Thermal Fields
@@ -2590,7 +2590,7 @@ Coverage: reading
 
 ## Thermal Instability and the Formation of Clumpy Gas Clouds — Thermal Instability and the Formation of Clumpy Gas Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
 Coverage: reading
 
 Burkert & Lin · 2000
@@ -2600,7 +2600,7 @@ During radiative cooling, the transition from isobaric to isochoric evolution li
 
 ## Thermal Instability and the Formation of Clumpy Gas Clouds — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
 Coverage: reading
 
 Audit the growth, transition-temperature, and nonlinear-amplitude estimates. Use small analytic or time-dependent perturbation calculations before considering fragmentation simulations; distinguish cooling backgrounds from thermal equilibrium.
@@ -2608,14 +2608,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## Thermal Instability and the Formation of Clumpy Gas Clouds — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## Thermal Instability and the Formation of Clumpy Gas Clouds — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2624,7 +2624,7 @@ Read this reference in its research path →
 
 ## Thermal Instability and the Formation of Clumpy Gas Clouds — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/burkert-lin-2000/
 Coverage: reading
 
 1999 · Hennebelle & Pérault — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus
@@ -2636,7 +2636,7 @@ Coverage: reading
 
 ## Hydrodynamic and Hydromagnetic Stability — Hydrodynamic and Hydromagnetic Stability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
 Coverage: reading
 
 S. Chandrasekhar · 1961
@@ -2646,7 +2646,7 @@ Buoyancy-driven thermal convection and its Boussinesq approximation: a fluid-dyn
 
 ## Hydrodynamic and Hydromagnetic Stability — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
 Coverage: reading
 
 Proposed entry point: the onset of convection in a layer heated from below, followed by a neutral Rayleigh curve for explicitly specified mechanical and thermal boundaries. Retain velocity, perturbation pressure and buoyancy; distinguish this mechanism from the Field radiative-condensation mode. No equation or figure reproduction yet.
@@ -2654,14 +2654,14 @@ Source review: Original-year bibliography and publisher listing checked. Full-te
 
 ## Hydrodynamic and Hydromagnetic Stability — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
 Coverage: reading
 
 Boussinesq convection & scope →
 
 ## Hydrodynamic and Hydromagnetic Stability — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2669,7 +2669,7 @@ Read this reference in its research path →
 
 ## Hydrodynamic and Hydromagnetic Stability — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/chandrasekhar-1961/
 Coverage: reading
 
 1953 · Eugene N. Parker — Instability of Thermal Fields
@@ -2678,7 +2678,7 @@ Coverage: reading
 
 ## Heating and Ionization of HI Regions — Heating and Ionization of HI Regions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
 Coverage: reading
 
 Dalgarno & McCray · 1972
@@ -2688,7 +2688,7 @@ A historical review of heating and ionization processes in neutral interstellar 
 
 ## Heating and Ionization of HI Regions — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
 Coverage: reading
 
 Use as a source map for historical heating/cooling processes. Audit individual formulas, ionization fractions, abundance assumptions, and original rate references before selecting a cooling-curve calculation.
@@ -2696,14 +2696,14 @@ Source review: Bibliography and source overview checked; equations, target figur
 
 ## Heating and Ionization of HI Regions — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
 Coverage: reading
 
 Historical theory & heating sources →
 
 ## Heating and Ionization of HI Regions — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2712,7 +2712,7 @@ Read this reference in its research path →
 
 ## Heating and Ionization of HI Regions — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/dalgarno-mccray-1972/
 Coverage: reading
 
 1960 · Takayanagi & Nishimura — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen
@@ -2723,7 +2723,7 @@ Coverage: reading
 
 ## Dynamics of Fronts in Thermally Bistable Fluids — Dynamics of Fronts in Thermally Bistable Fluids [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/elphick-1992/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/elphick-1992/
 Coverage: reading
 
 Elphick, Regev & Shaviv · 1992
@@ -2733,7 +2733,7 @@ Isobaric conductive fronts, a Lyapunov functional, equal-depth potential minima 
 
 ## Dynamics of Fronts in Thermally Bistable Fluids — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/elphick-1992/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/elphick-1992/
 Coverage: reading
 
 The source equations are reviewed; no numerical reproduction yet. Candidate: the cubic benchmark, static kink or front speed versus potential-depth difference, retaining the Lagrangian mass coordinate and state-dependent mobility.
@@ -2741,7 +2741,7 @@ Source review: Original scan pp.108–109, Eq.2.14, Eqs3.2–3.6 and Figure1 vis
 
 ## Dynamics of Fronts in Thermally Bistable Fluids — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/elphick-1992/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/elphick-1992/
 Coverage: reading
 
 Front lineage & source review →
@@ -2749,7 +2749,7 @@ Ginzburg–Landau connection →
 
 ## Dynamics of Fronts in Thermally Bistable Fluids — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/elphick-1992/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/elphick-1992/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2758,7 +2758,7 @@ Read this reference in its research path →
 
 ## Dynamics of Fronts in Thermally Bistable Fluids — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/elphick-1992/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/elphick-1992/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -2772,7 +2772,7 @@ Coverage: reading
 
 ## Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons — Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
 Coverage: reading
 
 Ferrara & Shchekinov · 1993
@@ -2782,7 +2782,7 @@ Conductive and radiative interfaces admit static and steady fronts, cloud compre
 
 ## Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
 Coverage: reading
 
 Start with planar static/steady front equations, boundary heat fluxes, and the mechanical analogy. Select a small ODE benchmark after auditing the heat-loss law, conductivity, and pressure/flow assumptions. Cloud implosion simulations are a separate, optional scope.
@@ -2790,7 +2790,7 @@ Source review: Author preprint abstract and bibliography checked; equations, tar
 
 ## Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2799,7 +2799,7 @@ Read this reference in its research path →
 
 ## Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ferrara-shchekinov-1993/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -2813,7 +2813,7 @@ Coverage: reading
 
 ## Cosmic-Ray Heating of the Interstellar Gas — Cosmic-Ray Heating of the Interstellar Gas [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/fgh-1969/
 Coverage: reading
 
 Field, Goldsmith & Habing · 1969
@@ -2822,14 +2822,14 @@ From heating and cooling balance to two coexisting phases.
 
 ## Cosmic-Ray Heating of the Interstellar Gas — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/fgh-1969/
 Coverage: reading
 
 Historical heating/cooling diagnostics and cold-to-warm prototype, now compared with96 sparse readings of Figures1/2. Warm pressure maximum1516.7 versus printed1800Kcm^-3; larger local differences remain near the shifted transition. Historical coefficient recovery is deferred, without fitting a correction.
 
 ## Cosmic-Ray Heating of the Interstellar Gas — Figures, calculations and validation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/fgh-1969/
 Coverage: reading
 
 Two-phase equilibrium prototype →
@@ -2838,21 +2838,21 @@ Reduced cold branch →
 
 ## Cosmic-Ray Heating of the Interstellar Gas — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/fgh-1969/
 Coverage: reading
 
 Original-figure comparison & stopping note →
 
 ## Cosmic-Ray Heating of the Interstellar Gas — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/fgh-1969/
 Coverage: reading
 
 Read the original source and bibliography ↗
 
 ## Cosmic-Ray Heating of the Interstellar Gas — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/fgh-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/fgh-1969/
 Coverage: reading
 
 1965 · George B. Field — Thermal Instability
@@ -2860,7 +2860,7 @@ Coverage: reading
 
 ## Thermal Instability — Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/field-1965/
 Coverage: reading
 
 George B. Field · 1965
@@ -2869,14 +2869,14 @@ Explore the conditions for condensation through linear theory.
 
 ## Thermal Instability — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/field-1965/
 Coverage: reading
 
 Figures 1–3: stability domains, condensation growth (alpha=1/2), and wave growth (alpha=-2), with gamma=5/3. Equation-based reproductions with 15 map checks, 10 condensation checks, and 24 wave checks. Printed boundaries and curves have not been digitized for a pointwise comparison.
 
 ## Thermal Instability — Figures, calculations and validation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/field-1965/
 Coverage: reading
 
 Figure 1: stability map →
@@ -2885,14 +2885,14 @@ Figure 3: waves →
 
 ## Thermal Instability — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/field-1965/
 Coverage: reading
 
 Read the original source and bibliography ↗
 
 ## Thermal Instability — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/field-1965/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/field-1965/
 Coverage: reading
 
 1969 · Field, Goldsmith & Habing — Cosmic-Ray Heating of the Interstellar Gas
@@ -2900,7 +2900,7 @@ Coverage: reading
 
 ## Implementation of Chemistry in the Athena++ Code — Implementation of Chemistry in the Athena++ Code [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gong-2023/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gong-2023/
 Coverage: reading
 
 Gong, Ho, Stone, Ostriker, Caselli, Grassi, C.-G. Kim, J.-G. Kim & Halevi · 2023
@@ -2910,7 +2910,7 @@ A public chemistry framework including GOW17, general KIDA networks, and coupled
 
 ## Implementation of Chemistry in the Athena++ Code — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gong-2023/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gong-2023/
 Coverage: reading
 
 Begin with published tests, public inputs, or a small one-zone/1D case; full 3D runs are optional.
@@ -2918,7 +2918,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Implementation of Chemistry in the Athena++ Code — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gong-2023/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gong-2023/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2927,7 +2927,7 @@ Read this reference in its research path →
 
 ## Implementation of Chemistry in the Athena++ Code — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gong-2023/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gong-2023/
 Coverage: reading
 
 1994 · Bakes & Tielens — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons
@@ -2937,7 +2937,7 @@ Coverage: reading
 
 ## A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium — A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gow-2017/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gow-2017/
 Coverage: reading
 
 Gong, Ostriker & Wolfire · 2017
@@ -2947,7 +2947,7 @@ A compact chemical network with an author-maintained public PDR implementation a
 
 ## A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gow-2017/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gow-2017/
 Coverage: reading
 
 Pin a corrected rate/code version, inspect units and validity ranges, then choose a small chemical or thermal benchmark.
@@ -2955,7 +2955,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gow-2017/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gow-2017/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -2964,7 +2964,7 @@ Read this reference in its research path →
 
 ## A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/gow-2017/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/gow-2017/
 Coverage: reading
 
 1994 · Bakes & Tielens — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons
@@ -2974,7 +2974,7 @@ Coverage: reading
 
 ## Thermal and Dynamical Evolution of Gas Clouds of Various Masses — Thermal and Dynamical Evolution of Gas Clouds of Various Masses [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
 Coverage: reading
 
 Hattori, Nakano & Hayashi · 1969
@@ -2984,7 +2984,7 @@ Gas-cloud evolution with molecular/atomic line cooling, grains, radiation, and i
 
 ## Thermal and Dynamical Evolution of Gas Clouds of Various Masses — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
 Coverage: reading
 
 Inventory the individual heating/cooling prescriptions and their cited atomic/molecular data before choosing a small thermal-evolution calculation.
@@ -2992,14 +2992,14 @@ Source review: Publisher bibliography and abstract checked; individual coefficie
 
 ## Thermal and Dynamical Evolution of Gas Clouds of Various Masses — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
 Coverage: reading
 
 Rate-coefficient lineage & scope →
 
 ## Thermal and Dynamical Evolution of Gas Clouds of Various Masses — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3008,7 +3008,7 @@ Read this reference in its research path →
 
 ## Thermal and Dynamical Evolution of Gas Clouds of Various Masses — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hattori-nakano-hayashi-1969/
 Coverage: reading
 
 1960 · Takayanagi & Nishimura — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen
@@ -3019,7 +3019,7 @@ Coverage: reading
 
 ## Radiations from the Interstellar Hydrogen Atoms — Radiations from the Interstellar Hydrogen Atoms [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
 Coverage: reading
 
 Hayakawa, Nishimura & Takayanagi · 1961
@@ -3029,7 +3029,7 @@ Excitation and ionization of interstellar hydrogen by suprathermal particles, co
 
 ## Radiations from the Interstellar Hydrogen Atoms — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
 Coverage: reading
 
 Audit particle spectra, excitation/ionization definitions, and radiation/heating yields separately from thermally averaged chemical rates.
@@ -3037,14 +3037,14 @@ Source review: Publisher bibliography and abstract checked; individual coefficie
 
 ## Radiations from the Interstellar Hydrogen Atoms — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
 Coverage: reading
 
 Rate-coefficient lineage & scope →
 
 ## Radiations from the Interstellar Hydrogen Atoms — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3053,7 +3053,7 @@ Read this reference in its research path →
 
 ## Radiations from the Interstellar Hydrogen Atoms — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hayakawa-nishimura-takayanagi-1961/
 Coverage: reading
 
 1960 · Takayanagi & Nishimura — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen
@@ -3064,7 +3064,7 @@ Coverage: reading
 
 ## The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows — The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
 Coverage: reading
 
 Heitsch, Slyz, Devriendt, Hartmann & Burkert · 2006
@@ -3074,7 +3074,7 @@ Colliding atomic flows develop structure through dynamical and thermal instabili
 
 ## The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
 Coverage: reading
 
 Document the inflow, cooling law, geometry, and instability diagnostics. Prefer reanalysis of available density/temperature and fragmentation outputs; do not require a full multidimensional rerun or imply that this model follows the molecular stage.
@@ -3082,14 +3082,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3098,7 +3098,7 @@ Read this reference in its research path →
 
 ## The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-2006/
 Coverage: reading
 
 1999 · Hennebelle & Pérault — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus
@@ -3110,7 +3110,7 @@ Coverage: reading
 
 ## Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling — Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
 Coverage: reading
 
 Heitsch, Hartmann & Burkert · 2008
@@ -3120,7 +3120,7 @@ Comparing dynamical, thermal, and gravitational timescales identifies where shoc
 
 ## Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
 Coverage: reading
 
 A timescale/regime diagram is a promising inexpensive reproduction target. First audit the cooling law, perturbation scales, background state, and boundaries; keep this calculation distinct from a full flow-driven cloud simulation.
@@ -3128,14 +3128,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3144,7 +3144,7 @@ Read this reference in its research path →
 
 ## Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/heitsch-hartmann-burkert-2008/
 Coverage: reading
 
 1999 · Hennebelle & Pérault — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus
@@ -3156,7 +3156,7 @@ Coverage: reading
 
 ## On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow — On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
 Coverage: reading
 
 Hennebelle & Audit · 2007
@@ -3166,7 +3166,7 @@ High-resolution two-dimensional bistable turbulence produces small-scale CNM str
 
 ## On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
 Coverage: reading
 
 Begin with the analytical mass-spectrum argument and definitions of the measured spectra. Recompute diagnostics only from accessible, documented outputs; retain the dimensionality dependence and avoid treating a small run as a reproduction of the full statistics.
@@ -3174,14 +3174,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3190,7 +3190,7 @@ Read this reference in its research path →
 
 ## On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-audit-2007/
 Coverage: reading
 
 1999 · Hennebelle & Pérault — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus
@@ -3202,7 +3202,7 @@ Coverage: reading
 
 ## Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
 Coverage: reading
 
 Hennebelle & Pérault · 1999
@@ -3212,7 +3212,7 @@ Transonic converging warm flows produce cold condensations; self-similar non-iso
 
 ## Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
 Coverage: reading
 
 Audit the self-similar solution and size/velocity thresholds versus ambient pressure. Start with analytic relations or a planar one-dimensional benchmark; preserve the original heating/cooling and boundary conditions.
@@ -3220,14 +3220,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3235,7 +3235,7 @@ Read this reference in its research path →
 
 ## Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-1999/
 Coverage: reading
 
 2000 · Hennebelle & Pérault — Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus
@@ -3247,7 +3247,7 @@ Coverage: reading
 
 ## Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus — Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
 Coverage: reading
 
 Hennebelle & Pérault · 2000
@@ -3257,7 +3257,7 @@ Oblique magnetic fields and tension alter condensation in slab geometry; transve
 
 ## Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
 Coverage: reading
 
 Compare nonmagnetic, transverse-field, and oblique-field limits using the published self-similar analysis and a small one-dimensional MHD benchmark. Audit the angle and field-strength assumptions before choosing a figure.
@@ -3265,14 +3265,14 @@ Source review: Bibliography and abstract checked in the source paper or author p
 
 ## Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
 Coverage: reading
 
 Condensation, turbulence & fragmentation →
 
 ## Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3280,7 +3280,7 @@ Read this reference in its research path →
 
 ## Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/hennebelle-perault-2000/
 Coverage: reading
 
 1999 · Hennebelle & Pérault — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus
@@ -3292,7 +3292,7 @@ Coverage: reading
 
 ## Structure and Stability of Phase Transition Layers in the Interstellar Medium — Structure and Stability of Phase Transition Layers in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2006/
 Coverage: reading
 
 Inoue, Inutsuka & Koyama · 2006
@@ -3302,7 +3302,7 @@ CNM/WNM fronts, evaporation and condensation, and corrugational stability.
 
 ## Structure and Stability of Phase Transition Layers in the Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2006/
 Coverage: reading
 
 Candidate: a plane-parallel front or the linear growth relation, after checking boundary conditions.
@@ -3310,7 +3310,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Structure and Stability of Phase Transition Layers in the Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2006/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3319,7 +3319,7 @@ Read this reference in its research path →
 
 ## Structure and Stability of Phase Transition Layers in the Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2006/
 Coverage: reading
 
 2007 · Inoue, Inutsuka & Koyama — The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds
@@ -3334,7 +3334,7 @@ Coverage: reading
 
 ## The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds — The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2007/
 Coverage: reading
 
 Inoue, Inutsuka & Koyama · 2007
@@ -3344,7 +3344,7 @@ Two-fluid condensation and the competition between magnetic flux accumulation an
 
 ## The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2007/
 Coverage: reading
 
 Candidate: the analytic field-strength estimate or a small 1D verification case.
@@ -3352,7 +3352,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2007/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3361,7 +3361,7 @@ Read this reference in its research path →
 
 ## The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2007/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2007/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3376,7 +3376,7 @@ Coverage: reading
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2008/
 Coverage: reading
 
 Inoue & Inutsuka · 2008
@@ -3386,7 +3386,7 @@ Two-fluid coupling and magnetic limits on condensation in converging atomic flow
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2008/
 Coverage: reading
 
 Document the method and inputs; consider a coupling benchmark or analysis of available outputs rather than a full 2D rerun.
@@ -3394,7 +3394,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2008/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3403,7 +3403,7 @@ Read this reference in its research path →
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2008/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3418,7 +3418,7 @@ Coverage: reading
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2009/
 Coverage: reading
 
 Inoue & Inutsuka · 2009
@@ -3428,7 +3428,7 @@ The angle between inflow and mean magnetic field affects shocked atomic gas and 
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2009/
 Coverage: reading
 
 Compare model assumptions and published diagnostics; reanalyse public outputs if available. Large runs are outside the initial scope.
@@ -3436,7 +3436,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2009/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3445,7 +3445,7 @@ Read this reference in its research path →
 
 ## Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2009/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3460,7 +3460,7 @@ Coverage: reading
 
 ## Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds — Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2012/
 Coverage: reading
 
 Inoue & Inutsuka · 2012
@@ -3470,7 +3470,7 @@ Three-dimensional MHD with chemistry, conduction, and accretion of inhomogeneous
 
 ## Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2012/
 Coverage: reading
 
 Focus on setup documentation, analysis methods, and any available snapshots. Do not require rerunning the full 3D calculation.
@@ -3478,7 +3478,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2012/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3487,7 +3487,7 @@ Read this reference in its research path →
 
 ## Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/inoue-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/inoue-2012/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3502,7 +3502,7 @@ Coverage: reading
 
 ## Self-similar solutions for the dynamical condensation of a radiative gas layer — Self-similar solutions for the dynamical condensation of a radiative gas layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
 Coverage: reading
 
 Iwasaki & Tsuribe · 2008
@@ -3512,7 +3512,7 @@ Non-equilibrium thermal condensation described by a family of plane-parallel sim
 
 ## Self-similar solutions for the dynamical condensation of a radiative gas layer — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
 Coverage: reading
 
 Candidate: similarity profiles and limiting scalings, using an ODE solver and a small 1D comparison.
@@ -3520,7 +3520,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Self-similar solutions for the dynamical condensation of a radiative gas layer — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3529,7 +3529,7 @@ Read this reference in its research path →
 
 ## Self-similar solutions for the dynamical condensation of a radiative gas layer — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2008/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3544,7 +3544,7 @@ Coverage: reading
 
 ## Fragmentation of a dynamically condensing radiative layer — Fragmentation of a dynamically condensing radiative layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
 Coverage: reading
 
 Iwasaki & Tsuribe · 2009
@@ -3554,7 +3554,7 @@ Perturbation growth on a time-dependent, dynamically condensing background.
 
 ## Fragmentation of a dynamically condensing radiative layer — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
 Coverage: reading
 
 Candidate: linear perturbation evolution on the time-dependent similarity solution, before a full nonlinear calculation.
@@ -3562,7 +3562,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Fragmentation of a dynamically condensing radiative layer — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3571,7 +3571,7 @@ Read this reference in its research path →
 
 ## Fragmentation of a dynamically condensing radiative layer — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2009/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3586,7 +3586,7 @@ Coverage: reading
 
 ## Structure of dynamical condensation fronts in the interstellar medium — Structure of dynamical condensation fronts in the interstellar medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
 Coverage: reading
 
 Iwasaki & Inutsuka · 2012
@@ -3596,7 +3596,7 @@ Condensation-front families parameterized by pressure and mass flux, with coolin
 
 ## Structure of dynamical condensation fronts in the interstellar medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
 Coverage: reading
 
 Confirmed target: Figures 5 and 7, pressure–mass-flux classification. A computed prototype reproduces nine stated example classes and passes 30 checks. Unavailable CNM branches and temperature-limited cells are masked; the jcrit overlay and complete boundary comparison await technical review.
@@ -3604,14 +3604,14 @@ Source review: arXiv:1204.5532v2 equations and figures reviewed; user confirmed 
 
 ## Structure of dynamical condensation fronts in the interstellar medium — Figures, calculations and validation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
 Coverage: reading
 
 Figures 5 & 7: computed prototype →
 
 ## Structure of dynamical condensation fronts in the interstellar medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3620,7 +3620,7 @@ Read this reference in its research path →
 
 ## Structure of dynamical condensation fronts in the interstellar medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2012/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3635,7 +3635,7 @@ Coverage: reading
 
 ## Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium — Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
 Coverage: reading
 
 Iwasaki & Inutsuka · 2014
@@ -3645,7 +3645,7 @@ Thermal conduction, phase transitions, viscosity, and kinetic-energy transfer in
 
 ## Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
 Coverage: reading
 
 Prioritize published energy budgets and analysis of available outputs. A small front problem can isolate the mechanism without reproducing the full 2D run.
@@ -3653,7 +3653,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3662,7 +3662,7 @@ Read this reference in its research path →
 
 ## Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2014/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3677,7 +3677,7 @@ Coverage: reading
 
 ## The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases — The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
 Coverage: reading
 
 Iwasaki, Tomida, Inoue & Inutsuka · 2019
@@ -3687,7 +3687,7 @@ Three-dimensional MHD, non-equilibrium chemistry, and the critical magnetic-fiel
 
 ## The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
 Coverage: reading
 
 Candidate: evaluate the analytic critical-angle relation and reanalyse available outputs; full parameter-survey reruns are optional.
@@ -3695,7 +3695,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3704,7 +3704,7 @@ Read this reference in its research path →
 
 ## The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/iwasaki-2019/
 Coverage: reading
 
 2006 · Inoue, Inutsuka & Koyama — Structure and Stability of Phase Transition Layers in the Interstellar Medium
@@ -3719,7 +3719,7 @@ Coverage: reading
 
 ## Molecular Cloud Formation in Shock-Compressed Layers — Molecular Cloud Formation in Shock-Compressed Layers [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2000/
 Coverage: reading
 
 Koyama & Inutsuka · 2000
@@ -3728,21 +3728,21 @@ From shock-compressed layers to molecular cloud formation.
 
 ## Molecular Cloud Formation in Shock-Compressed Layers — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2000/
 Coverage: reading
 
 Locate original code and data, then select target figures and define the scope of a new implementation.
 
 ## Molecular Cloud Formation in Shock-Compressed Layers — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2000/
 Coverage: reading
 
 Read the original source and bibliography ↗
 
 ## Molecular Cloud Formation in Shock-Compressed Layers — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2000/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2000/
 Coverage: reading
 
 2002 · Koyama & Inutsuka — An Origin of Supersonic Motions in Interstellar Clouds
@@ -3750,7 +3750,7 @@ Coverage: reading
 
 ## An Origin of Supersonic Motions in Interstellar Clouds — An Origin of Supersonic Motions in Interstellar Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2002/
 Coverage: reading
 
 Koyama & Inutsuka · 2002
@@ -3759,35 +3759,35 @@ Corrected heating/cooling law, thermal equilibria and local isobaric stability.
 
 ## An Origin of Supersonic Motions in Interstellar Clouds — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2002/
 Coverage: reading
 
 Validated equilibrium benchmark, planar ZP saturation and pressure-dependent effective potential wells with explicit coordinates, normalization and independent quadrature checks; corrected coefficients traced to primary sources. Original 2D simulation remains outside this exhibit.
 
 ## An Origin of Supersonic Motions in Interstellar Clouds — Figures, calculations and validation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2002/
 Coverage: reading
 
 Thermal equilibrium & ZP saturation
 
 ## An Origin of Supersonic Motions in Interstellar Clouds — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2002/
 Coverage: reading
 
 Pressure-dependent potential wells →
 
 ## An Origin of Supersonic Motions in Interstellar Clouds — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2002/
 Coverage: reading
 
 Read the original source and bibliography ↗
 
 ## An Origin of Supersonic Motions in Interstellar Clouds — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2002/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2002/
 Coverage: reading
 
 2000 · Koyama & Inutsuka — Molecular Cloud Formation in Shock-Compressed Layers
@@ -3795,7 +3795,7 @@ Coverage: reading
 
 ## The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability — The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2004/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2004/
 Coverage: reading
 
 Koyama & Inutsuka · 2004
@@ -3804,21 +3804,21 @@ Examine numerical convergence through thermal conduction and spatial resolution.
 
 ## The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2004/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2004/
 Coverage: reading
 
 Candidate exhibits compare simulations with and without thermal conduction across different spatial resolutions.
 
 ## The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2004/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2004/
 Coverage: reading
 
 Read the original source and bibliography ↗
 
 ## The Field Condition: A New Constraint on Spatial Resolution in Simulations of the Nonlinear Development of Thermal Instability — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2004/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2004/
 Coverage: reading
 
 2000 · Koyama & Inutsuka — Molecular Cloud Formation in Shock-Compressed Layers
@@ -3826,7 +3826,7 @@ Coverage: reading
 
 ## Nonlinear Development of Thermal Instability without External Forcing — Nonlinear Development of Thermal Instability without External Forcing [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
 Coverage: reading
 
 Koyama & Inutsuka · 2006
@@ -3836,7 +3836,7 @@ Conduction, viscosity, and cloud motions in multidimensional nonlinear thermal i
 
 ## Nonlinear Development of Thermal Instability without External Forcing — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
 Coverage: reading
 
 Start with the preprint’s physical mechanism, diagnostics, and any available outputs. A full 2D/3D rerun is optional; its journal-publication status remains unverified.
@@ -3844,14 +3844,14 @@ Source review: Bibliography and abstract checked; equations and target figures r
 
 ## Nonlinear Development of Thermal Instability without External Forcing — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
 Coverage: reading
 
 Phase-transition front lineage →
 
 ## Nonlinear Development of Thermal Instability without External Forcing — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3860,7 +3860,7 @@ Read this reference in its research path →
 
 ## Nonlinear Development of Thermal Instability without External Forcing — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/ki-2006-preprint/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -3874,7 +3874,7 @@ Coverage: reading
 
 ## Instability of Evaporation Fronts in the Interstellar Medium — Instability of Evaporation Fronts in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
 Coverage: reading
 
 Jeong-Gyu Kim & Woong-Tae Kim · 2013
@@ -3884,7 +3884,7 @@ Thermal conduction suppresses short-wavelength corrugations of CNM–WNM evapora
 
 ## Instability of Evaporation Fronts in the Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
 Coverage: reading
 
 Detailed reconstruction of AppendixA with coupled eigenfunctions as the required output. Primary target: Figure9 temperature and transverse-velocity profiles from the same normalized mode; supporting targets are the background front, Figure5 dispersion and long-wave/cutoff limits. Source-audited plan only; no Kim eigenfunctions computed yet. Nonlinear2D remains separate and optional.
@@ -3892,7 +3892,7 @@ Source review: arXiv1310.2940v2 Sections2–3 and AppendixA read; source pp3,5,6
 
 ## Instability of Evaporation Fronts in the Interstellar Medium — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
 Coverage: reading
 
 Conductive evaporation-front stability →
@@ -3900,7 +3900,7 @@ Eigenfunction reconstruction specification →
 
 ## Instability of Evaporation Fronts in the Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3909,7 +3909,7 @@ Read this reference in its research path →
 
 ## Instability of Evaporation Fronts in the Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/kim-kim-2013/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -3923,7 +3923,7 @@ Coverage: reading
 
 ## Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces — Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
 Coverage: reading
 
 Nagashima, Koyama & Inutsuka · 2005
@@ -3933,7 +3933,7 @@ Curvature modifies evaporation and condensation for cylindrical, spherical, and 
 
 ## Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
 Coverage: reading
 
 Candidate: evaluate the semi-analytic curvature correction and compare planar, cylindrical, and spherical limits using a small ODE calculation. Keep the polynomial heat-loss model distinct from later realistic fits.
@@ -3941,14 +3941,14 @@ Source review: Bibliography and abstract checked; equations and target figures r
 
 ## Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
 Coverage: reading
 
 Phase-transition front lineage →
 
 ## Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -3957,7 +3957,7 @@ Read this reference in its research path →
 
 ## Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2005/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -3971,7 +3971,7 @@ Coverage: reading
 
 ## How Long Can Tiny H I Clouds Survive? — How Long Can Tiny H I Clouds Survive? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
 Coverage: reading
 
 Nagashima, Inutsuka & Koyama · 2006
@@ -3981,7 +3981,7 @@ Spherical cloud evaporation times depend on cloud size and ambient pressure, wit
 
 ## How Long Can Tiny H I Clouds Survive? — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
 Coverage: reading
 
 Candidate: reproduce the analytic timescale/critical-radius relation and, if practical, a one-dimensional radial benchmark. Large multidimensional reruns are unnecessary for this scope.
@@ -3989,14 +3989,14 @@ Source review: Bibliography and abstract checked; equations and target figures r
 
 ## How Long Can Tiny H I Clouds Survive? — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
 Coverage: reading
 
 Phase-transition front lineage →
 
 ## How Long Can Tiny H I Clouds Survive? — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4005,7 +4005,7 @@ Read this reference in its research path →
 
 ## How Long Can Tiny H I Clouds Survive? — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nagashima-2006/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -4019,7 +4019,7 @@ Coverage: reading
 
 ## Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions — Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
 Coverage: reading
 
 Nishi, Nakano & Umebayashi · 1991
@@ -4029,7 +4029,7 @@ Ionization–recombination equilibrium with electrons, ions and charged grains; 
 
 ## Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
 Coverage: reading
 
 Candidate: Figure1 charged-species abundances at10K for the standard MRN grain distribution, before comparing the other grain models. Recover the required reaction rates and PaperI inputs first. This is a charge-equilibrium benchmark, not a thermal-equilibrium curve or a reproduced magnetic-flux-loss calculation.
@@ -4037,14 +4037,14 @@ Source review: Original abstract and SectionII read; p.183 Eqs3–4 and Figures1
 
 ## Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
 Coverage: reading
 
 Ionization, grain charge & proposed benchmark →
 
 ## Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4053,7 +4053,7 @@ Read this reference in its research path →
 
 ## Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/nishi-nakano-umebayashi-1991/
 Coverage: reading
 
 1960 · Takayanagi & Nishimura — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen
@@ -4064,7 +4064,7 @@ Coverage: reading
 
 ## Instability of Thermal Fields — Instability of Thermal Fields [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/parker-1953/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/parker-1953/
 Coverage: reading
 
 Eugene N. Parker · 1953
@@ -4074,7 +4074,7 @@ Thermal-field stability before Field (1965), with a solar-atmosphere application
 
 ## Instability of Thermal Fields — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/parker-1953/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/parker-1953/
 Coverage: reading
 
 Historical background: compare the temperature-field equation, conduction, and heating assumptions with Field’s hydrodynamic analysis. Keep the original solar application distinct from neutral interstellar gas.
@@ -4082,14 +4082,14 @@ Source review: Bibliography and source overview checked; equations, target figur
 
 ## Instability of Thermal Fields — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/parker-1953/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/parker-1953/
 Coverage: reading
 
 Historical theory & heating sources →
 
 ## Instability of Thermal Fields — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/parker-1953/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/parker-1953/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4097,7 +4097,7 @@ Read this reference in its research path →
 
 ## Instability of Thermal Fields — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/parker-1953/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/parker-1953/
 Coverage: reading
 
 1961 · S. Chandrasekhar — Hydrodynamic and Hydromagnetic Stability
@@ -4106,7 +4106,7 @@ Coverage: reading
 
 ## The Cloud–Intercloud Phase-Change in the Interstellar Medium — The Cloud–Intercloud Phase-Change in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
 Coverage: reading
 
 Penston & Brown · 1970
@@ -4116,7 +4116,7 @@ Thermal balance across a conducting cloud–intercloud interface adds a conditio
 
 ## The Cloud–Intercloud Phase-Change in the Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
 Coverage: reading
 
 Candidate: compare the stationary interface criterion and thermal timescales with the Zel’dovich–Pikel’ner formulation before choosing a small front calculation.
@@ -4124,14 +4124,14 @@ Source review: Bibliography and abstract checked; equations and target figures r
 
 ## The Cloud–Intercloud Phase-Change in the Interstellar Medium — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
 Coverage: reading
 
 Phase-transition front lineage →
 
 ## The Cloud–Intercloud Phase-Change in the Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4140,7 +4140,7 @@ Read this reference in its research path →
 
 ## The Cloud–Intercloud Phase-Change in the Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/penston-brown-1970/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -4154,7 +4154,7 @@ Coverage: reading
 
 ## Formation of Clouds in a Cooling Interstellar Medium — Formation of Clouds in a Cooling Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
 Coverage: reading
 
 Schwarz, McCray & Stein · 1972
@@ -4164,7 +4164,7 @@ Thermal conduction and recombination shape perturbations growing in an isochoric
 
 ## Formation of Clouds in a Cooling Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
 Coverage: reading
 
 Early-time linear Figure2 plus a nonlinear3pc/10percent Lagrangian prototype without a Riemann solver. Historical-scale64/96/128-cell runs and a512-cell auxiliary comparison document conservation, timing/input differences, and unresolved conductive-front resolution.
@@ -4172,7 +4172,7 @@ Source review: Governing equations, figures and proof note reviewed; cooling inp
 
 ## Formation of Clouds in a Cooling Interstellar Medium — Figures, calculations and validation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
 Coverage: reading
 
 Cooling-medium condensation: Figure2 prototype →
@@ -4180,7 +4180,7 @@ Nonlinear Lagrangian condensation →
 
 ## Formation of Clouds in a Cooling Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4188,7 +4188,7 @@ Read this reference in its research path →
 
 ## Formation of Clouds in a Cooling Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/schwarz-1972/
 Coverage: reading
 
 1965 · George B. Field — Thermal Instability
@@ -4196,7 +4196,7 @@ Coverage: reading
 
 ## Interaction of Small Planar Perturbations with Cooling-Conductive Fronts — Interaction of Small Planar Perturbations with Cooling-Conductive Fronts [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
 Coverage: reading
 
 Shchekinov & Ibáñez · 2001
@@ -4206,7 +4206,7 @@ Acoustic and entropy perturbations interact with steady subsonic cold–hot fron
 
 ## Interaction of Small Planar Perturbations with Cooling-Conductive Fronts — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
 Coverage: reading
 
 First audit the steady planar background and its mass-flux eigenvalue at prescribed pressure, as discussed by Iwasaki & Inutsuka (2012), section 3. Then consider reflection/transmission coefficients as a separate perturbation benchmark. Do not equate this one-dimensional perturbation problem with transverse front corrugation.
@@ -4214,7 +4214,7 @@ Source review: Bibliography and author-uploaded abstract checked; the mass-flux 
 
 ## Interaction of Small Planar Perturbations with Cooling-Conductive Fronts — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4223,7 +4223,7 @@ Read this reference in its research path →
 
 ## Interaction of Small Planar Perturbations with Cooling-Conductive Fronts — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/shchekinov-ibanez-2001/
 Coverage: reading
 
 1969 · Zel’dovich & Pikel’ner — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled
@@ -4237,7 +4237,7 @@ Coverage: reading
 
 ## Heating of H I Regions by Energetic Particles — Heating of H I Regions by Energetic Particles [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
 Coverage: reading
 
 Spitzer & Tomasko · 1968
@@ -4247,7 +4247,7 @@ Energetic-particle heating and ionization of H I, including secondary-electron e
 
 ## Heating of H I Regions by Energetic Particles — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
 Coverage: reading
 
 Prioritize the definitions of primary/total ionization rates and energy per ionization when comparing with FGH/GHF. Audit secondary-electron treatment, abundances, and collider channels before implementing a heating benchmark.
@@ -4255,14 +4255,14 @@ Source review: Bibliography and source overview checked; equations, target figur
 
 ## Heating of H I Regions by Energetic Particles — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
 Coverage: reading
 
 Historical theory & heating sources →
 
 ## Heating of H I Regions by Energetic Particles — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4270,7 +4270,7 @@ Read this reference in its research path →
 
 ## Heating of H I Regions by Energetic Particles — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/spitzer-tomasko-1968/
 Coverage: reading
 
 1960 · Takayanagi & Nishimura — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen
@@ -4281,7 +4281,7 @@ Coverage: reading
 
 ## Cooling of the Interstellar Clouds in Region of Neutral Hydrogen — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
 Coverage: reading
 
 Takayanagi & Nishimura · 1960
@@ -4291,7 +4291,7 @@ H₂ rotational excitation and the cooling budget of neutral clouds.
 
 ## Cooling of the Interstellar Clouds in Region of Neutral Hydrogen — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
 Coverage: reading
 
 34 printed upward H + para-H2 rates audited on p. 82; a truncated steady level calculation is compared with 60 printed cooling values. Twelve numerical checks pass, while the largest Table 2 discrepancy is retained at about 21.72%.
@@ -4299,21 +4299,21 @@ Source review: Title p. 77, Table 1 and Eq. 7 p. 82, Eq. 9, energy and Table 2 p
 
 ## Cooling of the Interstellar Clouds in Region of Neutral Hydrogen — Figures, calculations and validation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
 Coverage: reading
 
 H₂ rates & cooling comparison →
 
 ## Cooling of the Interstellar Clouds in Region of Neutral Hydrogen — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
 Coverage: reading
 
 Rate-coefficient lineage & scope →
 
 ## Cooling of the Interstellar Clouds in Region of Neutral Hydrogen — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4322,7 +4322,7 @@ Read this reference in its research path →
 
 ## Cooling of the Interstellar Clouds in Region of Neutral Hydrogen — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/takayanagi-nishimura-1960/
 Coverage: reading
 
 1961 · Hayakawa, Nishimura & Takayanagi — Radiations from the Interstellar Hydrogen Atoms
@@ -4333,7 +4333,7 @@ Coverage: reading
 
 ## The Neutral Atomic Phases of the Interstellar Medium — The Neutral Atomic Phases of the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
 Coverage: reading
 
 Wolfire, Hollenbach, McKee, Tielens & Bakes · 1995
@@ -4343,7 +4343,7 @@ Photoelectric heating by small grains and PAHs, X-ray/cosmic-ray ionization, and
 
 ## The Neutral Atomic Phases of the Interstellar Medium — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
 Coverage: reading
 
 Audit the heating/cooling terms and identify a local equilibrium curve for a modest-cost calculation.
@@ -4351,7 +4351,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## The Neutral Atomic Phases of the Interstellar Medium — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4360,7 +4360,7 @@ Read this reference in its research path →
 
 ## The Neutral Atomic Phases of the Interstellar Medium — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-1995/
 Coverage: reading
 
 1994 · Bakes & Tielens — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons
@@ -4370,7 +4370,7 @@ Coverage: reading
 
 ## Neutral Atomic Phases of the Interstellar Medium in the Galaxy — Neutral Atomic Phases of the Interstellar Medium in the Galaxy [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
 Coverage: reading
 
 Wolfire, McKee, Hollenbach & Tielens · 2003
@@ -4380,7 +4380,7 @@ Revised atomic-gas microphysics and the allowed two-phase pressure range across 
 
 ## Neutral Atomic Phases of the Interstellar Medium in the Galaxy — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
 Coverage: reading
 
 Compare physical inputs with the 1995 model before attempting an equilibrium calculation.
@@ -4388,7 +4388,7 @@ Source review: Bibliography and abstract checked; equations, data availability, 
 
 ## Neutral Atomic Phases of the Interstellar Medium in the Galaxy — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4397,7 +4397,7 @@ Read this reference in its research path →
 
 ## Neutral Atomic Phases of the Interstellar Medium in the Galaxy — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/wolfire-2003/
 Coverage: reading
 
 1994 · Bakes & Tielens — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons
@@ -4407,7 +4407,7 @@ Coverage: reading
 
 ## The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
 Coverage: reading
 
 Zel’dovich & Pikel’ner · 1969
@@ -4417,7 +4417,7 @@ Conductive interfaces select the stationary two-phase pressure; away from that p
 
 ## The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled — Scope in this archive. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
 Coverage: reading
 
 Candidate: the planar saturation condition and a steady front or front-speed calculation. Specify the heat-loss law, conductivity, signs, and boundary conditions.
@@ -4425,14 +4425,14 @@ Source review: Bibliography and abstract checked; equations and target figures r
 
 ## The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled — Source notes and related resources. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
 Coverage: reading
 
 Phase-transition front lineage →
 
 ## The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled — Original publication and bibliography. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
 Coverage: reading
 
 Read the original source and bibliography ↗
@@ -4440,7 +4440,7 @@ Read this reference in its research path →
 
 ## The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled — Continue along this research path. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/papers/zeldovich-pikelner-1969/
 Coverage: reading
 
 1970 · Penston & Brown — The Cloud–Intercloud Phase-Change in the Interstellar Medium
@@ -4455,7 +4455,7 @@ Coverage: reading
 ## Track the scientific question.
 Keep the limits visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Progress / Snapshot: 8 November 2026
@@ -4464,7 +4464,7 @@ Progress / Snapshot: 8 November 2026
 Keep the limits visible. — Track the scientific question.
 Keep the limits visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Each work item has a purpose, a completion condition, evidence and a published outcome. An unresolved diagnostic can be useful progress when its assumptions and restart conditions are recorded.
@@ -4473,7 +4473,7 @@ GitHub Issues are the live task record. This page is a dated guide to the curren
 ## Track the scientific question.
 Keep the limits visible. — Latest result: pressure-dependent potential wells. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 The KI2002 static-front potential comparison is implemented, numerically checked and published. It compares 0.9, 1 and 1.1 Psat with a shared normalization: the warm minimum is deeper below saturation, the wells have equal depth at saturation, and the cold minimum is deeper above saturation.
@@ -4482,7 +4482,7 @@ Code, configuration, curve CSV, equilibrium/depth records and desktop/mobile fig
 ## Track the scientific question.
 Keep the limits visible. — Queued next [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Kim & Kim2013: reconstruct the coupled Figure9 eigenfunctions. The source-audited specification makes component shapes, relative amplitudes, phase and boundary/domain convergence mandatory. This is the next major linear-analysis target now that the KI potential task is complete; no Kim solver has been implemented yet.
@@ -4493,7 +4493,7 @@ Quantify Schwarz1972 condensation timing and mesh sensitivity. Reuse existing ru
 ## Track the scientific question.
 Keep the limits visible. — What the archive currently provides. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Historical simulation gallery: four 2D and four 3D full-frame recordings, an 18-second edited 3D introduction, and two source-traceable still illustrations. Materials MD is excluded. Complete media decode, source/output frame counts and provenance are checked; exact run inputs and paper-figure matches remain unverified. This is archival footage, not a newly validated simulation.
@@ -4507,7 +4507,7 @@ FGH/GHF equilibrium prototype: original-curve residuals and a conditional satura
 ## Track the scientific question.
 Keep the limits visible. — What the archive currently provides. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Historical H₂ coefficient audit: source rates and a finite-level cooling model, retaining its mismatch with the source table.
@@ -4516,7 +4516,7 @@ Maxwell and Ginzburg–Landau and biophysical front comparisons: source-based ex
 ## Track the scientific question.
 Keep the limits visible. — Deferred questions stay documented. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 FGH1969 historical coefficient recovery is deferred. Restart requires a concrete historical rate/cross-section input, a checkable convention explaining a residual, or equivalent new numerical evidence. Rates will not be tuned to force the original curve. Existing approximate-model saturation values remain conditional.
@@ -4525,7 +4525,7 @@ Other limits remain attached to their exhibits: the narrow Schwarz conductive la
 ## Track the scientific question.
 Keep the limits visible. — Short, medium and long term. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Short term: begin the specified Kim & Kim2013 eigenfunction solver and explain the role of compressible flow; the KI potential comparison is now complete.
@@ -4535,7 +4535,7 @@ Long term: extend to KI2000/2004, available multidimensional outputs and unpubli
 ## Track the scientific question.
 Keep the limits visible. — How work moves [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/progress.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/progress.html
 Coverage: reading
 
 Candidate → Working → Verifying → Published, with Deferred as a separate state requiring a restart condition. Specification, implementation, verification and publication are distinct milestones. The completed scope must be reviewable before an issue closes.
@@ -4545,7 +4545,7 @@ Live IssuesRoadmapPaper catalog
 to chemistry and cloud formation. — From two phases
 to chemistry and cloud formation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 FGH established a two-phase picture. Later work changed the heating and chemical inputs, then followed fronts, turbulence, and magnetized clouds. This reading list connects those questions to the calculations we can document and explore.
@@ -4554,7 +4554,7 @@ Listed references are not completed reproductions. Bibliography and abstracts ha
 ## From two phases
 to chemistry and cloud formation. — Choose the scientific question before the computing budget. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Reproducing a large multidimensional simulation can require substantial computing time, storage, and access to original inputs. Our modern-paper exhibits can instead provide a source guide, documented setup, analysis of available outputs, or a small benchmark that isolates a physical mechanism.
@@ -4567,7 +4567,7 @@ For new nonlinear thermal-instability simulation exhibits, the thermal-conductio
 ## From two phases
 to chemistry and cloud formation. — Foundations: thermal stability, buoyancy and conductive phase exchange [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Parker (1953) provides a pre-Field historical starting point. Chandrasekhar (1961) supplies the buoyancy-driven convection and Boussinesq comparison. Balbus (1986) extends the local stability analysis to evolving backgrounds, while Begelman & McKee (1990) treats conductive mass exchange between phases. Analytical background references and conduction-resolved simulation exhibits have different roles.
@@ -4576,7 +4576,7 @@ Parker (1953) provides a pre-Field historical starting point. Chandrasekhar (196
 ## From two phases
 to chemistry and cloud formation. — Instability of Thermal Fields [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Eugene N. Parker
@@ -4588,7 +4588,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — Hydrodynamic and Hydromagnetic Stability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 S. Chandrasekhar
@@ -4600,7 +4600,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — Hydrodynamic and Hydromagnetic Stability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 1972 / Computed prototype / technical review pending
@@ -4608,7 +4608,7 @@ Coverage: reading
 ## From two phases
 to chemistry and cloud formation. — Formation of Clouds in a Cooling Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Schwarz, McCray & Stein
@@ -4620,7 +4620,7 @@ Source & bibliography ↗Cooling-medium condensation: Figure2 prototype →Nonli
 ## From two phases
 to chemistry and cloud formation. — Local Dynamic Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Steven A. Balbus
@@ -4632,7 +4632,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Global Effects of Thermal Conduction on Two-Phase Media [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Begelman & McKee
@@ -4644,7 +4644,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — Global Effects of Thermal Conduction on Two-Phase Media [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Convection and radiative condensation are distinct: Chandrasekhar’s textbook is included as a foundational monograph, not a journal paper. Its proposed benchmark is buoyancy-driven convection of a layer heated from below. Rayleigh-number onset must not be identified with the cooling-derivative criterion for the Field condensation mode, which does not require gravity.
@@ -4655,7 +4655,7 @@ The textbook’s bibliography is checked; its exact equations, sections and figu
 ## From two phases
 to chemistry and cloud formation. — Rate and ionization lineage: atomic data, grains and charge balance [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 A separate branch follows the atomic and molecular data, radiative yields, and heating/cooling prescriptions behind gas models. Nishi, Nakano & Umebayashi (1991) extends the path to grain-size-dependent charge equilibrium in shielded molecular gas. These papers are not all chemical-network rate catalogs.
@@ -4664,7 +4664,7 @@ A separate branch follows the atomic and molecular data, radiative yields, and h
 ## From two phases
 to chemistry and cloud formation. — Cooling of the Interstellar Clouds in Region of Neutral Hydrogen [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Takayanagi & Nishimura
@@ -4676,7 +4676,7 @@ Source & bibliography ↗Publication / DOI ↗H₂ rates & cooling comparison �
 ## From two phases
 to chemistry and cloud formation. — Radiations from the Interstellar Hydrogen Atoms [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Hayakawa, Nishimura & Takayanagi
@@ -4688,7 +4688,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Heating of H I Regions by Energetic Particles [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Spitzer & Tomasko
@@ -4700,7 +4700,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — Thermal and Dynamical Evolution of Gas Clouds of Various Masses [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Hattori, Nakano & Hayashi
@@ -4712,7 +4712,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Heating and Ionization of HI Regions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Dalgarno & McCray
@@ -4724,7 +4724,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Nishi, Nakano & Umebayashi
@@ -4736,7 +4736,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Field et al. (1968) discusses Takayanagi and Nishimura’s H₂ excitation data. FGH (1969) cites Hayakawa, Nishimura and Takayanagi’s cosmic-ray heating work. Hattori, Nakano and Hayashi’s reference list includes both papers. These links identify a route for source tracing; they do not establish that later models use identical coefficients.
@@ -4746,7 +4746,7 @@ The Takayanagi–Nishimura rate audit now transcribes 34 coefficients and tests 
 ## From two phases
 to chemistry and cloud formation. — Magnetic Flux Loss from Interstellar Clouds with Various Grain-Size Distributions [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Ionization fraction is a separate branch: Nishi, Nakano & Umebayashi (1991) calculates electron, ion and charged-grain abundances before magnetic coupling. Figures1–4 compare grain distributions. Figure1 is a possible small charge-equilibrium benchmark, not a thermal-balance calculation. Its axes use abundances relative to total hydrogen nuclei and nH/ζ, with ζ the ionization rate per hydrogen molecule; these conventions must not be silently interchanged with FGH’s atomic-gas definitions.
@@ -4755,7 +4755,7 @@ The paper calls Umebayashi & Nakano (1990), Magnetic flux loss from interstellar
 ## From two phases
 to chemistry and cloud formation. — Heating, cooling, and public chemistry [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Cosmic-ray heating in FGH, grain photoelectric heating in Bakes & Tielens (1994), Wolfire (1995, 2003), and GOW (2017) provide a path to public chemistry implementations. These models use different physical assumptions; they are not interchangeable cooling prescriptions.
@@ -4764,7 +4764,7 @@ Cosmic-ray heating in FGH, grain photoelectric heating in Bakes & Tielens (1994)
 ## From two phases
 to chemistry and cloud formation. — The Photoelectric Heating Mechanism for Very Small Graphitic Grains and Polycyclic Aromatic Hydrocarbons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Bakes & Tielens
@@ -4776,7 +4776,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — The Neutral Atomic Phases of the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Wolfire, Hollenbach, McKee, Tielens & Bakes
@@ -4788,7 +4788,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Neutral Atomic Phases of the Interstellar Medium in the Galaxy [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Wolfire, McKee, Hollenbach & Tielens
@@ -4800,7 +4800,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — A Simple and Accurate Network for Hydrogen and Carbon Chemistry in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Gong, Ostriker & Wolfire
@@ -4812,7 +4812,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Implementation of Chemistry in the Athena++ Code [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Gong, Ho, Stone, Ostriker, Caselli, Grassi, C.-G. Kim, J.-G. Kim & Halevi
@@ -4824,7 +4824,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Phase-transition fronts: from planar balance to curved clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Zel’dovich–Pikel’ner (1969) and Penston–Brown (1970) connect to Elphick–Regev–Shaviv (1992), Ferrara–Shchekinov (1993), Shchekinov–Ibáñez (2001), Nagashima and collaborators’ curved-front work, and Kim & Kim’s (2013) conductive evaporation-front instability. Static balance, steady mass flux, perturbations, and spherical survival times are distinct computational questions.
@@ -4833,7 +4833,7 @@ Zel’dovich–Pikel’ner (1969) and Penston–Brown (1970) connect to Elphick�
 ## From two phases
 to chemistry and cloud formation. — The Phase Equilibrium and Dynamics of a Gas Volume That Is Heated and Cooled [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Zel’dovich & Pikel’ner
@@ -4845,7 +4845,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — The Cloud–Intercloud Phase-Change in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Penston & Brown
@@ -4857,7 +4857,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Dynamics of Fronts in Thermally Bistable Fluids [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Elphick, Regev & Shaviv
@@ -4869,7 +4869,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Dynamics of Conductive/Cooling Fronts: Cloud Implosion and Thermal Solitons [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Ferrara & Shchekinov
@@ -4881,7 +4881,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Interaction of Small Planar Perturbations with Cooling-Conductive Fronts [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Shchekinov & Ibáñez
@@ -4893,7 +4893,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Evaporation and condensation of H I clouds in thermally bistable interstellar media: semi-analytic description of isobaric dynamics of curved interfaces [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Nagashima, Koyama & Inutsuka
@@ -4905,7 +4905,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — How Long Can Tiny H I Clouds Survive? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Nagashima, Inutsuka & Koyama
@@ -4917,7 +4917,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Nonlinear Development of Thermal Instability without External Forcing [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Koyama & Inutsuka
@@ -4929,7 +4929,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Instability of Evaporation Fronts in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Jeong-Gyu Kim & Woong-Tae Kim
@@ -4941,7 +4941,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Instability of Evaporation Fronts in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Gradient-flow connection: Elphick, Regev & Shaviv (1992) gives an isobaric reduction in Lagrangian mass coordinates, a Lyapunov functional, equal-minima ZP fronts and front interactions. The biophysical comparisons follow wave-pinning, conserved protein redistribution and neural excitability, with their distinct conservation laws and scope.
@@ -4950,7 +4950,7 @@ Conductive front instability: Kim & Kim (2013) explicitly includes thermal condu
 ## From two phases
 to chemistry and cloud formation. — Instability of Evaporation Fronts in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Steady flow and perturbations: Ferrara & Shchekinov (1993) studies static/steady front properties and their dynamical evolution. Shchekinov & Ibáñez (2001) studies planar acoustic/entropy perturbations interacting with steady subsonic fronts. In section 3, Iwasaki & Inutsuka (2012) explicitly describes the latter work as determining the ZP mass flux j(P) through an eigenvalue problem. We will audit the steady background before attempting perturbation coefficients. This citation does not establish identical cooling laws or numerical parameters.
@@ -4960,7 +4960,7 @@ Different heat-loss laws, geometries, and dynamical approximations must be prese
 ## From two phases
 to chemistry and cloud formation. — Hennebelle, Burkert, and collaborators: condensation and fragmentation [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Converging flows connect thermal bistability to cloud formation. Hennebelle and collaborators examine dynamical condensation, magnetic fields, and turbulent two-phase gas; Burkert and collaborators examine cooling perturbations, colliding flows, and fragmentation. These are related research paths, not a claim that the listed papers share the same authors or physical model.
@@ -4969,7 +4969,7 @@ Converging flows connect thermal bistability to cloud formation. Hennebelle and 
 ## From two phases
 to chemistry and cloud formation. — Dynamical condensation in a thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Hennebelle & Pérault
@@ -4981,7 +4981,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — Dynamical condensation in a magnetized and thermally bistable flow. Application to interstellar cirrus [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Hennebelle & Pérault
@@ -4993,7 +4993,7 @@ Source & bibliography ↗
 ## From two phases
 to chemistry and cloud formation. — Thermal Instability and the Formation of Clumpy Gas Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Burkert & Lin
@@ -5005,7 +5005,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Thermal condensation in a turbulent atomic hydrogen flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Audit & Hennebelle
@@ -5017,7 +5017,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — The Birth of Molecular Clouds: Formation of Atomic Precursors in Colliding Flows [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Heitsch, Slyz, Devriendt, Hartmann & Burkert
@@ -5029,7 +5029,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — On the structure of the turbulent interstellar atomic hydrogen. I. Physical characteristics. Influence and nature of turbulence in a thermally bistable flow [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Hennebelle & Audit
@@ -5041,7 +5041,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Heitsch, Hartmann & Burkert
@@ -5053,7 +5053,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Fragmentation of Shocked Flows: Gravity, Turbulence, and Cooling [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Publication years determine the order: Audit & Hennebelle (2005) has a 2004 preprint, and Hennebelle & Audit (2007) has a 2006 preprint. For modest computing budgets, the self-similar, perturbation-growth, semi-analytical, and timescale arguments offer entry points. High-resolution multidimensional statistics require suitable released outputs or a separately documented computing plan.
@@ -5061,7 +5061,7 @@ Publication years determine the order: Audit & Hennebelle (2005) has a 2004 prep
 ## From two phases
 to chemistry and cloud formation. — Inoue: fronts, two-fluid gas, and magnetic fields [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 A path from the stability of phase-transition fronts to converging flows and turbulent molecular clouds.
@@ -5070,7 +5070,7 @@ A path from the stability of phase-transition fronts to converging flows and tur
 ## From two phases
 to chemistry and cloud formation. — Structure and Stability of Phase Transition Layers in the Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Inoue, Inutsuka & Koyama
@@ -5082,7 +5082,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — The Role of Ambipolar Diffusion in the Formation Process of Moderately Magnetized Diffuse Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Inoue, Inutsuka & Koyama
@@ -5094,7 +5094,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. I: Methodology and Basic Results [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Inoue & Inutsuka
@@ -5106,7 +5106,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Two-Fluid MHD Simulations of Converging H I Flows in the Interstellar Medium. II: Are Molecular Clouds Generated Directly from a Warm Neutral Medium? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Inoue & Inutsuka
@@ -5118,7 +5118,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Formation of Turbulent and Magnetized Molecular Clouds via Accretion Flows of H I Clouds [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Inoue & Inutsuka
@@ -5130,7 +5130,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Iwasaki: condensation, interfaces, and cloud formation [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Similarity solutions and front structure offer modest-cost entry points. Later multidimensional calculations can be explored through their diagnostics and available data.
@@ -5139,7 +5139,7 @@ Similarity solutions and front structure offer modest-cost entry points. Later m
 ## From two phases
 to chemistry and cloud formation. — Self-similar solutions for the dynamical condensation of a radiative gas layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Iwasaki & Tsuribe
@@ -5151,7 +5151,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Fragmentation of a dynamically condensing radiative layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Iwasaki & Tsuribe
@@ -5163,7 +5163,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Fragmentation of a dynamically condensing radiative layer [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 2012 / Computed prototype / technical review pending
@@ -5171,7 +5171,7 @@ Coverage: reading
 ## From two phases
 to chemistry and cloud formation. — Structure of dynamical condensation fronts in the interstellar medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Iwasaki & Inutsuka
@@ -5183,7 +5183,7 @@ Source & bibliography ↗Publication / DOI ↗Figures 5 & 7: computed prototype 
 ## From two phases
 to chemistry and cloud formation. — Self-Sustained Turbulence without Dynamical Forcing: A Two-Dimensional Study of a Bistable Interstellar Medium [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Iwasaki & Inutsuka
@@ -5195,7 +5195,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — The Early Stage of Molecular Cloud Formation by Compression of Two-phase Atomic Gases [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 Iwasaki, Tomida, Inoue & Inutsuka
@@ -5207,7 +5207,7 @@ Source & bibliography ↗Publication / DOI ↗
 ## From two phases
 to chemistry and cloud formation. — Follow the corrected rates to their implementation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 The GOW paper has a 2018 erratum, and Gong’s code page lists further corrections and updates. The original paper, its erratum, a revised preprint, and an evolving code repository are separate references. Before a benchmark, we will pin the actual implementation and audit its rate definitions and units.
@@ -5223,7 +5223,7 @@ Links checked on 3 November 2026. Resource provenance / JSON · Complete paper c
 ## From two phases
 to chemistry and cloud formation. — Connect these references to the current exhibits. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/research-paths.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/research-paths.html
 Coverage: reading
 
 The corrected KI2002 equilibrium benchmark includes stability branches, ZP saturation pressure and all three thermal-equilibrium intersections. Model-specific landmarks retain density conventions and unresolved cases. The Maxwell equal-area historical aside traces the primary publications and distinguishes its integral from ZP selection. The same aside develops a scalar Ginzburg–Landau connection, with Elphick, Regev & Shaviv (1992) as a direct precedent.
@@ -5232,7 +5232,7 @@ Field’s stability map connects to front and perturbation problems. FGH/GHF two
 ## Let the background cool.
 Watch the perturbations grow. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 Paper overview: Schwarz, McCray & Stein (1972) →
@@ -5242,7 +5242,7 @@ Chapter 03 / Schwarz, McCray & Stein (1972) / Linear prototype
 Watch the perturbations grow. — Let the background cool.
 Watch the perturbations grow. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 Cloud formation can begin while the surrounding gas cools, rather than departing from steady thermal equilibrium. Here the background temperature and ionization evolve together with density perturbations at four wavelengths.
@@ -5251,7 +5251,7 @@ First target: the early-time part of Figure 2. The linear equations include cond
 ## Let the background cool.
 Watch the perturbations grow. — A time-dependent background changes the instability problem. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 Solid lines: the declared linear prototype. Dashed black: background temperature, read on the right axis. Open circles: Figure 2 density readings; black crosses: its temperature readings. Gray: beyond the input domain. The right panel shows the reconstructed cooling input. There is no fitted time rescaling.SVGPNGBackground & perturbations / CSVFigure 2 comparison / CSVNumerical report / JSON
@@ -5262,7 +5262,7 @@ The original curves are not matched exactly. The report gives separate log-RMS d
 ## Let the background cool.
 Watch the perturbations grow. — Integrate the background and perturbations together. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 Equations (16)–(18) evolve uniform cooling and recombination. Equations (19)–(24) evolve relative density, pressure, velocity divergence, and ionization perturbations; the equation of state supplies the temperature perturbation. The coefficients change with time, so a single constant exponential growth rate is insufficient.
@@ -5276,7 +5276,7 @@ DOP 853 and Radau agree on the computed evolution. Equation (19) is also compare
 ## Let the background cool.
 Watch the perturbations grow. — Keep the historical input limits visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 The 39 Figure 1 readings cover x =0.001,0.01,0.1 and T ≈13.93–8,429.74 K. PCHIP interpolates logΛ(logT), with Λ piecewise linear in ionization fraction. A logarithmic-ionization alternative changes the stopping time to about 1.51 Myr, illustrating reconstruction sensitivity.
@@ -5287,7 +5287,7 @@ This paper adopts Fe/H =5 ×10⁻⁵, compared with 8 ×10⁻⁶ in the earlier 
 ## Let the background cool.
 Watch the perturbations grow. — Keep the historical input limits visible. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 Equation (7) contains 1.4m(H) in the power-per-mass normalization; the Figure 1 caption omits 1.4. The implementation follows equations (7)–(9) without adjusting the time axis to improve agreement. The note added in proof on p.686 revises the discussion of trace-element ionization and cooling but supplies no replacement numerical rate table. See the source audit.
@@ -5295,7 +5295,7 @@ Equation (7) contains 1.4m(H) in the power-per-mass normalization; the Figure 1 
 ## Let the background cool.
 Watch the perturbations grow. — Run the prototype. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 Save the five required files together. No PDF or network access is needed after dependency installation.
@@ -5308,7 +5308,7 @@ All 31 checks pass: calibration, interpolation, coefficient derivatives, the ind
 ## Let the background cool.
 Watch the perturbations grow. — Next: the nonlinear 3 pc example. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/
 Coverage: reading
 
 First establish the cold cooling input, recombination fit and initial mode for the complete Figure 2. The nonlinear prototype and mesh study now computes profiles corresponding to Figures 3–6 in a periodic one-dimensional calculation with a 3 pc wavelength and 10% initially isobaric density modulation. This requires conduction, recombination, shock handling and grid/time convergence; a large linear amplification alone does not reproduce cloud thickness or density contrast.
@@ -5319,7 +5319,7 @@ Original implementation code is MIT. Text, figures and generated data have separ
 ## Follow the gas
 into a cold, dense layer. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 Paper overview: Schwarz, McCray & Stein (1972) →
@@ -5329,7 +5329,7 @@ Chapter03 / Schwarz, McCray & Stein (1972) / Nonlinear prototype
 into a cold, dense layer. — Follow the gas
 into a cold, dense layer. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 A 10% density wave grows beyond the linear regime in a cooling 3 pc box. Moving mass cells follow the compression, while thermal conduction, recombination and shock heating act together.
@@ -5338,7 +5338,7 @@ A nonlinear numerical prototype, using 96 mass cells for the displayed profiles.
 ## Follow the gas
 into a cold, dense layer. — Density, velocity, temperature and ionization. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 Times are the same as the published snapshots; no temporal or phase shift was fitted. The displayed run uses 96 equal-H-mass cells. Both the mass coordinate and physical positions/cell widths are exported. The original figure labels zone number; its exact grid-to-mass mapping has not been recovered.Profiles / SVGPNGFull profiles / CSVMesh histories / CSVValidation & source comparison / JSON
@@ -5349,7 +5349,7 @@ The condensation timing differs: by 0.955 Myr this prototype already has a stron
 ## Follow the gas
 into a cold, dense layer. — A classical Lagrangian calculation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 The periodic domain contains a sinusoidal physical-space density perturbation of amplitude 0.1 and wavelength 3 pc, with mean n(H) = 0.3 cm⁻³. The unperturbed temperature is 8,200 K, x = 0.05, and neutral He/H = 0.1. Initial pressure is uniform, so the local temperature varies inversely with density; velocities start at zero.
@@ -5360,7 +5360,7 @@ The semi-implicit conduction update is backward Euler. We therefore do not claim
 ## Follow the gas
 into a cold, dense layer. — Compare mesh counts without declaring every front resolved. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 64, 96 and 128 cells are the historical-scale study; 512 cells provide an auxiliary comparison. The dashed temperature line is the input boundary. The four-cell Field-length line is a stated diagnostic, not a universal theorem, and is not met throughout these runs.Mesh comparison / SVGPNG
@@ -5371,7 +5371,7 @@ All 33 numerical self-checks pass, including compatible hydro energy accounting,
 ## Follow the gas
 into a cold, dense layer. — Track where the cooling input is extended. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 The nonlinear cooling table adds 12 warm-end readings to the earlier 39 points from Figure 1. These cover the locally warmer cells in the initially isobaric wave. The earlier linear input and results are preserved.
@@ -5382,7 +5382,7 @@ Changing the cold electron temperature power from −1/2 to 0 is included as a s
 ## Follow the gas
 into a cold, dense layer. — Run the nonlinear study. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/schwarz-1972/nonlinear.html
 Coverage: reading
 
 Save the four nonlinear files plus reproduce.py, config.json, cooling-readings.csv and requirements.txt from the linear exhibit. No source PDF is required after installing the pinned dependencies.
@@ -5398,7 +5398,7 @@ Original implementation code is MIT. Text, figures and generated data have separ
 ## Follow a rate coefficient
 into molecular cooling. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 Paper overview: Takayanagi & Nishimura (1960) →
@@ -5408,7 +5408,7 @@ Rate-coefficient lineage / Takayanagi & Nishimura 1960
 into molecular cooling. — Follow a rate coefficient
 into molecular cooling. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 Before a cooling function becomes one line of code, it depends on collision partners, transition directions, level populations, and radiative losses. Here we trace those steps through a historical H₂ calculation.
@@ -5417,7 +5417,7 @@ Scope: 34 printed excitation coefficients and a declared finite-level calculatio
 ## Follow a rate coefficient
 into molecular cooling. — From H-atom collisions to para-H₂ radiation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 Table 1, printed p. 82: thermally averaged upward excitation coefficients. The right panel uses those coefficients, equations (7) and (9), and the photon-energy definition on p. 83. Lines connect computed samples, while crosses show the source cooling values. No interpolated coefficients enter the calculation.SVGPNG34 rate records / CSVLevel populations & cooling / CSV
@@ -5427,7 +5427,7 @@ These are the temperatures and channels printed in the 1960 source. The authors 
 ## Follow a rate coefficient
 into molecular cooling. — Keep upward rates, downward rates, and energy losses distinct. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 qdown = qup [(2J−3)/(2J+1)] exp[170.68(2J−1)/T]
@@ -5439,7 +5439,7 @@ The historical spontaneous-emission formula is A = 7.52 × 10⁻¹³ J(J−1)(2J
 ## Follow a rate coefficient
 into molecular cooling. — What does a blank table entry mean? [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 Table 1 provides fewer transitions at lower temperatures. Its missing entries are preserved as unavailable inputs. At each temperature this experiment closes the ladder at the highest connected level for which an upward coefficient is listed: J = 2, 4, 6, or 8.
@@ -5448,7 +5448,7 @@ That is an explicit truncation of the model. It does not establish a zero physic
 ## Follow a rate coefficient
 into molecular cooling. — Show the mismatch as part of the result. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 100 × (finite-ladder calculation / printed cooling − 1), for 60 reference points. These are measured discrepancies, not passed validation tests. The source row that appears as 155 K in Table 2, while Table 1 gives 150 K, is excluded pending clarification.SVGPNGPrinted values & differences / CSV
@@ -5458,7 +5458,7 @@ We have not established the cause. Additional level/rate information or a source
 ## Follow a rate coefficient
 into molecular cooling. — Show the mismatch as part of the result. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 A small, reproducible calculation
@@ -5466,7 +5466,7 @@ A small, reproducible calculation
 ## Follow a rate coefficient
 into molecular cooling. — Run the level model without a large simulation. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 Download these four files into one folder. The model uses at most five levels; no hydrodynamic simulation or original PDF is required at runtime.
@@ -5480,18 +5480,18 @@ The validation report records measured errors and tolerances, runtime versions, 
 ## Follow a rate coefficient
 into molecular cooling. — Source and next steps. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/takayanagi-nishimura-1960/
 Coverage: reading
 
 Takayanagi & Nishimura (1960), PASJ 12, 77–105 ↗
 ADS scan used for the audit ↗
 Next, trace missing level information and the related prescriptions in Hattori, Nakano & Hayashi. The rate-coefficient lineage records the citation links; an exact numerical inheritance requires further equation-by-equation review.
-Original implementation code is MIT. Generated data and figures have separate content terms; see https://koyamahr.github.io/rights/ . Original paper rights are unchanged.
+Original implementation code is MIT. Generated data and figures have separate content terms; see https://koyamarium.github.io/rights/ . Original paper rights are unchanged.
 
 ## Watch an unstable medium
 form cold clouds. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 Cover experiment / November 2026
@@ -5500,7 +5500,7 @@ Cover experiment / November 2026
 form cold clouds. — Watch an unstable medium
 form cold clouds. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 A real compressible-flow calculation: small density perturbations grow, pressure gradients drive motion, and cold regions condense.
@@ -5510,7 +5510,7 @@ Illustrative model. The KI-type heating/cooling law is coupled to deliberately e
 form cold clouds. — Watch an unstable medium
 form cold clouds. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 Your browser cannot play this video. Download the MP4.
@@ -5520,7 +5520,7 @@ Fixed logarithmic density scale: 0.15 → 40 cm⁻³ throughout. Display interpo
 ## Watch an unstable medium
 form cold clouds. — Equations and deliberate choices. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 Periodic 4.8 × 3.0 pc box, 256 × 160 cells (Δx = Δy = 0.01875 pc). The compressible Euler equations include momentum, advection, compressional work, thermal conduction and net radiative cooling. There is no forcing, magnetic field, gravity or evolving chemistry.
@@ -5531,7 +5531,7 @@ Periodic 4.8 × 3.0 pc box, 256 × 160 cells (Δx = Δy = 0.01875 pc). The compr
 ## Watch an unstable medium
 form cold clouds. — Equations and deliberate choices. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 The finite-volume solver uses MC-limited reconstruction, HLLC fluxes, SSPRK2, harmonic-face conductive fluxes, and explicit radiative sources. Time steps respect hyperbolic, diffusion and cooling constraints. Invalid stages cause a smaller step; there are no density or temperature floors, clipping, mass sinks or imposed condensations. The source lookup covers 2–30000 K without extrapolation.
@@ -5539,7 +5539,7 @@ The finite-volume solver uses MC-limited reconstruction, HLLC fluxes, SSPRK2, ha
 ## Watch an unstable medium
 form cold clouds. — Check the flow before trusting the picture. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 The numerical report tests an analytically advected contact, continuum heat-equation decay, isochoric cooling against independent adaptive integration, and a compressible linear TI eigenmode derived from a separate Fourier-space matrix. Density, velocity and pressure are checked together. The movie run also has mass and radiative-energy accounting checks.
@@ -5550,7 +5550,7 @@ The Field proxy √[κT/(n²Λ)] is an energy-balance estimate, not the exact ma
 ## Watch an unstable medium
 form cold clouds. — Check the flow before trusting the picture. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 Full-grid history and coarse-grid history retain pressure, temperatures, density extrema, cold mass fraction, Mach number, resolution proxy and conservation accounting. Their global integrals use solver units over pc², per unspecified out-of-plane depth; the “mass” column integrates n and is not in grams.
@@ -5558,7 +5558,7 @@ Full-grid history and coarse-grid history retain pressure, temperatures, density
 ## Watch an unstable medium
 form cold clouds. — Take the calculation apart. [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/ti-2d/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/ti-2d/
 Coverage: reading
 
 Movie / MP4Poster / PNGInitial & final states / NPZConfigurationC++17 solverModel & unitsIndependent benchmarksRender actual framesDependenciesReproduction guideAsset hashes
@@ -5567,7 +5567,7 @@ Source-law attribution: Koyama & Inutsuka (2002), with the correction documented
 
 ## 熱的不安定性の研究アーカイブ [ja]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: overview
 
 星間ガスの冷たい相と暖かい相、Fieldの熱的不安定性、冷却・加熱、線形成長、伝導を論文・式・計算例からたどる。
@@ -5575,7 +5575,7 @@ Coverage: overview
 
 ## The Art of Thermal Instability [en]
 
-Source: https://koyamahr.github.io/the-art-of-thermal-instability/
+Source: https://koyamarium.github.io/the-art-of-thermal-instability/
 Coverage: overview
 
 Interstellar cold and warm phases, Field thermal instability, cooling/heating, linear growth and conduction through papers, equations and numerical examples.

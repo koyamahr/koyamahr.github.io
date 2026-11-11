@@ -1,6 +1,6 @@
 # Research Compass / サイトを案内する
 
-Buildless, bilingual, client-side retrieval and manual handoff to the visitor's own LLM. Published at https://koyamahr.github.io/guide/ .
+Buildless, bilingual, client-side retrieval and manual handoff to the visitor's own LLM. Published at https://koyamarium.github.io/guide/ .
 
 ## Data and scope
 
@@ -36,7 +36,7 @@ The root `llms.txt` and `guide/index.md` provide machine-readable pointers. They
 
 ## Rights
 
-Original implementation code: MIT within `/LICENSING.md`. Extracted prose, figures and other materials retain their separate conditions. These packs are provided for source-grounded consultation about the published resources with the visitor's own LLM. No blanket training/republication license is added. See https://koyamahr.github.io/rights/ .
+Original implementation code: MIT within `/LICENSING.md`. Extracted prose, figures and other materials retain their separate conditions. These packs are provided for source-grounded consultation about the published resources with the visitor's own LLM. No blanket training/republication license is added. See https://koyamarium.github.io/rights/ .
 
 ## Checks
 

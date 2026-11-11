@@ -1,14 +1,14 @@
 # Research Compass / サイトを案内する
 
-Research guide to the Numerical Methods Atlas and Thermal Instability archive by Hiroshi Koyama: https://koyamahr.github.io/
+Research guide to the Numerical Methods Atlas and Thermal Instability archive by Hiroshi Koyama: https://koyamarium.github.io/
 
 Describe a goal, retrieve public excerpts in your browser, and copy a source-grounded consultation prompt into your own LLM. Questions and input are not collected, saved or transmitted to the site operator. No analytics or tracking. No LLM inference API, server-side question processing, API keys or question storage. GitHub Pages retains ordinary access logs including IP addresses; this is separate from question/input handling. Pasting the prompt into your chosen LLM shares it with that provider. This is a manual handoff, not an automatic connection to your LLM.
 
-- [Interactive guide](https://koyamahr.github.io/guide/)
-- [Two-site excerpts & overviews](https://koyamahr.github.io/guide/packs/all.md)
-- [Numerical methods pack](https://koyamahr.github.io/guide/packs/numerical.md)
-- [Thermal instability pack](https://koyamahr.github.io/guide/packs/thermal.md)
-- [Works directory](https://koyamahr.github.io/research/)
+- [Interactive guide](https://koyamarium.github.io/guide/)
+- [Two-site excerpts & overviews](https://koyamarium.github.io/guide/packs/all.md)
+- [Numerical methods pack](https://koyamarium.github.io/guide/packs/numerical.md)
+- [Thermal instability pack](https://koyamarium.github.io/guide/packs/thermal.md)
+- [Works directory](https://koyamarium.github.io/research/)
 
 ## Guidance for assistants
 
@@ -20,4 +20,4 @@ Only Numerical Methods Atlas reading chapters and Thermal Instability static pag
 
 ## Terms
 
-Use these packs to consult the published resources with your own LLM. This does not change the licenses of the underlying material or grant a blanket model-training/republication license. Original implementation code is MIT within its defined scope. Text, figures and other content have separate conditions: https://koyamahr.github.io/rights/
+Use these packs to consult the published resources with your own LLM. This does not change the licenses of the underlying material or grant a blanket model-training/republication license. Original implementation code is MIT within its defined scope. Text, figures and other content have separate conditions: https://koyamarium.github.io/rights/

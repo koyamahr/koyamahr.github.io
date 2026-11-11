@@ -17,7 +17,7 @@ const prompts = {
  bb:{ja:'倍率だけを動かすと中心線はそのまま。期間も変えたときとの違いを比べてください。',en:'Changing only the multiplier leaves the middle line unchanged. Compare this with changing the period.'}
 };
 let lang = 'ja', cases = [], active = 0, revealed = false, category = 'all', selected = 80, retrieved = '';
-try {lang = localStorage.getItem('koyamahr.home.language') === 'en' ? 'en' : 'ja';} catch {}
+try {lang = localStorage.getItem('koyamarium.home.language') === 'en' ? 'en' : 'ja';} catch {}
 const query = new URLSearchParams(location.search).get('lang');
 if (['ja','en'].includes(query)) lang = query;
 const t = key => copy[lang][key];
@@ -32,7 +32,7 @@ function setLanguage(next, save = false) {
  $('home').href=$('back').href='../?lang='+lang;
  $('search').placeholder=t('search');$('search').setAttribute('aria-label',t('search'));$('scrub').setAttribute('aria-label',t('scrub'));$('case-picker').setAttribute('aria-label',lang==='ja'?'チャート事例':'Chart case');$('method-tabs').setAttribute('aria-label',lang==='ja'?'分析手法':'Indicator methods');
  $('filters').setAttribute('aria-label',lang==='ja'?'事例の分類':'Case categories');document.querySelector('.chart-options').setAttribute('aria-label',lang==='ja'?'指標の表示':'Chart indicators');
- if(save)try{localStorage.setItem('koyamahr.home.language',lang);}catch{}
+ if(save)try{localStorage.setItem('koyamarium.home.language',lang);}catch{}
  stateURL(); renderFilters();renderMethods();renderMethodPanel(); if(cases.length){renderStudy();renderCards();}
 }
 function renderFilters(){

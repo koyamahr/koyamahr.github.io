@@ -28,10 +28,10 @@
     document.querySelectorAll('[data-lang]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.lang===lang)));
     document.querySelectorAll('[data-gallery]').forEach(el=>{const url=new URL(el.href);url.searchParams.set('lang',lang);el.href=url;});
     const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);
-    if(save){try{localStorage.setItem('koyamahr.home.language',lang);}catch{}}
+    if(save){try{localStorage.setItem('koyamarium.home.language',lang);}catch{}}
     if(viewer.open)showPhoto(current);
   }
-  let saved;try{saved=localStorage.getItem('koyamahr.home.language');}catch{}
+  let saved;try{saved=localStorage.getItem('koyamarium.home.language');}catch{}
   const requested=new URLSearchParams(location.search).get('lang');
   setLanguage(['ja','en'].includes(requested)?requested:saved==='en'?'en':'ja');
   document.querySelector('.languages').hidden=false;

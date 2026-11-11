@@ -17,7 +17,8 @@
     "notesTitle": "大学ノート",
     "notesDescription": "学生時代の自筆ノート43冊・1,192ページ。数式や図、考えた跡をそのまま残した、読み返せる書庫です。",
     "notesAction": "ノートを読む",
-    "title": "小山 洋 | ポートフォリオ",
+    "notesPaused": "現在非公開",
+    "title": "koyamarium | 小山 洋",
     "skip": "ポートフォリオへ進む",
     "headline": "小山 洋",
     "tagline": "宇宙を考え、言葉と計算で届ける。",
@@ -41,7 +42,7 @@
     "contactAction": "フォームを開く",
     "contactService": "Googleフォームが別タブで開きます。",
     "profiles": "研究プロフィール",
-    "footer": "小山 洋 / Hiroshi Koyama",
+    "footer": "koyamarium · 小山 洋 / Hiroshi Koyama",
     "metaDescription": "小山洋のポートフォリオ。記事・エッセイ、教材・研究、著書・Kindle本、写真作品を紹介します。",
     "portfolio": "ポートフォリオ",
     "entryWriting": "記事・エッセイ",
@@ -78,7 +79,8 @@
     "notesTitle": "College Notes",
     "notesDescription": "43 notebooks and 1,192 handwritten pages from my student years. An archive preserving the equations, diagrams, and traces of learning, in the original Japanese.",
     "notesAction": "Browse the notebooks",
-    "title": "Hiroshi Koyama | Portfolio",
+    "notesPaused": "Temporarily unavailable",
+    "title": "koyamarium | Hiroshi Koyama",
     "skip": "Skip to portfolio",
     "headline": "Hiroshi Koyama",
     "tagline": "Exploring the cosmos, through words and code.",
@@ -102,7 +104,7 @@
     "contactAction": "Open the contact form",
     "contactService": "Opens Google Forms in a new tab.",
     "profiles": "Research profiles",
-    "footer": "Hiroshi Koyama / 小山 洋",
+    "footer": "koyamarium · Hiroshi Koyama / 小山 洋",
     "metaDescription": "Hiroshi Koyama’s portfolio: articles, astrophysics and numerical methods resources, research archives, books and photographs.",
     "portfolio": "Portfolio",
     "entryWriting": "Articles & essays",
@@ -152,10 +154,10 @@
     document.querySelector('meta[name="description"]').content = description;
     document.querySelector('meta[property="og:title"]').content = title;
     document.querySelector('meta[property="og:description"]').content = description;
-    if (save) { try { localStorage.setItem('koyamahr.home.language', lang); } catch {} }
+    if (save) { try { localStorage.setItem('koyamarium.home.language', lang); } catch {} }
     const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null, '', url);
   }
-  let saved; try { saved = localStorage.getItem('koyamahr.home.language'); } catch {}
+  let saved; try { saved = localStorage.getItem('koyamarium.home.language'); } catch {}
   const requested = new URLSearchParams(location.search).get('lang');
   const lang = ['ja', 'en'].includes(requested) ? requested : saved === 'en' ? 'en' : 'ja';
   setLanguage(lang);

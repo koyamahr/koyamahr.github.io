@@ -27,7 +27,7 @@ function setLanguage(lang,save=false){
  document.querySelectorAll('[data-home]').forEach(a=>{a.href='../?lang='+lang});
  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
  document.querySelectorAll('[data-archive]').forEach(a=>{a.href='./?lang='+lang;a.textContent=lang==='ja'?'← 出向・担当業務の記録':'← Secondments & responsibilities'});
- if(save){try{localStorage.setItem('koyamahr.home.language',lang)}catch{}const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u)}
+ if(save){try{localStorage.setItem('koyamarium.home.language',lang)}catch{}const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u)}
 }
 app.addEventListener('click',event=>{
  const b=event.target.closest('button');if(!b)return;
@@ -38,7 +38,7 @@ app.addEventListener('click',event=>{
 });
 app.addEventListener('change',e=>{if(e.target.matches('#finance-year,#finance-kind'))filterFinance()});
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang,true)));
-let initial=new URL(location.href).searchParams.get('lang');if(!['ja','en'].includes(initial)){try{initial=localStorage.getItem('koyamahr.home.language')}catch{}}
+let initial=new URL(location.href).searchParams.get('lang');if(!['ja','en'].includes(initial)){try{initial=localStorage.getItem('koyamarium.home.language')}catch{}}
 setLanguage(['ja','en'].includes(initial)?initial:'ja');
 const initialAnchor=location.hash.slice(1);
 if(initialAnchor) requestAnimationFrame(()=>document.getElementById(initialAnchor)?.scrollIntoView({block:'start'}));
