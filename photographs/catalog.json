@@ -44,24 +44,27 @@
       }
     },
     {
-      "slug": "evening-sky",
+      "slug": "moon",
       "title": {
-        "ja": "街と夕空",
-        "en": "City and evening sky"
+        "ja": "月",
+        "en": "The Moon"
       },
       "category": "Light & sky",
-      "date": "2026-02-28",
-      "camera": "NIKON Z 50",
-      "exposure_seconds": 0.5,
-      "aperture": null,
+      "date": "2021-09-19",
+      "capture_time": "2021-09-19T21:07:35+09:00",
+      "camera": "Nikon Z50",
+      "lens": "NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
+      "exposure_seconds": 0.00125,
+      "aperture": 6.3,
       "iso": 100,
-      "focal_length_mm": null,
-      "image": "images/evening-sky.jpg",
-      "width": 1600,
-      "height": 1067,
+      "focal_length_mm": 250,
+      "image": "images/moon-original.jpg",
+      "width": 5568,
+      "height": 3712,
+      "display": "Lunar close-up framed in CSS from the original image",
       "alt": {
-        "ja": "広角で見上げた街の建物と、青く暮れていく空。",
-        "en": "A wide-angle view of buildings and the blue evening sky."
+        "ja": "黒い夜空に浮かぶ月のクローズアップ。月面の海とクレーターが見える。",
+        "en": "A close-up of the Moon against the dark sky, showing lunar maria and craters."
       }
     },
     {

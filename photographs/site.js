@@ -1,5 +1,5 @@
 (() => {
-  const copy={ja:{title:'小山 洋 | 写真ポートフォリオ',description:'小山洋の写真ポートフォリオ。鳥、花と虫、空の光、街の形、観測の現場。'},en:{title:'Hiroshi Koyama | Photography portfolio',description:'Selected photographs by Hiroshi Koyama: nature, light, architecture and the observatory.'}};
+  const copy={ja:{title:'小山 洋 | 写真ポートフォリオ',description:'小山洋の写真ポートフォリオ。月、鳥、花と虫、空の光、街の形、観測の現場。'},en:{title:'Hiroshi Koyama | Photography portfolio',description:'Selected photographs by Hiroshi Koyama: the Moon, nature, light, architecture and the observatory.'}};
   let lang='ja';
   const links=[...document.querySelectorAll('[data-view]')];
   const viewer=document.querySelector('#viewer');
