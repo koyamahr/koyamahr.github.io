@@ -30,3 +30,7 @@ header{padding:24px 0;border-bottom:1px solid var(--line);display:flex;align-ite
 @media(max-width:600px){.hero-moon{display:flex;flex-direction:column;align-items:stretch;min-height:0;margin:20px 0 22px;padding:0 0 28px}.hero-moon .hero-copy{width:100%;max-width:none;padding:0 25px;order:1}.hero-moon .hero-photograph{position:relative;inset:auto;order:0;width:100%;height:184px;max-width:none;margin:0 0 9px;overflow:hidden}.hero-moon .hero-photograph img{position:relative;left:-50%;width:200%;max-width:none;object-position:center 42%}.hero-moon .hero-photograph figcaption{left:0;right:0;bottom:6px;padding:0 20px;font-size:8px}.hero-moon .eyebrow{font-size:8px;margin-bottom:15px}.hero-moon h1{font-size:39px;margin-bottom:10px}.hero-moon .hero-tagline{font-size:16px;line-height:1.8;margin-bottom:11px}.hero-moon .intro{font-size:11px;line-height:1.95;max-width:360px;text-wrap:pretty}}
 
 .hero-moon .intro{white-space:pre-line;text-wrap:pretty}
+
+/* Society memberships sit below the external research profile links. */
+.profile-details{min-width:0;display:flex;flex-direction:column;gap:12px}.memberships{display:flex;align-items:baseline;gap:12px 24px;color:var(--muted);font-size:11px;line-height:1.9}.memberships h3{font:inherit;margin:0;flex-shrink:0}.memberships ul{list-style:none;margin:0;padding:0}.memberships li{overflow-wrap:anywhere}
+@media(max-width:600px){.memberships{font-size:10px;gap:8px 18px}}
