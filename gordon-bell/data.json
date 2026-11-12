@@ -177,6 +177,13 @@
       "kind": "registration_record",
       "checked_on": "2026-11-12"
     },
+    "year-transition-1991": {
+      "url": "https://netlib.org/na-digest-html/91/v91n35.html",
+      "label": "Alan Karp, Rules for Bell Prize, August 26, 1991 (NA Digest 91:35)",
+      "kind": "contemporary_committee_announcement",
+      "local_reference": "歴史一次資料/1991_Karp_Rules_for_Bell_Prize.html",
+      "source_sha256": "ab111b447d470ad75c9bd054c01ff183a0e2cc6cb3960f81e42db082d7374b1f"
+    },
     "sc25_cascadia_arxiv_v2_pdf": {
       "label": "Cascadia Bayesian-inference manuscript, arXiv:2504.16344v2",
       "url": "https://arxiv.org/pdf/2504.16344v2",
@@ -4498,7 +4505,9 @@
     {
       "year": 1988,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "status": "Partial roster: 3 entries identified; further candidates may be missing. 0 DOI matches verified.",
+      "candidate_count": 3,
+      "verified_doi_count": 0,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1988.pdf",
         "label": "SC88",
@@ -4536,14 +4545,15 @@
     {
       "year": 1991,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "status": "The committee notice says the next prize, which would have been called the 1991 Prize, will be renamed as the ceremony moves from February CompCon to November Supercomputing. It gives the next entry/finalist deadlines and presentations in 1992. A separate 1991-labelled candidate list is not inferred, and the 1990 entries reported in SC1991 proceedings are not duplicated here.",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1991.pdf",
         "label": "SC91",
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/125826",
         "website_url": null,
         "year": 1991
-      }
+      },
+      "context_source_id": "year-transition-1991"
     },
     {
       "year": 1992,
@@ -4574,9 +4584,9 @@
     {
       "year": 1994,
       "local_candidate_count": null,
-      "status": "Partial roster: 2 entries identified; further candidates may be missing. 2 DOI matches verified.",
-      "candidate_count": 2,
-      "verified_doi_count": 2,
+      "status": "Annual source indexed; 3 DOI matches verified. Manuscript review is tracked separately.",
+      "candidate_count": 4,
+      "verified_doi_count": 3,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1994.pdf",
         "label": "SC94",
@@ -4588,9 +4598,9 @@
     {
       "year": 1995,
       "local_candidate_count": null,
-      "status": "Partial roster: 2 entries identified; further candidates may be missing. 2 DOI matches verified.",
-      "candidate_count": 2,
-      "verified_doi_count": 2,
+      "status": "Annual source indexed; 3 DOI matches verified. Manuscript review is tracked separately.",
+      "candidate_count": 3,
+      "verified_doi_count": 3,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1995.pdf",
         "label": "SC95",
@@ -4602,9 +4612,9 @@
     {
       "year": 1996,
       "local_candidate_count": null,
-      "status": "Partial roster: 1 entries identified; further candidates may be missing. 1 DOI matches verified.",
-      "candidate_count": 1,
-      "verified_doi_count": 1,
+      "status": "Partial roster: 3 entries identified; further candidates may be missing. 2 DOI matches verified.",
+      "candidate_count": 3,
+      "verified_doi_count": 2,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1996.pdf",
         "label": "SC96",
@@ -4618,7 +4628,7 @@
       "local_candidate_count": 4,
       "status": "Preserved Gordon Bell session entries; finalist/winner labels unresolved.",
       "candidate_count": 4,
-      "verified_doi_count": 0,
+      "verified_doi_count": 4,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1997.pdf",
         "label": "SC97",
@@ -4630,8 +4640,8 @@
     {
       "year": 1998,
       "local_candidate_count": null,
-      "status": "Partial roster: 1 entries identified; further candidates may be missing. 0 DOI matches verified.",
-      "candidate_count": 1,
+      "status": "Partial roster: 2 entries identified; further candidates may be missing. 0 DOI matches verified.",
+      "candidate_count": 2,
       "verified_doi_count": 0,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1998.pdf",
@@ -4644,7 +4654,9 @@
     {
       "year": 1999,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "status": "Annual source indexed; 4 DOI matches verified. Manuscript review is tracked separately.",
+      "candidate_count": 4,
+      "verified_doi_count": 4,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1999.pdf",
         "label": "SC99",
@@ -4656,9 +4668,9 @@
     {
       "year": 2000,
       "local_candidate_count": null,
-      "status": "Partial roster: 1 entries identified; further candidates may be missing. 1 DOI matches verified.",
-      "candidate_count": 1,
-      "verified_doi_count": 1,
+      "status": "Annual source indexed; 6 DOI matches verified. Manuscript review is tracked separately.",
+      "candidate_count": 6,
+      "verified_doi_count": 6,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2000.pdf",
         "label": "SC2000",
@@ -4670,9 +4682,9 @@
     {
       "year": 2001,
       "local_candidate_count": null,
-      "status": "Partial roster: 2 entries identified; further candidates may be missing. 2 DOI matches verified.",
-      "candidate_count": 2,
-      "verified_doi_count": 2,
+      "status": "Partial roster: 3 entries identified; further candidates may be missing. 3 DOI matches verified.",
+      "candidate_count": 3,
+      "verified_doi_count": 3,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2001.pdf",
         "label": "SC01",
@@ -5023,9 +5035,9 @@
     {
       "year": 2026,
       "local_candidate_count": null,
-      "status": "Partial roster: 6 entries identified; further candidates may be missing. 0 DOI matches verified.",
+      "status": "Annual source indexed; 6 DOI matches verified. Manuscript review is tracked separately.",
       "candidate_count": 6,
-      "verified_doi_count": 0,
+      "verified_doi_count": 6,
       "sc_links": {
         "year": 2026,
         "label": "SC26",
@@ -5078,132 +5090,443 @@
           "url": "https://sc26.conference-program.com/presentation/?id=pap599&sess=sess211",
           "label": "Arachne belongs to regular Scaling Complex AI Training Workloads session",
           "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "sc26-day-2026-11-14",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-14.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-14",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-14.html",
+          "source_sha256": "8d10012b932c6c4e8876430d30213f431b04919e3d8527c4a5fde620011a20b5"
+        },
+        {
+          "id": "sc26-day-2026-11-15",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-15.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-15",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-15.html",
+          "source_sha256": "7e835c7fdf7e1f1fb2ffb03078d97ec5ceb7f5dbf6dee9e2b14965035ce78832"
+        },
+        {
+          "id": "sc26-day-2026-11-16",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-16.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-16",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-16.html",
+          "source_sha256": "b2aed4d98ef7dd6046576c57749f79be9bcc9c2ad36db6317d0cba8401b3aae3"
+        },
+        {
+          "id": "sc26-day-2026-11-17",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-17.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-17",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-17.html",
+          "source_sha256": "c4fe2b0395af1b1b3f4765aae5d03a04c4b27cba2a65f748549fbe959c8b6e8a"
+        },
+        {
+          "id": "sc26-day-2026-11-18",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-18.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-18",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-18.html",
+          "source_sha256": "5ff11f9825708fae62c2a55edd4d867378de3677974520e0506253078168c6a8"
+        },
+        {
+          "id": "sc26-day-2026-11-19",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-19.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-19",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-19.html",
+          "source_sha256": "01729e1c630b5f73bb76be15355bb2eedbe956d10f034798b62fbc549f9d6d26"
+        },
+        {
+          "id": "sc26-day-2026-11-20",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-20.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-20",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-20.html",
+          "source_sha256": "0a8ed4e5df4af471be4a31912616c70998c885ac53522b59c7115a388d09b55a"
+        },
+        {
+          "id": "sc26-day-2026-11-21",
+          "url": "https://sc26.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2026-11-21.txt?v=1794442135",
+          "label": "SC26 official public program snapshot, 2026-11-21",
+          "kind": "official_conference_program_day",
+          "local_reference": "2026/web_program/2026-11-21.html",
+          "source_sha256": "a09fa35a5e44ce85767e640c0817e9a346a6499801789aeebeb8f44e25c19e6a"
+        },
+        {
+          "id": "sc26_csdl_publisher_toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+proceeding%3A+proceeding%28proceedingId%3A+%24proceedingId%29+%7B+id+acronym+title+year+%7D+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+idPrefix+fno+pubDate+pubType+pages+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%222lkuyoe0xtm%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC26 proceedings catalog (162 records), retrieved 2026-11-12",
+          "kind": "publisher_proceedings_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_proceedings_metadata.json",
+          "source_sha256": "dbddc19e333d2520e856ffba229df5de660e50ec723a83cc08106f7e5d7b3c68"
+        },
+        {
+          "id": "sc26_csdl_main01",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+%7D&variables=%7B%22articleId%22%3A+%222lkuzbdetfG%22%7D",
+          "label": "IEEE Computer Society exact article metadata: Architecture-Agnostic Exascale Star-by-Star Simulation of Our Galaxy",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_main01_metadata.json",
+          "source_sha256": "faf9f1cf1894abe084d59b53944c228ac1905577426b3140211743fd92c66415"
+        },
+        {
+          "id": "sc26_csdl_main02",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+%7D&variables=%7B%22articleId%22%3A+%222lkuzcdoCJO%22%7D",
+          "label": "IEEE Computer Society exact article metadata: Exascale Multiphysics Simulations for Liquid Metal Fusion Blankets",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_main02_metadata.json",
+          "source_sha256": "8c720790c28e11f127b04c63f6f570087ed31e2e8f4f2d7ae41048217f1b2077"
+        },
+        {
+          "id": "sc26_csdl_main03",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+%7D&variables=%7B%22articleId%22%3A+%222lkuzdolxao%22%7D",
+          "label": "IEEE Computer Society exact article metadata: Crossing the 12,000-Atom Barrier with Heterogeneous Quantum-Classical Supercomputing: Quantum Chemistry of Protein-Ligand Complexes",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_main03_metadata.json",
+          "source_sha256": "78abf2149fc6c8faf5fa7560d8f5a82bd5fc5a62ca6b30dff068b3ffb71ebdb7"
+        },
+        {
+          "id": "sc26_csdl_main04",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+%7D&variables=%7B%22articleId%22%3A+%222lkuzegQw8M%22%7D",
+          "label": "IEEE Computer Society exact article metadata: Closing the FeMo-Cofactor \"Quantum-Advantage\" Gap with Exascale Supercomputers",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_main04_metadata.json",
+          "source_sha256": "9715df40fea4a0b368ce18c0bca68ad9b2a0300e130eb0a0cb8049ac3f4eb6ba"
+        },
+        {
+          "id": "sc26_csdl_main05",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+%7D&variables=%7B%22articleId%22%3A+%222lkuzfdjSW4%22%7D",
+          "label": "IEEE Computer Society exact article metadata: Exascale Distillation Workflows for Protein Structure Prediction on El Capitan",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_main05_metadata.json",
+          "source_sha256": "8cbd6fc389f4fc7f57d9d4492fc77f4ce5204e0aaa2cf6bafdcd3ed57ef87999"
+        },
+        {
+          "id": "sc26_csdl_main06",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+%7D&variables=%7B%22articleId%22%3A+%222lkuzfVBje8%22%7D",
+          "label": "IEEE Computer Society exact article metadata: Extreme-Scale Linear-Scaling Kohn-Sham DFT at 100 Million Atoms: Bridging Quantum Simulations and Experiments",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC2026_main06_metadata.json",
+          "source_sha256": "80b66e7255c7898ffb40828541f50213862af348baa9a5bd8eda30350c269145"
         }
       ],
       "roster_completeness": {
-        "status": "partial_primary_roster",
-        "expected_count": null,
+        "status": "complete_current_official_program_snapshot",
+        "expected_count": 6,
         "basis_source_ids": [
           "sc26_s1",
           "sc26_s2",
           "sc26_program",
-          "sc26_exclude_xmoe",
-          "sc26_exclude_arachne"
-        ]
+          "sc26-day-2026-11-14",
+          "sc26-day-2026-11-15",
+          "sc26-day-2026-11-16",
+          "sc26-day-2026-11-17",
+          "sc26-day-2026-11-18",
+          "sc26-day-2026-11-19",
+          "sc26-day-2026-11-20",
+          "sc26-day-2026-11-21"
+        ],
+        "note": "All eight official program day snippets establish two main-prize sessions and six distinct scheduled candidates as of 2026-11-12. Publisher metadata assigns all six DOIs; doi.org returned HTTP404 that day. This snapshot establishes scheduled membership and publisher-assigned bibliography, with resolver activation and award outcomes unestablished."
       },
       "records": [
         {
           "id": "SC26_main01",
           "title": "Architecture-Agnostic Exascale Star-by-Star Simulation of Our Galaxy",
           "title_source_id": "sc26_s1",
-          "doi": null,
-          "doi_status": "not_checked",
-          "doi_source_id": null,
-          "publisher_title": null,
-          "authors": [],
-          "authors_status": "not_checked",
-          "publication_url": null,
+          "doi": "10.1109/SC51908.2026.00007",
+          "doi_status": "verified",
+          "doi_source_id": "sc26_csdl_main01",
+          "publisher_title": "Architecture-Agnostic Exascale Star-by-Star Simulation of Our Galaxy",
+          "authors": [
+            "Keiya Hirashima",
+            "Naoto Harada",
+            "Takayuki R. Saitoh",
+            "Kentaro Nomura",
+            "Masaki Iwasawa",
+            "Dennis Bollweg",
+            "Kohji Yoshikawa",
+            "Yohei Miki",
+            "Tetsuro Asano",
+            "Yutaka Hirai",
+            "Takashi Okamoto",
+            "Kana Moriwaki",
+            "Junichiro Makino",
+            "Matthew T. Bettencour",
+            "Laura Morgenstern",
+            "Mathis Bode",
+            "Michiko S. Fujii"
+          ],
+          "authors_status": "publisher_metadata_order_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/2026/478900a001/2lkuzbdetfG",
           "notes": [
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "This is a currently scheduled main-prize candidate, not a winner. The conference has not yet occurred as of 2026-11-12.",
-            "A Crossref title lookup found no exact matching SC26 registration; unrelated results were rejected. No publication DOI or registry author array is asserted."
-          ]
+            "DOI and complete ordered byline verified in exact IEEE Computer Society article metadata. The publisher records publication date 2026-11-12; doi.org returned HTTP 404 on that date. The identifier is publisher-assigned, with resolver activation not yet established. No award or final-score claim follows from this publication metadata."
+          ],
+          "doi_verification": {
+            "method": "exact_primary_publisher_article_metadata",
+            "publisher_article_id": "2lkuzbdetfG",
+            "publisher_venue": "SC26: International Conference for High Performance Computing, Networking, Storage and Analysis",
+            "publisher_year": 2026,
+            "publisher_publication_date": "2026-11-12",
+            "ordered_author_count": 17,
+            "title_match": "exact",
+            "identifier_status": "publisher_assigned",
+            "resolver_status": "not_found",
+            "resolver_http_status": 404,
+            "resolver_checked_on": "2026-11-12"
+          }
         },
         {
           "id": "SC26_main02",
           "title": "Exascale Multiphysics Simulations for Liquid Metal Fusion Blankets",
           "title_source_id": "sc26_s1",
-          "doi": null,
-          "doi_status": "not_checked",
-          "doi_source_id": null,
-          "publisher_title": null,
-          "authors": [],
-          "authors_status": "not_checked",
-          "publication_url": null,
+          "doi": "10.1109/SC51908.2026.00008",
+          "doi_status": "verified",
+          "doi_source_id": "sc26_csdl_main02",
+          "publisher_title": "Exascale Multiphysics Simulations for Liquid Metal Fusion Blankets",
+          "authors": [
+            "Yu-Hsiang Lan",
+            "Misun Min",
+            "Paul Fischer",
+            "Elia Merzari",
+            "Tri Nguyen",
+            "Haomin Yuan",
+            "Patrick Shriwise",
+            "Stefan Kerkemeier",
+            "Andrew Davis",
+            "Aleksander Dubas",
+            "Rupert Eardley-Brunt",
+            "Maximiliano Dalinger",
+            "Luiz Aldeia Machado",
+            "Kris Rowe",
+            "Ananias Tomboulides",
+            "Ramesh Balakrishnan"
+          ],
+          "authors_status": "publisher_metadata_order_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/2026/478900a014/2lkuzcdoCJO",
           "notes": [
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "This is a currently scheduled main-prize candidate, not a winner. The conference has not yet occurred as of 2026-11-12.",
-            "A Crossref title lookup found no exact matching SC26 registration; unrelated results were rejected. No publication DOI or registry author array is asserted."
-          ]
+            "DOI and complete ordered byline verified in exact IEEE Computer Society article metadata. The publisher records publication date 2026-11-12; doi.org returned HTTP 404 on that date. The identifier is publisher-assigned, with resolver activation not yet established. No award or final-score claim follows from this publication metadata."
+          ],
+          "doi_verification": {
+            "method": "exact_primary_publisher_article_metadata",
+            "publisher_article_id": "2lkuzcdoCJO",
+            "publisher_venue": "SC26: International Conference for High Performance Computing, Networking, Storage and Analysis",
+            "publisher_year": 2026,
+            "publisher_publication_date": "2026-11-12",
+            "ordered_author_count": 16,
+            "title_match": "exact",
+            "identifier_status": "publisher_assigned",
+            "resolver_status": "not_found",
+            "resolver_http_status": 404,
+            "resolver_checked_on": "2026-11-12"
+          }
         },
         {
           "id": "SC26_main03",
           "title": "Crossing the 12,000-Atom Barrier with Heterogeneous Quantum-Classical Supercomputing: Quantum Chemistry of Protein-Ligand Complexes",
           "title_source_id": "sc26_s1",
-          "doi": null,
-          "doi_status": "not_checked",
-          "doi_source_id": null,
-          "publisher_title": null,
-          "authors": [],
-          "authors_status": "not_checked",
-          "publication_url": null,
+          "doi": "10.1109/SC51908.2026.00009",
+          "doi_status": "verified",
+          "doi_source_id": "sc26_csdl_main03",
+          "publisher_title": "Crossing the 12,000-Atom Barrier with Heterogeneous Quantum-Classical Supercomputing: Quantum Chemistry of Protein-Ligand Complexes",
+          "authors": [
+            "Kenneth M. Merz",
+            "Akhil Shajan",
+            "Danil Kaliakin",
+            "Fangchun Liang",
+            "Yuichi Otsuka",
+            "Tomonori Shirakawa",
+            "Lukas Broers",
+            "Han Xu",
+            "Miwako Tsuji",
+            "Mitsuhisa Sato",
+            "Seiji Yunoki",
+            "Ryo Wakizaka",
+            "Yukio Kawashima",
+            "Jun Doi",
+            "Hitomi Takahashi",
+            "Toshinari Itoko",
+            "Hiroshi Horii",
+            "Thaddeus Pellegrini",
+            "Javier Robledo Moreno",
+            "Kevin J. Sung",
+            "Ella Fejer",
+            "Robert Walkup",
+            "Seetharami Seelam",
+            "Mario Motta"
+          ],
+          "authors_status": "publisher_metadata_order_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/2026/478900a026/2lkuzdolxao",
           "notes": [
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "This is a currently scheduled main-prize candidate, not a winner. The conference has not yet occurred as of 2026-11-12.",
-            "A Crossref title lookup found no exact matching SC26 registration; unrelated results were rejected. No publication DOI or registry author array is asserted."
-          ]
+            "DOI and complete ordered byline verified in exact IEEE Computer Society article metadata. The publisher records publication date 2026-11-12; doi.org returned HTTP 404 on that date. The identifier is publisher-assigned, with resolver activation not yet established. No award or final-score claim follows from this publication metadata."
+          ],
+          "doi_verification": {
+            "method": "exact_primary_publisher_article_metadata",
+            "publisher_article_id": "2lkuzdolxao",
+            "publisher_venue": "SC26: International Conference for High Performance Computing, Networking, Storage and Analysis",
+            "publisher_year": 2026,
+            "publisher_publication_date": "2026-11-12",
+            "ordered_author_count": 24,
+            "title_match": "exact",
+            "identifier_status": "publisher_assigned",
+            "resolver_status": "not_found",
+            "resolver_http_status": 404,
+            "resolver_checked_on": "2026-11-12"
+          }
         },
         {
           "id": "SC26_main04",
           "title": "Closing the FeMo-Cofactor \"Quantum-Advantage'' Gap with Exascale Supercomputers",
           "title_source_id": "sc26_s1",
-          "doi": null,
-          "doi_status": "not_checked",
-          "doi_source_id": null,
-          "publisher_title": null,
-          "authors": [],
-          "authors_status": "not_checked",
-          "publication_url": null,
+          "doi": "10.1109/SC51908.2026.00010",
+          "doi_status": "verified",
+          "doi_source_id": "sc26_csdl_main04",
+          "publisher_title": "Closing the FeMo-Cofactor \"Quantum-Advantage\" Gap with Exascale Supercomputers",
+          "authors": [
+            "Honghui Shang",
+            "Zhiyu Xiao",
+            "Zhuozhao Xia",
+            "Hao Wu",
+            "Huan Ma",
+            "Yongqing Chen",
+            "Bin Li",
+            "Zhenyu Li",
+            "Yutong Lu",
+            "Jinlong Yang"
+          ],
+          "authors_status": "publisher_metadata_order_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/2026/478900a039/2lkuzegQw8M",
           "notes": [
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "This is a currently scheduled main-prize candidate, not a winner. The conference has not yet occurred as of 2026-11-12.",
-            "A Crossref title lookup found no exact matching SC26 registration; unrelated results were rejected. No publication DOI or registry author array is asserted."
-          ]
+            "DOI and complete ordered byline verified in exact IEEE Computer Society article metadata. The publisher records publication date 2026-11-12; doi.org returned HTTP 404 on that date. The identifier is publisher-assigned, with resolver activation not yet established. No award or final-score claim follows from this publication metadata.",
+            "Publisher title uses closing double quotation marks around \"Quantum-Advantage\"; the conference program uses two closing apostrophes. This punctuation variant is preserved in publisher_title."
+          ],
+          "doi_verification": {
+            "method": "exact_primary_publisher_article_metadata",
+            "publisher_article_id": "2lkuzegQw8M",
+            "publisher_venue": "SC26: International Conference for High Performance Computing, Networking, Storage and Analysis",
+            "publisher_year": 2026,
+            "publisher_publication_date": "2026-11-12",
+            "ordered_author_count": 10,
+            "title_match": "quotation_punctuation_variant",
+            "identifier_status": "publisher_assigned",
+            "resolver_status": "not_found",
+            "resolver_http_status": 404,
+            "resolver_checked_on": "2026-11-12"
+          }
         },
         {
           "id": "SC26_main05",
           "title": "Exascale Distillation Workflows for Protein Structure Prediction on El Capitan",
           "title_source_id": "sc26_s2",
-          "doi": null,
-          "doi_status": "not_checked",
-          "doi_source_id": null,
-          "publisher_title": null,
-          "authors": [],
-          "authors_status": "not_checked",
-          "publication_url": null,
+          "doi": "10.1109/SC51908.2026.00011",
+          "doi_status": "verified",
+          "doi_source_id": "sc26_csdl_main05",
+          "publisher_title": "Exascale Distillation Workflows for Protein Structure Prediction on El Capitan",
+          "authors": [
+            "Nikoli Dryden",
+            "Tal Ben-Nun",
+            "Tom Benson",
+            "Vinay S. Swamy",
+            "Colin Kalicki",
+            "Vinayak Gokhale",
+            "J. Austin Ellis",
+            "Nicholas Malaya",
+            "Bronis R. de Supinski",
+            "Mohammed AlQuraishi",
+            "Brian C. Van Essen"
+          ],
+          "authors_status": "publisher_metadata_order_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/2026/478900a051/2lkuzfdjSW4",
           "notes": [
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "This is a currently scheduled main-prize candidate, not a winner. The conference has not yet occurred as of 2026-11-12.",
-            "A Crossref title lookup found no exact matching SC26 registration; unrelated results were rejected. No publication DOI or registry author array is asserted."
-          ]
+            "DOI and complete ordered byline verified in exact IEEE Computer Society article metadata. The publisher records publication date 2026-11-12; doi.org returned HTTP 404 on that date. The identifier is publisher-assigned, with resolver activation not yet established. No award or final-score claim follows from this publication metadata."
+          ],
+          "doi_verification": {
+            "method": "exact_primary_publisher_article_metadata",
+            "publisher_article_id": "2lkuzfdjSW4",
+            "publisher_venue": "SC26: International Conference for High Performance Computing, Networking, Storage and Analysis",
+            "publisher_year": 2026,
+            "publisher_publication_date": "2026-11-12",
+            "ordered_author_count": 11,
+            "title_match": "exact",
+            "identifier_status": "publisher_assigned",
+            "resolver_status": "not_found",
+            "resolver_http_status": 404,
+            "resolver_checked_on": "2026-11-12"
+          }
         },
         {
           "id": "SC26_main06",
           "title": "Extreme-Scale Linear-Scaling Kohn-Sham DFT at 100 Million Atoms: Bridging Quantum Simulations and Experiments",
           "title_source_id": "sc26_s2",
-          "doi": null,
-          "doi_status": "not_checked",
-          "doi_source_id": null,
-          "publisher_title": null,
-          "authors": [],
-          "authors_status": "not_checked",
-          "publication_url": null,
+          "doi": "10.1109/SC51908.2026.00012",
+          "doi_status": "verified",
+          "doi_source_id": "sc26_csdl_main06",
+          "publisher_title": "Extreme-Scale Linear-Scaling Kohn-Sham DFT at 100 Million Atoms: Bridging Quantum Simulations and Experiments",
+          "authors": [
+            "Qimen Xu",
+            "Yu Zhang",
+            "Dixing Ni",
+            "Lei Gao",
+            "Guangnan Feng",
+            "Qinrui Zheng",
+            "Jianting Liu",
+            "Haitian Lu",
+            "Zhaopeng Jia",
+            "Wei Xue",
+            "Shriram Chandran",
+            "Torsten Hoefler",
+            "Haohuan Fu",
+            "Yutong Lu"
+          ],
+          "authors_status": "publisher_metadata_order_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/2026/478900a063/2lkuzfVBje8",
           "notes": [
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "This is a currently scheduled main-prize candidate, not a winner. The conference has not yet occurred as of 2026-11-12.",
-            "No exact matching SC26 publisher-deposited DOI registration was verified in this brief pass; unrelated search results were rejected. The last lookup was rate-limited and was not repeatedly retried."
-          ]
+            "DOI and complete ordered byline verified in exact IEEE Computer Society article metadata. The publisher records publication date 2026-11-12; doi.org returned HTTP 404 on that date. The identifier is publisher-assigned, with resolver activation not yet established. No award or final-score claim follows from this publication metadata."
+          ],
+          "doi_verification": {
+            "method": "exact_primary_publisher_article_metadata",
+            "publisher_article_id": "2lkuzfVBje8",
+            "publisher_venue": "SC26: International Conference for High Performance Computing, Networking, Storage and Analysis",
+            "publisher_year": 2026,
+            "publisher_publication_date": "2026-11-12",
+            "ordered_author_count": 14,
+            "title_match": "exact",
+            "identifier_status": "publisher_assigned",
+            "resolver_status": "not_found",
+            "resolver_http_status": 404,
+            "resolver_checked_on": "2026-11-12"
+          }
         }
       ],
       "notes": [
         "As of 2026-11-12 these are announced/scheduled main Gordon Bell candidates; SC26 has not yet been held. No 2026 winner, award outcome or final score is asserted.",
-        "The public main-prize session pages list four morning and two afternoon candidates scheduled for Tuesday, 17 November 2026. Six entries are recovered, but this brief pass does not establish an exhaustive annual candidate count; expected_count is null.",
         "Climate Modeling finalist sessions are excluded. The broad Paper event type is not sufficient for main-prize membership.",
         "Cached full-program fragments juxtaposed X-MoE-4D and Arachne with the afternoon award block; their individual official pages assign both to the regular Scaling Complex AI Training Workloads session, so they are excluded.",
-        "DOI fields remain null because no exact primary registration was verified. not_checked denotes incomplete DOI verification; it is not a claim that no DOI exists or will be registered.",
-        "This is a title-level annual index, with no PDF or performance/final-score audit."
+        "This is a title-level annual index, with no PDF or performance/final-score audit.",
+        "The currently scheduled main-prize roster was reconciled against all eight official day snippets on 2026-11-12. Climate/other prize series and regular paper sessions were kept separate. Program changes after this snapshot remain possible.",
+        "Six exact SC26 article records assign DOI identifiers and publication date 2026-11-12. These are verified as publisher-assigned bibliographic DOIs; doi.org returned HTTP404 for all six when checked that day, so the resolvers may not yet be active. The conference remains upcoming and this is not an award-outcome or performance-score claim."
       ],
-      "verified_doi_count": 0,
+      "verified_doi_count": 6,
       "source_method": "Primary online sources",
       "sc_links": {
         "year": 2026,
@@ -10278,6 +10601,24 @@
           "url": "https://dl.acm.org/doi/proceedings/10.5555/1105760",
           "label": "Proceedings entry linked by official SC conference history",
           "kind": "official_proceedings_entrypoint"
+        },
+        {
+          "id": "sc05_csdl_toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+proceeding%3A+proceeding%28proceedingId%3A+%24proceedingId%29+%7B+id+acronym+title+year+%7D+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+idPrefix+fno+pubDate+pubType+pages+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNyRxFmX%22%2C+%22limitResults%22%3A+200%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC2005 proceedings catalog: 75 records",
+          "kind": "publisher_proceedings_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_sc2005-publisher-toc.json",
+          "source_sha256": "ba8e833174c4e4932f56277f8af2212f696610b334b426a17e4312f3a7c12b3c"
+        },
+        {
+          "id": "sc05_csdl_alt_toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+proceeding%3A+proceeding%28proceedingId%3A+%24proceedingId%29+%7B+id+acronym+title+year+%7D+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+idPrefix+fno+pubDate+pubType+pages+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNzRZpZM%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society alternate SC2005 proceedings catalog: one record",
+          "kind": "publisher_proceedings_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_sc2005-superc-publisher-toc.json",
+          "source_sha256": "e11d1f9b1bb282375248f079c55b804bebc961d060892ab1d43f4a42c8b216ae"
         }
       ],
       "roster_completeness": {
@@ -10380,7 +10721,8 @@
           "publication_url": null,
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted."
+            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
+            "A follow-up exact-title Crossref query and both public IEEE Computer Society SC2005 catalog sets (75 records and one alternate record) did not yield this entry. This does not establish that no DOI was assigned; the candidate DOI remains unresolved."
           ]
         },
         {
@@ -10396,7 +10738,8 @@
           "publication_url": null,
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted."
+            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
+            "A follow-up exact-title Crossref query and both public IEEE Computer Society SC2005 catalog sets (75 records and one alternate record) did not yield this entry. This does not establish that no DOI was assigned; the candidate DOI remains unresolved."
           ]
         },
         {
@@ -10412,7 +10755,8 @@
           "publication_url": null,
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted."
+            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
+            "A follow-up exact-title Crossref query and both public IEEE Computer Society SC2005 catalog sets (75 records and one alternate record) did not yield this entry. This does not establish that no DOI was assigned; the candidate DOI remains unresolved."
           ]
         }
       ],
@@ -11150,13 +11494,29 @@
           "url": "https://api.crossref.org/works?query.title=Terascale+Spectral+Element+Dynamical+Core+for+Atmospheric+General+Circulation+Models&filter=from-pub-date%3A2001-01-01%2Cuntil-pub-date%3A2001-12-31%2Ctype%3Aproceedings-article&rows=3",
           "label": "Crossref successful publisher-deposited search item: 10.1145/582034.582052",
           "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "abel01-cv",
+          "url": "https://cap.stanford.edu/profiles/viewCV?facultyId=10119&name=Tom_Abel",
+          "label": "Tom Abel’s Stanford-hosted CV, publication item 17, PDF p. 5; retrospective author identification",
+          "kind": "author_cv_retrospective_finalist_identification",
+          "local_reference": "歴史一次資料/Tom_Abel_Stanford_CV_SC2001_finalist.pdf",
+          "source_sha256": "e3755a9bb2699ee9d1a610dc79ce2ce6bc4dad92839e6bf6897c316e5f3fb100",
+          "competition_year": 2001
+        },
+        {
+          "id": "sc01-primordial-stars-registry",
+          "url": "https://api.crossref.org/works?query.title=Achieving+extreme+resolution+in+numerical+cosmology+using+adaptive+mesh+refinement+resolving+primordial+star+formation&filter=from-pub-date%3A2001-01-01%2Cuntil-pub-date%3A2001-12-31%2Ctype%3Aproceedings-article&rows=3",
+          "label": "Crossref successful publisher-deposited search item: 10.1145/582034.582047",
+          "kind": "publisher_deposited_registry_search_record"
         }
       ],
       "roster_completeness": {
         "status": "partial_from_primary_source",
         "expected_count": null,
         "basis_source_ids": [
-          "nersc01"
+          "nersc01",
+          "abel01-cv"
         ]
       },
       "records": [
@@ -11207,14 +11567,35 @@
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline."
           ],
           "title_kind": "source_title"
+        },
+        {
+          "id": "SC01-primordial-stars",
+          "title": "Achieving Extreme Resolution in Numerical Cosmology Using Adaptive Mesh Refinement: Resolving Primordial Star Formation",
+          "title_kind": "source_title",
+          "title_source_id": "abel01-cv",
+          "doi": "10.1145/582034.582047",
+          "doi_status": "verified",
+          "doi_source_id": "sc01-primordial-stars-registry",
+          "publisher_title": "Achieving extreme resolution in numerical cosmology using adaptive mesh refinement",
+          "authors": [
+            "Greg L. Bryan",
+            "Tom Abel",
+            "Michael L. Norman"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/582034.582047",
+          "notes": [
+            "Author CV publication item 17 explicitly labels this Supercomputing 2001 paper a Gordon Bell prize finalist. This source is retrospective author testimony, not a contemporaneous selection announcement. The CV’s descriptive subtitle is kept separately from the shorter deposited publisher title.",
+            "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed."
+          ]
         }
       ],
       "notes": [
-        "The two NERSC-supported finalist entries explicitly named by the institution’s contemporary annual report. The report discusses its own supported teams, not the complete SC2001 finalist roster.",
+        "Three finalists are identified by primary institutional or author records; one identification is retrospective. The full annual list and total remain unresolved.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
         "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
       ],
-      "verified_doi_count": 2,
+      "verified_doi_count": 3,
       "source_method": "Primary online sources",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2001.pdf",
@@ -11241,13 +11622,39 @@
           "url": "https://api.crossref.org/works?query.title=Scalable+Molecular+Dynamics+for+Large+Biomolecular+Systems&filter=from-pub-date%3A2000-01-01%2Cuntil-pub-date%3A2000-12-31%2Ctype%3Aproceedings-article&rows=3",
           "label": "Crossref successful publisher-deposited search item: 10.1109/sc.2000.10038",
           "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "klat00-finalist",
+          "url": "https://aggregate.org/TechPub/als2000_small.pdf",
+          "label": "KLAT2’s Flat Neighborhood Network, author paper, PDF p. 10: conclusion and reference 4",
+          "kind": "contemporary_author_paper_finalist_identification",
+          "local_reference": "歴史一次資料/SC2000_KLAT2_Flat_Neighborhood_Network_author_paper.pdf",
+          "source_sha256": "6aed7d16524bd5ba4b922519b80eb38518f55c15b67521c100bbc955351c9621",
+          "competition_year": 2000
+        },
+        {
+          "id": "sc00-low-cost-cfd-registry",
+          "url": "https://api.crossref.org/works?query.title=High-Cost+CFD+on+a+Low-Cost+Cluster&filter=from-pub-date%3A2000-01-01%2Cuntil-pub-date%3A2000-12-31%2Ctype%3Aproceedings-article&rows=3",
+          "label": "Crossref successful publisher-deposited search item: 10.1109/sc.2000.10020",
+          "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "csdl00-toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNyPQ4Et%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC2000 proceedings TOC metadata",
+          "kind": "publisher_proceedings_toc_api",
+          "local_reference": "歴史一次資料/CSDL_SC2000_proceedings_metadata.json",
+          "source_sha256": "c9a976ec62df3b8311f026fdb2c365115826a6eba2dc4e6364a9d03e1755474a",
+          "competition_year": 2000
         }
       ],
       "roster_completeness": {
-        "status": "partial_from_primary_source",
-        "expected_count": null,
+        "status": "complete_from_publisher_proceedings_section",
+        "expected_count": 6,
         "basis_source_ids": [
-          "nih00"
+          "csdl00-toc",
+          "nih00",
+          "klat00-finalist"
         ]
       },
       "records": [
@@ -11267,19 +11674,139 @@
           "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
           "publication_url": "http://ieeexplore.ieee.org/document/1592758/",
           "notes": [
-            "Historical competition membership is supported by nih00; this record does not establish a complete annual roster. No full-text or performance audit was performed.",
+            "Historical competition membership is supported by nih00; the annual membership set is complete against the publisher Gordon Bell sections. No full-text or performance audit was performed.",
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline.",
-            "The institutional report explicitly labels this proceedings paper Finalist for Gordon Bell Award and separately lists its SC2000 talk. It supplies membership independently of any winner list."
+            "The institutional report explicitly labels this proceedings paper Finalist for Gordon Bell Award and separately lists its SC2000 talk. It supplies membership independently of any winner list.",
+            "The publisher TOC independently lists this paper in its GORDON BELL I/II sections, with the same DOI. Existing registry author forms are preserved."
           ],
           "title_kind": "source_title"
+        },
+        {
+          "id": "SC00-low-cost-cfd",
+          "title": "High-Cost CFD on a Low-Cost Cluster",
+          "title_kind": "source_title",
+          "title_source_id": "klat00-finalist",
+          "doi": "10.1109/sc.2000.10020",
+          "doi_status": "verified",
+          "doi_source_id": "sc00-low-cost-cfd-registry",
+          "publisher_title": "High-Cost CFD on a Low-Cost Cluster",
+          "authors": [
+            "T. Hauser",
+            "T.I. Mattox",
+            "R.P. LeBeau",
+            "H.G. Dietz",
+            "P.G. Huang"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
+          "publication_url": "http://ieeexplore.ieee.org/document/1592768/",
+          "notes": [
+            "PDF p. 10 explicitly identifies DNSTool as a Gordon Bell price/performance finalist; reference 4 gives this SC2000 title and authors. This is primary membership evidence independent of award results.",
+            "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed.",
+            "The publisher TOC independently lists this paper in its GORDON BELL I/II sections, with the same DOI. Existing registry author forms are preserved."
+          ]
+        },
+        {
+          "id": "SC00-grape6",
+          "title": "A 1.349 Tflops simulation of black holes in a galactic center on GRAPE-6",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl00-toc",
+          "doi": "10.1109/SC.2000.10042",
+          "doi_status": "verified",
+          "doi_source_id": "csdl00-toc",
+          "publisher_title": "A 1.349 Tflops simulation of black holes in a galactic center on GRAPE-6",
+          "authors": [
+            "Junichiro Makino",
+            "Toshiyuki Fukushige",
+            "Masaki Koga"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly lists this paper in GORDON BELL I. DOI and ordered names come directly from publisher metadata; no paper-byline, performance or award-result audit is claimed."
+          ]
+        },
+        {
+          "id": "SC00-neural-network",
+          "title": "92¢ /MFlops/s, Ultra-Large-Scale Neural-Network Training on a PIII Cluster",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl00-toc",
+          "doi": "10.1109/SC.2000.10031",
+          "doi_status": "verified",
+          "doi_source_id": "csdl00-toc",
+          "publisher_title": "92¢ /MFlops/s, Ultra-Large-Scale Neural-Network Training on a PIII Cluster",
+          "authors": [
+            "Douglas Aberdeen",
+            "Jonathan Baxter",
+            "Robert Edwards"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly lists this paper in GORDON BELL I. DOI and ordered names come directly from publisher metadata; no paper-byline, performance or award-result audit is claimed."
+          ]
+        },
+        {
+          "id": "SC00-mdm",
+          "title": "1.34 Tflops Molecular Dynamics Simulation for NaCl with a Special-Purpose Computer: MDM",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl00-toc",
+          "doi": "10.1109/SC.2000.10016",
+          "doi_status": "verified",
+          "doi_source_id": "csdl00-toc",
+          "publisher_title": "1.34 Tflops Molecular Dynamics Simulation for NaCl with a Special-Purpose Computer: MDM",
+          "authors": [
+            "Tetsu Narumi",
+            "Ryutaro Susukita",
+            "Takahiro Koishi",
+            "Kenji Yasuoka",
+            "Hideaki Furusawa",
+            "Atsushi Kawai",
+            "Toshikazu Ebisuzaki"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly lists this paper in GORDON BELL II. DOI and ordered names come directly from publisher metadata; no paper-byline, performance or award-result audit is claimed."
+          ]
+        },
+        {
+          "id": "SC00-reactive-amr",
+          "title": "High-Performance Reactive Fluid Flow Simulations Using Adaptive Mesh Refinement on Thousands of Processors",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl00-toc",
+          "doi": "10.1109/SC.2000.10010",
+          "doi_status": "verified",
+          "doi_source_id": "csdl00-toc",
+          "publisher_title": "High-Performance Reactive Fluid Flow Simulations Using Adaptive Mesh Refinement on Thousands of Processors",
+          "authors": [
+            "A. C. Calder",
+            "B. C. Curts",
+            "L. J. Dursi",
+            "B. Fryxell",
+            "G. Henry",
+            "P. MacNece",
+            "K. Olson",
+            "P. Ricker",
+            "R. Rosner",
+            "F. X. Timmes",
+            "H. M. Tufo",
+            "J. W. Truran",
+            "M. Zingale"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly lists this paper in GORDON BELL II. DOI and ordered names come directly from publisher metadata; no paper-byline, performance or award-result audit is claimed.",
+            "Publisher metadata spells two names B. C. Curts and P. MacNece; these deposited forms are preserved pending original-byline verification."
+          ]
         }
       ],
       "notes": [
-        "One SC2000 paper explicitly marked Gordon Bell finalist in its project’s contemporary institutional annual report; complete annual membership and total remain unknown.",
+        "All six papers in the publisher’s GORDON BELL I and GORDON BELL II sections are represented; completeness is against those publisher sections, independent of award results.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
         "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
       ],
-      "verified_doi_count": 1,
+      "verified_doi_count": 6,
       "source_method": "Primary online sources",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2000.pdf",
@@ -11287,6 +11814,155 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/370049",
         "website_url": null,
         "year": 2000
+      },
+      "detailed_paper_count": 0
+    },
+    {
+      "year": 1999,
+      "award_series": "ACM Gordon Bell Prize",
+      "checked_on": "2026-11-12",
+      "sources": [
+        {
+          "id": "nasa99-fun3d",
+          "url": "https://fun3d.larc.nasa.gov/papers/99GB.pdf",
+          "label": "SC99 Gordon Bell Prize Finalist Presentation, FUN3D, title slide (PDF p. 1)",
+          "kind": "contemporary_finalist_presentation",
+          "local_reference": "歴史一次資料/SC99_Gordon_Bell_Finalist_FUN3D_presentation.pdf",
+          "source_sha256": "306b3de850d2522d2c4cb367cb495b9deee03b4f3e6ae7c4ba21143c73a7ce9a",
+          "competition_year": 1999
+        },
+        {
+          "id": "sc99-fun3d-registry",
+          "url": "https://api.crossref.org/works?query.title=Achieving+high+sustained+performance+in+an+unstructured+mesh+CFD+application&filter=from-pub-date%3A1999-01-01%2Cuntil-pub-date%3A1999-12-31%2Ctype%3Aproceedings-article&rows=3",
+          "label": "Crossref successful publisher-deposited search item: 10.1145/331532.331600",
+          "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "csdl99-finalists",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNyKJiwF%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC1999 proceedings TOC, section Fernbach Award and Gordon Bell Finalists",
+          "kind": "publisher_proceedings_toc_api",
+          "local_reference": "歴史一次資料/CSDL_SC1999_proceedings_metadata.json",
+          "source_sha256": "6fb42942df7884e740d350bbd8a4094093e6940168c7b56152fc4cabcc475ba0",
+          "competition_year": 1999
+        }
+      ],
+      "roster_completeness": {
+        "status": "complete_from_publisher_proceedings_section",
+        "expected_count": 4,
+        "basis_source_ids": [
+          "csdl99-finalists",
+          "nasa99-fun3d"
+        ]
+      },
+      "records": [
+        {
+          "id": "SC99-fun3d",
+          "title": "Achieving High Sustained Performance in an Unstructured Mesh CFD Application",
+          "title_kind": "source_title",
+          "title_source_id": "nasa99-fun3d",
+          "doi": "10.1145/331532.331600",
+          "doi_status": "verified",
+          "doi_source_id": "sc99-fun3d-registry",
+          "publisher_title": "Achieving high sustained performance in an unstructured mesh CFD application",
+          "authors": [
+            "W. K. Anderson",
+            "W. D. Gropp",
+            "D. K. Kaushik",
+            "D. E. Keyes",
+            "B. F. Smith"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/331532.331600",
+          "notes": [
+            "The title slide explicitly says Gordon Bell Prize Finalist Presentation and SC’99. Ordered displayed names are Kyle Anderson, William Gropp, Dinesh Kaushik, David Keyes and Barry Smith; registry author initials below are preserved separately.",
+            "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed.",
+            "The IEEE publisher TOC independently lists this paper in its Fernbach Award and Gordon Bell Finalists section, with alternate IEEE DOI 10.1109/SC.1999.10037. The already verified ACM DOI is retained; this is one finalist, not two."
+          ]
+        },
+        {
+          "id": "SC99-grape5",
+          "title": "$7.0/Mflops Astrophysical N-Body Simulation with Treecode on GRAPE-5",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl99-finalists",
+          "doi": "10.1109/SC.1999.10031",
+          "doi_status": "verified",
+          "doi_source_id": "csdl99-finalists",
+          "publisher_title": "$7.0/Mflops Astrophysical N-Body Simulation with Treecode on GRAPE-5",
+          "authors": [
+            "Atsushi Kawai",
+            "Toshiyuki Fukushige",
+            "Junichiro Makino"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly places this paper in the Fernbach Award and Gordon Bell Finalists section. DOI and author order are directly returned by that publisher metadata source; no PDF-byline or performance audit is claimed."
+          ]
+        },
+        {
+          "id": "SC99-spectral-element",
+          "title": "Terascale Spectral Element Algorithms and Implementations",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl99-finalists",
+          "doi": "10.1109/SC.1999.10035",
+          "doi_status": "verified",
+          "doi_source_id": "csdl99-finalists",
+          "publisher_title": "Terascale Spectral Element Algorithms and Implementations",
+          "authors": [
+            "H. M. Tufo",
+            "P. F. Fischer"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly places this paper in the Fernbach Award and Gordon Bell Finalists section. DOI and author order are directly returned by that publisher metadata source; no PDF-byline or performance audit is claimed."
+          ]
+        },
+        {
+          "id": "SC99-compressible-turbulence",
+          "title": "Very High Resolution Simulation of Compressible Turbulence on the IBM-SP System",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl99-finalists",
+          "doi": "10.1109/SC.1999.10039",
+          "doi_status": "verified",
+          "doi_source_id": "csdl99-finalists",
+          "publisher_title": "Very High Resolution Simulation of Compressible Turbulence on the IBM-SP System",
+          "authors": [
+            "A. A. Mirin",
+            "R. H. Cohen",
+            "B. C. Curtis",
+            "W. P. Dannevik",
+            "A. M. Dimits",
+            "M. A. Duchauneau",
+            "D. E. Eliason",
+            "D. R. Schikore",
+            "S. E. Anderson",
+            "D. H. Porter",
+            "P. R. Woodward",
+            "L. J. Shieh",
+            "S. W. White"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The publisher TOC explicitly places this paper in the Fernbach Award and Gordon Bell Finalists section. DOI and author order are directly returned by that publisher metadata source; no PDF-byline or performance audit is claimed."
+          ]
+        }
+      ],
+      "notes": [
+        "All four research-paper entries in the publisher’s Fernbach Award and Gordon Bell Finalists section are represented. The Author Index entry carrying the same section label is excluded as noncandidate back matter. This completeness claim is against that publisher section; it is not inferred from an award-winner list.",
+        "FUN3D has separate contemporaneous finalist-presentation evidence. Other titles, author order and DOIs are publisher metadata, not full-paper audits.",
+        "No performance, award-result or final-conference-score audit is claimed."
+      ],
+      "verified_doi_count": 4,
+      "source_method": "Primary online sources",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1999.pdf",
+        "label": "SC99",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/331532",
+        "website_url": null,
+        "year": 1999
       },
       "detailed_paper_count": 0
     },
@@ -11312,6 +11988,16 @@
           "url": "https://www.researchgate.net/publication/234803976_High_performance_first_principles_method_for_complex_magnetic_properties",
           "label": "Author-associated SC98 paper metadata: High performance first principles method for complex magnetic properties",
           "kind": "author_publication_metadata"
+        },
+        {
+          "id": "bnl98-qcdsp",
+          "url": "https://www.bnl.gov/bnlweb/pubaf/bulletin/files/1998/19981023.pdf",
+          "label": "Brookhaven Bulletin, October 23, 1998, PDF p. 2: RIKEN BNL Computer finalist announcement",
+          "kind": "contemporary_institutional_finalist_announcement",
+          "local_reference": "歴史一次資料/BNL_Bulletin_1998-10-23_QCDSP_finalist.pdf",
+          "source_sha256": "88932be0d7d175f4009a360465a1d89ffbca42f48a09b5a09a151ee9b8074879",
+          "competition_year": 1998,
+          "publication_date": "1998-10-23"
         }
       ],
       "roster_completeness": {
@@ -11320,7 +12006,8 @@
         "basis_source_ids": [
           "nersc98",
           "lbl98",
-          "paper98"
+          "paper98",
+          "bnl98-qcdsp"
         ]
       },
       "records": [
@@ -11341,10 +12028,26 @@
             "The attempted 1998-filtered Crossref title queries did not return a convincing SC98 registration. DOI remains null, rather than selecting a similarly worded magnetism conference paper."
           ],
           "title_kind": "source_title"
+        },
+        {
+          "id": "SC98-qcdsp",
+          "title": "Lattice quantum chromodynamics on the RIKEN-BNL QCD supercomputer",
+          "title_kind": "editorial_description",
+          "title_source_id": "bnl98-qcdsp",
+          "doi": null,
+          "doi_status": "not_checked",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [],
+          "authors_status": "not_checked",
+          "publication_url": null,
+          "notes": [
+            "Editorial description: the BNL bulletin PDF pp. 1–2 identifies the QCD machine and explicitly calls it a price/performance finalist at upcoming SC98. Formal entrant-paper title, DOI and full ordered byline remain unresolved."
+          ]
         }
       ],
       "notes": [
-        "One team explicitly documented as a finalist by NERSC/LBNL. NERSC reports four finalists; the other three have not been recovered from a primary list in this pass.",
+        "Two finalist teams are supported by contemporary institutional sources. The NERSC report gives four finalists; the remaining two are unresolved from primary membership evidence.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
         "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
       ],
@@ -11401,6 +12104,42 @@
           "url": "https://dl.acm.org/doi/proceedings/10.1145/509593",
           "label": "Proceedings entry linked by official SC conference history",
           "kind": "official_proceedings_entrypoint"
+        },
+        {
+          "id": "sc97_csdl_attaway",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+adjacentArticles%3A+adjacentArticles%28articleId%3A+%24articleId%29+%7B+previous+%7B+fno+articleId+%7D+next+%7B+fno+articleId+%7D+%7D+%7D&variables=%7B%22articleId%22%3A+%2212OmNBiygw4%22%7D",
+          "label": "IEEE Computer Society publisher metadata: Transient Solid Dynamics Simulations on the Sandia/Intel Teraflop Computer",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC1997_attaway_metadata.json",
+          "source_sha256": "61463389382bb79f2faa5585b294e7137868e03e0472d540cb412baebddf416e"
+        },
+        {
+          "id": "sc97_csdl_devine",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+adjacentArticles%3A+adjacentArticles%28articleId%3A+%24articleId%29+%7B+previous+%7B+fno+articleId+%7D+next+%7B+fno+articleId+%7D+%7D+%7D&variables=%7B%22articleId%22%3A+%2212OmNAXPy5p%22%7D",
+          "label": "IEEE Computer Society publisher metadata: High Performance MP Unstructured Finite Element Simulation of Chemically Reacting Flows",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC1997_devine_metadata.json",
+          "source_sha256": "1fbccfda72dae55db3eba6cf23f38c4060d19a545efb58753123095f5a437e90"
+        },
+        {
+          "id": "sc97_csdl_phan",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+adjacentArticles%3A+adjacentArticles%28articleId%3A+%24articleId%29+%7B+previous+%7B+fno+articleId+%7D+next+%7B+fno+articleId+%7D+%7D+%7D&variables=%7B%22articleId%22%3A+%2212OmNwwuDPZ%22%7D",
+          "label": "IEEE Computer Society publisher metadata: Large Scale Simulation of Suspensions with PVM",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC1997_phan_metadata.json",
+          "source_sha256": "3bbb008e6803650522a795ac2f71e788a5d1457468fe986b2238d0bba8f2cfed"
+        },
+        {
+          "id": "sc97_csdl_warren",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24articleId%3A+String%21%29+%7B+proceeding%3A+proceedingByArticleId%28articleId%3A+%24articleId%29+%7B+id+title+acronym+year+%7D+article%3A+articleById%28articleId%3A+%24articleId%29+%7B+id+doi+title+normalizedTitle+fno+authors+%7B+fullName+givenName+surname+%7D+idPrefix+pubDate+pubType+pages+year+%7D+adjacentArticles%3A+adjacentArticles%28articleId%3A+%24articleId%29+%7B+previous+%7B+fno+articleId+%7D+next+%7B+fno+articleId+%7D+%7D+%7D&variables=%7B%22articleId%22%3A+%2212OmNvDqsLb%22%7D",
+          "label": "IEEE Computer Society publisher metadata: Pentium Pro Inside: I. A Treecode at 430 Gigaflops on ASCI Red, II. Price/Performance of $50/Mflop on Loki and Hyglac",
+          "kind": "publisher_bibliographic_metadata_api",
+          "checked_on": "2026-11-12",
+          "local_reference": "歴史一次資料/CSDL_SC1997_warren_metadata.json",
+          "source_sha256": "828726b7887c76f6acfc8e64a4b8c73055a90865cbbde8bfaa7cc54fdd3c522f"
         }
       ],
       "roster_completeness": {
@@ -11420,10 +12159,10 @@
           "id": "sc1997-ATTAWAY",
           "title": "Transient Solid Dynamics Simulations on the Sandia/Intel Teraflop Computer",
           "title_source_id": "sc97-preserved-ATTAWAY",
-          "doi": null,
-          "doi_status": "unresolved",
-          "doi_source_id": null,
-          "publisher_title": null,
+          "doi": "10.1109/SC.1997.10054",
+          "doi_status": "verified",
+          "doi_source_id": "sc97_csdl_attaway",
+          "publisher_title": "Transient Solid Dynamics Simulations on the Sandia/Intel Teraflop Computer",
           "authors": [
             "Stephen A. Attaway",
             "Edward J. Barragy",
@@ -11433,22 +12172,22 @@
             "Steven J. Plimpton",
             "Courtenay T. Vaughan"
           ],
-          "authors_status": "preserved_html_byline_checked",
-          "publication_url": null,
+          "authors_status": "preserved_html_and_publisher_byline_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/1997/19820058/12OmNBiygw4",
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
-            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved."
+            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved.",
+            "DOI verified from the IEEE Computer Society article API, which returns this exact title, SC Conference (1997), and the same complete ordered byline as the preserved HTML. Crossref title search did not recover this legacy record. Award-label ambiguity is unchanged."
           ]
         },
         {
           "id": "sc1997-DEVINE",
           "title": "High Performance MP Unstructured Finite Element Simulation of Chemically Reacting Flows",
           "title_source_id": "sc97-preserved-DEVINE",
-          "doi": null,
-          "doi_status": "unresolved",
-          "doi_source_id": null,
-          "publisher_title": null,
+          "doi": "10.1109/SC.1997.10051",
+          "doi_status": "verified",
+          "doi_source_id": "sc97_csdl_devine",
+          "publisher_title": "High Performance MP Unstructured Finite Element Simulation of Chemically Reacting Flows",
           "authors": [
             "Karen D. Devine",
             "Gary L. Hennigan",
@@ -11457,43 +12196,43 @@
             "John N. Shadid",
             "Ray S. Tuminaro"
           ],
-          "authors_status": "preserved_html_byline_checked",
-          "publication_url": null,
+          "authors_status": "preserved_html_and_publisher_byline_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/1997/19820059/12OmNAXPy5p",
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
-            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved."
+            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved.",
+            "DOI verified from the IEEE Computer Society article API, which returns this exact title, SC Conference (1997), and the same complete ordered byline as the preserved HTML. Crossref title search did not recover this legacy record. Award-label ambiguity is unchanged."
           ]
         },
         {
           "id": "sc1997-PHANTHIE",
           "title": "Large Scale Simulation of Suspensions with PVM",
           "title_source_id": "sc97-preserved-PHANTHIE",
-          "doi": null,
-          "doi_status": "unresolved",
-          "doi_source_id": null,
-          "publisher_title": null,
+          "doi": "10.1109/SC.1997.10050",
+          "doi_status": "verified",
+          "doi_source_id": "sc97_csdl_phan",
+          "publisher_title": "Large Scale Simulation of Suspensions with PVM",
           "authors": [
             "Nhan Phan-Thien",
             "Ka Yan Lee",
             "David Tullock"
           ],
-          "authors_status": "preserved_html_byline_checked",
-          "publication_url": null,
+          "authors_status": "preserved_html_and_publisher_byline_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/1997/19820060/12OmNwwuDPZ",
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
-            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved."
+            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved.",
+            "DOI verified from the IEEE Computer Society article API, which returns this exact title, SC Conference (1997), and the same complete ordered byline as the preserved HTML. Crossref title search did not recover this legacy record. Award-label ambiguity is unchanged."
           ]
         },
         {
           "id": "sc1997-WARREN",
           "title": "Pentium Pro Inside: I. A Treecode at 430 Gigaflops on ASCI Red, II. Price/Performance of $50/Mflop on Loki and Hyglac",
           "title_source_id": "sc97-preserved-WARREN",
-          "doi": null,
-          "doi_status": "unresolved",
-          "doi_source_id": null,
-          "publisher_title": null,
+          "doi": "10.1109/SC.1997.10057",
+          "doi_status": "verified",
+          "doi_source_id": "sc97_csdl_warren",
+          "publisher_title": "Pentium Pro Inside: I. A Treecode at 430 Gigaflops on ASCI Red, II. Price/Performance of $50/Mflop on Loki and Hyglac",
           "authors": [
             "Michael S. Warren",
             "John K. Salmon",
@@ -11502,19 +12241,19 @@
             "Thomas Sterling",
             "Grégoire S. Winckelmans"
           ],
-          "authors_status": "preserved_html_byline_checked",
-          "publication_url": null,
+          "authors_status": "preserved_html_and_publisher_byline_checked",
+          "publication_url": "https://www.computer.org/csdl/proceedings-article/sc/1997/19820061/12OmNvDqsLb",
           "notes": [
             "Candidate membership and selection title come from the preserved official conference index; the original source is retained offline and has not been re-fetched from a live website. Bibliography only; no new manuscript-performance or award-outcome audit.",
-            "No conference DOI match was established in the registration lookup. Similar titles from another year, journal articles and technical-report DOIs were not substituted.",
-            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved."
+            "Authors follow the previously checked preserved HTML byline. The session index labels winners while the daily program labels finalists; award outcomes remain unresolved.",
+            "DOI verified from the IEEE Computer Society article API, which returns this exact title, SC Conference (1997), and the same complete ordered byline as the preserved HTML. Crossref title search did not recover this legacy record. Award-label ambiguity is unchanged."
           ]
         }
       ],
       "notes": [
         "Four preserved Gordon Bell session entries; conflicting finalist/winner labels remain unresolved. This is not an independently reconciled award-outcome list."
       ],
-      "verified_doi_count": 0,
+      "verified_doi_count": 4,
       "source_method": "Preserved conference index",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1997.pdf",
@@ -11534,13 +12273,33 @@
           "id": "judges96",
           "url": "https://www.davidhbailey.com/dhbpapers/gbprize-96.pdf",
           "label": "1996 judges’ summary by Karp, Geist and Bailey, Computer January 1997, author-hosted report",
-          "kind": "contemporary_judges_report_author_copy"
+          "kind": "contemporary_judges_report_author_copy",
+          "local_reference": "歴史一次資料/gbprize-competition1996-published1997.pdf",
+          "source_sha256": "54df60a76d4e27fd985f99ee342d14b7cabfdff901e3d8145c17d684013ffdd9",
+          "competition_year": 1996,
+          "publication_year": 1997,
+          "publication_date": "1997-01"
         },
         {
           "id": "sc96-registry-grape4-galaxy",
           "url": "https://api.crossref.org/works?query.title=High+performance+N-body+simulations+on+the+GRAPE-4+special-purpose+computer&filter=from-pub-date%3A1996-01-01%2Cuntil-pub-date%3A1996-12-31%2Ctype%3Aproceedings-article&rows=3",
           "label": "Crossref successful publisher-deposited search item: 10.1145/369028.369130",
           "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "sc96-electronic-structure-registry",
+          "url": "https://api.crossref.org/works?query.title=Electronic+structure+of+materials+using+self-interaction+corrected+density+functional+theory&filter=from-pub-date%3A1996-01-01%2Cuntil-pub-date%3A1996-12-31%2Ctype%3Aproceedings-article&rows=3",
+          "label": "Crossref successful publisher-deposited search item: 10.1145/369028.369132",
+          "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "csdl96-toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNvEyR7V%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC1996 proceedings TOC metadata",
+          "kind": "publisher_proceedings_toc_api",
+          "local_reference": "歴史一次資料/CSDL_SC1996_proceedings_metadata.json",
+          "source_sha256": "4573d6395eed3e2b897ed2aa96768be28f965755313919f9c7580452f8a5caec",
+          "competition_year": 1996
         }
       ],
       "roster_completeness": {
@@ -11572,14 +12331,53 @@
             "The report states that one finalist using a special-purpose machine received recognition and identifies the GRAPE-4 galaxy-formation entry by Fukushige and Makino. The recovered record is a partial membership result, not a full roster inferred from prize winners."
           ],
           "title_kind": "publisher_title"
+        },
+        {
+          "id": "SC96-electronic-structure",
+          "title": "Electronic structure of materials using self-interaction corrected density functional theory",
+          "title_kind": "publisher_title",
+          "title_source_id": "sc96-electronic-structure-registry",
+          "doi": "10.1145/369028.369132",
+          "doi_status": "verified",
+          "doi_source_id": "sc96-electronic-structure-registry",
+          "publisher_title": "Electronic structure of materials using self-interaction corrected density functional theory",
+          "authors": [
+            "Adolfy Hoisie",
+            "Stefan Goedecker",
+            "Jurg Hutter"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/369028.369132",
+          "notes": [
+            "The judges’ report PDF p. 1 identifies the Hoisie–Goedecker–Hutter electronic-structure entry. Its title is recovered separately from publisher metadata.",
+            "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed."
+          ]
+        },
+        {
+          "id": "SC96-nwt-cascade",
+          "title": "Three-dimensional jet-engine cascade-flow simulation on the Numerical Wind Tunnel",
+          "title_kind": "editorial_description",
+          "title_source_id": "judges96",
+          "doi": null,
+          "doi_status": "not_checked",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [],
+          "authors_status": "not_checked",
+          "publication_url": null,
+          "notes": [
+            "Editorial description of the Iwamiya–Yoshida–Matsuo–Fukuda–Nakamura competition entry identified on report PDF p. 1. Formal paper title and complete ordered byline remain unverified. A registry title query was rate-limited; no DOI is inferred."
+          ]
         }
       ],
       "notes": [
-        "One finalist explicitly connected by the contemporary judges’ report to its special-purpose-machine discussion. Other entrants in that report are not automatically classified as finalists.",
+        "Three entries identified in the 1996 committee report are represented. The report’s separate OTHER ENTRANTS section is not treated as a finalist list; total finalist membership remains unresolved.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
-        "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
+        "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero.",
+        "The source title is 1996 Gordon Bell Prize Winners and explicitly dates the announcement to Supercomputing 96; January 1997 is the report publication date, not the competition year.",
+        "The retrieved publisher proceedings TOC has no explicitly labelled Gordon Bell section and does not identify the NWT cascade-flow entry; it is not used to establish a total."
       ],
-      "verified_doi_count": 1,
+      "verified_doi_count": 2,
       "source_method": "Primary online sources",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1996.pdf",
@@ -11599,7 +12397,10 @@
           "id": "judges95",
           "url": "https://www.researchgate.net/publication/2954512_Judges'_Summary_1995_Gordon_Bell_Prize_Winners_Special_Report",
           "label": "Contemporary 1995 judges’ summary by Karp, Heath and Geist, Computer 29(1), 1996, author-uploaded public text",
-          "kind": "contemporary_judges_report_author_upload"
+          "kind": "contemporary_judges_report_author_upload",
+          "competition_year": 1995,
+          "publication_year": 1996,
+          "publication_date": "1996-01"
         },
         {
           "id": "sc95-registry-wind-instruments",
@@ -11612,20 +12413,36 @@
           "url": "https://api.crossref.org/works?query.title=Quantum+Chromodynamics+Simulation+on+NWT&filter=from-pub-date%3A1995-01-01%2Cuntil-pub-date%3A1995-12-31%2Ctype%3Aproceedings-article&rows=3",
           "label": "Crossref successful publisher-deposited search item: 10.1145/224170.224403",
           "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "sc95-grape4-registry",
+          "url": "https://api.crossref.org/works?query.title=Astrophysical+N-body+simulations+on+the+GRAPE-4+special-purpose+computer&filter=from-pub-date%3A1995-01-01%2Cuntil-pub-date%3A1995-12-31%2Ctype%3Aproceedings-article&rows=3",
+          "label": "Crossref successful publisher-deposited search item: 10.1145/224170.224400",
+          "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "csdl95-toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNyFCvPg%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC1995 proceedings TOC metadata",
+          "kind": "publisher_proceedings_toc_api",
+          "local_reference": "歴史一次資料/CSDL_SC1995_proceedings_metadata.json",
+          "source_sha256": "822494511c47abbcdb8c936bfdf3285411b161597b2e866e44963152bccc2df2",
+          "competition_year": 1995
         }
       ],
       "roster_completeness": {
-        "status": "partial_from_primary_source",
-        "expected_count": null,
+        "status": "complete_from_publisher_proceedings_section",
+        "expected_count": 3,
         "basis_source_ids": [
+          "csdl95-toc",
           "judges95"
         ]
       },
       "records": [
         {
           "id": "SC95-wind-instruments",
-          "title": "Economical high performance parallel simulations of wind instruments",
-          "title_source_id": "sc95-registry-wind-instruments",
+          "title": "Price and Performance of Simulating Wind Instruments",
+          "title_source_id": "csdl95-toc",
           "doi": "10.1145/224170.224402",
           "doi_status": "verified",
           "doi_source_id": "sc95-registry-wind-instruments",
@@ -11636,17 +12453,18 @@
           "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
           "publication_url": "http://portal.acm.org/citation.cfm?doid=224170.224402",
           "notes": [
-            "Historical competition membership is supported by judges95; this record does not establish a complete annual roster. No full-text or performance audit was performed.",
-            "Exact original selection/program title was not recovered. The displayed title is the publisher-deposited paper title; title provenance therefore points to the registry response, separately from membership evidence.",
+            "Historical competition membership is supported by judges95; the annual membership set is complete against the publisher finalist section. No full-text or performance audit was performed.",
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline.",
-            "The committee report identifies Panayotis Skordos’s wind-instrument entry. The indexed program alias Price and Performance of Simulating Wind Instruments was a discovery lead only; the registered paper title is retained here."
+            "The committee report identifies Panayotis Skordos’s wind-instrument entry. The publisher TOC selection title is now directly verified; the different ACM deposited title is retained in publisher_title.",
+            "The publisher’s Gordon Bell Prize Finalists section independently confirms this entry; its IEEE registration is 10.1109/SUPERC.1995.62. The existing verified ACM DOI is retained for the same entry.",
+            "The publisher TOC selection title is Price and Performance of Simulating Wind Instruments; the separately deposited ACM paper title remains in publisher_title."
           ],
-          "title_kind": "publisher_title"
+          "title_kind": "source_title"
         },
         {
           "id": "SC95-qcd-nwt",
-          "title": "Quantum chromodynamics simulation on NWT",
-          "title_source_id": "sc95-registry-qcd-nwt",
+          "title": "Quantum Chromodynamics Simulation on NWT",
+          "title_source_id": "csdl95-toc",
           "doi": "10.1145/224170.224403",
           "doi_status": "verified",
           "doi_source_id": "sc95-registry-qcd-nwt",
@@ -11661,21 +12479,43 @@
           "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
           "publication_url": "http://portal.acm.org/citation.cfm?doid=224170.224403",
           "notes": [
-            "Historical competition membership is supported by judges95; this record does not establish a complete annual roster. No full-text or performance audit was performed.",
-            "Exact original selection/program title was not recovered. The displayed title is the publisher-deposited paper title; title provenance therefore points to the registry response, separately from membership evidence.",
+            "Historical competition membership is supported by judges95; the annual membership set is complete against the publisher finalist section. No full-text or performance audit was performed.",
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline.",
-            "The committee report identifies the Yoshida/Nakamura/Fukuda/Hioki NWT quantum-chromodynamics entry. Additional finalists may be missing; no completeness is inferred from the award results.",
-            "The registry spells one author M. Fukada; the committee/institutional descriptions use Fukuda. Registry spelling is preserved here and the original paper byline has not been audited."
+            "The committee report identifies the Yoshida/Nakamura/Fukuda/Hioki NWT quantum-chromodynamics entry. Completeness is established separately by the publisher finalist section, rather than inferred from award results.",
+            "The registry spells one author M. Fukada; the committee/institutional descriptions use Fukuda. Registry spelling is preserved here and the original paper byline has not been audited.",
+            "The publisher’s Gordon Bell Prize Finalists section independently confirms this entry; its IEEE registration is 10.1109/SUPERC.1995.64. The existing verified ACM DOI is retained for the same entry.",
+            "The IEEE publisher TOC spells the third author M. Fukuda; the existing ACM registry spelling M. Fukada remains recorded as originally deposited, pending paper-byline verification."
           ],
-          "title_kind": "publisher_title"
+          "title_kind": "source_title"
+        },
+        {
+          "id": "SC95-grape4",
+          "title": "Astrophysical N-Body Simulations on the GRAPE-4 Special-Purpose Computer",
+          "title_kind": "source_title",
+          "title_source_id": "csdl95-toc",
+          "doi": "10.1145/224170.224400",
+          "doi_status": "verified",
+          "doi_source_id": "sc95-grape4-registry",
+          "publisher_title": "Astrophysical N-body simulations on GRAPE-4 special-purpose computer",
+          "authors": [
+            "Junichiro Makino",
+            "Makoto Taiji"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
+          "publication_url": "http://portal.acm.org/citation.cfm?doid=224170.224400",
+          "notes": [
+            "The committee report explicitly discusses the Makino–Taiji special-purpose-machine entry. Other submissions are not promoted to finalists; the publisher section independently supplies the three-member finalist set.",
+            "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed.",
+            "The publisher’s Gordon Bell Prize Finalists section independently confirms this entry; its IEEE registration is 10.1109/SUPERC.1995.15. The existing verified ACM DOI is retained for the same entry."
+          ]
         }
       ],
       "notes": [
-        "Two named competition entries identified in the contemporary committee report. The complete finalist list and its total are not established here; the report’s awardee list is not treated as the full roster.",
+        "All three items in the publisher’s explicitly labelled Gordon Bell Prize Finalists section are represented. The judges’ report separately discusses other submissions; their inclusion is not inferred.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
         "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
       ],
-      "verified_doi_count": 2,
+      "verified_doi_count": 3,
       "source_method": "Primary online sources",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1995.pdf",
@@ -11694,8 +12534,11 @@
         {
           "id": "judges94",
           "url": "https://www.researchgate.net/publication/2954374_1994_Gordon_Bell_Prize_Winners",
-          "label": "Contemporary 1994 judges’ summary, Computer 28(1), 1995, author-uploaded public text",
-          "kind": "contemporary_judges_report_author_upload"
+          "label": "1994 judges’ summary, Computer 28(1), January 1995, pp. 68–74, author-uploaded public text",
+          "kind": "contemporary_judges_report_author_upload",
+          "competition_year": 1994,
+          "publication_year": 1995,
+          "publication_date": "1995-01"
         },
         {
           "id": "sc94-registry-reacting-flow",
@@ -11708,10 +12551,19 @@
           "url": "https://api.crossref.org/works?query.title=A+65%2B+Gflop%2Fs+unstructured+finite+element+simulation+of+chemically+reacting+flows+on+the+Intel+Paragon&filter=from-pub-date%3A1994-01-01%2Cuntil-pub-date%3A1994-12-31%2Ctype%3Aproceedings-article&rows=3",
           "label": "Crossref successful publisher-deposited search item: 10.1145/602879.602882",
           "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "csdl94-toc",
+          "url": "https://www.computer.org/csdl/api/v1/graphql?query=query+%28%24proceedingId%3A+String%21%2C+%24limitResults%3A+Int%2C+%24skipResults%3A+Int%29+%7B+articlesByProceeding%3A+articlesByProceedingWithPagination%28proceedingId%3A+%24proceedingId+limit%3A+%24limitResults+skip%3A+%24skipResults%29+%7B+totalResults+articleResults+%7B+id+doi+title+year+authors+%7B+fullName+%7D+sectionTitle+%7D+%7D+%7D&variables=%7B%22proceedingId%22%3A+%2212OmNyxXlt5%22%2C+%22limitResults%22%3A+250%2C+%22skipResults%22%3A+0%7D",
+          "label": "IEEE Computer Society SC1994 proceedings TOC metadata",
+          "kind": "publisher_proceedings_toc_api",
+          "local_reference": "歴史一次資料/CSDL_SC1994_proceedings_metadata.json",
+          "source_sha256": "5c736444cb915b626ecbcd40371066e0d87de6b857a2a541778e15a5efe7ce8d",
+          "competition_year": 1994
         }
       ],
       "roster_completeness": {
-        "status": "partial_from_primary_source",
+        "status": "complete_from_primary_judges_report",
         "expected_count": 4,
         "basis_source_ids": [
           "judges94"
@@ -11737,7 +12589,7 @@
           "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
           "publication_url": "http://portal.acm.org/citation.cfm?doid=602770.602881",
           "notes": [
-            "Historical competition membership is supported by judges94; this record does not establish a complete annual roster. No full-text or performance audit was performed.",
+            "Historical competition membership is supported by judges94; the annual membership set is complete against that report, while some paper identities remain unresolved. No full-text or performance audit was performed.",
             "Exact original selection/program title was not recovered. The displayed title is the publisher-deposited paper title; title provenance therefore points to the registry response, separately from membership evidence.",
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline.",
             "The judges’ report explicitly calls the Shadid/Hutchinson/Moffat/Hennigan/Hendrickson/Leland entry the fourth finalist, distinct from other submissions.",
@@ -11765,21 +12617,56 @@
           "authors_status": "verified_publisher_deposited_registry_order_not_pdf_audited",
           "publication_url": "http://portal.acm.org/citation.cfm?doid=602770.602882",
           "notes": [
-            "Historical competition membership is supported by judges94; this record does not establish a complete annual roster. No full-text or performance audit was performed.",
+            "Historical competition membership is supported by judges94; the annual membership set is complete against that report, while some paper identities remain unresolved. No full-text or performance audit was performed.",
             "Exact original selection/program title was not recovered. The displayed title is the publisher-deposited paper title; title provenance therefore points to the registry response, separately from membership evidence.",
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline.",
             "The Womble/Ingber/Greenberg/Benner/Henry boundary-element entry is one of the three honored entries preceding the report’s explicitly identified fourth finalist. This is a subset of the report, not a winners list substituted for the entire roster.",
             "The registry spells the final author Satya Gutpa; this is preserved as deposited metadata, rather than silently changed to Gupta. Original byline verification remains pending."
           ],
           "title_kind": "publisher_title"
+        },
+        {
+          "id": "SC94-tight-binding",
+          "title": "Tight binding molecular dynamics",
+          "title_kind": "publisher_title",
+          "title_source_id": "csdl94-toc",
+          "doi": "10.1109/SUPERC.1994.344331",
+          "doi_status": "verified",
+          "doi_source_id": "csdl94-toc",
+          "publisher_title": "Tight binding molecular dynamics",
+          "authors": [
+            "Goedecker",
+            "Colombo"
+          ],
+          "authors_status": "verified_publisher_metadata_order_not_pdf_audited",
+          "publication_url": null,
+          "notes": [
+            "The contemporary judges’ report identifies the Goedecker–Colombo tight-binding molecular-dynamics finalist. The matching 1994 publisher proceedings item establishes this title and DOI; publisher metadata supplies surnames only, preserved here. No original-paper byline audit is claimed."
+          ]
+        },
+        {
+          "id": "SC94-nwt-turbulence",
+          "title": "Isotropic turbulence and other CFD calculations on the Numerical Wind Tunnel",
+          "title_kind": "editorial_description",
+          "title_source_id": "judges94",
+          "doi": null,
+          "doi_status": "not_checked",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [],
+          "authors_status": "not_checked",
+          "publication_url": null,
+          "notes": [
+            "Editorial description of the NWT team’s finalist entry, headed by H. Miyoshi in the report. A formal candidate-paper title and ordered paper byline remain unverified."
+          ]
         }
       ],
       "notes": [
-        "Two explicitly discussed competition entries recovered from the contemporary judges’ report, which identifies a fourth finalist and distinguishes other nonfinalist submissions. Four is the report’s finalist count; two other titles are not populated here.",
+        "All four finalist entries are represented from the contemporary judges’ report, which separately identifies three nonfinalist submissions. Three displayed entries have matched publication titles; the NWT entry retains a labelled editorial description.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
         "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
       ],
-      "verified_doi_count": 2,
+      "verified_doi_count": 3,
       "source_method": "Primary online sources",
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1994.pdf",
@@ -12364,6 +13251,146 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/125826",
         "website_url": null,
         "year": 1991
+      },
+      "detailed_paper_count": 0
+    },
+    {
+      "year": 1988,
+      "year_label": "1988 competition; reported in May 1989",
+      "event_label": "Gordon Bell Prize presentation at Compcon 1989",
+      "conference_year": 1989,
+      "membership_label": "competition entries",
+      "award_series": "ACM Gordon Bell Prize",
+      "checked_on": "2026-11-12",
+      "sources": [
+        {
+          "id": "committee_1988_report_author_indexed",
+          "url": "https://www.researchgate.net/publication/3246676_1988_Gordon_Bell_Prize",
+          "label": "Browne, Dongarra, Karp, Kennedy and Kuck: 1988 Gordon Bell Prize, IEEE Software 6(3), May 1989, pp. 78–85; indexed transcription of Karp’s author upload",
+          "kind": "contemporary_judges_report_author_upload_indexed_transcription",
+          "local_reference": "歴史一次資料/1988_Gordon_Bell_Prize_author_upload_indexed_transcription.html"
+        },
+        {
+          "id": "publisher_1988_report_registry",
+          "url": "https://api.crossref.org/works/10.1109%2F52.28127",
+          "label": "Publisher-deposited registration for the judges’ 1988 report (source DOI, not entrant-paper DOI)",
+          "kind": "doi_registry",
+          "local_reference": "歴史一次資料/Crossref_1988_report_10.1109_52.28127.json"
+        },
+        {
+          "id": "sc16_1988_context",
+          "url": "https://sc16.supercomputing.org/2015/07/08/1988-gordon-bell-prize-creates/",
+          "label": "Official SC retrospective establishing Compcon 1989 presentation context for the 1988 competition",
+          "kind": "historical_context_not_roster_membership"
+        }
+      ],
+      "roster_completeness": {
+        "status": "partial_from_primary_source",
+        "expected_count": 4,
+        "basis_source_ids": [
+          "committee_1988_report_author_indexed"
+        ],
+        "membership_label": "competition entries"
+      },
+      "records": [
+        {
+          "id": "gb1988-static-structures",
+          "title": "Static finite-element analysis on a Cray Y-MP",
+          "title_kind": "editorial_description",
+          "title_source_id": "committee_1988_report_author_indexed",
+          "doi": null,
+          "doi_status": "not_checked",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [
+            "Phuong Vu",
+            "Horst Simon",
+            "Cleve Ashcraft",
+            "Roger Grimes",
+            "John Lewis",
+            "Barry Peyton"
+          ],
+          "authors_status": "named_entry_participants_from_contemporary_report_not_original_paper_byline",
+          "publication_url": null,
+          "membership_label": "competition entries",
+          "year_label": "1988 competition; reported in May 1989",
+          "event_label": "Gordon Bell Prize presentation at Compcon 1989",
+          "conference_year": 1989,
+          "notes": [
+            "Report opening section, printed p. 78; First place section, pp. 78–81. The label describes the entry, not a quoted original submission title.",
+            "Names retain the named participant group in the report. No formal original-paper title or independently matched entrant-publication DOI was recovered.",
+            "The judges’ report DOI 10.1109/52.28127 belongs only in source provenance and is not assigned as this entry’s DOI."
+          ]
+        },
+        {
+          "id": "gb1988-spectral-fluid-flow",
+          "title": "Implicit spectral-method fluid-flow simulation on an N-Cube",
+          "title_kind": "editorial_description",
+          "title_source_id": "committee_1988_report_author_indexed",
+          "doi": null,
+          "doi_status": "not_checked",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [
+            "Richard Pelz"
+          ],
+          "authors_status": "named_entry_participants_from_contemporary_report_not_original_paper_byline",
+          "publication_url": null,
+          "membership_label": "competition entries",
+          "year_label": "1988 competition; reported in May 1989",
+          "event_label": "Gordon Bell Prize presentation at Compcon 1989",
+          "conference_year": 1989,
+          "notes": [
+            "Report opening and Honorable mentions / Pelz sections, printed pp. 78 and 82–83. The report explicitly describes Pelz’s submitted fluid-flow application.",
+            "Names retain the named participant group in the report. No formal original-paper title or independently matched entrant-publication DOI was recovered.",
+            "The judges’ report DOI 10.1109/52.28127 belongs only in source provenance and is not assigned as this entry’s DOI."
+          ]
+        },
+        {
+          "id": "gb1988-crystal-mortgage-pricing",
+          "title": "Mortgage pricing parallelized by the Crystal compiler",
+          "title_kind": "editorial_description",
+          "title_source_id": "committee_1988_report_author_indexed",
+          "doi": null,
+          "doi_status": "not_checked",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [
+            "Marina Chen",
+            "Young-Il Choo",
+            "Jungke Li",
+            "Janet Wu",
+            "Eric DeBenedictus"
+          ],
+          "authors_status": "named_entry_participants_from_contemporary_report_not_original_paper_byline",
+          "publication_url": null,
+          "membership_label": "competition entries",
+          "year_label": "1988 competition; reported in May 1989",
+          "event_label": "Gordon Bell Prize presentation at Compcon 1989",
+          "conference_year": 1989,
+          "notes": [
+            "Report opening and Yale/Ansoft discussion, printed pp. 78 and 83–85. The report explicitly describes the submitted mortgage-pricing/financial-modeling application.",
+            "Names retain the named participant group in the report. No formal original-paper title or independently matched entrant-publication DOI was recovered.",
+            "The judges’ report DOI 10.1109/52.28127 belongs only in source provenance and is not assigned as this entry’s DOI."
+          ]
+        }
+      ],
+      "notes": [
+        "The contemporary report explicitly states that four entries were received and three were deemed to have met that year’s rules. The three named qualifying entry groups are recorded here; the fourth identity is not recovered. This is not a claim of a complete three-entry roster.",
+        "Membership is extracted from the committee’s report text, including its entrant-count statement and detailed descriptions of submitted work, rather than inferred from a later winner list.",
+        "Original full-report PDF/HTML bytes were not recovered. The source inspected was a multi-page indexed transcription of the report uploaded by coauthor Alan Karp on ResearchGate (upload date shown as October 29, 2015). The preserved HTML is clearly labeled as a derived transcription snapshot, with OCR limitations.",
+        "All three title labels are editorial descriptions, not original submitted-paper titles. Names describe entry participants, not an audited technical-paper byline.",
+        "The source was published in May 1989 about the 1988 competition; it must not be labeled as an SC88 proceedings finalist list.",
+        "The fixed award_series field normalizes the archive series name; the report predates ACM administration. No new winner, performance, PDF-audit or final-conference-score claim is made."
+      ],
+      "verified_doi_count": 0,
+      "source_method": "Primary online sources",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1989.pdf",
+        "label": "SC89",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/76263",
+        "website_url": null,
+        "year": 1989
       },
       "detailed_paper_count": 0
     }
@@ -13629,31 +14656,37 @@
         "history_pdf_url": null
       }
     ],
-    "current_year_source_note": "SC26 website linked from the official history page navigation; proceedings not checked."
+    "current_year_source_note": "SC26 website linked from official history navigation; scheduled main-prize membership checked against the public day-by-day program on 2026-11-12. Publisher-assigned DOI metadata is tracked in the annual roster."
   },
+  "year_contexts": [
+    {
+      "year": 1991,
+      "status": "historical_year_label_transition",
+      "target_year": 1992,
+      "source_id": "year-transition-1991",
+      "explanation": "The committee notice says the next prize, which would have been called the 1991 Prize, will be renamed as the ceremony moves from February CompCon to November Supercomputing. It gives the next entry/finalist deadlines and presentations in 1992. A separate 1991-labelled candidate list is not inferred, and the 1990 entries reported in SC1991 proceedings are not duplicated here."
+    }
+  ],
   "catalogue_summary": {
-    "years": 34,
-    "records": 168,
-    "verified_dois": 143,
-    "unresolved_dois": 24,
+    "years": 36,
+    "records": 187,
+    "verified_dois": 166,
+    "unresolved_dois": 20,
     "not_applicable_dois": 1,
     "uncovered_years": [
       1987,
-      1988,
       1989,
-      1991,
-      1992,
-      1999
+      1992
+    ],
+    "context_years": [
+      1991
     ],
     "partial_years": [
-      2026,
       2003,
       2001,
-      2000,
       1998,
       1996,
-      1995,
-      1994
+      1988
     ]
   },
   "detailed_years": [
