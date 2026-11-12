@@ -45,7 +45,27 @@ function renderHoldings() {
   $('holdings-list').innerHTML=rows.map(r=>`<details class="holding"><summary><span>${r.year} / ${esc(r.code)}</span> ${esc(r.title)}</summary><p>${esc(r.content_status)}</p>${r.authors?`<p>${esc(r.authors.join(' · '))}</p>`:''}${r.award_status?`<p>${esc(r.award_status)}</p>`:''}<p>Source volume: ${esc(r.source_directory)}</p><ul>${r.body_files.map(f=>`<li><code>${esc(f.relative_path)}</code> · ${f.size_bytes.toLocaleString('en-US')} bytes</li>`).join('')}</ul><p>SHA-256-verified local copies. Full text is retained offline; this site provides metadata, not manuscript downloads.</p></details>`).join('');
 }
 function renderYearCoverage() {
-  $('year-coverage').innerHTML=db.year_coverage.map(y=>`<div class="year-cell ${y.year===2008?'audited':''}"><strong>${y.year}</strong><span>${y.local_candidate_count==null?'Not reconciled':y.local_candidate_count+' local records'}</span><small>${esc(y.status)}</small></div>`).join('');
+  $('year-coverage').innerHTML=db.year_coverage.map(y=>`<div class="year-cell ${y.year===2008?'audited':''}"><strong>${y.year}</strong><span>${y.web_candidate_count!=null?y.web_candidate_count+' web finalists':y.local_candidate_count==null?'Not reconciled':y.local_candidate_count+' local records'}</span><small>${esc(y.status)}</small><p class="annual-links">${annualLinks(y.sc_links)||'SC conference series began in 1988.'}</p></div>`).join('');
+}
+function annualLinks(s) {
+  if(!s) return '';
+  return [s.website_url&&link(s.website_url,'SC website'),s.proceedings_url&&link(s.proceedings_url,'Proceedings'),s.history_pdf_url&&link(s.history_pdf_url,'SC history PDF')].filter(Boolean).join(' ');
+}
+function renderRecent() {
+  const q=$('recent-search').value.trim().toLowerCase(), year=$('recent-year').value;
+  let total=0,matched=0;
+  const html=db.recent_rosters.map(r=>{
+    total+=r.records.length;
+    const records=r.records.filter(p=>(year==='all'||String(r.year)===year)&&(!q||[p.title,p.publisher_title,p.doi,r.year,...p.authors].join(' ').toLowerCase().includes(q)));
+    matched+=records.length;
+    if(!records.length) return '';
+    const sources=Object.fromEntries(r.sources.map(s=>[s.id,s]));
+    const ref=(id,label)=>sources[id]?link(sources[id].url,label||sources[id].label):'';
+    const rosterSources=r.roster_completeness.basis_source_ids.map(id=>ref(id)).join(' ');
+    return `<article class="roster-year"><h3>SC${String(r.year).slice(-2)} <span class="tag">${r.records.length} main-prize finalists</span></h3><p class="annual-links">${annualLinks(r.sc_links)}</p><details class="roster-evidence"><summary>Official roster evidence</summary><p class="source-links">${rosterSources}</p></details><p class="roster-status">Annual roster reconciled against official sources · Bibliography only; manuscript and conference-day results not audited.</p><ol class="roster-records">${records.map(p=>`<li><h4>${esc(p.title)}</h4><div class="paper-links">${p.doi_status==='verified'?link('https://doi.org/'+p.doi,'DOI: '+p.doi):'<span>DOI not yet verified</span>'}${ref(p.title_source_id,'Official title source')}${p.publication_url?link(p.publication_url,'Publisher record'):''}${p.doi_status==='verified'?ref(p.doi_source_id,'DOI verification'):''}</div><details><summary>Bibliographic evidence & title variants</summary>${p.publisher_title&&p.publisher_title!==p.title?`<p>Publisher title: ${esc(p.publisher_title)}</p>`:''}<p>${esc(p.authors.join(' · '))}</p><p>Author order follows the publisher-deposited registry record; the PDF byline has not been audited.</p>${p.notes.length?`<ul>${p.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>`:''}<p>Checked ${esc(r.checked_on)}. Full-text, performance and award-outcome audits are pending.</p></details></li>`).join('')}</ol></article>`;
+  }).join('');
+  $('recent-count').textContent=`${matched} of ${total} web finalist records`;
+  $('recent-list').innerHTML=html||'<p class="empty">No recent titles match these filters.</p>';
 }
 
 async function init() {
@@ -62,7 +82,9 @@ async function init() {
     $('issues').innerHTML=db.issues.map(i=>`<article class="issue"><span class="tag ${i.state==='Open'||i.state==='Blocked'?'pending':''}">${esc(i.state)}</span><h4>${esc(i.title)}</h4><p>${esc(i.detail)}</p></article>`).join('');
     fillSelect('holdings-year',db.holdings.records.map(r=>String(r.year)));
     $('holdings-search').addEventListener('input',renderHoldings); $('holdings-year').addEventListener('change',renderHoldings);
-    renderYearCoverage(); renderHoldings(); render();
+    fillSelect('recent-year',db.recent_rosters.map(r=>String(r.year)));
+    $('recent-search').addEventListener('input',renderRecent); $('recent-year').addEventListener('change',renderRecent);
+    renderYearCoverage(); renderHoldings(); renderRecent(); render();
   } catch(err) { $('list').innerHTML='<p class="empty">The research records could not be loaded. Please reload the page.</p>'; console.error(err); }
 }
 init();

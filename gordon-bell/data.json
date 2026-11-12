@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2",
   "updated_on": "2026-11-12",
-  "scope": "SC08 selected-field audit; SC97 legacy-format checkpoint; 16-year local holdings, not a complete historical roster",
+  "scope": "SC08 selected-field audit; SC97 legacy-format checkpoint; 16-year local holdings, not a complete historical roster; 2023–2025 main-prize web rosters with separately verified DOI metadata",
   "sources": {
     "selection": {
       "label": "SC08 initial finalist announcement",
@@ -2958,202 +2958,479 @@
     {
       "year": 1987,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": null
     },
     {
       "year": 1988,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1988.pdf",
+        "label": "SC88",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/62972",
+        "website_url": null,
+        "year": 1988
+      }
     },
     {
       "year": 1989,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1989.pdf",
+        "label": "SC89",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/76263",
+        "website_url": null,
+        "year": 1989
+      }
     },
     {
       "year": 1990,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1990.pdf",
+        "label": "SC90",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/110382",
+        "website_url": null,
+        "year": 1990
+      }
     },
     {
       "year": 1991,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1991.pdf",
+        "label": "SC91",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/125826",
+        "website_url": null,
+        "year": 1991
+      }
     },
     {
       "year": 1992,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1992.pdf",
+        "label": "SC92",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/147877",
+        "website_url": null,
+        "year": 1992
+      }
     },
     {
       "year": 1993,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1993.pdf",
+        "label": "SC93",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/169627",
+        "website_url": null,
+        "year": 1993
+      }
     },
     {
       "year": 1994,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1994.pdf",
+        "label": "SC94",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/602770",
+        "website_url": "https://sc94.supercomputing.org/",
+        "year": 1994
+      }
     },
     {
       "year": 1995,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1995.pdf",
+        "label": "SC95",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/224170",
+        "website_url": null,
+        "year": 1995
+      }
     },
     {
       "year": 1996,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1996.pdf",
+        "label": "SC96",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/369028",
+        "website_url": null,
+        "year": 1996
+      }
     },
     {
       "year": 1997,
       "local_candidate_count": 4,
-      "status": "Local roster and legacy formats checked; award outcomes unresolved"
+      "status": "Local roster and legacy formats checked; award outcomes unresolved",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1997.pdf",
+        "label": "SC97",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/509593",
+        "website_url": null,
+        "year": 1997
+      }
     },
     {
       "year": 1998,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1998.pdf",
+        "label": "SC98",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/509058",
+        "website_url": null,
+        "year": 1998
+      }
     },
     {
       "year": 1999,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1999.pdf",
+        "label": "SC99",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/331532",
+        "website_url": null,
+        "year": 1999
+      }
     },
     {
       "year": 2000,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2000.pdf",
+        "label": "SC2000",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/370049",
+        "website_url": null,
+        "year": 2000
+      }
     },
     {
       "year": 2001,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2001.pdf",
+        "label": "SC01",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/582034",
+        "website_url": null,
+        "year": 2001
+      }
     },
     {
       "year": 2002,
       "local_candidate_count": 6,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2002.pdf",
+        "label": "SC02",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/762761",
+        "website_url": "https://sc02.supercomputing.org/",
+        "year": 2002
+      }
     },
     {
       "year": 2003,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2003.pdf",
+        "label": "SC03",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1048935",
+        "website_url": "https://sc03.supercomputing.org/",
+        "year": 2003
+      }
     },
     {
       "year": 2004,
       "local_candidate_count": 4,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2004.pdf",
+        "label": "SC04",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1048933",
+        "website_url": "https://sc04.supercomputing.org/",
+        "year": 2004
+      }
     },
     {
       "year": 2005,
       "local_candidate_count": 6,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2005.pdf",
+        "label": "SC05",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1105760",
+        "website_url": "https://sc05.supercomputing.org/",
+        "year": 2005
+      }
     },
     {
       "year": 2006,
       "local_candidate_count": 6,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2006.pdf",
+        "label": "SC06",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1188455",
+        "website_url": null,
+        "year": 2006
+      }
     },
     {
       "year": 2007,
       "local_candidate_count": 4,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2007.pdf",
+        "label": "SC07",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1362622",
+        "website_url": null,
+        "year": 2007
+      }
     },
     {
       "year": 2008,
       "local_candidate_count": 6,
-      "status": "Selected PDF fields audited; day-of-conference update unverified"
+      "status": "Selected PDF fields audited; day-of-conference update unverified",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2008.pdf",
+        "label": "SC08",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1413370",
+        "website_url": "https://sc08.supercomputing.org/",
+        "year": 2008
+      }
     },
     {
       "year": 2009,
       "local_candidate_count": 9,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2009.pdf",
+        "label": "SC09",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1654059",
+        "website_url": "https://sc09.supercomputing.org/",
+        "year": 2009
+      }
     },
     {
       "year": 2010,
       "local_candidate_count": 6,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2010.pdf",
+        "label": "SC10",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1884643",
+        "website_url": null,
+        "year": 2010
+      }
     },
     {
       "year": 2011,
       "local_candidate_count": 5,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2011.pdf",
+        "label": "SC11",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/2063384",
+        "website_url": "https://sc11.supercomputing.org/",
+        "year": 2011
+      }
     },
     {
       "year": 2012,
       "local_candidate_count": 5,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2012.pdf",
+        "label": "SC12",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/2388996",
+        "website_url": "https://sc12.supercomputing.org/",
+        "year": 2012
+      }
     },
     {
       "year": 2013,
       "local_candidate_count": 6,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2013.pdf",
+        "label": "SC13",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/2503210",
+        "website_url": "https://sc13.supercomputing.org/",
+        "year": 2013
+      }
     },
     {
       "year": 2014,
       "local_candidate_count": 5,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2014.pdf",
+        "label": "SC14",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/2683593",
+        "website_url": "https://sc14.supercomputing.org/",
+        "year": 2014
+      }
     },
     {
       "year": 2015,
       "local_candidate_count": 5,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2015.pdf",
+        "label": "SC15",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/2807591",
+        "website_url": "https://sc15.supercomputing.org/",
+        "year": 2015
+      }
     },
     {
       "year": 2016,
       "local_candidate_count": 6,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2016.pdf",
+        "label": "SC16",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3014904",
+        "website_url": "https://sc16.supercomputing.org/",
+        "year": 2016
+      }
     },
     {
       "year": 2017,
       "local_candidate_count": 3,
-      "status": "Local roster and body copies available; full-text audit pending"
+      "status": "Local roster and body copies available; full-text audit pending",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2017.pdf",
+        "label": "SC17",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3126908",
+        "website_url": "https://sc17.supercomputing.org/",
+        "year": 2017
+      }
     },
     {
       "year": 2018,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2018.pdf",
+        "label": "SC18",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3291656",
+        "website_url": "http://sc18.supercomputing.org/",
+        "year": 2018
+      }
     },
     {
       "year": 2019,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/11/SC2019.pdf",
+        "label": "SC19",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3295500",
+        "website_url": "https://sc19.supercomputing.org/",
+        "year": 2019
+      }
     },
     {
       "year": 2020,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2020/11/SC20.pdf",
+        "label": "SC20",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3433701",
+        "website_url": "https://sc20.supercomputing.org/",
+        "year": 2020
+      }
     },
     {
       "year": 2021,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/11/SC21.pdf",
+        "label": "SC21",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3458817",
+        "website_url": "https://sc21.supercomputing.org/",
+        "year": 2021
+      }
     },
     {
       "year": 2022,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/11/SC22.pdf",
+        "label": "SC22",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3571885",
+        "website_url": "https://sc22.supercomputing.org/",
+        "year": 2022
+      }
     },
     {
       "year": 2023,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "Official web roster indexed; bibliography only. Full-text, performance and conference updates not audited.",
+      "web_candidate_count": 6,
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/12/sc23_history_06.pdf",
+        "label": "SC23",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3581784",
+        "website_url": "https://sc23.supercomputing.org/",
+        "year": 2023
+      }
     },
     {
       "year": 2024,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "Official web roster indexed; bibliography only. Full-text, performance and conference updates not audited.",
+      "web_candidate_count": 6,
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2024/12/sc24_history_04.pdf",
+        "label": "SC24",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3703596",
+        "website_url": "https://sc24.supercomputing.org/",
+        "year": 2024
+      }
     },
     {
       "year": 2025,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "Official web roster indexed; bibliography only. Full-text, performance and conference updates not audited.",
+      "web_candidate_count": 6,
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2026/03/sc25_history.pdf",
+        "label": "SC25",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3712285",
+        "website_url": "https://sc25.supercomputing.org/",
+        "year": 2025
+      }
     },
     {
       "year": 2026,
       "local_candidate_count": null,
-      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+      "status": "No local collection in this checkpoint; official roster not yet reconciled",
+      "sc_links": {
+        "year": 2026,
+        "label": "SC26",
+        "website_url": "https://sc26.supercomputing.org/",
+        "proceedings_url": null,
+        "history_pdf_url": null
+      }
     }
   ],
   "legacy_format_checkpoint": {
@@ -3163,5 +3440,1247 @@
     "image_check": "All figures resolve in the local copies; one optional PHANTHIE stylesheet is absent",
     "outcome_caution": "These contemporary local files use contradictory finalist/winner labels for the same four papers. Treat inclusion as a verified Gordon Bell finalist/candidate listing. Do not assign wins, winner categories, or a resolved award outcome from these labels alone. Warren explicitly describes performance and price/performance entries; entry language is not proof of either win.",
     "performance_audit": "Not completed; HTML metadata/format checkpoint only"
+  },
+  "recent_rosters": [
+    {
+      "year": 2023,
+      "award_series": "ACM Gordon Bell Prize",
+      "checked_on": "2026-11-12",
+      "sources": [
+        {
+          "id": "sc23_selection",
+          "url": "https://sc23.supercomputing.org/2023/08/a-look-at-the-2023-gordon-bell-prize-finalists/",
+          "label": "SC23: A Look at the 2023 Gordon Bell Prize Finalists (August 8, 2023)",
+          "kind": "official_finalist_selection"
+        },
+        {
+          "id": "sc23_program",
+          "url": "https://sc23.conference-program.com/",
+          "label": "SC23 official schedule: ACM Gordon Bell Finalists Presentations 1 and 2",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref_3627037",
+          "url": "https://api.crossref.org/works/10.1145/3581784.3627037",
+          "label": "Crossref DOI registry: Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+          "kind": "doi_registry"
+        },
+        {
+          "id": "sc23_program_gb104",
+          "url": "https://sc23.conference-program.com/presentation/?id=gb104&sess=sess296",
+          "label": "SC23 official finalist program: Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+          "kind": "official_conference_program_entry"
+        },
+        {
+          "id": "crossref_3627040",
+          "url": "https://api.crossref.org/works/10.1145/3581784.3627040",
+          "label": "Crossref DOI registry: Toward Exascale Computation for Turbomachinery Flows",
+          "kind": "doi_registry"
+        },
+        {
+          "id": "sc23_program_gb107",
+          "url": "https://sc23.conference-program.com/presentation/?id=gb107&sess=sess297",
+          "label": "SC23 official finalist program: Toward Exascale Computation for Turbomachinery Flows",
+          "kind": "official_conference_program_entry"
+        },
+        {
+          "id": "crossref_3627038",
+          "url": "https://api.crossref.org/works/10.1145/3581784.3627038",
+          "label": "Crossref DOI registry: Exascale Multiphysics Nuclear Reactor Simulations for Advanced Designs",
+          "kind": "doi_registry"
+        },
+        {
+          "id": "sc23_program_gb105",
+          "url": "https://sc23.conference-program.com/presentation/?id=gb105&sess=sess296",
+          "label": "SC23 official finalist program: Exascale Multiphysics Nuclear Reactor Simulations for Advanced Designs",
+          "kind": "official_conference_program_entry"
+        },
+        {
+          "id": "crossref_3627039",
+          "url": "https://api.crossref.org/works/10.1145/3581784.3627039",
+          "label": "Crossref DOI registry: Exploring the Ultimate Regime of Turbulent Rayleigh–Bénard Convection Through Unprecedented Spectral-Element Simulations",
+          "kind": "doi_registry"
+        },
+        {
+          "id": "sc23_program_gb106",
+          "url": "https://sc23.conference-program.com/presentation/?id=gb106&sess=sess297",
+          "label": "SC23 official finalist program: Exploring the Ultimate Regime of Turbulent Rayleigh–Bénard Convection Through Unprecedented Spectral-Element Simulations",
+          "kind": "official_conference_program_entry"
+        },
+        {
+          "id": "crossref_3627042",
+          "url": "https://api.crossref.org/works/10.1145/3581784.3627042",
+          "label": "Crossref DOI registry: Scaling the “Memory Wall” for Multi-Dimensional Seismic Processing with Algebraic Compression on Cerebras CS-2 Systems",
+          "kind": "doi_registry"
+        },
+        {
+          "id": "sc23_program_gb109",
+          "url": "https://sc23.conference-program.com/presentation/?id=gb109&sess=sess297",
+          "label": "SC23 official finalist program: Scaling the “Memory Wall” for Multi-Dimensional Seismic Processing with Algebraic Compression on Cerebras CS-2 Systems",
+          "kind": "official_conference_program_entry"
+        },
+        {
+          "id": "crossref_3627041",
+          "url": "https://api.crossref.org/works/10.1145/3581784.3627041",
+          "label": "Crossref DOI registry: Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+          "kind": "doi_registry"
+        },
+        {
+          "id": "sc23_program_gb108",
+          "url": "https://sc23.conference-program.com/presentation/?id=gb108&sess=sess296",
+          "label": "SC23 official finalist program: Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+          "kind": "official_conference_program_entry"
+        }
+      ],
+      "roster_completeness": {
+        "status": "complete",
+        "expected_count": 6,
+        "basis_source_ids": [
+          "sc23_selection",
+          "sc23_program"
+        ]
+      },
+      "records": [
+        {
+          "id": "SC23-materials",
+          "title": "Large-scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+          "title_source_id": "sc23_selection",
+          "doi": "10.1145/3581784.3627037",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3627037",
+          "publisher_title": "Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+          "authors": [
+            "Sambit Das",
+            "Bikash Kanungo",
+            "Vishal Subramanian",
+            "Gourab Panigrahi",
+            "Phani Motamarri",
+            "David Rogers",
+            "Paul Zimmerman",
+            "Vikram Gavini"
+          ],
+          "authors_status": "verified_ordered_crossref",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3581784.3627037",
+          "notes": [
+            "Listed as Finalist 1 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb104.",
+            "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627037.",
+            "Selection-page title and publisher title differ; both forms are preserved without silently replacing the selection title."
+          ]
+        },
+        {
+          "id": "SC23-turbomachinery",
+          "title": "Towards Exascale Computation for Turbomachinery Flows",
+          "title_source_id": "sc23_selection",
+          "doi": "10.1145/3581784.3627040",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3627040",
+          "publisher_title": "Toward Exascale Computation for Turbomachinery Flows",
+          "authors": [
+            "Yuhang Fu",
+            "Weiqi Shen",
+            "Jiahuan Cui",
+            "Yao Zheng",
+            "Guangwen Yang",
+            "Zhao Liu",
+            "Jifa Zhang",
+            "Tingwei Ji",
+            "Fangfang Xie",
+            "Xiaojing Lv",
+            "Hanyue Liu",
+            "Xu Liu",
+            "Xiyang Liu",
+            "Xiaoyu Song",
+            "Guocheng Tao",
+            "Yan Yan",
+            "Paul Tucker",
+            "Steven Miller",
+            "Shirui Luo",
+            "Seid Koric",
+            "Weimin Zheng"
+          ],
+          "authors_status": "verified_ordered_crossref",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3581784.3627040",
+          "notes": [
+            "Listed as Finalist 2 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb107.",
+            "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627040.",
+            "Selection-page title and publisher title differ; both forms are preserved without silently replacing the selection title.",
+            "The selection page says 20 authors; the Crossref record lists 21. The complete ordered registry list is used here."
+          ]
+        },
+        {
+          "id": "SC23-nuclear",
+          "title": "Exascale Multiphysics Nuclear Reactor Simulations for Advanced Designs",
+          "title_source_id": "sc23_selection",
+          "doi": "10.1145/3581784.3627038",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3627038",
+          "publisher_title": "Exascale Multiphysics Nuclear Reactor Simulations for Advanced Designs",
+          "authors": [
+            "Elia Merzari",
+            "Steven Hamilton",
+            "Thomas Evans",
+            "Misun Min",
+            "Paul Fischer",
+            "Stefan Kerkemeier",
+            "Jun Fang",
+            "Paul Romano",
+            "Yu-Hsiang Lan",
+            "Malachi Phillips",
+            "Elliott Biondo",
+            "Katherine Royston",
+            "Tim Warburton",
+            "Noel Chalmers",
+            "Thilina Rathnayake"
+          ],
+          "authors_status": "verified_ordered_crossref",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3581784.3627038",
+          "notes": [
+            "Listed as Finalist 3 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb105.",
+            "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627038.",
+            "The selection page says 12 authors and spells the first author Elia Merzaria; the Crossref record lists 15 authors, beginning Elia Merzari. The registry spelling and complete ordered list are used here."
+          ]
+        },
+        {
+          "id": "SC23-convection",
+          "title": "Exploring the Ultimate Regime of Turbulent Rayleigh–Bénard Convection Through Unprecedented Spectral-element Simulations",
+          "title_source_id": "sc23_selection",
+          "doi": "10.1145/3581784.3627039",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3627039",
+          "publisher_title": "Exploring the Ultimate Regime of Turbulent Rayleigh–Bénard Convection Through Unprecedented Spectral-Element Simulations",
+          "authors": [
+            "Niclas Jansson",
+            "Martin Karp",
+            "Adalberto Perez",
+            "Timofey Mukha",
+            "Yi Ju",
+            "Jiahui Liu",
+            "Szilárd Páll",
+            "Erwin Laure",
+            "Tino Weinkauf",
+            "Jörg Schumacher",
+            "Philipp Schlatter",
+            "Stefano Markidis"
+          ],
+          "authors_status": "verified_ordered_crossref",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3581784.3627039",
+          "notes": [
+            "Listed as Finalist 4 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb106.",
+            "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627039.",
+            "Selection-page title and publisher title differ; both forms are preserved without silently replacing the selection title."
+          ]
+        },
+        {
+          "id": "SC23-seismic",
+          "title": "Scaling the “Memory Wall” for Multi-dimensional Seismic Processing with Algebraic Compression on Cerebras CS-2 Systems",
+          "title_source_id": "sc23_selection",
+          "doi": "10.1145/3581784.3627042",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3627042",
+          "publisher_title": "Scaling the “Memory Wall” for Multi-Dimensional Seismic Processing with Algebraic Compression on Cerebras CS-2 Systems",
+          "authors": [
+            "Hatem Ltaief",
+            "Yuxi Hong",
+            "Leighton Wilson",
+            "Mathias Jacquelin",
+            "Matteo Ravasi",
+            "David Elliot Keyes"
+          ],
+          "authors_status": "verified_ordered_crossref",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3581784.3627042",
+          "notes": [
+            "Listed as Finalist 5 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb109.",
+            "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627042.",
+            "Selection-page title and publisher title differ; both forms are preserved without silently replacing the selection title."
+          ]
+        },
+        {
+          "id": "SC23-biomolecular",
+          "title": "Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+          "title_source_id": "sc23_selection",
+          "doi": "10.1145/3581784.3627041",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3627041",
+          "publisher_title": "Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+          "authors": [
+            "Boris Kozinsky",
+            "Albert Musaelian",
+            "Anders Johansson",
+            "Simon Batzner"
+          ],
+          "authors_status": "verified_ordered_crossref",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3581784.3627041",
+          "notes": [
+            "Listed as Finalist 6 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb108.",
+            "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627041.",
+            "The selection page introduces Albert Musaelian first; the Crossref record and conference program list Boris Kozinsky first. Authors here retain registry order."
+          ]
+        }
+      ],
+      "notes": [
+        "This checkpoint covers the six finalists for the main ACM Gordon Bell Prize, excluding the separate Gordon Bell Prize for Climate Modelling.",
+        "The official selection article states that the committee selected six finalists; the two main-prize conference-program sessions contain the corresponding six presentations.",
+        "Metadata roster only. No PDF availability, full-text or figure audit, performance validation, or final award-result claim is made.",
+        "The August selection article explicitly warns that results and system sizes were not final before the teams’ final submissions. Manuscript or selection-page rates must not be treated as final winning scores."
+      ],
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/12/sc23_history_06.pdf",
+        "label": "SC23",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3581784",
+        "website_url": "https://sc23.supercomputing.org/",
+        "year": 2023
+      }
+    },
+    {
+      "year": 2024,
+      "award_series": "ACM Gordon Bell Prize",
+      "checked_on": "2026-11-12",
+      "sources": [
+        {
+          "id": "sc24-announcement",
+          "url": "https://sc24.supercomputing.org/2024/10/presenting-the-finalists-for-the-2024-gordon-bell-prize/",
+          "label": "SC24 official six-finalist announcement, October 9, 2024",
+          "kind": "official_finalist_announcement"
+        },
+        {
+          "id": "sc24-program",
+          "url": "https://sc24.conference-program.com/",
+          "label": "SC24 official full program, main-prize finalist sessions 1 and 2",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref-00013",
+          "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00013",
+          "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00013",
+          "kind": "publisher_deposited_registry_metadata"
+        },
+        {
+          "id": "sc24-program-gb101",
+          "url": "https://sc24.conference-program.com/presentation/?id=gb101&sess=sess497",
+          "label": "SC24 official ACM Gordon Bell Finalist presentation gb101",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref-00011",
+          "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00011",
+          "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00011",
+          "kind": "publisher_deposited_registry_metadata"
+        },
+        {
+          "id": "sc24-program-gb103",
+          "url": "https://sc24.conference-program.com/presentation/?id=gb103&sess=sess496",
+          "label": "SC24 official ACM Gordon Bell Finalist presentation gb103",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref-00012",
+          "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00012",
+          "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00012",
+          "kind": "publisher_deposited_registry_metadata"
+        },
+        {
+          "id": "sc24-program-gb105",
+          "url": "https://sc24.conference-program.com/presentation/?id=gb105&sess=sess496",
+          "label": "SC24 official ACM Gordon Bell Finalist presentation gb105",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref-00014",
+          "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00014",
+          "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00014",
+          "kind": "publisher_deposited_registry_metadata"
+        },
+        {
+          "id": "sc24-program-gb104",
+          "url": "https://sc24.conference-program.com/presentation/?id=gb104&sess=sess497",
+          "label": "SC24 official ACM Gordon Bell Finalist presentation gb104",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref-00010",
+          "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00010",
+          "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00010",
+          "kind": "publisher_deposited_registry_metadata"
+        },
+        {
+          "id": "sc24-program-gb102",
+          "url": "https://sc24.conference-program.com/presentation/?id=gb102&sess=sess496",
+          "label": "SC24 official ACM Gordon Bell Finalist presentation gb102",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "crossref-00015",
+          "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00015",
+          "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00015",
+          "kind": "publisher_deposited_registry_metadata"
+        },
+        {
+          "id": "sc24-program-gb106",
+          "url": "https://sc24.conference-program.com/presentation/?id=gb106&sess=sess497",
+          "label": "SC24 official ACM Gordon Bell Finalist presentation gb106",
+          "kind": "official_conference_program"
+        }
+      ],
+      "roster_completeness": {
+        "status": "complete_official_finalist_roster",
+        "expected_count": 6,
+        "basis_source_ids": [
+          "sc24-announcement",
+          "sc24-program"
+        ]
+      },
+      "records": [
+        {
+          "id": "SC24-gb101",
+          "title": "MProt-DPO[CB3]: Breaking the ExaFLOPS Barrier for Multimodal Protein Design Workflows with Direct Preference Optimization",
+          "title_source_id": "sc24-announcement",
+          "doi": "10.1109/sc41406.2024.00013",
+          "doi_status": "verified",
+          "doi_source_id": "crossref-00013",
+          "publisher_title": "MProt-DPO: Breaking the ExaFLOPS Barrier for Multimodal Protein Design Workflows with Direct Preference Optimization",
+          "authors": [
+            "Gautham Dharuman",
+            "Kyle Hippe",
+            "Alexander Brace",
+            "Sam Foreman",
+            "Väinö Hatanpää",
+            "Varuni K. Sastry",
+            "Huihuo Zheng",
+            "Logan Ward",
+            "Servesh Muralidharan",
+            "Archit Vasan",
+            "Bharat Kale",
+            "Carla M. Mann",
+            "Heng Ma",
+            "Yun-Hsuan Cheng",
+            "Yuliana Zamora",
+            "Shengchao Liu",
+            "Chaowei Xiao",
+            "Murali Emani",
+            "Tom Gibbs",
+            "Mahidhar Tatineni",
+            "Deepak Canchi",
+            "Jerome Mitchell",
+            "Koichi Yamada",
+            "Maria Garzaran",
+            "Michael E. Papka",
+            "Ian Foster",
+            "Rick Stevens",
+            "Anima Anandkumar",
+            "Venkatram Vishwanath",
+            "Arvind Ramanathan"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order",
+          "publication_url": "https://ieeexplore.ieee.org/document/10793126/",
+          "notes": [
+            "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record.",
+            "The official announcement prints MProt-DPO[CB3]. The official program and deposited publisher title print MProt-DPO without [CB3]. The announcement spelling is preserved here; the reason for its bracketed label is not established.",
+            "The program author list differs in count and order from the 30-name deposited record; authors here preserve registry order."
+          ]
+        },
+        {
+          "id": "SC24-gb103",
+          "title": "Pushing the Limit of Quantum Mechanical Simulation to the Raman Spectra of a Biological System with 100 Million Atoms",
+          "title_source_id": "sc24-announcement",
+          "doi": "10.1109/sc41406.2024.00011",
+          "doi_status": "verified",
+          "doi_source_id": "crossref-00011",
+          "publisher_title": "Pushing the Limit of Quantum Mechanical Simulation to the Raman Spectra of a Biological System with 100 Million Atoms",
+          "authors": [
+            "Honghui Shang",
+            "Ying Liu",
+            "Zhikun Wu",
+            "Zhenchuan Chen",
+            "Jinfeng Liu",
+            "Meiyue Shao",
+            "Yingzhou Li",
+            "Bowen Kan",
+            "Huimin Cui",
+            "Xiaobing Feng",
+            "Yunquan Zhang",
+            "Donald G. Truhlar",
+            "Hong An",
+            "Xiao He",
+            "Jinlong Yang"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order",
+          "publication_url": "https://ieeexplore.ieee.org/document/10793225/",
+          "notes": [
+            "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record."
+          ]
+        },
+        {
+          "id": "SC24-gb105",
+          "title": "Toward Capturing Genetic Epistasis From Multivariate Genome-Wide Association Studies Using Mixed-Precision Kernel Ridge Regression",
+          "title_source_id": "sc24-announcement",
+          "doi": "10.1109/sc41406.2024.00012",
+          "doi_status": "verified",
+          "doi_source_id": "crossref-00012",
+          "publisher_title": "Toward Capturing Genetic Epistasis from Multivariate Genome-Wide Association Studies Using Mixed-Precision Kernel Ridge Regression",
+          "authors": [
+            "Hatem Ltaief",
+            "Rabab Alomairy",
+            "Qinglei Cao",
+            "Jie Ren",
+            "Lotfi Slim",
+            "Thorsten Kurth",
+            "Benedikt Dorschner",
+            "Salim Bougouffa",
+            "Rached Abdelkhalak",
+            "David E. Keyes"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order",
+          "publication_url": "https://ieeexplore.ieee.org/document/10793171/",
+          "notes": [
+            "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record.",
+            "The announcement capitalizes From; the publisher title uses from. The registry and announcement spell the ninth author Rached Abdelkhalak, while the program spells Rached Abdelkhalek. Registry spelling is preserved in authors."
+          ]
+        },
+        {
+          "id": "SC24-gb104",
+          "title": "Breaking the Molecular Dynamics Timescale Barrier Using a Wafer-Scale System",
+          "title_source_id": "sc24-announcement",
+          "doi": "10.1109/sc41406.2024.00014",
+          "doi_status": "verified",
+          "doi_source_id": "crossref-00014",
+          "publisher_title": "Breaking the Molecular Dynamics Timescale Barrier Using a Wafer-Scale System",
+          "authors": [
+            "Kylee Santos",
+            "Stan Moore",
+            "Tomas Oppelstrup",
+            "Amirali Sharifian",
+            "Ilya Sharapov",
+            "Aidan Thompson",
+            "Delyan Z. Kalchev",
+            "Danny Perez",
+            "Robert Schreiber",
+            "Scott Pakin",
+            "Edgar A. Leon",
+            "James H. Laros",
+            "Michael James",
+            "Sivasankaran Rajamanickam"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order",
+          "publication_url": "https://ieeexplore.ieee.org/document/10793165/",
+          "notes": [
+            "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record.",
+            "The registry lists James H. Laros; announcement and program include the suffix III. Registry spelling is preserved in authors."
+          ]
+        },
+        {
+          "id": "SC24-gb102",
+          "title": "Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers",
+          "title_source_id": "sc24-announcement",
+          "doi": "10.1109/sc41406.2024.00010",
+          "doi_status": "verified",
+          "doi_source_id": "crossref-00010",
+          "publisher_title": "Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers",
+          "authors": [
+            "Siddharth Singh",
+            "Prajwal Singhania",
+            "Aditya Ranjan",
+            "John Kirchenbauer",
+            "Jonas Geiping",
+            "Yuxin Wen",
+            "Neel Jain",
+            "Abhimanyu Hans",
+            "Manli Shu",
+            "Aditya Tomar",
+            "Tom Goldstein",
+            "Abhinav Bhatele"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order",
+          "publication_url": "https://ieeexplore.ieee.org/document/10793182/",
+          "notes": [
+            "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record."
+          ]
+        },
+        {
+          "id": "SC24-gb106",
+          "title": "Breaking the Million-Electron and 1 EFLOP/s Barriers: Biomolecular-Scale Ab Initio Molecular Dynamics Using MP2 Potentials",
+          "title_source_id": "sc24-announcement",
+          "doi": "10.1109/sc41406.2024.00015",
+          "doi_status": "verified",
+          "doi_source_id": "crossref-00015",
+          "publisher_title": "Breaking the Million-Electron and 1 EFLOP/s Barriers: Biomolecular-Scale Ab Initio Molecular Dynamics Using MP2 Potentials",
+          "authors": [
+            "Ryan Stocks",
+            "Jorge L. Galvez Vallejo",
+            "Fiona C. Y. Yu",
+            "Calum Snowdon",
+            "Elise Palethorpe",
+            "Jakub Kurzak",
+            "Dmytro Bykov",
+            "Giuseppe M. J. Barca"
+          ],
+          "authors_status": "verified_publisher_deposited_registry_order",
+          "publication_url": "https://ieeexplore.ieee.org/document/10793210/",
+          "notes": [
+            "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record."
+          ]
+        }
+      ],
+      "notes": [
+        "Scope: metadata roster only. No full-text, machine configuration, performance result, precision, measurement-method, or final-score audit was performed.",
+        "The main ACM Gordon Bell Prize is kept separate from the ACM Gordon Bell Prize for Climate Modelling; the latter appears in a separately named SC24 program session and is not included in these six records.",
+        "Announcement titles are retained separately from publisher-deposited titles. Registry author order is preserved without normalization against program variants.",
+        "Six distinct direct Crossref work records were retrieved successfully. Each identifies publisher IEEE, member 263, and type proceedings-article; matching relied on title and ordered author metadata, not search-result snippets.",
+        "The checked date records this metadata verification, not a paper revision or performance measurement date."
+      ],
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2024/12/sc24_history_04.pdf",
+        "label": "SC24",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3703596",
+        "website_url": "https://sc24.supercomputing.org/",
+        "year": 2024
+      }
+    },
+    {
+      "year": 2025,
+      "award_series": "ACM Gordon Bell Prize",
+      "checked_on": "2026-11-12",
+      "sources": [
+        {
+          "id": "sc25_program",
+          "url": "https://sc25.conference-program.com/",
+          "label": "SC25 official full program and event-type legend",
+          "kind": "official_conference_program"
+        },
+        {
+          "id": "sc25_day_15",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-15.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 15, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_16",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-16.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 16, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_17",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-17.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 17, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_18",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-18.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 18, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_19",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-19.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 19, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_20",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-20.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 20, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_21",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-21.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 21, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_day_22",
+          "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-22.txt?v=1770063066",
+          "label": "SC25 official public daily-program data, November 22, 2025",
+          "kind": "official_conference_program_data"
+        },
+        {
+          "id": "sc25_session_575",
+          "url": "https://sc25.conference-program.com/session/?sess=sess575",
+          "label": "SC25 Gordon Bell presentation session sess575",
+          "kind": "official_conference_program_session"
+        },
+        {
+          "id": "sc25_session_577",
+          "url": "https://sc25.conference-program.com/session/?sess=sess577",
+          "label": "SC25 Gordon Bell presentation session sess577",
+          "kind": "official_conference_program_session"
+        },
+        {
+          "id": "sc25_session_590",
+          "url": "https://sc25.conference-program.com/session/?sess=sess590",
+          "label": "SC25 Gordon Bell presentation session sess590",
+          "kind": "official_conference_program_session"
+        },
+        {
+          "id": "sc25_presentation_pap577",
+          "url": "https://sc25.conference-program.com/presentation/?id=pap577&sess=sess575",
+          "label": "SC25 official presentation pap577",
+          "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "crossref_3771784",
+          "url": "https://api.crossref.org/works/10.1145/3712285.3771784",
+          "label": "Crossref direct registration record for 10.1145/3712285.3771784",
+          "kind": "doi_registration_record"
+        },
+        {
+          "id": "sc25_presentation_gb101",
+          "url": "https://sc25.conference-program.com/presentation/?id=gb101&sess=sess575",
+          "label": "SC25 official presentation gb101",
+          "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "crossref_3771783",
+          "url": "https://api.crossref.org/works/10.1145/3712285.3771783",
+          "label": "Crossref direct registration record for 10.1145/3712285.3771783",
+          "kind": "doi_registration_record"
+        },
+        {
+          "id": "sc25_presentation_gb104",
+          "url": "https://sc25.conference-program.com/presentation/?id=gb104&sess=sess575",
+          "label": "SC25 official presentation gb104",
+          "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "crossref_3771786",
+          "url": "https://api.crossref.org/works/10.1145/3712285.3771786",
+          "label": "Crossref direct registration record for 10.1145/3712285.3771786",
+          "kind": "doi_registration_record"
+        },
+        {
+          "id": "sc25_presentation_gb103",
+          "url": "https://sc25.conference-program.com/presentation/?id=gb103&sess=sess575",
+          "label": "SC25 official presentation gb103",
+          "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "crossref_3771785",
+          "url": "https://api.crossref.org/works/10.1145/3712285.3771785",
+          "label": "Crossref direct registration record for 10.1145/3712285.3771785",
+          "kind": "doi_registration_record"
+        },
+        {
+          "id": "sc25_presentation_gb105",
+          "url": "https://sc25.conference-program.com/presentation/?id=gb105&sess=sess577",
+          "label": "SC25 official presentation gb105",
+          "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "crossref_3772093",
+          "url": "https://api.crossref.org/works/10.1145/3712285.3772093",
+          "label": "Crossref direct registration record for 10.1145/3712285.3772093",
+          "kind": "doi_registration_record"
+        },
+        {
+          "id": "sc25_presentation_gb106",
+          "url": "https://sc25.conference-program.com/presentation/?id=gb106&sess=sess577",
+          "label": "SC25 official presentation gb106",
+          "kind": "official_conference_program_presentation"
+        },
+        {
+          "id": "crossref_3771787",
+          "url": "https://api.crossref.org/works/10.1145/3712285.3771787",
+          "label": "Crossref direct registration record for 10.1145/3712285.3771787",
+          "kind": "doi_registration_record"
+        }
+      ],
+      "roster_completeness": {
+        "status": "verified_complete_program_roster",
+        "expected_count": 6,
+        "basis_source_ids": [
+          "sc25_program",
+          "sc25_day_15",
+          "sc25_day_16",
+          "sc25_day_17",
+          "sc25_day_18",
+          "sc25_day_19",
+          "sc25_day_20",
+          "sc25_day_21",
+          "sc25_day_22",
+          "sc25_session_575",
+          "sc25_session_577",
+          "sc25_session_590"
+        ]
+      },
+      "records": [
+        {
+          "id": "SC25_pap577",
+          "title": "Ab-Initio Quantum Transport with the GW Approximation, 42,240 Atoms, and Sustained Exascale Performance",
+          "title_source_id": "sc25_presentation_pap577",
+          "doi": "10.1145/3712285.3771784",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3771784",
+          "publisher_title": "Ab-initio Quantum Transport with the GW Approximation, 42,240 Atoms, and Sustained Exascale Performance",
+          "authors": [
+            "Nicolas Vetsch",
+            "Alexander Maeder",
+            "Vincent Maillou",
+            "Anders Winka",
+            "Jiang Cao",
+            "Grzegorz Kwasniewski",
+            "Leonard Deuschle",
+            "Torsten Hoefler",
+            "Alexandros Nikolaos Ziogas",
+            "Mathieu Luisier"
+          ],
+          "authors_status": "registry_verified_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3712285.3771784",
+          "notes": [
+            "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
+            "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline.",
+            "The official program uses presentation ID pap577 rather than a gb-prefixed ID. It is explicitly an ACM Gordon Bell Finalist in main-only session sess575; absence of a GB tag is not treated as exclusion.",
+            "Program author spelling Leonard Deutschle differs from registry spelling Leonard Deuschle; the authors array preserves the registry spelling.",
+            "Program and publisher-registration title capitalization differs; title preserves the program and publisher_title preserves the registry."
+          ]
+        },
+        {
+          "id": "SC25_gb101",
+          "title": "Simulating Many-Engine Spacecraft: Exceeding 1 Quadrillion Degrees of Freedom via Information Geometric Regularization",
+          "title_source_id": "sc25_presentation_gb101",
+          "doi": "10.1145/3712285.3771783",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3771783",
+          "publisher_title": "Simulating many-engine spacecraft: Exceeding 1 quadrillion degrees of freedom via information geometric regularization",
+          "authors": [
+            "Benjamin Wilfong",
+            "Anand Radhakrishnan",
+            "Henry Le Berre",
+            "Daniel Vickers",
+            "Tanush Prathi",
+            "Nikolaos Tselepidis",
+            "Benedikt Dorschner",
+            "Reuben Budiardja",
+            "Brian Cornille",
+            "Stephen Abbott",
+            "Florian Schäfer",
+            "Spencer Bryngelson"
+          ],
+          "authors_status": "registry_verified_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3712285.3771783",
+          "notes": [
+            "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
+            "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline.",
+            "Program and publisher-registration title capitalization differs; title preserves the program and publisher_title preserves the registry."
+          ]
+        },
+        {
+          "id": "SC25_gb104",
+          "title": "Cosmological Hydrodynamics at Exascale: A Trillion-Particle Leap in Capability",
+          "title_source_id": "sc25_presentation_gb104",
+          "doi": "10.1145/3712285.3771786",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3771786",
+          "publisher_title": "Cosmological Hydrodynamics at Exascale: A Trillion-Particle Leap in Capability",
+          "authors": [
+            "Nicholas Frontiere",
+            "J.D. Emberson",
+            "Michael Buehlmann",
+            "Esteban M. Rangel",
+            "Salman Habib",
+            "Katrin Heitmann",
+            "Patricia Larsen",
+            "Vitali Morozov",
+            "Adrian Pope",
+            "Claude-André Faucher-Giguère",
+            "Antigoni Georgiadou",
+            "Damien Lebrun-Grandié",
+            "Andrey Prokopenko"
+          ],
+          "authors_status": "registry_verified_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3712285.3771786",
+          "notes": [
+            "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
+            "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline."
+          ]
+        },
+        {
+          "id": "SC25_gb103",
+          "title": "Multiscale Light-Matter Dynamics in Quantum Materials: From Electrons to Topological Superlattices",
+          "title_source_id": "sc25_presentation_gb103",
+          "doi": "10.1145/3712285.3771785",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3771785",
+          "publisher_title": "Multiscale Light-Matter Dynamics in Quantum Materials: From Electrons to Topological Superlattices",
+          "authors": [
+            "Taufeq Mohammed Razakh",
+            "Thomas Linker",
+            "Ye Luo",
+            "Nariman Piroozan",
+            "John Pennycook",
+            "Nalini Kumar",
+            "Albert Musaelian",
+            "Anders Johansson",
+            "Boris Kozinsky",
+            "Rajiv K. Kalia",
+            "Priya Vashishta",
+            "Fuyuki Shimojo",
+            "Shinnosuke Hattori",
+            "Ken-ichi Nomura",
+            "Aiichiro Nakano"
+          ],
+          "authors_status": "registry_verified_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3712285.3771785",
+          "notes": [
+            "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
+            "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline."
+          ]
+        },
+        {
+          "id": "SC25_gb105",
+          "title": "Advancing Quantum Many-Body GW Calculations on Exascale Supercomputing Platforms",
+          "title_source_id": "sc25_presentation_gb105",
+          "doi": "10.1145/3712285.3772093",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3772093",
+          "publisher_title": "Advancing Quantum Many-Body GW Calculations on Exascale Supercomputing Platforms",
+          "authors": [
+            "Benran Zhang",
+            "Daniel Weinberg",
+            "Chih-En Hsu",
+            "Aaron R. Altman",
+            "Yuming Shi",
+            "James B. White III",
+            "Derek Vigil-Fowler",
+            "Steven G. Louie",
+            "Jack R. Deslippe",
+            "Felipe H. da Jornada",
+            "Zhenglu Li",
+            "Mauro Del Ben"
+          ],
+          "authors_status": "registry_verified_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3712285.3772093",
+          "notes": [
+            "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
+            "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline.",
+            "Mixed session sess577 propagates both main and Climate Modeling event types to presentations; the individual GB tag identifies this as a main-prize finalist.",
+            "Crossref supplies suffix III separately for James B. White; the author name is rendered James B. White III. Name particles da Jornada and Del Ben are retained."
+          ]
+        },
+        {
+          "id": "SC25_gb106",
+          "title": "Real-Time Bayesian Inference at Extreme Scale: A Digital Twin for Tsunami Early Warning Applied to the Cascadia Subduction Zone",
+          "title_source_id": "sc25_presentation_gb106",
+          "doi": "10.1145/3712285.3771787",
+          "doi_status": "verified",
+          "doi_source_id": "crossref_3771787",
+          "publisher_title": "Real-Time Bayesian Inference at Extreme Scale: A Digital Twin for Tsunami Early Warning Applied to the Cascadia Subduction Zone",
+          "authors": [
+            "Stefan Henneking",
+            "Sreeram Venkat",
+            "Veselin Dobrev",
+            "John Camier",
+            "Tzanio Kolev",
+            "Milinda Fernando",
+            "Alice-Agnes Gabriel",
+            "Omar Ghattas"
+          ],
+          "authors_status": "registry_verified_not_pdf_audited",
+          "publication_url": "https://dl.acm.org/doi/10.1145/3712285.3771787",
+          "notes": [
+            "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
+            "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline.",
+            "Mixed session sess577 propagates both main and Climate Modeling event types to presentations; the individual GB tag identifies this as a main-prize finalist."
+          ]
+        }
+      ],
+      "notes": [
+        "Scope is the main ACM Gordon Bell Prize, excluding the distinct ACM Gordon Bell Prize for Climate Modelling/Climate Modeling series.",
+        "Completeness is derived from all eight official daily-program data files linked by the full program. Deduplicating adjacent-day copies yields only sess575 and sess577 with the main-finalist event type sstype112. Main-only sess575 contains four entries, including pap577; mixed sess577 contains two GB-tagged entries plus two GBC-tagged climate entries. This establishes six scheduled main finalists without assuming a fixed annual count.",
+        "The program legend distinguishes main Gordon Bell Finalist tag ptrack189 / GB from climate tag ptrack190 / GBC. Mixed session event-type labels alone cannot safely distinguish the series.",
+        "Excluded from this main roster: AERIS (gbv102) and ORBIT-2 (pap875) are GBC-tagged in sess577; Destination Earth (gbv104) and Computing the Full Earth System at 1 km Resolution (gbv103) are GBC-tagged in climate-only sess590.",
+        "All six DOI/title matches were verified against direct Crossref registration records deposited for ACM publications, not inferred from search snippets. Registered publisher titles are preserved separately from program capitalization.",
+        "This file is bibliographic and program-roster evidence only. It establishes neither complete manuscript audits nor winner status, paper performance measurements, or award-final scores.",
+        "Program snippets retrieved for this check identify generation time 2026-02-02 14:11:09; they are the currently available official schedule representation, not a claim to have captured a pre-conference snapshot."
+      ],
+      "sc_links": {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2026/03/sc25_history.pdf",
+        "label": "SC25",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3712285",
+        "website_url": "https://sc25.supercomputing.org/",
+        "year": 2025
+      }
+    }
+  ],
+  "annual_sc_links": {
+    "checked_on": "2026-11-12",
+    "source_url": "https://supercomputing.org/conference-history/",
+    "link_check": "URLs transcribed from official SC history page DOM; individual target availability not asserted",
+    "entries": [
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2026/03/sc25_history.pdf",
+        "label": "SC25",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3712285",
+        "website_url": "https://sc25.supercomputing.org/",
+        "year": 2025
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2024/12/sc24_history_04.pdf",
+        "label": "SC24",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3703596",
+        "website_url": "https://sc24.supercomputing.org/",
+        "year": 2024
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/12/sc23_history_06.pdf",
+        "label": "SC23",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3581784",
+        "website_url": "https://sc23.supercomputing.org/",
+        "year": 2023
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/11/SC22.pdf",
+        "label": "SC22",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3571885",
+        "website_url": "https://sc22.supercomputing.org/",
+        "year": 2022
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/11/SC21.pdf",
+        "label": "SC21",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3458817",
+        "website_url": "https://sc21.supercomputing.org/",
+        "year": 2021
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2020/11/SC20.pdf",
+        "label": "SC20",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3433701",
+        "website_url": "https://sc20.supercomputing.org/",
+        "year": 2020
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/11/SC2019.pdf",
+        "label": "SC19",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3295500",
+        "website_url": "https://sc19.supercomputing.org/",
+        "year": 2019
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2018.pdf",
+        "label": "SC18",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3291656",
+        "website_url": "http://sc18.supercomputing.org/",
+        "year": 2018
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2017.pdf",
+        "label": "SC17",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3126908",
+        "website_url": "https://sc17.supercomputing.org/",
+        "year": 2017
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2016.pdf",
+        "label": "SC16",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3014904",
+        "website_url": "https://sc16.supercomputing.org/",
+        "year": 2016
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2015.pdf",
+        "label": "SC15",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/2807591",
+        "website_url": "https://sc15.supercomputing.org/",
+        "year": 2015
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2014.pdf",
+        "label": "SC14",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/2683593",
+        "website_url": "https://sc14.supercomputing.org/",
+        "year": 2014
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2013.pdf",
+        "label": "SC13",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/2503210",
+        "website_url": "https://sc13.supercomputing.org/",
+        "year": 2013
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2012.pdf",
+        "label": "SC12",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/2388996",
+        "website_url": "https://sc12.supercomputing.org/",
+        "year": 2012
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2011.pdf",
+        "label": "SC11",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/2063384",
+        "website_url": "https://sc11.supercomputing.org/",
+        "year": 2011
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2010.pdf",
+        "label": "SC10",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1884643",
+        "website_url": null,
+        "year": 2010
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2009.pdf",
+        "label": "SC09",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1654059",
+        "website_url": "https://sc09.supercomputing.org/",
+        "year": 2009
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2008.pdf",
+        "label": "SC08",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1413370",
+        "website_url": "https://sc08.supercomputing.org/",
+        "year": 2008
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2007.pdf",
+        "label": "SC07",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1362622",
+        "website_url": null,
+        "year": 2007
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2006.pdf",
+        "label": "SC06",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1188455",
+        "website_url": null,
+        "year": 2006
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2005.pdf",
+        "label": "SC05",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1105760",
+        "website_url": "https://sc05.supercomputing.org/",
+        "year": 2005
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2004.pdf",
+        "label": "SC04",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/1048933",
+        "website_url": "https://sc04.supercomputing.org/",
+        "year": 2004
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2003.pdf",
+        "label": "SC03",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/1048935",
+        "website_url": "https://sc03.supercomputing.org/",
+        "year": 2003
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2002.pdf",
+        "label": "SC02",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/762761",
+        "website_url": "https://sc02.supercomputing.org/",
+        "year": 2002
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2001.pdf",
+        "label": "SC01",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/582034",
+        "website_url": null,
+        "year": 2001
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2000.pdf",
+        "label": "SC2000",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/370049",
+        "website_url": null,
+        "year": 2000
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1999.pdf",
+        "label": "SC99",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/331532",
+        "website_url": null,
+        "year": 1999
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1998.pdf",
+        "label": "SC98",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/509058",
+        "website_url": null,
+        "year": 1998
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1997.pdf",
+        "label": "SC97",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/509593",
+        "website_url": null,
+        "year": 1997
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1996.pdf",
+        "label": "SC96",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/369028",
+        "website_url": null,
+        "year": 1996
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1995.pdf",
+        "label": "SC95",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/224170",
+        "website_url": null,
+        "year": 1995
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1994.pdf",
+        "label": "SC94",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/602770",
+        "website_url": "https://sc94.supercomputing.org/",
+        "year": 1994
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1993.pdf",
+        "label": "SC93",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/169627",
+        "website_url": null,
+        "year": 1993
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1992.pdf",
+        "label": "SC92",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/147877",
+        "website_url": null,
+        "year": 1992
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1991.pdf",
+        "label": "SC91",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/125826",
+        "website_url": null,
+        "year": 1991
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1990.pdf",
+        "label": "SC90",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/110382",
+        "website_url": null,
+        "year": 1990
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1989.pdf",
+        "label": "SC89",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/76263",
+        "website_url": null,
+        "year": 1989
+      },
+      {
+        "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC1988.pdf",
+        "label": "SC88",
+        "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/62972",
+        "website_url": null,
+        "year": 1988
+      },
+      {
+        "year": 2026,
+        "label": "SC26",
+        "website_url": "https://sc26.supercomputing.org/",
+        "proceedings_url": null,
+        "history_pdf_url": null
+      }
+    ],
+    "current_year_source_note": "SC26 website linked from the official history page navigation; proceedings not checked."
   }
 }
