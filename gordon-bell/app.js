@@ -1,8 +1,8 @@
 'use strict';
-let db, visible = [];
+let db, visible = [], rosterVisible = [];
 const $ = id => document.getElementById(id);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const link = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`;
+const link = (url, label) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>` : `<span class="offline-source">${esc(label)} (preserved offline)</span>`;
 const src = (ids) => (ids || []).map(id => link(db.sources[id].url, db.sources[id].label)).join(' ');
 const doi = p => 'https://doi.org/' + p.doi;
 function measurement(m) { return `${m.relation && m.relation !== '=' ? m.relation+' ' : ''}${m.value.toLocaleString('en-US')} ${m.unit}`; }
@@ -49,33 +49,52 @@ function renderHoldings() {
   $('holdings-list').innerHTML=rows.map(r=>`<details class="holding"><summary><span>${r.year} / ${esc(r.code)}</span> ${esc(r.title)}</summary><p>${esc(r.content_status)}</p>${r.authors?`<p>${esc(r.authors.join(' · '))}</p>`:''}${r.award_status?`<p>${esc(r.award_status)}</p>`:''}<p>Source volume: ${esc(r.source_directory)}</p><ul>${r.body_files.map(f=>`<li><code>${esc(f.relative_path)}</code> · ${f.size_bytes.toLocaleString('en-US')} bytes</li>`).join('')}</ul><p>SHA-256-verified local copies. Full text is retained offline; this site provides metadata, not manuscript downloads.</p></details>`).join('');
 }
 function renderYearCoverage() {
-  $('year-coverage').innerHTML=db.year_coverage.map(y=>`<div class="year-cell ${y.year===2008?'audited':''}"><strong>${y.year}</strong><span>${y.web_candidate_count!=null?y.web_candidate_count+' web finalists':y.local_candidate_count==null?'Not reconciled':y.local_candidate_count+' local records'}</span><small>${esc(y.status)}</small><p class="annual-links">${annualLinks(y.sc_links)||'SC conference series began in 1988.'}</p></div>`).join('');
+  $('year-coverage').innerHTML=db.year_coverage.map(y=>`<div class="year-cell ${y.year===2008?'audited':''}"><strong>${y.year}</strong><span>${y.candidate_count!=null?y.candidate_count+' indexed entries':y.local_candidate_count==null?'Not reconciled':y.local_candidate_count+' local records'}</span><small>${esc(y.status)}</small><p class="annual-links">${annualLinks(y.sc_links)||'SC conference series began in 1988.'}</p></div>`).join('');
 }
 function annualLinks(s) {
   if(!s) return '';
   return [s.website_url&&link(s.website_url,'SC website'),s.proceedings_url&&link(s.proceedings_url,'Proceedings'),s.history_pdf_url&&link(s.history_pdf_url,'SC history PDF')].filter(Boolean).join(' ');
 }
+function rosterStatus(r) {
+  const status=r.roster_completeness.status;
+  if(r.roster_completeness.expected_count==null || status.includes('partial')) return 'Partial roster · further candidates may be missing';
+  if(status.includes('award_labels_unresolved')) return 'Preserved session list · finalist/winner labels unresolved';
+  return r.source_method==='Preserved conference index' ? 'Preserved official index enumerated' : 'Primary source roster enumerated';
+}
 function renderRecent() {
-  const q=$('recent-search').value.trim().toLowerCase(), year=$('recent-year').value;
-  let total=0,matched=0;
-  const html=db.recent_rosters.map(r=>{
+  const q=$('recent-search').value.trim().toLowerCase(), year=$('recent-year').value, doiState=$('roster-doi').value;
+  const catalogue=db.annual_rosters || db.recent_rosters;
+  let total=0,matched=0; rosterVisible=[];
+  const html=catalogue.map(r=>{
     total+=r.records.length;
-    const records=r.records.filter(p=>(year==='all'||String(r.year)===year)&&(!q||[p.title,p.publisher_title,p.doi,r.year,...p.authors].join(' ').toLowerCase().includes(q)));
+    const records=r.records.filter(p=>(year==='all'||String(r.year)===year)&&(!q||[p.title,p.publisher_title,p.doi,r.year,...p.authors].join(' ').toLowerCase().includes(q))&&(doiState==='all'||(doiState==='verified'&&p.doi_status==='verified')||(doiState==='unresolved'&&!['verified','not_applicable'].includes(p.doi_status))||(doiState==='not_applicable'&&p.doi_status==='not_applicable')));
     matched+=records.length;
     if(!records.length) return '';
     const sources=Object.fromEntries(r.sources.map(s=>[s.id,s]));
+    for(const p of records) rosterVisible.push({year:r.year,...p,conference_year:r.conference_year||r.year,year_label:r.year_label||String(r.year),entry_type:r.roster_completeness.membership_label||'candidates',title_source:sources[p.title_source_id],roster_status:r.roster_completeness.status});
     const ref=(id,label)=>sources[id]?link(sources[id].url,label||sources[id].label):'';
     const rosterSources=r.roster_completeness.basis_source_ids.map(id=>ref(id)).join(' ');
-    return `<article class="roster-year"><h3>SC${String(r.year).slice(-2)} <span class="tag">${r.records.length} main-prize finalists</span></h3><p class="annual-links">${annualLinks(r.sc_links)}</p><details class="roster-evidence"><summary>Official roster evidence</summary><p class="source-links">${rosterSources}</p></details><p class="roster-status">Annual roster reconciled · ${r.detailed_paper_count || 0} of ${r.records.length} papers have selected manuscript fields checked · Conference-day scores unverified.</p><ol class="roster-records">${records.map(p=>`<li><h4>${esc(p.title)}</h4><div class="paper-links">${p.doi_status==='verified'?link('https://doi.org/'+p.doi,'DOI: '+p.doi):'<span>DOI not yet verified</span>'}${p.detailed_paper_id?`<button data-paper="${esc(p.detailed_paper_id)}">Manuscript details</button>`:''}${ref(p.title_source_id,'Official title source')}${p.publication_url?link(p.publication_url,'Publisher record'):''}${p.doi_status==='verified'?ref(p.doi_source_id,'DOI verification'):''}</div><details><summary>Bibliographic evidence & title variants</summary>${p.publisher_title&&p.publisher_title!==p.title?`<p>Publisher title: ${esc(p.publisher_title)}</p>`:''}<p>${esc(p.authors.join(' · '))}</p><p>${p.detailed_paper_id?'Registry author order is preserved here; the reviewed manuscript byline is shown in Manuscript details.':'Author order follows the publisher-deposited registry record; the PDF byline has not been audited.'}</p>${p.notes.length?`<ul>${p.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>`:''}<p>Checked ${esc(r.checked_on)}. ${p.detailed_paper_id?'Selected manuscript fields checked; see Manuscript details for version-specific values and award evidence.':'Full-text, performance and award-outcome audits are pending.'}</p></details></li>`).join('')}</ol></article>`;
+    const note=r.roster_completeness.note || r.notes?.[0] || '';
+    const open=year!=='all'||q||doiState!=='all';
+    const membership=r.roster_completeness.membership_label || 'candidates';
+    const partial=r.roster_completeness.expected_count==null || r.roster_completeness.status.includes('partial');
+    const countLabel=partial ? r.records.length+' identified · partial list' : r.records.length+' '+membership+(r.roster_completeness.status.includes('award_labels_unresolved')?' · labels unresolved':'');
+    return `<details class="roster-year" ${open?'open':''}><summary><strong>${r.year}${r.event_label?' · '+esc(r.event_label):' / SC'+String(r.year).slice(-2)}</strong><span>${esc(countLabel)} · ${r.verified_doi_count} DOI verified</span></summary><p class="annual-links">${annualLinks(r.sc_links)}</p><details class="roster-evidence"><summary>Annual source evidence</summary><p class="source-links">${rosterSources}</p>${note?`<p>${esc(note)}</p>`:''}</details><p class="roster-status">${esc(rosterStatus(r))} · ${r.detailed_paper_count || 0} manuscript checks · Conference-day scores unverified.</p><ol class="roster-records">${records.map(p=>`<li><h4>${esc(p.title)}</h4>${p.title_kind==='editorial_description'?'<p class="title-kind">Editorial description; formal paper title not recovered.</p>':p.title_kind==='corporate_entry'?'<p class="title-kind">Organization-level finalist; no single paper is implied.</p>':p.title_kind==='publisher_title'?'<p class="title-kind">Publication title; original selection title not recovered.</p>':''}<div class="paper-links">${p.doi_status==='verified'?link('https://doi.org/'+p.doi,'DOI: '+p.doi):p.doi_status==='not_applicable'?'<span>DOI not applicable to this organization-level entry</span>':'<span class="unresolved-doi">DOI unresolved</span>'}${p.detailed_paper_id?`<button data-paper="${esc(p.detailed_paper_id)}">Manuscript details</button>`:''}${ref(p.title_source_id,'Title source')}${p.publication_url?link(p.publication_url,'Publisher record'):''}${p.doi_status==='verified'?ref(p.doi_source_id,'DOI verification'):''}</div><details><summary>Bibliographic evidence & title variants</summary>${p.publisher_title&&p.publisher_title!==p.title?`<p>Publisher title: ${esc(p.publisher_title)}</p>`:''}${p.authors.length?`<p>${esc(p.authors.join(' · '))}</p><p>${p.detailed_paper_id?'Registry names are preserved here; the reviewed manuscript byline is shown in Manuscript details.':/registry|crossref/i.test(p.authors_status)?'Names follow publisher-deposited registry order; the PDF byline has not been audited here.':'Names follow the cited source; the full publication byline has not been reconciled here.'}</p>`:/corporate|not_applicable/i.test(p.authors_status)?'<p>Organization-level entry; no single paper byline.</p>':'<p>Author list not yet verified.</p>'}${p.notes.length?`<ul>${p.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>`:''}<p>Checked ${esc(r.checked_on)}. ${p.detailed_paper_id?'Selected manuscript fields checked; see Manuscript details for version-specific values and award evidence.':'Manuscript, performance and award-outcome checks remain separate from this bibliography.'}</p></details></li>`).join('')}</ol></details>`;
   }).join('');
-  $('recent-count').textContent=`${matched} of ${total} web finalist records`;
-  $('recent-list').innerHTML=html||'<p class="empty">No recent titles match these filters.</p>';
+  $('recent-count').textContent=`${matched} of ${total} indexed entries`;
+  $('recent-list').innerHTML=html||'<p class="empty">No annual records match these filters.</p>';
+}
+function rosterCSV() {
+  const columns=['record_id','year','conference_year','year_label','entry_type','title_kind','selection_title','publisher_title','doi','doi_status','authors','authors_status','roster_status','title_source_url','preserved_source_reference'];
+  const rows=rosterVisible.map(p=>[p.id,p.year,p.conference_year,p.year_label,p.entry_type,p.title_kind||'source_title',p.title,p.publisher_title||'',p.doi||'',p.doi_status,p.authors.join('; '),p.authors_status,p.roster_status,p.title_source?.url||'',p.title_source?.local_reference||'']);
+  const cell=v=>'"'+String(v).replace(/^[=+\-@]/,"'$&").replaceAll('"','""')+'"';
+  return '\uFEFF'+[columns,...rows].map(row=>row.map(cell).join(',')).join('\r\n');
 }
 
 async function init() {
   try {
-    const response = await fetch('data.json'); if (!response.ok) throw new Error('Data request failed'); db = await response.json();
-    $('stat-papers').textContent=db.papers.length; $('stat-awards').textContent=db.papers.filter(p=>p.award).length; $('stat-years').textContent=new Set(db.papers.map(p=>p.year)).size; $('stat-runs').textContent=db.papers.reduce((n,p)=>n+p.measurements.length,0);
+    const response = await fetch('data.json?v=annual-20261112'); if (!response.ok) throw new Error('Data request failed'); db = await response.json();
+    $('catalogue-gaps').textContent='Membership lists not yet recovered for: '+db.catalogue_summary.uncovered_years.join(', ')+'. Partial lists are labelled separately.'; $('stat-papers').textContent=db.papers.length; $('stat-roster-years').textContent=db.catalogue_summary.years; $('stat-candidates').textContent=db.catalogue_summary.records; $('stat-dois').textContent=db.catalogue_summary.verified_dois; $('detail-scope').textContent=`${db.papers.length} selected papers · ${db.papers.reduce((n,p)=>n+p.measurements.length,0)} performance observations · ${new Set(db.papers.map(p=>p.year)).size} conference years`;
     fillSelect('paper-year',db.papers.map(p=>String(p.year))); fillSelect('field',db.papers.map(p=>p.field)); fillSelect('machine',db.papers.flatMap(p=>p.machines));
     for (const id of ['search','paper-year','result','field','machine']) $(id).addEventListener(id==='search'?'input':'change',render);
     for(const id of ['list','recent-list']) $(id).addEventListener('click',e=>{const b=e.target.closest('[data-paper]'); if(b) showPaper(b.dataset.paper);});
@@ -86,8 +105,8 @@ async function init() {
     $('issues').innerHTML=db.issues.map(i=>`<article class="issue"><span class="tag ${i.state==='Open'||i.state==='Blocked'?'pending':''}">${esc(i.state)}</span><h4>${esc(i.title)}</h4><p>${esc(i.detail)}</p></article>`).join('');
     fillSelect('holdings-year',db.holdings.records.map(r=>String(r.year)));
     $('holdings-search').addEventListener('input',renderHoldings); $('holdings-year').addEventListener('change',renderHoldings);
-    fillSelect('recent-year',db.recent_rosters.map(r=>String(r.year)));
-    $('recent-search').addEventListener('input',renderRecent); $('recent-year').addEventListener('change',renderRecent);
+    fillSelect('recent-year',db.annual_rosters.map(r=>String(r.year))); $('roster-csv').addEventListener('click',()=>download('gordon-bell-candidate-index.csv',rosterCSV(),'text/csv;charset=utf-8'));
+    $('recent-search').addEventListener('input',renderRecent); $('recent-year').addEventListener('change',renderRecent); $('roster-doi').addEventListener('change',renderRecent);
     renderYearCoverage(); renderHoldings(); renderRecent(); render();
   } catch(err) { $('list').innerHTML='<p class="empty">The research records could not be loaded. Please reload the page.</p>'; console.error(err); }
 }

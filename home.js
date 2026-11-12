@@ -2,7 +2,7 @@
   const copy = {
   "ja": {
     "gordonAction": "候補論文・マシン・性能の記録へ（英語） →",
-    "gordonDescription": "Gordon Bell候補論文の著者・マシン・性能条件・出典をたどる英語の資料サイト。2008・2023〜2025年の論文詳細と、近年の公式候補一覧を収録しています。",
+    "gordonDescription": "歴代Gordon Bell賞の候補・応募記録とDOIを年別にたどる英語資料サイト。部分一覧や未確認項目を明示し、本文の性能条件・出典も収録しています。",
     "gordonResearchAction": "論文と性能の記録を読む",
     "moonCamera": "Nikon Z50 · NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
     "moonExposure": "250mm · f/6.3 · 1/800秒 · ISO 100",
@@ -72,7 +72,7 @@
   },
   "en": {
     "gordonAction": "Explore finalist papers, machines & performance →",
-    "gordonDescription": "An English index of Gordon Bell finalist papers, authors, machines, performance conditions, and sources. Detailed records cover 2008 and 2023–2025, alongside complete recent title/DOI rosters.",
+    "gordonDescription": "A source-linked annual index of Gordon Bell candidates and historical competition entries, with DOI records, explicit coverage gaps, and selected manuscript performance details.",
     "gordonResearchAction": "Explore the research archive",
     "moonCamera": "Nikon Z50 · NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
     "moonExposure": "250mm · f/6.3 · 1/800 s · ISO 100",
