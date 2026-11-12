@@ -9,3 +9,5 @@
 
 .roster-filters{grid-template-columns:2fr 1fr 1fr}.roster-tools{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:12px;margin-bottom:15px}.roster-year{margin:12px 0;padding:0;border:1px solid var(--line);border-left:3px solid var(--green)}.roster-year>summary{padding:16px;display:flex;justify-content:space-between;gap:15px;align-items:center}.roster-year>summary strong{font:21px Georgia,serif}.roster-year>summary span{font-size:12px;color:var(--muted)}.roster-year>p,.roster-year>.roster-evidence,.roster-year>.roster-records{margin-left:18px;margin-right:18px}.roster-evidence{font-size:12px}.roster-evidence p{font-size:12px}.offline-source{font-size:12px;color:var(--muted)}.unresolved-doi{color:#875b20}.stats span{max-width:140px}@media(max-width:600px){.roster-filters{grid-template-columns:1fr}.roster-year>summary{display:block}.roster-year>summary strong,.roster-year>summary span{display:block}.roster-year>summary span{margin-top:6px}}
 .title-kind{font-size:11px;color:var(--muted);margin:7px 0}.roster-status{overflow-wrap:anywhere}
+
+@media(max-width:600px){header{flex-wrap:wrap;gap:12px}nav{flex-wrap:wrap}}
