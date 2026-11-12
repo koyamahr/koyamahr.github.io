@@ -11,3 +11,5 @@
 .title-kind{font-size:11px;color:var(--muted);margin:7px 0}.roster-status{overflow-wrap:anywhere}
 
 @media(max-width:600px){header{flex-wrap:wrap;gap:12px}nav{flex-wrap:wrap}}
+
+.memorial{margin-top:28px;padding:20px 24px;border-left:3px solid var(--gold);background:#f0efe6}.memorial h2{font:24px/1.3 Georgia,serif;letter-spacing:0;margin:0 0 10px}.memorial h2 span{white-space:nowrap}.memorial p{font-size:13px;color:var(--muted);margin:8px 0 0}.memorial-source{display:block;font-size:11px;margin-top:6px}.memorial a{overflow-wrap:anywhere}@media(max-width:600px){.memorial{padding:18px}.memorial h2{font-size:22px}}
