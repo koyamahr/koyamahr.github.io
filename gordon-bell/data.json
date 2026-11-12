@@ -1,0 +1,3167 @@
+{
+  "schema_version": "0.2",
+  "updated_on": "2026-11-12",
+  "scope": "SC08 selected-field audit; SC97 legacy-format checkpoint; 16-year local holdings, not a complete historical roster",
+  "sources": {
+    "selection": {
+      "label": "SC08 initial finalist announcement",
+      "url": "https://www.sc08.supercomputing.org/index-pg%3Dgordonbell.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "schedule": {
+      "label": "SC08 final conference schedule",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/ACM_Gordon_Bell_Finalist.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "awards": {
+      "label": "SC08 award announcement",
+      "url": "https://sc08.supercomputing.org/html/AwardsPresented.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "seismic": {
+      "label": "SC08 presentation record",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/view/gb109.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "qmc": {
+      "label": "SC08 presentation record",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/view/gb118.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "mantle": {
+      "label": "SC08 presentation record",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/view/gb132.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "vpic": {
+      "label": "SC08 presentation record",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/view/gb121.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "md": {
+      "label": "SC08 presentation record",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/view/gb124.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "ls3df": {
+      "label": "SC08 presentation record",
+      "url": "https://www.sc08.supercomputing.org/scyourway/conference/view/gb115.html",
+      "kind": "conference_page",
+      "checked_on": "2026-11-12"
+    },
+    "qmc-paper": {
+      "label": "ORNL publication record",
+      "url": "https://impact.ornl.gov/en/publications/new-algorithm-to-enable-400-tflops-sustained-performance-in-simul/",
+      "kind": "institutional_record",
+      "checked_on": "2026-11-12"
+    },
+    "vpic-paper": {
+      "label": "LANL publication record",
+      "url": "https://laro.lanl.gov/esploro/outputs/conferenceProceeding/0374-Pflops-trillion-particle-kinetic-modeling-of/9916364328203761",
+      "kind": "institutional_record",
+      "checked_on": "2026-11-12"
+    },
+    "md-paper": {
+      "label": "LANL publication record",
+      "url": "https://laro.lanl.gov/esploro/outputs/conferenceProceeding/369-Tflops-molecular-dynamics-simulations-on/9916363736503761",
+      "kind": "institutional_record",
+      "checked_on": "2026-11-12"
+    },
+    "mantle-paper": {
+      "label": "Caltech publication record",
+      "url": "https://authors.library.caltech.edu/records/xdpzw-waj57",
+      "kind": "institutional_record",
+      "checked_on": "2026-11-12"
+    },
+    "seismic-paper": {
+      "label": "Princeton publication record",
+      "url": "https://collaborate.princeton.edu/en/publications/high-frequency-simulations-of-global-seismic-wave-propagation-usi/",
+      "kind": "institutional_record",
+      "checked_on": "2026-11-12"
+    },
+    "seismic-dblp": {
+      "label": "DBLP bibliography",
+      "url": "https://dblp.uni-trier.de/rec/conf/sc/CarringtonKLTMGST08.html",
+      "kind": "bibliographic_record",
+      "checked_on": "2026-11-12"
+    },
+    "ls3df-doi": {
+      "label": "Published DOI bibliography (secondary)",
+      "url": "https://aiichironakano.github.io/phys516/Romero-QMD-IEEEComputer15.pdf",
+      "kind": "secondary_reference",
+      "checked_on": "2026-11-12"
+    },
+    "gb118-pdf": {
+      "label": "Preserved SC08 proceedings manuscript (gb118)",
+      "url": "https://doi.org/10.1109/SC.2008.5218119",
+      "kind": "local_proceedings_pdf",
+      "checked_on": "2026-11-12",
+      "access_note": "Evidence is the locally inspected disc copy identified by SHA-256; DOI link opens the publication record, not a hosted copy of these bytes."
+    },
+    "gb121-pdf": {
+      "label": "Preserved SC08 proceedings manuscript (gb121)",
+      "url": "https://doi.org/10.1109/SC.2008.5222734",
+      "kind": "local_proceedings_pdf",
+      "checked_on": "2026-11-12",
+      "access_note": "Evidence is the locally inspected disc copy identified by SHA-256; DOI link opens the publication record, not a hosted copy of these bytes."
+    },
+    "gb132-pdf": {
+      "label": "Preserved SC08 proceedings manuscript (gb132)",
+      "url": "https://doi.org/10.1109/SC.2008.5214248",
+      "kind": "local_proceedings_pdf",
+      "checked_on": "2026-11-12",
+      "access_note": "Evidence is the locally inspected disc copy identified by SHA-256; DOI link opens the publication record, not a hosted copy of these bytes."
+    },
+    "gb109-pdf": {
+      "label": "Preserved SC08 proceedings manuscript (gb109)",
+      "url": "https://doi.org/10.1109/SC.2008.5215501",
+      "kind": "local_proceedings_pdf",
+      "checked_on": "2026-11-12",
+      "access_note": "Evidence is the locally inspected disc copy identified by SHA-256; DOI link opens the publication record, not a hosted copy of these bytes."
+    },
+    "gb124-pdf": {
+      "label": "Preserved SC08 proceedings manuscript (gb124)",
+      "url": "https://doi.org/10.1109/SC.2008.5214713",
+      "kind": "local_proceedings_pdf",
+      "checked_on": "2026-11-12",
+      "access_note": "Evidence is the locally inspected disc copy identified by SHA-256; DOI link opens the publication record, not a hosted copy of these bytes."
+    },
+    "gb115-pdf": {
+      "label": "Preserved SC08 proceedings manuscript (gb115)",
+      "url": "https://doi.org/10.1109/SC.2008.5218327",
+      "kind": "local_proceedings_pdf",
+      "checked_on": "2026-11-12",
+      "access_note": "Evidence is the locally inspected disc copy identified by SHA-256; DOI link opens the publication record, not a hosted copy of these bytes."
+    },
+    "crossref-sc2008-qmc": {
+      "label": "Crossref publisher-deposited DOI record",
+      "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5218119",
+      "kind": "registration_record",
+      "checked_on": "2026-11-12"
+    },
+    "crossref-sc2008-vpic": {
+      "label": "Crossref publisher-deposited DOI record",
+      "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5222734",
+      "kind": "registration_record",
+      "checked_on": "2026-11-12"
+    },
+    "crossref-sc2008-mantle": {
+      "label": "Crossref publisher-deposited DOI record",
+      "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5214248",
+      "kind": "registration_record",
+      "checked_on": "2026-11-12"
+    },
+    "crossref-sc2008-seismic": {
+      "label": "Crossref publisher-deposited DOI record",
+      "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5215501",
+      "kind": "registration_record",
+      "checked_on": "2026-11-12"
+    },
+    "crossref-sc2008-md": {
+      "label": "Crossref publisher-deposited DOI record",
+      "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5214713",
+      "kind": "registration_record",
+      "checked_on": "2026-11-12"
+    },
+    "crossref-sc2008-ls3df": {
+      "label": "Crossref publisher-deposited DOI record",
+      "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5218327",
+      "kind": "registration_record",
+      "checked_on": "2026-11-12"
+    }
+  },
+  "papers": [
+    {
+      "id": "sc2008-qmc",
+      "year": 2008,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "award": {
+        "label": "Winner — Peak Performance",
+        "category": "Peak Performance",
+        "source_id": "awards"
+      },
+      "title": "New algorithm to enable 400+ TFlop/s sustained performance in simulations of disorder effects in high-Tc superconductors",
+      "title_aliases": [
+        {
+          "title": "Multi-teraflops Simulations of Disorder Effects on the Transition Temperature of the High Tc Superconducting Cuprates",
+          "source_id": "selection"
+        }
+      ],
+      "authors": [
+        "G. Alvarez",
+        "M. S. Summers",
+        "D. E. Maxwell",
+        "M. Eisenbach",
+        "J. S. Meredith",
+        "J. M. Larkin",
+        "J. Levesque",
+        "T. A. Maier",
+        "P. R. C. Kent",
+        "E. F. D’Azevedo",
+        "T. C. Schulthess"
+      ],
+      "doi": "10.1109/sc.2008.5218119",
+      "field": "Materials science",
+      "summary": "Delayed Monte Carlo updates and mixed precision accelerate Hubbard-model calculations of how disorder changes superconductivity.",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "machines": [
+        "ORNL Cray XT4"
+      ],
+      "measurements": [
+        {
+          "machine": "Cray XT4 (mixed-frequency configuration)",
+          "value": 408.9,
+          "unit": "TFLOP/s",
+          "flops": 408900000000000.0,
+          "relation": "=",
+          "precision": "Mixed FP32/FP64",
+          "scope": "DCA++ self-consistency benchmark, whole-run average",
+          "scale": "49,288 cores; 404 disorder configurations; 122 random walkers per configuration",
+          "source_id": "gb118-pdf",
+          "location": "PDF pp. 8–9, Section IV-C and Table I",
+          "measurement_method": "PAPI retired floating-point operations divided by elapsed wall-clock time",
+          "note": "The title/abstract rounds this result to 409 TFLOP/s. The mixed clock-frequency label is separate from mixed arithmetic precision.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Cray XT4 (mixed-frequency configuration)",
+          "value": 202.3,
+          "unit": "TFLOP/s",
+          "flops": 202300000000000.0,
+          "relation": "=",
+          "precision": "Double (FP64)",
+          "scope": "DCA++ self-consistency benchmark, whole-run average",
+          "scale": "49,288 cores; 404 disorder configurations; 122 random walkers per configuration",
+          "source_id": "gb118-pdf",
+          "location": "PDF p. 9, Table I (second row)",
+          "measurement_method": "PAPI retired floating-point operations divided by elapsed wall-clock time",
+          "note": "The table caption explicitly identifies the first two rows as double precision. This is not the separate >200 TFLOP/s production-job statement on about 31 thousand cores.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        }
+      ],
+      "notes": [
+        "The title and complete ordered byline were checked on PDF p. 1.",
+        "The largest tabulated mixed-precision result is 408.9 TFLOP/s, rounded to 409 in the abstract; the matched FP64 run is 202.3 TFLOP/s.",
+        "Coarse graining uses FP64; QMC updates/measurements use FP32 in the mixed mode (PDF pp. 6–7).",
+        "Table I contains an apparent unit inconsistency in the 8-core row (67.51 in the TFLOP/s total column). That row is not imported; the source is not silently corrected.",
+        "Paper-stage results are preserved. A later conference presentation or official score update must be added with its own date, scope and source, without overwriting these manuscript results."
+      ],
+      "provenance": {
+        "selection": [
+          "selection",
+          "schedule"
+        ],
+        "award": [
+          "awards"
+        ],
+        "title": [
+          "gb118-pdf"
+        ],
+        "authors": [
+          "gb118-pdf"
+        ],
+        "abstract": [
+          "qmc-paper",
+          "gb118-pdf"
+        ],
+        "machines": [
+          "gb118-pdf"
+        ],
+        "doi": [
+          "crossref-sc2008-qmc"
+        ]
+      },
+      "verification": "Title, ordered authors, machine descriptions and selected performance records checked against local PDF; conference-day final score not verified",
+      "local_evidence": [
+        {
+          "volume": "SC08_Proceedings",
+          "code": "gb118",
+          "title": "New algorithm to enable 400+ TFlop/s sustained performance in simulations of disorder effects in high-Tc superconductors",
+          "pdf_relative_path": "sc08/pdfs/gb118.pdf",
+          "size_bytes": 861822,
+          "detail_html_relative_path": "scyourway/conference/view/gordonbell/gb118.html",
+          "sha256": "c92024907083c72b740db9dc4d245201b7968e078ccce4ee60d3f485b13e1251",
+          "evidence_type": "local_copy_and_pdf_content_audit",
+          "checked_at_reported": "2026-11-12T14:46:41.938419+09:00",
+          "file_bytes_verified_here": true,
+          "content_audit": "Selected title/byline/machine/performance fields checked against preserved PDF",
+          "checked_on": "2026-11-12",
+          "source_revision_date": null
+        }
+      ],
+      "publication_stage": "Preserved proceedings manuscript; conference-day update not established",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from paper evidence",
+      "machine_configurations": [
+        {
+          "name": "Cray XT4 benchmark configuration",
+          "facility": "ORNL resources; NICS/University of Tennessee resources also acknowledged, specific host names not identified",
+          "configuration": "Quad-core nodes at 2.1 GHz and 2.3 GHz; Figure 7 describes 31,328 and 18,048 available cores respectively. The largest actual run uses 49,288 cores.",
+          "location": "PDF p. 8, Figure 7; p. 9, acknowledgments"
+        }
+      ],
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "crossref-sc2008-qmc",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
+      }
+    },
+    {
+      "id": "sc2008-vpic",
+      "year": 2008,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "award": null,
+      "title": "0.374 Pflop/s Trillion-Particle Kinetic Modeling of Laser Plasma Interaction on Roadrunner",
+      "title_aliases": [
+        {
+          "title": "0.374 Pflop/s Trillion-particle Particle-in-cell Modeling of Laser Plasma Interactions on Roadrunner",
+          "source_id": "selection"
+        }
+      ],
+      "authors": [
+        "K. J. Bowers",
+        "B. J. Albright",
+        "B. Bergen",
+        "L. Yin",
+        "K. J. Barker",
+        "D. J. Kerbyson"
+      ],
+      "doi": "10.1109/sc.2008.5222734",
+      "field": "Plasma physics",
+      "summary": "VPIC sustained 374.2 Tflop/s in single precision for a trillion-particle laser-plasma benchmark on 12,240 Roadrunner Cell CPUs. End-to-end timings span 870 time steps and use a conservative particle-advance operation count. The separate particle-advance kernel is reported at 0.488 Pflop/s. The local proceedings PDF retains DRAFT running headers.",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "machines": [
+        "IBM Roadrunner"
+      ],
+      "measurements": [
+        {
+          "machine": "IBM Roadrunner",
+          "value": 374.2,
+          "unit": "TFLOP/s",
+          "flops": 374200000000000.0,
+          "relation": "=",
+          "precision": "Single (FP32)",
+          "scope": "Full application end-to-end timing, conservative particle-operation count",
+          "scale": "Table II exact value, 17 CUs / 12,240 Cell CPU chips, 1105 x 168 x 168 voxels, 6,420 particles/voxel/species across five species; timed over 870 steps.",
+          "source_id": "gb121-pdf",
+          "location": "PDF pp. 1, 9, 10; Table II; Fig. 5",
+          "measurement_method": "Hand-counted 246 floating-point operations for a cold particle advance; a voxel crossing adds 168 plus 168 times the number of boundaries crossed. Advance a random thermal population of 10^7 particles one step to estimate crossing probabilities. For the stated timestep and voxel dimensions, 256.15 operations/particle for electrons and 246.25 for ions are weighted by population fractions. FLOP count omits field advance and other kernels, so the reported end-to-end rate is conservative rather than a full hardware instruction counter result.",
+          "note": "0.374 Pflop/s; abstract and introduction say exceeding/over 0.374.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": "2008-08-22",
+          "measurement_date": null,
+          "measurement_date_note": "Late May 2008 acceptance trials, as reported on PDF p. 10",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "IBM Roadrunner",
+          "value": 340.2,
+          "unit": "TFLOP/s",
+          "flops": 340200000000000.0,
+          "relation": "=",
+          "precision": "Single (FP32)",
+          "scope": "Full application end-to-end timing, conservative particle-operation count",
+          "scale": "Table II exact value, 17 CUs / 12,240 Cell CPU chips, same full mesh, 2,000 particles/voxel/species across five species.",
+          "source_id": "gb121-pdf",
+          "location": "PDF pp. 3, 10; Table II",
+          "measurement_method": "Hand-counted 246 floating-point operations for a cold particle advance; a voxel crossing adds 168 plus 168 times the number of boundaries crossed. Advance a random thermal population of 10^7 particles one step to estimate crossing probabilities. For the stated timestep and voxel dimensions, 256.15 operations/particle for electrons and 246.25 for ions are weighted by population fractions. FLOP count omits field advance and other kernels, so the reported end-to-end rate is conservative rather than a full hardware instruction counter result.",
+          "note": "0.340 Pflop/s",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": "2008-08-22",
+          "measurement_date": null,
+          "measurement_date_note": "Late May 2008 acceptance trials, as reported on PDF p. 10",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "IBM Roadrunner",
+          "value": 488.0,
+          "unit": "TFLOP/s",
+          "flops": 488000000000000.0,
+          "relation": "=",
+          "precision": "Single (FP32)",
+          "scope": "Kernel-only full-machine capability; distinct from end-to-end result",
+          "scale": "Paper reports the particle-advance kernel can achieve this on the whole machine; p. 9 cites 158 SPE clocks versus 174 Opteron clocks per common-case particle advance. Do not present as a full-application measurement.",
+          "source_id": "gb121-pdf",
+          "location": "PDF pp. 1, 9",
+          "measurement_method": "Hand-counted 246 floating-point operations for a cold particle advance; a voxel crossing adds 168 plus 168 times the number of boundaries crossed. Advance a random thermal population of 10^7 particles one step to estimate crossing probabilities. For the stated timestep and voxel dimensions, 256.15 operations/particle for electrons and 246.25 for ions are weighted by population fractions. FLOP count omits field advance and other kernels, so the reported end-to-end rate is conservative rather than a full hardware instruction counter result.",
+          "note": "",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": "2008-08-22",
+          "measurement_date": null,
+          "measurement_date_note": "Kernel capability reported in manuscript; exact measurement date not stated",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        }
+      ],
+      "notes": [
+        "Running header on odd pages from PDF p. 3 reads DRAFT - BOWERS et al.: 0.374 PFLOP/S ...; retain the DRAFT indicator in the archive provenance.",
+        "PDF p. 1 says Received April 14, 2008; revised August 22, 2008.",
+        "PDF p. 1 carries SC2008 November 2008 proceedings copyright notice.",
+        "Do not combine the abstract/Fig. 1 science-suite 136 x 10^6 voxel figure with the 374.2 Tflop/s full-scale Table II benchmark: the latter uses 1105 x 168 x 168 voxels (about 31 million). Fig. 1 p. 2 discusses separate reflectivity calculations comparable to Problems 1 and 2.",
+        "PDF p. 3 calls full scale 12,240 cores, while Table II and section VII.B identify 12,240 Cell CPUs; archive should explicitly say Cell CPU chips, not imply 12,240 SPE cores.",
+        "PDF p. 3 gives simulation voxel dimensions 1.3 x 1.7 x 1.7 lambda_De, whereas operation-count discussion p. 10 gives 1.3 x 1.8 x 1.8 lambda_De. Preserve the context-specific figures rather than forcing a unified value.",
+        "Fig. 5 caption p. 9 prints fit slopes 0.276 (Problem 1) and 0.0301 (Problem 2); do not infer or silently repair the apparent mismatch against the plot/table.",
+        "The 0.488 Pflop/s kernel capability is not the same scope as 374.2 Tflop/s end-to-end application performance.",
+        "Conference presentations can update submitted-paper scores. These are paper-stage verified figures, not a claim about annual final or award-winning final scores.",
+        "Paper-stage results are preserved. A later conference presentation or official score update must be added with its own date, scope and source, without overwriting these manuscript results."
+      ],
+      "provenance": {
+        "selection": [
+          "selection",
+          "schedule"
+        ],
+        "award": [],
+        "title": [
+          "gb121-pdf"
+        ],
+        "authors": [
+          "gb121-pdf"
+        ],
+        "abstract": [
+          "vpic-paper",
+          "gb121-pdf"
+        ],
+        "machines": [
+          "gb121-pdf"
+        ],
+        "doi": [
+          "crossref-sc2008-vpic"
+        ]
+      },
+      "verification": "Title, ordered authors, machine descriptions and selected performance records checked against local PDF; conference-day final score not verified",
+      "local_evidence": [
+        {
+          "volume": "SC08_Proceedings",
+          "code": "gb121",
+          "title": "0.374 Pflop/s Trillion-particle Particle-in-cell Modeling of Laser Plasma Interactions on Roadrunner",
+          "pdf_relative_path": "sc08/pdfs/gb121.pdf",
+          "size_bytes": 386937,
+          "detail_html_relative_path": "scyourway/conference/view/gordonbell/gb121.html",
+          "sha256": "bb88f90b2bc1114c24d4fec053a74e0a5691806796d7af46a858aabc29de79ac",
+          "evidence_type": "local_copy_and_pdf_content_audit",
+          "checked_at_reported": "2026-11-12T14:46:41.938419+09:00",
+          "file_bytes_verified_here": true,
+          "content_audit": "Selected title/byline/machine/performance fields checked against preserved PDF",
+          "checked_on": "2026-11-12",
+          "source_revision_date": "2008-08-22"
+        }
+      ],
+      "publication_stage": "Preserved proceedings manuscript; conference-day update not established",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from paper evidence",
+      "machine_configurations": [
+        {
+          "name": "IBM Roadrunner",
+          "facility": "IBM Roadrunner, LANL system during acceptance trials at IBM Poughkeepsie, New York, late May 2008 (p. 10, section VII.B).",
+          "configuration": "3,060 Triblade compute nodes; 17 connected units; 6,120 dual-core AMD Opteron CPU chips; 12,240 IBM PowerXCell 8i chips, each with eight SPE/SPU cores and one PPE/PPU. 4 GB DDR2-667 per Opteron core; 4 GB DDR2-800 per Cell CPU (p. 7). Full Problem 2 uses over 93% of approximately 47 TB of Cell DRAM (p. 10); preserve this wording rather than substituting another paper's rounded 49 TB.",
+          "location": "PDF pp. 6–8"
+        }
+      ],
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "crossref-sc2008-vpic",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
+      }
+    },
+    {
+      "id": "sc2008-mantle",
+      "year": 2008,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "award": null,
+      "title": "Scalable Adaptive Mantle Convection Simulation on Petascale Supercomputers",
+      "title_aliases": [],
+      "authors": [
+        "Carsten Burstedde",
+        "Omar Ghattas",
+        "Michael Gurnis",
+        "Georg Stadler",
+        "Eh Tan",
+        "Tiankai Tu",
+        "Lucas C. Wilcox",
+        "Shijie Zhong"
+      ],
+      "doi": "10.1109/sc.2008.5214248",
+      "field": "Geophysics",
+      "summary": "RHEA combines adaptive octree finite elements with parallel mesh management to resolve fine mantle structures without a uniformly fine global mesh.",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "machines": [
+        "Ranger"
+      ],
+      "measurements": [
+        {
+          "machine": "Ranger",
+          "value": 36,
+          "unit": "TFLOP/s",
+          "flops": 36000000000000.0,
+          "relation": "=",
+          "precision": "Not explicitly stated for this result",
+          "scope": "Low-order transport component of RHEA, including AMR",
+          "scale": "62K cores (rounded wording retained from conclusion)",
+          "source_id": "gb132-pdf",
+          "location": "PDF p. 14, Section VIII, fifth bullet",
+          "measurement_method": "Sustained floating-point rate reported in the conclusion",
+          "note": "Component-level result, not a measured rate for the complete nonlinear mantle-convection solve. Hardware peak 579 TFLOP/s is excluded.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Ranger",
+          "value": 145,
+          "unit": "TFLOP/s",
+          "flops": 145000000000000.0,
+          "relation": "=",
+          "precision": "Not explicitly stated for this result",
+          "scope": "MANGLL high-order DG advection; matrix-based derivative operator, with AMR",
+          "scale": "32,768 cores; polynomial order p=8",
+          "source_id": "gb132-pdf",
+          "location": "PDF pp. 13–14, Section VII and Section VIII",
+          "measurement_method": "PAPI-based sustained rate for the DG implementation",
+          "note": "The matrix implementation performs more work and is not the fastest time-to-solution method on Ranger. Not a full mantle-convection result.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Ranger",
+          "value": 100,
+          "unit": "TFLOP/s",
+          "flops": 100000000000000.0,
+          "relation": "=",
+          "precision": "Not explicitly stated for this result",
+          "scope": "MANGLL high-order DG advection; matrix-based derivative operator",
+          "scale": "32,768 cores; polynomial order p=6",
+          "source_id": "gb132-pdf",
+          "location": "PDF p. 14, continuation of Section VII",
+          "measurement_method": "PAPI-based sustained rate",
+          "note": "Compare with the p=6 tensor implementation only with its different operation count and runtime.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Ranger",
+          "value": 9.3,
+          "unit": "TFLOP/s",
+          "flops": 9300000000000.0,
+          "relation": "=",
+          "precision": "Not explicitly stated for this result",
+          "scope": "MANGLL high-order DG advection; tensor-product derivative operator",
+          "scale": "32K cores (rounded wording retained); polynomial order p=6",
+          "source_id": "gb132-pdf",
+          "location": "PDF p. 14, continuation of Section VII",
+          "measurement_method": "PAPI-based sustained rate",
+          "note": "Performs about 20 times fewer operations and runs about twice as fast as the p=6 matrix implementation, despite its lower FLOP/s rate.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        }
+      ],
+      "notes": [
+        "Title and ordered authors were checked on PDF p. 1.",
+        "The abstract gives up to 12.4 billion elements, while the conclusion describes a 7.9-billion-element transport scaling experiment. These are separate statements and not treated as one run.",
+        "Section VIII provides a 36 TFLOP/s low-order transport-component result. It does not establish a whole-simulation FLOP/s rate for the full nonlinear Stokes/transport solve.",
+        "PAPI-based MANGLL rates must retain the discretization and operator implementation. Higher FLOP/s here does not imply shorter runtime.",
+        "The 579 TFLOP/s number is Ranger hardware capacity and remains excluded from application measurements.",
+        "Paper-stage results are preserved. A later conference presentation or official score update must be added with its own date, scope and source, without overwriting these manuscript results."
+      ],
+      "provenance": {
+        "selection": [
+          "selection",
+          "schedule"
+        ],
+        "award": [],
+        "title": [
+          "gb132-pdf"
+        ],
+        "authors": [
+          "gb132-pdf"
+        ],
+        "abstract": [
+          "mantle-paper",
+          "gb132-pdf"
+        ],
+        "machines": [
+          "gb132-pdf"
+        ],
+        "doi": [
+          "crossref-sc2008-mantle"
+        ]
+      },
+      "verification": "Title, ordered authors, machine descriptions and selected performance records checked against local PDF; conference-day final score not verified",
+      "local_evidence": [
+        {
+          "volume": "SC08_Proceedings",
+          "code": "gb132",
+          "title": "Scalable adaptive Mantle Convection Simulation on Petascale Supercomputers",
+          "pdf_relative_path": "sc08/pdfs/gb132.pdf",
+          "size_bytes": 1817464,
+          "detail_html_relative_path": "scyourway/conference/view/gordonbell/gb132.html",
+          "sha256": "e269218a711a24ff0b20330eb0cbb12a4c5f041af9fba6d6aac5497b4e7907ce",
+          "evidence_type": "local_copy_and_pdf_content_audit",
+          "checked_at_reported": "2026-11-12T14:46:41.938419+09:00",
+          "file_bytes_verified_here": true,
+          "content_audit": "Selected title/byline/machine/performance fields checked against preserved PDF",
+          "checked_on": "2026-11-12",
+          "source_revision_date": null
+        }
+      ],
+      "publication_stage": "Preserved proceedings manuscript; conference-day update not established",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from paper evidence",
+      "machine_configurations": [
+        {
+          "name": "Ranger",
+          "facility": "Texas Advanced Computing Center (TACC)",
+          "configuration": "Sun/AMD system; 62,976 installed cores and 123 TB memory. Each compute node has 16 cores and 32 GB memory. Section VII specifies 2.3 GHz AMD Barcelona nodes.",
+          "location": "PDF pp. 8 and 13; 579 TFLOP/s is stated hardware capacity, not an application measurement."
+        }
+      ],
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "crossref-sc2008-mantle",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
+      }
+    },
+    {
+      "id": "sc2008-seismic",
+      "year": 2008,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "award": null,
+      "title": "High-Frequency Simulations of Global Seismic Wave Propagation Using SPECFEM3D_GLOBE on 62K Processors",
+      "title_aliases": [
+        {
+          "title": "High-frequency simulations of global seismic wave propagation using SPECFEM3D-GLOBE on 62K processors",
+          "source_id": "seismic-paper"
+        }
+      ],
+      "authors": [
+        "Laura Carrington",
+        "Dimitri Komatitsch",
+        "Michael Laurenzano",
+        "Mustafa M Tikir",
+        "David Michéa",
+        "Nicolas Le Goff",
+        "Allan Snavely",
+        "Jeroen Tromp"
+      ],
+      "doi": "10.1109/sc.2008.5215501",
+      "field": "Geophysics",
+      "summary": "Spectral-element simulations resolve globe-crossing seismic signals below two seconds, using performance modeling, mesh tuning and parallel I/O.",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "machines": [
+        "Ranger",
+        "Franklin",
+        "Kraken",
+        "Jaguar"
+      ],
+      "measurements": [
+        {
+          "machine": "Ranger",
+          "value": 28.7,
+          "unit": "TFLOP/s",
+          "flops": 28700000000000.0,
+          "relation": "=",
+          "precision": "Whole-run precision not explicitly stated; FP32 force kernels documented",
+          "scope": "Sustained rate for the reported precursor simulation of the same Argentina earthquake event; not a completed 25-minute global wave-propagation calculation.",
+          "scale": "32K cores",
+          "source_id": "gb109-pdf",
+          "location": "PDF p. 10, Section 6; also abstract p. 1",
+          "measurement_method": "Measured using PSiNSlight [18].",
+          "note": "Shortest seismic period: 1.84 s. ",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Jaguar",
+          "value": 35.7,
+          "unit": "TFLOP/s",
+          "flops": 35700000000000.0,
+          "relation": "=",
+          "precision": "Whole-run precision not explicitly stated; FP32 force kernels documented",
+          "scope": "Sustained rate, called the current FLOPS record; same earthquake event as Kraken/Ranger.",
+          "scale": "29K cores (body); 28K processor system (abstract)",
+          "source_id": "gb109-pdf",
+          "location": "PDF p. 10, Section 6; conflicting abstract count p. 1",
+          "measurement_method": "Measured using PSiNSlight [18].",
+          "note": "Shortest seismic period: 1.94 s. ",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Kraken",
+          "value": 22.4,
+          "unit": "TFLOP/s",
+          "flops": 22400000000000.0,
+          "relation": "=",
+          "precision": "Whole-run precision not explicitly stated; FP32 force kernels documented",
+          "scope": "Sustained rate with attenuation enabled, a few seconds of an Argentina earthquake.",
+          "scale": "17,496 cores",
+          "source_id": "gb109-pdf",
+          "location": "PDF p. 10, Section 6",
+          "measurement_method": "Measured using PSiNSlight [18].",
+          "note": "Shortest seismic period: 2.52 s. ",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        }
+      ],
+      "notes": [
+        "The schedule title differs in capitalization; the original paper title is authoritative for a paper-title field.",
+        "Schedule author order differs materially: use PDF order for a paper bibliography, and retain the schedule order only as schedule metadata.",
+        "SPECFEM3D_GLOBE is the package name; the paper also uses SPECFEM3D and merged SPECFEM when discussing components/runs.",
+        "The schedule abstract describes the earlier 3-second Franklin result and future 62K Ranger work. The PDF abstract includes the later sub-2-second results.",
+        "Jaguar core count is internally inconsistent: abstract p. 1 says 28K, Section 6 p. 10 says 29K. Neither supplies a precise integer. Preserve the conflict rather than expanding K or choosing an exact core count.",
+        "The 62K in the title is not the scale of the reported best-performance run. Section 7 p. 10 plans 48K and 62K Ranger runs as future work.",
+        "IPM on p. 8 measures communication time in initial Franklin modeling runs; it is not the named tool for the later Kraken/Jaguar/Ranger sustained Tflop/s numbers.",
+        "p. 10 identifies PSiNSlight, while reference [18], p. 11, is PSiNS Tracer and Simulator, Performance Modeling and Characterization Lab, SDSC.",
+        "The main performance results are in prose, not a table. Section 6 spans PDF pp. 9-10. No table number should be invented.",
+        "Section 7 p. 10 says reported precursor runs model only a few seconds of each earthquake. Approximately 25 minutes of simulated physical time and an estimated week of dedicated 32K-or-more-core execution are discussed for full propagation.",
+        "Section 4.3 p. 7 describes four single-precision floating-point operations per SSE/Altivec vector in the force/acceleration kernels and 5x5x5 float blocks. The inspected paper does not explicitly identify every reported sustained rate as exclusively 32-bit or 64-bit. Do not label the overall performance FP64.",
+        "Paper-stage results are preserved. A later conference presentation or official score update must be added with its own date, scope and source, without overwriting these manuscript results."
+      ],
+      "provenance": {
+        "selection": [
+          "selection",
+          "schedule"
+        ],
+        "award": [],
+        "title": [
+          "gb109-pdf"
+        ],
+        "authors": [
+          "gb109-pdf"
+        ],
+        "abstract": [
+          "seismic-paper",
+          "gb109-pdf"
+        ],
+        "machines": [
+          "gb109-pdf"
+        ],
+        "doi": [
+          "crossref-sc2008-seismic"
+        ]
+      },
+      "verification": "Title, ordered authors, machine descriptions and selected performance records checked against local PDF; conference-day final score not verified",
+      "local_evidence": [
+        {
+          "volume": "SC08_Proceedings",
+          "code": "gb109",
+          "title": "High-frequency Simulations of Global Seismic Wave Propagation using SPECFEM3D_GLOBE on 62K Processors",
+          "pdf_relative_path": "sc08/pdfs/gb109.pdf",
+          "size_bytes": 437512,
+          "detail_html_relative_path": "scyourway/conference/view/gordonbell/gb109.html",
+          "sha256": "550f18f0fa8ad6bb9714dee67577f48b3b7066be1cd1abce5c8a8a460d8508db",
+          "evidence_type": "local_copy_and_pdf_content_audit",
+          "checked_at_reported": "2026-11-12T14:46:41.938419+09:00",
+          "file_bytes_verified_here": true,
+          "content_audit": "Selected title/byline/machine/performance fields checked against preserved PDF",
+          "checked_on": "2026-11-12",
+          "source_revision_date": null
+        }
+      ],
+      "publication_stage": "Preserved proceedings manuscript; conference-day update not established",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from paper evidence",
+      "machine_configurations": [
+        {
+          "name": "Ranger",
+          "facility": "Texas Advanced Computing Center (TACC), The University of Texas at Austin",
+          "configuration": "62,976 processing cores; full-CLOS InfiniBand; each compute node consists of four 2.0 GHz quad-core AMD Opteron processors; the same sentence assigns a theoretical peak of 32 Gflops and 8 GBytes of memory. Whole-system peak about 504 Tflops; Rmax 326 Tflops.",
+          "location": "PDF p. 8, Section 5; TACC affiliation p. 10 acknowledgements",
+          "note": "Do not silently reinterpret the printed 32 Gflops/8 GBytes as a verified node total: the four-quad-core description and quoted total peak expose a unit/scope ambiguity in that sentence."
+        },
+        {
+          "name": "Franklin",
+          "facility": "National Energy Research Scientific Computing Center (NERSC)",
+          "configuration": "2.6 GHz dual-core AMD Opteron and 4 GBytes memory per compute node; 10.4 Gflops node theoretical peak; approximately 101.5 Tflops whole-system theoretical peak and 85 Tflops Rmax; dedicated SeaStar2 router through HyperTransport, 3-D torus.",
+          "location": "PDF p. 8, Section 5",
+          "note": ""
+        },
+        {
+          "name": "Kraken",
+          "facility": "National Institute for Computational Sciences (NICS), operated by the University of Tennessee",
+          "configuration": "4,512 compute nodes, each 2.3 GHz quad-core AMD Opteron and 4 GB memory; 18,048 total cores; about 166 Tflops peak; Compute Node Linux; SeaStar/HyperTransport 3-D torus.",
+          "location": "PDF p. 8, Section 5; operator p. 10 acknowledgements",
+          "note": ""
+        },
+        {
+          "name": "Jaguar",
+          "facility": "Oak Ridge National Laboratory (ORNL), National Center for Computational Sciences (NCCS)",
+          "configuration": "7,832 compute nodes, each quad-core 2.1 GHz AMD Opteron and 8 GB memory; whole-system peak 263 Tflops, Rmax 205 Tflops; SeaStar/HyperTransport 3-D torus.",
+          "location": "PDF p. 8, Section 5; NCCS affiliation p. 10 acknowledgements",
+          "note": ""
+        }
+      ],
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "crossref-sc2008-seismic",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
+      }
+    },
+    {
+      "id": "sc2008-md",
+      "year": 2008,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "award": null,
+      "title": "369 Tflop/s Molecular Dynamics Simulations on the Roadrunner General-Purpose Heterogeneous Supercomputer",
+      "title_aliases": [
+        {
+          "title": "350-450 Tflops Molecular Dynamics Simulations on the Roadrunner General-purpose Heterogeneous Supercomputer",
+          "source_id": "selection"
+        }
+      ],
+      "authors": [
+        "Sriram Swaminarayan",
+        "Timothy C. Germann",
+        "Kai Kadau",
+        "Gordon C. Fossum"
+      ],
+      "doi": "10.1109/sc.2008.5214713",
+      "field": "Molecular dynamics",
+      "summary": "SPaSM achieved 368.6 TFlop/s in double precision for a 48.96-billion-atom Lennard-Jones benchmark on 17 Roadrunner CUs (12,240 MPI ranks). Twenty-step timings use a hand count of 45 operations per pair interaction. The title rounds this to 369 Tflop/s; the PDF gives both 27.7% and approximately 28.3% of peak. A separate 36-million-atom copper EAM run demonstrates shock-ejecta physics.",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "machines": [
+        "IBM Roadrunner"
+      ],
+      "measurements": [
+        {
+          "machine": "IBM Roadrunner",
+          "value": 368.6,
+          "unit": "TFLOP/s",
+          "flops": 368600000000000.0,
+          "relation": "=",
+          "precision": "Double (FP64); reciprocal starts from an FP32 estimate",
+          "scope": "Aggregate benchmark time-step performance, not force-kernel-only",
+          "scale": "17 CUs / 12,240 MPI ranks, each host core paired with a Cell; 48.96 billion atoms; 20-step Fig. 4 timing; 45 counted operations per pair interaction divided by measured wall time.",
+          "source_id": "gb124-pdf",
+          "location": "PDF pp. 1, 4, 6, 7; Fig. 4",
+          "measurement_method": "Lightweight gettimeofday()-based event timers on Opteron processes, claimed overhead below 0.01%; only MPI rank 0 timers enabled for these measurements. Count N_pair interactions and divide 45 N_pair by cumulative wall time. Operation count includes force and potential energy; hand-coded Newton-Raphson reciprocal contributes nine operations with frest not counted, yielding 45 operations per LJ pair. Because SPU branching is expensive all pairs within the selected self/list subdomains are computed and out-of-cutoff contributions are zeroed.",
+          "note": "369 Tflop/s",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        }
+      ],
+      "notes": [
+        "LA-UR-08-2605 printed at bottom of PDF p. 1.",
+        "PDF p. 1 carries SC2008 November 2008 proceedings copyright notice.",
+        "Source discusses delivery to LANL beginning July 2008 and expected completion in November; preserve historical timing rather than describing the measurements as performed after final deployment.",
+        "Title and abstract report 369 Tflop/s; section 4.4 p. 7 reports 368.6 TFlop/s. Treat 369 as the rounded headline, retain 368.6 for the detailed benchmark.",
+        "Abstract p. 1 says 27.7% of peak; introduction on the same page says approximately 28.3%. Preserve both as source claims. The paper does not explain the discrepancy.",
+        "Section 4.1 p. 5 gives a projected full-system 98 TFlop/s for the earlier evolutionary port; it is a projection, not the measured 368.6 TFlop/s redesigned benchmark. Its about 8 GF per node wording should not be silently reinterpreted.",
+        "Section 3.3 p. 4 anticipates 737 TFlop/s with a possible single-precision version; p. 8 anticipates over 400 TFlop/s after further porting. Neither is a measured result.",
+        "Fig. 3 caption says all computation is offloaded to SPUs, whereas p. 8 and Fig. 6 explicitly discuss force on SPUs and particle redistribution / position / velocity steps on Opterons. Preserve the more detailed breakdown when describing actual execution.",
+        "Paper reports performance-per-power/cost in the abstract but gives no separate derivation or benchmark-specific metering procedure there; do not turn them into independently verified efficiency measurements.",
+        "Paper does not state a separate numerical precision for the EAM speedup; the double-precision descriptor follows its explicit paper-wide policy for the present implementation, not a separate EAM precision test.",
+        "Conference presentations can update submitted-paper scores. These are paper-stage verified figures, not a claim about annual final or award-winning final scores.",
+        "Paper-stage results are preserved. A later conference presentation or official score update must be added with its own date, scope and source, without overwriting these manuscript results."
+      ],
+      "provenance": {
+        "selection": [
+          "selection",
+          "schedule"
+        ],
+        "award": [],
+        "title": [
+          "gb124-pdf"
+        ],
+        "authors": [
+          "gb124-pdf"
+        ],
+        "abstract": [
+          "md-paper",
+          "gb124-pdf"
+        ],
+        "machines": [
+          "gb124-pdf"
+        ],
+        "doi": [
+          "crossref-sc2008-md"
+        ]
+      },
+      "verification": "Title, ordered authors, machine descriptions and selected performance records checked against local PDF; conference-day final score not verified",
+      "local_evidence": [
+        {
+          "volume": "SC08_Proceedings",
+          "code": "gb124",
+          "title": "369 Tflop/s Molecular Dynamics Simulations on the Roadrunner General-purpose Heterogeneous Supercomputer",
+          "pdf_relative_path": "sc08/pdfs/gb124.pdf",
+          "size_bytes": 918267,
+          "detail_html_relative_path": "scyourway/conference/view/gordonbell/gb124.html",
+          "sha256": "acee8c989e35ef1ac274bd451ced32d68c96194590339c5c177ce8fee9369c54",
+          "evidence_type": "local_copy_and_pdf_content_audit",
+          "checked_at_reported": "2026-11-12T14:46:41.938419+09:00",
+          "file_bytes_verified_here": true,
+          "content_audit": "Selected title/byline/machine/performance fields checked against preserved PDF",
+          "checked_on": "2026-11-12",
+          "source_revision_date": null
+        }
+      ],
+      "publication_stage": "Preserved proceedings manuscript; conference-day update not established",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from paper evidence",
+      "machine_configurations": [
+        {
+          "name": "IBM Roadrunner",
+          "facility": "IBM Roadrunner, built for LANL; paper describes runs at IBM Poughkeepsie in summer 2008 (p. 2).",
+          "configuration": "3,060 Triblade compute nodes; 17 connected units; 6,120 dual-core AMD Opteron CPU chips; 12,240 IBM PowerXCell 8i chips, each with eight SPE/SPU cores and one PPE/PPU. Per hybrid compute node: 16 GB Opteron plus 16 GB Cell, total 32 GB. Per CU: 2.88 TB + 2.88 TB = 5.76 TB. System: 49 TB + 49 TB = 98 TB. Table excludes I/O nodes from memory/peak counts (p. 2).",
+          "location": "PDF p. 2, Table 1"
+        }
+      ],
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "crossref-sc2008-md",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
+      }
+    },
+    {
+      "id": "sc2008-ls3df",
+      "year": 2008,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "award": {
+        "label": "Winner — Algorithmic Innovation",
+        "category": "Special recognition for algorithmic innovation",
+        "source_id": "awards"
+      },
+      "title": "Linearly Scaling 3D Fragment Method for Large-Scale Electronic Structure Calculations",
+      "title_aliases": [
+        {
+          "title": "Linear Scaling Divide-and-conquer Electronic Structure Calculations for Thousand Atom Nanostructures",
+          "source_id": "ls3df"
+        }
+      ],
+      "authors": [
+        "Lin-Wang Wang",
+        "Byounghak Lee",
+        "Hongzhang Shan",
+        "Zhengji Zhao",
+        "Juan Meza",
+        "Erich Strohmaier",
+        "David H. Bailey"
+      ],
+      "doi": "10.1109/sc.2008.5218327",
+      "field": "Materials science",
+      "summary": "LS3DF partitions electronic-structure calculations into fragments while cancelling boundary artifacts, enabling extensive parallel execution.",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "machines": [
+        "Franklin",
+        "Jaguar",
+        "Intrepid"
+      ],
+      "measurements": [
+        {
+          "machine": "Jaguar",
+          "value": 60.3,
+          "unit": "TFLOP/s",
+          "flops": 60300000000000.0,
+          "relation": "=",
+          "precision": "Double (FP64)",
+          "scope": "LS3DF test run; ZnTeO alloy. Conclusion gives 115 seconds per iteration and projects less than two hours for a complete 60-iteration run.",
+          "scale": "30,720 cores; 12,288 atoms",
+          "source_id": "gb115-pdf",
+          "location": "PDF p. 6, Table I, Jaguar final row; p. 9 conclusions; p. 1 abstract",
+          "measurement_method": "Operation counts measured on Franklin using CrayPat. For the very largest problems that could not run on Franklin, operation count estimated from fragment counts and small-problem counts. The estimation was within 1% for problems runnable on Franklin. Wall-clock time, consistently across systems; Franklin rates approximately 10% lower than CrayPat user-time rates.",
+          "note": "Operation counts for the largest problems are estimated from fragment/small-problem counts; this is not a direct hardware count on every target machine.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        },
+        {
+          "machine": "Intrepid",
+          "value": 107.5,
+          "unit": "TFLOP/s",
+          "flops": 107500000000000.0,
+          "relation": "=",
+          "precision": "Double (FP64)",
+          "scope": "Separate LS3DF test run on ZnTeO; conclusion says a full calculation could complete within one hour, not that this timing statement proves a completed full converged run.",
+          "scale": "131,072 cores; 16,384 atoms",
+          "source_id": "gb115-pdf",
+          "location": "PDF p. 6, Table I, Intrepid final row; p. 9 conclusions; p. 1 abstract",
+          "measurement_method": "Operation counts measured on Franklin using CrayPat. For the very largest problems that could not run on Franklin, operation count estimated from fragment counts and small-problem counts. The estimation was within 1% for problems runnable on Franklin. Wall-clock time, consistently across systems; Franklin rates approximately 10% lower than CrayPat user-time rates.",
+          "note": "Operation counts for the largest problems are estimated from fragment/small-problem counts; this is not a direct hardware count on every target machine.",
+          "verification": "checked_against_preserved_pdf",
+          "evidence_stage": "preserved_proceedings_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "measurement_date_note": "Exact measurement date not established",
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established"
+        }
+      ],
+      "notes": [
+        "The schedule title is a substantive earlier/alternate title, not the PDF title. Preserve it as a schedule-title alias.",
+        "Schedule author order matches the PDF, but the schedule omits the middle initial in David H. Bailey.",
+        "LS3DF expands to linearly scaling three-dimensional fragment method. It is a divide-and-conquer electronic-structure approach using a patching scheme to cancel artificial fragment-boundary effects.",
+        "PDF p. 7 prose rounds the Intrepid weak-scaling endpoint to 107 Tflop/s, while Table I, the abstract, and conclusions specify 107.5 Tflop/s.",
+        "The 13,824-atom Franklin comparison is separate from the 12,288-atom Jaguar and 16,384-atom Intrepid endpoints; do not merge those scales.",
+        "Paper-stage results are preserved. A later conference presentation or official score update must be added with its own date, scope and source, without overwriting these manuscript results."
+      ],
+      "provenance": {
+        "selection": [
+          "selection",
+          "schedule"
+        ],
+        "award": [
+          "awards"
+        ],
+        "title": [
+          "gb115-pdf"
+        ],
+        "authors": [
+          "gb115-pdf"
+        ],
+        "abstract": [
+          "ls3df",
+          "gb115-pdf"
+        ],
+        "machines": [
+          "gb115-pdf"
+        ],
+        "doi": [
+          "crossref-sc2008-ls3df"
+        ]
+      },
+      "verification": "Title, ordered authors, machine descriptions and selected performance records checked against local PDF; conference-day final score not verified",
+      "local_evidence": [
+        {
+          "volume": "SC08_Proceedings",
+          "code": "gb115",
+          "title": "Linear Scaling Divide-and-conquer Electronic Structure Calculations for Thousand Atom Nanostructures",
+          "pdf_relative_path": "sc08/pdfs/gb115.pdf",
+          "size_bytes": 434800,
+          "detail_html_relative_path": "scyourway/conference/view/gordonbell/gb115.html",
+          "sha256": "a55a1937cd6e3cd7902623a0810ef623520a56155b85acbff630910abc5f9e75",
+          "evidence_type": "local_copy_and_pdf_content_audit",
+          "checked_at_reported": "2026-11-12T14:46:41.938419+09:00",
+          "file_bytes_verified_here": true,
+          "content_audit": "Selected title/byline/machine/performance fields checked against preserved PDF",
+          "checked_on": "2026-11-12",
+          "source_revision_date": null
+        }
+      ],
+      "publication_stage": "Preserved proceedings manuscript; conference-day update not established",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from paper evidence",
+      "machine_configurations": [
+        {
+          "name": "Franklin",
+          "facility": "NERSC, Lawrence Berkeley National Laboratory",
+          "configuration": "9,660 compute nodes, each two 2.6 GHz AMD Opteron cores and 4 GByte main memory; theoretical whole-system peak 101.5 Tflop/s.",
+          "location": "PDF p. 6, Section VI; institutional location p. 2",
+          "note": ""
+        },
+        {
+          "name": "Jaguar",
+          "facility": "NCCS, Oak Ridge National Laboratory",
+          "configuration": "7,832 XT4 compute nodes, each quad-core 2.1 GHz AMD Opteron and 8 GByte memory; approximate theoretical whole-system peak 263 Tflop/s.",
+          "location": "PDF p. 6, Section VI; institutional location p. 2",
+          "note": ""
+        },
+        {
+          "name": "Intrepid",
+          "facility": "ALCF, Argonne National Laboratory",
+          "configuration": "40,960 nodes and 163,840 cores; theoretical whole-system peak 556 Tflop/s.",
+          "location": "PDF p. 6, Section VI; institutional location p. 2",
+          "note": ""
+        }
+      ],
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "crossref-sc2008-ls3df",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "conference-updates",
+      "title": "Conference-day scores may differ from paper scores",
+      "state": "Open",
+      "detail": "Current measurements are manuscript-stage evidence. Conference talks and official updates require separate dated records; no annual final score is inferred."
+    },
+    {
+      "id": "local-access",
+      "title": "Local evidence available offline",
+      "state": "Resolved",
+      "detail": "Six SC08 PDFs are independently hash-verified and selected fields audited. Candidate bodies and indexes for 16 years were copied read-only; 86 local candidate records do not establish complete historical coverage."
+    },
+    {
+      "id": "scope",
+      "title": "Precision and scope corrected from full text",
+      "state": "Checked",
+      "detail": "QMC Table I distinguishes 202.3 TFLOP/s FP64 from 408.9 mixed precision. VPIC Table II gives 374.2 end-to-end, separate from the 488 kernel claim. Mantle component and DG rates are retained separately."
+    },
+    {
+      "id": "metadata",
+      "title": "Ordered bylines and all six DOIs verified",
+      "state": "Checked",
+      "detail": "PDF order resolves the seismic byline and confirms David H. Bailey in LS3DF. All six DOI codes and titles were directly matched against publisher-deposited Crossref registration records."
+    },
+    {
+      "id": "source-conflicts",
+      "title": "Source discrepancies remain visible",
+      "state": "Recorded",
+      "detail": "Seismic Jaguar is 28K in the abstract and 29K in the body. MD title rounds 368.6 to 369. Original table anomalies and version labels are documented, not silently repaired."
+    },
+    {
+      "id": "sc97",
+      "title": "1997 legacy checkpoint completed",
+      "state": "Recorded",
+      "detail": "Four HTML/PostScript papers and all figure resources are preserved. Daily and session pages use conflicting finalist/winner labels, so wins and categories remain unresolved."
+    }
+  ],
+  "coverage": {
+    "year": 2008,
+    "expected_finalists": 6,
+    "roster_status": "Six entries reconciled against the official announcement and final schedule",
+    "full_text_audit": "Selected PDF fields checked for all six SC08 papers; score-stage and source conflicts retained",
+    "cdrom_audit": "All six PDF hashes match local-copy receipts and the original inventory; no HDD reconnection needed",
+    "local_holdings_years_reported": [
+      1997,
+      2002,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "local_candidate_records": 86,
+    "local_holdings_years": [
+      1997,
+      2002,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "inventory_report": {
+    "volume": "SC08_Proceedings",
+    "evidence_type": "user_supplied_inventory_report",
+    "source_report_library_file_id": "libfile_738b9f975fec8191be0320b344440bf4",
+    "source_report_sha256": "0379ffb11cab9417f561f41f26638b4c33b9503e3e29541df9eb63141798585b",
+    "inspected_at_reported": "2026-11-12T14:46:35.475875+09:00",
+    "completed_at_reported": "2026-11-12T14:46:41.938419+09:00",
+    "general_papers_reported": 59,
+    "finalists_reported": 6,
+    "pdf_files_reported": 65,
+    "finalist_pdf_total_bytes": 4856802,
+    "index_paths": [
+      "sc08/index4bc0.html",
+      "scyourway/conference/allpapers.html",
+      "sc08/paper-authors.html",
+      "sc08/indexc656.html",
+      "scyourway/conference/allgordonbell.html",
+      "sc08/gb-authors.html"
+    ],
+    "integrity_audit_reported": {
+      "files": 520,
+      "checks": [
+        "SHA-256",
+        "size",
+        "modification time",
+        "change time",
+        "directory metadata"
+      ],
+      "excluded": [
+        "access time"
+      ],
+      "result": "Unchanged before and after collection"
+    },
+    "access_mode_reported": "Read-only operations on a normally writable OS mount; no remount or settings changes",
+    "verification": "Report parsed and six identifiers matched; PDF bytes not received or independently hashed in this workspace"
+  },
+  "holdings": {
+    "copied_on": "2026-11-12",
+    "years": 16,
+    "candidate_records": 86,
+    "copied_bytes": 230343118,
+    "records": [
+      {
+        "year": 1997,
+        "code": "ATTAWAY",
+        "title": "Transient Solid Dynamics Simulations on the Sandia/Intel Teraflop Computer",
+        "source_directory": "SC97_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "BELL/ATTAWAY/INDEX.HTM",
+            "size_bytes": 33868,
+            "sha256": "e99e521ae82dd1ce9b1048514d295c50696b60d0225f900649c9b37489019387"
+          },
+          {
+            "relative_path": "BELL/ATTAWAY/ATTAWAY.PS",
+            "size_bytes": 4789302,
+            "sha256": "bf2ce010b17fb643d8edd487256912282f7a9ac554518d785f58a7c6737ad7d0"
+          }
+        ],
+        "roster_evidence": [
+          "BELL/INDEX.HTM",
+          "DAILY/TH.HTM"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Metadata and legacy format checked; performance audit pending",
+        "authors": [
+          "Stephen A. Attaway",
+          "Edward J. Barragy",
+          "Kevin H. Brown",
+          "David R. Gardner",
+          "Bruce A. Hendrickson",
+          "Steven J. Plimpton",
+          "Courtenay T. Vaughan"
+        ],
+        "award_status": "finalist listing verified; winner/category not independently established by these inconsistent local labels"
+      },
+      {
+        "year": 1997,
+        "code": "DEVINE",
+        "title": "High Performance MP Unstructured Finite Element Simulation of Chemically Reacting Flows",
+        "source_directory": "SC97_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "BELL/DEVINE/INDEX.HTM",
+            "size_bytes": 31689,
+            "sha256": "e97a0027b2ddbfcacdadb67d8f7e740cecc737d150208c0a8bdaf3e1108d3401"
+          },
+          {
+            "relative_path": "BELL/DEVINE/DEVINE.PS",
+            "size_bytes": 4437444,
+            "sha256": "f71242f717cc0013abea22b87779bcc76cfea00430ac80196f0b8dca42e983a4"
+          }
+        ],
+        "roster_evidence": [
+          "BELL/INDEX.HTM",
+          "DAILY/TH.HTM"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Metadata and legacy format checked; performance audit pending",
+        "authors": [
+          "Karen D. Devine",
+          "Gary L. Hennigan",
+          "Scott A. Hutchinson",
+          "Andrew G. Salinger",
+          "John N. Shadid",
+          "Ray S. Tuminaro"
+        ],
+        "award_status": "finalist listing verified; winner/category not independently established by these inconsistent local labels"
+      },
+      {
+        "year": 1997,
+        "code": "PHANTHIE",
+        "title": "Large Scale Simulation of Suspensions with PVM",
+        "source_directory": "SC97_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "BELL/PHANTHIE/INDEX.HTM",
+            "size_bytes": 35529,
+            "sha256": "335faeb4149c20d087a859e749b7b199c0c6902ad97c73e05a60b99d812797c4"
+          },
+          {
+            "relative_path": "BELL/PHANTHIE/PHANTHIE.PS",
+            "size_bytes": 3005767,
+            "sha256": "4b88009c7dd352f3d1ed8c2904436bb6668055cef492fbff620ab2ce29ef3825"
+          }
+        ],
+        "roster_evidence": [
+          "BELL/INDEX.HTM",
+          "DAILY/TH.HTM"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Metadata and legacy format checked; performance audit pending",
+        "authors": [
+          "Nhan Phan-Thien",
+          "Ka Yan Lee",
+          "David Tullock"
+        ],
+        "award_status": "finalist listing verified; winner/category not independently established by these inconsistent local labels"
+      },
+      {
+        "year": 1997,
+        "code": "WARREN",
+        "title": "Pentium Pro Inside: I. A Treecode at 430 Gigaflops on ASCI Red, II. Price/Performance of $50/Mflop on Loki and Hyglac",
+        "source_directory": "SC97_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "BELL/WARREN/INDEX.HTM",
+            "size_bytes": 64276,
+            "sha256": "800890b018fd570583a95d91946c9a6cf8198f35584fc38a0911f2c5134522a0"
+          },
+          {
+            "relative_path": "BELL/WARREN/WARREN.PS",
+            "size_bytes": 4287212,
+            "sha256": "00a773a436c1659711a98617bcddb3565d913ccd33ed85a29c48642eff65a76e"
+          }
+        ],
+        "roster_evidence": [
+          "BELL/INDEX.HTM",
+          "DAILY/TH.HTM"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Metadata and legacy format checked; performance audit pending",
+        "authors": [
+          "Michael S. Warren",
+          "John K. Salmon",
+          "Donald J. Becker",
+          "M. Patrick Goda",
+          "Thomas Sterling",
+          "Grégoire S. Winckelmans"
+        ],
+        "award_status": "finalist listing verified; winner/category not independently established by these inconsistent local labels"
+      },
+      {
+        "year": 2002,
+        "code": "pap146",
+        "title": "A 29.5 Tflops simulation of planetesimals in Uranus-Neptune region on GRAPE-6",
+        "source_directory": "SC02_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "paperpdf/pap146.pdf",
+            "size_bytes": 3791632,
+            "sha256": "b4fd927e8813372cbbfb3f0b7170cdb10fca16b95b53fdf59f18c8c9ae1859a2"
+          }
+        ],
+        "roster_evidence": [
+          "ab_ppr/ab_ppr12.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2002,
+        "code": "pap216",
+        "title": "Salinas: A Scalable Software for High-Performance Structural and Solid Mechanics Simulations",
+        "source_directory": "SC02_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "paperpdf/pap216.pdf",
+            "size_bytes": 1592945,
+            "sha256": "50368d331f91edd1beb589ff4df74178a24279f7cdfc4a0e1ccdfc3c3e6f2b55"
+          }
+        ],
+        "roster_evidence": [
+          "ab_ppr/ab_ppr12.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2002,
+        "code": "pap277",
+        "title": "NAMD: Biomolecular Simulation on Thousands of Processors",
+        "source_directory": "SC02_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "paperpdf/pap277.pdf",
+            "size_bytes": 509650,
+            "sha256": "cfd3967a5e1632056b16ab9d771731c9fc5a25a9d90588504f86b101915738b0"
+          }
+        ],
+        "roster_evidence": [
+          "ab_ppr/ab_ppr12.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2002,
+        "code": "pap273",
+        "title": "16.4 Tflops Direct Numerical Simulation of Turbulence by Fourier Spectral Method on the Earth Simulator",
+        "source_directory": "SC02_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "paperpdf/pap273.pdf",
+            "size_bytes": 3696700,
+            "sha256": "dde2a719b008789642e700567f219d9c66df0e4d04e0f7ddcffa7f55e78d74e3"
+          }
+        ],
+        "roster_evidence": [
+          "ab_ppr/ab_ppr17.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2002,
+        "code": "pap147",
+        "title": "14.9 TFLOPS Three-dimensional Fluid Simulation for Fusion Science with HPF on the Earth Simulator",
+        "source_directory": "SC02_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "paperpdf/pap147.pdf",
+            "size_bytes": 503780,
+            "sha256": "9403e55a5423d62aa6c3cc66a9c429d5199d4c46c97f7058812c00495dfd4ceb"
+          }
+        ],
+        "roster_evidence": [
+          "ab_ppr/ab_ppr17.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2002,
+        "code": "pap331",
+        "title": "A 26.58 Tflops Global Atmospheric Simulation with the Spectral Transform Method on the Earth Simulator",
+        "source_directory": "SC02_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "paperpdf/pap331.pdf",
+            "size_bytes": 782188,
+            "sha256": "dda885e2c07f7f228a6b0c384a012dfd67b84dcbeadc999d4c45406939e3c52e"
+          }
+        ],
+        "roster_evidence": [
+          "ab_ppr/ab_ppr17.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2004,
+        "code": "pap111",
+        "title": "Ultrascalable Implicit Finite Element Analyses in Solid Mechanics with over a Half a Billion Degrees of Freedom",
+        "source_directory": "SC04_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdfs/pap111.pdf",
+            "size_bytes": 973450,
+            "sha256": "77e467798a7554650f58e00b59a47a1fad7fae318c83cb93be6bdb81411b9fc2"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/index_42.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2004,
+        "code": "pap234",
+        "title": "A 15.2 TFlops Simulation of Geodynamo on the Earth Simulator",
+        "source_directory": "SC04_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdfs/pap234.pdf",
+            "size_bytes": 1025209,
+            "sha256": "7bd22dc513ff7aaff381d40f366d0ed18b17ef5222d52f6bd01b11d9523aad07"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/index_42.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2004,
+        "code": "pap275",
+        "title": "Optimal Blade System Design of a New Concept VTOL Vehicle using the Departmental Computing Grid System",
+        "source_directory": "SC04_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdfs/pap275.pdf",
+            "size_bytes": 1348038,
+            "sha256": "9f1d9c003a9b5d84eb19db7b7d95735dab223d0624edb8546690a5f3a84dc0f1"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/index_42.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2004,
+        "code": "pap231",
+        "title": "QCDOC: A 10 Teraflops Computer for Tightly-Coupled Calculations",
+        "source_directory": "SC04_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdfs/pap231.pdf",
+            "size_bytes": 5613296,
+            "sha256": "1efe319d53758a4a62277d0adae663e19f76fe6b3f745c2f3911adbce0845920"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/indexp_1.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2005,
+        "code": "pap200",
+        "title": "Large-Scale First-Principles Molecular Dynamics Simulations on the BlueGene/L Platform using the Qbox Code",
+        "source_directory": "SC05_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdf/pap200.pdf",
+            "size_bytes": 772953,
+            "sha256": "b5cabd6946ca607102ed3396dc198bcb9ed1d80630292c9038d2f17335e2cfdc"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/event_detail_5039.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2005,
+        "code": "pap346",
+        "title": "A Scalable Distributed Parallel Breadth-First Search Algorithm on BlueGene/L",
+        "source_directory": "SC05_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdf/pap346.pdf",
+            "size_bytes": 193080,
+            "sha256": "832c60519894281e37961c6c8a29f4ce394bace0f6cd0cde48905b5df619c0b6"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/event_detail_5064.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2005,
+        "code": "pap188",
+        "title": "16.447 TFlops and 159-Billion-dimensional Exact-diagonalization for Trapped Fermion-Hubbard Model on the Earth Simulator",
+        "source_directory": "SC05_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdf/pap188.pdf",
+            "size_bytes": 573035,
+            "sha256": "c0bb9daa0cbd2f13e37eee8c941b5b787a4928ff374d5960115e46635f2485e6"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/event_detail_5060.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2005,
+        "code": "pap122",
+        "title": "25 Tflop/s Multibillion-Atom Molecular Dynamics Simulations and Visualization/Analysis on BlueGene/L",
+        "source_directory": "SC05_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdf/pap122.pdf",
+            "size_bytes": 934922,
+            "sha256": "e5e6038273d3a5b2095f16c2c34b573b0114d6bfc597c8a44b0890b19de26092"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/event_detail_5196.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2005,
+        "code": "pap260",
+        "title": "Magnetohydrodynamic Turbulence Simulations on the Earth Simulator Using the Lattice Boltzmann Method",
+        "source_directory": "SC05_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdf/pap260.pdf",
+            "size_bytes": 813374,
+            "sha256": "073eaf8d6a1762ffce7eee31bee7dd85617ba2721cb9a18c295d2cd0c9cf7e38"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/event_detail_5197.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2005,
+        "code": "pap307",
+        "title": "100+ TFlop Solidification Simulations on BlueGene/L",
+        "source_directory": "SC05_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "schedule/pdf/pap307.pdf",
+            "size_bytes": 1473147,
+            "sha256": "1f225ea010b4ad1a1b6efffe3772c65a0292b3e8839402e3b9ea8767851ebe02"
+          }
+        ],
+        "roster_evidence": [
+          "schedule/event_detail_5198.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2006,
+        "code": "gb104",
+        "title": "Large-Scale Electronic Structure Calculations of High-Z Metals on the BlueGene/L Platform",
+        "source_directory": "SC06_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc06/schedule/pdf/gb104.pdf",
+            "size_bytes": 1455000,
+            "sha256": "26a68ff10dcb7818f312599feb01bb01d1c4f59767aae4ef45c9647416e905af"
+          }
+        ],
+        "roster_evidence": [
+          "sc06/schedule/event_detail_5057.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2006,
+        "code": "gb112",
+        "title": "Large Scale Drop Impact Analysis of Mobile Phone Using ADVC on Blue Gene/L",
+        "source_directory": "SC06_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc06/schedule/pdf/gb112.pdf",
+            "size_bytes": 938440,
+            "sha256": "e3948c80fbf9ab7dc269c9bd523936f2bd6e70b37d9cb5b97ece103e17d4e12a"
+          }
+        ],
+        "roster_evidence": [
+          "sc06/schedule/event_detail_5199.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2006,
+        "code": "gb113",
+        "title": "High-Performance Computing for Exact Numerical Approaches to Quantum Many-Body Problems on the Earth Simulator",
+        "source_directory": "SC06_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc06/schedule/pdf/gb113.pdf",
+            "size_bytes": 503852,
+            "sha256": "acf1ded16ff9216a9b4410fb482b3b8ed3b076ed612db03b55cff7ee3f0f10a5"
+          }
+        ],
+        "roster_evidence": [
+          "sc06/schedule/event_detail_5059.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2006,
+        "code": "gb107",
+        "title": "$158/GFLOP Astrophysical N-Body Simulation with a Reconfigurable Add-in Card and a Hierarchical Tree Algorithm",
+        "source_directory": "SC06_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc06/schedule/pdf/gb107.pdf",
+            "size_bytes": 399391,
+            "sha256": "d21e2ec311edc4ff77724073f13c5b6cef79a09b369594a0539666e4b2cc9c54"
+          }
+        ],
+        "roster_evidence": [
+          "sc06/schedule/event_detail_5054.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2006,
+        "code": "gb106",
+        "title": "A 55 TFLOPS Simulation of Amyloid-forming Peptides from Yeast Prion Sup35 with the Special-purpose Computer System MDGRAPE-3",
+        "source_directory": "SC06_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc06/schedule/pdf/gb106.pdf",
+            "size_bytes": 363974,
+            "sha256": "73fee2868e4374fcc19a9a7c743b7609ee9da1db42e573f77ce303ff1036022d"
+          }
+        ],
+        "roster_evidence": [
+          "sc06/schedule/event_detail_5197.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2006,
+        "code": "gb110",
+        "title": "The BlueGene/L Supercomputer and Quantum Chromodynamics",
+        "source_directory": "SC06_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc06/schedule/pdf/gb110.pdf",
+            "size_bytes": 391202,
+            "sha256": "427c690a4fdf7f8e9682243b2eea78a5cdba483bae45fde24b5bfd5af8b3bb1e"
+          }
+        ],
+        "roster_evidence": [
+          "sc06/schedule/event_detail_5055.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2007,
+        "code": "gb103",
+        "title": "A 281 Tflops Calculation for X-ray Protein Structure Analysis with the Special-Purpose Computer MDGRAPE-3",
+        "source_directory": "SC07_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc07.supercomp.org/schedule/pdf/gb103.pdf",
+            "size_bytes": 1568959,
+            "sha256": "0b7392561a6bac3769e093117f3f1bd7d5de1562f974b90cf2b2c66a798f4b29"
+          }
+        ],
+        "roster_evidence": [
+          "sc07.supercomp.org/schedule/event_detaila746.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2007,
+        "code": "gb104",
+        "title": "First-Principles Calculations of Large-Scale Semiconductor Systems on the Earth Simulator",
+        "source_directory": "SC07_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc07.supercomp.org/schedule/pdf/gb104.pdf",
+            "size_bytes": 407863,
+            "sha256": "783afae6be90352313473bb8651e5760fc6b2a707cd5251de1726c37dd0844d9"
+          }
+        ],
+        "roster_evidence": [
+          "sc07.supercomp.org/schedule/event_detail6bc4.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2007,
+        "code": "gb109",
+        "title": "Extending Stability Beyond CPU-Millennium: Micron-Scale Atomistic Simulation of Kelvin-Helmholtz Instability",
+        "source_directory": "SC07_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc07.supercomp.org/schedule/pdf/gb109.pdf",
+            "size_bytes": 13133564,
+            "sha256": "cb4e88128259e8a276f521f5a413cbebf8cb71b00b9c32d90155871b75f59c3c"
+          }
+        ],
+        "roster_evidence": [
+          "sc07.supercomp.org/schedule/event_detailcf43.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2007,
+        "code": "gb110",
+        "title": "WRF Nature Run",
+        "source_directory": "SC07_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc07.supercomp.org/schedule/pdf/gb110.pdf",
+            "size_bytes": 253862,
+            "sha256": "9223826c496c141e32a489d3be4e8a36520f574477e88f6c4edab7ed7a1deda9"
+          }
+        ],
+        "roster_evidence": [
+          "sc07.supercomp.org/schedule/event_detailafdc.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2008,
+        "code": "gb109",
+        "title": "High-frequency Simulations of Global Seismic Wave Propagation using SPECFEM3D_GLOBE on 62K Processors",
+        "source_directory": "SC08_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc08/pdfs/gb109.pdf",
+            "size_bytes": 437512,
+            "sha256": "550f18f0fa8ad6bb9714dee67577f48b3b7066be1cd1abce5c8a8a460d8508db"
+          }
+        ],
+        "roster_evidence": [
+          "scyourway/conference/view/gordonbell/gb109.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Selected fields audited against PDF"
+      },
+      {
+        "year": 2008,
+        "code": "gb118",
+        "title": "New algorithm to enable 400+ TFlop/s sustained performance in simulations of disorder effects in high-Tc superconductors",
+        "source_directory": "SC08_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc08/pdfs/gb118.pdf",
+            "size_bytes": 861822,
+            "sha256": "c92024907083c72b740db9dc4d245201b7968e078ccce4ee60d3f485b13e1251"
+          }
+        ],
+        "roster_evidence": [
+          "scyourway/conference/view/gordonbell/gb118.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Selected fields audited against PDF"
+      },
+      {
+        "year": 2008,
+        "code": "gb132",
+        "title": "Scalable adaptive Mantle Convection Simulation on Petascale Supercomputers",
+        "source_directory": "SC08_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc08/pdfs/gb132.pdf",
+            "size_bytes": 1817464,
+            "sha256": "e269218a711a24ff0b20330eb0cbb12a4c5f041af9fba6d6aac5497b4e7907ce"
+          }
+        ],
+        "roster_evidence": [
+          "scyourway/conference/view/gordonbell/gb132.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Selected fields audited against PDF"
+      },
+      {
+        "year": 2008,
+        "code": "gb121",
+        "title": "0.374 Pflop/s Trillion-particle Particle-in-cell Modeling of Laser Plasma Interactions on Roadrunner",
+        "source_directory": "SC08_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc08/pdfs/gb121.pdf",
+            "size_bytes": 386937,
+            "sha256": "bb88f90b2bc1114c24d4fec053a74e0a5691806796d7af46a858aabc29de79ac"
+          }
+        ],
+        "roster_evidence": [
+          "scyourway/conference/view/gordonbell/gb121.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Selected fields audited against PDF"
+      },
+      {
+        "year": 2008,
+        "code": "gb124",
+        "title": "369 Tflop/s Molecular Dynamics Simulations on the Roadrunner General-purpose Heterogeneous Supercomputer",
+        "source_directory": "SC08_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc08/pdfs/gb124.pdf",
+            "size_bytes": 918267,
+            "sha256": "acee8c989e35ef1ac274bd451ced32d68c96194590339c5c177ce8fee9369c54"
+          }
+        ],
+        "roster_evidence": [
+          "scyourway/conference/view/gordonbell/gb124.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Selected fields audited against PDF"
+      },
+      {
+        "year": 2008,
+        "code": "gb115",
+        "title": "Linear Scaling Divide-and-conquer Electronic Structure Calculations for Thousand Atom Nanostructures",
+        "source_directory": "SC08_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "sc08/pdfs/gb115.pdf",
+            "size_bytes": 434800,
+            "sha256": "a55a1937cd6e3cd7902623a0810ef623520a56155b85acbff630910abc5f9e75"
+          }
+        ],
+        "roster_evidence": [
+          "scyourway/conference/view/gordonbell/gb115.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Selected fields audited against PDF"
+      },
+      {
+        "year": 2009,
+        "code": "gb101",
+        "title": "Beyond Homogeneous Decomposition: Scaling Long-Range Forces on Massively Parallel Architectures",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb101s2.pdf",
+            "size_bytes": 1345343,
+            "sha256": "67cbd0c27ecd501552844c08798753ad85bd7256632e914948edc170b9f3531c"
+          },
+          {
+            "relative_path": "GB_updated_papers/a60-richards.pdf",
+            "size_bytes": 625945,
+            "sha256": "947ad03d2cd9bfcdd2155587b719d47daf977337db23177689f8673f0d688d2b"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb101.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb109",
+        "title": "A Scalable Method for Ab Initio Computation of Free Energies in Nanoscale Systems",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb109s2.pdf",
+            "size_bytes": 490987,
+            "sha256": "12459a307608281aae3939aee4c8f5370fbe91f4e11972f50ca33d3c3ceb4cf9"
+          },
+          {
+            "relative_path": "GB_updated_papers/a64-eisenbach.pdf",
+            "size_bytes": 437667,
+            "sha256": "ef97cbf25e5f3f1dd66f82c8c27420994579981c65c8bd8c145b32b0a16c4121"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb109.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb118",
+        "title": "Liquid Water: Obtaining the Right Answer for the Right Reasons",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb118s2.pdf",
+            "size_bytes": 213748,
+            "sha256": "f11e0b93e7e9d9ab77c91a4416e033a1008f106012aeea2b639ada5649b51957"
+          },
+          {
+            "relative_path": "GB_updated_papers/a66-apra.pdf",
+            "size_bytes": 258172,
+            "sha256": "78be90f0a634563b471cfd97a57a3e2cede67d4e3a87fe5f7d7cff6e2e0da822"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb118.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb129",
+        "title": "Enabling High-Fidelity Neutron Transport Simulations on Petascale Architectures",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb129s2.pdf",
+            "size_bytes": 552013,
+            "sha256": "1917418a970366bb31600a9d8a9ccd582ad449933a4f7f8c7d1356695cc4c426"
+          },
+          {
+            "relative_path": "GB_updated_papers/a67-kaushik.pdf",
+            "size_bytes": 585881,
+            "sha256": "b96b0b40821aba456ebab680e658de33614c421822b938791294f8e79fdfd300"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb129.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb133",
+        "title": "Scalable Implicit Finite Element Solver for Massively Parallel Processing with Demonstration to 160K cores",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb133s2.pdf",
+            "size_bytes": 2445861,
+            "sha256": "75a27ca301639072e376442af05bae15d336fa8bc4633d3b40774552f316aba3"
+          },
+          {
+            "relative_path": "GB_updated_papers/a68-sahni.pdf",
+            "size_bytes": 2508025,
+            "sha256": "7f17bc799ba4aa8bf253de4a29142723995669cebf016449fdf44ad161c1ae7b"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb133.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb107",
+        "title": "42 TFlops Hierarchical N-body Simulations on GPUs with Applications in both Astrophysics and Turbulence",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb107s2.pdf",
+            "size_bytes": 6081465,
+            "sha256": "ecb283a4333bdf0b8786149d4af794e5b11f4e2399309ab9f7ba894eecb5fdf3"
+          },
+          {
+            "relative_path": "GB_updated_papers/a62-hamada.pdf",
+            "size_bytes": 1483473,
+            "sha256": "b0103afcfd7101cd362b3e6933486c5c09adf832a2d69acf918f7920ca9e2198"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb107.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb105",
+        "title": "Indexing Genomic Sequences on the IBM Blue Gene",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb105s2.pdf",
+            "size_bytes": 273748,
+            "sha256": "c5eec04da591adcadd90617e9911d625da65c4d9a671741363b322dbea6b204e"
+          },
+          {
+            "relative_path": "GB_updated_papers/a61-ghoting.pdf",
+            "size_bytes": 259480,
+            "sha256": "cfb19163bcf1d395d636c9a0e7a491ed240a25da4a47f6e056ae1d09285dd1c2"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb105.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb108",
+        "title": "The Cat is Out of the Bag: Cortical Simulations with 10^9 Neurons, 10^13 Synapses",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb108s2.pdf",
+            "size_bytes": 1878035,
+            "sha256": "015be3f25326abef62bdeddfd810afda2cde6822f3d54871c997873460c67601"
+          },
+          {
+            "relative_path": "GB_updated_papers/a63-ananthanarayanan.pdf",
+            "size_bytes": 2241594,
+            "sha256": "98d3ae00f2cf7a889a98ee48742fe6f592d78d24f4bdb1cda5247fc8c8545bdb"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb108.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2009,
+        "code": "gb116",
+        "title": "Millisecond-Scale Molecular Dynamics Simulations on Anton",
+        "source_directory": "SC09_Proceedings",
+        "body_files": [
+          {
+            "relative_path": "Proceedings/Data/papers/gb116s2.pdf",
+            "size_bytes": 2898363,
+            "sha256": "cd52579f199b20fb56f5e7077d818d16a88d40fbcc919074e22d47d717c00a67"
+          },
+          {
+            "relative_path": "GB_updated_papers/a65-shaw.pdf",
+            "size_bytes": 2870888,
+            "sha256": "12bca925816029ce228be40bf9abca87ac44be817eb1cb5fc5daf4d2e9131264"
+          }
+        ],
+        "roster_evidence": [
+          "Proceedings/Data/scyourway/conference/view/gb116.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2010,
+        "code": "gb106",
+        "title": "190 TFlops Astrophysical N-body Simulation on a Cluster of GPUs",
+        "source_directory": "sc10",
+        "body_files": [
+          {
+            "relative_path": "SC10/pdfs/gb106s4.pdf",
+            "size_bytes": 5686177,
+            "sha256": "9b72a02982331c36eaef243faab8d54271e5f3792395bef176b7e48160fb489c"
+          }
+        ],
+        "roster_evidence": [
+          "SC10/html/gb106.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2010,
+        "code": "gb119",
+        "title": "Extreme-Scale AMR",
+        "source_directory": "sc10",
+        "body_files": [
+          {
+            "relative_path": "SC10/pdfs/gb119s4.pdf",
+            "size_bytes": 4190632,
+            "sha256": "0c91710c04e8c86ea76f04d0fbad84e121990a003101d18cd15b971b7c822732"
+          }
+        ],
+        "roster_evidence": [
+          "SC10/html/gb119.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2010,
+        "code": "gb118",
+        "title": "Scalable Earthquake Simulation on Petascale Supercomputers",
+        "source_directory": "sc10",
+        "body_files": [
+          {
+            "relative_path": "SC10/pdfs/gb118s4.pdf",
+            "size_bytes": 11272151,
+            "sha256": "7cd4ef5e45c8516b2abec7d961f8ceb825bdabb25ffcbdff2cedd98ae65a95c7"
+          }
+        ],
+        "roster_evidence": [
+          "SC10/html/gb118.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2010,
+        "code": "gb109",
+        "title": "Multiscale Simulation of Cardiovascular flows on the IBM Bluegene/P: Full Heart-Circulation System at Red-Blood Cell Resolution",
+        "source_directory": "sc10",
+        "body_files": [
+          {
+            "relative_path": "SC10/pdfs/gb109s4.pdf",
+            "size_bytes": 779890,
+            "sha256": "9316885bf8f1e7718474f0624b68621f3123e2fc33b12107a818bb3090b6280d"
+          }
+        ],
+        "roster_evidence": [
+          "SC10/html/gb109.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2010,
+        "code": "gb111",
+        "title": "Petascale Direct Numerical Simulation of Blood Flow on 200K Cores and Heterogeneous Architectures",
+        "source_directory": "sc10",
+        "body_files": [
+          {
+            "relative_path": "SC10/pdfs/gb111s4.pdf",
+            "size_bytes": 11145285,
+            "sha256": "4c4d997429dd0f53f12d7eb38e38dff1d26f943225253f16879724b445a3e5e6"
+          }
+        ],
+        "roster_evidence": [
+          "SC10/html/gb111.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2010,
+        "code": "gb112",
+        "title": "Toward First Principles Electronic Structure Simulations of Excited States and Strong Correlations in Nano- and Materials Science",
+        "source_directory": "sc10",
+        "body_files": [
+          {
+            "relative_path": "SC10/pdfs/gb112s4.pdf",
+            "size_bytes": 448571,
+            "sha256": "8f917c3705e173411410d9b4d7e4b930506d94aa8e8887b6a2febb5c4a7a01eb"
+          }
+        ],
+        "roster_evidence": [
+          "SC10/html/gb112.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2011,
+        "code": "gb1",
+        "title": "First-principles calculations of electron states of a silicon nanowire with 100,000 atoms on the K computer",
+        "source_directory": "SC11",
+        "body_files": [
+          {
+            "relative_path": "src/pdf/gb_papers/gb1.pdf",
+            "size_bytes": 805624,
+            "sha256": "cf7cc3f441a49be6b8a6e1f9a0568ed4784090a68871f1217bbd47fe68de4546"
+          }
+        ],
+        "roster_evidence": [
+          "src/html/gb_papers/gb1.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2011,
+        "code": "gb2",
+        "title": "Atomistic nanoelectronic device engineering with sustained performances up to 1.44 PFlop/s",
+        "source_directory": "SC11",
+        "body_files": [
+          {
+            "relative_path": "src/pdf/gb_papers/gb2.pdf",
+            "size_bytes": 415235,
+            "sha256": "0b03802fc33ffb7b3b7e815c29d7928ba0cef5e7d5ea99a92d8141b2d39ac189"
+          }
+        ],
+        "roster_evidence": [
+          "src/html/gb_papers/gb2.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2011,
+        "code": "gb3",
+        "title": "Peta-scale Phase-Field Simulation for Dendritic Solidification on the TSUBAME 2.0 Supercomputer",
+        "source_directory": "SC11",
+        "body_files": [
+          {
+            "relative_path": "src/pdf/gb_papers/gb3.pdf",
+            "size_bytes": 1680565,
+            "sha256": "bfb62584455fbaf30f1b7f3b902a440f24c9a811e84e997b40f129d0a174b1ee"
+          }
+        ],
+        "roster_evidence": [
+          "src/html/gb_papers/gb3.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2011,
+        "code": "gb4",
+        "title": "Petaflop Biofluidics Simulations On A Two Million-Core System",
+        "source_directory": "SC11",
+        "body_files": [
+          {
+            "relative_path": "src/pdf/gb_papers/gb4.pdf",
+            "size_bytes": 4206401,
+            "sha256": "431075ab820bfea859e7a23cb50e3a53035e1aa8704e7c0a4fb7dd9af553350c"
+          }
+        ],
+        "roster_evidence": [
+          "src/html/gb_papers/gb4.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2011,
+        "code": "gb5",
+        "title": "A new Computational Paradigm in Multiscale Simulations: Application to Brain Blood Flow",
+        "source_directory": "SC11",
+        "body_files": [
+          {
+            "relative_path": "src/pdf/gb_papers/gb5.pdf",
+            "size_bytes": 1434103,
+            "sha256": "51c69a7d78d8a6c11a473c7667d861ce7545b02d129b579beed4797d4dcb96e3"
+          }
+        ],
+        "roster_evidence": [
+          "src/html/gb_papers/gb5.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2012,
+        "code": "gb126",
+        "title": "Billion-Particle SIMD-Friendly Two-Point Correlation on Large-Scale HPC Cluster Systems",
+        "source_directory": "SC12-DVD",
+        "body_files": [
+          {
+            "relative_path": "SC12/pdfs/gb126s4.pdf",
+            "size_bytes": 1155374,
+            "sha256": "9947052d9831feebddb864721c1e8dfdedc9707fc73ca0c7b5ce5cf6523db405"
+          }
+        ],
+        "roster_evidence": [
+          "SC12/html/gb126.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2012,
+        "code": "gb103",
+        "title": "Toward Real-Time Modeling of Human Heart Ventricles at Cellular Resolution: Multi-Hour Simulation of Drug-Induced Arrhythmias",
+        "source_directory": "SC12-DVD",
+        "body_files": [
+          {
+            "relative_path": "SC12/pdfs/gb103s4.pdf",
+            "size_bytes": 793936,
+            "sha256": "a8d677a3a8bd3ac06154288a33b3d0eb5cef4a5f043a46b2219afbcfc0a4f0d9"
+          }
+        ],
+        "roster_evidence": [
+          "SC12/html/gb103.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2012,
+        "code": "gb132",
+        "title": "Extreme-scale UQ for Bayesian Inverse Problems Governed by PDEs",
+        "source_directory": "SC12-DVD",
+        "body_files": [
+          {
+            "relative_path": "SC12/pdfs/gb132s4.pdf",
+            "size_bytes": 8512375,
+            "sha256": "8a0e78d7dc323a23bd16911c1530adfb339729ee4fef065e3c07273af0ffaebe"
+          }
+        ],
+        "roster_evidence": [
+          "SC12/html/gb132.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2012,
+        "code": "gb118",
+        "title": "The Universe at Extreme Scale: Multi-Petaflop Sky Simulation on the BG/Q",
+        "source_directory": "SC12-DVD",
+        "body_files": [
+          {
+            "relative_path": "SC12/pdfs/gb118s4.pdf",
+            "size_bytes": 5174195,
+            "sha256": "c7c71325472804d4ca335109281665c91ff5968175fffc5ec8c19d384920ada6"
+          }
+        ],
+        "roster_evidence": [
+          "SC12/html/gb118.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2012,
+        "code": "gb109",
+        "title": "4.45 Pflops Astrophysical N-Body Simulation on K computer: The Gravitational Trillion-Body Problem",
+        "source_directory": "SC12-DVD",
+        "body_files": [
+          {
+            "relative_path": "SC12/pdfs/gb109s4.pdf",
+            "size_bytes": 5686922,
+            "sha256": "9ba7cfe03747d534d9eb574892d342f256a6ae1191b76c1ba3fe0541a0c8ee3b"
+          }
+        ],
+        "roster_evidence": [
+          "SC12/html/gb109.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2013,
+        "code": "01Staar",
+        "title": "Taking a Quantum Leap in Time to Solution for Simulations of High-Tc Superconductors",
+        "source_directory": "SC13 Proceedings",
+        "body_files": [
+          {
+            "relative_path": "pdfs/01Staar.pdf",
+            "size_bytes": 842415,
+            "sha256": "a91c591c22078c453c1746b04c604d0ce34b21e74cd3c4e591ee2f0ce5748272"
+          }
+        ],
+        "roster_evidence": [
+          "index.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2013,
+        "code": "02Bernaschi",
+        "title": "20 Petaflops Simulation of Protein Suspensions in Crowding Conditions",
+        "source_directory": "SC13 Proceedings",
+        "body_files": [
+          {
+            "relative_path": "pdfs/02Bernaschi.pdf",
+            "size_bytes": 2714769,
+            "sha256": "350c994587a761df3b41a9cb7738786a5cf6fd9e3fb5e68745c34a23781148c4"
+          }
+        ],
+        "roster_evidence": [
+          "index.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2013,
+        "code": "03Rossinelli",
+        "title": "11 PFLOP/s Simulations of Cloud Cavitation Collapse",
+        "source_directory": "SC13 Proceedings",
+        "body_files": [
+          {
+            "relative_path": "pdfs/03Rossinelli.pdf",
+            "size_bytes": 4429557,
+            "sha256": "8133886ad6f88c92a5e47a02774465694c198b21aa5bd597eba7f40ceaa8e347"
+          }
+        ],
+        "roster_evidence": [
+          "index.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2013,
+        "code": "04Boyle",
+        "title": "The Origin of Mass",
+        "source_directory": "SC13 Proceedings",
+        "body_files": [
+          {
+            "relative_path": "pdfs/04Boyle.pdf",
+            "size_bytes": 1282908,
+            "sha256": "f7d97da8c3a04ffdc22b5c07df4fde98045d183af4af81d660ebc32c752c4601"
+          }
+        ],
+        "roster_evidence": [
+          "index.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2013,
+        "code": "05Bussmann",
+        "title": "Radiative Signatures of the Relativistic Kelvin-Helmholtz Instability",
+        "source_directory": "SC13 Proceedings",
+        "body_files": [
+          {
+            "relative_path": "pdfs/05Bussmann.pdf",
+            "size_bytes": 1780320,
+            "sha256": "c73244ab466c71a539624f5945350c779dfc50d668d3d9e1bf8b26f981ca096d"
+          }
+        ],
+        "roster_evidence": [
+          "index.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2013,
+        "code": "06Habib",
+        "title": "HACC: Extreme Scaling and Performance Across Diverse Architectures",
+        "source_directory": "SC13 Proceedings",
+        "body_files": [
+          {
+            "relative_path": "pdfs/06Habib.pdf",
+            "size_bytes": 876332,
+            "sha256": "d08ed3f8b37325932e14d1de7c64b7770f8bc1def5328d95cf6d3d06195379d5"
+          }
+        ],
+        "roster_evidence": [
+          "index.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2014,
+        "code": "gb112",
+        "title": "Petascale High Order Dynamic Rupture Earthquake Simulations on Heterogeneous Supercomputers",
+        "source_directory": "SC14",
+        "body_files": [
+          {
+            "relative_path": "PDF/1-Heinecke-gb112s2.pdf",
+            "size_bytes": 2891985,
+            "sha256": "c3d7553b9dbf218f8e11222d1b01ac162202ed78a2d3ecf49d8540871110f1e4"
+          }
+        ],
+        "roster_evidence": [
+          "Index.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2014,
+        "code": "gb107",
+        "title": "Physics-based urban earthquake simulation enhanced by 10.7 BlnDOF X 30 K time-step unstructured FE non-linear seismic wave simulation",
+        "source_directory": "SC14",
+        "body_files": [
+          {
+            "relative_path": "PDF/2-Ichimura-gb107s2-2.pdf",
+            "size_bytes": 2059496,
+            "sha256": "6a04d5a04bfa46ccdcc541ca791235383be1f96985ac5bd9994aa73b07680670"
+          }
+        ],
+        "roster_evidence": [
+          "Index.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2014,
+        "code": "gb111",
+        "title": "Real-time Scalable Cortical Computing at 46 Giga-Synaptic OPS/Watt with ~100x Speedup in Time-to-Solution and ~100,000x Reduction in Energy-to-Solution",
+        "source_directory": "SC14",
+        "body_files": [
+          {
+            "relative_path": "PDF/3-Cassidy-gb111s2.pdf",
+            "size_bytes": 3022673,
+            "sha256": "bf82c0f4cff1287430903a66b5b3e11a4f94a110f2f2d09357426a4930ffedac"
+          }
+        ],
+        "roster_evidence": [
+          "Index.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2014,
+        "code": "gb105",
+        "title": "Anton 2: Raising the Bar for Performance and Programmability in a Special-Purpose Molecular Dynamics Supercomputer",
+        "source_directory": "SC14",
+        "body_files": [
+          {
+            "relative_path": "PDF/4-Shaw-gb105s2.pdf",
+            "size_bytes": 1267906,
+            "sha256": "c46c6c6d00d46ac77d31278a7fe371c8aa5418b975d44502fd688fa34ab84478"
+          }
+        ],
+        "roster_evidence": [
+          "Index.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2014,
+        "code": "gb108",
+        "title": "24.77 Pflops on a Gravitational Tree-Code to Simulate the Milky Way Galaxy with 18600 GPUs",
+        "source_directory": "SC14",
+        "body_files": [
+          {
+            "relative_path": "PDF/5-Bedorf-gb108s2.pdf",
+            "size_bytes": 3444656,
+            "sha256": "e03978b870273f332734e7cf2c67d4e1be578e3f5e911e2f3ecd74b5e4ad4270"
+          }
+        ],
+        "roster_evidence": [
+          "Index.htm"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2015,
+        "code": "gb111",
+        "title": "Massively Parallel Models of the Human Circulatory System",
+        "source_directory": "SC15",
+        "body_files": [
+          {
+            "relative_path": "papers/Randles.gb111.pdf",
+            "size_bytes": 3136502,
+            "sha256": "d74aae68a94ae3f58531774aa142a6f9444ef2a6de8398eb0b03fafde34a97db"
+          }
+        ],
+        "roster_evidence": [
+          "Contents.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2015,
+        "code": "gb113",
+        "title": "The In-Silico Lab-on-a-Chip: Petascale and High-Throughput Simulations of Microfluidics at Cell Resolution",
+        "source_directory": "SC15",
+        "body_files": [
+          {
+            "relative_path": "papers/Rossinelli.gb113.pdf",
+            "size_bytes": 3705457,
+            "sha256": "707f0153981c3176bee6739da4f8f73c61b13d639457fdd4166b88d633340116"
+          }
+        ],
+        "roster_evidence": [
+          "Contents.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2015,
+        "code": "gb103",
+        "title": "Pushing Back the Limit of Ab-Initio Quantum Transport Simulations on Hybrid Supercomputers",
+        "source_directory": "SC15",
+        "body_files": [
+          {
+            "relative_path": "papers/Calderara.gb103.pdf",
+            "size_bytes": 2638944,
+            "sha256": "709da43ca369f58fc897feb21ffafc852ee00fa20bbbfe1c33e124fcde1c939b"
+          }
+        ],
+        "roster_evidence": [
+          "Contents.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2015,
+        "code": "gb107",
+        "title": "Implicit Nonlinear Wave Simulation with 1.08T DOF and 0.270T Unstructured Finite Elements to Enhance Comprehensive Earthquake Simulation",
+        "source_directory": "SC15",
+        "body_files": [
+          {
+            "relative_path": "papers/Ichimura.gb107.pdf",
+            "size_bytes": 2890630,
+            "sha256": "e9164784d774eb01b3c4db7292a206e8e02afb25d56bb049465a0e854fd432ba"
+          }
+        ],
+        "roster_evidence": [
+          "Contents.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2015,
+        "code": "gb110",
+        "title": "An Extreme-Scale Implicit Solver for Complex PDEs: Highly Heterogeneous Flow in Earth�s Mantle",
+        "source_directory": "SC15",
+        "body_files": [
+          {
+            "relative_path": "papers/Rudi.gb110.pdf",
+            "size_bytes": 3578024,
+            "sha256": "dc0e4ae90118517768806b160529da2689861a62b713754662ea06be42eb7cfa"
+          }
+        ],
+        "roster_evidence": [
+          "Contents.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2016,
+        "code": "gb101",
+        "title": "Towards Green Aviation with Python at Petascale",
+        "source_directory": "SC16-DVD",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb101s3.pdf",
+            "size_bytes": 3851938,
+            "sha256": "3a662b5f0a4e3ddc595702e0d2eca3530d4df16e5c00cc0559ee4873d388d571"
+          }
+        ],
+        "roster_evidence": [
+          "by_session.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2016,
+        "code": "gb103",
+        "title": "Modeling Dilute Solutions Using First-Principles Molecular Dynamics: Computing More than a Million Atoms with Over a Million Cores",
+        "source_directory": "SC16-DVD",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb103s3.pdf",
+            "size_bytes": 2381985,
+            "sha256": "741f5c8f3aa405519b8d552ddcb679bc6a209bb846ea2fe32231ec98a25a1f01"
+          }
+        ],
+        "roster_evidence": [
+          "by_session.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2016,
+        "code": "gb106",
+        "title": "Simulations of Below-Ground Dynamics of Fungi: 1.184 Pflops Attained by Automated Generation and Autotuning of Temporal Blocking Codes",
+        "source_directory": "SC16-DVD",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb106s3.pdf",
+            "size_bytes": 2366949,
+            "sha256": "ae9a2f508ae1eb6910ac0ac220407a44b0b1aca4f57618533902e064b6b56008"
+          }
+        ],
+        "roster_evidence": [
+          "by_session.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2016,
+        "code": "gb105",
+        "title": "Extreme-Scale Phase Field Simulations of Coarsening Dynamics on the Sunway TaihuLight Supercomputer",
+        "source_directory": "SC16-DVD",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb105s3.pdf",
+            "size_bytes": 3955426,
+            "sha256": "6c1aab5f3c599c210d7bf8d4b667dff58996c2c14ccb24abb2a52516f0c72292"
+          }
+        ],
+        "roster_evidence": [
+          "by_session.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2016,
+        "code": "gb102",
+        "title": "A Highly Effective Global Surface Wave Numerical Simulation with Ultra-High Resolution",
+        "source_directory": "SC16-DVD",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb102s3.pdf",
+            "size_bytes": 699043,
+            "sha256": "22faf1e93fcfd443e07ac31bcf706dadafd89b225097efa37e8a5cf4579abcfb"
+          }
+        ],
+        "roster_evidence": [
+          "by_session.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2016,
+        "code": "gb104",
+        "title": "10M-Core Scalable Fully-Implicit Solver for Nonhydrostatic Atmospheric Dynamics",
+        "source_directory": "SC16-DVD",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb104s3.pdf",
+            "size_bytes": 3765940,
+            "sha256": "03cf7c3e68841552629f74d54c4ac539986ea997a8c1c0a8912042997e71eb21"
+          }
+        ],
+        "roster_evidence": [
+          "by_session.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2017,
+        "code": "gb101",
+        "title": "Redesigning CAM-SE for Petascale Climate Modeling Performance on Sunway TaihuLight",
+        "source_directory": "SC17_USB",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb101s3-file1.pdf",
+            "size_bytes": 1998151,
+            "sha256": "2fdfc1cc19aaa12fbef924e66c0a26554e7d7139e39084029534a9e82e735bb6"
+          }
+        ],
+        "roster_evidence": [
+          "by_sub_type.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2017,
+        "code": "gb102",
+        "title": "15-Pflops Nonlinear Earthquake Simulation on Sunway TaihuLight: Enabling Depiction of Realistic 10 Hz Scenarios",
+        "source_directory": "SC17_USB",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb102s3-file1.pdf",
+            "size_bytes": 2650236,
+            "sha256": "0d8d414919f4e6866da54ca5f58ce29778ebbdfb026a5b81e9db27bf3d1cd98e"
+          }
+        ],
+        "roster_evidence": [
+          "by_sub_type.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      },
+      {
+        "year": 2017,
+        "code": "gb103",
+        "title": "Massively Parallel 3D Image Reconstruction",
+        "source_directory": "SC17_USB",
+        "body_files": [
+          {
+            "relative_path": "includes/files/gb103s3-file1.pdf",
+            "size_bytes": 1867295,
+            "sha256": "4a88798ee0fd40ac96da09d2425738d905997e163db1ee552d8b3a7b468a92d3"
+          }
+        ],
+        "roster_evidence": [
+          "by_sub_type.html"
+        ],
+        "body_copy_verified": true,
+        "content_status": "Full-text audit pending"
+      }
+    ]
+  },
+  "score_history_policy": {
+    "stages": [
+      "submitted_manuscript",
+      "revised_manuscript",
+      "preserved_proceedings_manuscript",
+      "conference_presentation",
+      "official_award_announcement",
+      "later_followup"
+    ],
+    "rule": "A paper result is not automatically the conference-day or final annual score. Preserve each source-version result; do not overwrite manuscript values with later values.",
+    "dates": "Keep source revision, measurement date, presentation date and audit date separate. Unknown dates remain null.",
+    "conference_day_updates": "Not yet verified for these SC08 records"
+  },
+  "year_coverage": [
+    {
+      "year": 1987,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1988,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1989,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1990,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1991,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1992,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1993,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1994,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1995,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1996,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1997,
+      "local_candidate_count": 4,
+      "status": "Local roster and legacy formats checked; award outcomes unresolved"
+    },
+    {
+      "year": 1998,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 1999,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2000,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2001,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2002,
+      "local_candidate_count": 6,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2003,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2004,
+      "local_candidate_count": 4,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2005,
+      "local_candidate_count": 6,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2006,
+      "local_candidate_count": 6,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2007,
+      "local_candidate_count": 4,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2008,
+      "local_candidate_count": 6,
+      "status": "Selected PDF fields audited; day-of-conference update unverified"
+    },
+    {
+      "year": 2009,
+      "local_candidate_count": 9,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2010,
+      "local_candidate_count": 6,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2011,
+      "local_candidate_count": 5,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2012,
+      "local_candidate_count": 5,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2013,
+      "local_candidate_count": 6,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2014,
+      "local_candidate_count": 5,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2015,
+      "local_candidate_count": 5,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2016,
+      "local_candidate_count": 6,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2017,
+      "local_candidate_count": 3,
+      "status": "Local roster and body copies available; full-text audit pending"
+    },
+    {
+      "year": 2018,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2019,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2020,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2021,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2022,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2023,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2024,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2025,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    },
+    {
+      "year": 2026,
+      "local_candidate_count": null,
+      "status": "No local collection in this checkpoint; official roster not yet reconciled"
+    }
+  ],
+  "legacy_format_checkpoint": {
+    "year": 1997,
+    "candidates": 4,
+    "formats": "HTML with figure/equation images and original supplied PostScript",
+    "image_check": "All figures resolve in the local copies; one optional PHANTHIE stylesheet is absent",
+    "outcome_caution": "These contemporary local files use contradictory finalist/winner labels for the same four papers. Treat inclusion as a verified Gordon Bell finalist/candidate listing. Do not assign wins, winner categories, or a resolved award outcome from these labels alone. Warren explicitly describes performance and price/performance entries; entry language is not proof of either win.",
+    "performance_audit": "Not completed; HTML metadata/format checkpoint only"
+  }
+}

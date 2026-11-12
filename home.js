@@ -1,6 +1,9 @@
 (() => {
   const copy = {
   "ja": {
+    "gordonAction": "候補論文・マシン・性能の記録へ（英語） →",
+    "gordonDescription": "Gordon Bell候補論文の著者・マシン・性能条件・出典をたどる英語の資料サイト。2008年の本文照合から整備中です。",
+    "gordonResearchAction": "論文と性能の記録を読む",
     "moonCamera": "Nikon Z50 · NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
     "moonExposure": "250mm · f/6.3 · 1/800秒 · ISO 100",
     "moonTime": "撮影：2021年9月19日 21:07:35（日本時間）",
@@ -68,6 +71,9 @@
     "backHome": "ポートフォリオへ戻る"
   },
   "en": {
+    "gordonAction": "Explore finalist papers, machines & performance →",
+    "gordonDescription": "An English research index of Gordon Bell finalist papers, ordered authors, machines, performance conditions, and sources. Manuscript audits begin with SC08; historical coverage is still being reconciled.",
+    "gordonResearchAction": "Explore the research archive",
     "moonCamera": "Nikon Z50 · NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
     "moonExposure": "250mm · f/6.3 · 1/800 s · ISO 100",
     "moonTime": "Taken: 19 September 2021, 21:07:35 JST",
