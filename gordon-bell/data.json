@@ -4682,8 +4682,8 @@
     {
       "year": 2001,
       "local_candidate_count": null,
-      "status": "Partial roster: 3 entries identified; further candidates may be missing. 3 DOI matches verified.",
-      "candidate_count": 3,
+      "status": "Partial roster: 4 entries identified; further candidates may be missing. 3 DOI matches verified.",
+      "candidate_count": 4,
       "verified_doi_count": 3,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/10/SC2001.pdf",
@@ -11032,6 +11032,15 @@
           "url": "https://api.crossref.org/works/10.1145/1048935.1050181",
           "label": "Crossref publisher-deposited registration: 10.1145/1048935.1050181",
           "kind": "doi_registration_record"
+        },
+        {
+          "id": "sc03-awards-author-copy",
+          "url": "https://specfem.org/komatitsch.free.fr/gordon_bell_news_release_2003.html",
+          "label": "SC2003 awards news release, 21 November 2003, preserved on a recipient’s research website",
+          "kind": "contemporary_conference_press_release_author_preserved_copy",
+          "local_reference": "歴史一次資料/SC2003_awards_news_release_author_copy.html",
+          "source_sha256": "e3dbafa3d5dfa58acb1b3266b7726e3df76a65679805c79c98df1766dd785216",
+          "published_on": "2003-11-21"
         }
       ],
       "roster_completeness": {
@@ -11072,7 +11081,14 @@
             "DOI verified by matching registered title plus subtitle, proceedings venue and year; author order follows the registry and is not PDF-byline audited.",
             "Verification uses the matched registration item in the cited successful search response; a direct DOI-work request is not claimed.",
             "title retains program wording; publisher_title separately preserves registry wording/capitalization, removing markup and joining title/subtitle."
-          ]
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Special Achievement",
+            "category": "Special Achievement",
+            "source_id": "sc03-awards-author-copy",
+            "evidence_note": "Award title/category from the dated SC2003 news release. Award-recipient names and publisher bylines may differ; the existing publisher author array is retained."
+          }
         },
         {
           "id": "SC03_main02",
@@ -11140,7 +11156,14 @@
             "DOI verified by matching registered title plus subtitle, proceedings venue and year; author order follows the registry and is not PDF-byline audited.",
             "Verification uses the matched registration item in the cited successful search response; a direct DOI-work request is not claimed.",
             "title retains program wording; publisher_title separately preserves registry wording/capitalization, removing markup and joining title/subtitle."
-          ]
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Special Achievement (lifetime)",
+            "category": "Special Achievement (lifetime)",
+            "source_id": "sc03-awards-author-copy",
+            "evidence_note": "Award title/category from the dated SC2003 news release. Award-recipient names and publisher bylines may differ; the existing publisher author array is retained."
+          }
         },
         {
           "id": "SC03_main05",
@@ -11162,7 +11185,14 @@
             "Program-membership and bibliographic roster entry only; no manuscript PDF, performance measurement, or final-score audit was performed.",
             "DOI verified by matching registered title plus subtitle, proceedings venue and year; author order follows the registry and is not PDF-byline audited.",
             "Verification uses the matched registration item in the cited successful search response; a direct DOI-work request is not claimed."
-          ]
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Winner — Peak Performance",
+            "category": "Peak Performance",
+            "source_id": "sc03-awards-author-copy",
+            "evidence_note": "Award title/category from the dated SC2003 news release. Award-recipient names and publisher bylines may differ; the existing publisher author array is retained."
+          }
         },
         {
           "id": "SC03_main06",
@@ -11509,6 +11539,23 @@
           "url": "https://api.crossref.org/works?query.title=Achieving+extreme+resolution+in+numerical+cosmology+using+adaptive+mesh+refinement+resolving+primordial+star+formation&filter=from-pub-date%3A2001-01-01%2Cuntil-pub-date%3A2001-12-31%2Ctype%3Aproceedings-article&rows=3",
           "label": "Crossref successful publisher-deposited search item: 10.1145/582034.582047",
           "kind": "publisher_deposited_registry_search_record"
+        },
+        {
+          "id": "makino01-author-release",
+          "url": "https://jun-makino.sakura.ne.jp/press/2001-gbprize.html",
+          "label": "GRAPE team press release, 17 December 2001; includes retrospective category table for 1995–2001",
+          "kind": "contemporary_author_press_release_with_retrospective_category_table",
+          "local_reference": "歴史一次資料/Makino_2001_Gordon_Bell_press_release.html",
+          "source_sha256": "d0a1b621a68ff3987aeba5a8b1ac7d4c75cb8e23e883cdb10569a4641ca9f766",
+          "published_on": "2001-12-17"
+        },
+        {
+          "id": "makino01-award-certificate",
+          "url": "https://jun-makino.sakura.ne.jp/images/gbp2001m.gif",
+          "label": "SC2001 award certificate preserved by recipient Junichiro Makino: Winner, Peak Performance",
+          "kind": "recipient_hosted_original_award_certificate",
+          "local_reference": "歴史一次資料/Makino_Gordon_Bell_2001_certificate.gif",
+          "source_sha256": "052881ab92be0b1086d5cedc9eca1842b4a95c6b693c585c7c618513e6b4605b"
         }
       ],
       "roster_completeness": {
@@ -11516,7 +11563,8 @@
         "expected_count": null,
         "basis_source_ids": [
           "nersc01",
-          "abel01-cv"
+          "abel01-cv",
+          "makino01-award-certificate"
         ]
       },
       "records": [
@@ -11588,10 +11636,42 @@
             "Author CV publication item 17 explicitly labels this Supercomputing 2001 paper a Gordon Bell prize finalist. This source is retrospective author testimony, not a contemporaneous selection announcement. The CV’s descriptive subtitle is kept separately from the shorter deposited publisher title.",
             "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed."
           ]
+        },
+        {
+          "id": "SC01-grape6",
+          "title": "A 11.55 Tflops Simulation of Black Holes in a Galactic Center on GRAPE-6",
+          "title_kind": "source_title",
+          "title_source_id": "makino01-award-certificate",
+          "doi": null,
+          "doi_status": "unresolved",
+          "doi_source_id": null,
+          "publisher_title": null,
+          "authors": [
+            "Junichiro Makino",
+            "Toshiyuki Fukushige"
+          ],
+          "authors_status": "award_recipients_from_contemporary_author_release_not_publication_byline",
+          "publication_url": null,
+          "notes": [
+            "Exact competition title and Peak Performance winner status are transcribed from the recipient-hosted SC2001 certificate. The author release independently identifies Makino and Fukushige as recipients; these names are not claimed to be an audited publication byline.",
+            "No exact DOI was verified. Crossref exact-title searches return the distinct 2000 1.349 Tflops paper, whose DOI is not reused for this 2001 11.55 Tflops entry.",
+            "This adds an explicitly documented historical competition entry; the annual roster remains partial. No manuscript performance record or final conference score is inferred from the title."
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Winner — Peak Performance",
+            "category": "Peak Performance",
+            "source_id": "makino01-award-certificate",
+            "additional_source_ids": [
+              "makino01-author-release"
+            ],
+            "award_date": "2001-11-15",
+            "date_source_id": "makino01-author-release"
+          }
         }
       ],
       "notes": [
-        "Three finalists are identified by primary institutional or author records; one identification is retrospective. The full annual list and total remain unresolved.",
+        "Four competition entries identified by institutional, author and original award-certificate evidence. One is retrospective author testimony; the full annual list and total remain unresolved.",
         "Historical naming: these were Gordon Bell Prize competition entries before ACM began co-sponsoring in 2006; the award_series field groups the continuing main-prize lineage.",
         "Primary membership evidence and publisher title/DOI metadata are separate. No winner, performance, full-text or final-score claim is added. Unknown totals are null, never zero."
       ],
@@ -11646,6 +11726,15 @@
           "local_reference": "歴史一次資料/CSDL_SC2000_proceedings_metadata.json",
           "source_sha256": "c9a976ec62df3b8311f026fdb2c365115826a6eba2dc4e6364a9d03e1755474a",
           "competition_year": 2000
+        },
+        {
+          "id": "makino01-author-release",
+          "url": "https://jun-makino.sakura.ne.jp/press/2001-gbprize.html",
+          "label": "GRAPE team press release, 17 December 2001; includes retrospective category table for 1995–2001",
+          "kind": "contemporary_author_press_release_with_retrospective_category_table",
+          "local_reference": "歴史一次資料/Makino_2001_Gordon_Bell_press_release.html",
+          "source_sha256": "d0a1b621a68ff3987aeba5a8b1ac7d4c75cb8e23e883cdb10569a4641ca9f766",
+          "published_on": "2001-12-17"
         }
       ],
       "roster_completeness": {
@@ -11723,7 +11812,14 @@
           "publication_url": null,
           "notes": [
             "The publisher TOC explicitly lists this paper in GORDON BELL I. DOI and ordered names come directly from publisher metadata; no paper-byline, performance or award-result audit is claimed."
-          ]
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Winner — Performance",
+            "category": "Performance",
+            "source_id": "makino01-author-release",
+            "evidence_note": "Retrospective category table in the team’s 2001 press release; no conference-day score inferred."
+          }
         },
         {
           "id": "SC00-neural-network",
@@ -11845,6 +11941,15 @@
           "local_reference": "歴史一次資料/CSDL_SC1999_proceedings_metadata.json",
           "source_sha256": "6fb42942df7884e740d350bbd8a4094093e6940168c7b56152fc4cabcc475ba0",
           "competition_year": 1999
+        },
+        {
+          "id": "makino01-author-release",
+          "url": "https://jun-makino.sakura.ne.jp/press/2001-gbprize.html",
+          "label": "GRAPE team press release, 17 December 2001; includes retrospective category table for 1995–2001",
+          "kind": "contemporary_author_press_release_with_retrospective_category_table",
+          "local_reference": "歴史一次資料/Makino_2001_Gordon_Bell_press_release.html",
+          "source_sha256": "d0a1b621a68ff3987aeba5a8b1ac7d4c75cb8e23e883cdb10569a4641ca9f766",
+          "published_on": "2001-12-17"
         }
       ],
       "roster_completeness": {
@@ -11898,7 +12003,14 @@
           "publication_url": null,
           "notes": [
             "The publisher TOC explicitly places this paper in the Fernbach Award and Gordon Bell Finalists section. DOI and author order are directly returned by that publisher metadata source; no PDF-byline or performance audit is claimed."
-          ]
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Winner — Price/performance",
+            "category": "Price/performance",
+            "source_id": "makino01-author-release",
+            "evidence_note": "Retrospective category table in the team’s 2001 press release; no conference-day score inferred."
+          }
         },
         {
           "id": "SC99-spectral-element",
@@ -12300,6 +12412,15 @@
           "local_reference": "歴史一次資料/CSDL_SC1996_proceedings_metadata.json",
           "source_sha256": "4573d6395eed3e2b897ed2aa96768be28f965755313919f9c7580452f8a5caec",
           "competition_year": 1996
+        },
+        {
+          "id": "makino01-author-release",
+          "url": "https://jun-makino.sakura.ne.jp/press/2001-gbprize.html",
+          "label": "GRAPE team press release, 17 December 2001; includes retrospective category table for 1995–2001",
+          "kind": "contemporary_author_press_release_with_retrospective_category_table",
+          "local_reference": "歴史一次資料/Makino_2001_Gordon_Bell_press_release.html",
+          "source_sha256": "d0a1b621a68ff3987aeba5a8b1ac7d4c75cb8e23e883cdb10569a4641ca9f766",
+          "published_on": "2001-12-17"
         }
       ],
       "roster_completeness": {
@@ -12330,7 +12451,17 @@
             "DOI verified from the successful Crossref query item, matching paper title, authors, conference venue and publication year; no individual-work endpoint retrieval is claimed. Authors are registry metadata, not a verified full PDF byline.",
             "The report states that one finalist using a special-purpose machine received recognition and identifies the GRAPE-4 galaxy-formation entry by Fukushige and Makino. The recovered record is a partial membership result, not a full roster inferred from prize winners."
           ],
-          "title_kind": "publisher_title"
+          "title_kind": "publisher_title",
+          "award_result": {
+            "status": "source_conflict",
+            "label": "Honorable mention — judges’ report; category descriptions differ",
+            "category": "Performance recognition (source conflict)",
+            "source_id": "judges96",
+            "additional_source_ids": [
+              "makino01-author-release"
+            ],
+            "evidence_note": "The contemporaneous judges’ report describes an honorable mention; the team’s retrospective 2001 table lists this under Performance. Both are retained."
+          }
         },
         {
           "id": "SC96-electronic-structure",
@@ -12428,6 +12559,15 @@
           "local_reference": "歴史一次資料/CSDL_SC1995_proceedings_metadata.json",
           "source_sha256": "822494511c47abbcdb8c936bfdf3285411b161597b2e866e44963152bccc2df2",
           "competition_year": 1995
+        },
+        {
+          "id": "makino01-author-release",
+          "url": "https://jun-makino.sakura.ne.jp/press/2001-gbprize.html",
+          "label": "GRAPE team press release, 17 December 2001; includes retrospective category table for 1995–2001",
+          "kind": "contemporary_author_press_release_with_retrospective_category_table",
+          "local_reference": "歴史一次資料/Makino_2001_Gordon_Bell_press_release.html",
+          "source_sha256": "d0a1b621a68ff3987aeba5a8b1ac7d4c75cb8e23e883cdb10569a4641ca9f766",
+          "published_on": "2001-12-17"
         }
       ],
       "roster_completeness": {
@@ -12507,7 +12647,14 @@
             "The committee report explicitly discusses the Makino–Taiji special-purpose-machine entry. Other submissions are not promoted to finalists; the publisher section independently supplies the three-member finalist set.",
             "DOI verified from the successful publisher-deposited Crossref query item, with matching title, authors, venue and year; no individual-work retrieval or PDF-byline audit is claimed.",
             "The publisher’s Gordon Bell Prize Finalists section independently confirms this entry; its IEEE registration is 10.1109/SUPERC.1995.15. The existing verified ACM DOI is retained for the same entry."
-          ]
+          ],
+          "award_result": {
+            "status": "verified",
+            "label": "Special award — Special-purpose machines",
+            "category": "Special-purpose machines",
+            "source_id": "makino01-author-release",
+            "evidence_note": "Retrospective category table in the team’s 2001 press release; no conference-day score inferred."
+          }
         }
       ],
       "notes": [
@@ -14669,9 +14816,9 @@
   ],
   "catalogue_summary": {
     "years": 36,
-    "records": 187,
+    "records": 188,
     "verified_dois": 166,
-    "unresolved_dois": 20,
+    "unresolved_dois": 21,
     "not_applicable_dois": 1,
     "uncovered_years": [
       1987,
