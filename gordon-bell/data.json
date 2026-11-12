@@ -1,7 +1,7 @@
 {
-  "schema_version": "0.2",
+  "schema_version": "0.3",
   "updated_on": "2026-11-12",
-  "scope": "SC08 selected-field audit; SC97 legacy-format checkpoint; 16-year local holdings, not a complete historical roster; 2023–2025 main-prize web rosters with separately verified DOI metadata",
+  "scope": "Selected manuscript fields checked for papers from 2008 and 2023–2025; complete official title/DOI rosters for 2023–2025; historical coverage remains incomplete",
   "sources": {
     "selection": {
       "label": "SC08 initial finalist announcement",
@@ -176,9 +176,1508 @@
       "url": "https://api.crossref.org/works/10.1109%2FSC.2008.5218327",
       "kind": "registration_record",
       "checked_on": "2026-11-12"
+    },
+    "sc23_materials_osti_pdf": {
+      "label": "Public OSTI manuscript, OSTI 2426285: Large-scale materials modeling at quantum accuracy (12 pages)",
+      "url": "https://www.osti.gov/servlets/purl/2426285",
+      "kind": "institutional_public_fulltext",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "sc23_biomolecular_arxiv_v1": {
+      "label": "Author preprint arXiv:2304.10061v1, submitted April 20, 2023 (11 pages)",
+      "url": "https://arxiv.org/pdf/2304.10061v1",
+      "kind": "author_preprint_fulltext",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2023-04-20"
+    },
+    "sc23_biomolecular_arxiv_record": {
+      "label": "arXiv submission history for 2304.10061v1",
+      "url": "https://arxiv.org/abs/2304.10061v1",
+      "kind": "author_preprint_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2023-04-20"
+    },
+    "acm_2023_main_award_announcement": {
+      "label": "ACM news release, November 16, 2023: materials simulations team named winner of the 2023 ACM Gordon Bell Prize",
+      "url": "https://awards.acm.org/binaries/content/assets/press-releases/2023/november/gordon-bell-prize-2023.pdf",
+      "kind": "primary_award_announcement",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2023-11-16"
+    },
+    "crossref_3627037": {
+      "label": "ACM-deposited Crossref proceedings record: 10.1145/3581784.3627037",
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627037",
+      "kind": "doi_registry",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "crossref_3627041": {
+      "label": "ACM-deposited Crossref proceedings record: 10.1145/3581784.3627041",
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627041",
+      "kind": "doi_registry",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "roster-2023-sc23_selection": {
+      "url": "https://sc23.supercomputing.org/2023/08/a-look-at-the-2023-gordon-bell-prize-finalists/",
+      "label": "SC23: A Look at the 2023 Gordon Bell Prize Finalists (August 8, 2023)",
+      "kind": "official_finalist_selection"
+    },
+    "roster-2023-sc23_program": {
+      "url": "https://sc23.conference-program.com/",
+      "label": "SC23 official schedule: ACM Gordon Bell Finalists Presentations 1 and 2",
+      "kind": "official_conference_program"
+    },
+    "roster-2023-crossref_3627037": {
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627037",
+      "label": "Crossref DOI registry: Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+      "kind": "doi_registry"
+    },
+    "roster-2023-sc23_program_gb104": {
+      "url": "https://sc23.conference-program.com/presentation/?id=gb104&sess=sess296",
+      "label": "SC23 official finalist program: Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+      "kind": "official_conference_program_entry"
+    },
+    "roster-2023-crossref_3627040": {
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627040",
+      "label": "Crossref DOI registry: Toward Exascale Computation for Turbomachinery Flows",
+      "kind": "doi_registry"
+    },
+    "roster-2023-sc23_program_gb107": {
+      "url": "https://sc23.conference-program.com/presentation/?id=gb107&sess=sess297",
+      "label": "SC23 official finalist program: Toward Exascale Computation for Turbomachinery Flows",
+      "kind": "official_conference_program_entry"
+    },
+    "roster-2023-crossref_3627038": {
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627038",
+      "label": "Crossref DOI registry: Exascale Multiphysics Nuclear Reactor Simulations for Advanced Designs",
+      "kind": "doi_registry"
+    },
+    "roster-2023-sc23_program_gb105": {
+      "url": "https://sc23.conference-program.com/presentation/?id=gb105&sess=sess296",
+      "label": "SC23 official finalist program: Exascale Multiphysics Nuclear Reactor Simulations for Advanced Designs",
+      "kind": "official_conference_program_entry"
+    },
+    "roster-2023-crossref_3627039": {
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627039",
+      "label": "Crossref DOI registry: Exploring the Ultimate Regime of Turbulent Rayleigh–Bénard Convection Through Unprecedented Spectral-Element Simulations",
+      "kind": "doi_registry"
+    },
+    "roster-2023-sc23_program_gb106": {
+      "url": "https://sc23.conference-program.com/presentation/?id=gb106&sess=sess297",
+      "label": "SC23 official finalist program: Exploring the Ultimate Regime of Turbulent Rayleigh–Bénard Convection Through Unprecedented Spectral-Element Simulations",
+      "kind": "official_conference_program_entry"
+    },
+    "roster-2023-crossref_3627042": {
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627042",
+      "label": "Crossref DOI registry: Scaling the “Memory Wall” for Multi-Dimensional Seismic Processing with Algebraic Compression on Cerebras CS-2 Systems",
+      "kind": "doi_registry"
+    },
+    "roster-2023-sc23_program_gb109": {
+      "url": "https://sc23.conference-program.com/presentation/?id=gb109&sess=sess297",
+      "label": "SC23 official finalist program: Scaling the “Memory Wall” for Multi-Dimensional Seismic Processing with Algebraic Compression on Cerebras CS-2 Systems",
+      "kind": "official_conference_program_entry"
+    },
+    "roster-2023-crossref_3627041": {
+      "url": "https://api.crossref.org/works/10.1145/3581784.3627041",
+      "label": "Crossref DOI registry: Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+      "kind": "doi_registry"
+    },
+    "roster-2023-sc23_program_gb108": {
+      "url": "https://sc23.conference-program.com/presentation/?id=gb108&sess=sess296",
+      "label": "SC23 official finalist program: Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+      "kind": "official_conference_program_entry"
+    },
+    "sc24-gb104-preprint": {
+      "label": "Wafer-scale molecular dynamics, arXiv:2405.07898v1 full text",
+      "url": "https://arxiv.org/pdf/2405.07898v1",
+      "kind": "author_preprint_fulltext",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2024-05-13"
+    },
+    "sc24-gb104-version": {
+      "label": "arXiv version history for 2405.07898",
+      "url": "https://arxiv.org/abs/2405.07898v1",
+      "kind": "author_preprint_version_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2024-05-13"
+    },
+    "sc24-gb102-preprint": {
+      "label": "AxoNN Democratizing AI, arXiv:2502.08145v1 full text",
+      "url": "https://arxiv.org/pdf/2502.08145v1",
+      "kind": "author_preprint_fulltext",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2025-02-12"
+    },
+    "sc24-gb102-version": {
+      "label": "arXiv version history for 2502.08145",
+      "url": "https://arxiv.org/abs/2502.08145v1",
+      "kind": "author_preprint_version_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2025-02-12"
+    },
+    "sc24-announcement": {
+      "label": "SC24 official six main-prize finalist announcement",
+      "url": "https://sc24.supercomputing.org/2024/10/presenting-the-finalists-for-the-2024-gordon-bell-prize/",
+      "kind": "official_finalist_announcement",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2024-10-09"
+    },
+    "sc24-gb104-registry": {
+      "label": "IEEE-deposited Crossref metadata, 10.1109/SC41406.2024.00014",
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00014",
+      "kind": "publisher_deposited_registry_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "sc24-gb102-registry": {
+      "label": "IEEE-deposited Crossref metadata, 10.1109/SC41406.2024.00010",
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00010",
+      "kind": "publisher_deposited_registry_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "roster-2024-sc24-announcement": {
+      "url": "https://sc24.supercomputing.org/2024/10/presenting-the-finalists-for-the-2024-gordon-bell-prize/",
+      "label": "SC24 official six-finalist announcement, October 9, 2024",
+      "kind": "official_finalist_announcement"
+    },
+    "roster-2024-sc24-program": {
+      "url": "https://sc24.conference-program.com/",
+      "label": "SC24 official full program, main-prize finalist sessions 1 and 2",
+      "kind": "official_conference_program"
+    },
+    "roster-2024-crossref-00013": {
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00013",
+      "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00013",
+      "kind": "publisher_deposited_registry_metadata"
+    },
+    "roster-2024-sc24-program-gb101": {
+      "url": "https://sc24.conference-program.com/presentation/?id=gb101&sess=sess497",
+      "label": "SC24 official ACM Gordon Bell Finalist presentation gb101",
+      "kind": "official_conference_program"
+    },
+    "roster-2024-crossref-00011": {
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00011",
+      "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00011",
+      "kind": "publisher_deposited_registry_metadata"
+    },
+    "roster-2024-sc24-program-gb103": {
+      "url": "https://sc24.conference-program.com/presentation/?id=gb103&sess=sess496",
+      "label": "SC24 official ACM Gordon Bell Finalist presentation gb103",
+      "kind": "official_conference_program"
+    },
+    "roster-2024-crossref-00012": {
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00012",
+      "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00012",
+      "kind": "publisher_deposited_registry_metadata"
+    },
+    "roster-2024-sc24-program-gb105": {
+      "url": "https://sc24.conference-program.com/presentation/?id=gb105&sess=sess496",
+      "label": "SC24 official ACM Gordon Bell Finalist presentation gb105",
+      "kind": "official_conference_program"
+    },
+    "roster-2024-crossref-00014": {
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00014",
+      "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00014",
+      "kind": "publisher_deposited_registry_metadata"
+    },
+    "roster-2024-sc24-program-gb104": {
+      "url": "https://sc24.conference-program.com/presentation/?id=gb104&sess=sess497",
+      "label": "SC24 official ACM Gordon Bell Finalist presentation gb104",
+      "kind": "official_conference_program"
+    },
+    "roster-2024-crossref-00010": {
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00010",
+      "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00010",
+      "kind": "publisher_deposited_registry_metadata"
+    },
+    "roster-2024-sc24-program-gb102": {
+      "url": "https://sc24.conference-program.com/presentation/?id=gb102&sess=sess496",
+      "label": "SC24 official ACM Gordon Bell Finalist presentation gb102",
+      "kind": "official_conference_program"
+    },
+    "roster-2024-crossref-00015": {
+      "url": "https://api.crossref.org/works/10.1109%2FSC41406.2024.00015",
+      "label": "Crossref direct work record, IEEE member 263, 10.1109/SC41406.2024.00015",
+      "kind": "publisher_deposited_registry_metadata"
+    },
+    "roster-2024-sc24-program-gb106": {
+      "url": "https://sc24.conference-program.com/presentation/?id=gb106&sess=sess497",
+      "label": "SC24 official ACM Gordon Bell Finalist presentation gb106",
+      "kind": "official_conference_program"
+    },
+    "sc25_cascadia_arxiv_v2_pdf": {
+      "label": "Cascadia Bayesian-inference manuscript, arXiv:2504.16344v2",
+      "url": "https://arxiv.org/pdf/2504.16344v2",
+      "kind": "public_author_manuscript_pdf",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2025-08-28"
+    },
+    "sc25_cascadia_arxiv_metadata": {
+      "label": "arXiv submission and version history for Cascadia manuscript",
+      "url": "https://arxiv.org/abs/2504.16344",
+      "kind": "preprint_version_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2025-08-28"
+    },
+    "sc25_quatrex_arxiv_v1_pdf": {
+      "label": "QuaTrEx manuscript, arXiv:2508.19138v1",
+      "url": "https://arxiv.org/pdf/2508.19138v1",
+      "kind": "public_author_manuscript_pdf",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2025-08-26"
+    },
+    "sc25_quatrex_arxiv_metadata": {
+      "label": "arXiv submission and version history for QuaTrEx manuscript",
+      "url": "https://arxiv.org/abs/2508.19138",
+      "kind": "preprint_version_metadata",
+      "checked_on": "2026-11-12",
+      "source_revision_date": "2025-08-26"
+    },
+    "sc25_cascadia_crossref": {
+      "label": "ACM publication registration for Cascadia paper",
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771787",
+      "kind": "doi_registration_record",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "sc25_quatrex_crossref": {
+      "label": "ACM publication registration for QuaTrEx paper",
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771784",
+      "kind": "doi_registration_record",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "sc25_acm_award_release": {
+      "label": "ACM-issued announcement: 2025 Gordon Bell Prize winner and honorable mention (EurekAlert, 21 November 2025)",
+      "url": "https://www.eurekalert.org/news-releases/1107037",
+      "kind": "official_award_announcement",
+      "checked_on": "2026-11-12",
+      "source_revision_date": null
+    },
+    "roster-2025-sc25_program": {
+      "url": "https://sc25.conference-program.com/",
+      "label": "SC25 official full program and event-type legend",
+      "kind": "official_conference_program"
+    },
+    "roster-2025-sc25_day_15": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-15.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 15, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_16": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-16.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 16, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_17": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-17.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 17, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_18": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-18.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 18, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_19": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-19.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 19, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_20": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-20.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 20, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_21": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-21.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 21, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_day_22": {
+      "url": "https://sc25.conference-program.com/wp-content/linklings_snippets/wp_program_view_all_2025-11-22.txt?v=1770063066",
+      "label": "SC25 official public daily-program data, November 22, 2025",
+      "kind": "official_conference_program_data"
+    },
+    "roster-2025-sc25_session_575": {
+      "url": "https://sc25.conference-program.com/session/?sess=sess575",
+      "label": "SC25 Gordon Bell presentation session sess575",
+      "kind": "official_conference_program_session"
+    },
+    "roster-2025-sc25_session_577": {
+      "url": "https://sc25.conference-program.com/session/?sess=sess577",
+      "label": "SC25 Gordon Bell presentation session sess577",
+      "kind": "official_conference_program_session"
+    },
+    "roster-2025-sc25_session_590": {
+      "url": "https://sc25.conference-program.com/session/?sess=sess590",
+      "label": "SC25 Gordon Bell presentation session sess590",
+      "kind": "official_conference_program_session"
+    },
+    "roster-2025-sc25_presentation_pap577": {
+      "url": "https://sc25.conference-program.com/presentation/?id=pap577&sess=sess575",
+      "label": "SC25 official presentation pap577",
+      "kind": "official_conference_program_presentation"
+    },
+    "roster-2025-crossref_3771784": {
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771784",
+      "label": "Crossref direct registration record for 10.1145/3712285.3771784",
+      "kind": "doi_registration_record"
+    },
+    "roster-2025-sc25_presentation_gb101": {
+      "url": "https://sc25.conference-program.com/presentation/?id=gb101&sess=sess575",
+      "label": "SC25 official presentation gb101",
+      "kind": "official_conference_program_presentation"
+    },
+    "roster-2025-crossref_3771783": {
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771783",
+      "label": "Crossref direct registration record for 10.1145/3712285.3771783",
+      "kind": "doi_registration_record"
+    },
+    "roster-2025-sc25_presentation_gb104": {
+      "url": "https://sc25.conference-program.com/presentation/?id=gb104&sess=sess575",
+      "label": "SC25 official presentation gb104",
+      "kind": "official_conference_program_presentation"
+    },
+    "roster-2025-crossref_3771786": {
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771786",
+      "label": "Crossref direct registration record for 10.1145/3712285.3771786",
+      "kind": "doi_registration_record"
+    },
+    "roster-2025-sc25_presentation_gb103": {
+      "url": "https://sc25.conference-program.com/presentation/?id=gb103&sess=sess575",
+      "label": "SC25 official presentation gb103",
+      "kind": "official_conference_program_presentation"
+    },
+    "roster-2025-crossref_3771785": {
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771785",
+      "label": "Crossref direct registration record for 10.1145/3712285.3771785",
+      "kind": "doi_registration_record"
+    },
+    "roster-2025-sc25_presentation_gb105": {
+      "url": "https://sc25.conference-program.com/presentation/?id=gb105&sess=sess577",
+      "label": "SC25 official presentation gb105",
+      "kind": "official_conference_program_presentation"
+    },
+    "roster-2025-crossref_3772093": {
+      "url": "https://api.crossref.org/works/10.1145/3712285.3772093",
+      "label": "Crossref direct registration record for 10.1145/3712285.3772093",
+      "kind": "doi_registration_record"
+    },
+    "roster-2025-sc25_presentation_gb106": {
+      "url": "https://sc25.conference-program.com/presentation/?id=gb106&sess=sess577",
+      "label": "SC25 official presentation gb106",
+      "kind": "official_conference_program_presentation"
+    },
+    "roster-2025-crossref_3771787": {
+      "url": "https://api.crossref.org/works/10.1145/3712285.3771787",
+      "label": "Crossref direct registration record for 10.1145/3712285.3771787",
+      "kind": "doi_registration_record"
     }
   },
   "papers": [
+    {
+      "doi": "10.1145/3712285.3771787",
+      "title": "Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone",
+      "authors": [
+        "Stefan Henneking",
+        "Sreeram Venkat",
+        "Veselin Dobrev",
+        "John Camier",
+        "Tzanio Kolev",
+        "Milinda Fernando",
+        "Alice-Agnes Gabriel",
+        "Omar Ghattas"
+      ],
+      "field": "Computational geophysics; Bayesian inverse problems; real-time tsunami forecasting",
+      "summary": "The authors combine seafloor-pressure observations with a three-dimensional acoustic-gravity model to infer earthquake-driven seafloor motion and predict coastal wave heights with uncertainty. Shift invariance and block-Toeplitz algorithms move expensive PDE solves into one-time offline preparation. The resulting online inference takes less than 0.2 seconds on 512 A100 GPUs for a synthetic Cascadia scenario; the offline wave solver separately scales to 55.5 trillion degrees of freedom on El Capitan.",
+      "machines": [
+        "El Capitan",
+        "Alps",
+        "Perlmutter",
+        "Frontera"
+      ],
+      "machine_configurations": [
+        {
+          "name": "El Capitan",
+          "facility": "Lawrence Livermore National Laboratory (LLNL)",
+          "configuration": "As described in this manuscript: HPE Cray EX, 11,136 nodes, four AMD Instinct MI300A APUs per node. Each APU integrates 24 Zen4 CPU cores, a CDNA3 GPU and 128 GB HBM3. HPE Slingshot-200 dragonfly interconnect. Scaling experiments used 85-10,880 nodes / 340-43,520 APUs (called GPUs in the paper).",
+          "location": "PDF pp. 7-9, section VI.A, Table II, Fig. 5."
+        },
+        {
+          "name": "Alps",
+          "facility": "Swiss National Supercomputing Centre (CSCS)",
+          "configuration": "As described in this manuscript: HPE Cray EX, 2,688 nodes, four NVIDIA GH200 superchips per node; each has a 72-core Grace CPU and H100 GPU with 96 GB HBM3. Slingshot-11 dragonfly interconnect. Scaling run: 36-2,304 nodes / 144-9,216 GPUs.",
+          "location": "PDF pp. 7-9, section VI.A, Table II, Fig. 5."
+        },
+        {
+          "name": "Perlmutter",
+          "facility": "National Energy Research Scientific Computing Center (NERSC)",
+          "configuration": "As described in this manuscript: HPE Cray Shasta, 1,536 GPU nodes, AMD EPYC 7763 64-core CPU and four NVIDIA A100 GPUs with 40 GB HBM2 per node; Slingshot-11 dragonfly. Time-to-solution experiment uses 128 nodes / 512 GPUs; scaling experiments use 47-1,504 nodes / 188-6,016 GPUs.",
+          "location": "PDF pp. 7-10, section VI.A, Table II, Fig. 5, Table III."
+        },
+        {
+          "name": "Frontera",
+          "facility": "Texas Advanced Computing Center (TACC)",
+          "configuration": "As described in this manuscript: 8,368 Intel Xeon Platinum 8280 Cascade Lake compute nodes, each with 56 cores across two sockets and 192 GB DDR4. CPU weak scaling: one to 8,192 nodes (458,752 cores).",
+          "location": "PDF p. 9, section VII.A and footnote 3."
+        }
+      ],
+      "measurements": [
+        {
+          "machine": "Perlmutter",
+          "value": 0.2,
+          "unit": "s",
+          "precision": "Double precision",
+          "scope": "Online Phase 4 Bayesian parameter inference: strict upper bound (<0.2 s), excluding offline preparation",
+          "scale": "128 Perlmutter nodes / 512 NVIDIA A100 GPUs; 2,416,530 spatial parameter points x 420 temporal steps (~1.015 billion parameters), 252,000 synthetic noisy observations from 600 hypothesized sensors, and 21 forecast locations.",
+          "source_id": "sc25_cascadia_arxiv_v2_pdf",
+          "location": "PDF p. 10, section VII.C and Table III (Phase 4); parameter discretization on p. 7.",
+          "evidence_stage": "revised_manuscript",
+          "source_revision_date": "2025-08-28",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Wall time measured using omp_get_wtime after GPU synchronization and MPI_Barrier (section VI.D, p. 8).",
+          "note": "The source reports less than 0.2 s, not an exact 0.2 s value. Phase 1 alone requires 621 independent PDE solutions totaling about 538 hours on 512 GPUs; later offline phases also precede the online result. Table III separately lists QoI-only prediction at <1 ms on one GPU. Synthetic noisy data, not an operational sensor-to-alert deployment benchmark.",
+          "relation": "<",
+          "measurement_date_note": "Exact measurement date not established"
+        },
+        {
+          "machine": "El Capitan",
+          "value": 92,
+          "unit": "percent",
+          "precision": "Double precision",
+          "scope": "Weak parallel efficiency of the offline acoustic-gravity PDE solver",
+          "scale": "85 to 10,880 nodes / 340 to 43,520 AMD MI300A GPUs; 128-fold increase in GPUs and problem size; largest problem >55.5 trillion DOF (~1.28 billion DOF/APU), using 4.8 PB of memory.",
+          "source_id": "sc25_cascadia_arxiv_v2_pdf",
+          "location": "PDF pp. 8-9, section VII.A, Table II and Fig. 5 (left).",
+          "evidence_stage": "revised_manuscript",
+          "source_revision_date": "2025-08-28",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Runtime per RK4 step averaged over ten consecutive time steps (40 operator applications), after discarding the initial ten steps. POSIX wall clocks called after device synchronization and MPI_Barrier (p. 8, section VI.C).",
+          "note": "This is an offline-solver scaling efficiency, not the speed or GPU count of the <0.2 s online inference. Table II separates weak-scaling mesh elements from strong-scaling elements per GPU. The distinct strong-scaling test fixes 434 billion DOF and reports 100.9x speedup / 79% efficiency.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        },
+        {
+          "machine": "Perlmutter",
+          "value": 0.024,
+          "unit": "s",
+          "precision": "Double precision",
+          "scope": "FFT-based Hessian matrix-vector product after precomputing the parameter-to-observation map",
+          "scale": "128 Perlmutter nodes / 512 NVIDIA A100 GPUs; 2,416,530 spatial parameter points x 420 temporal steps (~1.015 billion parameters), 252,000 synthetic noisy observations from 600 hypothesized sensors, and 21 forecast locations.",
+          "source_id": "sc25_cascadia_arxiv_v2_pdf",
+          "location": "PDF p. 10, section VII.C; Table III form-K row gives 24 ms per matvec.",
+          "evidence_stage": "revised_manuscript",
+          "source_revision_date": "2025-08-28",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Wall timings use omp_get_wtime after device synchronization and MPI_Barrier; vendor FFT/BLAS libraries (section VI.D, p. 8).",
+          "note": "Reported as an exact block-Toeplitz Hessian application, without an approximation. The comparison is 104 minutes for a forward/adjoint PDE pair on the same 512 A100 GPUs versus 0.024 s after offline precomputation, yielding the paper's 260,000x speedup. This is not a whole workflow runtime.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        }
+      ],
+      "provenance": {
+        "title": [
+          "sc25_cascadia_arxiv_v2_pdf"
+        ],
+        "authors": [
+          "sc25_cascadia_arxiv_v2_pdf",
+          "sc25_cascadia_crossref"
+        ],
+        "machines": [
+          "sc25_cascadia_arxiv_v2_pdf"
+        ],
+        "abstract": [
+          "sc25_cascadia_arxiv_v2_pdf"
+        ],
+        "selection": [
+          "roster-2025-sc25_presentation_gb106"
+        ],
+        "doi": [
+          "roster-2025-crossref_3771787"
+        ],
+        "award": [
+          "sc25_acm_award_release"
+        ]
+      },
+      "notes": [
+        "Audit uses arXiv v2 dated 2025-08-28; v1 was submitted 2025-04-23. The PDF is an author manuscript, not asserted identical to the final ACM proceedings PDF. The registry confirms the associated SC25 DOI/booktitle.",
+        "Title capitalization follows the reviewed PDF rather than the title-cased conference program. Ordered eight-author byline was visually verified across its three rows.",
+        "All computations are explicitly double precision (section VI, p. 7). The authors prioritize time-to-solution / DOF throughput over maximizing FLOP/s; no whole-machine FLOP/s is inferred from the scaling result.",
+        "Reported hardware inventory is manuscript-specific and is not updated to a current machine inventory.",
+        "The abstract rounds online inference to 0.2 s, whereas Table III and section VII.C give <0.2 s. The strict bound is retained in the detailed measurement.",
+        "No conference presentation update or award-final numerical score was checked.",
+        "Award status is verified separately from ACM's own press release distributed through EurekAlert, explicitly identified as issued by the Association for Computing Machinery. Award recognition does not establish any numerical result as a conference-updated or award-final score.",
+        "This manuscript version is the source for the selected performance records. Conference-day changes require separate evidence and do not overwrite these results."
+      ],
+      "verification": "Selected title, ordered byline, machine configurations and performance observations checked against the linked manuscript version; conference-day final score not verified",
+      "booktitle": "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "award": {
+        "label": "2025 ACM Gordon Bell Prize",
+        "category": "Winner",
+        "source_id": "sc25_acm_award_release"
+      },
+      "local_fulltext": {
+        "filename": "2504.16344v2.pdf",
+        "sha256": "1fc44c9a738085c3add5dabbf6967134c05c355c1674e97ce505bb72a6cb38fe",
+        "page_count": 11,
+        "source_url": "https://arxiv.org/pdf/2504.16344v2"
+      },
+      "id": "SC25_gb106",
+      "year": 2025,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "content_status": "Selected manuscript fields checked",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from manuscript evidence",
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "roster-2025-crossref_3771787",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and publisher title matched to the official finalist bibliography; manuscript version documented separately."
+      },
+      "title_aliases": [
+        {
+          "title": "Real-Time Bayesian Inference at Extreme Scale: A Digital Twin for Tsunami Early Warning Applied to the Cascadia Subduction Zone",
+          "source_id": "roster-2025-sc25_presentation_gb106"
+        }
+      ],
+      "award_status": "Official award result checked",
+      "citation_title": "Real-Time Bayesian Inference at Extreme Scale: A Digital Twin for Tsunami Early Warning Applied to the Cascadia Subduction Zone",
+      "citation_authors": [
+        "Stefan Henneking",
+        "Sreeram Venkat",
+        "Veselin Dobrev",
+        "John Camier",
+        "Tzanio Kolev",
+        "Milinda Fernando",
+        "Alice-Agnes Gabriel",
+        "Omar Ghattas"
+      ],
+      "reviewed_versions": [
+        {
+          "evidence_stage": "revised_manuscript",
+          "source_revision_date": "2025-08-28"
+        }
+      ]
+    },
+    {
+      "doi": "10.1145/3712285.3771784",
+      "title": "Ab-initio Quantum Transport with the GW Approximation, 42,240 Atoms, and Sustained Exascale Performance",
+      "authors": [
+        "Nicolas Vetsch",
+        "Alexander Maeder",
+        "Vincent Maillou",
+        "Anders Winka",
+        "Jiang Cao",
+        "Grzegorz Kwasniewski",
+        "Leonard Deuschle",
+        "Torsten Hoefler",
+        "Alexandros N. Ziogas",
+        "Mathieu Luisier"
+      ],
+      "field": "Quantum transport; semiconductor nanodevices; many-body electronic-structure computation",
+      "summary": "QuaTrEx combines non-equilibrium Green's functions with self-consistent GW electron-interaction calculations to model silicon nanoribbon transistors at experimentally relevant dimensions. A spatial decomposition and recursive Green's-function solver distribute large devices over accelerator ranks. A 42,240-atom case sustains 1,146.037 Pflop/s in FP64 on Frontier, while Alps reaches 342.637 Pflop/s for 46,464 atoms. These are per-iteration application measurements excluding I/O.",
+      "machines": [
+        "Frontier",
+        "Alps"
+      ],
+      "machine_configurations": [
+        {
+          "name": "Frontier",
+          "facility": "Oak Ridge Leadership Computing Facility (OLCF), Oak Ridge National Laboratory",
+          "configuration": "As described in this manuscript: 9,604 HPE Cray EX235a nodes, each with one 64-core AMD EPYC Trento CPU and four AMD Instinct MI250X GPU packages. Each MI250X comprises two graphics compute dies (GCDs), each with 64 GB HBM; one MPI rank per GCD. Near-full benchmark uses 9,400 nodes = 37,600 MI250X packages = 75,200 GCDs/ranks. Slingshot network and intranode Infinity Fabric.",
+          "location": "PDF p. 8, section 6.1; p. 10, section 7.2 and Table 6."
+        },
+        {
+          "name": "Alps",
+          "facility": "Swiss National Supercomputing Centre (CSCS)",
+          "configuration": "As described in this manuscript: 2,600 HPE Cray EX254n nodes, four NVIDIA GH200 superchips per node; each combines a 72-core Grace CPU and Hopper GPU with 96 GB HBM. One MPI rank per GPU. Large-scale benchmark uses 2,350 nodes / 9,400 GPUs. NVLink intranode links and one Slingshot NIC per GH200.",
+          "location": "PDF p. 8, section 6.1; p. 10, section 7.2 and Table 6."
+        }
+      ],
+      "measurements": [
+        {
+          "machine": "Frontier",
+          "value": 1146.037,
+          "unit": "Pflop/s",
+          "precision": "FP64 (double precision)",
+          "scope": "Sustained full-application performance per SCBA iteration, excluding I/O",
+          "scale": "NR-40: 42,240 atoms, 86.9 nm device length, 40 transport cells; 18,800 energy points; four spatial ranks per energy; 9,400 nodes / 37,600 MI250X packages / 75,200 GCDs and MPI ranks; memoization enabled.",
+          "source_id": "sc25_quatrex_arxiv_v1_pdf",
+          "location": "PDF p. 10, Table 6, NR-40 column; Table 3 on p. 4 and sections 6.1-6.3 on p. 8.",
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2025-08-26",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Median of at least ten consecutive SCBA iterations; first iteration discarded to remove JIT compilation/startup. Self-energy reset to zero for each benchmark iteration. All workload counts FP64; AMD rocprof/NVIDIA Nsight Compute profile kernels or BLAS calls, then multiply profiled call work by exact call counts for device-length-dependent kernels (section 6.3, p. 8).",
+          "note": "Table 6 gives workload 48,252.738 Pflop, 42.104 s per iteration, and 82.0% weak scaling efficiency. Abstract rounds performance to 1.15 Eflop/s. Full-application scope except I/O is stated in the p. 1 performance-attributes table; this is not a kernel-only rate. The 56% Rpeak / 85% Rmax headline is based on full system; Table 6 separately gives 57.0% / 86.5% when scaled to used nodes.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 1.146037e+18
+        },
+        {
+          "machine": "Alps",
+          "value": 342.637,
+          "unit": "Pflop/s",
+          "precision": "FP64 (double precision)",
+          "scope": "Sustained full-application performance per SCBA iteration, excluding I/O",
+          "scale": "NR-44: 46,464 atoms, 4,700 energy points; two spatial ranks per energy; 2,350 nodes / 9,400 GH200 GPUs and MPI ranks; memoization enabled.",
+          "source_id": "sc25_quatrex_arxiv_v1_pdf",
+          "location": "PDF p. 10, Table 6, NR-44 column; sections 6.1-6.3 on p. 8.",
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2025-08-26",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Median of at least ten consecutive SCBA iterations; first iteration discarded to remove JIT compilation/startup. Self-energy reset to zero for each benchmark iteration. All workload counts FP64; AMD rocprof/NVIDIA Nsight Compute profile kernels or BLAS calls, then multiply profiled call work by exact call counts for device-length-dependent kernels (section 6.3, p. 8).",
+          "note": "Table 6 gives workload 8,686.874 Pflop, 25.353 s per iteration, and 85.8% weak scaling efficiency. The paper describes intermittent solver delays near full Alps scale and says the runs could not be repeated due to limited resources.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 3.42637e+17
+        },
+        {
+          "machine": "Alps",
+          "value": 134.363,
+          "unit": "Tflop/s",
+          "precision": "FP64 (double precision)",
+          "scope": "Single-energy spatial-decomposition benchmark, total over four ranks; distinct from near-full-system run",
+          "scale": "NR-80: 84,480 atoms, one energy point, four spatial partitions / GH200 GPU ranks; memoization enabled.",
+          "source_id": "sc25_quatrex_arxiv_v1_pdf",
+          "location": "PDF p. 9, Table 5, NR-80 column; section 6.2 on p. 8.",
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2025-08-26",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Median of at least ten consecutive SCBA iterations; first iteration discarded to remove JIT compilation/startup. Self-energy reset to zero for each benchmark iteration. All workload counts FP64; AMD rocprof/NVIDIA Nsight Compute profile kernels or BLAS calls, then multiply profiled call work by exact call counts for device-length-dependent kernels (section 6.3, p. 8).",
+          "note": "Table 5 gives 4,934.075 Tflop workload and 36.722 s elapsed time. The source uses one rank per Alps GPU and four ranks per energy for NR-80. This demonstrates the maximum atom count; it is not the 42,240-atom Frontier exascale measurement or the 46,464-atom Alps large-scale measurement.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 134363000000000.0
+        }
+      ],
+      "provenance": {
+        "title": [
+          "sc25_quatrex_arxiv_v1_pdf"
+        ],
+        "authors": [
+          "sc25_quatrex_arxiv_v1_pdf",
+          "sc25_quatrex_crossref"
+        ],
+        "machines": [
+          "sc25_quatrex_arxiv_v1_pdf"
+        ],
+        "abstract": [
+          "sc25_quatrex_arxiv_v1_pdf"
+        ],
+        "selection": [
+          "roster-2025-sc25_presentation_pap577"
+        ],
+        "doi": [
+          "roster-2025-crossref_3771784"
+        ],
+        "award": [
+          "sc25_acm_award_release"
+        ]
+      },
+      "notes": [
+        "Audit uses arXiv v1, submitted 2025-08-26; no later arXiv revision is listed on the checked landing page. The PDF is an author manuscript, not asserted identical to the ACM proceedings PDF. The associated ACM DOI was separately registry-verified.",
+        "The byline prints Alexandros N. Ziogas; the registry expands this to Alexandros Nikolaos Ziogas. The authors array retains the exact reviewed manuscript byline. Leonard Deuschle is the manuscript/registry spelling; the conference program says Leonard Deutschle.",
+        "Do not conflate GPU packages and GCDs: the p. 1 headline uses 37,600 Frontier GPUs, while Table 6 reports 75,200 GCDs. Four MI250X packages per node each contain two GCDs.",
+        "Section 7.1 (p. 9) prints 44,464 atoms for NR-44; Table 6 (p. 10) prints 46,464, consistent with the stated 1,056 atoms per transport cell. The large-scale record retains Table 6 rather than silently merging the inconsistent prose.",
+        "Section 7.2 prose refers to NR-{44-80} while Table 6 columns are NR-23 and NR-44. The audit records the explicit table column labels and treats NR-80 separately via Table 5.",
+        "The benchmark measures SCBA iterations with self-energy reset between iterations, not a separately documented time for a fully converged device simulation.",
+        "Reported system inventory is manuscript-specific: Alps is described as 2,600 nodes here, whereas the separately audited Cascadia manuscript describes 2,688. These are retained per source.",
+        "Award status is verified separately from ACM's own press release distributed through EurekAlert, explicitly identified as issued by the Association for Computing Machinery. Award recognition does not establish any numerical result as a conference-updated or award-final score.",
+        "This manuscript version is the source for the selected performance records. Conference-day changes require separate evidence and do not overwrite these results."
+      ],
+      "verification": "Selected title, ordered byline, machine configurations and performance observations checked against the linked manuscript version; conference-day final score not verified",
+      "booktitle": "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "award": {
+        "label": "2025 ACM Gordon Bell Prize Honorable Mention",
+        "category": "Honorable Mention",
+        "source_id": "sc25_acm_award_release"
+      },
+      "local_fulltext": {
+        "filename": "2508.19138v1.pdf",
+        "sha256": "5f2e452b6c65a09066b513aba0ff64a0c27ce28279ace67f37a3ed2791fffaab",
+        "page_count": 12,
+        "source_url": "https://arxiv.org/pdf/2508.19138v1"
+      },
+      "id": "SC25_pap577",
+      "year": 2025,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "content_status": "Selected manuscript fields checked",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from manuscript evidence",
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "roster-2025-crossref_3771784",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and publisher title matched to the official finalist bibliography; manuscript version documented separately."
+      },
+      "title_aliases": [
+        {
+          "title": "Ab-Initio Quantum Transport with the GW Approximation, 42,240 Atoms, and Sustained Exascale Performance",
+          "source_id": "roster-2025-sc25_presentation_pap577"
+        }
+      ],
+      "award_status": "Official award result checked",
+      "citation_title": "Ab-initio Quantum Transport with the GW Approximation, 42,240 Atoms, and Sustained Exascale Performance",
+      "citation_authors": [
+        "Nicolas Vetsch",
+        "Alexander Maeder",
+        "Vincent Maillou",
+        "Anders Winka",
+        "Jiang Cao",
+        "Grzegorz Kwasniewski",
+        "Leonard Deuschle",
+        "Torsten Hoefler",
+        "Alexandros Nikolaos Ziogas",
+        "Mathieu Luisier"
+      ],
+      "reviewed_versions": [
+        {
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2025-08-26"
+        }
+      ]
+    },
+    {
+      "doi": "10.1109/sc41406.2024.00014",
+      "title": "Breaking the Molecular Dynamics Timescale Barrier Using a Wafer-Scale System",
+      "authors": [
+        "Kylee Santos",
+        "Stan Moore",
+        "Tomas Oppelstrup",
+        "Amirali Sharifian",
+        "Ilya Sharapov",
+        "Aidan Thompson",
+        "Delyan Z Kalchev",
+        "Danny Perez",
+        "Robert Schreiber",
+        "Scott Pakin",
+        "Edgar A. Leon",
+        "James H Laros III",
+        "Michael James",
+        "Sivasankaran Rajamanickam"
+      ],
+      "field": "Computational materials science; classical molecular dynamics",
+      "summary": "This work maps each simulated atom to a processor core on a Cerebras wafer-scale engine and uses local dataflow communication to accelerate Embedded Atom Method molecular dynamics. The approach targets the time horizon of a fixed-size simulation, which is limited by communication latency on conventional CPU/GPU clusters. Uniform copper, tungsten and tantalum crystals and a grain-boundary case demonstrate the method; the audited May 2024 version reports measured loop rates for roughly 802,000 atoms and separately models future optimizations and multi-wafer extensions.",
+      "machines": [
+        "CS-2 (WSE-2)",
+        "Frontier",
+        "Quartz"
+      ],
+      "machine_configurations": [
+        {
+          "name": "CS-2 (WSE-2)",
+          "facility": "Specific installation not stated in the audited preprint",
+          "configuration": "One Cerebras WSE-2 with 850,000 cores in an approximately 920 x 920 tile array; each tile has a core, router and 48 kB SRAM. Total on-chip SRAM is 40 GB; cumulative memory bandwidth 20 PB/s. Tiles form a nearest-neighbor mesh. The paper quotes 23 kW processor power.",
+          "location": "PDF pp. 5-6, Section IV-A; Table I single-WSE tests on p. 7."
+        },
+        {
+          "name": "Frontier",
+          "facility": "Oak Ridge Leadership Computing Facility (OLCF), Oak Ridge National Laboratory",
+          "configuration": "Comparison system: 9,408 nodes connected by HPE Slingshot-11; each node has eight AMD Instinct MI250X GPU compute dies and an AMD optimized third-generation EPYC 64-core 2 GHz CPU. LAMMPS uses KOKKOS HIP and GPU-aware MPI.",
+          "location": "PDF pp. 6-7, Section IV-B."
+        },
+        {
+          "name": "Quartz",
+          "facility": "Lawrence Livermore National Laboratory",
+          "configuration": "Comparison cluster with 2.1 GHz Intel Xeon E5-2695 v4 Broadwell CPUs and Omni-Path network; Figure 7 sweeps node count. The text describes scaling stalling at 400 dual-socket nodes.",
+          "location": "PDF p. 6, Section IV-B; p. 7, Section V-A."
+        }
+      ],
+      "measurements": [
+        {
+          "machine": "CS-2 (WSE-2)",
+          "value": 274016,
+          "unit": "timesteps/s",
+          "precision": "FP32 on WSE; comparison LAMMPS runs use FP64",
+          "scope": "Measured EAM molecular-dynamics Verlet-loop throughput for a uniform elemental crystal in a thin open-boundary slab; not total application wall time and not a FLOP/s rate.",
+          "scale": "Tantalum; 801,792 atoms, one worker core per atom on one WSE (about 94% of 850,000 cores); 14 interactions / 80 candidates per atom as listed in Table I.",
+          "source_id": "sc24-gb104-preprint",
+          "location": "PDF p. 7, Table I, Tantalum row; timing/test conditions PDF p. 6; precision PDF p. 7.",
+          "evidence_stage": "pre_conference_preprint",
+          "source_revision_date": "2024-05-13",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Run 8,000 WSE timesteps and count processor clock cycles. Report the MD Verlet-loop rate, excluding initialization, setup and finalization (PDF p. 6, Section IV-B). Reference LAMMPS rates use the internal Loop time timer; they also exclude initialization/setup/finalization.",
+          "note": "Table I lists measured, not predicted, WSE rate. The same row reports best comparison rates of 1,530 timesteps/s on Frontier and 4,938 on Quartz; the WSE/Frontier ratio is printed as 179x. The comparison uses different arithmetic precision. Crystals were equilibrated in LAMMPS for 20,000 steps at 290 K with a 2 fs timestep before benchmarking. The later conference score is not established by this May 2024 source.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        },
+        {
+          "machine": "CS-2 (WSE-2)",
+          "value": 106313,
+          "unit": "timesteps/s",
+          "precision": "FP32 on WSE; comparison LAMMPS runs use FP64",
+          "scope": "Measured EAM molecular-dynamics Verlet-loop throughput for a uniform elemental crystal in a thin open-boundary slab; not total application wall time and not a FLOP/s rate.",
+          "scale": "Copper; 801,792 atoms, one worker core per atom on one WSE (about 94% of 850,000 cores); 42 interactions / 224 candidates per atom as listed in Table I.",
+          "source_id": "sc24-gb104-preprint",
+          "location": "PDF p. 7, Table I, Copper row; timing/test conditions PDF p. 6; precision PDF p. 7.",
+          "evidence_stage": "pre_conference_preprint",
+          "source_revision_date": "2024-05-13",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Run 8,000 WSE timesteps and count processor clock cycles. Report the MD Verlet-loop rate, excluding initialization, setup and finalization (PDF p. 6, Section IV-B). Reference LAMMPS rates use the internal Loop time timer; they also exclude initialization/setup/finalization.",
+          "note": "Table I lists measured, not predicted, WSE rate. The same row reports best comparison rates of 973 timesteps/s on Frontier and 3,120 on Quartz; the WSE/Frontier ratio is printed as 109x. The comparison uses different arithmetic precision. Crystals were equilibrated in LAMMPS for 20,000 steps at 290 K with a 2 fs timestep before benchmarking. The later conference score is not established by this May 2024 source.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        },
+        {
+          "machine": "CS-2 (WSE-2)",
+          "value": 96140,
+          "unit": "timesteps/s",
+          "precision": "FP32 on WSE; comparison LAMMPS runs use FP64",
+          "scope": "Measured EAM molecular-dynamics Verlet-loop throughput for a uniform elemental crystal in a thin open-boundary slab; not total application wall time and not a FLOP/s rate.",
+          "scale": "Tungsten; 801,792 atoms, one worker core per atom on one WSE (about 94% of 850,000 cores); 59 interactions / 224 candidates per atom as listed in Table I.",
+          "source_id": "sc24-gb104-preprint",
+          "location": "PDF p. 7, Table I, Tungsten row; timing/test conditions PDF p. 6; precision PDF p. 7.",
+          "evidence_stage": "pre_conference_preprint",
+          "source_revision_date": "2024-05-13",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Run 8,000 WSE timesteps and count processor clock cycles. Report the MD Verlet-loop rate, excluding initialization, setup and finalization (PDF p. 6, Section IV-B). Reference LAMMPS rates use the internal Loop time timer; they also exclude initialization/setup/finalization.",
+          "note": "Table I lists measured, not predicted, WSE rate. The same row reports best comparison rates of 998 timesteps/s on Frontier and 3,633 on Quartz; the WSE/Frontier ratio is printed as 96x. The comparison uses different arithmetic precision. Crystals were equilibrated in LAMMPS for 20,000 steps at 290 K with a 2 fs timestep before benchmarking. The later conference score is not established by this May 2024 source.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        }
+      ],
+      "provenance": {
+        "title": [
+          "sc24-gb104-preprint"
+        ],
+        "authors": [
+          "sc24-gb104-preprint"
+        ],
+        "machines": [
+          "sc24-gb104-preprint"
+        ],
+        "abstract": [
+          "sc24-gb104-preprint"
+        ],
+        "selection": [
+          "roster-2024-sc24-announcement"
+        ],
+        "doi": [
+          "roster-2024-crossref-00014"
+        ],
+        "award": []
+      },
+      "notes": [
+        "Audited full text is arXiv:2405.07898v1 posted May 13, 2024, not an authenticated final conference version. The arXiv landing page links the SC24 proceedings DOI, and title/ordered authors match the roster with punctuation/suffix variants.",
+        "This early preprint is kept as its own evidence stage. Later program or conference updates must be stored separately and cannot silently replace or be merged into these May 2024 measurements.",
+        "The title-page byline is transcribed in printed order, retaining Delyan Z Kalchev and James H Laros III without adding periods. The Crossref registry omits the III suffix and adds punctuation to some initials.",
+        "All three selected rates are the Measured (WSE) column of Table I. The neighboring Predicted (WSE) column is not substituted for measurement.",
+        "The WSE implementation uses single precision; LAMMPS comparison uses double precision. Speedup therefore compares the stated implementations and is not a same-precision hardware-only comparison.",
+        "Future optimization gains and multi-wafer performance in later sections are models/projections and are not included as measured results.",
+        "No conference-day or final annual score update was audited. No award-winner claim is made.",
+        "This manuscript version is the source for the selected performance records. Conference-day changes require separate evidence and do not overwrite these results."
+      ],
+      "verification": "Selected title, ordered byline, machine configurations and performance observations checked against the linked manuscript version; conference-day final score not verified",
+      "booktitle": "SC24: International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "award": null,
+      "local_fulltext": {
+        "filename": "SC24_gb104_arxiv_2405.07898v1.pdf",
+        "sha256": "b5c87166287564e47be174576db81c5a6d2ac54bf4674c397ede188ecf679052",
+        "page_count": 11,
+        "source_url": "https://arxiv.org/pdf/2405.07898v1"
+      },
+      "evidence_stage": "pre_conference_preprint",
+      "event_year": 2024,
+      "source_revision_date": "2024-05-13",
+      "id": "SC24-gb104",
+      "year": 2024,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "content_status": "Selected manuscript fields checked",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from manuscript evidence",
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "roster-2024-crossref-00014",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and publisher title matched to the official finalist bibliography; manuscript version documented separately."
+      },
+      "title_aliases": [],
+      "award_status": "Award outcome not checked in this record",
+      "citation_title": "Breaking the Molecular Dynamics Timescale Barrier Using a Wafer-Scale System",
+      "citation_authors": [
+        "Kylee Santos",
+        "Stan Moore",
+        "Tomas Oppelstrup",
+        "Amirali Sharifian",
+        "Ilya Sharapov",
+        "Aidan Thompson",
+        "Delyan Z. Kalchev",
+        "Danny Perez",
+        "Robert Schreiber",
+        "Scott Pakin",
+        "Edgar A. Leon",
+        "James H. Laros",
+        "Michael James",
+        "Sivasankaran Rajamanickam"
+      ],
+      "reviewed_versions": [
+        {
+          "evidence_stage": "pre_conference_preprint",
+          "source_revision_date": "2024-05-13"
+        }
+      ]
+    },
+    {
+      "doi": "10.1109/sc41406.2024.00010",
+      "title": "Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers",
+      "authors": [
+        "Siddharth Singh",
+        "Prajwal Singhania",
+        "Aditya Ranjan",
+        "John Kirchenbauer",
+        "Jonas Geiping",
+        "Yuxin Wen",
+        "Neel Jain",
+        "Abhimanyu Hans",
+        "Manli Shu",
+        "Aditya Tomar",
+        "Tom Goldstein",
+        "Abhinav Bhatele"
+      ],
+      "field": "Distributed machine learning; large language model training",
+      "summary": "AxoNN combines four dimensions of model and data parallelism to train large transformer models across NVIDIA and AMD supercomputers. Kernel tuning, communication overlap and a performance model reduce training costs while allowing models too large for one accelerator. The paper benchmarks weak scaling on three systems, predicts longer training times from short iteration measurements, and uses the framework to study model memorization and a mitigation through fine-tuning.",
+      "machines": [
+        "Perlmutter",
+        "Frontier",
+        "Alps"
+      ],
+      "machine_configurations": [
+        {
+          "name": "Perlmutter",
+          "facility": "NERSC, Lawrence Berkeley National Laboratory",
+          "configuration": "Four NVIDIA A100 GPUs per node, each with 40 GB DRAM. Software: CUDA 11.7, NCCL 2.15.5, PyTorch 1.13; Megatron-LM model code parallelized through AxoNN. Each node has four HPE Slingshot-11 NICs; the paper states 25 GB/s bidirectional link speed per NIC.",
+          "location": "PDF p. 8, Sections VI-A and VI-B."
+        },
+        {
+          "name": "Frontier",
+          "facility": "OLCF, Oak Ridge National Laboratory",
+          "configuration": "Four AMD Instinct MI250X GPUs per node with 128 GB DRAM each; each GPU contains two independently managed 64 GB GCDs (eight GCDs per node). Software: PyTorch 2.2.1, ROCm 5.7, RCCL 2.18.6, LitGPT with AxoNN. Four HPE Slingshot-11 NICs per node, stated as 25 GB/s bidirectional per NIC.",
+          "location": "PDF p. 8, Sections VI-A and VI-B."
+        },
+        {
+          "name": "Alps",
+          "facility": "Swiss National Supercomputing Centre (CSCS)",
+          "configuration": "Four NVIDIA GH200 Superchips per node; each H100 GPU has 96 GB DRAM. Software: PyTorch 2.4.0, CUDA 12.5.1, NCCL 2.22.3, LitGPT with AxoNN. Four HPE Slingshot-11 NICs per node, stated as 25 GB/s bidirectional per NIC.",
+          "location": "PDF p. 8, Sections VI-A and VI-B."
+        }
+      ],
+      "measurements": [
+        {
+          "machine": "Perlmutter",
+          "value": 620.1,
+          "unit": "Pflop/s",
+          "precision": "Reported bf16 model-FLOP/s; training uses mixed bf16/fp32",
+          "scope": "Sustained weak-scaling GPT-style transformer training throughput. Numerator is analytical model/matrix-multiplication FLOPs, not a whole-program hardware-counter total.",
+          "scale": "4,096 NVIDIA A100 GPUs; GPT-40B (40 billion parameters)",
+          "source_id": "sc24-gb102-preprint",
+          "location": "PDF p. 10, Table III, Perlmutter final row; measurement method and mixed precision PDF p. 8.",
+          "evidence_stage": "later_author_manuscript",
+          "source_revision_date": "2025-02-12",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Run ten training-loop iterations (batches), average elapsed time over the last eight after warmup. Divide the analytical transformer-model FLOP count from Narayanan et al. by batch time. The paper reports a small Nsight Compute check of that count; Figure 8 specifies analytical counts for matrix-multiplication kernels (PDF p. 8, Section VI-C; p. 9, Figure 8 caption).",
+          "note": "Table III reports 48.5% of vendor-advertised peak and 53.9% of empirical peak at this scale. These denominators are GPU/GCD bf16 peak rates. This is a short training-loop benchmark, not an elapsed full-model-training completion measurement. Do not label the bf16 throughput FP64.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 6.201e+17
+        },
+        {
+          "machine": "Frontier",
+          "value": 1381.0,
+          "unit": "Pflop/s",
+          "precision": "Reported bf16 model-FLOP/s; training uses mixed bf16/fp32",
+          "scope": "Sustained weak-scaling GPT-style transformer training throughput. Numerator is analytical model/matrix-multiplication FLOPs, not a whole-program hardware-counter total.",
+          "scale": "32,768 AMD MI250X GCDs; GPT-320B (320 billion parameters)",
+          "source_id": "sc24-gb102-preprint",
+          "location": "PDF p. 10, Table III, Frontier final row; measurement method and mixed precision PDF p. 8.",
+          "evidence_stage": "later_author_manuscript",
+          "source_revision_date": "2025-02-12",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Run ten training-loop iterations (batches), average elapsed time over the last eight after warmup. Divide the analytical transformer-model FLOP count from Narayanan et al. by batch time. The paper reports a small Nsight Compute check of that count; Figure 8 specifies analytical counts for matrix-multiplication kernels (PDF p. 8, Section VI-C; p. 9, Figure 8 caption).",
+          "note": "Table III reports 22.0% of vendor-advertised peak and 33.8% of empirical peak at this scale. These denominators are GPU/GCD bf16 peak rates. This is a short training-loop benchmark, not an elapsed full-model-training completion measurement. Do not label the bf16 throughput FP64.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 1.381e+18
+        },
+        {
+          "machine": "Alps",
+          "value": 1423.1,
+          "unit": "Pflop/s",
+          "precision": "Reported bf16 model-FLOP/s; training uses mixed bf16/fp32",
+          "scope": "Sustained weak-scaling GPT-style transformer training throughput. Numerator is analytical model/matrix-multiplication FLOPs, not a whole-program hardware-counter total.",
+          "scale": "6,144 NVIDIA H100 GPUs; GPT-60B (60 billion parameters)",
+          "source_id": "sc24-gb102-preprint",
+          "location": "PDF p. 10, Table III, Alps final row; measurement method and mixed precision PDF p. 8.",
+          "evidence_stage": "later_author_manuscript",
+          "source_revision_date": "2025-02-12",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Run ten training-loop iterations (batches), average elapsed time over the last eight after warmup. Divide the analytical transformer-model FLOP count from Narayanan et al. by batch time. The paper reports a small Nsight Compute check of that count; Figure 8 specifies analytical counts for matrix-multiplication kernels (PDF p. 8, Section VI-C; p. 9, Figure 8 caption).",
+          "note": "Table III reports 23.4% of vendor-advertised peak and 28.6% of empirical peak at this scale. These denominators are GPU/GCD bf16 peak rates. This is a short training-loop benchmark, not an elapsed full-model-training completion measurement. Do not label the bf16 throughput FP64.",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 1.4231e+18
+        }
+      ],
+      "provenance": {
+        "title": [
+          "sc24-gb102-preprint"
+        ],
+        "authors": [
+          "sc24-gb102-preprint"
+        ],
+        "machines": [
+          "sc24-gb102-preprint"
+        ],
+        "abstract": [
+          "sc24-gb102-preprint"
+        ],
+        "selection": [
+          "roster-2024-sc24-announcement"
+        ],
+        "doi": [
+          "roster-2024-crossref-00010"
+        ],
+        "award": []
+      },
+      "notes": [
+        "Audited full text is arXiv:2502.08145v1 posted February 12, 2025, after SC24. Its title and ordered byline match the IEEE-deposited proceedings roster. This audit does not establish that every statement is identical to the November 2024 proceedings version.",
+        "Event year is 2024, but this source version is dated 2025. Its values cannot establish what was reported at SC24; they remain later-author-manuscript evidence.",
+        "The title-page performance-attributes box calls the scope whole application including input and precision mixed. Sections VI-C/VII-B and the Figure 8 caption clarify that the reported sustained bf16 rate uses analytically counted model matrix operations over timed training iterations. Preserve both scope descriptions.",
+        "GCDs are not whole MI250X packages: Frontier has two GCDs per package. The 32,768 count in Table III is a GCD count.",
+        "Time-to-solution results for training on two trillion tokens in Figure 9 are extrapolations from per-iteration timing, not completed training runs; they are not selected as measured end-to-end times here.",
+        "The paper notes run-to-run performance variability, including on reserved Perlmutter and Alps runs, attributed to network congestion or filesystem degradation.",
+        "No conference-day or final annual score update was audited. No award-winner claim is made.",
+        "This manuscript version is the source for the selected performance records. Conference-day changes require separate evidence and do not overwrite these results."
+      ],
+      "verification": "Selected title, ordered byline, machine configurations and performance observations checked against the linked manuscript version; conference-day final score not verified",
+      "booktitle": "SC24: International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "award": null,
+      "local_fulltext": {
+        "filename": "SC24_gb102_arxiv_2502.08145v1.pdf",
+        "sha256": "a7d764d5ea8c7ce90d7e9cfb956d95f1c12de766ee82b5a774bd50fb45116f22",
+        "page_count": 14,
+        "source_url": "https://arxiv.org/pdf/2502.08145v1"
+      },
+      "evidence_stage": "later_author_manuscript",
+      "event_year": 2024,
+      "source_revision_date": "2025-02-12",
+      "id": "SC24-gb102",
+      "year": 2024,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "content_status": "Selected manuscript fields checked",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from manuscript evidence",
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "roster-2024-crossref-00010",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and publisher title matched to the official finalist bibliography; manuscript version documented separately."
+      },
+      "title_aliases": [],
+      "award_status": "Award outcome not checked in this record",
+      "citation_title": "Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers",
+      "citation_authors": [
+        "Siddharth Singh",
+        "Prajwal Singhania",
+        "Aditya Ranjan",
+        "John Kirchenbauer",
+        "Jonas Geiping",
+        "Yuxin Wen",
+        "Neel Jain",
+        "Abhimanyu Hans",
+        "Manli Shu",
+        "Aditya Tomar",
+        "Tom Goldstein",
+        "Abhinav Bhatele"
+      ],
+      "reviewed_versions": [
+        {
+          "evidence_stage": "later_author_manuscript",
+          "source_revision_date": "2025-02-12"
+        }
+      ]
+    },
+    {
+      "title": "Large-scale materials modeling at quantum accuracy: Ab initio simulations of quasicrystals and interacting extended defects in metallic alloys",
+      "authors": [
+        "Sambit Das",
+        "Bikash Kanungo",
+        "Vishal Subramanian",
+        "Gourab Panigrahi",
+        "Phani Motamarri",
+        "David Rogers",
+        "Paul M. Zimmerman",
+        "Vikram Gavini"
+      ],
+      "field": "Electronic structure and quantum-accurate materials modeling",
+      "summary": "The framework connects inverse density functional theory to a learned exchange-correlation functional and an adaptive finite-element DFT solver. Mixed precision and overlapping GPU communication make calculations of quasicrystals and interacting defects in magnesium alloys feasible at substantially larger scales while approaching quantum many-body accuracy.",
+      "machines": [
+        "Frontier",
+        "Crusher",
+        "Summit",
+        "Perlmutter"
+      ],
+      "machine_configurations": [
+        {
+          "name": "Frontier",
+          "facility": "Oak Ridge Leadership Computing Facility, Oak Ridge National Laboratory",
+          "configuration": "Each node has four AMD MI250X GPUs, each containing two GCDs, and a 64-core AMD Optimized 3rd Gen EPYC CPU. Paper uses a vector-FP64 denominator of 47.8 TFLOP/s per GPU; ROCm 5.4.0, GNU 11.2.0, Cray MPICH 8.1.26. Largest reported run uses 8,000 nodes.",
+          "location": "PDF p. 8, section VI-A; p. 10, Table III"
+        },
+        {
+          "name": "Crusher",
+          "facility": "Oak Ridge Leadership Computing Facility, Oak Ridge National Laboratory",
+          "configuration": "Frontier-architecture test system; AMD MI250X GPU nodes. The paper explicitly identifies it as the same architecture as Frontier.",
+          "location": "PDF pp. 7-8, section V-D and section VI-A footnote 4"
+        },
+        {
+          "name": "Summit",
+          "facility": "Oak Ridge Leadership Computing Facility, Oak Ridge National Laboratory",
+          "configuration": "NVIDIA V100 GPU nodes; paper uses a vector-FP64 denominator of 7.8 TFLOP/s per GPU. Strong-scaling study spans 240-1,920 nodes. Node GPU count is not specified in the cited manuscript section.",
+          "location": "PDF pp. 7-8, Figure 5 and section VI-A"
+        },
+        {
+          "name": "Perlmutter",
+          "facility": "National Energy Research Scientific Computing Center",
+          "configuration": "NVIDIA A100 GPU nodes; paper uses a vector-FP64 denominator of 9.7 TFLOP/s per GPU, excluding FP64 tensor cores. The full quasicrystal ground-state timing uses 1,120 nodes.",
+          "location": "PDF pp. 7-10, sections VI-A and VII-A, Table II"
+        }
+      ],
+      "measurements": [
+        {
+          "machine": "Frontier",
+          "value": 659.7,
+          "unit": "PFLOP/s",
+          "precision": "Mixed FP32/FP64; efficiency compared with vector FP64 peak, not a pure-FP64 workload",
+          "scope": "Sustained rate for one self-consistent-field (SCF) iteration of TwinDislocMgY(C); total iteration wall-time includes minor operations whose FLOP counts were omitted",
+          "scale": "8,000 nodes; 74,164 atoms, 154,781 electrons at four k-points (619,124 in supercell convention); about 1.7 billion FE degrees of freedom and 356,000 eigenstates",
+          "source_id": "sc23_materials_osti_pdf",
+          "location": "PDF p. 10, Table III and section VII-B; counting method p. 9, section VI-C",
+          "evidence_stage": "archived_author_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "513.7 seconds and 338,863.4 PFLOP as reported. CF FLOPs are sampled with nvprof on Summit and extrapolated by FE-cell/wavefunction counts; major dense-matrix steps use manual lower-bound counts. GPU-synchronized MPI wall timers provide elapsed time.",
+          "note": "Table III reports 43.1% of the 1,529.6 PFLOP/s vector-FP64 peak for these nodes. This is one SCF iteration, not the wall-time or average rate of a completed ground-state calculation. No conference-final score is established.",
+          "source_version_description": "Public manuscript archived by OSTI; manuscript revision date not stated",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established",
+          "flops": 6.597e+17
+        },
+        {
+          "machine": "Perlmutter",
+          "value": 2092,
+          "unit": "seconds",
+          "precision": "Mixed FP32/FP64 in DFT-FE-MLXC",
+          "scope": "Complete ground-state calculation for a YbCd quasicrystal nanoparticle, including initialization",
+          "scale": "1,120 nodes; Yb295Cd1648 nanoparticle, 1,943 atoms and 40,040 electrons; 75,069,290 FE degrees of freedom",
+          "source_id": "sc23_materials_osti_pdf",
+          "location": "PDF p. 10, Table II; workload pp. 8-9, sections VI-B and VII-A2",
+          "evidence_stage": "archived_author_manuscript",
+          "source_revision_date": null,
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "Total run time is 69 seconds initialization plus 2,023 seconds for 34 SCF steps; section VI-C specifies MPI_Barrier, MPI_Wtime and GPU device synchronization.",
+          "note": "Uses the exact Table II value rather than the approximate narrative description of about 30 minutes. Initial SCF includes multiple Chebyshev-filter passes (footnote 8).",
+          "source_version_description": "Public manuscript archived by OSTI; manuscript revision date not stated",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        }
+      ],
+      "provenance": {
+        "title": [
+          "sc23_materials_osti_pdf"
+        ],
+        "authors": [
+          "sc23_materials_osti_pdf"
+        ],
+        "machines": [
+          "sc23_materials_osti_pdf"
+        ],
+        "abstract": [
+          "sc23_materials_osti_pdf"
+        ],
+        "selection": [
+          "roster-2023-sc23_selection"
+        ],
+        "doi": [
+          "roster-2023-crossref_3627037"
+        ],
+        "award": [
+          "acm_2023_main_award_announcement"
+        ]
+      },
+      "notes": [
+        "Matched to existing roster DOI 10.1145/3581784.3627037. Title capitalization and the full name Paul M. Zimmerman follow the preserved PDF rather than silently adopting registry normalization.",
+        "The first three authors are marked as equal contributors on PDF p. 1.",
+        "The source revision date is not stated in the manuscript. PDF metadata records a creation/modification timestamp of September 16, 2023; that technical timestamp is not treated as a documented manuscript revision date.",
+        "The manuscript has an IEEE-style SC23 footer, whereas the existing DOI is an ACM proceedings record; this institutional manuscript is preserved as its own source version and is not declared byte-identical to the publisher version.",
+        "ACM directly names this project the 2023 main-prize winner. That verifies the award label separately; the measurements here remain attributed to the preserved manuscript.",
+        "This manuscript version is the source for the selected performance records. Conference-day changes require separate evidence and do not overwrite these results."
+      ],
+      "verification": "Selected title, ordered byline, machine configurations and performance observations checked against the linked manuscript version; conference-day final score not verified",
+      "booktitle": "SC ’23: Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "award": {
+        "label": "2023 ACM Gordon Bell Prize winner",
+        "category": "ACM Gordon Bell Prize (main prize)",
+        "source_id": "acm_2023_main_award_announcement"
+      },
+      "local_fulltext": {
+        "filename": "SC23_materials_OSTI_2426285.pdf",
+        "sha256": "a5800eab03ab7a573310a06f281780a74553c10b73abacecaa8d8d0f64f0f92e",
+        "page_count": 12,
+        "source_url": "https://www.osti.gov/servlets/purl/2426285"
+      },
+      "id": "SC23-materials",
+      "year": 2023,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "doi": "10.1145/3581784.3627037",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "content_status": "Selected manuscript fields checked",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from manuscript evidence",
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "roster-2023-crossref_3627037",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and publisher title matched to the official finalist bibliography; manuscript version documented separately."
+      },
+      "title_aliases": [
+        {
+          "title": "Large-scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+          "source_id": "roster-2023-sc23_selection"
+        },
+        {
+          "title": "Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+          "source_id": "roster-2023-crossref_3627037"
+        }
+      ],
+      "award_status": "Official award result checked",
+      "citation_title": "Large-Scale Materials Modeling at Quantum Accuracy: Ab Initio Simulations of Quasicrystals and Interacting Extended Defects in Metallic Alloys",
+      "citation_authors": [
+        "Sambit Das",
+        "Bikash Kanungo",
+        "Vishal Subramanian",
+        "Gourab Panigrahi",
+        "Phani Motamarri",
+        "David Rogers",
+        "Paul Zimmerman",
+        "Vikram Gavini"
+      ],
+      "reviewed_versions": [
+        {
+          "evidence_stage": "archived_author_manuscript",
+          "source_revision_date": null
+        }
+      ]
+    },
+    {
+      "title": "Scaling the leading accuracy of deep equivariant models to biomolecular simulations of realistic size",
+      "authors": [
+        "Albert Musaelian",
+        "Anders Johansson",
+        "Simon Batzner",
+        "Boris Kozinsky"
+      ],
+      "field": "Machine-learned interatomic potentials and biomolecular molecular dynamics",
+      "summary": "Allegro combines local equivariant neural-network potentials with GPU-efficient tensor operations and a LAMMPS/Kokkos implementation. The study demonstrates learned-potential molecular dynamics for large biomolecular structures, including a solvated HIV capsid, while measuring how mixed precision and parallel scale affect simulation throughput.",
+      "machines": [
+        "Perlmutter"
+      ],
+      "machine_configurations": [
+        {
+          "name": "Perlmutter",
+          "facility": "National Energy Research Scientific Computing Center",
+          "configuration": "The preprint describes a 1,536-node regular queue, each node with four 40 GB NVIDIA A100 GPUs and an AMD EPYC 7763 Milan CPU. Runs reach 1,280 nodes / 5,120 GPUs. Software includes Allegro 0.3.0, NequIP 0.6.0, e3nn 0.5.1, PyTorch 1.11.0, Python 3.9.16, CUDA 11.7, cuDNN 8.7.0, GCC 11.2.0 and Cray MPICH 8.1.25.",
+          "location": "PDF p. 7, section VI-B; p. 9, section VII-B"
+        }
+      ],
+      "measurements": [
+        {
+          "machine": "Perlmutter",
+          "value": 8.73,
+          "unit": "timesteps/s",
+          "precision": "Mixed FP64/FP32/TF32: double precision final energy shifting/scaling/summation, FP32 weights/activations, TF32 tensor-core matrix products",
+          "scope": "Peak reported MD application throughput for the solvated HIV capsid benchmark; a short post-warm-up measurement",
+          "scale": "44 million atoms; largest tested partition 1,280 nodes / 5,120 A100 GPUs",
+          "source_id": "sc23_biomolecular_arxiv_v1",
+          "location": "PDF p. 9, section VII-B and Figure 6 (Capsid); measurement protocol p. 7, section VI-C",
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2023-04-20",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "LAMMPS profiling output in timesteps/s; typically 200 warm-up steps precede short subsequent measurement simulations. All benchmark jobs use four MPI ranks per node, one per GPU; CUDA-aware MPI disabled because of Cray MPICH issues.",
+          "note": "The text reports 8.73 timesteps/s as the capsid peak; Figure 6 places its largest-partition point at 1,280 nodes. The reported range is about 3.9-8.7 timesteps/s on 512-1,280 nodes. The p. 1 attributes table describes whole-application performance including I/O; these measurements are not long-trajectory average rates or FLOP/s.",
+          "source_version_description": "Author preprint arXiv:2304.10061v1 (April 20, 2023)",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        },
+        {
+          "machine": "Perlmutter",
+          "value": 4.32,
+          "unit": "timesteps/s",
+          "precision": "Mixed FP64/FP32/TF32: double precision final energy shifting/scaling/summation, FP32 weights/activations, TF32 tensor-core matrix products",
+          "scope": "Peak reported MD application throughput for the largest strong-scaling water benchmark; a short post-warm-up measurement",
+          "scale": "100 million water atoms; largest tested partition 1,280 nodes / 5,120 A100 GPUs",
+          "source_id": "sc23_biomolecular_arxiv_v1",
+          "location": "PDF p. 9, section VII-B and Figure 6 (100-million-atom water); precision p. 5, section V-B3",
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2023-04-20",
+          "measurement_date": null,
+          "presentation_date": null,
+          "checked_on": "2026-11-12",
+          "conference_update_status": "Not checked",
+          "final_score_status": "Not established",
+          "measurement_method": "LAMMPS profiling output in timesteps/s; typically 200 warm-up steps precede short subsequent measurement simulations. All benchmark jobs use four MPI ranks per node, one per GPU; CUDA-aware MPI disabled because of Cray MPICH issues.",
+          "note": "This is the 100-million-atom strong-scaling case, separate from the maximum 126.4-million-atom problem size in the p. 1 attributes table. No conversion to FLOP/s or simulated nanoseconds/day is made.",
+          "source_version_description": "Author preprint arXiv:2304.10061v1 (April 20, 2023)",
+          "relation": "=",
+          "measurement_date_note": "Exact measurement date not established"
+        }
+      ],
+      "provenance": {
+        "title": [
+          "sc23_biomolecular_arxiv_v1"
+        ],
+        "authors": [
+          "sc23_biomolecular_arxiv_v1"
+        ],
+        "machines": [
+          "sc23_biomolecular_arxiv_v1"
+        ],
+        "abstract": [
+          "sc23_biomolecular_arxiv_v1"
+        ],
+        "selection": [
+          "roster-2023-sc23_selection"
+        ],
+        "doi": [
+          "roster-2023-crossref_3627041"
+        ],
+        "award": []
+      },
+      "notes": [
+        "Matched to existing roster DOI 10.1145/3581784.3627041. This audit intentionally uses author preprint arXiv:2304.10061v1, not an asserted publisher-final version.",
+        "The preprint byline order is Albert Musaelian, Anders Johansson, Simon Batzner, Boris Kozinsky; the first three are marked as equal contributors with random order. The ACM-deposited Crossref proceedings record orders Boris Kozinsky first. These source-specific orders must remain separate.",
+        "The performance attributes table on p. 1 reports mixed precision and a maximum problem size of 126.4 million atoms. The particular measurements above follow the separate strong-scaling cases on p. 9.",
+        "Table IV on p. 9 benchmarks precision schemes on one 80 GB A100; it must not be confused with the 40 GB A100 node configuration used for Perlmutter application-scale runs.",
+        "Selection as a main-prize finalist was verified in the existing roster. No winner label is assigned here.",
+        "This manuscript version is the source for the selected performance records. Conference-day changes require separate evidence and do not overwrite these results."
+      ],
+      "verification": "Selected title, ordered byline, machine configurations and performance observations checked against the linked manuscript version; conference-day final score not verified",
+      "booktitle": "SC ’23: Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "award": null,
+      "local_fulltext": {
+        "filename": "SC23_biomolecular_arxiv_2304.10061v1.pdf",
+        "sha256": "d45e99ebe6d3c24ee0826d577ab48e1aa1a097b522b1fa12667f4217415890b7",
+        "page_count": 11,
+        "source_url": "https://arxiv.org/pdf/2304.10061v1"
+      },
+      "id": "SC23-biomolecular",
+      "year": 2023,
+      "award_series": "ACM Gordon Bell Prize",
+      "selection": "Finalist",
+      "doi": "10.1145/3581784.3627041",
+      "summary_kind": "Editorial summary; not the original abstract",
+      "content_status": "Selected manuscript fields checked",
+      "conference_update_status": "Not checked",
+      "final_score_status": "Not established from manuscript evidence",
+      "doi_verification": {
+        "status": "verified",
+        "source_id": "roster-2023-crossref_3627041",
+        "checked_on": "2026-11-12",
+        "detail": "DOI and publisher title matched to the official finalist bibliography; manuscript version documented separately."
+      },
+      "title_aliases": [
+        {
+          "title": "Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+          "source_id": "roster-2023-sc23_selection"
+        }
+      ],
+      "award_status": "Award outcome not checked in this record",
+      "citation_title": "Scaling the Leading Accuracy of Deep Equivariant Models to Biomolecular Simulations of Realistic Size",
+      "citation_authors": [
+        "Boris Kozinsky",
+        "Albert Musaelian",
+        "Anders Johansson",
+        "Simon Batzner"
+      ],
+      "reviewed_versions": [
+        {
+          "evidence_stage": "author_preprint",
+          "source_revision_date": "2023-04-20"
+        }
+      ]
+    },
     {
       "id": "sc2008-qmc",
       "year": 2008,
@@ -328,7 +1827,10 @@
         "source_id": "crossref-sc2008-qmc",
         "checked_on": "2026-11-12",
         "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
-      }
+      },
+      "booktitle": "Proceedings of the 2008 ACM/IEEE Conference on Supercomputing",
+      "content_status": "Selected manuscript fields checked",
+      "award_status": "Outcome checked against official award announcement"
     },
     {
       "id": "sc2008-vpic",
@@ -495,7 +1997,10 @@
         "source_id": "crossref-sc2008-vpic",
         "checked_on": "2026-11-12",
         "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
-      }
+      },
+      "booktitle": "Proceedings of the 2008 ACM/IEEE Conference on Supercomputing",
+      "content_status": "Selected manuscript fields checked",
+      "award_status": "Outcome checked against official award announcement"
     },
     {
       "id": "sc2008-mantle",
@@ -677,7 +2182,10 @@
         "source_id": "crossref-sc2008-mantle",
         "checked_on": "2026-11-12",
         "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
-      }
+      },
+      "booktitle": "Proceedings of the 2008 ACM/IEEE Conference on Supercomputing",
+      "content_status": "Selected manuscript fields checked",
+      "award_status": "Outcome checked against official award announcement"
     },
     {
       "id": "sc2008-seismic",
@@ -873,7 +2381,10 @@
         "source_id": "crossref-sc2008-seismic",
         "checked_on": "2026-11-12",
         "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
-      }
+      },
+      "booktitle": "Proceedings of the 2008 ACM/IEEE Conference on Supercomputing",
+      "content_status": "Selected manuscript fields checked",
+      "award_status": "Outcome checked against official award announcement"
     },
     {
       "id": "sc2008-md",
@@ -996,7 +2507,10 @@
         "source_id": "crossref-sc2008-md",
         "checked_on": "2026-11-12",
         "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
-      }
+      },
+      "booktitle": "Proceedings of the 2008 ACM/IEEE Conference on Supercomputing",
+      "content_status": "Selected manuscript fields checked",
+      "award_status": "Outcome checked against official award announcement"
     },
     {
       "id": "sc2008-ls3df",
@@ -1161,7 +2675,10 @@
         "source_id": "crossref-sc2008-ls3df",
         "checked_on": "2026-11-12",
         "detail": "DOI and registered title directly matched to the audited manuscript; author order follows the PDF, not automated registry name parsing."
-      }
+      },
+      "booktitle": "Proceedings of the 2008 ACM/IEEE Conference on Supercomputing",
+      "content_status": "Selected manuscript fields checked",
+      "award_status": "Outcome checked against official award announcement"
     }
   ],
   "issues": [
@@ -1200,6 +2717,12 @@
       "title": "1997 legacy checkpoint completed",
       "state": "Recorded",
       "detail": "Four HTML/PostScript papers and all figure resources are preserved. Daily and session pages use conflicting finalist/winner labels, so wins and categories remain unresolved."
+    },
+    {
+      "id": "recent-fulltext",
+      "title": "Detailed manuscript coverage expanded beyond SC08",
+      "state": "Checked",
+      "detail": "Selected papers from each of 2023, 2024 and 2025 now include ordered bylines, editorial summaries, machine configurations and source-located performance records. Other web-roster entries retain their bibliography-only status."
     }
   ],
   "coverage": {
@@ -1244,7 +2767,14 @@
       2015,
       2016,
       2017
-    ]
+    ],
+    "detailed_years": [
+      2008,
+      2023,
+      2024,
+      2025
+    ],
+    "detailed_paper_count": 12
   },
   "inventory_report": {
     "volume": "SC08_Proceedings",
@@ -2948,11 +4478,15 @@
       "preserved_proceedings_manuscript",
       "conference_presentation",
       "official_award_announcement",
-      "later_followup"
+      "later_followup",
+      "author_preprint",
+      "pre_conference_preprint",
+      "archived_author_manuscript",
+      "later_author_manuscript"
     ],
     "rule": "A paper result is not automatically the conference-day or final annual score. Preserve each source-version result; do not overwrite manuscript values with later values.",
     "dates": "Keep source revision, measurement date, presentation date and audit date separate. Unknown dates remain null.",
-    "conference_day_updates": "Not yet verified for these SC08 records"
+    "conference_day_updates": "Not yet verified for the current manuscript records"
   },
   "year_coverage": [
     {
@@ -3384,7 +4918,7 @@
     {
       "year": 2023,
       "local_candidate_count": null,
-      "status": "Official web roster indexed; bibliography only. Full-text, performance and conference updates not audited.",
+      "status": "Official web roster indexed; 2 of 6 papers have selected manuscript fields checked. Conference-day score updates unverified.",
       "web_candidate_count": 6,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2023/12/sc23_history_06.pdf",
@@ -3392,12 +4926,13 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3581784",
         "website_url": "https://sc23.supercomputing.org/",
         "year": 2023
-      }
+      },
+      "detailed_paper_count": 2
     },
     {
       "year": 2024,
       "local_candidate_count": null,
-      "status": "Official web roster indexed; bibliography only. Full-text, performance and conference updates not audited.",
+      "status": "Official web roster indexed; 2 of 6 papers have selected manuscript fields checked. Conference-day score updates unverified.",
       "web_candidate_count": 6,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2024/12/sc24_history_04.pdf",
@@ -3405,12 +4940,13 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3703596",
         "website_url": "https://sc24.supercomputing.org/",
         "year": 2024
-      }
+      },
+      "detailed_paper_count": 2
     },
     {
       "year": 2025,
       "local_candidate_count": null,
-      "status": "Official web roster indexed; bibliography only. Full-text, performance and conference updates not audited.",
+      "status": "Official web roster indexed; 2 of 6 papers have selected manuscript fields checked. Conference-day score updates unverified.",
       "web_candidate_count": 6,
       "sc_links": {
         "history_pdf_url": "https://supercomputing.org/app/uploads/2026/03/sc25_history.pdf",
@@ -3418,7 +4954,8 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3712285",
         "website_url": "https://sc25.supercomputing.org/",
         "year": 2025
-      }
+      },
+      "detailed_paper_count": 2
     },
     {
       "year": 2026,
@@ -3565,7 +5102,9 @@
             "Listed as Finalist 1 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb104.",
             "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627037.",
             "Selection-page title and publisher title differ; both forms are preserved without silently replacing the selection title."
-          ]
+          ],
+          "detailed_paper_id": "SC23-materials",
+          "content_status": "Selected manuscript fields checked"
         },
         {
           "id": "SC23-turbomachinery",
@@ -3714,7 +5253,9 @@
             "Listed as Finalist 6 in sc23_selection and included in sc23_program; official program entry: sc23_program_gb108.",
             "DOI, publisher title, ordered authors and publication URL are from the ACM-deposited Crossref record crossref_3627041.",
             "The selection page introduces Albert Musaelian first; the Crossref record and conference program list Boris Kozinsky first. Authors here retain registry order."
-          ]
+          ],
+          "detailed_paper_id": "SC23-biomolecular",
+          "content_status": "Selected manuscript fields checked"
         }
       ],
       "notes": [
@@ -3729,7 +5270,8 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3581784",
         "website_url": "https://sc23.supercomputing.org/",
         "year": 2023
-      }
+      },
+      "detailed_paper_count": 2
     },
     {
       "year": 2024,
@@ -3965,7 +5507,9 @@
           "notes": [
             "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record.",
             "The registry lists James H. Laros; announcement and program include the suffix III. Registry spelling is preserved in authors."
-          ]
+          ],
+          "detailed_paper_id": "SC24-gb104",
+          "content_status": "Selected manuscript fields checked"
         },
         {
           "id": "SC24-gb102",
@@ -3993,7 +5537,9 @@
           "publication_url": "https://ieeexplore.ieee.org/document/10793182/",
           "notes": [
             "Main-prize finalist membership is established by the official announcement and corroborated by the official presentation page. DOI, publisher title, ordered authors and publication URL are from the direct IEEE-deposited Crossref work record."
-          ]
+          ],
+          "detailed_paper_id": "SC24-gb102",
+          "content_status": "Selected manuscript fields checked"
         },
         {
           "id": "SC24-gb106",
@@ -4033,7 +5579,8 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.5555/3703596",
         "website_url": "https://sc24.supercomputing.org/",
         "year": 2024
-      }
+      },
+      "detailed_paper_count": 2
     },
     {
       "year": 2025,
@@ -4232,7 +5779,9 @@
             "The official program uses presentation ID pap577 rather than a gb-prefixed ID. It is explicitly an ACM Gordon Bell Finalist in main-only session sess575; absence of a GB tag is not treated as exclusion.",
             "Program author spelling Leonard Deutschle differs from registry spelling Leonard Deuschle; the authors array preserves the registry spelling.",
             "Program and publisher-registration title capitalization differs; title preserves the program and publisher_title preserves the registry."
-          ]
+          ],
+          "detailed_paper_id": "SC25_pap577",
+          "content_status": "Selected manuscript fields checked"
         },
         {
           "id": "SC25_gb101",
@@ -4381,7 +5930,9 @@
             "Metadata roster entry only; no manuscript PDF, performance score, or conference-updated final result was audited.",
             "Author names and order follow the Crossref author array; given/family components and suffixes are preserved without inferring a PDF byline.",
             "Mixed session sess577 propagates both main and Climate Modeling event types to presentations; the individual GB tag identifies this as a main-prize finalist."
-          ]
+          ],
+          "detailed_paper_id": "SC25_gb106",
+          "content_status": "Selected manuscript fields checked"
         }
       ],
       "notes": [
@@ -4399,7 +5950,8 @@
         "proceedings_url": "https://dl.acm.org/doi/proceedings/10.1145/3712285",
         "website_url": "https://sc25.supercomputing.org/",
         "year": 2025
-      }
+      },
+      "detailed_paper_count": 2
     }
   ],
   "annual_sc_links": {
@@ -4682,5 +6234,11 @@
       }
     ],
     "current_year_source_note": "SC26 website linked from the official history page navigation; proceedings not checked."
-  }
+  },
+  "detailed_years": [
+    2008,
+    2023,
+    2024,
+    2025
+  ]
 }
