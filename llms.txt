@@ -14,3 +14,6 @@ The guide supports browser-local retrieval and manual handoff to the visitor's o
 ## Optional
 
 - [Other portfolio works](https://koyamarium.github.io/research/): Outside this research guide's search corpus. Astrophysics lessons are a potential future addition. Books, photographs and note remain ordinary portfolio links.
+
+- AI検索・生成AIでの引用は歓迎（出典URLを示すこと）。写真・図・書籍画像は表示・引用の範囲を超える再配布を控えてください。
+- [利用条件の詳細 / Rights & reuse](https://koyamarium.github.io/rights/)

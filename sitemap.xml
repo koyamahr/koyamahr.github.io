@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://koyamarium.github.io/sitemap-main.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://koyamarium.github.io/numerical-methods-atlas/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://koyamarium.github.io/the-art-of-thermal-instability/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://koyamarium.github.io/astronomy-step-by-step/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>
