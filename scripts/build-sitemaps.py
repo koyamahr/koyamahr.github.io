@@ -3,6 +3,7 @@
 
 Run from any directory: python3 scripts/build-sitemaps.py
 Project sites publish their own sitemaps; they are not scanned or copied here.
+Explicit cross-repository landing pages may be listed in EXTRA_URLS without lastmod.
 """
 from pathlib import Path
 from html.parser import HTMLParser
@@ -12,6 +13,10 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://koyamarium.github.io/'
 NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+# Cross-repository pages: omit lastmod because this git history cannot date them.
+EXTRA_URLS = (
+    'https://koyamarium.github.io/optics/',
+)
 PROJECTS = {'numerical-methods-atlas', 'the-art-of-thermal-instability',
             'astronomy-step-by-step', 'the-art-of-numerical-algorithms',
             'retro-astro-jax', 'ko09-pme', 'college-notes'}
@@ -58,6 +63,13 @@ def main():
         modified = git('log', '-1', '--format=%cs', '--', rel).strip()
         if modified:
             ET.SubElement(item, f'{{{NS}}}lastmod').text = modified
+    existing_urls = {item.findtext(f'{{{NS}}}loc') for item in urlset}
+    for url in EXTRA_URLS:
+        if url in existing_urls:
+            continue
+        item = ET.SubElement(urlset, f'{{{NS}}}url')
+        ET.SubElement(item, f'{{{NS}}}loc').text = url
+        existing_urls.add(url)
     write('sitemap-main.xml', urlset)
     index = ET.Element(f'{{{NS}}}sitemapindex')
     for path in ['sitemap-main.xml', 'numerical-methods-atlas/sitemap.xml',
@@ -66,7 +78,7 @@ def main():
         item = ET.SubElement(index, f'{{{NS}}}sitemap')
         ET.SubElement(item, f'{{{NS}}}loc').text = BASE + path
     write('sitemap.xml', index)
-    print(f'Generated sitemap index and {len(urlset)} root HTML URLs')
+    print(f'Generated sitemap index and {len(urlset)} URLs (root HTML plus explicit extras)')
 
 if __name__ == '__main__':
     main()
